@@ -1,0 +1,11 @@
+# Śabda Engineering Hypotheses
+
+status: PREMATURE-HYPOTHESIS
+depends_on:
+  - understanding-siva-sutras
+  - paninian-pratyahara-analysis
+  - cross-language-testing
+
+## Опис
+Тут зберігаються наші ранні гіпотези щодо машинного кодування Śiva-sūtras (Śabda-256, Śabda-512, UPC-8, FPGA representations). 
+Вони не видаляються, оскільки є важливою частиною історії нашого мислення. Однак вони заморожені, доки не будуть отримані фундаментальні відповіді щодо самої системи.

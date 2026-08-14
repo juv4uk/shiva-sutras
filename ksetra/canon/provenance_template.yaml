@@ -1,0 +1,11 @@
+# Шаблон для джерелознавчого дослідження кожної одиниці канону
+# (або окремих сутр, або всього переліку)
+
+claim: "" # Що саме стверджується (напр. "Порядок сутр 1-4 саме такий")
+source: "" # Назва джерела (напр. "Mahābhāṣya", "Kāśikāvṛtti")
+date: "" # Орієнтовне датування
+source_type: "" # manuscript | traditional_edition | commentary | critical_edition | modern
+direct_or_secondary: "" # direct | secondary
+manuscript_tradition: "" # Якщо застосовно (напр. північна, південна)
+confidence: "" # high | medium | low (обґрунтування)
+disputes: "" # Чи є відомі суперечки щодо цього фрагмента в інших джерелах?
