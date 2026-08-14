@@ -1,0 +1,25 @@
+- padaccheda: अणुदित् १/१ सवर्णस्य ६/१ च ०/० अप्रत्ययः १/१
+  source_text: अणुदित् सवर्णस्य चाप्रत्ययः ।
+  sutra_id: 1.1.69
+  sutra_type: ''
+  term: ''
+- padaccheda: प्रहरणम्  १/१
+  source_text: प्रहरणम् ।
+  sutra_id: 4.4.57
+  sutra_type: ''
+  term: ''
+- padaccheda: रात् ५/१ लोपः १/१
+  source_text: राल्लोपः ।
+  sutra_id: 6.4.21
+  sutra_type: ''
+  term: ''
+- padaccheda: अचि ७/१ श्नुधातुभ्रुवाम् ६/३ य्वोः ६/२ इयङुवङौ १/२
+  source_text: अचि श्नुधातुभ्रुवां य्वोरियङुवङौ ।
+  sutra_id: 6.4.77
+  sutra_type: अतिदेशः
+  term: ''
+- padaccheda: मयः ५/१ उञो ६/१ वः १/१  वा ०/०
+  source_text: मय उञो वो वा ।
+  sutra_id: 8.3.33
+  sutra_type: अतिदेशः
+  term: ''

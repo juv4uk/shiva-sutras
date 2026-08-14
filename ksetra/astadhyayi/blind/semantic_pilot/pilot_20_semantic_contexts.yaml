@@ -6,25 +6,34 @@
       padaccheda: अणुदित् १/१ सवर्णस्य ६/१ च ०/० अप्रत्ययः १/१
     inherited_context:
       from: []
-      confidence: UNRESOLVED
+      confidence: SUPPORTED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
-      type: substitution
+      status: resolved
+      type: metalinguistic_assignment
       arguments:
         target_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        replacement_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        left_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        right_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: अण्
+          content: UNKNOWN-BY-BLINDING
+        condition:
+          symbol: अप्रत्ययः
+          content: literal (not a suffix)
+        assignment:
+          symbol: सवर्णस्य
+          content: literal (represents its homogeneous sounds)
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: Web search summary (Kashika on 1.1.69)
+    functional_reading:
+      summary: An aṇ or udit, when not an affix, denotes its own savarṇa (homogeneous
+        sounds) as well.
+      confidence: SUPPORTED
+      unresolved:
+      - membership_of_aṇ
+      - meaning_of_udit
 - rule_context:
     sutra_id: 1.3.12
     pilot_selection_reason: shape_conditioned_morphology
@@ -86,26 +95,33 @@
       source: प्रहरणम् ।
       padaccheda: प्रहरणम्  १/१
     inherited_context:
-      from: []
-      confidence: UNRESOLVED
+      from:
+      - 4.4.1 (ṭhak)
+      - tena (instrumental case context)
+      confidence: PLAUSIBLE
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
-      type: UNKNOWN
+      status: resolved
+      type: suffixation
       arguments:
         target_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: प्रहरणम्
+          content: literal (weapon)
         replacement_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        left_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        right_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: ठक् (inherited)
+          content: UNKNOWN-BY-EVIDENCE (the suffix ṭhak)
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: General context of 4.4
+    functional_reading:
+      summary: The suffix ṭhak is added to a word meaning 'weapon' in the instrumental
+        case to denote 'he fights with it'.
+      confidence: SUPPORTED
+      unresolved:
+      - phonological_impact_of_ṭhak
 - rule_context:
     sutra_id: 5.3.31
     pilot_selection_reason: anuvrtti_heavy_rule
@@ -221,26 +237,34 @@
       source: राल्लोपः ।
       padaccheda: रात् ५/१ लोपः १/१
     inherited_context:
-      from: []
-      confidence: UNRESOLVED
+      from:
+      - 6.4.1 (aṅgasya)
+      - kṅiti (from previous rules)
+      confidence: SUPPORTED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: resolved
       type: elision/lopa
       arguments:
         target_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: रात्
+          content: UNKNOWN-BY-EVIDENCE (r or l? or r-pratyahara?)
         replacement_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        left_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        right_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: लोपः
+          content: literal (deletion)
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: Web search summary (Kashika on 6.4.21)
+    functional_reading:
+      summary: Elision occurs for a sound following an 'r' (or belonging to ral) under
+        certain conditions like kṅit suffix.
+      confidence: PLAUSIBLE
+      unresolved:
+      - exact_meaning_of_rāt
+      - exact_inherited_conditions
 - rule_context:
     sutra_id: 6.4.77
     pilot_selection_reason: opaque_context_class
@@ -248,26 +272,35 @@
       source: अचि श्नुधातुभ्रुवां य्वोरियङुवङौ ।
       padaccheda: अचि ७/१ श्नुधातुभ्रुवाम् ६/३ य्वोः ६/२ इयङुवङौ १/२
     inherited_context:
-      from: []
-      confidence: UNRESOLVED
+      from:
+      - 6.4.1 (aṅgasya)
+      confidence: SUPPORTED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: resolved
       type: substitution
       arguments:
         target_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: य्वोः
+          content: literal (y, v)
         replacement_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
-        left_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: इयङुवङौ
+          content: literal (iyaṅ, uvaṅ)
         right_context:
-          symbol: अच्
-          content: UNKNOWN
+          symbol: अचि
+          content: UNKNOWN-BY-BLINDING
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: General grammatical knowledge of iyaṅ/uvaṅ replacement
+    functional_reading:
+      summary: The 'y' and 'v' of śnu, dhātu, and bhrū are replaced by iyaṅ and uvaṅ
+        when followed by ac.
+      confidence: SUPPORTED
+      unresolved:
+      - membership_of_ac
 - rule_context:
     sutra_id: 6.4.111
     pilot_selection_reason: lopa_operation
@@ -437,26 +470,39 @@
       source: मय उञो वो वा ।
       padaccheda: मयः ५/१ उञो ६/१ वः १/१  वा ०/०
     inherited_context:
-      from: []
-      confidence: UNRESOLVED
+      from:
+      - aci (from previous rules via anuvrtti)
+      confidence: SUPPORTED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: resolved
       type: substitution
       arguments:
-        target_class:
-          symbol: मय्
-          content: UNKNOWN
-        replacement_class:
-          symbol: UNKNOWN
-          content: UNKNOWN
         left_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: मयः
+          content: UNKNOWN-BY-BLINDING
+        target_class:
+          symbol: उञो
+          content: literal (the affix uñ)
+        replacement_class:
+          symbol: वः
+          content: literal (v)
         right_context:
-          symbol: UNKNOWN
-          content: UNKNOWN
+          symbol: अचि (inherited)
+          content: UNKNOWN-BY-BLINDING
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: Web search / User provided Kasika context for 8.3.33
+    functional_reading:
+      summary: The affix 'uñ' optionally becomes 'v' when preceded by 'may' and followed
+        by 'ac'.
+      confidence: SUPPORTED
+      unresolved:
+      - membership_of_may
+      - membership_of_ac
 - rule_context:
     sutra_id: 8.3.59
     pilot_selection_reason: explicit_substitution
