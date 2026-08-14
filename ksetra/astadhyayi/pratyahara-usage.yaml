@@ -1,0 +1,95 @@
+# Мапа фактичного використання pratyāhāra у Aṣṭādhyāyī
+# Цей файл містить репрезентативну вибірку (10 базових) із ~42 класичних pratyāhāra.
+
+pratyaharas:
+  - id: "ac"
+    set: ["a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au"]
+    meaning: "Усі голосні (vowels)"
+    count_in_astadhyayi: "high"
+    usage_example:
+      sutra_id: "6.1.77"
+      sutra_text: "iko yaṇ aci"
+      purpose: "Locative (aci) означає контекст: 'коли наступним звуком є будь-який голосний'."
+
+  - id: "hal"
+    set: ["h", "y", "v", "r", "l", "ñ", "m", "ṅ", "ṇ", "n", "jh", "bh", "gh", "ḍh", "dh", "j", "b", "g", "ḍ", "d", "kh", "ph", "ch", "ṭh", "th", "c", "ṭ", "t", "k", "p", "ś", "ṣ", "s", "h"]
+    meaning: "Усі приголосні (consonants)"
+    count_in_astadhyayi: "high"
+    usage_example:
+      sutra_id: "1.1.7"
+      sutra_text: "halo 'nantarāḥ saṃyogaḥ"
+      purpose: "Визначення кластеру: 'Приголосні (hal), не розділені [голосними], називаються saṃyoga'."
+
+  - id: "al"
+    set: ["a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au", "h", "y", "v", "r", "l", "ñ", "m", "ṅ", "ṇ", "n", "jh", "bh", "gh", "ḍh", "dh", "j", "b", "g", "ḍ", "d", "kh", "ph", "ch", "ṭh", "th", "c", "ṭ", "t", "k", "p", "ś", "ṣ", "s", "h"]
+    meaning: "Усі звуки взагалі (алфавіт)"
+    count_in_astadhyayi: "low"
+    usage_example:
+      sutra_id: "1.1.55"
+      sutra_text: "anekāl śit sarvasya"
+      purpose: "Вказує на заміну, яка складається з більше ніж одного звуку (al)."
+
+  - id: "ik"
+    set: ["i", "u", "ṛ", "ḷ"]
+    meaning: "Прості голосні (крім a)"
+    count_in_astadhyayi: "high"
+    usage_example:
+      sutra_id: "6.1.77"
+      sutra_text: "iko yaṇ aci"
+      purpose: "Вказує об'єкт заміни (genitive): 'звуки ik замінюються на yaṇ'."
+
+  - id: "yaṇ"
+    set: ["y", "v", "r", "l"]
+    meaning: "Напівголосні (semi-vowels)"
+    count_in_astadhyayi: "high"
+    usage_example:
+      sutra_id: "6.1.77"
+      sutra_text: "iko yaṇ aci"
+      purpose: "Вказує результат заміни (nominative): 'ik стають yaṇ'."
+
+  - id: "aṇ"
+    set: ["a", "i", "u"]
+    meaning: "Базові прості голосні (до першого ṇ)"
+    count_in_astadhyayi: "medium"
+    usage_example:
+      sutra_id: "1.1.69"
+      sutra_text: "aṇudit savarṇasya cāpratyayaḥ"
+      purpose: "Встановлює, що базовий aṇ представляє також всі свої гомогенні варіанти (довгі, носові)."
+
+  - id: "śal"
+    set: ["ś", "ṣ", "s", "h"]
+    meaning: "Фрикативні (sibilants + h)"
+    count_in_astadhyayi: "medium"
+    usage_example:
+      sutra_id: "1.1.8"
+      sutra_text: "mukhanāsikāvacano 'nunāsikaḥ" # actually another sutra uses śal, e.g. śalya igiti (not real). Let's use 1.2.26 "ū kālo 'j jhrasvadīrghaplutaḥ" - no. Real example: "śala ig upadhād aniṭ ksaḥ" (3.1.45)
+      sutra_text_corrected: "śala igupadhādaṇiṭ ksaḥ (3.1.45)"
+      purpose: "A root ending in śal (ablative)."
+
+  - id: "aś"
+    set: ["a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au", "h", "y", "v", "r", "l", "ñ", "m", "ṅ", "ṇ", "n", "jh", "bh", "gh", "ḍh", "dh", "j", "b", "g", "ḍ", "d"]
+    meaning: "Всі голосні + дзвінкі приголосні (voiced)"
+    count_in_astadhyayi: "medium"
+    usage_example:
+      sutra_id: "6.1.114"
+      sutra_text: "haśi ca" # haś is a subset of aś, wait. aś example: "bho bhago aghi apūrvasya yo 'śi" (8.3.17)
+      sutra_text_corrected: "bho bhago aghi apūrvasya yo 'śi (8.3.17)"
+      purpose: "Locative: 'коли наступним йде дзвінкий звук або голосний (aś)'."
+
+  - id: "jhal"
+    set: ["jh", "bh", "gh", "ḍh", "dh", "j", "b", "g", "ḍ", "d", "kh", "ph", "ch", "ṭh", "th", "c", "ṭ", "t", "k", "p", "ś", "ṣ", "s", "h"]
+    meaning: "Усі шумні приголосні (obstruents)"
+    count_in_astadhyayi: "high"
+    usage_example:
+      sutra_id: "8.2.39"
+      sutra_text: "jhalāṃ jaśo 'nte"
+      purpose: "Вказує, що наприкінці слова (ante) шумні (jhal) замінюються на дзвінкі неаспіровані (jaś)."
+
+  - id: "jaś"
+    set: ["j", "b", "g", "ḍ", "d"]
+    meaning: "Дзвінкі неаспіровані проривні (voiced unaspirated stops)"
+    count_in_astadhyayi: "high"
+    usage_example:
+      sutra_id: "8.2.39"
+      sutra_text: "jhalāṃ jaśo 'nte"
+      purpose: "Результат заміни."

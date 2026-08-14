@@ -1,0 +1,29 @@
+# Формальний алгоритм утворення pratyāhāra
+
+sutras:
+  - id: "1.1.71"
+    text: "ādir antyena sahetā"
+    translation: "Початковий [звук], разом із кінцевим it-маркером, [позначає себе та проміжні звуки]."
+    components:
+      - term: "ādi"
+        meaning: "початковий елемент (звук з 14 сутр, який не є it-маркером наприкінці сутри)"
+      - term: "antya"
+        meaning: "кінцевий елемент"
+      - term: "itā (saha)"
+        meaning: "(разом з) it-маркером"
+    
+algorithm:
+  step_1: "Визначити ādi (початковий звук) у тексті Śiva-sūtras."
+  step_2: "Визначити antya it-marker (кінцевий маркер) у тексті Śiva-sūtras, що йде ПІСЛЯ ādi."
+  step_3: "Зібрати всі звуки, починаючи від ādi до звуку безпосередньо перед antya it-marker включно."
+  step_4: "Виключити з отриманої множини всі проміжні it-маркери."
+  
+example_derivation:
+  name: "ac"
+  steps:
+    1: "ādi = 'a' (початок сутри 1: a i u ṇ)"
+    2: "antya it-marker = 'c' (кінець сутри 4: ai au c)"
+    3: "raw sequence = a i u ṇ ṛ ḷ k e o ṅ ai au"
+    4: "exclude anubandhas (ṇ, k, ṅ) = a i u ṛ ḷ e o ai au"
+  result: ["a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au"]
+  meaning: "Всі голосні"
