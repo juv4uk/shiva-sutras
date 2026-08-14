@@ -561,14 +561,14 @@
   padaccheda: स्वरादिनिपातम् १/१ अव्ययम् १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वर
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -657,8 +657,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -693,8 +694,8 @@
     - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
-    - यण्
     - इक्
+    - यण्
     roles:
       इक्: replacement/target
       यण्: target/left_context
@@ -727,6 +728,7 @@
     triggers:
     - opaque_symbols_detected
     - derived_shape:अन्त
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
     - अच्
@@ -749,8 +751,8 @@
     - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
-    - एच्
     - इक्
+    - एच्
     roles:
       एच्: target/left_context
       इक्: replacement/target
@@ -864,8 +866,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -909,19 +912,20 @@
   padaccheda: न ०/० पदान्तद्विर्वचनवरेयलोपस्वरसवर्णानुस्वारदीर्घजश्चर्विधिषु ७/३
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:लोप
     - lexical:दीर्घ
     - lexical:सवर्ण
-    - lexical:स्वर
     - derived_shape:वर्ण
+    - prosody_morpheme:स्वर
     - prior:medium
+    - demoted_due_to_domain:prosody_accent
     opaque_classes: []
     roles: {}
 - sutra_id: 1.1.59
@@ -1106,6 +1110,7 @@
     triggers:
     - lexical:सवर्ण
     - derived_shape:वर्ण
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1119,8 +1124,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1151,8 +1157,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1171,6 +1178,7 @@
     triggers:
     - lexical:वृद्धि
     - derived_shape:आदि
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1202,6 +1210,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
     - एङ्
@@ -1343,8 +1352,8 @@
     - opaque_symbols_detected
     - prior:low
     opaque_classes:
-    - झल्
     - इक्
+    - झल्
     roles:
       इक्: target/left_context
       झल्: replacement/target
@@ -1657,14 +1666,14 @@
   padaccheda: उच्चैः ०/० उदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1673,14 +1682,14 @@
   padaccheda: नीचैः ०/० अनुदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1689,14 +1698,15 @@
   padaccheda: समाहारः १/१ स्वरितः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1705,17 +1715,18 @@
   padaccheda: तस्य ६/१ आदितः ०/० उदात्तम् १/१ अर्धह्रस्वम् १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:ह्रस्व
     - derived_shape:आदि
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
+    - demoted_due_to_domain:prosody_accent
     opaque_classes: []
     roles: {}
 - sutra_id: 1.2.33
@@ -1723,13 +1734,14 @@
   padaccheda: एकश्रुति १/१ दूरात् ५/१ सम्बुद्धौ ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - prosody_morpheme:एकश्रुति
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1753,14 +1765,14 @@
   padaccheda: '"उच्चैस्तराम् ०/० वा ०/० वषट्कारः १/१ उच्चैः (इत्यनेन उदात्तो गृह्यते'
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1784,15 +1796,16 @@
   padaccheda: न ०/० सुब्रह्मण्यायाम् ७/१ स्वरितस्य ६/१ तु ०/० उदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1801,14 +1814,14 @@
   padaccheda: देवब्रह्मणोः ७/२ अनुदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1817,17 +1830,19 @@
   padaccheda: स्वरितात् ५/१ संहितायाम् ७/१ अनुदात्तानाम् ६/३
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:संहिता
-    - lexical:स्वर
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:low
+    - demoted_due_to_domain:prosody_accent
     opaque_classes: []
     roles: {}
 - sutra_id: 1.2.40
@@ -1835,15 +1850,16 @@
   padaccheda: उदात्तस्वरितपरस्य ६/१ सन्नतरः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
@@ -1997,8 +2013,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2088,8 +2105,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2452,8 +2470,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2515,8 +2534,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2525,16 +2545,16 @@
   padaccheda: स्वरितेन ३/१ अधिकारः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: grammatical_notation
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:low
-    - demoted_due_to_domain:grammatical_notation
     opaque_classes: []
     roles: {}
 - sutra_id: 1.3.12
@@ -2542,7 +2562,7 @@
   padaccheda: अनुदात्तङितः ५/१ आत्मनेपदम् १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: grammatical_notation
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
@@ -2550,7 +2570,7 @@
     status: maybe
     triggers:
     - derived_shape:आत्
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2799,16 +2819,15 @@
   padaccheda: समः ५/१ गम्यृच्छि-प्रच्छि-स्वरत्यर्ति-श्रुविदिभ्यः ५/३
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: grammatical_notation
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वर
     - prior:low
-    - demoted_due_to_domain:grammatical_notation
     opaque_classes: []
     roles: {}
 - sutra_id: 1.3.30
@@ -3447,16 +3466,16 @@
   padaccheda: स्वरितञितः ५/१ कर्त्रभिप्राये ७/१ क्रियाफले ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: grammatical_notation
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:low
-    - demoted_due_to_domain:grammatical_notation
     opaque_classes: []
     roles: {}
 - sutra_id: 1.3.73
@@ -5479,14 +5498,14 @@
   padaccheda: सुप् १/१ आमन्त्रिते ७/१ पराङ्गवत् ०/० स्वरे ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वर
     - prior:low
     opaque_classes: []
     roles: {}
@@ -7766,8 +7785,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8307,8 +8327,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8399,8 +8420,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8594,8 +8616,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8609,8 +8632,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8694,16 +8718,17 @@
   padaccheda: इदमः ६/१ अन्वादेशे ७/१ अश् १/१ अनुदात्तः १/१ तृतीयाऽऽदौ ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - opaque_symbols_detected
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
+    - demoted_due_to_domain:prosody_accent
     opaque_classes:
     - अश्
     roles:
@@ -8713,14 +8738,14 @@
   padaccheda: एतदः ६/१ त्रतसोः ७/२ त्रतसौ १/२ च ०/० अनुदात्तौ १/२
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9107,6 +9132,7 @@
     status: 'yes'
     triggers:
     - lexical:लुक्
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10276,8 +10302,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -11361,8 +11388,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -14075,15 +14103,15 @@
   padaccheda: अनुदात्तेतः ५/१ च ०/० हलादेः ५/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
     - latent_technical_compound:हलादे
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -16119,14 +16147,14 @@
   padaccheda: मन्त्रे ७/१ वृषेषपचमनविदभूवीराः १/३ (पञ्चम्यर्थे प्रथमा) उदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18613,6 +18641,7 @@
     status: maybe
     triggers:
     - derived_shape:आदि
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18704,8 +18733,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18845,8 +18875,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18903,14 +18934,14 @@
   padaccheda: यासुट् १/१ परस्मैपदेषु ७/३ उदात्तः १/१ ङित् १/१ च ०/०
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18971,8 +19002,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19644,8 +19676,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19686,14 +19719,14 @@
   padaccheda: वृषाकप्यग्निकुसितकुसीदानाम् ६/३ उदात्तः  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
@@ -19719,7 +19752,7 @@
   padaccheda: वर्णात् ५/१ अनुदात्तात् ५/१ तोपधात् ५/१ तः ६/१  नः  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
@@ -19727,7 +19760,7 @@
     status: maybe
     triggers:
     - derived_shape:वर्ण
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
@@ -21131,8 +21164,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -22534,14 +22568,14 @@
   padaccheda: अनुदात्तादेः ५/१ अञ्  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -26224,14 +26258,14 @@
   padaccheda: अनुदात्तादेः ५/१ च ०/०
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28314,16 +28348,17 @@
   padaccheda: समानोदरे ७/१  शयितः १/१  ओ (लुप्तप्रथमान्तनिर्देशः) च ०/०  उदात्तः  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:लुप्
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
+    - demoted_due_to_domain:prosody_accent
     opaque_classes: []
     roles: {}
 - sutra_id: 4.4.109
@@ -31635,14 +31670,14 @@
   padaccheda: उभात् ५/१ उदात्तः १/१ नित्यम्  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33733,8 +33768,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36696,8 +36732,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36730,6 +36767,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes:
     - अच्
@@ -36790,8 +36828,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -37769,6 +37808,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -37830,6 +37870,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38061,6 +38102,7 @@
     - opaque_symbols_detected
     - derived_shape:आदे
     - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - एच्
@@ -38153,6 +38195,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38243,6 +38286,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38269,15 +38313,15 @@
   padaccheda: अनुदात्तस्य ६/१ च ०/० ऋदुपधस्य ६/१ अन्यतरस्याम् ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
     - latent_technical_compound:ऋदुपध
+    - prosody_morpheme:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38393,6 +38437,7 @@
     triggers:
     - lexical:लोप
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - वल्
@@ -38572,9 +38617,9 @@
     - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
+    - इक्
     - अच्
     - यण्
-    - इक्
     roles:
       इक्: target/left_context
       यण्: replacement/target
@@ -38685,6 +38730,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39255,14 +39301,14 @@
   padaccheda: अनुदात्ते ७/१ च ०/० कुधपरे ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39293,6 +39339,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39308,6 +39355,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39854,14 +39902,14 @@
   padaccheda: अनुदात्तम् १/१ पदम् १/१ एकवर्जम् १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39870,7 +39918,7 @@
   padaccheda: कर्षात्वतः ६/१ घञः ६/१ अन्तः १/१ उदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
@@ -39878,7 +39926,7 @@
     status: maybe
     triggers:
     - derived_shape:अन्त
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
@@ -39903,17 +39951,18 @@
   padaccheda: अनुदात्तस्य ६/१ च ०/० यत्र ०/० उदात्तलोपः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:लोप
-    - derived_shape:अनुदात्त
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:high
+    - demoted_due_to_domain:prosody_accent
     opaque_classes: []
     roles: {}
 - sutra_id: 6.1.162
@@ -40104,14 +40153,14 @@
   padaccheda: उदात्तयणः ५/१ हल्पूर्वात् ५/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40280,14 +40329,15 @@
   padaccheda: तित् १/१ स्वरितम् १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40297,14 +40347,15 @@
     ६/२
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40321,6 +40372,7 @@
     status: maybe
     triggers:
     - derived_shape:आदि
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40364,14 +40416,14 @@
   padaccheda: अनुदात्ते ७/१ च ०/०
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40756,6 +40808,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40833,6 +40886,7 @@
     status: maybe
     triggers:
     - derived_shape:अन्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -41855,7 +41909,7 @@
     status: maybe
     triggers:
     - derived_shape:आदि
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42148,6 +42202,7 @@
     status: maybe
     triggers:
     - derived_shape:अन्त
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42206,8 +42261,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42788,6 +42844,7 @@
     status: maybe
     triggers:
     - derived_shape:आदि
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -43045,7 +43102,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44292,6 +44349,7 @@
     status: maybe
     triggers:
     - derived_shape:ऋतः
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44320,8 +44378,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44381,8 +44440,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44396,8 +44456,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44616,6 +44677,7 @@
     status: maybe
     triggers:
     - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45035,6 +45097,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -46641,18 +46704,19 @@
     लोपः १/१ झलि ७/१ क्ङिति ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:लोप
     - lexical:लुप्
     - opaque_symbols_detected
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:high
+    - demoted_due_to_domain:prosody_accent
     opaque_classes:
     - झल्
     roles:
@@ -47182,14 +47246,14 @@
   padaccheda: लुङ्लङ्लृङ्क्ष्व् ७/३ अट् १/१ उदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47205,6 +47269,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47475,6 +47540,7 @@
     triggers:
     - derived_shape:उपध
     - latent_technical_compound:ऊदुपध
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47873,6 +47939,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48185,6 +48252,7 @@
     triggers:
     - lexical:लोप
     - derived_shape:अल्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48392,6 +48460,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48607,6 +48676,7 @@
     status: maybe
     triggers:
     - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48639,6 +48709,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48873,6 +48944,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49491,6 +49563,7 @@
     triggers:
     - lexical:लोप
     - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49992,8 +50065,8 @@
     - opaque_symbols_detected
     - prior:high
     opaque_classes:
-    - अच्
     - इक्
+    - अच्
     roles:
       इक्: target/left_context
       अच्: right_context
@@ -50017,14 +50090,14 @@
   padaccheda: अस्थिदधिसक्थ्यक्ष्णाम् ६/३ अनङ् १/१ उदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
@@ -50380,14 +50453,14 @@
   padaccheda: चतुरनडुहोः ६/२ आम् १/१ उदात्तः १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
@@ -50621,7 +50694,7 @@
   padaccheda: एकाचः ५/१ उपदेशे ७/१ अनुदात्तात् ५/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
@@ -50629,7 +50702,7 @@
     status: maybe
     triggers:
     - derived_shape:एकाच
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50747,14 +50820,14 @@
     ७/३
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वर
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51151,14 +51224,14 @@
   padaccheda: स्वरतिसूतिसूयतिधूञूदितः ५/१ वा ०/०
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वर
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51485,6 +51558,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51501,6 +51575,7 @@
     status: 'yes'
     triggers:
     - lexical:इट्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51532,6 +51607,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52030,6 +52106,7 @@
     triggers:
     - opaque_symbols_detected
     - derived_shape:ऋतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - अच्
@@ -52842,14 +52919,14 @@
   padaccheda: न ०/० उदात्तोपदेशस्य ६/१ मान्तस्य ६/१ अनाचमेः ६/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53085,6 +53162,7 @@
     status: maybe
     triggers:
     - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53226,6 +53304,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53316,6 +53395,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53871,6 +53951,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54573,6 +54654,7 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54635,6 +54717,7 @@
     status: maybe
     triggers:
     - derived_shape:ऋतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54666,6 +54749,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55122,6 +55206,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55297,6 +55382,7 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55329,6 +55415,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55516,6 +55603,7 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55531,6 +55619,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55547,6 +55636,7 @@
     status: maybe
     triggers:
     - derived_shape:अतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55593,6 +55683,7 @@
     status: maybe
     triggers:
     - derived_shape:अतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55624,6 +55715,7 @@
     status: maybe
     triggers:
     - latent_technical_compound:ऋदुपध
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55688,6 +55780,7 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55703,6 +55796,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55718,6 +55812,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55781,7 +55876,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56010,7 +56105,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56071,8 +56166,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56086,8 +56182,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56758,7 +56855,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56819,7 +56916,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56888,16 +56985,17 @@
   padaccheda: नलोपः १/१ सुप्स्वरसंज्ञातुग्विधिषु ७/३  कृति   ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:लोप
-    - lexical:स्वर
+    - prosody_morpheme:स्वर
     - prior:high
+    - demoted_due_to_domain:prosody_accent
     opaque_classes: []
     roles: {}
 - sutra_id: 8.2.3
@@ -56921,18 +57019,21 @@
   padaccheda: उदात्तस्वरितयोः ६/२ यणः ५/१ स्वरितः १/१ अनुदात्तस्य  ६/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
     - opaque_symbols_detected
-    - derived_shape:अनुदात्त
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
+    - prosody_morpheme:अनुदात्त
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
+    - syntactic_replacement_pattern
     - prior:high
+    - demoted_due_to_domain:prosody_accent
     opaque_classes:
     - यण्
     roles:
@@ -56942,14 +57043,14 @@
   padaccheda: एकादेशः १/१  उदात्तेन ३/१ उदात्तः  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56958,15 +57059,16 @@
   padaccheda: स्वरितः १/१ वा ०/०  अनुदात्ते ७/१  पदादौ  ७/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58155,17 +58257,18 @@
   padaccheda: वाक्यस्य  ६/१  टेः ६/१ प्लुतः १/१  उदात्तः  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
     - lexical:प्लुत
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
     - syntactic_replacement_pattern
     - prior:high
+    - demoted_due_to_domain:prosody_accent
     opaque_classes: []
     roles: {}
 - sutra_id: 8.2.83
@@ -58271,6 +58374,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58430,14 +58534,14 @@
   padaccheda: अनुदात्तम् १/१ प्रश्नान्ताभिपूजितयोः  ७/२
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
     status: maybe
     triggers:
-    - derived_shape:अनुदात्त
+    - prosody_morpheme:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58476,14 +58580,15 @@
   padaccheda: स्वरितम् १/१ आम्रेडिते ७/१ असूयासम्मतिकोपकुत्सनेषु ७/३
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58605,6 +58710,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58872,6 +58978,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -59547,6 +59654,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -60733,6 +60841,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -61447,16 +61556,17 @@
   padaccheda: उदात्तात् ५/१ अनुदात्तस्य  ६/१  स्वरितः  १/१
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
-    - derived_shape:अनुदात्त
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
+    - prosody_morpheme:अनुदात्त
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
     - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
@@ -61466,15 +61576,17 @@
   padaccheda: नः ०/० उदात्तस्वरितोदयम् १/१ अगार्ग्यकाश्यपगालवानाम् ६/३
   source_url_or_id: sanskritdocuments-sutrapāṭha
   source_layer: sutrapāṭha_raw
-  candidate_domain: segmental_phonology/morphophonology
+  candidate_domain: prosody_accent
   phonology: unknown
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'yes'
+    status: maybe
     triggers:
-    - lexical:स्वर
-    - derived_shape:उदात्त
+    - prosody_morpheme:उदात्त
+    - prosody_morpheme:स्वरित
+    - prosody_morpheme:स्वर
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
