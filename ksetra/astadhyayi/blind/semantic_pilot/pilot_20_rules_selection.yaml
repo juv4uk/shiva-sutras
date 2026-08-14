@@ -1,0 +1,368 @@
+- sutra_id: 1.1.69
+  source_text: अणुदित् सवर्णस्य चाप्रत्ययः ।
+  padaccheda: अणुदित् १/१ सवर्णस्य ६/१ च ०/० अप्रत्ययः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:सवर्ण
+    - derived_shape:वर्ण
+    - syntactic_replacement_pattern
+    - prior:medium
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: savarna_operation
+- sutra_id: 1.3.12
+  source_text: अनुदात्तङित आत्मनेपदम् ।
+  padaccheda: अनुदात्तङितः ५/१ आत्मनेपदम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - derived_shape:आत्
+    - prosody_morpheme:अनुदात्त
+    - prior:low
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: shape_conditioned_morphology
+- sutra_id: 4.4.18
+  source_text: अण् कुटिलिकायाः ।
+  padaccheda: अण् १/१ कुटिलिकायाः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+  pilot_selection_reason: random_filler
+- sutra_id: 4.4.57
+  source_text: प्रहरणम् ।
+  padaccheda: प्रहरणम्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:low
+    - inherited-context-candidate
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: anuvrtti_heavy_rule
+- sutra_id: 5.3.31
+  source_text: उपर्युपरिष्टात्‌ ।
+  padaccheda: उपर्युपरिष्टात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:low
+    - inherited-context-candidate
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: anuvrtti_heavy_rule
+- sutra_id: 5.3.92
+  source_text: किंयत्तदो निर्द्धारणे द्वयोरेकस्य डतरच् ।
+  padaccheda: किंयत्तदः ५/१ निर्द्धारणे ७/१  द्वयोः ७/२ एकस्य  ६/१  डतरच्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - syntactic_replacement_pattern
+    - prior:low
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: explicit_substitution
+- sutra_id: 6.3.68
+  source_text: इच एकाचोऽम्प्रत्ययवच्च ।
+  padaccheda: इचः ६/१ एकाचः ६/१ अम् १/१ प्रत्ययवत् ०/० च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - derived_shape:एकाच
+    - syntactic_replacement_pattern
+    - prior:low
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: explicit_substitution
+- sutra_id: 6.3.105
+  source_text: ईषदर्थे ।
+  padaccheda: ईषदर्थे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:low
+    - inherited-context-candidate
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: anuvrtti_heavy_rule
+- sutra_id: 6.4.21
+  source_text: राल्लोपः ।
+  padaccheda: रात् ५/१ लोपः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:high
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: lopa_operation
+- sutra_id: 6.4.77
+  source_text: अचि श्नुधातुभ्रुवां य्वोरियङुवङौ ।
+  padaccheda: अचि ७/१ श्नुधातुभ्रुवाम् ६/३ य्वोः ६/२ इयङुवङौ १/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - syntactic_replacement_pattern
+    - prior:high
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: right_context
+  pilot_selection_reason: opaque_context_class
+- sutra_id: 6.4.111
+  source_text: श्नसोरल्लोपः ।
+  padaccheda: श्नसोः ६/२ अल्लोपः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - derived_shape:अल्
+    - syntactic_replacement_pattern
+    - prior:high
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: lopa_operation
+- sutra_id: 7.1.39
+  source_text: सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः ।
+  padaccheda: सुपाम् ६/३ सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः १/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - lexical:सवर्ण
+    - derived_shape:वर्ण
+    - syntactic_replacement_pattern
+    - prior:high
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: savarna_operation
+- sutra_id: 7.1.41
+  source_text: लोपस्त आत्मनेपदेषु ।
+  padaccheda: लोपः १/१ तः ६/१ आत्मनेपदेषु ७/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - derived_shape:आत्
+    - syntactic_replacement_pattern
+    - prior:high
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: shape_conditioned_morphology
+- sutra_id: 7.2.37
+  source_text: ग्रहोऽलिटि दीर्घः ।
+  padaccheda: ग्रहः ५/१ अलिटि ७/१ दीर्घः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:high
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: random_filler
+- sutra_id: 7.2.91
+  source_text: मपर्यन्तस्य ।
+  padaccheda: मपर्यन्तस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: random_filler
+- sutra_id: 7.3.89
+  source_text: उतो वृद्धिर्लुकि हलि ।
+  padaccheda: उतः ६/१ वृद्धिः १/१ लुकि ७/१ हलि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:वृद्धि
+    - opaque_symbols_detected
+    - derived_shape:उतः
+    - syntactic_replacement_pattern
+    - prior:high
+    opaque_classes:
+    - हल्
+    roles:
+      हल्: right_context
+  pilot_selection_reason: opaque_context_class
+- sutra_id: 8.3.33
+  source_text: मय उञो वो वा ।
+  padaccheda: मयः ५/१ उञो ६/१ वः १/१  वा ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - syntactic_replacement_pattern
+    - prior:high
+    opaque_classes:
+    - मय्
+    roles:
+      मय्: target/left_context
+  pilot_selection_reason: opaque_target_class
+- sutra_id: 8.3.59
+  source_text: आदेशप्रत्यययोः ।
+  padaccheda: आदेशप्रत्यययोः  ६/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:आदेश
+    - derived_shape:आदे
+    - prior:high
+    opaque_classes: []
+    roles: {}
+  pilot_selection_reason: explicit_substitution
+- sutra_id: 8.4.45
+  source_text: यरोऽनुनासिकेऽनुनासिको वा ।
+  padaccheda: यरः ६/१ अनुनासिके ७/१ अनुनासिकः १/१  वा ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - यर्
+    roles:
+      यर्: target/left_context
+  pilot_selection_reason: opaque_target_class
+- sutra_id: 8.4.46
+  source_text: अचो रहाभ्यां द्वे ।
+  padaccheda: अचः ५/१  रहाभ्याम् ५/२ द्वे १/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology/morphophonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: target/left_context
+  pilot_selection_reason: random_filler

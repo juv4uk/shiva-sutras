@@ -1,0 +1,540 @@
+- rule_context:
+    sutra_id: 1.1.69
+    pilot_selection_reason: savarna_operation
+    local_text:
+      source: अणुदित् सवर्णस्य चाप्रत्ययः ।
+      padaccheda: अणुदित् १/१ सवर्णस्य ६/१ च ०/० अप्रत्ययः १/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 1.3.12
+    pilot_selection_reason: shape_conditioned_morphology
+    local_text:
+      source: अनुदात्तङित आत्मनेपदम् ।
+      padaccheda: अनुदात्तङितः ५/१ आत्मनेपदम् १/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 4.4.18
+    pilot_selection_reason: random_filler
+    local_text:
+      source: अण् कुटिलिकायाः ।
+      padaccheda: अण् १/१ कुटिलिकायाः  ५/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: अण्
+          content: UNKNOWN
+        replacement_class:
+          symbol: अण्
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 4.4.57
+    pilot_selection_reason: anuvrtti_heavy_rule
+    local_text:
+      source: प्रहरणम् ।
+      padaccheda: प्रहरणम्  १/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 5.3.31
+    pilot_selection_reason: anuvrtti_heavy_rule
+    local_text:
+      source: उपर्युपरिष्टात्‌ ।
+      padaccheda: उपर्युपरिष्टात् ५/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 5.3.92
+    pilot_selection_reason: explicit_substitution
+    local_text:
+      source: किंयत्तदो निर्द्धारणे द्वयोरेकस्य डतरच् ।
+      padaccheda: किंयत्तदः ५/१ निर्द्धारणे ७/१  द्वयोः ७/२ एकस्य  ६/१  डतरच्  १/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 6.3.68
+    pilot_selection_reason: explicit_substitution
+    local_text:
+      source: इच एकाचोऽम्प्रत्ययवच्च ।
+      padaccheda: इचः ६/१ एकाचः ६/१ अम् १/१ प्रत्ययवत् ०/० च ०/०
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 6.3.105
+    pilot_selection_reason: anuvrtti_heavy_rule
+    local_text:
+      source: ईषदर्थे ।
+      padaccheda: ईषदर्थे ७/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 6.4.21
+    pilot_selection_reason: lopa_operation
+    local_text:
+      source: राल्लोपः ।
+      padaccheda: रात् ५/१ लोपः १/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: elision/lopa
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 6.4.77
+    pilot_selection_reason: opaque_context_class
+    local_text:
+      source: अचि श्नुधातुभ्रुवां य्वोरियङुवङौ ।
+      padaccheda: अचि ७/१ श्नुधातुभ्रुवाम् ६/३ य्वोः ६/२ इयङुवङौ १/२
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: अच्
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 6.4.111
+    pilot_selection_reason: lopa_operation
+    local_text:
+      source: श्नसोरल्लोपः ।
+      padaccheda: श्नसोः ६/२ अल्लोपः १/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 7.1.39
+    pilot_selection_reason: savarna_operation
+    local_text:
+      source: सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः ।
+      padaccheda: सुपाम् ६/३ सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः १/३
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 7.1.41
+    pilot_selection_reason: shape_conditioned_morphology
+    local_text:
+      source: लोपस्त आत्मनेपदेषु ।
+      padaccheda: लोपः १/१ तः ६/१ आत्मनेपदेषु ७/३
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 7.2.37
+    pilot_selection_reason: random_filler
+    local_text:
+      source: ग्रहोऽलिटि दीर्घः ।
+      padaccheda: ग्रहः ५/१ अलिटि ७/१ दीर्घः १/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 7.2.91
+    pilot_selection_reason: random_filler
+    local_text:
+      source: मपर्यन्तस्य ।
+      padaccheda: मपर्यन्तस्य ६/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 7.3.89
+    pilot_selection_reason: opaque_context_class
+    local_text:
+      source: उतो वृद्धिर्लुकि हलि ।
+      padaccheda: उतः ६/१ वृद्धिः १/१ लुकि ७/१ हलि ७/१
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: हल्
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 8.3.33
+    pilot_selection_reason: opaque_target_class
+    local_text:
+      source: मय उञो वो वा ।
+      padaccheda: मयः ५/१ उञो ६/१ वः १/१  वा ०/०
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: मय्
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 8.3.59
+    pilot_selection_reason: explicit_substitution
+    local_text:
+      source: आदेशप्रत्यययोः ।
+      padaccheda: आदेशप्रत्यययोः  ६/२
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: substitution
+      arguments:
+        target_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 8.4.45
+    pilot_selection_reason: opaque_target_class
+    local_text:
+      source: यरोऽनुनासिकेऽनुनासिको वा ।
+      padaccheda: यरः ६/१ अनुनासिके ७/१ अनुनासिकः १/१  वा ०/०
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: यर्
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+- rule_context:
+    sutra_id: 8.4.46
+    pilot_selection_reason: random_filler
+    local_text:
+      source: अचो रहाभ्यां द्वे ।
+      padaccheda: अचः ५/१  रहाभ्याम् ५/२ द्वे १/२
+    inherited_context:
+      from: []
+      confidence: UNRESOLVED
+    adhikara:
+      inherited_from: []
+    semantic_operation:
+      status: unresolved
+      type: UNKNOWN
+      arguments:
+        target_class:
+          symbol: अच्
+          content: UNKNOWN
+        replacement_class:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        left_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
+        right_context:
+          symbol: UNKNOWN
+          content: UNKNOWN
