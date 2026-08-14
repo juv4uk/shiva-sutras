@@ -5,9 +5,9 @@ searched_object: ordering_efficiency
 conditions:
   corpus: astadhyayi (42 pratyaharas)
   metric: number of expressible target sets as contiguous slices (max 42)
-observation: "Оригінальний канон ідеально вміщує всі 42 множини. Строгий алфавітний (індійський) порядок дозволяє сформувати лише 15/42. Випадкові перестановки в середньому дають 1.11/42 (максимум знайдено 4/42 за 10,000 спроб)."
+observation: "Оригінальний канон вміщує всі 42 множини як безперервні відрізки. Контрольні перевірки (строгий алфавітний порядок та 10 000 випадкових перестановок) показують різке руйнування цієї властивості (15/42 та середнє 1.11/42 відповідно). Виявлено сильну combinatorial interval property."
 result:
-  status: supported # The hypothesis that the ordering is functionally exceptional is supported.
+  status: hypothesis_strengthened # We found a property, but have not proven optimality or uniqueness.
 evidence: "experiments/ordering/results_001.md"
 timestamp: "2026-08-15T01:30:00Z"
 agent: antigravity
