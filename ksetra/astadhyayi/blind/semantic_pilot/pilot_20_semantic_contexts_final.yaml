@@ -1,0 +1,2165 @@
+- rule_context:
+    sutra_id: 1.1.69
+    local_text:
+      source: अणुदित् सवर्णस्य चाप्रत्ययः ।
+      padaccheda: अणुदित् १/१ सवर्णस्य ६/१ च ०/० अप्रत्ययः १/१
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: Web search summary (Kashika on 1.1.69)
+    dependencies:
+      anuvrtti: []
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: metalinguistic_assignment
+      operands:
+      - role: metalinguistic_subject
+        expression: अण्
+        interpretation:
+          semantic_type:
+            value: technical_sound_class
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: UNKNOWN-BY-BLINDING
+        proposed_role: null
+        validated_role: metalinguistic_subject
+      - role: semantic_condition
+        expression: अप्रत्ययः
+        interpretation:
+          semantic_type:
+            value: not a suffix
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: semantic_condition
+      - role: metalinguistic_assignment
+        expression: सवर्णस्य
+        interpretation:
+          semantic_type:
+            value: represents its homogeneous sounds
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: metalinguistic_assignment
+    functional_reading:
+      summary: An aṇ or udit, when not an affix, denotes its own savarṇa (homogeneous
+        sounds) as well.
+      evidence_strength: SUPPORTED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation.type
+      value: metalinguistic_assignment
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C002
+      claim: operands[metalinguistic_subject]
+      value: अण्
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C003
+      claim: operands[semantic_condition]
+      value: अप्रत्ययः
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C004
+      claim: operands[metalinguistic_assignment]
+      value: सवर्णस्य
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    unresolved_questions:
+    - membership_of_aṇ
+    - meaning_of_udit
+- rule_context:
+    sutra_id: 1.3.12
+    local_text:
+      source: अनुदात्तङित आत्मनेपदम् ।
+      padaccheda: अनुदात्तङितः ५/१ आत्मनेपदम् १/१
+      neighbors:
+      - '1.3.9: तस्य लोपः ।'
+      - '1.3.10: यथासंख्यमनुदेशः समानाम् ।'
+      - '1.3.11: स्वरितेनाधिकारः ।'
+      - '1.3.13: भावकर्म्मणोः ।'
+      - '1.3.14: कर्त्तरि कर्म्मव्यतिहारे ।'
+      - '1.3.15: न गतिहिंसार्थेभ्यः ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 4.4.18
+    local_text:
+      source: अण् कुटिलिकायाः ।
+      padaccheda: अण् १/१ कुटिलिकायाः  ५/१
+      neighbors:
+      - '4.4.15: हरत्युत्सङ्गादिभ्यः ।'
+      - '4.4.16: भस्त्राऽऽदिभ्यः ष्ठन् ।'
+      - '4.4.17: विभाषा विवधवीवधात्‌ ।'
+      - '4.4.19: निर्वृत्तेऽक्षद्यूतादिभ्यः ।'
+      - '4.4.20: क्त्रेर्मम् नित्यं ।'
+      - '4.4.21: अपमित्ययाचिताभ्यां कक्कनौ ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: अण्
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: अण्
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 4.4.57
+    local_text:
+      source: प्रहरणम् ।
+      padaccheda: प्रहरणम्  १/१
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: General context of 4.4
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: 4.4.1 (ṭhak)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      - source_sutra: null
+        inherited_item: tena (instrumental case context)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: suffixation
+      operands:
+      - role: base
+        expression: प्रहरणम्
+        interpretation:
+          semantic_type:
+            value: weapon
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: base
+      - role: suffix
+        expression: ठक् (inherited)
+        interpretation:
+          semantic_type:
+            value: UNKNOWN-BY-EVIDENCE
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: UNKNOWN-BY-EVIDENCE
+        proposed_role: null
+        validated_role: suffix
+    functional_reading:
+      summary: The suffix ṭhak is added to a word meaning 'weapon' in the instrumental
+        case to denote 'he fights with it'.
+      evidence_strength: SUPPORTED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation.type
+      value: suffixation
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C002
+      claim: operands[base]
+      value: प्रहरणम्
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C003
+      claim: operands[suffix]
+      value: ठक् (inherited)
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    unresolved_questions:
+    - phonological_impact_of_ṭhak
+- rule_context:
+    sutra_id: 5.3.31
+    local_text:
+      source: उपर्युपरिष्टात्‌ ।
+      padaccheda: उपर्युपरिष्टात् ५/१
+      neighbors:
+      - '5.3.28: दक्षिणोत्तराभ्यामतसुच् ।'
+      - '5.3.29: विभाषा परावराभ्याम् ।'
+      - '5.3.30: अञ्चेर्लुक् ।'
+      - '5.3.32: पश्चात्‌ ।'
+      - '5.3.33: पश्च पश्चा च च्छन्दसि ।'
+      - '5.3.34: उत्तराधरदक्षिणादातिः ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 5.3.92
+    local_text:
+      source: किंयत्तदो निर्द्धारणे द्वयोरेकस्य डतरच् ।
+      padaccheda: किंयत्तदः ५/१ निर्द्धारणे ७/१  द्वयोः ७/२ एकस्य  ६/१  डतरच्  १/१
+      neighbors:
+      - '5.3.89: कुत्वा डुपच् ।'
+      - '5.3.90: कासूगोणीभ्यां ष्टरच् ।'
+      - '5.3.91: वत्सोक्षाश्वर्षभेभ्यश्च तनुत्वे ।'
+      - '5.3.93: वा बहूनां जातिपरिप्रश्ने डतमच् ।'
+      - '5.3.94: एकाच्च प्राचाम् ।'
+      - '5.3.95: अवक्षेपणे कन् ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: source
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 6.3.68
+    local_text:
+      source: इच एकाचोऽम्प्रत्ययवच्च ।
+      padaccheda: इचः ६/१ एकाचः ६/१ अम् १/१ प्रत्ययवत् ०/० च ०/०
+      neighbors:
+      - '6.3.65: इष्टकेषीकामालानां चिततूलभारिषु ।'
+      - '6.3.66: खित्यनव्ययस्य ।'
+      - '6.3.67: अरुर्द्विषदजन्तस्य मुम् ।'
+      - '6.3.69: वाचंयमपुरंदरौ च ।'
+      - '6.3.70: कारे सत्यागदस्य ।'
+      - '6.3.71: श्येनतिलस्य पाते ञे ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: source
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 6.3.105
+    local_text:
+      source: ईषदर्थे ।
+      padaccheda: ईषदर्थे ७/१
+      neighbors:
+      - '6.3.102: रथवदयोश्च ।'
+      - '6.3.103: तृणे च जातौ ।'
+      - '6.3.104: का पथ्यक्षयोः ।'
+      - '6.3.106: विभाषा पुरुषे ।'
+      - '6.3.107: कवं चोष्णे ।'
+      - '6.3.108: पथि च च्छन्दसि ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 6.4.21
+    local_text:
+      source: राल्लोपः ।
+      padaccheda: रात् ५/१ लोपः १/१
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: Web search summary (Kashika on 6.4.21)
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: 6.4.1 (aṅgasya)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      - source_sutra: null
+        inherited_item: kṅiti (from previous rules)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: elision/lopa
+      operands:
+      - role: source
+        expression: रात्
+        interpretation:
+          semantic_type:
+            value: UNKNOWN-BY-EVIDENCE
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: UNKNOWN-BY-EVIDENCE
+        proposed_role: null
+        validated_role: source
+      - role: replacement
+        expression: लोपः
+        interpretation:
+          semantic_type:
+            value: deletion
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: replacement
+    functional_reading:
+      summary: Elision occurs for a sound following an 'r' (or belonging to ral) under
+        certain conditions like kṅit suffix.
+      evidence_strength: PLAUSIBLE
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation.type
+      value: elision/lopa
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C002
+      claim: operands[source]
+      value: रात्
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C003
+      claim: operands[replacement]
+      value: लोपः
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    unresolved_questions:
+    - exact_meaning_of_rāt
+    - exact_inherited_conditions
+- rule_context:
+    sutra_id: 6.4.77
+    local_text:
+      source: अचि श्नुधातुभ्रुवां य्वोरियङुवङौ ।
+      padaccheda: अचि ७/१ श्नुधातुभ्रुवाम् ६/३ य्वोः ६/२ इयङुवङौ १/२
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: General grammatical knowledge of iyaṅ/uvaṅ replacement
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: 6.4.1 (aṅgasya)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: source
+        expression: य्वोः
+        interpretation:
+          semantic_type:
+            value: y, v
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: source
+      - role: replacement
+        expression: इयङुवङौ
+        interpretation:
+          semantic_type:
+            value: iyaṅ, uvaṅ
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: replacement
+      - role: right_context
+        expression: अचि
+        interpretation:
+          semantic_type:
+            value: technical_sound_class
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: UNKNOWN-BY-BLINDING
+        proposed_role: null
+        validated_role: right_context
+    functional_reading:
+      summary: The 'y' and 'v' of śnu, dhātu, and bhrū are replaced by iyaṅ and uvaṅ
+        when followed by ac.
+      evidence_strength: SUPPORTED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C002
+      claim: operands[source]
+      value: य्वोः
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C003
+      claim: operands[replacement]
+      value: इयङुवङौ
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C004
+      claim: operands[right_context]
+      value: अचि
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    unresolved_questions:
+    - membership_of_ac
+- rule_context:
+    sutra_id: 6.4.111
+    local_text:
+      source: श्नसोरल्लोपः ।
+      padaccheda: श्नसोः ६/२ अल्लोपः १/१
+      neighbors:
+      - '6.4.108: नित्यं करोतेः ।'
+      - '6.4.109: ये च ।'
+      - '6.4.110: अत उत्‌ सार्वधातुके ।'
+      - '6.4.112: श्नाऽभ्यस्तयोरातः ।'
+      - '6.4.113: ई हल्यघोः ।'
+      - '6.4.114: इद्दरिद्रस्य ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: source
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 7.1.39
+    local_text:
+      source: सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः ।
+      padaccheda: सुपाम् ६/३ सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः १/३
+      neighbors:
+      - '7.1.36: विदेः शतुर्वसुः ।'
+      - '7.1.37: समासेऽनञ्पूर्वे क्त्वो ल्यप्‌ ।'
+      - '7.1.38: क्त्वाऽपि छन्दसि ।'
+      - '7.1.40: अमो मश् ।'
+      - '7.1.41: लोपस्त आत्मनेपदेषु ।'
+      - '7.1.42: ध्वमो ध्वात्‌ ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: source
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 7.1.41
+    local_text:
+      source: लोपस्त आत्मनेपदेषु ।
+      padaccheda: लोपः १/१ तः ६/१ आत्मनेपदेषु ७/३
+      neighbors:
+      - '7.1.38: क्त्वाऽपि छन्दसि ।'
+      - '7.1.39: सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः ।'
+      - '7.1.40: अमो मश् ।'
+      - '7.1.42: ध्वमो ध्वात्‌ ।'
+      - '7.1.43: यजध्वैनमिति च ।'
+      - '7.1.44: तस्य तात्‌ ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: source
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 7.2.37
+    local_text:
+      source: ग्रहोऽलिटि दीर्घः ।
+      padaccheda: ग्रहः ५/१ अलिटि ७/१ दीर्घः १/१
+      neighbors:
+      - '7.2.34: ग्रसितस्कभितस्तभितोत्तभितचत्तविकस्तविशस्तॄशंस्तृशास्तृतरुतृतरूतृवरुतृवरूतृवरुत्रीरुज्ज्वलितिक्षरितिक्षमितिवमित्यमितीति
+        च ।'
+      - '7.2.35: आर्धधातुकस्येड् वलादेः ।'
+      - '7.2.36: स्नुक्रमोरनात्मनेपदनिमित्ते ।'
+      - '7.2.38: वॄतो वा ।'
+      - '7.2.39: न लिङि ।'
+      - '7.2.40: सिचि च परस्मैपदेषु ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 7.2.91
+    local_text:
+      source: मपर्यन्तस्य ।
+      padaccheda: मपर्यन्तस्य ६/१
+      neighbors:
+      - '7.2.88: प्रथमायाश्च द्विवचने भाषायाम् ।'
+      - '7.2.89: योऽचि ।'
+      - '7.2.90: शेषे लोपः ।'
+      - '7.2.92: युवावौ द्विवचने ।'
+      - '7.2.93: यूयवयौ जसि ।'
+      - '7.2.94: त्वाहौ सौ ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 7.3.89
+    local_text:
+      source: उतो वृद्धिर्लुकि हलि ।
+      padaccheda: उतः ६/१ वृद्धिः १/१ लुकि ७/१ हलि ७/१
+      neighbors:
+      - '7.3.86: पुगन्तलघूपधस्य च ।'
+      - '7.3.87: नाभ्यस्तस्याचि पिति सार्वधातुके ।'
+      - '7.3.88: भूसुवोस्तिङि ।'
+      - '7.3.90: ऊर्णोतेर्विभाषा ।'
+      - '7.3.91: गुणोऽपृक्ते ।'
+      - '7.3.92: तृणह इम् ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: source
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: हल्
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 8.3.33
+    local_text:
+      source: मय उञो वो वा ।
+      padaccheda: मयः ५/१ उञो ६/१ वः १/१  वा ०/०
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    - type: kasika
+      provenance: Web search / User provided Kasika context for 8.3.33
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: aci (from previous rules via anuvrtti)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: left_context
+        expression: मयः
+        interpretation:
+          semantic_type:
+            value: technical_sound_class
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: UNKNOWN-BY-BLINDING
+        proposed_role: null
+        validated_role: left_context
+      - role: source
+        expression: उञो
+        interpretation:
+          semantic_type:
+            value: the affix uñ
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: source
+      - role: replacement
+        expression: वः
+        interpretation:
+          semantic_type:
+            value: v
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: null
+        validated_role: replacement
+      - role: right_context
+        expression: अचि (inherited)
+        interpretation:
+          semantic_type:
+            value: technical_sound_class
+            evidence_strength: SUPPORTED
+        membership:
+          value: null
+          knowledge_status: UNKNOWN-BY-BLINDING
+        proposed_role: null
+        validated_role: right_context
+    functional_reading:
+      summary: The affix 'uñ' optionally becomes 'v' when preceded by 'may' and followed
+        by 'ac'.
+      evidence_strength: SUPPORTED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C002
+      claim: operands[left_context]
+      value: मयः
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C003
+      claim: operands[source]
+      value: उञो
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C004
+      claim: operands[replacement]
+      value: वः
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    - id: C005
+      claim: operands[right_context]
+      value: अचि (inherited)
+      confidence: SUPPORTED
+      evidence:
+      - source_id: kasika
+        supports: direct
+    unresolved_questions:
+    - membership_of_may
+    - membership_of_ac
+- rule_context:
+    sutra_id: 8.3.59
+    local_text:
+      source: आदेशप्रत्यययोः ।
+      padaccheda: आदेशप्रत्यययोः  ६/२
+      neighbors:
+      - '8.3.56: सहेः साडः सः ।'
+      - '8.3.57: इण्कोः ।'
+      - '8.3.58: नुम्विसर्जनीयशर्व्यवायेऽपि ।'
+      - '8.3.60: शासिवसिघसीनां च ।'
+      - '8.3.61: स्तौतिण्योरेव षण्यभ्यासात्‌ ।'
+      - '8.3.62: सः स्विदिस्वदिसहीनां च ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: source
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 8.4.45
+    local_text:
+      source: यरोऽनुनासिकेऽनुनासिको वा ।
+      padaccheda: यरः ६/१ अनुनासिके ७/१ अनुनासिकः १/१  वा ०/०
+      neighbors:
+      - '8.4.42: न पदान्ताट्टोरनाम् ।'
+      - '8.4.43: तोः षि ।'
+      - '8.4.44: शात्‌ ।'
+      - '8.4.46: अचो रहाभ्यां द्वे ।'
+      - '8.4.47: अनचि च ।'
+      - '8.4.48: नादिन्याक्रोशे पुत्रस्य ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: यर्
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
+- rule_context:
+    sutra_id: 8.4.46
+    local_text:
+      source: अचो रहाभ्यां द्वे ।
+      padaccheda: अचः ५/१  रहाभ्याम् ५/२ द्वे १/२
+      neighbors:
+      - '8.4.43: तोः षि ।'
+      - '8.4.44: शात्‌ ।'
+      - '8.4.45: यरोऽनुनासिकेऽनुनासिको वा ।'
+      - '8.4.47: अनचि च ।'
+      - '8.4.48: नादिन्याक्रोशे पुत्रस्य ।'
+      - '8.4.49: शरोऽचि ।'
+    sources: []
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        inherited_item: previous rule (placeholder)
+        status: PROPOSED
+        source_status: UNKNOWN-BY-EVIDENCE
+      adhikara: []
+    scope:
+      domain: UNRESOLVED
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: PROPOSED
+      type: UNKNOWN
+      operands:
+      - role: unresolved_operand
+        expression: अच्
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: target_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: replacement_class
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: left_context
+        validated_role: null
+      - role: unresolved_operand
+        expression: UNKNOWN
+        interpretation:
+          semantic_type:
+            value: UNKNOWN
+            evidence_strength: UNRESOLVED
+        membership:
+          value: null
+          knowledge_status: NOT-APPLICABLE
+        proposed_role: right_context
+        validated_role: null
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      candidate_roles: []
+      reason: Pending review
+      basis: []
+    claims:
+    - id: C001
+      claim: operation_type
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from lexical triggers
+    - id: C002
+      claim: inherited_context
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: auto_context_gatherer
+        supports: Pending validation against Kasika
+    - id: C003
+      claim: target_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from opaque symbols or 6/1 case
+    - id: C004
+      claim: replacement_role
+      value: PROPOSED
+      confidence: UNRESOLVED
+      evidence:
+      - source_id: heuristic_parser
+        supports: Derived from 1/1 case
+    unresolved_questions:
+    - pending_manual_validation
