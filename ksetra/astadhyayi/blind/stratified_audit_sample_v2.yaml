@@ -1,0 +1,4713 @@
+YES_SAMPLE:
+- sutra_id: 6.4.49
+  source_text: यस्य हलः ।
+  padaccheda: यस्य ६/१ हलः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - हल्
+    roles:
+      हल्: target/left_context
+- sutra_id: 3.3.102
+  source_text: अ प्रत्ययात्‌ ।
+  padaccheda: अ (लुप्तप्रथमान्तनिर्देशः) प्रत्ययात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.4.67
+  source_text: नोदात्तस्वरितोदयमगार्ग्यकाश्यपगालवानाम्‌ ।
+  padaccheda: नः ०/० उदात्तस्वरितोदयम् १/१ अगार्ग्यकाश्यपगालवानाम् ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:स्वर
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.1.47
+  source_text: मिदचोऽन्त्यात्परः ।
+  padaccheda: मित् १/१ अचः ६/१ अन्त्यात् ५/१ परः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:medium
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: target/left_context
+- sutra_id: 4.3.127
+  source_text: संघाङ्कलक्षणेष्वञ्यञिञामण् ।
+  padaccheda: संघाङ्कलक्षणेषु ७/३  अञ्यञिञाम् ६/३ अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 6.4.164
+  source_text: इनण्यनपत्ये ।
+  padaccheda: इन् १/१ अणि ७/१ अनपत्ये ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: right_context
+- sutra_id: 1.2.27
+  source_text: ऊकालोऽज्झ्रस्वदीर्घप्लुतः ।
+  padaccheda: ऊकालः १/१ अच् १/१ ह्रस्वदीर्घप्लुतः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - lexical:ह्रस्व
+    - lexical:प्लुत
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: replacement/target
+- sutra_id: 6.1.66
+  source_text: लोपो व्योर्वलि ।
+  padaccheda: लोपः १/१ व्योः ६/२ वलि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - वल्
+    roles:
+      वल्: right_context
+- sutra_id: 7.3.1
+  source_text: देविकाशिंशपादित्यवाड्दीर्घसत्रश्रेयसामात्‌ ।
+  padaccheda: देविकाशिंशपादित्यवाड्‍दीर्घसत्रश्रेयसाम् ६/३ आत् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.4.80
+  source_text: थासस्से ।
+  padaccheda: थासः ६/१ से (लुप्तप्रथमान्तनिर्देशः)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.59
+  source_text: दीर्घजिह्वी च च्छन्दसि ।
+  padaccheda: दीर्घजिह्वी १/१ च  ०/०  छन्दसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.93
+  source_text: चिण्णमुलोर्दीर्घोऽन्यतरस्याम् ।
+  padaccheda: चिण्णमुलोः ७/२ दीर्घः १/१ अन्यतरस्याम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.2.4
+  source_text: उदात्तस्वरितयोर्यणः स्वरितोऽनुदात्तस्य ।
+  padaccheda: उदात्तस्वरितयोः ६/२ यणः ५/१ स्वरितः १/१ अनुदात्तस्य  ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:स्वर
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - यण्
+    roles:
+      यण्: target/left_context
+- sutra_id: 3.4.93
+  source_text: एत ऐ ।
+  padaccheda: एतः ६/१ ऐ (लुप्तप्रथमान्तनिर्देशः)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.116
+  source_text: कन्यायाः कनीन च ।
+  padaccheda: कन्यायाः ६/१ कनीन (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.2.28
+  source_text: छ च ।
+  padaccheda: छ (लुप्तप्रथमान्तनिर्देशः)  च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.4.58
+  source_text: अनुस्वारस्य ययि परसवर्णः ।
+  padaccheda: अनुस्वारस्य  ६/१  ययि ७/१ परसवर्णः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:सवर्ण
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.95
+  source_text: तृज्वत्‌ क्रोष्टुः ।
+  padaccheda: तृज्वत् ०/० क्रोष्टुः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:टु
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.94
+  source_text: दीर्घो लघोः ।
+  padaccheda: दीर्घः १/१ लघोः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.62
+  source_text: स्यसिच्सीयुट्तासिषु भावकर्मणोरुपदेशेऽज्झनग्रहदृशां वा चिण्वदिट् च ।
+  padaccheda: स्यसिच्सीयुट्‍तासिषु ७/३ भावकर्म्मणोः ७/२ उपदेशे ७/१ अज्झनग्रहदृशाम्
+    ६/३ वा ०/० चिण्वत् ०/० इट् १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:इट्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.82
+  source_text: गुणो यङ्लुकोः ।
+  padaccheda: गुणः १/१ यङ्लुकोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:गुण
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.4.52
+  source_text: गतिबुद्धिप्रत्यवसानार्थशब्दकर्माकर्मकाणामणि कर्ता
+  padaccheda: गतिबुद्धिप्रत्यवसानार्थशब्दकर्माकर्मकाणाम् ६/३ अणि लुप्तसप्तम्यन्तनिर्देशः।
+    कर्ता १/१ सः १/१ णौ ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: right_context
+- sutra_id: 6.3.92
+  source_text: विष्वग्देवयोश्च टेरद्र्यञ्चतौ वप्रत्यये ।
+  padaccheda: विष्वग्देवयोः ६/२ च ०/० टेः ६/१ अद्रि (लुप्तप्रथमान्तनिर्देशः) अञ्चतौ
+    ७/१ वप्रत्यये ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.17
+  source_text: जसः शी ।
+  padaccheda: जसः ६/१ शी (लुप्तप्रथमान्तनिर्देशः)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.2.12
+  source_text: आसन्दीवदष्ठीवच्चक्रीवत्कक्षीवद्रुमण्वच्चर्मण्वती ।
+  padaccheda: आसन्दीवत् (लुप्तप्रथमान्त)  अष्ठीवत् (लुप्तप्रथमान्त)चक्रीवत् (लुप्तप्रथमान्त)
+    कक्षीवत् (लुप्तप्रथमान्त) रुमण्वत् (लुप्तप्रथमान्त) चर्मण्वती  (लुप्तप्रथमान्त)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.1.105
+  source_text: ऋतोरण् ।
+  padaccheda: ऋतोः ५/१  अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 5.3.82
+  source_text: अजिनान्तस्योत्तरपदलोपश्च ।
+  padaccheda: अजिनान्तस्य ६/१ उत्तरपदलोपः १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.126
+  source_text: अश्विमानण् ।
+  padaccheda: अश्विमान् १/१ अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 6.1.63
+  source_text: पद्दन्नोमास्हृन्निशसन्यूषन्दोषन्यकञ्छकन्नुदन्नासञ्छस्प्रभृतिषु ।
+  padaccheda: पद्‍दत्-नस्-मास्-हृत्-निश्-असन्-यूषन्-दोषन्-यकन्-शकन्-उदन्-आसन् (सर्वे
+    पृथक् पृथक् लुप्तप्रथमान्तनिर्द्दिष्टाः) शस्प्रभृतिषु ७/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.14
+  source_text: आयुधाच्छ च ।
+  padaccheda: आयुधात् ५/१ छ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.3.114
+  source_text: संहितायाम् ।
+  padaccheda: संहितायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:संहिता
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.25
+  source_text: अकृत्सार्वधातुकयोर्दीर्घः ।
+  padaccheda: अकृत्सार्वधातुकयोः ७/२ दीर्घः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.2.127
+  source_text: अर्शआदिभ्योऽच् ।
+  padaccheda: अर्शआदिभ्यः ५/३ अच्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: replacement/target
+- sutra_id: 7.2.37
+  source_text: ग्रहोऽलिटि दीर्घः ।
+  padaccheda: ग्रहः ५/१ अलिटि ७/१ दीर्घः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.3.25
+  source_text: विभाषा गुणेऽस्त्रियाम्‌ ।
+  padaccheda: विभाषा १/१ गुणे ७/१ अस्त्रियाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:गुण
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.4.2
+  source_text: अट्कुप्वाङ्नुम्व्यवायेऽपि ।
+  padaccheda: अट्‍कुप्वाङ्‍नुम्व्यवाये ७/१ अपि  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:नुम्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.1.18
+  source_text: सुखादिभ्यः कर्तृवेदनायाम् ।
+  padaccheda: सुखादिभ्यः ५/३ कर्तृ (लुप्तषष्ठ्यन्तनिर्देशः) वेदनायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.119
+  source_text: घ्वसोरेद्धावभ्यासलोपश्च ।
+  padaccheda: घ्वसोः ६/२ एत् १/१ हौ ७/१ अभ्यासलोपः १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.2.33
+  source_text: इनच्पिटच्चिकचि च ।
+  padaccheda: इनच्पिटच् १/१  चिकचि (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.124
+  source_text: मायायामण् ।
+  padaccheda: मायायाम् ७/१ अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 6.3.123
+  source_text: इकः काशे ।
+  padaccheda: इकः ६/१ काशे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - इक्
+    roles:
+      इक्: target/left_context
+- sutra_id: 8.4.31
+  source_text: हलश्च इजुपधात्‌ ।
+  padaccheda: हलः ५/१ च ०/० इजुपधात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - हल्
+    roles:
+      हल्: target/left_context
+- sutra_id: 4.1.156
+  source_text: अणो द्व्यचः ।
+  padaccheda: अणः ५/१  द्‍व्यचः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: target/left_context
+- sutra_id: 4.3.152
+  source_text: तालादिभ्योऽण् ।
+  padaccheda: तालादिभ्यः ५/३ अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 5.1.27
+  source_text: शतमानविंशतिकसहस्रवसनादण् ।
+  padaccheda: शतमानविंशतिकसहस्रवसनात् ५/१  अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 3.3.48
+  source_text: नौ वृ धान्ये ।
+  padaccheda: नौ ७/१ वृ (लुप्तपञ्चम्यन्तनिर्देशः) धान्ये ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.17
+  source_text: भोभगोअघोअपूर्वस्य योऽशि ।
+  padaccheda: भोभगः-अघः-अपूर्वस्य  ६/१  यः १/१ अशि  ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - अश्
+    roles:
+      अश्: right_context
+- sutra_id: 5.1.130
+  source_text: हायनान्तयुवादिभ्योऽण् ।
+  padaccheda: हायनान्तयुवादिभ्यः ५/३ अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 1.2.49
+  source_text: लुक् तद्धितलुकि ।
+  padaccheda: लुक् १/१ तद्धितलुकि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.98
+  source_text: गमहनजनखनघसां लोपः क्ङित्यनङि ।
+  padaccheda: गमहनजनखनघसाम् ६/३ लोपः १/१ क्ङिति ७/१ अनङि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.29
+  source_text: शसो न ।
+  padaccheda: शसः ६/१ न (लुप्तप्रथमान्तनिर्देशः)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.149
+  source_text: फेश्छ च ।
+  padaccheda: फेः ५/१ छ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.3.31
+  source_text: अ च ।
+  padaccheda: अ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.2.77
+  source_text: स्थः क च ।
+  padaccheda: स्थः ५/१ क (लुप्तप्रथमान्तनिर्देशः) च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.99
+  source_text: त्रिचतुरोः स्त्रियां तिसृचतसृ ।
+  padaccheda: त्रिचतुरोः ६/२ स्त्रियाम् ७/१ तिसृचतसृ (लुप्तप्रथमान्तनिर्देशः)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.2.28
+  source_text: अचश्च ।
+  padaccheda: अचः ६/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: target/left_context
+- sutra_id: 4.4.129
+  source_text: मधोर्ञ च ।
+  padaccheda: ४.१२९  मधोः ५/१ ञ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.4
+  source_text: कुलत्थकोपधादण् ।
+  padaccheda: कुलत्थकोपधात् ५/१ अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 4.2.13
+  source_text: कौमारापूर्ववचने ।
+  padaccheda: कौमार (लुप्तप्रथमान्तनिर्देशः) अपूर्ववचने ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.1.62
+  source_text: अचः कर्मकर्तरि ।
+  padaccheda: अचः ५/१ कर्मकर्त्तरि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: target/left_context
+- sutra_id: 6.4.37
+  source_text: अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिकलोपो झलि क्ङिति ।
+  padaccheda: अनुदात्तोपदेशवनतितनोत्यादीनाम् ६/३ अनुनासिक (लुप्तषष्ठ्यन्तनिर्देशः)
+    लोपः १/१ झलि ७/१ क्ङिति ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - lexical:लुप्
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - झल्
+    roles:
+      झल्: right_context
+- sutra_id: 6.1.21
+  source_text: चायः की ।
+  padaccheda: चायः ६/१ की (लुप्तप्रथमान्तनिर्देशः)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.23
+  source_text: श्नान्नलोपः ।
+  padaccheda: श्नात् ५/१ नलोपः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.88
+  source_text: द्विगोर्लुगनपत्ये ।
+  padaccheda: द्विगोः ६/१ लुक् १/१  अनपत्ये ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.47
+  source_text: अच उपसर्गात्तः ।
+  padaccheda: अचः ५/१ उपसर्गात् ५/१ तः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: target/left_context
+- sutra_id: 4.3.29
+  source_text: पथः पन्थ च ।
+  padaccheda: पथः ६/१ पन्थ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.2.81
+  source_text: जनपदे लुप्‌ ।
+  padaccheda: जनपदे ७/१  लुप् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.118
+  source_text: लोपो यि ।
+  padaccheda: लोपः १/१ यि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.80
+  source_text: शकटादण् ।
+  padaccheda: शकटात् ५/१  अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 6.3.62
+  source_text: एक तद्धिते च ।
+  padaccheda: एक (लुप्तषष्ठ्यन्तनिर्देशः) तद्धिते ७/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.2.44
+  source_text: क्षेमप्रियमद्रेऽण् च ।
+  padaccheda: क्षेमप्रियमद्रे ७/१ अण् १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 8.3.59
+  source_text: आदेशप्रत्यययोः ।
+  padaccheda: आदेशप्रत्यययोः  ६/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:आदेश
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.114
+  source_text: हशि च ।
+  padaccheda: हशि ७/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - हश्
+    roles:
+      हश्: right_context
+- sutra_id: 7.1.73
+  source_text: इकोऽचि विभक्तौ ।
+  padaccheda: इकः ६/१ अचि ७/१ विभक्तौ ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - अच्
+    - इक्
+    roles:
+      इक्: target/left_context
+      अच्: right_context
+- sutra_id: 6.1.71
+  source_text: ह्रस्वस्य पिति कृति तुक् ।
+  padaccheda: ह्रस्वस्य ६/१ पिति ७/१ कृति ७/१ तुक् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:ह्रस्व
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.147
+  source_text: गोत्रस्त्रियाः कुत्सने ण च ।
+  padaccheda: गोत्रस्त्रियाः ५/१ कुत्सने ७/१  ण (लुप्तप्रथमान्तनिर्देशः)  च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.114
+  source_text: सर्वनाम्नः स्याड्ढ्रस्वश्च ।
+  padaccheda: सर्वनाम्नः ५/१ स्याट् १/१ ह्रस्वः १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:ह्रस्व
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.24
+  source_text: अनिदितां हल उपधायाः क्ङिति ।
+  padaccheda: अनिदिताम् ६/३ हलः ६/१ उपधायाः ६/१ क्ङिति ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - हल्
+    roles:
+      हल्: target/left_context
+- sutra_id: 5.1.69
+  source_text: कडङ्गरदक्षिणाच्छ च ।
+  padaccheda: कडङ्गरदक्षिणात् ५/१ छ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.3.90
+  source_text: इदङ्किमोरीश्की ।
+  padaccheda: इदङ्किमोः ६/२ ईश्की (लुप्तप्रथमान्तनिर्देशः)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.1.6
+  source_text: मान्बधदान्शान्भ्यो दीर्घश्चाभ्यासस्य ।
+  padaccheda: मान्बधदान्शान्भ्यः ५/३ दीर्घः १/१ च ०/० अभ्यासस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.3.74
+  source_text: तस्मान्नुडचि ।
+  padaccheda: तस्मात् ५/१ नुट् १/१ अचि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: right_context
+- sutra_id: 4.1.28
+  source_text: अन उपधालोपिनोन्यतरस्याम् ।
+  padaccheda: अनः ५/१  उपधालोपिनः ५/१ अन्यतरस्याम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.4.58
+  source_text: ण्यक्षत्रियार्षञितो यूनि लुगणिञोः ।
+  padaccheda: ण्यक्षत्रियार्षञितः ५/१ यूनि ७/१ लुक् १/१ अणिञोः ६/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.3.118
+  source_text: '''अभिजिद्विदभृच्छालावच्छिखावच्छमीवदूर्णावच्छ्रुमदणो यञ् ।'
+  padaccheda: अभिजिद्विदभृच्छालावच्छिखावच्छमीवदूर्णावच्छ्रुमदणः ५/१  यञ्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - यञ्
+    roles:
+      यञ्: replacement/target
+- sutra_id: 8.2.46
+  source_text: क्षियो दीर्घात्‌ ।
+  padaccheda: क्षियः ५/१  दीर्घात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:दीर्घ
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.54
+  source_text: ह्रस्वनद्यापो नुट् ।
+  padaccheda: ह्रस्वनद्यापः ५/१ नुट् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:ह्रस्व
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.3.168
+  source_text: कंसीयपरशव्ययोर्यञञौ लुक् च ।
+  padaccheda: कंसीयपरशव्ययोः ६/२  यञञौ १/२ लुक् १/१ च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.180
+  source_text: झल्युपोत्तमम् ।
+  padaccheda: झलि ७/१ उपोत्तमम् ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - झल्
+    roles:
+      झल्: right_context
+- sutra_id: 6.3.73
+  source_text: नलोपो नञः ।
+  padaccheda: नलोपः १/१ नञः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.89
+  source_text: गोत्रेऽलुगचि ।
+  padaccheda: गोत्रे ७/१ अलुक् १/१ अचि  ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अच्
+    roles:
+      अच्: right_context
+- sutra_id: 6.1.78
+  source_text: एचोऽयवायावः ।
+  padaccheda: एचः ६/१ अयवायावः १/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - एच्
+    roles:
+      एच्: target/left_context
+- sutra_id: 3.3.103
+  source_text: गुरोश्च हलः ।
+  padaccheda: गुरोः ५/१ च ०/० हलः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - हल्
+    roles:
+      हल्: target/left_context
+- sutra_id: 8.2.27
+  source_text: ह्रस्वादङ्गात्‌ ।
+  padaccheda: ह्रस्वात् ५/१ अङ्गात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:ह्रस्व
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.90
+  source_text: यूनि लुक् ।
+  padaccheda: यूनि ७/१ लुक्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.4.51
+  source_text: अरुर्मनश्चक्षुश्चेतोरहोरजसां लोपश्च ।
+  padaccheda: अरुर्मनश्चक्षुश्चेतोरहोरजसाम् ६/३ लोपः १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लोप
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.112
+  source_text: शिवादिभ्योऽण् ।
+  padaccheda: शिवादिभ्यः ५/३  अण्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:low
+    opaque_classes:
+    - अण्
+    roles:
+      अण्: replacement/target
+- sutra_id: 7.2.80
+  source_text: अतो येयः ।
+  padaccheda: अतः ५/१ या (लुप्तषष्ठ्यन्तनिर्देशः) इयः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुप्
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.3.107
+  source_text: कठचरकाल्लुक् ।
+  padaccheda: कठचरकात् ५/१  लुक्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - lexical:लुक्
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.103
+  source_text: बहुवचने झल्येत्‌ ।
+  padaccheda: बहुवचने ७/१ झलि ७/१ एत् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'yes'
+    triggers:
+    - opaque_symbols_detected
+    - prior:high
+    opaque_classes:
+    - झल्
+    roles:
+      झल्: right_context
+MAYBE_SAMPLE:
+- sutra_id: 8.3.105
+  source_text: स्तुतस्तोमयोश्छन्दसि ।
+  padaccheda: स्तुतस्तोमयोः ६/२  छन्दसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.22
+  source_text: असिद्धवदत्राभात्‌ ।
+  padaccheda: असिद्धवत् ०/० अत्र ०/० आ ०/० भात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.101
+  source_text: उपधायाश्च ।
+  padaccheda: उपधायाः ६/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.25
+  source_text: प्रतेश्च ।
+  padaccheda: प्रतेः ५/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.108
+  source_text: सम्प्रसारणाच्च ।
+  padaccheda: सम्प्रसारणात् ५/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.78
+  source_text: नाभ्यस्ताच्छतुः ।
+  padaccheda: न ०/० अभ्यस्तात् ५/१ शतुः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.19
+  source_text: च्छ्वोः शूडनुनासिके च ।
+  padaccheda: च्छ्वोः ६/२ शूठ् १/१ अनुनासिके ७/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.155
+  source_text: टेः ।
+  padaccheda: टेः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.155
+  source_text: कास्तीराजस्तुन्दे नगरे ।
+  padaccheda: कास्तीराजस्तुन्दे १/२ नगरे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.80
+  source_text: वाऽम्शसोः ।
+  padaccheda: वा ०/० अम्शसोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.160
+  source_text: उञ्छादीनां च ।
+  padaccheda: उञ्छादीनाम् ६/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.46
+  source_text: आर्धधातुके ।
+  padaccheda: आर्धधातुके ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.86
+  source_text: जपजभदहदशभञ्जपशां च ।
+  padaccheda: जपजभदहदशभञ्जपशाम् ६/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.20
+  source_text: दृढः स्थूलबलयोः ।
+  padaccheda: दृढः १/१ स्थूलबलयोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.48
+  source_text: तीषसहलुभरुषरिषः ।
+  padaccheda: ति ७/१ इषसहलुभरुषरिषः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.126
+  source_text: चेलखेटकटुककाण्डं गर्हायाम् ।
+  padaccheda: चेलखेटकटुककाण्डम् १/१ गर्हायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - lexical:टु
+    - prior:low
+    - demoted_due_to_domain:prosody_accent
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.39
+  source_text: वश्चास्यान्यतरस्याम् किति ।
+  padaccheda: वः १/१ च ०/० अस्य ६/१ अन्यतरस्याम् ७/१ किति ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.2.52
+  source_text: पचो वः ।
+  padaccheda: पचः ५/१  वः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.51
+  source_text: रि च ।
+  padaccheda: रि ७/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.75
+  source_text: अस्थिदधिसक्थ्यक्ष्णामनङुदात्तः ।
+  padaccheda: अस्थिदधिसक्थ्यक्ष्णाम् ६/३ अनङ् १/१ उदात्तः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.106
+  source_text: पूर्वपदात्‌ ।
+  padaccheda: पूर्वपदात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.62
+  source_text: नेट्यलिटि रधेः ।
+  padaccheda: न ०/० इटि ७/१ अलिटि ७/१ रधेः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.99
+  source_text: अम् सम्बुद्धौ ।
+  padaccheda: अम् १/१ सम्बुद्धौ ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.30
+  source_text: भ्यसो भ्यम् ।
+  padaccheda: भ्यसः ६/१ भ्यम् १/१ ( अभ्यम् इत्यपि पदच्छेदः सम्भवति)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.30
+  source_text: नाञ्चेः पूजायाम् ।
+  padaccheda: न ०/० अञ्चेः ६/१ पूजायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.103
+  source_text: तस्माच्छसो नः पुंसि ।
+  padaccheda: तस्मात् ५/१ शसः ६/१ नः १/१ पुंसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.53
+  source_text: षष्ठ्याः पतिपुत्रपृष्ठपारपदपयस्पोषेषु ।
+  padaccheda: षष्ठ्याः ६/१ पतिपुत्रपृष्ठपारपदपयस्पोषेषु ७/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.192
+  source_text: भीह्रीभृहुमदजनधनदरिद्राजागरां प्रत्ययात् पूर्वम् पिति ।
+  padaccheda: भीह्रीभृहुमदजनधनदरिद्राजागराम् ६/३ प्रत्ययात् ५/१ पूर्वम् १/१ पिति ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.48
+  source_text: इष्ट्वीनमिति च ।
+  padaccheda: इष्ट्‍वीनम् १/१ इति ०/० च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.2.43
+  source_text: संयोगादेरातो धातोर्यण्वतः ।
+  padaccheda: संयोगादेः ५/१ आतः  ५/१ धातोः ५/१ यण्वतः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.112
+  source_text: ख्यत्यात्‌ परस्य ।
+  padaccheda: ख्यत्यात् ५/१ परस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.31
+  source_text: णौ च संश्चङोः ।
+  padaccheda: णौ ७/१ च ०/० संश्चङोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.176
+  source_text: न गुणादयोऽवयवाः ।
+  padaccheda: न ०/० गुणादयः १/३ अवयवाः १/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - lexical:गुण
+    - prior:low
+    - demoted_due_to_domain:prosody_accent
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.205
+  source_text: निष्ठा च द्व्यजनात्‌ ।
+  padaccheda: निष्ठा १/१ च ०/० द्व्-यच् १/१ अनात् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.26
+  source_text: विभाषाऽभ्यवपूर्वस्य ।
+  padaccheda: विभाषा १/१ अभ्यवपूर्वस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.203
+  source_text: वृषादीनां च ।
+  padaccheda: वृषादीनाम् ६/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.129
+  source_text: भस्य ।
+  padaccheda: भस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.76
+  source_text: पदान्ताद्वा ।
+  padaccheda: पदान्तात् ५/१ वा ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.45
+  source_text: तप्तनप्तनथनाश्च ।
+  padaccheda: तप्तनप्तनथनाः १/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.37
+  source_text: शाच्छासाह्वाव्यावेपां युक् ।
+  padaccheda: शाच्छासाह्वाव्यावेपाम् ६/३ युक् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.96
+  source_text: विभाषा वेष्टिचेष्ट्योः ।
+  padaccheda: विभाषा १/१ वेष्टिचेष्ट्योः ६/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.201
+  source_text: क्षयो निवासे ।
+  padaccheda: क्षयः १/१ निवासे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.27
+  source_text: रीङ् ऋतः ।
+  padaccheda: रीङ् १/१ ऋतः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.26
+  source_text: रञ्जेश्च ।
+  padaccheda: रञ्जेः ६/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.2.78
+  source_text: रोणी ।
+  padaccheda: रोणी  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:low
+    - inherited-context-candidate
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.55
+  source_text: जॄव्रश्च्योः क्त्वि ।
+  padaccheda: जॄव्रश्च्योः ६/२ क्त्वि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.31
+  source_text: क्त्वि स्कन्दिस्यन्दोः ।
+  padaccheda: क्त्वि ७/१ स्कन्दिस्यन्दोः ६/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.62
+  source_text: सः स्विदिस्वदिसहीनां च ।
+  padaccheda: सः १/१ स्विदिस्वदिसहीनाम् ६/३  च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.55
+  source_text: आप्ज्ञप्यृधामीत्‌ ।
+  padaccheda: आप्ज्ञप्यृधाम् ६/३ ईत् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.34
+  source_text: बहुलं छन्दसि ।
+  padaccheda: बहुलम् १/१ छन्दसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.27
+  source_text: घञि च भावकरणयोः ।
+  padaccheda: घञि ७/१ च ०/० भावकरणयोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.90
+  source_text: रीगृदुपधस्य च ।
+  padaccheda: रीक् १/१ ऋदुपधस्य ६/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.70
+  source_text: शेश्छन्दसि बहुलम् ।
+  padaccheda: शेः ६/१ छन्दसि ७/१ बहुलम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.56
+  source_text: उदितो वा ।
+  padaccheda: उदितः ५/१ वा ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.69
+  source_text: सनिंससनिवांसम् ।
+  padaccheda: सनिंससनिवांसम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.163
+  source_text: चितः ।
+  padaccheda: चितः (षष्ठ्यर्थे प्रथमा)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.34
+  source_text: नोदात्तोपदेशस्य मान्तस्यानाचमेः ।
+  padaccheda: न ०/० उदात्तोपदेशस्य ६/१ मान्तस्य ६/१ अनाचमेः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.18
+  source_text: क्रमश्च क्त्वि ।
+  padaccheda: क्रमः ६/१ च ०/० क्त्वि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.4.14
+  source_text: उपसर्गादसमासेऽपि णोपदेशस्य ।
+  padaccheda: उपसर्गात् ५/१ असमासे ७/१ अपि ०/० णोपदेशस्य  ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.57
+  source_text: इण्कोः ।
+  padaccheda: इण्कोः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.60
+  source_text: निष्ठायां अण्यदर्थे ।
+  padaccheda: निष्ठायाम् ७/१ अण्यदर्थे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.76
+  source_text: रुदादिभ्यः सार्वधातुके ।
+  padaccheda: रुदादिभ्यः ५/३ सार्वधतुके ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.65
+  source_text: उपसर्गात्‌ सुनोतिसुवतिस्यतिस्तौतिस्तोभतिस्थासेनयसेधसिचसञ्जस्वञ्जाम्
+    ।
+  padaccheda: उपसर्गात् ५/१ सुनोतिसुवतिस्यतिस्तौतिस्तोभतिस्थासेनयसेधसिचसञ्जस्वञ्जाम्  ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.23
+  source_text: स्त्यः प्रपूर्वस्य ।
+  padaccheda: स्त्यः ६/१ प्रपूर्वस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.98
+  source_text: रुदश्च पञ्चभ्यः ।
+  padaccheda: रुदः ५/१ (व्यत्येन् बहुवचनस्यैकत्वम्) च ०/० पञ्चभ्यः ५/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.5
+  source_text: आत्मनेपदेष्वनतः ।
+  padaccheda: आत्मनेपदेषु ७/३ अनतः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.119
+  source_text: निव्यभिभ्योऽड्व्यावये वा छन्दसि ।
+  padaccheda: निव्यभिभ्यः ५/३ अड्‍व्यावये ७/१  वा ०/०  छन्दसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.42
+  source_text: कुरुगार्हपतरिक्तगुर्वसूतजरत्यश्लीलदृढरूपापारेवडवातैतिलकद्रूःपण्यकम्बलो
+    दासीभाराणां च ।
+  padaccheda: कुरुगार्हपत (लुप्तप्रथमान्तनिर्देशः) रिक्तगुरु (लुप्तप्रथमान्तनिर्देशः)
+    असूतजरति १/१ यश्लीलदृढरूपा १/१ पारेवडवा १/१ तैतिलकद्रूः १/१ पण्यकम्बलः १/१ (सर्वत्र
+    सुब्व्यत्ययेन षष्ठीस्थाने प्रथमा वेदितया) दासीभाराणाम् ६/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - lexical:लुप्
+    - prior:low
+    - demoted_due_to_domain:prosody_accent
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.154
+  source_text: मस्करमस्करिणौ वेणुपरिव्राजकयोः ।
+  padaccheda: मस्करमस्करिणौ १/२ वेणुपरिव्राजकयोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.40
+  source_text: नमस्पुरसोर्गत्योः ।
+  padaccheda: नमस्पुरसोः ६/२  गत्योः   ६/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.33
+  source_text: साम आकम् ।
+  padaccheda: सामः ६/१ आकम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.63
+  source_text: ऋतो भारद्वाजस्य ।
+  padaccheda: ऋतः ५/१ भारद्वाजस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.2.50
+  source_text: निर्वाणोऽवाते ।
+  padaccheda: निर्वाणः १/१ अवाते ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.69
+  source_text: विभाषा चिण्णमुलोः ।
+  padaccheda: विभाषा १/१ चिण्णमुलोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.10
+  source_text: एकाच उपदेशेऽनुदात्तात्‌ ।
+  padaccheda: एकाचः ५/१ उपदेशे ७/१ अनुदात्तात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.97
+  source_text: बहुलं छन्दसि ।
+  padaccheda: बहुलम् १/१ छन्दसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.125
+  source_text: फणां च सप्तानाम् ।
+  padaccheda: फणाम् ६/३ च ०/० सप्तानाम् ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.107
+  source_text: अमि पूर्वः ।
+  padaccheda: अमि ७/१ पूर्वः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.93
+  source_text: वृक्षासनयोर्विष्टरः ।
+  padaccheda: वृक्षासनयोः ७/२  विष्टरः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.108
+  source_text: नित्यं करोतेः ।
+  padaccheda: नित्यम् १/१ करोतेः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.4.36
+  source_text: दुरस्युर्द्रविणस्युर्वृषण्यतिरिषण्यति ।
+  padaccheda: दुरस्युः १/१ द्रविणस्युः १/१ वृषण्यति (क्रियापदम्) रिषण्यति (क्रियापदम्)
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.50
+  source_text: क्लिशः क्त्वानिष्ठयोः ।
+  padaccheda: क्लिशः ५/१ क्त्वानिष्ठयोः ६/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.30
+  source_text: नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम् ।
+  padaccheda: नञः ५/१ शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम् ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.3.70
+  source_text: परिनिविभ्यः सेवसितसयसिवुसहसुट्स्तुस्वञ्जाम् ।
+  padaccheda: परिनिविभ्यः ५/३ सेवसितसयसिवुसहसुट्‍स्तुस्वञ्जाम्  ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.14
+  source_text: श्वीदितो निष्ठायाम् ।
+  padaccheda: श्वीदितः ६/१ निष्ठायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.1.86
+  source_text: इतोऽत्‌ सर्वनामस्थाने ।
+  padaccheda: इतः ६/१ अत् १/१ सर्वनामस्थाने ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.2.1
+  source_text: पूर्वत्रासिद्धम् ।
+  padaccheda: पूर्वत्र ०/०  असिद्धम्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.1.60
+  source_text: शीर्षंश्छन्दसि ।
+  padaccheda: शीर्षन् १/१ छन्दसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.82
+  source_text: एरनेकाचोऽसंयोगपूर्वस्य ।
+  padaccheda: एः ६/१ अनेकाचः ६/१ असंयोगपूर्वस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.7
+  source_text: अतो हलादेर्लघोः ।
+  padaccheda: अतः ६/१ हलादेः ६/१ लघोः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.44
+  source_text: प्रत्ययस्थात्‌ कात्‌ पूर्वस्यात इदाप्यसुपः ।
+  padaccheda: प्रत्ययस्थात् ५/१ कात् ५/१ पूर्वस्य ६/१ अतः ६/१ इत् १/१ आपि ७/१ असुपः
+    ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.149
+  source_text: सूर्यतिष्यागस्त्यमत्स्यानां य उपधायाः ।
+  padaccheda: सूर्यतिष्यागस्त्यमत्स्यानाम् ६/३ यः ६/१ उपधायाः ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.2.36
+  source_text: स्नुक्रमोरनात्मनेपदनिमित्ते ।
+  padaccheda: स्नुक्रमोः ६/२ अनात्मनेपदनिमित्ते १/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.154
+  source_text: तुरिष्ठेमेयस्सु ।
+  padaccheda: तुः ६/१ इष्ठेमेयस्सु ७/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 7.3.111
+  source_text: घेर्ङिति ।
+  padaccheda: घेः ६/१ ङिति ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.1.45
+  source_text: लोपे विभाषा ।
+  padaccheda: लोपे ७/१  विभाषा १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - lexical:लोप
+    - prior:low
+    - demoted_due_to_domain:prosody_accent
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.12
+  source_text: इन्हन्पूषार्यम्णां शौ ।
+  padaccheda: इन्हन्पूषार्यम्णाम् ६/३ शौ ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.69
+  source_text: न ल्यपि ।
+  padaccheda: न ०/० ल्यपि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.4.10
+  source_text: वा भावकरणयोः ।
+  padaccheda: वा ०/०  भावकरणयोः  ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.4.11
+  source_text: अप्तृन्तृच्स्वसृनप्तृनेष्टृत्वष्टृक्षत्तृहोतृपोतृप्रशास्तॄणाम् ।
+  padaccheda: अप्तृन्तृच्स्वसृनप्तृनेष्टृत्वष्टृक्षत्तृहोतृपोतॄप्रशास्तॄणाम् ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: maybe
+    triggers:
+    - prior:high
+    opaque_classes: []
+    roles: {}
+NO_SAMPLE:
+- sutra_id: 2.4.55
+  source_text: वा लिटि ।
+  padaccheda: वा ०/० लिटि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.1.33
+  source_text: खार्या ईकन् ।
+  padaccheda: खार्याः ५/१ ईकन्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.1.58
+  source_text: पूर्वापरप्रथमचरमजघन्यसमानमध्यमध्यमवीराश्च ।
+  padaccheda: पूर्वापरप्रथमचरमजघन्यसमानमध्यमध्यमवीराः १/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.172
+  source_text: शकि लिङ् च ।
+  padaccheda: शकि ७/१ लिङ् १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.3.19
+  source_text: विपराभ्यां जेः ।
+  padaccheda: विपराभ्याम् ५/२ जेः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: grammatical_notation
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.3.90
+  source_text: वा क्यषः ।
+  padaccheda: वा ०/० क्यषः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: grammatical_notation
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.3.6
+  source_text: षः प्रत्ययस्य ।
+  padaccheda: षः १/१ प्रत्ययस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: grammatical_notation
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.1.63
+  source_text: कतरकतमौ जातिपरिप्रश्ने ।
+  padaccheda: कतरकतमौ १/२ जातिपरिप्रश्ने ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.4.93
+  source_text: अधिपरी अनर्थकौ ।
+  padaccheda: अधिपरी १/२ अनर्थकौ १/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.4.57
+  source_text: अव्यक्तानुकरणाद्द्व्यजवरार्धादनितौ डाच् ।
+  padaccheda: अव्यक्तानुकरणात् ५/१  द्‍व्यजवरार्धात् ५/१  अनितौ ७/१ डाच्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.3.88
+  source_text: शिशुक्रन्दयमसभद्वंद्वेन्द्रजननादिभ्यश्छः ।
+  padaccheda: शिशुक्रन्दयमसभद्वन्द्वेन्द्रजननादिभ्यः ५/३  छः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.2.121
+  source_text: धन्वयोपधाद्वुञ् ।
+  padaccheda: धन्वयोपधात् ५/१ वुञ्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.3.13
+  source_text: चतुर्थी सम्प्रदाने ।
+  padaccheda: चतुर्थी १/१ सम्प्रदाने ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.17
+  source_text: स्वं स्वामिनि ।
+  padaccheda: स्वम् १/१ स्वामिनि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.1.39
+  source_text: कृन्मेजन्तः ।
+  padaccheda: कृत् १/१ मेजन्तः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:medium
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.39
+  source_text: वर्णादनुदात्तात्तोपधात्तो नः ।
+  padaccheda: वर्णात् ५/१ अनुदात्तात् ५/१ तोपधात् ५/१ तः ६/१  नः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.1.10
+  source_text: उपमानादाचारे ।
+  padaccheda: उपमानात् ५/१ आचारे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.133
+  source_text: नाचार्यराजर्त्विक्संयुक्तज्ञात्याख्येभ्यः ।
+  padaccheda: न ०/० आचार्यराजर्त्विक्संयुक्तज्ञात्याख्येभ्यः ५/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.4.3
+  source_text: समुच्चयेऽन्यतरस्याम् ।
+  padaccheda: समुच्चये ७/१ अन्यतरस्याम् ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.4.114
+  source_text: अङ्गुलेर्दारुणि ।
+  padaccheda: अङ्‍गुलेः ५/१  दारुणि  ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.2.132
+  source_text: धर्मशीलवर्णान्ताच्च ।
+  padaccheda: धर्मशीलवर्णान्तात् ५/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.2.140
+  source_text: अहंशुभमोर्युस् ।
+  padaccheda: अहंशुभमोः ६/२  युस्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.3.115
+  source_text: कर्णे लक्षणस्याविष्टाष्टपञ्चमणिभिन्नछिन्नछिद्रस्रुवस्वस्तिकस्य ।
+  padaccheda: कर्णे ७/१ लक्षणस्य ६/१ अविष्टाष्टपञ्चमणिभिन्नछिन्नछिद्रस्रुवस्वस्तिकस्य
+    ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.2.109
+  source_text: केशाद्वोऽन्यतरस्याम् ।
+  padaccheda: केशात् ५/१  वः १/१ अन्यतरस्याम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.156
+  source_text: ययतोश्चातदर्थे ।
+  padaccheda: ययतोः ६/२ च ०/० अतदर्थे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.3.106
+  source_text: विभाषा पुरुषे ।
+  padaccheda: विभाषा १/१ पुरुषे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.1.33
+  source_text: कृत्यैरधिकार्थवचने ।
+  padaccheda: कृत्यैः ३/३ अधिकार्थवचने ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.2.6
+  source_text: प्रे दाज्ञः ।
+  padaccheda: प्रे ७/१ दाज्ञः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.3.119
+  source_text: ञ्य्आदयस्तद्राजाः ।
+  padaccheda: ञ्यादयः १/३ तद्राजाः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.165
+  source_text: स्मे लोट् ।
+  padaccheda: स्मे ७/१ लोट् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.3.162
+  source_text: माने वयः ।
+  padaccheda: माने ७/१  वयः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.4.102
+  source_text: द्वित्रिभ्यामञ्जलेः ।
+  padaccheda: द्वित्रिभ्याम् ५/२ अञ्जलेः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.1.60
+  source_text: हेति क्षियायाम् ।
+  padaccheda: ह ०/० इति ०/०  क्षियायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.94
+  source_text: स्त्रियां क्तिन् ।
+  padaccheda: स्त्रियाम् ७/१ क्तिन् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.87
+  source_text: प्रस्थेऽवृद्धमकर्क्यादीनाम्‌ ।
+  padaccheda: प्रस्थे ७/१ अवृद्धम् १/१ अकर्क्यादीनाम् ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.2.12
+  source_text: द्वैपवैयाघ्रादञ् ।
+  padaccheda: द्वैपवैयाघ्रात् ५/१ अञ्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.12
+  source_text: अनो बहुव्रीहेः ।
+  padaccheda: अनः ५/१  बहुव्रीहेः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.3.22
+  source_text: सद्यःपरुत्परार्यैषमःपरेद्यव्यद्यपूर्वेद्युरन्येद्युरन्यतरेद्युरितरेद्युरपरेद्युरधरेद्युरुभयेद्युरुत्तरेद्युः
+    ।
+  padaccheda: सद्यः ०/० परुत्परार्यैषमः ०/० परेद्यव्यद्यपूर्वेद्युः ०/० अन्येद्युः
+    ०/० अन्यतरेद्युः ०/० इतरेद्युः ०/० अपरेद्युः ०/० अधरेद्युः ०/० उभयेद्युः ०/० उत्तरेद्युः  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.81
+  source_text: हलसीराट्ठक् ।
+  padaccheda: हलसीरात् ५/१ ठक्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.1.135
+  source_text: होत्राभ्यश्छः ।
+  padaccheda: होत्राभ्यः ५/३ छः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.4.56
+  source_text: विशिपतिपदिस्कन्दां व्याप्यमानासेव्यमानयोः ।
+  padaccheda: विशिपतिपदिस्कन्दाम् ६/३ व्याप्यमानासेव्यमानयोः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.3.57
+  source_text: उदकस्योदः संज्ञायाम् ।
+  padaccheda: उदकस्य ६/१ उदः १/१ संज्ञायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.47
+  source_text: परौ यज्ञे ।
+  padaccheda: परौ ७/१ यज्ञे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.4.27
+  source_text: अन्यथैवंकथमित्थंसु सिद्धाप्रयोगश्चेत्‌ ।
+  padaccheda: अन्यथैवंकथमित्थंसु ७/३ सिद्धाप्रयोगः १/१ चेत् ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.4.52
+  source_text: अपादाने परीप्सायाम् ।
+  padaccheda: अपादाने ७/१ परीप्सायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.129
+  source_text: कूलसूदस्थलकर्षाः संज्ञायाम् ।
+  padaccheda: कूलसूदस्थलकर्षाः १/३ संज्ञायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.1.23
+  source_text: द्विगुश्च ।
+  padaccheda: द्विगुः १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.5
+  source_text: विभाषा कदाकर्ह्योः ।
+  padaccheda: विभाषा १/१ कदाकर्ह्योः ७/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.3.35
+  source_text: अकर्मकाच्च ।
+  padaccheda: अकर्मकात् ५/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: grammatical_notation
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.2.67
+  source_text: जनसनखनक्रमगमो विट् ।
+  padaccheda: जनसनखनक्रमगमः ५/१ विट् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.3.112
+  source_text: पूगाञ्ञ्योऽग्रामणीपूर्वात्‌ ।
+  padaccheda: पूगात् ५/१  ञ्यः १/१ अग्रामणीपूर्वात् ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.4.98
+  source_text: स उत्तमस्य ।
+  padaccheda: सः ६/१ उत्तमस्य ६/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.27
+  source_text: प्रे द्रुस्तुस्रुवः ।
+  padaccheda: प्रे ७/१ द्रुस्तुस्रुवः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.4.7
+  source_text: शेषो घ्यसखि ।
+  padaccheda: शेषः १/१ घि १/१ असखि १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.3.85
+  source_text: अल्पे ।
+  padaccheda: अल्पे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.4.28
+  source_text: हेमन्तशिशिरावहोरात्रे च च्छन्दसि ।
+  padaccheda: हेमन्तशिशिरौ १/२ अहोरात्रे १/२ च ०/० छन्दसि ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.117
+  source_text: घच्छौ च ।
+  padaccheda: घच्छौ १/२ च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.95
+  source_text: अत इञ् ।
+  padaccheda: अतः ५/१  इञ्  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.3.48
+  source_text: साऽऽमन्त्रितम्‌ ।
+  padaccheda: सा १/१ आमन्त्रितम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.97
+  source_text: ऊतियूतिजूतिसातिहेतिकीर्तयश्च ।
+  padaccheda: ऊतियूतिजूतिसातिहेतिकीर्त्तयः १/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.107
+  source_text: कपिबोधादाङ्गिरसे ।
+  padaccheda: कपिबोधात् ५/१ आङ्गिरसे ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.1.49
+  source_text: पूर्वकालैकसर्वजरत्पुराणनवकेवलाः समानाधिकरणेन ।
+  padaccheda: पूर्वकालैकसर्वजरत्पुराणनवकेवलाः १/३ समानाधिकरणेन ३/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.61
+  source_text: वाहः ।
+  padaccheda: वाहः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.4.113
+  source_text: तिङ्शित्सार्वधातुकम् ।
+  padaccheda: तिङ्शित् १/१ सार्वधातुकम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.1.14
+  source_text: लक्षणेनाभिप्रती आभिमुख्ये ।
+  padaccheda: लक्षणेन ३/१ अभिप्रती १/२ आभिमुख्ये ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.1.149
+  source_text: प्रुसृल्वः समभिहारे वुन् ।
+  padaccheda: प्रुसृल्वः १/३ ( अत्र पञ्चम्याः स्थाने जस्) समभिहारे ७/१ वुन् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.1.54
+  source_text: द्विगोष्ठंश्च ।
+  padaccheda: द्विगोः ५/१  ष्ठन् १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.172
+  source_text: नञ्सुभ्याम् ।
+  padaccheda: नञ्सुभ्याम् ५/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.1.57
+  source_text: विशेषणं विशेष्येण बहुलम्‌ ।
+  padaccheda: विशेषणम् १/१ विशेष्येण ३/१ बहुलम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.1.5
+  source_text: क्ङिति च ।
+  padaccheda: क्क्ङिति ७/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:medium
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.36
+  source_text: आचार्योपसर्जनश्चान्तेवासी ।
+  padaccheda: आचार्योपसर्जनः १/१ च ०/० अन्तेवासी १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.105
+  source_text: उत्तरपदवृद्धौ सर्वं च ।
+  padaccheda: उत्तरपदवृद्धौ ७/१ सर्वम् १/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.4.43
+  source_text: संख्यैकवचनाच्च वीप्सायाम् ।
+  padaccheda: सङ्‍ख्यैकवचनात् ५/१ च ०/० वीप्सायाम् ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.3.116
+  source_text: नहिवृतिवृषिव्यधिरुचिसहितनिषु क्वौ ।
+  padaccheda: नहिवृतिवृषिव्यधिरुचिसहितनिषु ७/३ क्वौ ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.2.24
+  source_text: तस्य पाकमूले पील्वदिकर्णादिभ्यः कुणब्जाहचौ ।
+  padaccheda: तस्य  ६/१  पाकमूले ७/१  पील्वदिकर्णादिभ्यः ५/३ कुणब्जाहचौ  १/२
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.29
+  source_text: उन्न्योर्ग्रः ।
+  padaccheda: उन्न्योः ७/२ ग्रः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.2.80
+  source_text: उत्क उन्मनाः ।
+  padaccheda: उत्कः १/१  उन्मनाः  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.2.123
+  source_text: रोपधेतोः प्राचाम् ।
+  padaccheda: रोपधेतोः ६/२ प्राचाम्  ६/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.35
+  source_text: नित्यं सपत्न्य्आदिषु ।
+  padaccheda: नित्यम् १/१ सपत्न्यादिषु ७/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.2.142
+  source_text: संपृचानुरुधाङ्यमाङ्यसपरिसृसंसृजपरिदेविसंज्वरपरिक्षिपपरिरटपरिवदपरिदहपरिमुहदुषद्विषद्रुहदुहयुजाक्रीडविविचत्यजरजभजातिचरापचरामुषाभ्याहनश्च
+    ।
+  padaccheda: संपृचानुरुधाङ्यमाङ्यसपरिसृसंसृज-परिदेविसंज्वरपरिक्षिपपरिरटपरिवदपरिदहपरिमुह-दुषद्विषद्रुहदुहयुजाक्रीडविविचत्यजरज-भजातिचरापचरामुषाभ्याहनः
+    ५/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.128
+  source_text: आतो युच् ।
+  padaccheda: आतः ५/१ युच् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.41
+  source_text: निवासचितिशरीरोपसमाधानेष्वादेश्च कः ।
+  padaccheda: निवासचितिशरीरोपसमाधानेषु ७/३ आदेः ६/१ च ०/० कः १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.4.87
+  source_text: अहस्सर्वैकदेशसंख्यातपुण्याच्च रात्रेः ।
+  padaccheda: अहस्सर्वैकदेशसंख्यातपुण्यात् ५/१ च ०/० रात्रेः  ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.111
+  source_text: भर्गात्‌ त्रैगर्ते ।
+  padaccheda: भर्गात् ५/१ त्रैगर्ते ७/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 2.2.19
+  source_text: उपपदमतिङ् ।
+  padaccheda: उपपदम् १/१ अतिङ् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 5.3.38
+  source_text: उत्तराच्च ।
+  padaccheda: उत्तरात् ५/१ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.2.151
+  source_text: क्रुधमण्डार्थेभ्यश्च ।
+  padaccheda: क्रुधमण्डार्थेभ्यः ५/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.1.139
+  source_text: ददातिदधात्योर्विभाषा ।
+  padaccheda: ददातिदधात्योः ५/२ विभाषा १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.74
+  source_text: यङश्चाप्‌ ।
+  padaccheda: यङः ५/१ चाप् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.1.53
+  source_text: अस्वाङ्गपूर्वपदाद्वा ।
+  padaccheda: अस्वाङ्गपूर्वपदात् ५/१ वा  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.1.58
+  source_text: चादिषु च ।
+  padaccheda: चादिषु ७/३  च  ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 6.2.116
+  source_text: नञो जरमरमित्रमृताः ।
+  padaccheda: नञः ५/१ जरमरमित्रमृताः १/३
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.1.56
+  source_text: सर्त्तिशास्त्यर्तिभ्यश्च ।
+  padaccheda: सर्त्तिशास्त्यर्तिभ्यः ५/३ च ०/०
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.4.99
+  source_text: लः परस्मैपदम् ।
+  padaccheda: लः ६/१ परस्मैपदम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 4.4.88
+  source_text: मूलमस्याबर्हि ।
+  padaccheda: मूलम् १/१ अस्य ६/१  आबर्हि  १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.113
+  source_text: कृत्यल्युटो बहुलम् ।
+  padaccheda: कृत्यल्युटः १/३ बहुलम् १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 8.1.26
+  source_text: सपूर्वायाः प्रथमाया विभाषा ।
+  padaccheda: सपूर्वायाः ५/१ प्रथमायाः ५/१ विभाषा १/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: prosody_accent
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 1.3.57
+  source_text: ज्ञाश्रुस्मृदृशां सनः ।
+  padaccheda: ज्ञाश्रुस्मृदृशाम् ६/३ सनः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: grammatical_notation
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.3.118
+  source_text: पुंसि संज्ञायां घः प्रायेण ।
+  padaccheda: पुंसि ७/१ संज्ञायाम् ७/१ घः १/१ प्रायेण ३/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
+- sutra_id: 3.2.49
+  source_text: आशिषि हनः ।
+  padaccheda: आशिषि ७/१ हनः ५/१
+  source_url_or_id: sanskritdocuments-sutrapāṭha
+  source_layer: sutrapāṭha_raw
+  candidate_domain: segmental_phonology
+  phonology: unknown
+  reason: ''
+  status: RAW
+  phonology_candidate:
+    status: 'no'
+    triggers:
+    - prior:low
+    opaque_classes: []
+    roles: {}
