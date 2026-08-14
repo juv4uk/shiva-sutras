@@ -44,6 +44,7 @@
     triggers:
     - lexical:गुण
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
     - इक्
@@ -141,7 +142,7 @@
     status: 'yes'
     triggers:
     - lexical:सवर्ण
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -218,8 +219,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
-    - form-shape-condition:एकाच्
+    - derived_shape:एकाच
+    - derived_shape:एकाच्
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -551,7 +552,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -689,6 +690,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
     - यण्
@@ -724,7 +726,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:medium
     opaque_classes:
     - अच्
@@ -744,10 +746,11 @@
     triggers:
     - lexical:ह्रस्व
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
-    - इक्
     - एच्
+    - इक्
     roles:
       एच्: target/left_context
       इक्: replacement/target
@@ -778,7 +781,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -795,6 +798,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes:
     - अण्
@@ -813,7 +817,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:medium
     opaque_classes:
     - अल्
@@ -844,8 +848,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:आदे
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -877,6 +882,7 @@
     status: 'yes'
     triggers:
     - lexical:आदेश
+    - derived_shape:आदे
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -914,7 +920,7 @@
     - lexical:दीर्घ
     - lexical:सवर्ण
     - lexical:स्वर
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -966,6 +972,7 @@
     triggers:
     - lexical:लुक्
     - lexical:श्लु
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1013,7 +1020,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:medium
     opaque_classes:
     - अच्
@@ -1032,8 +1039,8 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:अन्त
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
+    - derived_shape:अन्त
     - prior:medium
     opaque_classes:
     - अल्
@@ -1079,8 +1086,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1097,7 +1105,7 @@
     status: 'yes'
     triggers:
     - lexical:सवर्ण
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1128,8 +1136,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
-    - form-shape-condition:आदि
+    - derived_shape:आदि
+    - derived_shape:अन्त
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1162,7 +1170,7 @@
     status: 'yes'
     triggers:
     - lexical:वृद्धि
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:medium
     opaque_classes: []
     roles: {}
@@ -1367,7 +1375,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1456,8 +1464,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1652,7 +1661,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1668,7 +1677,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1701,8 +1710,8 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
-    - form-shape-condition:आदि
-    - form-shape-condition:उदात्त
+    - derived_shape:आदि
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1748,7 +1757,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1780,7 +1789,7 @@
     status: 'yes'
     triggers:
     - lexical:स्वर
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1796,7 +1805,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1814,7 +1823,7 @@
     triggers:
     - lexical:संहिता
     - lexical:स्वर
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1831,7 +1840,8 @@
     status: 'yes'
     triggers:
     - lexical:स्वर
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1845,8 +1855,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:एकाल्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2150,8 +2161,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2181,8 +2193,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2196,8 +2209,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -2384,7 +2398,7 @@
     status: maybe
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     - demoted_due_to_domain:grammatical_notation
     opaque_classes:
@@ -2419,7 +2433,7 @@
     status: maybe
     triggers:
     - lexical:टु
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     - demoted_due_to_domain:grammatical_notation
     opaque_classes: []
@@ -2482,6 +2496,7 @@
     status: maybe
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:low
     - demoted_due_to_domain:grammatical_notation
     opaque_classes: []
@@ -2530,8 +2545,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
-    - form-shape-condition:अनुदात्त
+    - derived_shape:आत्
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -3907,6 +3922,7 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
+    - derived_shape:लघु
     - prior:low
     opaque_classes: []
     roles: {}
@@ -3920,8 +3936,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:गुरु
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4131,8 +4148,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4146,8 +4164,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4161,8 +4180,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4178,7 +4198,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4207,8 +4227,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4222,8 +4243,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4252,8 +4274,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4267,8 +4290,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4282,8 +4306,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4297,8 +4322,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4327,8 +4353,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4342,8 +4369,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4357,8 +4385,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4402,8 +4431,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4447,8 +4477,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4492,8 +4523,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4739,7 +4771,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -4830,7 +4862,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -5249,8 +5281,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -5266,7 +5299,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -5280,8 +5313,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -5992,8 +6026,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:अल्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -6461,7 +6496,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -6898,7 +6933,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -7017,8 +7052,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:अल्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -7139,7 +7175,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -7213,8 +7249,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -7484,8 +7521,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8660,7 +8698,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes:
     - अश्
@@ -8678,7 +8716,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8725,6 +8763,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8798,8 +8837,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8846,7 +8886,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8966,8 +9006,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8981,8 +9022,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -8996,8 +9038,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9238,8 +9281,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9439,7 +9483,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9453,8 +9497,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9468,8 +9513,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9591,7 +9637,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9808,7 +9855,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
+    - derived_shape:एकाच
     - prior:low
     opaque_classes: []
     roles: {}
@@ -9855,7 +9902,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10019,8 +10066,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:गुरु
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10145,8 +10193,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10160,8 +10209,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10297,7 +10347,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10740,6 +10790,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes:
     - हल्
@@ -10830,8 +10881,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10845,8 +10897,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -11361,8 +11414,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -11874,8 +11928,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -12152,7 +12207,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -12486,7 +12541,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -13016,7 +13071,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -13316,8 +13371,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -13361,8 +13417,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -13631,8 +13688,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -13691,8 +13749,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -14014,7 +14073,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -14358,8 +14417,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -14373,8 +14433,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -14811,8 +14872,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -15219,8 +15281,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:आदे
     - prior:low
     opaque_classes: []
     roles: {}
@@ -15781,7 +15844,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -16053,7 +16116,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -16358,8 +16421,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -16418,8 +16482,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -17293,8 +17358,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -17520,8 +17586,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18138,7 +18205,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18334,7 +18401,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18456,7 +18523,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18486,8 +18553,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18501,8 +18569,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18533,7 +18602,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18562,8 +18631,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18608,8 +18678,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18653,8 +18724,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18684,8 +18756,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18733,7 +18806,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
-    - form-shape-condition:इतः
+    - derived_shape:इतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18779,7 +18852,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:इतः
+    - derived_shape:इतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18793,8 +18866,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18808,8 +18882,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18825,7 +18900,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18854,8 +18929,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18869,8 +18945,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -18899,8 +18976,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19295,8 +19373,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19463,7 +19542,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19524,7 +19603,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19538,8 +19618,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19570,7 +19651,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19602,7 +19683,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19634,8 +19716,9 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
-    - form-shape-condition:अनुदात्त
+    - derived_shape:वर्ण
+    - derived_shape:अनुदात्त
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19683,7 +19766,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19715,7 +19798,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
-    - form-shape-condition:उतः
+    - derived_shape:उतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19789,8 +19872,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19819,8 +19903,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:अल्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -19836,7 +19921,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20033,7 +20118,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:इतः
+    - derived_shape:इतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20049,7 +20134,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उतः
+    - derived_shape:उतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20228,8 +20313,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20384,6 +20470,7 @@
     status: 'yes'
     triggers:
     - lexical:लुक्
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20447,8 +20534,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20494,7 +20582,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20523,8 +20611,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20801,8 +20890,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20894,7 +20984,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:द्व्यच
+    - derived_shape:द्व्यच
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20910,7 +21000,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:इतः
+    - derived_shape:इतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20954,8 +21044,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -20969,8 +21060,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -21377,8 +21469,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -21425,7 +21518,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:द्व्यच
+    - derived_shape:द्व्यच
     - prior:low
     opaque_classes:
     - अण्
@@ -21456,8 +21549,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -21747,7 +21841,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -22123,8 +22217,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -22138,8 +22233,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -22321,8 +22417,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -22434,7 +22531,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -22600,7 +22697,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -22810,8 +22908,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -23146,8 +23245,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -23331,7 +23431,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -23422,7 +23522,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -23486,7 +23586,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:द्व्यच
+    - derived_shape:द्व्यच
     - prior:low
     opaque_classes: []
     roles: {}
@@ -23755,8 +23855,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -24765,8 +24866,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -24890,7 +24992,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -24996,7 +25098,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -25168,7 +25270,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -25332,8 +25434,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -25802,8 +25905,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -25910,6 +26014,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes:
     - अण्
@@ -26019,8 +26124,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -26082,8 +26188,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -26114,7 +26221,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -26265,7 +26372,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:द्व्यच
+    - derived_shape:द्व्यच
     - prior:low
     opaque_classes: []
     roles: {}
@@ -26545,6 +26652,7 @@
     status: 'yes'
     triggers:
     - lexical:लुक्
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -26654,7 +26762,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:द्व्यच
+    - derived_shape:द्व्यच
     - prior:low
     opaque_classes: []
     roles: {}
@@ -27261,8 +27369,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -27296,7 +27405,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -27325,8 +27434,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -27449,8 +27559,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -27891,8 +28002,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28001,8 +28113,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28199,7 +28312,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28381,8 +28494,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28396,8 +28510,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28426,8 +28541,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28463,7 +28579,8 @@
     status: 'yes'
     triggers:
     - lexical:लुक्
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28556,8 +28673,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:आदे
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28889,7 +29007,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28963,8 +29081,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28978,8 +29097,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -28993,8 +29113,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -29331,8 +29452,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -29348,7 +29470,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:द्व्यच
+    - derived_shape:द्व्यच
     - prior:low
     opaque_classes: []
     roles: {}
@@ -29393,8 +29515,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -29438,8 +29561,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -29604,8 +29728,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -29619,8 +29744,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30179,8 +30305,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30332,8 +30459,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30563,8 +30691,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30625,7 +30754,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30686,8 +30815,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30749,8 +30879,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:लघु
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30854,8 +30985,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30914,8 +31046,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31112,8 +31245,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31368,8 +31502,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31431,8 +31566,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31477,8 +31613,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31494,7 +31631,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31599,8 +31736,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31614,8 +31752,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -31629,8 +31768,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -32009,8 +32149,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -32024,8 +32165,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -32571,7 +32713,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -32753,7 +32895,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     opaque_classes:
     - अच्
@@ -32831,7 +32973,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -32862,7 +33004,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -32951,8 +33093,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -32996,8 +33139,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33026,8 +33170,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33041,8 +33186,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33252,8 +33398,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33620,8 +33767,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33863,8 +34011,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33911,7 +34060,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33925,8 +34075,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -33943,6 +34094,7 @@
     status: 'yes'
     triggers:
     - lexical:लुक्
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -34031,8 +34183,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -34199,6 +34352,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -34245,8 +34399,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:अल्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -34351,8 +34506,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -34383,8 +34539,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
-    - form-shape-condition:एकाच्
+    - derived_shape:एकाच
+    - derived_shape:एकाच्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -35057,8 +35213,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -35239,7 +35396,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -35544,6 +35701,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -35618,8 +35776,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36104,8 +36263,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36542,7 +36702,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36724,8 +36884,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36754,8 +36915,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36799,8 +36961,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36814,8 +36977,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -36829,8 +36993,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - derived_shape:अल्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -37164,7 +37329,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -37210,7 +37375,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
+    - derived_shape:एकाच
     - prior:high
     opaque_classes: []
     roles: {}
@@ -37302,6 +37467,7 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -37392,6 +37558,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -37681,6 +37848,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -37879,7 +38047,8 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:आत्
+    - derived_shape:आदे
+    - derived_shape:आत्
     - prior:high
     opaque_classes:
     - एच्
@@ -38095,7 +38264,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38142,6 +38311,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - अच्
@@ -38176,6 +38346,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38191,6 +38362,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38384,11 +38556,12 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
+    - अच्
     - यण्
     - इक्
-    - अच्
     roles:
       इक्: target/left_context
       यण्: replacement/target
@@ -38406,6 +38579,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - एच्
@@ -38513,7 +38687,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38545,7 +38719,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38705,7 +38879,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38721,7 +38895,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38737,7 +38911,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38771,7 +38945,7 @@
     - lexical:दीर्घ
     - lexical:सवर्ण
     - opaque_symbols_detected
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:high
     opaque_classes:
     - अक्
@@ -38790,7 +38964,7 @@
     status: 'yes'
     triggers:
     - lexical:सवर्ण
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38806,6 +38980,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38821,7 +38996,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38931,7 +39106,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38963,7 +39138,7 @@
     status: 'yes'
     triggers:
     - lexical:प्लुत
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38997,7 +39172,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39074,7 +39249,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39169,6 +39344,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39187,7 +39363,8 @@
     - lexical:ह्रस्व
     - lexical:सवर्ण
     - opaque_symbols_detected
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - इक्
@@ -39255,6 +39432,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39272,6 +39450,7 @@
     triggers:
     - lexical:लोप
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - हल्
@@ -39669,7 +39848,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39685,8 +39864,9 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
-    - form-shape-condition:उदात्त
+    - derived_shape:अन्त
+    - derived_shape:उदात्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39718,8 +39898,8 @@
     status: 'yes'
     triggers:
     - lexical:लोप
-    - form-shape-condition:अनुदात्त
-    - form-shape-condition:उदात्त
+    - derived_shape:अनुदात्त
+    - derived_shape:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39825,7 +40005,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
+    - derived_shape:एकाच
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39841,7 +40021,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -39918,7 +40098,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40043,7 +40223,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40110,7 +40290,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40126,7 +40306,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40160,7 +40340,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40176,7 +40357,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40237,7 +40418,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40272,7 +40453,7 @@
     status: 'yes'
     triggers:
     - lexical:इट्
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40288,7 +40469,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40335,7 +40516,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40621,7 +40802,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40637,7 +40818,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40728,7 +40909,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -41091,7 +41272,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     opaque_classes: []
     roles: {}
@@ -41227,7 +41408,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -41323,6 +41504,7 @@
     status: maybe
     triggers:
     - lexical:लुप्
+    - derived_shape:गुरु
     - prior:low
     - demoted_due_to_domain:prosody_accent
     opaque_classes: []
@@ -41460,7 +41642,7 @@
     status: maybe
     triggers:
     - lexical:लुप्
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     - demoted_due_to_domain:prosody_accent
     opaque_classes: []
@@ -41657,8 +41839,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
-    - form-shape-condition:उदात्त
+    - derived_shape:आदि
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -41950,7 +42132,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42056,9 +42238,9 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:द्व्यच
-    - form-shape-condition:द्व्यच्
-    - form-shape-condition:वर्ण
+    - derived_shape:द्व्यच
+    - derived_shape:द्व्यच्
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42089,7 +42271,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42392,7 +42574,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42498,8 +42680,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:द्व्यच
-    - form-shape-condition:द्व्यच्
+    - derived_shape:द्व्यच
+    - derived_shape:द्व्यच्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42590,7 +42772,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42848,7 +43030,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -42864,7 +43046,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -43165,8 +43347,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -43212,7 +43395,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -43334,7 +43517,7 @@
     status: maybe
     triggers:
     - lexical:ह्रस्व
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     - demoted_due_to_domain:prosody_accent
     opaque_classes: []
@@ -43413,7 +43596,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -43429,7 +43612,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -43806,7 +43989,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44062,7 +44245,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44093,7 +44276,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44152,8 +44335,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44369,7 +44553,8 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
-    - form-shape-condition:अनेकाच
+    - derived_shape:अनेकाच
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44415,7 +44600,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44444,8 +44629,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44474,8 +44660,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44580,8 +44767,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44644,6 +44832,7 @@
     triggers:
     - lexical:ह्रस्व
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes:
     - इक्
@@ -44735,8 +44924,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44752,7 +44942,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
+    - derived_shape:एकाच
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -44907,8 +45098,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45014,7 +45206,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45170,8 +45362,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45201,8 +45394,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45233,8 +45427,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45266,6 +45461,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes:
     - अच्
@@ -45403,8 +45599,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45423,6 +45620,7 @@
     - lexical:लोप
     - lexical:दीर्घ
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes:
     - अण्
@@ -45440,7 +45638,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45797,8 +45996,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
-    - form-shape-condition:द्व्यच
+    - derived_shape:द्व्यच
+    - derived_shape:अतः
     - prior:low
     opaque_classes: []
     roles: {}
@@ -45969,7 +46168,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46121,6 +46320,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46151,6 +46351,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46166,7 +46367,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46230,7 +46431,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:high
     opaque_classes:
     - हल्
@@ -46353,6 +46554,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46383,6 +46585,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46413,6 +46616,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46432,7 +46636,7 @@
     - lexical:लोप
     - lexical:लुप्
     - opaque_symbols_detected
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes:
     - झल्
@@ -46496,7 +46700,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46588,6 +46792,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46604,7 +46809,8 @@
     status: 'yes'
     triggers:
     - lexical:लोप
-    - form-shape-condition:अतः
+    - derived_shape:अतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46638,6 +46844,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46728,6 +46935,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - derived_shape:लघु
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46759,6 +46967,7 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46855,6 +47064,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46948,6 +47158,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -46963,7 +47174,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47056,6 +47267,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - अच्
@@ -47074,7 +47286,7 @@
     status: 'yes'
     triggers:
     - lexical:सवर्ण
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47121,6 +47333,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - यण्
@@ -47138,7 +47351,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनेकाच
+    - derived_shape:अनेकाच
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47229,6 +47442,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47244,7 +47458,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47291,6 +47505,7 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47384,6 +47599,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47432,6 +47648,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47493,7 +47710,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47509,7 +47726,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उतः
+    - derived_shape:उतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47571,7 +47788,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47588,6 +47806,8 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - derived_shape:अल्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47715,6 +47935,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47730,7 +47951,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47883,6 +48104,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47898,6 +48120,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47913,6 +48136,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -47944,6 +48168,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - derived_shape:अल्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48055,7 +48280,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आदे
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48133,6 +48359,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48179,7 +48406,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48244,6 +48471,7 @@
     status: 'yes'
     triggers:
     - lexical:लुक्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48292,6 +48520,7 @@
     triggers:
     - lexical:ह्रस्व
     - lexical:गुण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48310,6 +48539,8 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
+    - derived_shape:गुरु
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48342,6 +48573,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48357,7 +48589,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48373,7 +48605,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48404,8 +48636,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
-    - form-shape-condition:एकाच्
+    - derived_shape:एकाच
+    - derived_shape:एकाच्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48499,7 +48731,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48607,6 +48839,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48637,7 +48870,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48668,7 +48902,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48729,7 +48963,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48775,6 +49010,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48790,6 +49026,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48820,6 +49057,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48896,6 +49134,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48957,7 +49196,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49004,6 +49243,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - अश्
@@ -49053,6 +49293,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49068,6 +49309,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49098,6 +49340,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49129,6 +49372,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49144,6 +49388,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49159,6 +49404,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49192,7 +49438,8 @@
     triggers:
     - lexical:लुक्
     - lexical:सवर्ण
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49208,6 +49455,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49224,7 +49472,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49240,6 +49488,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49316,6 +49565,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49362,7 +49612,8 @@
     status: 'yes'
     triggers:
     - lexical:सुक्
-    - form-shape-condition:आत्
+    - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49378,7 +49629,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49409,6 +49660,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49486,6 +49738,7 @@
     status: 'yes'
     triggers:
     - lexical:नुम्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49720,8 +49973,8 @@
     - opaque_symbols_detected
     - prior:high
     opaque_classes:
-    - इक्
     - अच्
+    - इक्
     roles:
       इक्: target/left_context
       अच्: right_context
@@ -49752,7 +50005,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49830,7 +50084,7 @@
     status: 'yes'
     triggers:
     - lexical:नुम्
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49846,6 +50100,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49891,6 +50146,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49906,7 +50162,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49922,7 +50178,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:इतः
+    - derived_shape:इतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49938,6 +50195,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49954,6 +50212,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49969,6 +50228,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50108,7 +50368,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50139,6 +50400,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50154,7 +50416,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50217,8 +50479,8 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
-    - form-shape-condition:अन्त
-    - form-shape-condition:अतः
+    - derived_shape:अन्त
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50282,6 +50544,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50297,7 +50560,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50344,8 +50607,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
-    - form-shape-condition:अनुदात्त
+    - derived_shape:एकाच
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50421,6 +50684,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50436,7 +50700,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50732,6 +50996,7 @@
     status: 'yes'
     triggers:
     - lexical:इट्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50747,6 +51012,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50839,7 +51105,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50855,7 +51121,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50994,6 +51260,7 @@
     status: 'yes'
     triggers:
     - lexical:इट्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51164,7 +51431,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51319,6 +51586,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51412,6 +51680,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51428,7 +51697,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51489,6 +51758,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51738,7 +52008,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes:
     - अच्
@@ -51756,6 +52026,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51771,6 +52042,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51786,6 +52058,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51832,6 +52105,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51864,6 +52138,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51909,6 +52184,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51963,6 +52239,7 @@
     status: 'yes'
     triggers:
     - lexical:वृद्धि
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -51996,8 +52273,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
-    - form-shape-condition:अतः
+    - derived_shape:उपध
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52013,6 +52290,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - derived_shape:आदे
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52044,7 +52322,7 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52060,6 +52338,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52410,6 +52689,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52440,7 +52720,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52516,6 +52796,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52531,6 +52812,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52546,7 +52828,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52577,6 +52859,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52592,6 +52875,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52622,6 +52906,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52652,6 +52937,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52682,6 +52968,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52698,7 +52985,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52775,7 +53063,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -52792,6 +53080,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - इक्
@@ -52825,6 +53114,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53096,6 +53386,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53145,7 +53436,7 @@
     status: 'yes'
     triggers:
     - lexical:लुक्
-    - form-shape-condition:आत्
+    - derived_shape:आत्
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53162,6 +53453,7 @@
     status: 'yes'
     triggers:
     - lexical:दीर्घ
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53207,6 +53499,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53224,6 +53517,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53256,6 +53550,7 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53287,6 +53582,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53397,7 +53693,8 @@
     triggers:
     - lexical:वृद्धि
     - opaque_symbols_detected
-    - form-shape-condition:उतः
+    - derived_shape:उतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - हल्
@@ -53415,6 +53712,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53446,6 +53744,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53583,7 +53882,8 @@
     triggers:
     - lexical:दीर्घ
     - opaque_symbols_detected
-    - form-shape-condition:अतः
+    - derived_shape:अतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - यञ्
@@ -53680,6 +53980,7 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53697,6 +53998,7 @@
     triggers:
     - lexical:ह्रस्व
     - lexical:गुण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53727,7 +54029,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53819,6 +54121,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53879,6 +54182,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53895,7 +54199,8 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53943,6 +54248,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53958,6 +54264,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -53988,6 +54295,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54035,7 +54343,8 @@
     status: 'yes'
     triggers:
     - lexical:गुण
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54067,6 +54376,7 @@
     status: 'yes'
     triggers:
     - lexical:ह्रस्व
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54146,6 +54456,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54161,6 +54472,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54176,6 +54488,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54191,6 +54504,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54299,7 +54613,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54452,7 +54766,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:आत्
+    - derived_shape:आत्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54499,6 +54814,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54529,6 +54845,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54591,6 +54908,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54655,6 +54973,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54700,7 +55019,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54716,6 +55035,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54731,6 +55051,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54746,6 +55067,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54762,6 +55084,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54839,6 +55162,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54903,6 +55227,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54918,6 +55243,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -54964,7 +55290,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:आदे
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55010,6 +55337,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55041,6 +55369,7 @@
     status: 'yes'
     triggers:
     - lexical:गुण
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55056,6 +55385,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55101,7 +55431,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55194,7 +55524,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55240,7 +55570,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55301,7 +55631,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:ऋतः
+    - derived_shape:ऋतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55318,6 +55648,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - derived_shape:लघु
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55393,8 +55724,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -55408,8 +55740,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -55425,7 +55758,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -55654,7 +55987,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -55683,8 +56016,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -55698,8 +56032,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56400,7 +56735,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56461,7 +56796,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -56572,8 +56907,8 @@
     triggers:
     - lexical:स्वर
     - opaque_symbols_detected
-    - form-shape-condition:अनुदात्त
-    - form-shape-condition:उदात्त
+    - derived_shape:अनुदात्त
+    - derived_shape:उदात्त
     - prior:high
     opaque_classes:
     - यण्
@@ -56591,7 +56926,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56608,7 +56943,7 @@
     status: 'yes'
     triggers:
     - lexical:स्वर
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56626,7 +56961,7 @@
     triggers:
     - lexical:लोप
     - lexical:लुप्
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56657,7 +56992,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56795,6 +57131,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56874,6 +57211,7 @@
     status: 'yes'
     triggers:
     - lexical:लोप
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56968,7 +57306,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56984,6 +57322,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -56999,6 +57338,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57014,6 +57354,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57044,6 +57385,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57059,6 +57401,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57074,6 +57417,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57089,7 +57433,8 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:एकाच
+    - derived_shape:एकाच
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57121,7 +57466,8 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - जश्
@@ -57139,6 +57485,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57154,6 +57501,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57169,6 +57517,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57470,6 +57819,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57500,6 +57850,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57530,6 +57881,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57622,6 +57974,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57652,6 +58005,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57684,7 +58038,8 @@
     triggers:
     - lexical:दीर्घ
     - opaque_symbols_detected
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - इक्
@@ -57720,7 +58075,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:उपधा
+    - derived_shape:उपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57752,6 +58107,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57767,6 +58123,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57783,7 +58140,8 @@
     status: 'yes'
     triggers:
     - lexical:प्लुत
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -57920,6 +58278,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - derived_shape:आदे
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58055,7 +58414,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अनुदात्त
+    - derived_shape:अनुदात्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58149,6 +58508,7 @@
     triggers:
     - lexical:प्लुत
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - ऐच्
@@ -58168,6 +58528,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - एच्
@@ -58187,6 +58548,7 @@
     triggers:
     - lexical:संहिता
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - अच्
@@ -58451,6 +58813,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - अश्
@@ -58468,6 +58831,8 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - derived_shape:लघु
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58547,6 +58912,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58627,6 +58993,7 @@
     triggers:
     - lexical:टु
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - शर्
@@ -58710,6 +59077,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - मय्
@@ -58727,6 +59095,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -58910,7 +59279,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अतः
+    - derived_shape:अतः
     - prior:high
     opaque_classes: []
     roles: {}
@@ -59046,6 +59415,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -59108,6 +59478,7 @@
     status: 'yes'
     triggers:
     - lexical:आदेश
+    - derived_shape:आदे
     - prior:high
     opaque_classes: []
     roles: {}
@@ -59773,7 +60144,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -60029,6 +60400,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -60321,7 +60693,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -60382,7 +60754,7 @@
   phonology_candidate:
     status: maybe
     triggers:
-    - form-shape-condition:अन्त
+    - derived_shape:अन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -60758,7 +61130,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
-    - form-shape-condition:आदि
+    - derived_shape:आदि
     - prior:high
     opaque_classes: []
     roles: {}
@@ -60777,8 +61149,8 @@
     - opaque_symbols_detected
     - prior:high
     opaque_classes:
-    - शर्
     - अच्
+    - शर्
     roles:
       शर्: target/left_context
       अच्: right_context
@@ -60841,6 +61213,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - जश्
@@ -60907,6 +61280,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes:
     - अण्
@@ -60925,7 +61299,7 @@
     status: 'yes'
     triggers:
     - lexical:सवर्ण
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:high
     opaque_classes: []
     roles: {}
@@ -61001,6 +61375,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -61037,7 +61412,7 @@
     triggers:
     - lexical:सवर्ण
     - opaque_symbols_detected
-    - form-shape-condition:वर्ण
+    - derived_shape:वर्ण
     - prior:high
     opaque_classes:
     - झर्
@@ -61056,8 +61431,9 @@
     status: 'yes'
     triggers:
     - lexical:स्वर
-    - form-shape-condition:अनुदात्त
-    - form-shape-condition:उदात्त
+    - derived_shape:अनुदात्त
+    - derived_shape:उदात्त
+    - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
     roles: {}
@@ -61074,7 +61450,7 @@
     status: 'yes'
     triggers:
     - lexical:स्वर
-    - form-shape-condition:उदात्त
+    - derived_shape:उदात्त
     - prior:high
     opaque_classes: []
     roles: {}
