@@ -1,0 +1,9 @@
+sources:
+  - id: "sanskritdocuments-sutrapāṭha"
+    url: "https://sanskritdocuments.org/doc_z_misc_panini/panini_sutra.html" # Needs verification
+    description: "Raw sūtrapāṭha from Sanskrit Documents"
+    format: "html/text"
+  - id: "sanskritdocuments-index"
+    url: "https://sanskritdocuments.org/learning_tools/ashtadhyayi/" # Needs verification
+    description: "Sortable index of Astadhyayi with padaccheda and tags"
+    format: "html/json"
