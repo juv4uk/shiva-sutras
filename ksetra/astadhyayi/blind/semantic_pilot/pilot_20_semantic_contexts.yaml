@@ -34,19 +34,40 @@
       unresolved:
       - membership_of_aṇ
       - meaning_of_udit
+    evidence_map:
+      operation_type:
+        source: UNRESOLVED
+        evidence: ''
+      inherited_context:
+        source: UNRESOLVED
+        evidence: ''
+      target_role:
+        source: UNRESOLVED
+        evidence: ''
+      replacement_role:
+        source: UNRESOLVED
+        evidence: ''
 - rule_context:
     sutra_id: 1.3.12
     pilot_selection_reason: shape_conditioned_morphology
     local_text:
       source: अनुदात्तङित आत्मनेपदम् ।
       padaccheda: अनुदात्तङितः ५/१ आत्मनेपदम् १/१
+      neighbors:
+      - '1.3.9: तस्य लोपः ।'
+      - '1.3.10: यथासंख्यमनुदेशः समानाम् ।'
+      - '1.3.11: स्वरितेनाधिकारः ।'
+      - '1.3.13: भावकर्म्मणोः ।'
+      - '1.3.14: कर्त्तरि कर्म्मव्यतिहारे ।'
+      - '1.3.15: न गतिहिंसार्थेभ्यः ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -61,19 +82,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 4.4.18
     pilot_selection_reason: random_filler
     local_text:
       source: अण् कुटिलिकायाः ।
       padaccheda: अण् १/१ कुटिलिकायाः  ५/१
+      neighbors:
+      - '4.4.15: हरत्युत्सङ्गादिभ्यः ।'
+      - '4.4.16: भस्त्राऽऽदिभ्यः ष्ठन् ।'
+      - '4.4.17: विभाषा विवधवीवधात्‌ ।'
+      - '4.4.19: निर्वृत्तेऽक्षद्यूतादिभ्यः ।'
+      - '4.4.20: क्त्रेर्मम् नित्यं ।'
+      - '4.4.21: अपमित्ययाचिताभ्यां कक्कनौ ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -88,6 +135,24 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 4.4.57
     pilot_selection_reason: anuvrtti_heavy_rule
@@ -122,19 +187,40 @@
       confidence: SUPPORTED
       unresolved:
       - phonological_impact_of_ṭhak
+    evidence_map:
+      operation_type:
+        source: UNRESOLVED
+        evidence: ''
+      inherited_context:
+        source: UNRESOLVED
+        evidence: ''
+      target_role:
+        source: UNRESOLVED
+        evidence: ''
+      replacement_role:
+        source: UNRESOLVED
+        evidence: ''
 - rule_context:
     sutra_id: 5.3.31
     pilot_selection_reason: anuvrtti_heavy_rule
     local_text:
       source: उपर्युपरिष्टात्‌ ।
       padaccheda: उपर्युपरिष्टात् ५/१
+      neighbors:
+      - '5.3.28: दक्षिणोत्तराभ्यामतसुच् ।'
+      - '5.3.29: विभाषा परावराभ्याम् ।'
+      - '5.3.30: अञ्चेर्लुक् ।'
+      - '5.3.32: पश्चात्‌ ।'
+      - '5.3.33: पश्च पश्चा च च्छन्दसि ।'
+      - '5.3.34: उत्तराधरदक्षिणादातिः ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -149,19 +235,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 5.3.92
     pilot_selection_reason: explicit_substitution
     local_text:
       source: किंयत्तदो निर्द्धारणे द्वयोरेकस्य डतरच् ।
       padaccheda: किंयत्तदः ५/१ निर्द्धारणे ७/१  द्वयोः ७/२ एकस्य  ६/१  डतरच्  १/१
+      neighbors:
+      - '5.3.89: कुत्वा डुपच् ।'
+      - '5.3.90: कासूगोणीभ्यां ष्टरच् ।'
+      - '5.3.91: वत्सोक्षाश्वर्षभेभ्यश्च तनुत्वे ।'
+      - '5.3.93: वा बहूनां जातिपरिप्रश्ने डतमच् ।'
+      - '5.3.94: एकाच्च प्राचाम् ।'
+      - '5.3.95: अवक्षेपणे कन् ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: substitution
       arguments:
         target_class:
@@ -176,19 +288,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 6.3.68
     pilot_selection_reason: explicit_substitution
     local_text:
       source: इच एकाचोऽम्प्रत्ययवच्च ।
       padaccheda: इचः ६/१ एकाचः ६/१ अम् १/१ प्रत्ययवत् ०/० च ०/०
+      neighbors:
+      - '6.3.65: इष्टकेषीकामालानां चिततूलभारिषु ।'
+      - '6.3.66: खित्यनव्ययस्य ।'
+      - '6.3.67: अरुर्द्विषदजन्तस्य मुम् ।'
+      - '6.3.69: वाचंयमपुरंदरौ च ।'
+      - '6.3.70: कारे सत्यागदस्य ।'
+      - '6.3.71: श्येनतिलस्य पाते ञे ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: substitution
       arguments:
         target_class:
@@ -203,19 +341,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 6.3.105
     pilot_selection_reason: anuvrtti_heavy_rule
     local_text:
       source: ईषदर्थे ।
       padaccheda: ईषदर्थे ७/१
+      neighbors:
+      - '6.3.102: रथवदयोश्च ।'
+      - '6.3.103: तृणे च जातौ ।'
+      - '6.3.104: का पथ्यक्षयोः ।'
+      - '6.3.106: विभाषा पुरुषे ।'
+      - '6.3.107: कवं चोष्णे ।'
+      - '6.3.108: पथि च च्छन्दसि ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -230,6 +394,24 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 6.4.21
     pilot_selection_reason: lopa_operation
@@ -265,6 +447,19 @@
       unresolved:
       - exact_meaning_of_rāt
       - exact_inherited_conditions
+    evidence_map:
+      operation_type:
+        source: UNRESOLVED
+        evidence: ''
+      inherited_context:
+        source: UNRESOLVED
+        evidence: ''
+      target_role:
+        source: UNRESOLVED
+        evidence: ''
+      replacement_role:
+        source: UNRESOLVED
+        evidence: ''
 - rule_context:
     sutra_id: 6.4.77
     pilot_selection_reason: opaque_context_class
@@ -301,19 +496,40 @@
       confidence: SUPPORTED
       unresolved:
       - membership_of_ac
+    evidence_map:
+      operation_type:
+        source: UNRESOLVED
+        evidence: ''
+      inherited_context:
+        source: UNRESOLVED
+        evidence: ''
+      target_role:
+        source: UNRESOLVED
+        evidence: ''
+      replacement_role:
+        source: UNRESOLVED
+        evidence: ''
 - rule_context:
     sutra_id: 6.4.111
     pilot_selection_reason: lopa_operation
     local_text:
       source: श्नसोरल्लोपः ।
       padaccheda: श्नसोः ६/२ अल्लोपः १/१
+      neighbors:
+      - '6.4.108: नित्यं करोतेः ।'
+      - '6.4.109: ये च ।'
+      - '6.4.110: अत उत्‌ सार्वधातुके ।'
+      - '6.4.112: श्नाऽभ्यस्तयोरातः ।'
+      - '6.4.113: ई हल्यघोः ।'
+      - '6.4.114: इद्दरिद्रस्य ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: substitution
       arguments:
         target_class:
@@ -328,19 +544,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 7.1.39
     pilot_selection_reason: savarna_operation
     local_text:
       source: सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः ।
       padaccheda: सुपाम् ६/३ सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः १/३
+      neighbors:
+      - '7.1.36: विदेः शतुर्वसुः ।'
+      - '7.1.37: समासेऽनञ्पूर्वे क्त्वो ल्यप्‌ ।'
+      - '7.1.38: क्त्वाऽपि छन्दसि ।'
+      - '7.1.40: अमो मश् ।'
+      - '7.1.41: लोपस्त आत्मनेपदेषु ।'
+      - '7.1.42: ध्वमो ध्वात्‌ ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: substitution
       arguments:
         target_class:
@@ -355,19 +597,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 7.1.41
     pilot_selection_reason: shape_conditioned_morphology
     local_text:
       source: लोपस्त आत्मनेपदेषु ।
       padaccheda: लोपः १/१ तः ६/१ आत्मनेपदेषु ७/३
+      neighbors:
+      - '7.1.38: क्त्वाऽपि छन्दसि ।'
+      - '7.1.39: सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः ।'
+      - '7.1.40: अमो मश् ।'
+      - '7.1.42: ध्वमो ध्वात्‌ ।'
+      - '7.1.43: यजध्वैनमिति च ।'
+      - '7.1.44: तस्य तात्‌ ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: substitution
       arguments:
         target_class:
@@ -382,19 +650,46 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 7.2.37
     pilot_selection_reason: random_filler
     local_text:
       source: ग्रहोऽलिटि दीर्घः ।
       padaccheda: ग्रहः ५/१ अलिटि ७/१ दीर्घः १/१
+      neighbors:
+      - '7.2.34: ग्रसितस्कभितस्तभितोत्तभितचत्तविकस्तविशस्तॄशंस्तृशास्तृतरुतृतरूतृवरुतृवरूतृवरुत्रीरुज्ज्वलितिक्षरितिक्षमितिवमित्यमितीति
+        च ।'
+      - '7.2.35: आर्धधातुकस्येड् वलादेः ।'
+      - '7.2.36: स्नुक्रमोरनात्मनेपदनिमित्ते ।'
+      - '7.2.38: वॄतो वा ।'
+      - '7.2.39: न लिङि ।'
+      - '7.2.40: सिचि च परस्मैपदेषु ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -409,19 +704,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 7.2.91
     pilot_selection_reason: random_filler
     local_text:
       source: मपर्यन्तस्य ।
       padaccheda: मपर्यन्तस्य ६/१
+      neighbors:
+      - '7.2.88: प्रथमायाश्च द्विवचने भाषायाम् ।'
+      - '7.2.89: योऽचि ।'
+      - '7.2.90: शेषे लोपः ।'
+      - '7.2.92: युवावौ द्विवचने ।'
+      - '7.2.93: यूयवयौ जसि ।'
+      - '7.2.94: त्वाहौ सौ ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -436,19 +757,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 7.3.89
     pilot_selection_reason: opaque_context_class
     local_text:
       source: उतो वृद्धिर्लुकि हलि ।
       padaccheda: उतः ६/१ वृद्धिः १/१ लुकि ७/१ हलि ७/१
+      neighbors:
+      - '7.3.86: पुगन्तलघूपधस्य च ।'
+      - '7.3.87: नाभ्यस्तस्याचि पिति सार्वधातुके ।'
+      - '7.3.88: भूसुवोस्तिङि ।'
+      - '7.3.90: ऊर्णोतेर्विभाषा ।'
+      - '7.3.91: गुणोऽपृक्ते ।'
+      - '7.3.92: तृणह इम् ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: substitution
       arguments:
         target_class:
@@ -463,6 +810,24 @@
         right_context:
           symbol: हल्
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 8.3.33
     pilot_selection_reason: opaque_target_class
@@ -503,19 +868,40 @@
       unresolved:
       - membership_of_may
       - membership_of_ac
+    evidence_map:
+      operation_type:
+        source: UNRESOLVED
+        evidence: ''
+      inherited_context:
+        source: UNRESOLVED
+        evidence: ''
+      target_role:
+        source: UNRESOLVED
+        evidence: ''
+      replacement_role:
+        source: UNRESOLVED
+        evidence: ''
 - rule_context:
     sutra_id: 8.3.59
     pilot_selection_reason: explicit_substitution
     local_text:
       source: आदेशप्रत्यययोः ।
       padaccheda: आदेशप्रत्यययोः  ६/२
+      neighbors:
+      - '8.3.56: सहेः साडः सः ।'
+      - '8.3.57: इण्कोः ।'
+      - '8.3.58: नुम्विसर्जनीयशर्व्यवायेऽपि ।'
+      - '8.3.60: शासिवसिघसीनां च ।'
+      - '8.3.61: स्तौतिण्योरेव षण्यभ्यासात्‌ ।'
+      - '8.3.62: सः स्विदिस्वदिसहीनां च ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: substitution
       arguments:
         target_class:
@@ -530,19 +916,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 8.4.45
     pilot_selection_reason: opaque_target_class
     local_text:
       source: यरोऽनुनासिकेऽनुनासिको वा ।
       padaccheda: यरः ६/१ अनुनासिके ७/१ अनुनासिकः १/१  वा ०/०
+      neighbors:
+      - '8.4.42: न पदान्ताट्टोरनाम् ।'
+      - '8.4.43: तोः षि ।'
+      - '8.4.44: शात्‌ ।'
+      - '8.4.46: अचो रहाभ्यां द्वे ।'
+      - '8.4.47: अनचि च ।'
+      - '8.4.48: नादिन्याक्रोशे पुत्रस्य ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -557,19 +969,45 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
 - rule_context:
     sutra_id: 8.4.46
     pilot_selection_reason: random_filler
     local_text:
       source: अचो रहाभ्यां द्वे ।
       padaccheda: अचः ५/१  रहाभ्याम् ५/२ द्वे १/२
+      neighbors:
+      - '8.4.43: तोः षि ।'
+      - '8.4.44: शात्‌ ।'
+      - '8.4.45: यरोऽनुनासिकेऽनुनासिको वा ।'
+      - '8.4.47: अनचि च ।'
+      - '8.4.48: नादिन्याक्रोशे पुत्रस्य ।'
+      - '8.4.49: शरोऽचि ।'
     inherited_context:
-      from: []
+      from:
+      - 'PROPOSED: previous rule'
       confidence: UNRESOLVED
     adhikara:
       inherited_from: []
     semantic_operation:
-      status: unresolved
+      status: PROPOSED
       type: UNKNOWN
       arguments:
         target_class:
@@ -584,3 +1022,21 @@
         right_context:
           symbol: UNKNOWN
           content: UNKNOWN
+    evidence_map:
+      operation_type:
+        source: heuristic_parser
+        evidence: Derived from lexical triggers
+      inherited_context:
+        source: auto_context_gatherer
+        evidence: Pending validation against Kasika
+      target_role:
+        source: heuristic_parser
+        evidence: Derived from opaque symbols or 6/1 case
+      replacement_role:
+        source: heuristic_parser
+        evidence: Derived from 1/1 case
+    functional_reading:
+      summary: PROPOSED SUMMARY
+      confidence: UNRESOLVED
+      unresolved:
+      - pending_manual_validation
