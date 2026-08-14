@@ -1,0 +1,32 @@
+# Епістемічний ланцюг передачі Śiva-sūtras
+
+timeline:
+  - period: "~500 BCE (або раніше)"
+    source: "Паніні (усне передання)"
+    description: "Першоджерело. Фізичних записів не існує. Система використовувалася в усній традиції (vyākaraṇa)."
+    confidence: "High (як абстрактне джерело), None (як фізичний доказ)"
+
+  - period: "~300 BCE"
+    source: "Kātyāyana (Vārttikas)"
+    description: "Коментарі (vārttika) до сутр Паніні. Неявно підтверджують систему pratyāhāra, але не є самостійним списком сутр."
+    confidence: "High (непряме свідчення)"
+
+  - period: "~150 BCE"
+    source: "Patañjali (Mahābhāṣya)"
+    description: "Найраніший ЗБЕРЕЖЕНИЙ текст, який ДЕТАЛЬНО і ПРЯМО обговорює Śiva-sūtras (Āhnika 1-2). Патанджалі аналізує порядок, необхідність кожного звуку та маркеру."
+    confidence: "Very High (перше пряме свідчення структури)"
+
+  - period: "7th century CE"
+    source: "Kāśikāvṛtti (Jayāditya & Vāmana)"
+    description: "Найдавніший повний коментар до всієї Aṣṭādhyāyī, що зберігся. Явно подає весь список сутр."
+    confidence: "Very High"
+
+  - period: "11th - 18th century CE"
+    source: "Manuscript Tradition"
+    description: "Фізичні манускрипти Aṣṭādhyāyī та коментарів на різних носіях (береста, пальмове листя) та у різних скриптах (Śāradā, Grantha, Devanāgarī). Найстаріші збережені фізичні копії."
+    confidence: "High (як підтвердження стабільності тексту)"
+
+  - period: "19th - 20th century CE"
+    source: "Critical Editions"
+    description: "Академічні видання (Böhtlingk, Katre, Sharma), що зводять до єдиного стандарту різночитання манускриптів."
+    confidence: "Very High (як сучасний консенсус)"

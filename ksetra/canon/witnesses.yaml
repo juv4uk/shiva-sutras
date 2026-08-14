@@ -1,0 +1,30 @@
+# Детальне джерелознавче досьє на ключових свідків канону
+
+witnesses:
+  - id: "W1"
+    claim: "Повний перелік і порядок 14 сутр є стабільним і саме таким, як ми його знаємо."
+    source: "Patañjali's Mahābhāṣya (Paspśāhnika & Āhnika 2)"
+    date: "~150 BCE"
+    source_type: "commentary"
+    direct_or_secondary: "secondary (commentary on grammar)"
+    manuscript_tradition: "Various"
+    confidence: "high"
+    disputes: "Патанджалі сам порушує питання (Pūrvapakṣa), чи можна змінити порядок (наприклад, об'єднати сутри). Але його висновки (Siddhānta) щоразу захищають існуючий порядок як оптимальний."
+    notes: "Це найважливіший свідок. Те, що Патанджалі доводив оптимальність існуючого порядку, доводить, що цей порядок вже був жорстко зафіксований і вважався канонічним у 2 ст. до н.е."
+
+  - id: "W2"
+    claim: "Офіційний текст Śiva-sūtras як вступ до Aṣṭādhyāyī."
+    source: "Kāśikāvṛtti"
+    date: "7th c. CE"
+    source_type: "commentary"
+    direct_or_secondary: "direct_transmission_record"
+    confidence: "high"
+    disputes: "Немає фундаментальних суперечок щодо самих 14 сутр, проте є локальні дискусії щодо фонетичних нюансів (напр., вимова a)."
+
+  - id: "W3"
+    claim: "Запис тексту Śiva-sūtras."
+    source: "Earliest surviving physical manuscripts"
+    date: "Varies (mostly 16th-18th c. CE, some Nepali MS might be older)"
+    source_type: "manuscript"
+    confidence: "high"
+    notes: "Індійська традиція трималася на усному переданні; манускрипти є пізніми знімками стабільної усної традиції."

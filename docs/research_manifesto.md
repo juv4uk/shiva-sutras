@@ -21,8 +21,8 @@
 
 # I. Зафіксувати Kṣetra
 Перший етап взагалі не повинен нічого «винаходити». Агент створює карту того, що ми досліджуємо. Ці шари ніколи не змішуються:
-- CANON: 14 sūtras, sound sequence, it markers, pratyāhāra mechanism
-- PĀṆINIAN USAGE
+- CANON: 14 sūtras, sequence, markers
+- PĀṆINIAN FORMAL USE: pratyāhāra construction, occurrence resolution, actual use in Aṣṭādhyāyī
 - TRADITIONAL INTERPRETATION
 - MODERN SCHOLARSHIP
 - OUR HYPOTHESES

@@ -1,0 +1,23 @@
+# Відомі варіанти та альтернативні гіпотези з історії традиції
+
+variants:
+  - id: "V1"
+    name: "Об'єднання голосних (a i u ṇ + ṛ ḷ k)"
+    source: "Mahābhāṣya (Āhnika 2)"
+    nature: "Theoretical discussion (Pūrvapakṣa)"
+    description: "Патанджалі обговорює пропозицію опонента: чому б не об'єднати перші дві сутри в `a i u ṛ ḷ k` (один it-marker замість двох). Патанджалі доводить, що `ṇ` потрібен для певних специфічних pratyāhāra."
+    status: "rejected_by_tradition"
+
+  - id: "V2"
+    name: "Повторення 'h'"
+    source: "Internal anomaly"
+    nature: "Structural anomaly"
+    description: "Звук 'h' з'являється двічі: у сутрі 5 (h y v r ṭ) і сутрі 14 (h l). Це порушує принцип унікальності. Традиція пояснює це необхідністю включати 'h' у дві різні групи pratyāhāra (напр., aś і śal)."
+    status: "accepted_anomaly"
+
+  - id: "V3"
+    name: "Śiva Sūtras of Vasugupta"
+    source: "Kashmir Shaivism"
+    nature: "Completely different text"
+    description: "Містичний текст із 77 афоризмів, датований ~9 ст. н.е. (автор Vasugupta). НЕ плутати з нашими фонетичними сутрами. У них спільна лише назва (від легенди про отримання знання від Шиви)."
+    status: "unrelated"
