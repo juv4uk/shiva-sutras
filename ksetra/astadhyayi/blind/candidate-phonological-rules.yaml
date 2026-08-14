@@ -1358,8 +1358,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - latent_technical_compound:हलन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1526,8 +1527,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - latent_technical_compound:उदुपध
     - prior:low
     opaque_classes: []
     roles: {}
@@ -1605,6 +1607,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - latent_technical_compound:हलादे
     - prior:low
     opaque_classes:
     - रल्
@@ -2399,6 +2402,7 @@
     triggers:
     - opaque_symbols_detected
     - derived_shape:अन्त
+    - latent_technical_compound:हलन्त
     - prior:low
     - demoted_due_to_domain:grammatical_notation
     opaque_classes:
@@ -9856,6 +9860,7 @@
     status: maybe
     triggers:
     - derived_shape:एकाच
+    - latent_technical_compound:हलादे
     - prior:low
     opaque_classes: []
     roles: {}
@@ -10211,6 +10216,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - latent_technical_compound:इगुपध
     - syntactic_replacement_pattern
     - prior:low
     opaque_classes: []
@@ -11021,8 +11027,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - latent_technical_compound:अदुपध
     - prior:low
     opaque_classes: []
     roles: {}
@@ -11202,8 +11209,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - latent_technical_compound:ऋदुपध
     - prior:low
     opaque_classes: []
     roles: {}
@@ -11580,8 +11588,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - latent_technical_compound:इगुपध
     - prior:low
     opaque_classes: []
     roles: {}
@@ -14074,6 +14083,7 @@
     status: maybe
     triggers:
     - derived_shape:अनुदात्त
+    - latent_technical_compound:हलादे
     - prior:low
     opaque_classes: []
     roles: {}
@@ -30882,6 +30892,7 @@
     status: maybe
     triggers:
     - derived_shape:लघु
+    - latent_technical_compound:इगन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -37391,6 +37402,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - latent_technical_compound:अजादे
     - prior:high
     opaque_classes: []
     roles: {}
@@ -38265,6 +38277,7 @@
     status: maybe
     triggers:
     - derived_shape:अनुदात्त
+    - latent_technical_compound:ऋदुपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -40175,6 +40188,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - latent_technical_compound:हलादि
     - prior:high
     opaque_classes: []
     roles: {}
@@ -41301,8 +41315,9 @@
   reason: ''
   status: RAW
   phonology_candidate:
-    status: 'no'
+    status: maybe
     triggers:
+    - latent_technical_compound:इगन्त
     - prior:low
     opaque_classes: []
     roles: {}
@@ -47459,6 +47474,7 @@
     status: maybe
     triggers:
     - derived_shape:उपध
+    - latent_technical_compound:ऊदुपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -48520,6 +48536,7 @@
     triggers:
     - lexical:ह्रस्व
     - lexical:गुण
+    - latent_technical_compound:यणादि
     - syntactic_replacement_pattern
     - prior:high
     opaque_classes: []
@@ -48606,6 +48623,7 @@
     status: maybe
     triggers:
     - derived_shape:ऋतः
+    - latent_technical_compound:हलादे
     - prior:high
     opaque_classes: []
     roles: {}
@@ -49550,6 +49568,7 @@
     status: 'yes'
     triggers:
     - lexical:लुप्
+    - latent_technical_compound:इदन्त
     - prior:high
     opaque_classes: []
     roles: {}
@@ -50497,6 +50516,7 @@
     status: 'yes'
     triggers:
     - opaque_symbols_detected
+    - latent_technical_compound:हलन्त
     - prior:high
     opaque_classes:
     - अच्
@@ -50561,6 +50581,7 @@
     status: maybe
     triggers:
     - derived_shape:अतः
+    - latent_technical_compound:हलादे
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55132,6 +55153,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - latent_technical_compound:हलादि
     - prior:high
     opaque_classes: []
     roles: {}
@@ -55601,6 +55623,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - latent_technical_compound:ऋदुपध
     - prior:high
     opaque_classes: []
     roles: {}
@@ -60493,6 +60516,7 @@
   phonology_candidate:
     status: maybe
     triggers:
+    - latent_technical_compound:अदन्त
     - prior:high
     opaque_classes: []
     roles: {}
