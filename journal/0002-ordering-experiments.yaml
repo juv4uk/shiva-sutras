@@ -1,0 +1,16 @@
+hypothesis: SYSTEM-SHIFT-002
+question: "ЧОМУ порядок Śiva-sūtras саме такий, і що буде, якщо його змінити?"
+method: "Алгоритмічне тестування. Взято 42 цільові множини (pratyāhāra), які використовуються в Aṣṭādhyāyī. Перевірено, чи можуть ці множини утворити безперервний ланцюг звуків (contiguous slice) у трьох типах послідовностей: оригінальна, алфавітна, 10000 випадкових."
+searched_object: ordering_efficiency
+conditions:
+  corpus: astadhyayi (42 pratyaharas)
+  metric: number of expressible target sets as contiguous slices (max 42)
+observation: "Оригінальний канон ідеально вміщує всі 42 множини. Строгий алфавітний (індійський) порядок дозволяє сформувати лише 15/42. Випадкові перестановки в середньому дають 1.11/42 (максимум знайдено 4/42 за 10,000 спроб)."
+result:
+  status: supported # The hypothesis that the ordering is functionally exceptional is supported.
+evidence: "experiments/ordering/results_001.md"
+timestamp: "2026-08-15T01:30:00Z"
+agent: antigravity
+new_questions:
+  - "Чому саме ці 42 множини? Що робить їх настільки важливими для граматики, що Паніні оптимізував весь алфавіт під них?"
+  - "Чи існує інший порядок, який також дає 42/42? Якщо так, чим він відрізняється від канонічного?"
