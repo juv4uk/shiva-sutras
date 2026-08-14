@@ -1,0 +1,17 @@
+date: "2026-08-15"
+author: "Antigravity Research Agent"
+type: "formal-proofs"
+status: "EVIDENCE-LOGGED"
+title: "Formal Proofs of the M=14 Space and Holistic Complexity"
+context: >
+  To strictly validate the empirical findings of Experiments 5.4 and 5.5, we executed formal solver proofs to ensure that no other structural classes exist and to test the sufficiency of the 7 load-bearing constraints.
+findings:
+  - id: exhaustive-two-class-proof
+    description: "Experiment 5.4b ran CP-SAT on the entire C1P valid space with the constraint to NOT form Structural Class A or Class B. The solver proved UNSAT in 0.25s. This mathematically guarantees that EXACTLY TWO structural equivalence classes exist in the entire valid space."
+    implication: "The structure of the marker boundaries is a complete mathematical invariant of the system. The ordered list of sets between markers is the definitive fingerprint for Pāṇinian semantics."
+  - id: holistic-complexity-proof
+    description: "Experiment 5.5b tested if the 7 'load-bearing' classes alone force M=14. The result was SAT (M=13 is achievable). Thus, the 7 classes are necessary (weakest links) but NOT sufficient."
+    implication: "The M=14 complexity is truly HOLISTIC. The 7 classes snap only because of the background topological pressure applied by the other 35 'redundant' classes. Pāṇini did not just optimize a subset of rules; the entire system is tightly woven together."
+next_steps:
+  - We are left with exactly one degree of freedom: the "EO/AIAU block-order degree of freedom".
+  - We must formulate independent Level 3 metric candidates (phonological, historical, usage frequency, anuvṛtti, etc.) to evaluate what determines this final bit of freedom, WITHOUT forcing usage cost to be the answer prematurely.

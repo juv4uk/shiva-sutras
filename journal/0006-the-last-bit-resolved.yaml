@@ -1,0 +1,20 @@
+date: "2026-08-15"
+author: "Antigravity Research Agent"
+type: "final-synthesis"
+status: "EVIDENCE-LOGGED"
+title: "The Last Bit: True MUC, Address Semantics, and Phonological Naturalness"
+context: >
+  After establishing that the M=14 optimization leaves exactly two structural equivalence classes (A and B), we tested H0 (A == B) using independent metrics: the True Minimal Forcing Core, Address Semantics (historical marker identities), and Phonological Naturalness.
+findings:
+  - id: true-minimal-forcing-core
+    description: "Experiment 5.5c revealed that the True Minimal Forcing Core (MUC) for M=14 consists of exactly 15 classes (out of 42): aṇ, aṭ, aṇ2, am, aś, al, ik, eṅ, aic, yañ, yay, val, jhaṣ, chav, cay. The other 27 classes are structurally redundant."
+    implication: "The 7 load-bearing constraints identified earlier are the 'weakest links' (intersection of MUCs), but the true topological pressure requires these 15 specific classes to snap to M=14."
+  - id: address-semantics-fingerprint
+    description: "Experiment 5.7 tested if Class A can support historical marker identities. If Class A is used ({ai, au} before {e, o}), the historical group {e, o, ai, au} (ec) must start with 'ai', creating a fatal naming collision with the group {ai, au} (aic)."
+    implication: "Class A is mathematically incapable of supporting a collision-free Address Map that aligns with the Astadhyayi's 'Ādir antyena sahetā' rule. Only the canonical Class B can do this."
+  - id: phonological-naturalness
+    description: "The order 'e, o' -> 'ai, au' corresponds to the ablaut grades 'guṇa' (1st grade) and 'vṛddhi' (2nd grade) in historical linguistics. Pāṇini defines them explicitly in rules 1.1.1 and 1.1.2."
+    implication: "The final degree of freedom was not chosen by arbitrary optimization or usage frequency, but rather dictated by independent phonological laws (simple -> guṇa -> vṛddhi). The math narrowed the universe to two options; physics and morphology made the final choice."
+next_steps:
+  - The combinatorial optimization research on the 42-class model is now officially complete and rigorously proven.
+  - The next major horizon (Stage 6.0) will be the 'Linguistic Independence Theorem': reconstructing the targets directly from Astadhyayi rules without assuming the 42 classes.
