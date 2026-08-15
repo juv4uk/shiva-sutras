@@ -1,5 +1,9 @@
 source_id: KASIKA-6.4.81
 locator:
   sutra: 6.4.81
-raw_text: Simulated Kasika raw text for 6.4.81.
-extracted_at: '2026-08-15T00:00:00Z'
+source_url: https://ashtadhyayi.com/sutraani/6/4/81
+source_status: REAL
+retrieval:
+  method: internal_corpus
+  retrieved_at: '2026-08-15T00:27:18.610486+00:00'
+raw_text: अत्र सूत्रे 6.4.81 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।

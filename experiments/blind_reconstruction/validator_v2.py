@@ -10,7 +10,7 @@ def validator_v2():
         
     for c in sutras:
         rc = c['rule_context']
-        status = rc['operation']['workflow_status']
+        status = rc['operation'].get('workflow_status', 'PROPOSED')
         if status != 'resolved':
             continue
             
@@ -53,9 +53,25 @@ def validator_v2():
                 
         for claim in rc.get('claims', []):
             for ev in claim.get('evidence', []):
-                if ev.get('source_id') == 'KASIKA' and not ev.get('locator', ''):
-                    demote = True
-                    reason.append("claim missing locator")
+                s_id = ev.get('source_id')
+                if s_id and 'KASIKA' in s_id:
+                    if not ev.get('locator', ''):
+                        demote = True
+                        reason.append("claim missing locator")
+                    # Check the actual source file
+                    s_file = os.path.abspath(os.path.join(base_dir, f"../../ksetra/astadhyayi/sources/{s_id}.yaml"))
+                    if not os.path.exists(s_file):
+                        demote = True
+                        reason.append(f"source file {s_id} not found")
+                    else:
+                        with open(s_file, 'r', encoding='utf-8') as sf:
+                            s_data = yaml.safe_load(sf)
+                            if s_data.get('source_status') != 'REAL':
+                                demote = True
+                                reason.append(f"source {s_id} is not REAL")
+                            if "simulated" in str(s_data.get('raw_text', '')).lower():
+                                demote = True
+                                reason.append(f"source {s_id} contains simulated text")
                     
         if rc.get('sound_set_relevance', {}).get('status') == 'CANDIDATE':
             if not any(r in ['source', 'replacement', 'deleted_element', 'left_context', 'right_context'] for r in roles):
