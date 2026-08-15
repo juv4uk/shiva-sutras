@@ -3,9 +3,9 @@
 
 sutras:
   - id: 1
-    text_slp1: "a i u N"
+    text_slp1: "a i u R"
     sounds: ["a", "i", "u"]
-    it_marker_slp1: "N"
+    it_marker_slp1: "R"
 
   - id: 2
     text_slp1: "f x k"
