@@ -1,0 +1,54 @@
+metadata:
+  language: "English"
+  canon_ref: "../ksetra/canon/siva-sutras.yaml"
+  relation_to_canon: "comparison"
+  encoding: "IPA"
+
+mapping:
+  # Vowels (Simple)
+  - sutra_id: 1 # a i u ṇ
+    phonemes: ["a", "ɑː", "ʌ", "æ", "ɪ", "iː", "ʊ", "uː", "ə"]
+  - sutra_id: 2 # ṛ ḷ k
+    phonemes: ["ɹ̩", "l̩"] # Syllabic r and l in English
+  - sutra_id: 3 # e o ṅ
+    phonemes: ["ɛ", "ɔː", "ɒ"]
+    
+  # Diphthongs
+  - sutra_id: 4 # ai au c
+    phonemes: ["aɪ", "aʊ", "eɪ", "oʊ", "ɔɪ"]
+  
+  # Semi-vowels & Liquids
+  - sutra_id: 5 # h y v r ṭ
+    phonemes: ["h", "j", "w", "ɹ"] # v is grouped with fricatives
+  - sutra_id: 6 # l ṇ
+    phonemes: ["l"]
+    
+  # Nasals
+  - sutra_id: 7 # ñ m ṅ ṇ n m
+    phonemes: ["m", "ŋ", "n"]
+    
+  # Voiced stops/fricatives/affricates
+  - sutra_id: 8 # jh bh ñ
+    phonemes: ["d͡ʒ", "b"]
+  - sutra_id: 9 # gh ḍh dh ṣ
+    phonemes: ["g", "d", "ð"] # ð (voiced th) placed here
+  - sutra_id: 10 # j b g ḍ d ś
+    phonemes: ["z", "ʒ", "v"]
+    
+  # Voiceless stops/fricatives/affricates
+  - sutra_id: 11 # kh ph ch ṭh th c ṭ t v
+    phonemes: ["k", "p", "t͡ʃ", "θ", "t", "f"] # θ (voiceless th) and f
+  - sutra_id: 12 # k p y
+    phonemes: [] # Alternatively distribute k, p here
+    
+  # Sibilants
+  - sutra_id: 13 # ś ṣ s r
+    phonemes: ["s", "ʃ"]
+    
+  # Aspirates
+  - sutra_id: 14 # h l
+    phonemes: [] # h already mapped in sutra 5
+
+unresolved_features:
+  - description: "Величезна кількість англійських голосних та дифтонгів змушує групувати їх у сутрах 1, 3 і 4, що розмиває первинну елегантність санскритської системи (де кожному звуку відповідає лише одна позиція)."
+  - description: "Англійські фрикативні /v/ та /f/ змаплено до проривних позицій, подібно до українського мапінгу."
