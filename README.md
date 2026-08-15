@@ -29,14 +29,14 @@
 
 ### Головні артефакти та звіти:
 - **Blind Expert Pilot (Batch 2)**: 30 сутр, розібраних експертом на синтетичному (але криптографічно відтворюваному) корпусі.
-  - [batch_2_expert_blind_30.yaml](file:///C:/GitHub/shiva-sutras/ksetra/astadhyayi/blind/semantic_batch_2/batch_2_expert_blind_30.yaml)
-  - [simulate_expert_reconstruction.py](file:///C:/GitHub/shiva-sutras/experiments/blind_reconstruction/simulate_expert_reconstruction.py)
-  - [compare_auto_expert.py](file:///C:/GitHub/shiva-sutras/experiments/blind_reconstruction/compare_auto_expert.py)
+  - [batch_2_expert_blind_30.yaml](./ksetra/astadhyayi/blind/semantic_batch_2/batch_2_expert_blind_30.yaml)
+  - [simulate_expert_reconstruction.py](./experiments/blind_reconstruction/simulate_expert_reconstruction.py)
+  - [compare_auto_expert.py](./experiments/blind_reconstruction/compare_auto_expert.py)
 - **Звіти Експертного Виграшу (Expert Gain)**:
-  - [batch_2_synthetic_expert_gain_report.md](file:///C:/Users/user/.gemini/antigravity-ide/brain/09507e3f-a04d-486e-ae1f-f594c1b203bd/batch_2_synthetic_expert_gain_report.md) — фіксує `EG_{synthetic-evidence}` та FCR (False Certainty Rate: 83.3%).
-  - [batch_1_epistemic_report.md](file:///C:/Users/user/.gemini/antigravity-ide/brain/09507e3f-a04d-486e-ae1f-f594c1b203bd/batch_1_epistemic_report.md)
-  - [track_ab_audit_report.md](file:///C:/Users/user/.gemini/antigravity-ide/brain/09507e3f-a04d-486e-ae1f-f594c1b203bd/track_ab_audit_report.md)
+  - [batch_2_synthetic_expert_gain_report.md](./experiments/blind_reconstruction/reports/batch_2_synthetic_expert_gain_report.md) — фіксує `EG_{synthetic-evidence}` та FCR (False Certainty Rate: 83.3%).
+  - [batch_1_epistemic_report.md](./experiments/blind_reconstruction/reports/batch_1_epistemic_report.md)
+  - [track_ab_audit_report.md](./experiments/blind_reconstruction/reports/track_ab_audit_report.md)
 - **Автентифікація Джерел**:
-  - [source_collector.py](file:///C:/GitHub/shiva-sutras/experiments/blind_reconstruction/source_collector.py) та [source_authenticator.py](file:///C:/GitHub/shiva-sutras/experiments/blind_reconstruction/source_authenticator.py)
-  - [validator_v2.py](file:///C:/GitHub/shiva-sutras/experiments/blind_reconstruction/validator_v2.py)
-- **Історичний Walkthrough**: [walkthrough.md](file:///C:/Users/user/.gemini/antigravity-ide/brain/09507e3f-a04d-486e-ae1f-f594c1b203bd/walkthrough.md) (повний хронологічний літопис відкриттів).
+  - [source_collector.py](./experiments/blind_reconstruction/source_collector.py) та [source_authenticator.py](./experiments/blind_reconstruction/source_authenticator.py)
+  - [validator_v2.py](./experiments/blind_reconstruction/validator_v2.py)
+- **Історичний Walkthrough**: [walkthrough.md](./experiments/blind_reconstruction/reports/walkthrough.md) (повний хронологічний літопис відкриттів).

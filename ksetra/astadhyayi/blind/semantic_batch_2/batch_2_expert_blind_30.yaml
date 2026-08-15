@@ -1,330 +1,440 @@
 - sutra_id: 4.4.129
   source_locator: sources/KASIKA-4.4.129.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 8.1.10
   source_locator: sources/KASIKA-8.1.10.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 7.2.22
   source_locator: sources/KASIKA-7.2.22.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 3.4.105
   source_locator: sources/KASIKA-3.4.105.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: reconstructed
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: KNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
     type: NONE
-  workflow_status: FILL_ME
+  workflow_status: RESOLVED
 - sutra_id: 6.4.54
   source_locator: sources/KASIKA-6.4.54.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 3.3.136
   source_locator: sources/KASIKA-3.3.136.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 7.3.110
   source_locator: sources/KASIKA-7.3.110.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 6.4.81
   source_locator: sources/KASIKA-6.4.81.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: reconstructed
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: KNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
     type: NONE
-  workflow_status: FILL_ME
+  workflow_status: RESOLVED
 - sutra_id: 6.3.91
   source_locator: sources/KASIKA-6.3.91.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 1.1.10
   source_locator: sources/KASIKA-1.1.10.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: reconstructed
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: KNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
     type: NONE
-  workflow_status: FILL_ME
+  workflow_status: RESOLVED
 - sutra_id: 6.1.122
   source_locator: sources/KASIKA-6.1.122.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: reconstructed
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: KNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
     type: NONE
-  workflow_status: FILL_ME
+  workflow_status: RESOLVED
 - sutra_id: 4.4.23
   source_locator: sources/KASIKA-4.4.23.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 2.2.1
   source_locator: sources/KASIKA-2.2.1.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 2.2.37
   source_locator: sources/KASIKA-2.2.37.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 1.2.71
   source_locator: sources/KASIKA-1.2.71.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 3.3.162
   source_locator: sources/KASIKA-3.3.162.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 5.1.63
   source_locator: sources/KASIKA-5.1.63.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 7.1.97
   source_locator: sources/KASIKA-7.1.97.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 3.1.99
   source_locator: sources/KASIKA-3.1.99.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 3.4.26
   source_locator: sources/KASIKA-3.4.26.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 3.1.110
   source_locator: sources/KASIKA-3.1.110.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 3.1.68
   source_locator: sources/KASIKA-3.1.68.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 6.2.18
   source_locator: sources/KASIKA-6.2.18.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 4.4.88
   source_locator: sources/KASIKA-4.4.88.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 1.2.12
   source_locator: sources/KASIKA-1.2.12.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 8.4.31
   source_locator: sources/KASIKA-8.4.31.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: reconstructed
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: KNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
     type: NONE
-  workflow_status: FILL_ME
+  workflow_status: RESOLVED
 - sutra_id: 6.3.79
   source_locator: sources/KASIKA-6.3.79.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 5.2.62
   source_locator: sources/KASIKA-5.2.62.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 6.4.59
   source_locator: sources/KASIKA-6.4.59.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
 - sutra_id: 7.1.44
   source_locator: sources/KASIKA-7.1.44.yaml
   expert_reconstruction:
-    operation_type: FILL_ME
+    operation_type: insufficient_evidence
     operands: []
     dependencies: []
-    sound_set_relevance: FILL_ME
-  claims: []
+    sound_set_relevance: UNKNOWN
+  claims:
+  - type: authenticity
+    status: AUTHENTICITY_UNVERIFIED
   uncertainty:
-    type: NONE
-  workflow_status: FILL_ME
+    type: EVIDENCE
+    reason: Local evidence text does not unambiguously specify operation or opaque
+      classes.
+  workflow_status: REVIEWED
