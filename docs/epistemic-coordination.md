@@ -4,6 +4,7 @@
 
 Статус: **CONTRACT** (постійний протокол, не гіпотеза)
 Сфера застосування: координація між репозиторіями; не стосується внутрішньої методології `shiva-sutras`.
+Канонічний реєстр експортованих claims: [`docs/claims-export.yaml`](claims-export.yaml) (машиночитаний; внутрішній реєстр — `docs/RESULTS_LEDGER.md`).
 
 ---
 
@@ -88,13 +89,15 @@ Authoritative опис цих понять живе в `my-lisp-panini`.
 shiva-sutras
   exports:
     SS-CANON-001
-    SS-PRATYAHARA-014
+    SS-PRATYAHARA-001
     SS-MARKERS-003
 
 my-lisp-panini
   consumes:
-    SS-PRATYAHARA-014
+    SS-PRATYAHARA-001
 ```
+
+Повний набір доступних ID — у `docs/claims-export.yaml`.
 
 Якщо `shiva-sutras` потребує поняття `anuvṛtti`, він може споживати формалізований опис із `my-lisp-panini`, але **не** дозволяти йому визначати результат дослідження Śiva-sūtras.
 
@@ -184,21 +187,21 @@ export uncertainty.
 
 ```scheme
 (claim
-  (id "SS-PRATYAHARA-014")
+  (id "SS-PRATYAHARA-001")
   (owner "shiva-sutras")
   (statement "...")
-  (status proved-in-model)
-  (scope "42-class canonical model")
+  (status supported)
+  (scope "canonical 42-class model")
   (evidence (...))
   (limitations (...))
-  (revision "abc123"))
+  (revision "a8391c4"))
 ```
 
 `my-lisp-panini` може буквально імпортувати залежність:
 
 ```scheme
 (depends-on
-  "SS-PRATYAHARA-014"
+  "SS-PRATYAHARA-001"
   :min-status 'supported)
 ```
 

@@ -25,7 +25,7 @@
 
 ## Координація з downstream
 
-`shiva-sutras` є upstream-епістемічним авторитетом. Він експортує claims (з ID, статусом, evidence, scope, limitations), але не надає архітектурних порад downstream-проєктам (зокрема `my-lisp-panini`). Повний контракт — `docs/epistemic-coordination.md`.
+`shiva-sutras` є upstream-епістемічним авторитетом. Він експортує claims (з ID, статусом, evidence, scope, limitations), але не надає архітектурних порад downstream-проєктам (зокрема `my-lisp-panini`). Повний контракт — `docs/epistemic-coordination.md`; канонічний реєстр експортованих claims — `docs/claims-export.yaml`.
 
 ## Два проєкти в одному
 

@@ -1,0 +1,101 @@
+# Claims Export Registry (shiva-sutras)
+
+*Реєстр експортованих тверджень для downstream-споживачів (наприклад, `my-lisp-panini`).*
+*Машиночитаний формат: YAML. Канонічний реєстр внутрішніх результатів — `docs/RESULTS_LEDGER.md`.*
+
+Статус: **EXPORT REGISTRY** (постійний інтерфейс)
+Протокол: `docs/epistemic-coordination.md`
+Revision baseline: `a8391c41617331458e816698e5778971665f8436` (2026-08-15)
+
+---
+
+## Правила експорту
+
+1. Кожен claim має стабільний ID з префіксом `SS-`.
+2. `status` використовує епістемічні статуси з `docs/epistemic-coordination.md` (наприклад, `PROVED-IN-MODEL`, `RESOLVED`, `SUPPORTED`, `FALSIFIED`, `UNRESOLVED`).
+3. `scope` обов'язковий: математичний результат всередині моделі не є доказом історичного задуму Паніні.
+4. `revision` фіксує коміт, на якому claim стабільний.
+5. Downstream імпортує claim разом зі `status_at_import` та `revision`; підвищення статусу downstream-контекстом заборонено.
+
+---
+
+## Експортовані claims
+
+### SS-CANON-001 — Канон 14 Śiva-sūtras
+- **statement**: Канонічна послідовність 14 сутр із it-маркерами є задокументованим порядком, на який посилається PĀṆINIAN FORMAL USE.
+- **scope**: Канон як переданий текст; не стосується доведення його оптимальності чи історичного задуму.
+- **status**: `RESOLVED` (проvenance зафіксовано; текст узгоджено з традиційним каноном).
+- **evidence**: `ksetra/canon/`; `ksetra/astadhyayi/pratyahara-construction.yaml`.
+- **limitations**: Історичне походження окремих рукописних свідчень — окреме джерелознавче питання.
+
+### SS-PRATYAHARA-001 — Механіка pratyāhāra (ādir antyena sahetā)
+- **statement**: Механізм pratyāhāra: початковий звук + кінцевий it-маркер позначає множину звуків між ними (включно, без it-маркерів), згідно з Aṣṭādhyāyī 1.1.71.
+- **scope**: Формальна механіка в системі Паніні.
+- **status**: `SUPPORTED` (текст 1.1.71 + використання в Aṣṭādhyāyī).
+- **evidence**: `ksetra/astadhyayi/pratyahara-construction.yaml`; `pratyahara-usage.yaml`; `occurrence-resolution.yaml`.
+- **limitations**: Чи є множини "компактним дескриптором" у сучасному CS-сенсі — не встановлено і не є предметом цього claim.
+
+### SS-ORDER-001 — Неунікальність C1P порядку
+- **statement**: Сама вимога безперервності (C1P) не зумовлює унікальність канонічного порядку; існує понад 10,000 валідних топологій.
+- **scope**: 42-класова формальна модель.
+- **status**: `PROVED` (внутрішній: `M-001`). Як гіпотеза унікальності — `FALSIFIED`.
+- **evidence**: `experiments/ordering/c1p_sat_ablation.py`.
+- **limitations**: Не стосується оптимальності канонічного порядку за іншими метриками.
+
+### SS-MARKERS-001 — Глобальний мінімум маркерів M_min = 14
+- **statement**: Мінімальна кількість it-маркерів для адресації 42 класів дорівнює 14; канонічний порядок досягає цього оптимуму.
+- **scope**: 42-класова формальна модель, стандартне інтервальне представлення.
+- **status**: `PROVED-IN-MODEL` (внутрішній: `M-002`).
+- **evidence**: CP-SAT UNSAT proof (`experiments/ordering/marker_optimizer.py`).
+- **limitations**: Доведено для заданої моделі; не доводить історичний задум Паніні.
+
+### SS-MARKERS-002 — Рівно два оптимальні структурні класи
+- **statement**: Існує рівно 2 структурні класи, що досягають M_min = 14.
+- **scope**: 42-класова формальна модель.
+- **status**: `PROVED-IN-MODEL` (внутрішній: `M-003`).
+- **evidence**: Exhaustive exclusion proof.
+- **limitations**: Внутрішньомодельний результат.
+
+### SS-MARKERS-003 — Унікальність канонічного класу (Class B) для безколізійної адресації
+- **statement**: Канонічна структура (Class B) є єдиною серед оптимальних, що дозволяє безколізійну ідентифікацію маркерів.
+- **scope**: 2 оптимальні структурні класи, семантичне іменування пратяхар.
+- **status**: `PROVED-IN-MODEL` (внутрішній: `M-005`).
+- **evidence**: Address Semantics Fingerprint.
+- **limitations**: Не доводить лінгвістичну незалежність 42 класів.
+
+### SS-CORPUS-001 — GRETIL корпус з проvenance
+- **statement**: Доступний незалежний корпус Kāśikā/Aṣṭādhyāyī з підтвердженим походженням (sha256 + manifest).
+- **scope**: Kāśikāvṛtti (Sharma ed.) + Aṣṭādhyāyī (Baums) через GRETIL.
+- **status**: `RESOLVED` / `AUTHENTICITY-VERIFIED (Attributed)` (внутрішній: `L-002`).
+- **evidence**: `external_data/gretil_raw/manifest.json`; 3951 parsed sūtras; cross-witness diff (1891 AGREES / 2013 VARIANTS / 22 CONFLICTS / 57 MISSING).
+- **limitations**: Редакційні розбіжності (1.1.46–75, 8.3.118–119, 2.4.27) задокументовано; для них REAL не призначається без ад'юдикації.
+
+### SS-EPISTEMIC-001 — Reproducibility ≠ Authenticity
+- **statement**: Відтворюваність джерела (checksum match) не доводить його історичну автентичність.
+- **scope**: Epistemic pipeline, provenance.
+- **status**: `PROVED` (як принцип; гіпотеза оберненого — `FALSIFIED`, внутрішній: `E-001`).
+- **evidence**: `validator_v2.py`; `ksetra/EPISTEMIC_CONTRACT.md`.
+- **limitations**: Не заперечує корисність checksum як перевірки тотожності байтів.
+
+### SS-EPISTEMIC-002 — False Certainty Rate 83.3%
+- **statement**: Автоматичний семантичний агент генерує FCR 83.3% на нестачі доказів (25/30 RESOLVED помилково).
+- **scope**: Synthetic Batch-2 benchmark.
+- **status**: `MEASURED` (внутрішній: `E-002`).
+- **evidence**: `reports/batch_2_synthetic_expert_gain_report.md`.
+- **limitations**: Виміряно на синтетичному (відтворюваному) корпусі; перенесення на REAL-корпус — відкрите питання.
+
+---
+
+## Індекс за внутрішніми ID
+
+| Експортний ID | Внутрішній | Статус |
+| :--- | :--- | :--- |
+| `SS-CANON-001` | — | `RESOLVED` |
+| `SS-PRATYAHARA-001` | — | `SUPPORTED` |
+| `SS-ORDER-001` | `M-001` | `PROVED` / `FALSIFIED` (гіпотеза) |
+| `SS-MARKERS-001` | `M-002` | `PROVED-IN-MODEL` |
+| `SS-MARKERS-002` | `M-003` | `PROVED-IN-MODEL` |
+| `SS-MARKERS-003` | `M-005` | `PROVED-IN-MODEL` |
+| `SS-CORPUS-001` | `L-002` | `RESOLVED` |
+| `SS-EPISTEMIC-001` | `E-001` | `PROVED` (принцип) |
+| `SS-EPISTEMIC-002` | `E-002` | `MEASURED` |
