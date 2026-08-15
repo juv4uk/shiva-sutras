@@ -1,105 +1,80 @@
-# The Immutable Canon of the Śiva-sūtras
+# The Immutable Canon of the Śiva-sūtras v1.0
 # Цей файл є базовим джерелом істини для нашого дослідження.
-# Звуки відокремлені від it-маркерів. Для точності ми зберігаємо як IAST, так і SLP1.
+# Звуки відокремлені від it-маркерів. Цей файл містить виключно IAST (і Unicode).
+# Жодного інженерного кодування (SLP1 тощо) тут немає.
 
 sutras:
   - id: 1
     text_iast: "a i u ṇ"
-    text_slp1: "a i u N"
     sounds: ["a", "i", "u"]
     it_marker_iast: "ṇ"
-    it_marker_slp1: "N"
 
   - id: 2
     text_iast: "ṛ ḷ k"
-    text_slp1: "f x k"
     sounds: ["ṛ", "ḷ"]
     it_marker_iast: "k"
-    it_marker_slp1: "k"
 
   - id: 3
     text_iast: "e o ṅ"
-    text_slp1: "e o N"
     sounds: ["e", "o"]
     it_marker_iast: "ṅ"
-    it_marker_slp1: "N" # Note: SLP1 uses N for ṅ (n-velar) as well as N for ṇ (n-retroflex). Wait, SLP1 uses N for ṇ and N for ṅ? No, SLP1 uses N for ṇ, and N^ for ṅ. Let's fix this. In SLP1, ṅ is 'N', ṇ is 'R'. Wait, actually SLP1: ṅ = N, ñ = Y, ṇ = R, n = n, m = m. Let's correct the SLP1 representations.
 
   - id: 4
     text_iast: "ai au c"
-    text_slp1: "E O c"
     sounds: ["ai", "au"]
     it_marker_iast: "c"
-    it_marker_slp1: "c"
 
   - id: 5
     text_iast: "h y v r ṭ"
-    text_slp1: "h y v r V" # ṭ in SLP1 is 'w' or 'V'? ṭ = w. ṭh = W. ḍ = q. ḍh = Q. ṇ = R.
     sounds: ["h", "y", "v", "r"]
     it_marker_iast: "ṭ"
-    it_marker_slp1: "w"
 
   - id: 6
     text_iast: "l ṇ"
-    text_slp1: "l R"
     sounds: ["l"]
     it_marker_iast: "ṇ"
-    it_marker_slp1: "R"
 
   - id: 7
     text_iast: "ñ m ṅ ṇ n m"
-    text_slp1: "Y m N R n m"
     sounds: ["ñ", "m", "ṅ", "ṇ", "n"]
     it_marker_iast: "m"
-    it_marker_slp1: "m"
 
   - id: 8
     text_iast: "jh bh ñ"
-    text_slp1: "J B Y"
     sounds: ["jh", "bh"]
     it_marker_iast: "ñ"
-    it_marker_slp1: "Y"
 
   - id: 9
     text_iast: "gh ḍh dh ṣ"
-    text_slp1: "G Q D z"
     sounds: ["gh", "ḍh", "dh"]
     it_marker_iast: "ṣ"
-    it_marker_slp1: "z"
 
   - id: 10
     text_iast: "j b g ḍ d ś"
-    text_slp1: "j b g q d S"
     sounds: ["j", "b", "g", "ḍ", "d"]
     it_marker_iast: "ś"
-    it_marker_slp1: "S"
 
   - id: 11
     text_iast: "kh ph ch ṭh th c ṭ t v"
-    text_slp1: "K P C W T c w t v"
     sounds: ["kh", "ph", "ch", "ṭh", "th", "c", "ṭ", "t"]
     it_marker_iast: "v"
-    it_marker_slp1: "v"
 
   - id: 12
     text_iast: "k p y"
-    text_slp1: "k p y"
     sounds: ["k", "p"]
     it_marker_iast: "y"
-    it_marker_slp1: "y"
 
   - id: 13
     text_iast: "ś ṣ s r"
-    text_slp1: "S z s r"
     sounds: ["ś", "ṣ", "s"]
     it_marker_iast: "r"
-    it_marker_slp1: "r"
 
   - id: 14
     text_iast: "h l"
-    text_slp1: "h l"
     sounds: ["h"]
     it_marker_iast: "l"
-    it_marker_slp1: "l"
 
 metadata:
-  note_on_slp1: "SLP1 encoding used for exact 1-to-1 mapping. a,i,u = a,i,u. ṇ = R. ṛ = f. ḷ = x. k = k. e,o = e,o. ṅ = N. ai = E. au = O. c = c. h,y,v,r = h,y,v,r. ṭ = w. l = l. ñ = Y. m = m. jh = J. bh = B. gh = G. ḍh = Q. dh = D. ṣ = z. j = j. b = b. g = g. ḍ = q. d = d. ś = S. kh = K. ph = P. ch = C. ṭh = W. th = T. t = t. p = p. s = s."
+  version: "1.0"
+  status: "IMMUTABLE"
+  description: "Pure canonical data without engineering codes."

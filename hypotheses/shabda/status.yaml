@@ -9,3 +9,17 @@ depends_on:
 ## Опис
 Тут зберігаються наші ранні гіпотези щодо машинного кодування Śiva-sūtras (Śabda-256, Śabda-512, UPC-8, FPGA representations). 
 Вони не видаляються, оскільки є важливою частиною історії нашого мислення. Однак вони заморожені, доки не будуть отримані фундаментальні відповіді щодо самої системи.
+
+## Explicit Hypotheses
+
+**H1: Binary Feature Mapping (Śabda-256 / 512)**
+- *Hypothesis:* The sequence of the Śiva-sūtras naturally implies a multi-dimensional bitfield representation where each sound maps to an exact binary coordinate (e.g., place of articulation as one axis, voicing as another).
+- *Relation to Canon:* This is an engineering overlay (Level 6), distinct from the canon (Level 1).
+
+**H2: FPGA Hardware Acceleration (UPC-8)**
+- *Hypothesis:* Paninian grammatical operations (like *pratyāhāra* formation and sandhi resolution) can be executed in O(1) time using bitwise operations in hardware, avoiding traditional tree-based parsing.
+- *Relation to Canon:* Evaluates the computational efficiency of the canonical ordering.
+
+**H3: Universal Phonological Extensions**
+- *Hypothesis:* The 14 sutras can serve as a core coordinate system, with language-specific phonologies (e.g., Ukrainian, English) mapping onto this framework via extension files (`extensions/ukrainian.yaml`).
+- *Relation to Canon:* Validates the universality of the *apauruṣeya* structure.

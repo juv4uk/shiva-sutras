@@ -1,0 +1,78 @@
+# Engineering representation of Śiva-sūtras (SLP1)
+# Source of truth: siva-sutras.yaml
+
+sutras:
+  - id: 1
+    text_slp1: "a i u N"
+    sounds: ["a", "i", "u"]
+    it_marker_slp1: "N"
+
+  - id: 2
+    text_slp1: "f x k"
+    sounds: ["f", "x"]
+    it_marker_slp1: "k"
+
+  - id: 3
+    text_slp1: "e o N"
+    sounds: ["e", "o"]
+    it_marker_slp1: "N"
+
+  - id: 4
+    text_slp1: "E O c"
+    sounds: ["E", "O"]
+    it_marker_slp1: "c"
+
+  - id: 5
+    text_slp1: "h y v r w"
+    sounds: ["h", "y", "v", "r"]
+    it_marker_slp1: "w"
+
+  - id: 6
+    text_slp1: "l R"
+    sounds: ["l"]
+    it_marker_slp1: "R"
+
+  - id: 7
+    text_slp1: "Y m N R n m"
+    sounds: ["Y", "m", "N", "R", "n"]
+    it_marker_slp1: "m"
+
+  - id: 8
+    text_slp1: "J B Y"
+    sounds: ["J", "B"]
+    it_marker_slp1: "Y"
+
+  - id: 9
+    text_slp1: "G Q D z"
+    sounds: ["G", "Q", "D"]
+    it_marker_slp1: "z"
+
+  - id: 10
+    text_slp1: "j b g q d S"
+    sounds: ["j", "b", "g", "q", "d"]
+    it_marker_slp1: "S"
+
+  - id: 11
+    text_slp1: "K P C W T c w t v"
+    sounds: ["K", "P", "C", "W", "T", "c", "w", "t"]
+    it_marker_slp1: "v"
+
+  - id: 12
+    text_slp1: "k p y"
+    sounds: ["k", "p"]
+    it_marker_slp1: "y"
+
+  - id: 13
+    text_slp1: "S z s r"
+    sounds: ["S", "z", "s"]
+    it_marker_slp1: "r"
+
+  - id: 14
+    text_slp1: "h l"
+    sounds: ["h"]
+    it_marker_slp1: "l"
+
+metadata:
+  canon_ref: "siva-sutras.yaml"
+  encoding: "SLP1"
+  note: "SLP1 encoding used for exact 1-to-1 mapping with IAST. a,i,u = a,i,u. ṇ = R. ṛ = f. ḷ = x. k = k. e,o = e,o. ṅ = N. ai = E. au = O. c = c. h,y,v,r = h,y,v,r. ṭ = w. l = l. ñ = Y. m = m. jh = J. bh = B. gh = G. ḍh = Q. dh = D. ṣ = z. j = j. b = b. g = g. ḍ = q. d = d. ś = S. kh = K. ph = P. ch = C. ṭh = W. th = T. t = t. p = p. s = s."
