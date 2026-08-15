@@ -1,0 +1,206 @@
+- rule_context:
+    sutra_id: 2.4.54
+    local_text:
+      source: चक्षिङः ख्याञ्‌ ।
+      padaccheda: चक्षिङः ६/१ ख्याञ् १/१
+      neighbors:
+      - '2.4.51: णौ च सँश्चङोः ।'
+      - '2.4.52: अस्तेर्भूः ।'
+      - '2.4.53: ब्रुवो वचिः ।'
+      - '2.4.55: वा लिटि ।'
+      - '2.4.56: अजेर्व्यघञपोः ।'
+      - '2.4.57: वा यौ ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: substitution
+      operands: []
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: CANDIDATE
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles:
+      - source
+      - left_context
+      - right_context
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C001
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA
+        supports: direct explanation
+    unresolved_questions:
+    - 'Demoted by Validator v2: substitution missing source or replacement, claim
+      missing locator, CANDIDATE relevance without valid context operands'
+- rule_context:
+    sutra_id: 2.4.84
+    local_text:
+      source: तृतीयासप्तम्योर्बहुलम्‌ ।
+      padaccheda: तृतीयासप्तम्योः ६/२ बहुलम् १/१
+      neighbors:
+      - '2.4.81: आमः ।'
+      - '2.4.82: अव्ययादाप्सुपः ।'
+      - '2.4.83: नाव्ययीभावादतोऽम्त्वपञ्चम्याः ।'
+      - '2.4.85: लुटः प्रथमस्य डारौरसः ।'
+      - '3.1.1: प्रत्ययः ।'
+      - '3.1.2: परश्च ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: substitution
+      operands: []
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: CANDIDATE
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles:
+      - source
+      - left_context
+      - right_context
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C001
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA
+        supports: direct explanation
+    unresolved_questions:
+    - 'Demoted by Validator v2: substitution missing source or replacement, claim
+      missing locator, CANDIDATE relevance without valid context operands'
+- rule_context:
+    sutra_id: 4.1.95
+    local_text:
+      source: अत इञ् ।
+      padaccheda: अतः ५/१  इञ्  १/१
+      neighbors:
+      - '4.1.92: तस्यापत्यम् ।'
+      - '4.1.93: एको गोत्रे ।'
+      - '4.1.94: गोत्राद्यून्यस्त्रियाम् ।'
+      - '4.1.96: बाह्वादिभ्यश्च ।'
+      - '4.1.97: सुधातुरकङ् च ।'
+      - '4.1.98: गोत्रे कुञ्जादिभ्यश्च्फञ् ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: substitution
+      operands: []
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C001
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA
+        supports: direct explanation
+    unresolved_questions:
+    - 'Demoted by Validator v2: substitution missing source or replacement, claim
+      missing locator'
+- rule_context:
+    sutra_id: 4.1.116
+    local_text:
+      source: कन्यायाः कनीन च ।
+      padaccheda: कन्यायाः ६/१ कनीन (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+      neighbors:
+      - '4.1.113: अवृद्धाभ्यो नदीमानुषीभ्यस्तन्नामिकाभ्यः ।'
+      - '4.1.114: ऋष्यन्धकवृष्णिकुरुभ्यश्च ।'
+      - '4.1.115: मातुरुत्‌ संख्यासम्भद्रपूर्वायाः ।'
+      - '4.1.117: विकर्णशुङ्गच्छगलाद्वत्सभरद्वाजात्रिषु ।'
+      - '4.1.118: पीलाया वा ।'
+      - '4.1.119: ढक् च मण्डूकात्‌ ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: substitution
+      operands: []
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C001
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA
+        supports: direct explanation
+    unresolved_questions:
+    - 'Demoted by Validator v2: substitution missing source or replacement, claim
+      missing locator'
