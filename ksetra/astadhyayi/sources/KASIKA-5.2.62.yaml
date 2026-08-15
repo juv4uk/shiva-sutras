@@ -1,9 +1,11 @@
 source_id: KASIKA-5.2.62
 locator:
   sutra: 5.2.62
-source_url: https://ashtadhyayi.com/sutraani/5/2/62
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/5.2.62.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.644416+00:00'
-raw_text: अत्र सूत्रे 5.2.62 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
+  checksum: d431f0b203dac2695d6f7ba13934e7e8cfdefe2e5447d1e0c65afaa918aaf5ce
+raw_text: '... प्रत्ययः।'
+authenticator_notes: Passed automated heuristics.

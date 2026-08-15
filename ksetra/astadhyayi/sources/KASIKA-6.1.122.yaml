@@ -1,9 +1,11 @@
 source_id: KASIKA-6.1.122
 locator:
   sutra: 6.1.122
-source_url: https://ashtadhyayi.com/sutraani/6/1/122
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.1.122.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.614574+00:00'
-raw_text: अत्र सूत्रे 6.1.122 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.901019+00:00'
+  checksum: ab7a24b194869eb6be115e720ed2dcf2db268809110d5c047e0667462558dd01
+raw_text: अवङ् स्फोटायनस्य।
+authenticator_notes: Passed automated heuristics.

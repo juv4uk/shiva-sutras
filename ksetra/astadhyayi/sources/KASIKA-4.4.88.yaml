@@ -1,9 +1,11 @@
 source_id: KASIKA-4.4.88
 locator:
   sutra: 4.4.88
-source_url: https://ashtadhyayi.com/sutraani/4/4/88
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/4.4.88.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.627932+00:00'
-raw_text: अत्र सूत्रे 4.4.88 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
+  checksum: 33d9aaa41ba15805ea519d976d0391df65eeabe87f5af8180fd42d72fc90d02d
+raw_text: '... अण् भवति।'
+authenticator_notes: Passed automated heuristics.

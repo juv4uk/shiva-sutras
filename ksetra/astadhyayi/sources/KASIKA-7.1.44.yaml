@@ -1,9 +1,11 @@
 source_id: KASIKA-7.1.44
 locator:
   sutra: 7.1.44
-source_url: https://ashtadhyayi.com/sutraani/7/1/44
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/7.1.44.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.647606+00:00'
-raw_text: अत्र सूत्रे 7.1.44 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.932883+00:00'
+  checksum: fa32465300ccb7cf8b78604b279cb9f55537dcc788ca3f8dc59dbec9a5e2600a
+raw_text: '... आदेशो भवति।'
+authenticator_notes: Passed automated heuristics.

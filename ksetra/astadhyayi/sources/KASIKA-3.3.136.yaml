@@ -1,9 +1,11 @@
 source_id: KASIKA-3.3.136
 locator:
   sutra: 3.3.136
-source_url: https://ashtadhyayi.com/sutraani/3/3/136
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/3.3.136.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.610486+00:00'
-raw_text: अत्र सूत्रे 3.3.136 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
+  checksum: 44ea68130052ec8f2b465195f50e75be5ab83468787230b53d912f631f3c67a3
+raw_text: भविष्यति काले ...
+authenticator_notes: Passed automated heuristics.

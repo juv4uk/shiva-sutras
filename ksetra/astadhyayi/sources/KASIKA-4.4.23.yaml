@@ -1,9 +1,11 @@
 source_id: KASIKA-4.4.23
 locator:
   sutra: 4.4.23
-source_url: https://ashtadhyayi.com/sutraani/4/4/23
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/4.4.23.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.614574+00:00'
-raw_text: अत्र सूत्रे 4.4.23 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.901019+00:00'
+  checksum: 506d4586fa0426e7802b83da0fce9cf93841cc2aefa46e24de3ab4f535e72d33
+raw_text: '... ठक् प्रत्ययो भवति।'
+authenticator_notes: Passed automated heuristics.

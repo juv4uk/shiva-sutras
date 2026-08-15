@@ -1,9 +1,11 @@
 source_id: KASIKA-6.4.54
 locator:
   sutra: 6.4.54
-source_url: https://ashtadhyayi.com/sutraani/6/4/54
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.4.54.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.608477+00:00'
-raw_text: अत्र सूत्रे 6.4.54 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
+  checksum: 747e1a4bbb48aac7c6d6efbd619733dcd4e4b2340f2ce2aa8a4e07f049fce725
+raw_text: शमित्येतस्य ...
+authenticator_notes: Passed automated heuristics.

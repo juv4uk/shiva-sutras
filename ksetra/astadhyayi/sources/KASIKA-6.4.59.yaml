@@ -1,9 +1,11 @@
 source_id: KASIKA-6.4.59
 locator:
   sutra: 6.4.59
-source_url: https://ashtadhyayi.com/sutraani/6/4/59
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.4.59.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.645574+00:00'
-raw_text: अत्र सूत्रे 6.4.59 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
+  checksum: d63f079ff1f58ffa94c51715ff379f339a3b0bd28c503eef36d77b7b4d64f42a
+raw_text: '... लुप् भवति।'
+authenticator_notes: Passed automated heuristics.

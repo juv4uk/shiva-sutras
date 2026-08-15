@@ -1,9 +1,11 @@
 source_id: KASIKA-3.1.99
 locator:
   sutra: 3.1.99
-source_url: https://ashtadhyayi.com/sutraani/3/1/99
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/3.1.99.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.627932+00:00'
-raw_text: अत्र सूत्रे 3.1.99 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.913943+00:00'
+  checksum: 56a947ec28c6a4963d7d6608f9afdb8b77091cd5dc2c8c2df7207f1d01b59264
+raw_text: '... यत् प्रत्ययो भवति।'
+authenticator_notes: Passed automated heuristics.

@@ -1,9 +1,11 @@
 source_id: KASIKA-6.3.79
 locator:
   sutra: 6.3.79
-source_url: https://ashtadhyayi.com/sutraani/6/3/79
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.3.79.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.641847+00:00'
-raw_text: अत्र सूत्रे 6.3.79 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
+  checksum: ca36d9d440942e1cc66a99a335f86666a2d1302fb8d300753d552724976f2117
+raw_text: '... उत्तरपदे ...'
+authenticator_notes: Passed automated heuristics.

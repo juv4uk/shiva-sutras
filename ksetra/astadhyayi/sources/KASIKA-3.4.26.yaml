@@ -1,9 +1,11 @@
 source_id: KASIKA-3.4.26
 locator:
   sutra: 3.4.26
-source_url: https://ashtadhyayi.com/sutraani/3/4/26
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/3.4.26.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.627932+00:00'
-raw_text: अत्र सूत्रे 3.4.26 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.916731+00:00'
+  checksum: a4b1869725d6693f3866bb19a101228df5c38f069adbd18c1e265853e0555feb
+raw_text: '... णमुल् भवति।'
+authenticator_notes: Passed automated heuristics.

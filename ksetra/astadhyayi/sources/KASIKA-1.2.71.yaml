@@ -1,9 +1,11 @@
 source_id: KASIKA-1.2.71
 locator:
   sutra: 1.2.71
-source_url: https://ashtadhyayi.com/sutraani/1/2/71
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/1.2.71.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.623913+00:00'
-raw_text: अत्र सूत्रे 1.2.71 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
+  checksum: e41731d2cf6c3831b5734e759eeb532c5503ad9e609dc94f2248100399f3a9ab
+raw_text: एकशेषनिर्देशः ...
+authenticator_notes: Passed automated heuristics.

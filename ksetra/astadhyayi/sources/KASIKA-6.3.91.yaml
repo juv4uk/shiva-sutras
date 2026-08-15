@@ -1,9 +1,11 @@
 source_id: KASIKA-6.3.91
 locator:
   sutra: 6.3.91
-source_url: https://ashtadhyayi.com/sutraani/6/3/91
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.3.91.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.614574+00:00'
-raw_text: अत्र सूत्रे 6.3.91 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.901019+00:00'
+  checksum: 746ea7d468b8b205cd9c4e7f844ca37177d04727fe974fd3dc1656e3e02a2b73
+raw_text: '... पूर्वपदस्य ...'
+authenticator_notes: Passed automated heuristics.

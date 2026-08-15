@@ -1,9 +1,11 @@
 source_id: KASIKA-5.1.63
 locator:
   sutra: 5.1.63
-source_url: https://ashtadhyayi.com/sutraani/5/1/63
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/5.1.63.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.625922+00:00'
-raw_text: अत्र सूत्रे 5.1.63 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
+  checksum: 039656a279d9c7cd5ec4f3e4226ac4792edfdea855225997d91409e9a7edb016
+raw_text: तदर्हति।
+authenticator_notes: Passed automated heuristics.

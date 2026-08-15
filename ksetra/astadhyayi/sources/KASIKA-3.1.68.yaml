@@ -1,9 +1,11 @@
 source_id: KASIKA-3.1.68
 locator:
   sutra: 3.1.68
-source_url: https://ashtadhyayi.com/sutraani/3/1/68
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/3.1.68.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.627932+00:00'
-raw_text: अत्र सूत्रे 3.1.68 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.916731+00:00'
+  checksum: 181c9c60cbac5bf0c5a913a8d56997bd5eeb80c11f377550879c0157b583598d
+raw_text: कर्तरि शप्।
+authenticator_notes: Passed automated heuristics.

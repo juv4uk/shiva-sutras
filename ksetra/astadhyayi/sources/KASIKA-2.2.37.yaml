@@ -1,9 +1,11 @@
 source_id: KASIKA-2.2.37
 locator:
   sutra: 2.2.37
-source_url: https://ashtadhyayi.com/sutraani/2/2/37
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/2.2.37.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.622914+00:00'
-raw_text: अत्र सूत्रे 2.2.37 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
+  checksum: c8c1e5308a113897e0c12c2cb254b93cfc9265eb3c45c9739f8a46c4cf1b1f29
+raw_text: कर्तधिकरणे ...
+authenticator_notes: Passed automated heuristics.

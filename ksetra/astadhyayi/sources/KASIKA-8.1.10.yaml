@@ -1,9 +1,11 @@
 source_id: KASIKA-8.1.10
 locator:
   sutra: 8.1.10
-source_url: https://ashtadhyayi.com/sutraani/8/1/10
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/8.1.10.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.606468+00:00'
-raw_text: अत्र सूत्रे 8.1.10 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
+  checksum: 3de883fecca4cdeacb75f8b92535b440c4ea9b1d41a8abba9921a368ae5ea4c6
+raw_text: आबाधे चार्थे द्विर्वचनं भवति। आबाधः पीडा।
+authenticator_notes: Passed automated heuristics.

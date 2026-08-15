@@ -1,9 +1,11 @@
 source_id: KASIKA-7.3.110
 locator:
   sutra: 7.3.110
-source_url: https://ashtadhyayi.com/sutraani/7/3/110
+source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/7.3.110.txt
 source_status: REAL
 retrieval:
-  method: internal_corpus
-  retrieved_at: '2026-08-15T00:27:18.610486+00:00'
-raw_text: अत्र सूत्रे 7.3.110 इति पाणिनीयविधानम्। काशिकावृत्तौ अस्य स्पष्टीकरणं दत्तम्।
+  method: corpus_extraction
+  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
+  checksum: 4d51fcf77feab49a976c5b0988a320711abd4aea2520e4bc8c97228d450e252a
+raw_text: ऋतो ङि सर्वनामस्थानेषु ...
+authenticator_notes: Passed automated heuristics.
