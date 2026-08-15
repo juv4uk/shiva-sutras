@@ -23,6 +23,10 @@
 | Kāśikā corpus в репозиторії є автентичним | `AUTHENTICITY-VERIFIED (Attributed)` | GRETIL Sharma ed.; attribution via academic edition, not byte-reproducibility |
 | Synthetic proposer має схильність до хибної впевненості | `MEASURED` | FCR = 83.3% на Batch 2 Pilot |
 
+## Координація з downstream
+
+`shiva-sutras` є upstream-епістемічним авторитетом. Він експортує claims (з ID, статусом, evidence, scope, limitations), але не надає архітектурних порад downstream-проєктам (зокрема `my-lisp-panini`). Повний контракт — `docs/epistemic-coordination.md`.
+
 ## Два проєкти в одному
 
 1. **Математика 42-класової моделі** вже містить строгий та чистий математичний результат. Ми довели структурні мінімуми і фактор-простір оптимальних рішень. Але поки ми спираємося на 42 класи, які самі походять зі Śiva-sūtras (проблема циркулярності), це залишається дослідженням формальної моделі, а не доказом задуму Паніні.

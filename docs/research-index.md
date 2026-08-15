@@ -60,3 +60,12 @@
 - **Статус**: 🟢 **ВИРІШЕНО** (`AUTHENTICITY-VERIFIED (Attributed)`)
 - **Висновки**: Гейт L-002 пройдено. Редакційні розбіжності (1.1.46–75, 8.3.118–119, 2.4.27) задокументовано; для них `REAL` не призначається без ад'юдикації критичним виданням. Фіктивну заявку про `verified_ashtadhyayi.txt` видалено (False Certainty).
 
+## 8. Координація з Downstream (Epistemic Coordination Contract)
+- **Гіпотеза**: `shiva-sutras` виступає upstream-епістемічним авторитетом і координується з downstream-проєктами (зокрема `my-lisp-panini`) через версіоновані твердження, а не через архітектурні поради.
+- **Метод**: Контракт із 10 правил: authoritative scope, заборона downstream-гіпотез як premises, експорт claims (не порад), обов'язковий `scope`, заборона дублювання онтології, двостороння видимість залежностей, upstream impact signals, незмінність epistemic status, експорт негативних результатів, категорія `question-origin` для downstream-питань.
+- **Артефакти**: `docs/epistemic-coordination.md` (повний контракт + claim API у Scheme-форматі), `.agents/rules/epistemic_agent.md` (upstream-роль агента).
+- **Результат**: Встановлено формат claims `(claim (id ...) (owner ...) (status ...) (scope ...) (evidence ...) (revision ...))` та механізм `DOWNSTREAM IMPACT` сигналів при зміні статусу.
+- **Статус**: 🟢 **КОНТРАКТ** (постійний протокол координації)
+- **Висновки**: Відносини репозиторіїв організовано як "package manager для знань": downstream може імпортувати `(depends-on "SS-..." :min-status 'supported)` і одразу бачити втрату основи при зміні upstream-статусу.
+
+
