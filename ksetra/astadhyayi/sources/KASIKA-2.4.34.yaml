@@ -1,0 +1,36 @@
+source_id: KASIKA-2.4.34
+locator:
+  sutra: 2.4.34
+witness_text:
+  sutra: dvitīyā-ṭā-ossv enaḥ
+  commentary: anvādeśe 'nudāttaḥ iti vartate  / dvitīyā ṭā os ity eteṣu parata idam
+    etador anvādeśa-viṣayayoḥ ena-śabda ādeśo ādeśo bhavati anudāttaḥ  / idamo maṇḍūkaplutinyāyena
+    anuvṛttiḥ  / imaṃ  chātraṃ chando 'dhyāpaya, atho enaṃ vyākaraṇamadhyāpaya  /
+    anena chātreṇa rātriradhītā, atho enenāharapyadhītam  / anayośchātrayoḥ śobhanaṃ
+    śīlam, atho enayoḥ prabhūtaṃ svam  / etadaḥ khalv api -- etaṃ chātraṃ chanto 'dhyāpaya,
+    atho enaṃ vyākaraṇamapyadhyāpaya  / etena chātrena rātriradhītā, atho enenāharapyadhītam  /
+    etayoś chātrayoḥ śobhanaṃ śīlam, atho enayoḥ prabhūtaṃ svam  / enad iti napuṃsakaikavacane
+    vaktavyam  / prakṣālayainat  / parivartayainat  / iha kasmān na bhavati, ayaṃ
+    daṇḍo harānena, etamātaṃ ṅitaṃ vidyāt iti ? yatra kiñcid vidhāya vākyāntareṇa
+    punar anyadupadiśyate so 'nvādeśaḥ  / iha tu vastu-nirdeśamātraṃ kṛtvā ekam eva
+    vidhānam //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

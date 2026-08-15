@@ -1,0 +1,54 @@
+source_id: KASIKA-8.2.1
+locator:
+  sutra: 8.2.1
+witness_text:
+  sutra: pūrvatra asiddham
+  commentary: pūrvatra asiddham ity adhikāro 'yam ā adhyāyaparisamāpteḥ  / yad ita
+    ūrdhvam anukramiṣyāmaḥ pūrvatra asiddham ity evaṃ tad veditavyam  / tatra yeyaṃ
+    sapādasaptādhyāyī anukrāntā, etasyām ayaṃ pādono 'dhyāyo 'siddho bhavati  / ita
+    uttaraṃ ca uttara uttaro yogaḥ pūrvatra pūrvatra asiddho bhavati asiddhavad bhavati  /
+    siddhakāryam na karoti ity arthaḥ  / tad etad asiddhatvavacanam ādeśalakṣaṇapratiṣedhārtham,
+    utsargalakṣaṇabhāvārthaṃ ca  / asmā uddhara, dvā atra, dvā ānaya, asā ādityaḥ
+    ity atra vyalopasya śasiddhatvāt, ād guṇaḥ (*6,1.87) iti, akaḥ savarṇe dīrghaḥ
+    (*6,1.101) iti ca na bhavati  / amuṣmai, amuṣmāt, amuṣmin iti utvasya asiddhatvāt
+    smāyādayo bhavanti  / śuṣkikā śuṣkajaṅghā ca kṣāmimānaujaḍhattathā  / matorvattve
+    jhalāṃ jaśtve guḍaliṇmān nidarśanam // śuṣkikā ity atra śuṣaḥ kaḥ (*8,2.51) ity
+    asya asiddhatvād udīcāmātaḥ sthāne yakapūrvāyāḥ (*7,3.46) ity etan na bhavati  /
+    śuṣkajaṅghā iti na kopadhāyāḥ (*6,3.37) iti puṃvadbhāvapratiṣedho na bhavati  /
+    kṣāmimān iti kṣāmasya apatyaṃ kṣāmiḥ, kṣāmo vā asya asti iti kṣāmī, kṣāmiḥ kṣāmī
+    vā yasya asti iti kṣāmimān  / kṣāyo maḥ ity asya asiddhatvān mādupadhāyāś ca iti
+    vatvaṃ na bhavati  / aujaḍhat iti vaherniṣṭhāyāmūḍhaḥ, tamākhyat iti ṇic, tadantāl
+    luṅ, caṅi (*6,1.11) iti dvirvacane kartavye ḍhatvadhatvaṣṭutvaḍhalopānām asiddhatvāṇ
+    ṇau ca yaḥ ṭilopaḥ, tasya sthānivadbhāvāt tha ity etad dvirucyate  / anaglope
+    iti pratiṣedhāt sanvadittvaṃ na asti, tena aujaḍhat iti bhavati  / aujiḍhat ity
+    etat tu ktinnantasya uḍhiśabdasya bhavati  / guḍaliṇmān iti guḍaliho 'sya santi
+    iti matup, tatra ḍhatvajaśtvayor asiddhatvāt jhayaḥ (*8,2.10) iti vatvaṃ na bhavati  /
+    [#905] ye 'tra ṣaṣthīnirdeśāḥ, saptamīnirdeśāḥ, pañcamīnirdeśāś ca, teṣāṃ ṣaṣṭhī
+    sthāneyogā (*1,1.49), tasminniti nirdiṣṭe pūrvasya (*1,1.60), tasmād ity uttarasya
+    iti ca kartavye na asiddhatva bhavati, kāryakālaṃ hi sañjñāparibhāṣam iti pūrvatvamāsāṃ
+    paribhāṣāṇāṃ na asti iti  / vipratiṣedhe param ity eṣā ca paribhāṣā yena pūrveṇa
+    lakṣaṇena saha spardhate, paraṃ lakṣaṇaṃ tatprati tasya asiddhatvān na pravartate  /
+    tathā ca visphoryam, agoryam iti guṇaḥ pareṇa hali ca (*8,2.77) iti dīrghatvena
+    na bādhyate  / apavādasya tu parasya api utsarge kartavye vacanaprāmaṇyād asiddhatvaṃ
+    na bhavati  / tena dogdhā, dogdhum ity atra ghatvasya asiddhatvād ho ḍhaḥ (*8,2.31)
+    iti na bhavati //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

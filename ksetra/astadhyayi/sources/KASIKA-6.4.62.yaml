@@ -1,0 +1,50 @@
+source_id: KASIKA-6.4.62
+locator:
+  sutra: 6.4.62
+witness_text:
+  sutra: sya-sic-sīyuṭ-tāsiṣu bhāva-karmaṇor upadeśe 'j-jhana-graha-dṛśāṃ vā ciṇvad-iṭ
+    ca
+  commentary: sva sic sīyuṭ tāsi ity eteṣu bhāvakarmaviṣayeṣu parata upadeśe ajantānām
+    aṅgānāṃ han graḥ dṛś ity eteṣāṃ ca ciṇvat kāryaṃ bhavati vā  / yadā ciṇvat tadā
+    iḍāgamo bhavati  / kasya ? syasicsīyuṭtāsīnām eva iti veditavyam  / te hi prakṛtāḥ  /
+    aṅgasya tu lakṣyavirodhāt na kriyate  / kāni punar asya yogasya prayojanāni ?
+    ciṇvadvṛddhir yuk ca hanteś ca ghatvaṃ dīrghaś ca+ukto yo mitāṃ vā ciṇīti  / iṭ
+    ca asiddhas tena me lupyate ṇirnityaś ca ayaṃ valnimitto vighātī // [#746] ajantānāṃ
+    tāvat - cāyiṣyate, ceṣyate  / acāyiṣyata, aceṣyata  / dāyiṣyate, dāsyate  / adāyiṣyata,
+    adāsyata  / śāmiṣyate, śamiśyate, śamayisyate  / aśāmiṣyata, aśamiṣyata aśamayiṣyata  /
+    han - ghāniṣyate, haniṣyate  / aghāniṣyata, ahaniṣyata  / graḥ - grāhiṣyate, grahīṣyate  /
+    agrāhiṣyata, agrahīṣyata  / graho 'liṭi dīrghaḥ (*7,2.37) iti prakṛtasya iṭo dīrghatvam  /
+    dṛś - darśiṣyate, drakṣyate  / adarśiṣyata, adrakṣyata  / sici ajantānām - acāyiṣātām,
+    aceṣātām  / adāyiṣātām, adiṣātām  / aśāmiṣātam, aśamiṣātam, aśamayiṣātām  / han
+    - aghāniṣātām, avadhiṣātām, ahasātām  / graḥ - agrāhiṣātām, agrahīṣātām  / dṛś
+    - adarśiṣātām, adṛkṣātām  / sīyuṭi ajantānām - cāyiṣīṣta, ceṣīṣṭa  / dāyiṣīṣṭa,
+    dāsīṣṭa  / śāmiṣīṣṭa, śamiṣīṣṭa, śamayiṣīṣṭa  / han - ghāniṣīṣṭa, vadhiṣīṣṭa  /
+    graḥ - grāhiṣīṣṭa, grahīṣīṣṭa  / dṛś - darśiṣīṣṭa, dṛkṣīṣṭa  / tāsāvajantānām
+    - cāyitā, cetā  / dāyitā, dātā  / śāmitā, śamitā, śamayita  / han - ghānitā, hantā  /
+    graḥ - grāhitā, grahītā  / dṛś - darśitā, draṣṭā  / syasicsīyuṭtāsiṣu iti kim
+    ? cetavyam  / dātavyam  / bhāvakarmaṇoḥ iti kim ? ceṣyati  / dāsyati  / upadeśe
+    iti kim ? kāriṣyate iti guṇe kṛte raparatve ca na prāpnoti, upadeśagrahaṇād bhavati  /
+    ajjhanagrahadṛśām iti kim ? paṭhiṣyate  / aṅgādhikāravihitaṃ kāryam iha atidiśyate,
+    tena haniṇiṅāmādeśā na bhavanti  / haniṣyate, ghāniṣyate  / eṣyate, āyiṣyate  /
+    adhyeṣyate, adhyāyiṣyate  / hano vadha liṅi (*2,4.42), luṅi ca (*2,4.43), iṇo
+    gā luṅi (*2,4.45), vibhāṣā luṅlṛṅoḥ (*2,4.50) ity ete vidhayo na bhavanti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,35 @@
+source_id: KASIKA-1.2.56
+locator:
+  sutra: 1.2.56
+witness_text:
+  sutra: pradhāna-pratyaya-arthavacanam arthasya anya-pramāṇātvāt
+  commentary: aśiṣyam iti vartate  / pradhānaṃ samāse kiṃcit padaṃ, pratyayastavyadādiḥ  /
+    tābhyām artha-vacanam artha-abhidhānam anena prakāreṇa bhavati iti pūrva-ācāryaiḥ
+    paribhāṣitam  / pradhāna-upasarjane ca pradhāna-arthaṃ saha brūtaḥ, prakrti-pratyayau
+    sahārthaṃ brūtaḥ iti  / tat pāṇinir ācaryaḥ pratyācaṣṭe, aśiṣyam etat arthasya
+    anyapramāṇatvāt iti  / anyaḥ iti śāstra-apekṣayā loko vyapadiśyate  / śabdair
+    artha-abhidhānam svābhāvikaṃ na pāribhaṣākam aśakyatvāt  / lokata eva artha-avagateḥ  /
+    yair api vyākaraṇaṃ na śrutaṃ te 'pi rāja-puruṣam ānaya ity ukte rājaviśiṣṭaṃ
+    puruṣam ānayanti na rājanam na api puruṣa-mātram  / aupagavam ānaya ity ukte upaguviśiṣṭam
+    apatyam ānayanti, na+upaguṃ na apy apatya-mātraṃ, na+ubhau  / yaś ca lokato 'rthaḥ
+    siddhaḥ kiṃ tatra yatnena //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

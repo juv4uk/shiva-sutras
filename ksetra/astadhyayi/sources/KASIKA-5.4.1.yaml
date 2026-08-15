@@ -1,0 +1,35 @@
+source_id: KASIKA-5.4.1
+locator:
+  sutra: 5.4.1
+witness_text:
+  sutra: pādaśatasya saṅkhyāder vīpsāyāṃ vun lopaś ca
+  commentary: pādaśatāntasya saṅkhyādeḥ prātipadikasya vīpsāyāṃ dyotyāyāṃ vun pratyayo
+    bhavati  / tatsanniyogena cāntasya lopo bhavati  / yasya+iti lopena+eva siddhe
+    punar vacanam anaimittikārtham  / yasya+iti lopaḥ paranimittakaḥ  / tasya sthānivadbhāvāt
+    pādaḥ pat (*6,4.130) iti padbhāvo na syāt  / asya tv anaimittikatvān na sthānivattvam  /
+    dvau dvau pādau dadāti dvipadikāṃ dadāti  / dve dve śate dadāti dviśatikāṃ dadāti  /
+    taddhitārtha iti samāsaḥ  / tataḥ pratyayaḥ  / svabhāvāc ca vunpratyayāntaṃ striyām
+    eva vartate  / pādaśatasya iti kim ? dvau dvau māṣau dadāti  / saṅkhyādeḥ iti
+    kim ? pādaṃ pādaṃ dadāti  / vīpsāyām iti kim ? dvau pādau dadāti  / dve śate dadāti  /
+    pādaśatagrahaṇam anarthakam  / anyatra api darśanāt  / dvimodakikāṃ dadāti trimodakikāṃ
+    dadāti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

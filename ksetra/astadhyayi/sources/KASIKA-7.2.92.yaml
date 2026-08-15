@@ -1,0 +1,47 @@
+source_id: KASIKA-7.2.92
+locator:
+  sutra: 7.2.92
+witness_text:
+  sutra: vakṣyati - yuvāvau dvivacane
+  commentary: yuvām  / āvām  / maparyantasya iti kim ? yuvakām, āvakām iti sākackasya
+    mā bhūt  / tva-māv ekavacane (*7,2.97) tvayā  / mayā  / maparyantasya iti kim
+    ? sarvasya mā bhūt  / tathā ca sati tvamayor akārasya yo 'ci (*7,2.89) iti yakāre
+    kṛte aniṣṭaṃ rūpaṃ syāt  / māntasya ity eva siddhe asmin yat parigrahaṇaṃ kṛtam,
+    avadhidyotanārthaṃ tat  / mānte mā bhūt  / kadā ? yadā ṇyantayoḥ kvipi māntatvaṃ
+    vidyate yuṣmadasmadoḥ  / sthānivattvaṃ ca ṇeratra kvau lutatvān na vidyate //
+    yuvāvau dvivacane (*7,2.92)  / dvivacane ity arthagrahaṇam  / dvivacane ye yuṣmadasmadī
+    dvyarthābhidhānaviṣaye tayoḥ maparyantasya sthāne yuva āva ity etāv ādeśau bhavataḥ  /
+    yuvām  / āvām  / yuvābhyām  / āvābhyām  / yuvayoḥ  / āvayoḥ  / yadā samāse dvyarthe
+    yuṣmadasmadī bhavataḥ, samāsārthasya anyasaṅkhatvāt ekavacanaṃ bahuvacanaṃ vā
+    bhavati, tadā api dvyarthayoḥ yuṣmadasmadoḥ yuvāvau bhavataḥ , yadi tvāhau sau
+    (*7,2.94) ity evam ādinā ādeśāntareṇa na bādhyete  / atikrāntaṃ yuvām atiyuvām  /
+    atyāvām  / atikrāntān yuvām atiyuvān  / atyāvān  / atikrāntena yuvām atiyuvayā  /
+    atyāvayā  / atikrāntairyuvām atiyuvābhiḥ  / atyāvābhiḥ  / atikrāntebhyo yuvām
+    atiyuvabhyam  / atyāvabhyam  / atikrāntād yuvām atiyuvat  / atyāvat  / atikrāntebhyo
+    yuvām atiyuvat  / atyāvat  / atikrāntānāṃ yuvām atiyuvākam  / atyāvākam  / atikrānte
+    yuvām atiyuvayi  / atyāvayi  / atikrānteṣu yuvām atiyuvāsu  / atyāvāsu  / tvāhādīnāṃ
+    tu viṣaye paratvāt te eva bhavanti  / atikrānto yuvām atitvam  / atyaham  / atikrāntā
+    yuvām atiyūyam  / ativayam  / atikrāntāya yuvām atiyubhyam  / atimahyam  / atikrāntasya
+    yuvām atitava  / atimama  / yadā tu yuṣmadasmadī ekatvabahutvayor vartete, samāsārthastu
+    dvitve, tadā yuvāvau na bhavataḥ  / atikrāntau tvām atitvām  / atimām  / atikrāntau
+    yuṣmān atiyuṣmān  / atyasmān  / evamunneyam // [#824]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,51 @@
+source_id: KASIKA-6.4.174
+locator:
+  sutra: 6.4.174
+witness_text:
+  sutra: dāṇḍināyana-hāstināyana-ātharvaṇika-jaihmāśineya-vāsināyani-bhrauṇahatya-dhaivatya-sārava-aikṣvāka-maitreya-hiraṇmayāni
+  commentary: dāṇdināyana hāstināyana ātharvaṇika jaihmāśineya vāsināyani bhrauṇahatya
+    dhaivatya sārava aikṣvāka maitreya hiraṇmaya ity etāni nipātyante  / daṇḍin hastin
+    ity etau naḍādiṣu paṭhayete, tayorāyane parataḥ prakṛtibhāvo nipātyate  / keṣāṃcit
+    tu hastin iti naḍādiṣu na paṭhyate, teṣām ata eva nipātanāt phagapi bhavati  /
+    daṇḍino 'patyaṃ dāṇdināyanaḥ  / hastino 'patyaṃ hāstināyanaḥ  / atharvan iti vasantādiṣu
+    paṭhyate  / atharvaṇā prokto grantho 'pi upacārāt atharvan iti ucyate, tamadhīte
+    yaḥ sa ātharvaṇikaḥ  / ike prakṛtibhāvo nipātyate  / jihmāśin iti śubhrādiṣu paṭhyate,
+    tasya ṇye parataḥ prakṛtibhāvo nipātyate  / jihmāśino 'patyaṃ jaihmāśineyaḥ  /
+    vāsino 'patyam  / jdīcāṃ vṛddhādagotrāt (*4,1.157) iti phiñ  / tatra prakṛtibhāvo
+    nipātyate  / vāsināyaniḥ  / bhrūṇahan, dhīvan ity etayoḥ ṣyañi parataḥ takārādeśo
+    nipātyate  / bhrūṇaghnaḥ bhāvaḥ bhrauṇahatyam  / dhīvnaḥ bhāvaḥ dhaivatyam  /
+    hanasto 'ciṇṇaloḥ (*7,3.32) iti yat tatvaṃ tad dhātupratyaya eva iti bhrauṇaghnaḥ,
+    vārtraghnaḥ ity atra na bhavati, ataḥ bhrauṇahatye tatvaṃ nipātyate  / sārava
+    iti sarayū ity etasya aṇi parato yūśabdasya va ity ādeśo nipātyate  / sarayvāṃ
+    bhavaṃ sāravam udakam  / aikṣvāka iti svarasarvanāmnā ekaśrutyā paṭhyate  / tato
+    'yam ādyudātto 'ntodāttaś ca nipātyate  / ikṣvākoḥ upatyam, janapadaśabdāt kṣatriyādañ
+    (*4,1.166) iti añ, tatra ukāralopo nipātyate  / aikṣvākaḥ  / ikṣvākuṣu janapadeṣu
+    bhavaḥ, kopadhādaṇ (*4,2.132) ityaṇ  / aikṣvākaḥ  / maitreya iti  / mitrayuśabdo
+    gṛṣṭyādiṣu paṭhyate, tato ḍhañi kṛte yāderiyādeśāpavādo yuśabdalopo nipātyate  /
+    mitrayorapatyam maitreyaḥ  / [#772] atha kimarthaṃ mitrayuśabdo bidādiṣv eva na
+    paṭhyate, tatrāñi kṛte yādeḥ iti iyādeśenaiva siddham, evaṃ ca yulopārthaṃ nipātanaṃ
+    kartavyaṃ na bhavati, yaskādiṣu ca bahuṣu lugarthaḥ pāṭho na kartavyo bhavati,
+    mitrayavaḥ ity añaḥ yañañoś ca (*2,4.64) ity eva hi lukaḥ siddhatvāt ? na+etad
+    asti  / mitrayūṇāṃ saṅghaḥ ity atra gotracaraṇād vuñaṃ bādhitvā maitreyakaḥ saṅghaḥ
+    ity atra saṅgha-aṅka-lakṣaṇeṣv añ. yañ-iñām aṇ (*4,3.127) iti aṇ prāpnoti  / hiraṇmayam
+    iti hiraṇyasya mayaṭi yādilopo nipātyate, hiraṇyasya vikāraḥ hiraṇmayaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

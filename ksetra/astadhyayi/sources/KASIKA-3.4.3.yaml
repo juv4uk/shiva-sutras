@@ -1,0 +1,45 @@
+source_id: KASIKA-3.4.3
+locator:
+  sutra: 3.4.3
+witness_text:
+  sutra: sayuccaye 'nyatarasyām
+  commentary: anekakriyādhyāhāraḥ samuccayaḥ  / samuccīyamāna-kriyāvacanād dhātor
+    anyatarasyāṃ loṭ pratyayo bhavati, tasya loṭo hi-svau ādeśau bhavataḥ  / tadhvaṃbhāvinastu
+    vā bhavataḥ  / bhrāṣṭramaṭa, maṭhamaṭa, khadūramaṭa, sthālyapidhānam aṭa ity eva
+    ayam aṭati, imāv aṭataḥ, ime 'ṭanti  / bhrāṣṭramaṭa, maṭhamaṭa, khadūram aṭa,
+    sthālyapidhānam aṭa+ity eva tvam aṭasi, yuvām aṭathaḥ, yūyam aṭatha  / atha vā,
+    bhrāṣṭram aṭata, maṭham aṭata, khadūram aṭata, sthālyupidhānam aṭata ity eva yūyam
+    aṭatha  / bhrāṣṭram aṭa, maṭham aṭa, khadūram aṭa, sthālyupidhānam aṭa ity eva
+    aham aṭāmi, āvām aṭāvaḥ, vayam aṭāmaḥ  / atha vā, bhrāṣṭram aṭati, maṭham aṭati,
+    khadūram aṭati, sthālyupidhānam aṭati ity eva ayam aṭati, imā vaṭataḥ, ime 'ṭanti  /
+    bhrāṣṭram aṭasi, maṭham aṭasi, khadūram aṭasi, sthālyupidhānam aṭasi, ity eva
+    tvam aṭasi, yuvām aṭathaḥ, yūyam aṭatha  / bhrāṣṭram aṭāmi, maṭham aṭāmi, khadūram
+    aṭāmi, sthālyupidhānam aṭāmi ity eva aham aṭāmi, āvām aṭāvaḥ, vayam aṭAamaḥ  /
+    chando 'dhīṣva, vyākaraṇam adhīṣva, niruktam adhīṣva ity eva ayam adhīte, imāv
+    adhīyāte, ime 'dhīyate  / chando 'dhīṣva, vyākaraṇam adhīdhvam ity eva yūyam adhīdhve  /
+    chando 'dhīṣva, vyākaraṇam adhīṣva, niruktam adhīṣva ity eva aham adhīye, āvām
+    adhīvahe, vayam adhīmahe  / atha vā, chando 'dhīte, vyākaraṇam adhīte, niruktamadhīte,
+    ity eva ayam adhīte, imāv adhīyāte, ime 'dhīyate  / chando 'dhīṣe, vyākaraṇam
+    adhīṣe, niruktam adhīṣe ity eva tvam adhīṣe, yuvām adhīyāthe, yūyam adhīdhve  /
+    chando 'dhīye, vyākaraṇam adhīye, niruktam adhīye ity eva aham adhīye, āvām adhīvahe,
+    vayam adhīmahe //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

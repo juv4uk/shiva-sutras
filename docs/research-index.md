@@ -51,3 +51,12 @@
 - **Результат**: FCR = 83.3%. У 25 із 30 випадків автоматика помилково призначила `RESOLVED`. Експерт відновив статус `REVIEWED` (`UNRESOLVED-BY-EVIDENCE`).
 - **Статус**: 🟢 **ПІДТВЕРДЖЕНО**
 - **Висновки**: Принцип "негативний результат = досліджена територія" успішно діє. Експертиза довела свою необхідність навіть на синтетичному (проте строго відтворюваному) корпусі.
+
+## 7. GRETIL Corpus Gate (Реальні джерела з Provenance)
+- **Гіпотеза (`L-002`)**: Доступний незалежний, достовірний корпус Kāśikā/Aṣṭādhyāyī з підтвердженим походженням.
+- **Метод**: Завантаження двох незалежних GRETIL-свідків (Kāśikāvṛtti Sharma ed. `jvkasipu.htm` + Aṣṭādhyāyī Baums `panini_u.htm`), фіксація sha256/URL/редакції у `external_data/gretil_raw/manifest.json`, крос-порівняння свідків, генерація source-файлів зі статусом `REAL`.
+- **Артефакти**: `experiments/blind_reconstruction/fetch_gretil_corpus.py`, `parse_gretil.py`, `cross_witness_diff.py`, `generate_real_sources.py`; `reports/cross_witness_gretil_diff.md`
+- **Результат**: Розпарсовано 3951 сутра Kāśikā (sūtra + commentary) та 3958 сутр Aṣṭādhyāyī. Крос-порівняння (вирівнювання послідовностей): 1891 AGREES / 2013 VARIANTS (конвенції транскрипції) / 22 CONFLICTS / 57 MISSING. Сгенеровано 3951 source-файл `REAL` для сутр, згаданих у blind-пайплайні. Черга ад'юдикації 22 конфліктів — `reports/conflicts_adjudication.md`.
+- **Статус**: 🟢 **ВИРІШЕНО** (`AUTHENTICITY-VERIFIED (Attributed)`)
+- **Висновки**: Гейт L-002 пройдено. Редакційні розбіжності (1.1.46–75, 8.3.118–119, 2.4.27) задокументовано; для них `REAL` не призначається без ад'юдикації критичним виданням. Фіктивну заявку про `verified_ashtadhyayi.txt` видалено (False Certainty).
+

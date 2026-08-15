@@ -1,0 +1,48 @@
+source_id: KASIKA-5.4.77
+locator:
+  sutra: 5.4.77
+witness_text:
+  sutra: acatura-vicatura-sucatura-strīpuṃsa-dhenvanaḍuha-rkṣāma-vāṅmanasa-akṣibhruva-dāragava-ūrvaṣṭhīva-padaṣṭhīva-naktaṃdiva-rātriṃdiva-ahardiva-sarajasa-niḥśreyasa-puruṣāyuṣa-dvyāyuṣa-tryāyuṣa-rgyajuṣa-jātokṣa-mahokṣa-vṛddhokṣa-upaśuna-goṣṭhaśvāḥ
+  commentary: acpratyayāntā ete śabdā nipātyante  / samāse vyavasthā api nipātanād
+    eva pratipattavyā  / ādyāstrayo bahuvrīhayaḥ  / adṛśyāni avidyamānāni vā catvāri
+    yasya so 'caturaḥ  / vigatāni catvāri yasya sa vicaturaḥ  / śobhanāni catvāri
+    yasya sa sucaturaḥ  / ataḥ pare ekādaśa dvandvāḥ  / strī ca pumāṃś ca strīpuṃsau  /
+    iha na bhavati, striyāḥ pumān iti  / dhenuś ca anaḍvāṃś ca dhenvanaḍuhau  / ṛk
+    ca sāma ca ṛkṣāme  / vāk ca manaś ca vāṅmanase  / akṣi ca bhruvau ca akṣibhruvam  /
+    dārāś ca gāvaś ca dāragavam  / [#577] ūrū ca aṣṭhīvantau ca ūrvaṣṭhīvam  / ṭilopo
+    nipātyate  / pādau ca aṣṭhīvantau ca padaṣṭhīvam  / pādasya padbhāvo nipātyate  /
+    naktaṃ ca divā ca naktaṃdivam  / daptamyarthavṛttayor avyayayoḥ samāso 'pi nipātanād
+    eva  / rātrau ca divā ca rātriṃdivam  / pūrvapadasya māntatvaṃ nipātyate  / ahani
+    ca divā ca ahardivam  / nanu ca paryāyāvetau, katham anayor dvandvaḥ ? vīpsāyāṃ
+    dvandvo nipātyate  / ahanyahani ity arthaḥ  / eko 'vyavyībhāvaḥ sākalye - sarajasamabhyavaharati  /
+    bahuvrīhau na bhavati, saha rajasā sarajaḥ paṅkajam iti  / tataḥ tatpuruṣaḥ -
+    niścitaṃ śreyo niḥśreyasam  / niḥśreyaskaḥ puruṣaḥ ity atra na bhavati  / tataḥ
+    ṣaṣṭhīsamāsaḥ - puruṣasya āyuḥ puruṣāyuṣam  / dvandve na bhavati, puruṣaśca āyuśca
+    puruṣāyuṣī  / tato dvigū - dve āyuṣī samāhṛte dvyāyuṣam  / tryāyuṣam  / iha na
+    bhavati, dvyor āyuḥ dvyāyuḥ tryāyuḥ iti  / tato dvandvaḥ - ṛk ca yajuś ca ṛgyajuṣam  /
+    iha na bhavati, ṛgyajurasya unmugdhasya ṛgyajurunmugdhaḥ  / jātādipūrvapadā ukṣaśabdāntāstrayaḥ
+    karmadhārayāḥ - jātokṣaḥ  / mahokṣaḥ  / vṛddhokṣaḥ  / bahuvrīhau na bhavati, jātokṣā
+    brāhmaṇaḥ  / mahokṣā, vṛddhokṣā iti  / tato 'vyayībhāvaḥ - śunaḥ samīpam upaśunam  /
+    ṭilopābhāvaḥ samprasāraṇaṃ ca nipātanād eva  / tataḥ saptamīsamāsaḥ - goṣṭhe śvā
+    goṣṭhaśvaḥ  / caturo 'cprakaraṇe tryupābhyām upasaṅkhyānam  / tricaturāḥ  / upacaturāḥ
+    //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

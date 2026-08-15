@@ -1,0 +1,42 @@
+source_id: KASIKA-1.1.27
+locator:
+  sutra: 1.1.27
+witness_text:
+  sutra: sarva-ādīni sarvanāmāni
+  commentary: sarva-śabdaḥ ādir yeṣāṃ tāni-imāni sarva-adīni sarvanāma-sañjñāni bhavanti  /
+    sarvaḥ, sarvau, sarve  / sarvasmai  / sarvasmāt  / sarveṣām  / sarvasmin  / sarvakaḥ  /
+    viśvaḥ, viśvau, visve  / viśvasmai  / viśvasmāt  / viśveṣām  / viśvasmin  / viśvakaḥ  /
+    [#14] ubha  / ubhaya  / ubha-śabdasya sarvanāmatve prayojanam-- sarvanāmnas-tṛtīya
+    ca (*2,3.27) iti  / ubhābhyāṃ hetubhyāṃ vasati, ubhayoḥ hetvoḥ vasati  / ubhaye  /
+    ubhayasmai  / ubhayasmāt  / ubhyeṣām  / ubhayasmin  / ḍatara, ḍatama  / katara,
+    katama  / katarasmai, katamasmai  / itara  / anya  / anyatara  / itarasmai  /
+    anyasmai  / anyatarasamai  / tva-śabdo 'nya-vācī svara-bhedād dviḥ paṭhitaḥ  /
+    ekaḥ udāttaḥ  / dvitīyo 'nudāttaḥ  / kecit takārāntamekaṃ paṭhanti  / tva tvat
+    iti dvāv api ca anudātāu iti smaranti  / nema--nemasmai  / vakṣyamāṇena jasi vibhāṣā
+    bhavati  / neme, nemāḥ iti  / sama--samasmai  / kathaṃ yathā-saṅkhyam anudeśaḥ
+    samānām (*1,3.10), same deśe yajeta iti  / samasya sarva-śabda-paryāyasya sarvanāma-sñjñā
+    iṣyte, na sarvatra  / sima--simasmai  / pūrva-para-avara-dakṣiṇa-uttara-apara-adharāṇi
+    vyavasthāyām asañjñāyām (*1,1.34)  / svam añjñāti-dhana-ākhyām (*1,1.35)  / antaraṃ
+    bahiryogopsaṃvyānayoḥ (*1,1.36)  / tyad, tad, yad, etad, idam, adas, eka, dvi,
+    yuṣmad, asmad, bhavatu, kim  / sarvādiḥ  / sarvanāma-pradeśāḥ-- sarvanāmnaḥ smai
+    (*7,1.14) ity evam ādayaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

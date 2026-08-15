@@ -1,0 +1,40 @@
+source_id: KASIKA-2.1.48
+locator:
+  sutra: 2.1.48
+witness_text:
+  sutra: pātresamita-ādayaś ca
+  commentary: samudāyā eva nipātyante  / pātresamita-ādayaḥ śabdas tatpuruṣa-sañjñā
+    bhavanti kṣepe gamyamāne  / ye ca atra ktāntena saha samāsāḥ, teṣāṃ pūrvena+eva
+    siddhe punaḥ pāṭho yuktārohyādi-parigraha-arthaḥ, pūrvapadādy-udāttatvaṃ yathā
+    sayāt iti  / yuktarohyādiṣu hi pātresamitādayaś ca iti paṭhyate  / pātresamitāḥ  /
+    pātrebahulāḥ  / avadhāraṇena kṣepo gamyate, pātre eva samitā na punaḥ kvacit kārye
+    iti  / udumbaramaśakādaṣu upamayā kṣepaḥ  / mātaripuruṣaḥ iti pratiṣiddhasevanena  /
+    piṇḍīṣūrādiṣu nirīhatayā  / avyaktattvāccākṛtigaṇo 'yam  / pātresamitāḥ  / pātrebahulāḥ  /
+    udumbaramaśakāḥ  / udarakṛmiḥ  / kūpakacchapaḥ  / kūpacūrṇakaḥ  / avaṭakacchapaḥ  /
+    kūpamaṇḍūkaḥ  / kumbhamaṇḍūkaḥ  / udapānamaḥḍūkaḥ  / nagarakākaḥ  / nagaravāyasaḥ  /
+    mātariṣuruṣaḥ  / piṇḍīṣūraḥ  / pitariṣūraḥ  / geheśūraḥ  / gehenardī  / gehekṣveḍī  /
+    gehevijitī  / gehevyāḍaḥ  / gehemehī  / gehedāhī  / hehedṛptaḥ  / gehedhṛṣṭaḥ  /
+    garbhetṛptaḥ  / ākhanikabakaḥ  / goṣṭheśūraḥ  / goṣṭhe vijitī  / goṣṭhekṣveḍī  /
+    goṣṭhepaṭuḥ  / goṣṭhepaṇḍitaḥ  / goṣṭhepragalbhaḥ  / karṇeṭiṭṭibhaḥ  / karṇeṭiriṭirā  /
+    karṇecuracurā  / cakāro 'vadhāraṇa-arthaḥ, tena samāsāntaraṃ na bhavati, paramapātresamitāḥ
+    iti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

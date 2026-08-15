@@ -1,0 +1,54 @@
+source_id: KASIKA-7.2.34
+locator:
+  sutra: 7.2.34
+witness_text:
+  sutra: grasita-skabhita-stabhita-uttabhita-catta-vikastā viśastṛ-śaṃstṛ-śāstṛ-tarutṛ-tarūtṛ-varutṛ-varūtṛ-varūtrīr-ujjvaliti-kṣariti-kṣamiti-vamity-amiti
+    iti ca
+  commentary: grasita skabhita stabhita uttabhita catta vikasta viśastṛ śaṃstṛ śāstṛ
+    tarutṛ tarūtṛ varutṛ varūtṛ varūtrīḥ ujjvaliti kṣariti kṣamiti vamiti amiti ity
+    etāni chandasi viṣaye nipātyante  / tatra grasita skabhita stabhita uttabhita
+    iti grasu skambhu stambhu ity eteṣām udittvān niṣṭhāyām iṭpratiṣedhe prāpte iḍāgamo
+    nipātyate  / grasitaṃ vā etat somasya  / grastam iti bhāṣāyām  / skabhita - viṣkabhite
+    ajare  / viṣkabdha iti bhāṣāyām  / stabhita - yena svaḥ stabhitam  / stabdham
+    iti bhāṣāyām  / uttabhita - satyenottabhitā bhūmiḥ  / uttabdhā iti bhāṣāyām  /
+    uttabhita iti utpūrvasya nipātasāmarthyād anyopasargapūrvaḥ stabhitaśabdo na bhavati  /
+    [#809] catta, vikasta iti cateḥ kaseś ca vipūrvasya niṣṭhāyām iḍabhāvo nipātyate  /
+    cattā varṣeṇa vidyut catitā iti bhāṣāyām  / vikasta - uttānāyā hṛdayaṃ yad vikastam  /
+    vikasitam iti bhāṣāyām  / nipātanaṃ bahutvāpekṣam, vikastāḥ iti bahuvacanaṃ kṛtam  /
+    apareṣu tu nipātaneṣu pratyekaṃ vibhaktinirdeśaḥ  / viśastṛ śaṃstṛ śāstṛ iti śaser
+    vipūrvasya śaṃseḥ śāseś ca tṛci iḍabhāvo nipātyate  / viśastṛ - ekastvaṣṭuraśvasyāviśastā  /
+    viśasitā iti bhāṣāyām  / śaṃstṛ - uta śaṃstā suvipraḥ  / śaṃsitā iti bhāṣāyām  /
+    śāstṛ - praśāstā  / praśāsitam iti bhāṣāyām  / tarutṛ tarūtṛ varutṛ varūtṛ varūtrīḥ
+    iti tarateḥ vṛṅvṛñoś ca tṛci uṭ ūṭ ity etāv āgamau nipātyete  / tarutāraṃ rathānām,
+    tarūtāram  / taritāram, tarītāram iti bhāṣāyām  / varutāraṃ rathānām, varūtāraṃ
+    rathānām  / varitāram, varītāram iti bhāṣāyām  / varutrī tvā devī viśvadevyavatī  /
+    jasi pūrvasavarṇoccāraṇaṃ prayogadarśanārtham  / atantraṃ caitat  / idam api hi
+    bhavati - ahorātrāṇi vai varūtrayaḥ iti  / chāndasikamatra hrasvatvam  / prapañcārtham
+    eva ca ṅībantasya nipātanam  / varūtṛśabdo hi nipātitaḥ, tata eva ṅīpi sati siddho
+    varūtrīśabdaḥ  / ujjvaliti kṣariti kṣamiti vamiti amiti iti ca jvalater utpūrvasya
+    kṣara kṣama vama ity eteṣāṃ ca tipi śapaḥ ikārādeśo nipātyate, śapo lugvā, iḍāgamaḥ  /
+    agnirujjvaliti  / ujjvalati iti bhāṣāyām  / kṣariti - stokaṃ kṣariti  / kṣarati
+    iti bhāṣāyām  / kṣamiti - stomaṃ kṣamiti  / kṣamati iti bhāṣāyām  / vamiti - yaḥ
+    somaṃ vamiti  / vamati iti bhāṣāyām  / amiti - abhyamiti varuṇaḥ  / abhyamati
+    iti bhāṣāyām  / itikaraṇaṃ pradarśanārtham tena kvacit īkāro bhāvati, ravimabhyamīti
+    varuṇaḥ ity api hi vede paṭhyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,45 @@
+source_id: KASIKA-1.4.52
+locator:
+  sutra: 1.4.52
+witness_text:
+  sutra: guti-buddhi-pratyavasāna-artha-śabda-karma-akarmakāṇām aṇi kartā sa ṇau
+  commentary: artha-śabdaḥ praty-ekam abhisambadhyate  / gaty-arthānāṃ buddhy-arthānāṃ
+    pratyavasāna-arthānam ca dhātūnāṃ, tatha śabda-karmakāṇām akarmakanām ca aṇy-antānām
+    yaḥ kartā, sa ṇy-antānāṃ karmasañjño bhavati  / gacchati māṇavako grāmam, gamayati
+    māṇavakaṃ grāmam  / yāti māṇavako grāmam, yāpayati māṇavakaṃ grāmam  / gaty-artheṣu
+    nīvahyoḥ pratiṣedho vaktavyaḥ  / nayati bhāram devadattaḥ, nāyayati bhāram devadattena  /
+    vahati bhāram devadattaḥ, vāhyati bhāraṃ devadattena  / vaheraniyantṛkartṛkasya+iti
+    vaktavyam  / iha praitṣedho mā bhūt, vahanti yavān balīvardāḥ, vāhayati yavān
+    balīvardān iti  / buddhiḥ - budhyate māṇavako dharmam, bodhayati māṇavakaṃ dahrmam  /
+    vetti māṇavako dharmam, vedayati māṇavakaṃ dharmam  / pratyavasānam abhyavahāraḥ  /
+    bhuṅkte māṇavaka odanam, bhojayati māṇavakam odanam  / aśnāti mānavaka odanam,
+    āśayati māṇavakamodanam  / ādikhādyoḥ pratiśedho vaktavyaḥ  / atti māṇavaka odanam,
+    ādayate māṇavakena odanam  / khādati māṇavakaḥ, khādayati māṇavakena  / bhakṣer
+    ahiṃsa-arthasya pratiṣedho vaktavyaḥ  / bhakṣayati piṇḍīṃ devadattaḥ, bhakṣayati
+    piṇḍīṃ devadattena iti  / ahiṃsa-arthasya iti kim ? bhakṣayanti balīvardāḥ sasyam,
+    bhakṣayanti balīvardān sasyam  / śabda-karmaṇām -- adhīte mānavako vedam, adhyāpayati
+    māṇavakaṃ vedam  / paṭhati māṇavako vedam  / pāṭhayati māṇavakaṃ vedam  / akarmakāṇām
+    - āste devadattaḥ, āsayati devadattam  / śete devadattaḥ, śāyayati devadattam  /
+    eteṣām iti kim ? pacaty odanaṃ devadattaḥ, pācayaty odanaṃ devadattena iti  /
+    aṇyantānām iti kim ? gamayati devadatto yajñadattam, tam aparaḥ prayuṅkte, gamayati
+    devadattena yajñadattaṃ viṣṇumitraḥ // [#87]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

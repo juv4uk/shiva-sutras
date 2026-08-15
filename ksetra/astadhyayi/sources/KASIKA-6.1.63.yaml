@@ -1,0 +1,46 @@
+source_id: KASIKA-6.1.63
+locator:
+  sutra: 6.1.63
+witness_text:
+  sutra: pad-dan-no-mās-hṛn-niś-asan-yūṣan-doṣan-yakañ-chakann-udann-āsañ chasprabhṛtiṣu
+  commentary: pāda danta nāsikā māsa hṛdaya niśā asṛj yūṣa doṣa yakṛt śakṛt udaka
+    āsana ity eteṣāṃ śabdānāṃ sthāne śasprabhṛtipratyayeṣu parataḥ pad dat nas mās
+    hṛd niś asan yūṣan doṣan yakan śakan udan āsan ity ete ādeśāḥ yathāsaṅkhyaṃ bhavanti  /
+    pad - nipadaścaturo jahi  / padā vartaya goduham  / pādaḥ pat (*6,4.130)  / dat
+    - yā dato dhāvate tasyai śyāvadan  / nas - sūkarastvā khanannasā  / mās - māsi
+    tvā paśyāmi cakṣuṣā  / hṛd - hṛdā pūtaṃ manasā jātavedo  / niś - amāvāsyāyāṃ niśi
+    yajet  / asan - asikto 'snā 'varohati  / yūṣan - yā pātrāṇi yūṣṇa āsecanāni  /
+    doṣan - yatte doṣṇo daurbhāgyam  / yakan - yakno 'vadyati  / śakan - śakno 'vadyati  /
+    udan - udno divyasya no dehi  / āsan - āsani kiṃ labhe madhūni  / śasprabhṛtiṣu
+    iti kim ? pādau te pratipīḍyau  / nāsike te kṛśe  / kecid atra chandasi ity anuvartayanti  /
+    apare punar aviśeṣeṇa+icchanti  / tathā hi bhāṣāyām api padādayaḥ śabdāḥ prayujyante  /
+    vyāyāmakṣuṇṇagātrasya padbhyāmudvartitasya ca  / vyādhayo na+upasarpanti vainateryāmavoragāḥ
+    // ity evam ādayaḥ  / anyatarasyām ity etad anuvartayanti  / tena pādādayo 'pi
+    prayujyante  / śasprabhṛtiṣu iti prakārārthe prabhṛtiśabda iti śalā doṣaṇī ity
+    atra api doṣannādeśo bhavati  / padādiṣu māṃspṛtsnūnām upasaṅkhyānam  / māṃsa
+    pṛtanā sānu ity eteṣāṃ sthāne yathāsaṅkhyam māṃs pṛt snu ity ete ādeśāḥ bhavanti  /
+    māṃspacanyā ukhāyāḥ  / māṃsapacanyā iti prāpte  / pṛtsu martyam  / pṛtanāsu martyam
+    iti prāpte  / na te divo na pṛthivyā adhisnuṣu  / adhisānuṣu iti prāpte  / [#613]
+    nas nāsikāyā yattaskṣudreṣu  / nāsikāyā nasbhāvo vaktavyaḥ yat tas kṣudra ity
+    eteṣu parataḥ  / nasyam  / nastaḥ  / naḥkṣuḥ  / yati varṇanagarayor na+iti vaktavyam  /
+    nāsikyo varṇaḥ  / nāsikyaṃ nagaraṃ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

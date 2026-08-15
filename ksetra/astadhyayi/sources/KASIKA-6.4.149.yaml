@@ -1,0 +1,41 @@
+source_id: KASIKA-6.4.149
+locator:
+  sutra: 6.4.149
+witness_text:
+  sutra: sūrya-tiṣya-agastya-matsyānāṃ ya upadhāyāḥ
+  commentary: sūrya tisya agastya matsya ity eteṣāṃ yakārasya upadhāyāḥ bhasya lopo
+    bhavati īti paratastaddhite ca  / sūryeṇaikadik saurī balākā  / aṇi yo yasya+iti
+    lopaḥ tasya asiddhatvaṃ na asti, vyāśrayatvāt  / īkāre tu yastasyā - siddhatvād
+    upadhāyakāro bhasyāṇantasya sūryasya sambandhī iti lupyate  / tiṣya taiṣmahaḥ  /
+    taiṣī rātriḥ  / agastya - agastyasya apatyaṃ strī, ṛṣitvādaṇi kṛte āgastī  / āgastīyaḥ  /
+    matsya - gaurāditvāt ṅīṣ, matsī  / upadhāyāḥ iti kim ? matsyacarī  / yagrahaṇam
+    uttarārtham  / viṣayaparigaṇanam atra kartavyam  / [#765] matsyasya ṅyām iti vaktavyam  /
+    iha mā bhūt, matsyasya+idaṃ māṃsaṃ mātsyam  / sūryāgastyayośche ca gyāṃ ca  /
+    saurīyaḥ  / saurī  / āgastīyaḥ  / āgastī  / iha mā bhūt, sauryam caruṃ nirvapet  /
+    āgastyaḥ  / tiṣyapuṣyayor nakṣatrāṇi  / tiṣyeṇa nakṣatreṇa yuktaḥ kālaḥ taiṣaḥ  /
+    pauṣaḥ  / antikasya tasi kādilopa ādyudāttaṃ ca  / antikaśabdasya tasipratyaye
+    parataḥ kakāradeḥ śabdasya lopaḥ, ādyudāttatvam ca  / antito na dūrāt  / tame
+    tādeś ca  / tamapratyaye antikaśabdasya takārādeḥ kakārādeś ca lopo vaktavyaḥ  /
+    tatra tādilope - antamaḥ  / kādilope - antitamaḥ  / kādilope bahulam iti vaktavyam  /
+    anyatra api hi vṛśyate, antike sīdati iti antiṣat  / pūrvapadāt (*8,3.106) iti
+    ṣatvam  / ye ca  / antiyaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

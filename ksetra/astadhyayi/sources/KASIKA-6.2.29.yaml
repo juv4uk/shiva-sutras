@@ -1,0 +1,38 @@
+source_id: KASIKA-6.2.29
+locator:
+  sutra: 6.2.29
+witness_text:
+  sutra: iganta-kāla-kapāla-bhagāla-śarāveṣu dvigau
+  commentary: igante uttarapade, kālavācini, kapāla bhagāla śarāva ity eteṣu ca dvigau
+    samāse pūrvapadaṃ prakṛtisvaraṃ bhavati  / iganta - pañcāratniḥ  / daśāratniḥ  /
+    pañcāratnayaḥ pramāṇamasya, daśāratnayaḥ pramāṇamasya iti taddhitārthe dviguḥ,
+    pramāṇe laḥ dvigor nityam iti mātraco lopaḥ  / iganta  / kāla - pañcamāsyaḥ  /
+    daśamāsyaḥ  / pañca māsān bhṛto bhūto bhāvī vā iti taddhitārthe dvigor yap (*5,1.82)  /
+    pañcavarṣaḥ  / daśavarṣaḥ  / varṣāl luk ca (*5,1.88) iti ṭhaño luk  / kāla  /
+    kapāla - pañcakapālaḥ  / daśakapālaḥ  / kapāla  / bhagāla - pañcabhagālaḥ  / daśabhagālaḥ  /
+    bhagāla  / śarāva - pañcaśarāvaḥ  / daśaśarāvaḥ  / saṃskṛtaṃ bhakṣāḥ (*4,2.16)
+    iti taddhitārthe ete samāsāḥ dvigor lug anapatye (*4,1.88) iti kṛtāṇpratyayalopā
+    draṣṭavyāḥ  / igantādiṣu iti kim ? pañcabhir aśvaiḥ krītaḥ pañcāśvaḥ  / daśāśvaḥ  /
+    dvigau iti kim ? paramāratniḥ  / paramaśarāvam  / pañcāratnyo daśāratnyaḥ iti
+    ca yaṇguṇayoḥ bahiraṅgalakṣaṇayor asiddhatvāt sthānivadbhāvād vā dvigusvara igantalakṣaṇaḥ
+    pravartate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

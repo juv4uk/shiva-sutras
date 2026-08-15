@@ -1,0 +1,38 @@
+source_id: KASIKA-6.2.81
+locator:
+  sutra: 6.2.81
+witness_text:
+  sutra: yuktārohy-ādayaś ca
+  commentary: yuktārohyādayaḥ samāsāḥ ādyudāttā bhavanti  / yuktārohī  / āgatarohī  /
+    āgatayodhī  / āgatavañcī  / āgatanardī  / āgataprahārī  / ete ṇinantāḥ ṇini (*6,2.79)
+    ity asya+eva+udāharanārthaṃ pathyante purvottarapadaniyamārthā iti kecit  / iha
+    mā bhūt, vṛkṣārohi, yuktādhyāyī iti  / āgatamatsyā  / kṣīrahotā  / bhaginībhartā  /
+    yājakāditvāt ṣaṣṭhīsamāsāvetau  / grāmagodhuk  / aśvatrirātraḥ  / gargatrirātraḥ  /
+    vyuṣṭatrirātraḥ  / śaṇapādaḥ  / samapādaḥ  / ṣaṣṭhīsamāsā ete  / ekaśitipat  /
+    ekaḥ śitiḥ pādo 'sya iti tripado bahuvrīhiḥ  / tatra ekaśitiśabdas taddhitārthottarapadaḥ
+    iti tatpuruṣasañjñaḥ, tasya nimittisvarabalīyastvād antodāttatvaṃ prāptam ity
+    ādyudāttatvaṃ vidhīyate  / [#674] evam api na artha etena, iganta dvigau (*6,2.29)
+    iti siddhatvāt ? evaṃ tarhi jñāpanārtham  / etaj jñāpayati śityantasya+uttarapade
+    dvigusvaro na bhavati iti  / tena dviśitipād ity atra tiśabda udātto bhavati  /
+    nimittisvarabalīyastvasya apy ekaśitipātsvaravacanam eva jñāpakaṃ varṇayanti  /
+    pātresamitādayaś ca yuktārohyādayas tatas te 'py ādyudāttā bhavanti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

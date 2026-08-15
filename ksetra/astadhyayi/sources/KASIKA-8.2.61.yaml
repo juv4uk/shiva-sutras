@@ -1,0 +1,33 @@
+source_id: KASIKA-8.2.61
+locator:
+  sutra: 8.2.61
+witness_text:
+  sutra: nasatta-niṣatta-anutta-pratūrta-sūrta-gūrtāni chandasi
+  commentary: nasatta niṣatta anutta pratūrta sūrta gūrta ity etāni chandasi viṣaye
+    nipātyante  / nasatta, niṣatta iti sadeḥ naṇpūrvāt nipūrvāc ca natvābhāvo nipātyate  /
+    nasattamañjasā  / nasannam iti bhaṣāyām  / niṣattaḥ  / niṣaṇṇaḥ iti bhāṣāyām  /
+    anuttam iti undeḥ nañpūrvasya nipātanam  / anuttamā te maghavan  / anunna iti
+    bhāṣāyām  / praturtam iti tvarateḥ turvī ity etasya vā nipātanam  / pratūrtaṃ
+    vājin  / pratūrṇam iti bhāṣāyām  / sūrtam iti sṛ ity etasya utvaṃ nipātyate  /
+    sūrtā gāvaḥ  / sṛtā gāvaḥ iti bhāṣāyām  / gūrtam iti gūrī ity etasya natvābhāvo
+    nipātyate  / gūrtā amṛtasya  / gūrṇam iti bhāṣāyām // [#925]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

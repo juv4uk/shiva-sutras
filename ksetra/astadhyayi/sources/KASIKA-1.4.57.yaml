@@ -1,0 +1,47 @@
+source_id: KASIKA-1.4.57
+locator:
+  sutra: 1.4.57
+witness_text:
+  sutra: ca-ādayo 'sattve
+  commentary: ca-ādayo nipāta-sañjñā bhavanti, na cet sattve vartante  / prasajya-pratiṣedho
+    'yam  / sattvam iti dravyam ucyate  / ca  / vā  / ha  / aha  / eva  / evam  /
+    nūnam  / śaśvat  / yugapat  / sūpat  / kūpat  / kuvit  / net  / cet  / caṇ  /
+    kaccit  / yatra  / naha  / hanta  / mākim  / nakim  / māṅ  / māṅo ṅakāro viśeṣaṇārthaḥ,
+    māṅi luṅ (*3,3.175) iti  / iha na bhavati, mā bhavatu, ma bhaviṣyati  / nañ  /
+    yāvat  / tāvat  / tvā  / tvai  / dvai  / rai  / śrauṣaṭ  / vauṣaṭ  / svāhā  /
+    vaṣaṭ  / svadhā  / om  / kila  / tathā  / atha  / su  / sma  / asmi  / a  / i  /
+    u  / ṛ  / ḷ  / e  / ai  / o  / au  / am  / tak  / uñ  / ukañ  / velāyām  / mātrāyām  /
+    yathā  / yat  / yam  / tat  / kim  / purā  / addhā  / dhik  / hāhā  / he  / hai  /
+    pyāṭ  / pāṭ  / thāṭ  / aho  / utāho  / ho  / tum  / tathāhi  / khalu  / ām  /
+    āho  / atho  / nanu  / manye  / mithyā  / asi  / brūhi  / tu  / nu  / iti  / iva  /
+    vat  / cana  / bata  / iha  / śam  / kam  / anukam  / nahikam  / hikam  / sukam  /
+    satyam  / ṛtam  / śraddhā  / iddhā  / mudhā  / no cet  / na cet  / nahi  / jātu  /
+    katham  / kutaḥ  / kutra  / ava  / anu  / hāhau  / haihā  / īhā  / āhosvit  /
+    chambaṭ  / kham  / diṣṭyā  / paśu  / vaṭ  / saha  / ānuṣak  / aṅga  / phaṭ  /
+    tājak  / aye  / are  / caṭu  / bāṭ  / kum  / khum  / ghum  / hum  / āīm  / śīm  /
+    sīm  / vai  / upasarga-vibhakti-svara-pratirūpakāś ca nipātāḥ  / upasarga-pratirūpakāḥ
+    -- avadattam vidattaṃ ca pradataṃ ca adikarmaṇi  / sudattam anudattaṃ ca nidattam
+    iti ceṣyate // aca upasargāt taḥ (*7,4.47) iti tatvam na bhavati  / durnītam  /
+    durnayaḥ  / durnirṇayaḥ // upasargāt (*8,4.14) iti ṇatvaṃ na bhavati  / asattve
+    iti kim ? paśur vai puruṣaḥ  / paśuḥ puroḍaśaḥ nipāta-pradeśāḥ -- svara-ādi-nipatam
+    avyayam (*1,1.37) ity evam ādayaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

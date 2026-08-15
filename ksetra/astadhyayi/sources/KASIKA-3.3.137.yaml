@@ -1,0 +1,38 @@
+source_id: KASIKA-3.3.137
+locator:
+  sutra: 3.3.137
+witness_text:
+  sutra: kāla-vihbhāge ca anahorātrāṇām
+  commentary: bhaviṣyati maryādā-vacane 'varasmin iti vartate  / kālamaryādāvibhāge
+    satyavarsmin pravibhāge bhaviṣyati kāle 'nadyatanavat pratyayavidhirna bhavati,
+    na ced aho-rātra-sambhandhī vibhāgaḥ, taisteṣāṃ ca vibhāge pratiṣedhaḥ  / pūrveṇa+eva
+    siddhe vacanam idam aho-rātra-niṣedha-artham  / yoga-vibhāga uttarārthaḥ  / yo
+    'yaṃ saṃvatsara āgāmī, tatra yadavaramāgrahāyaṇyāḥ, tatra yuktā adhyeṣyāmahe,
+    tatraudanaṃ bhokṣyāmahe  / bhaviṣyati ity eva  / yo 'yaṃ vatsaro 'tītaḥ, tasya
+    yadavaramāgrahāyaṇyāḥ, tatra yuktā adhyaimahi, tatraudanamabhuñjamahi  / maryādāvacane
+    ity eva  / yo 'yaṃ niravadhikaḥ kāla āgāmī, tasya yadavaramāgrahāyaṇyāḥ, tatra
+    yuktā adhyetāsmahe, tatraudanaṃ bhoktāsmahe  / avarasmin ity eva  / parasmin vibhāṣāṃ
+    vakṣyati  / aho-rātrāṇām iti kim ? trividham udāharaṇam - yo 'yaṃ māsa āgāmī,
+    tasya yo 'varaḥ pañcadaśarātraḥ, yo 'yaṃ triṃśadrātra āgāmī, tasya yo 'varo 'rdhamāsaḥ,
+    yo 'yaṃ triṃśadahorātra āgāmī, tasya yo 'varaḥ pañcadaśa-rātraḥ, tatra yuktā adhyetāsamahe,
+    tatra saktūn pātāsmaḥ  / sarvathā ahorātrasparśe pratiṣedhaḥ // [#283]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,57 @@
+source_id: KASIKA-2.4.31
+locator:
+  sutra: 2.4.31
+witness_text:
+  sutra: ardharcāḥ puṃsi ca
+  commentary: ardharcādayaḥ śabdāḥ puṃsi napuṃsake ca bhāṣyante  / ardharcaḥ  / ardharcam  /
+    gomayaḥ  / gomayam  / [#161] śabda-rūpa-āśrayā ca+iyaṃ dvi-liṅgatā kvacid arthabhedena
+    api vyavatiṣṭhate, yathā - paḍmaśaṅkha-śabdau nidhi-vacanau puṃliṅgau, jalaje
+    ubhaya-liṅgau  / bhūta-śabdaḥ piśāce ubhaya-liṅgaḥ, kriyā-śabdasya abhidheyavalliṅgam  /
+    saindhava-śabdo lavaṇe ubhayaliṅgaḥ, yaugikasya abhidheyavalliṅgam  / sāra-śabda
+    utkarṣe puṃliṅgaḥ, nyāyādanapete napuṃsakam, naitat sāram iti  / dharmaḥ ity apūrve
+    puṃliṅgaḥ, tatsādhane napuṃsakam  / tāni dharmāṇi prathamānyāsan  / ardharca  /
+    gomaya  / kaṣāya  / kārṣāpaṇa  / kutapa  / kapāṭa  / śaṅkha  / cakra  / gūtha  /
+    yūtha  / dhvaja / kabandha  / paḍma  / gṛha  / saraka  / kaṃsa  / divasa  / yūṣa  /
+    andhakāra  / daṇḍa  / kamaṇḍalu  / manḍa  / bhūta  / dvīpa  / dyūta  / cakra  /
+    dharma  / karman  / modaka  / śatamāna  / yāna  / nakha  / nakhara  / caraṇa  /
+    puccha  / dāḍima  / hima  / rajata  / saktu  / pidhāna  / sāra  / pātra  / ghṛta  /
+    saindhava  / auṣadha  / āḍhaka  / caṣaka  / droṇa  / khalīna  / pātrīva  / ṣaṣṭika  /
+    vāra  / bāna  / protha  / kapaittha  / śuṣka  / śīla  / śulba  / sīdhu  / kavaca  /
+    reṇu  / kapaṭa  / sīkara  / musala  / suvarṇa  / yūpa  / camasa  / varṇa  / kṣīra  /
+    karṣa  / ākāśa  / aṣṭāpada  / maṅgala  / nidhana  / niryāsa  / jṛmbha  / vṛtta  /
+    pusta  / kṣveḍita  / śṛṅga  / śṛṅkhala  / madhu  / mūla  / mūlaka  / śarāva  /
+    śāla  / vapra  / vimāna  / mukha  / pragrīva  / śūla  / vajra  / karpaṭa  / śikhara  /
+    kalka  / nāṭa  / mastaka  / valaya  / kusuma  / tṛṇa  / paṅka  / kuṇḍala  / kirīṭa  /
+    arbuda  / aṅkuśa  / timira  / āśrama  / bhūṣaṇa  / ilvasa  / mukula  / vasanta  /
+    taḍāga  / piṭaka  / viṭaṅka  / māṣa  / kośa  / phalaka  / dina  / daivata  / pināka  /
+    samara  / sthāṇu  / anīka  / upavāsa  / śāka  / karpāsa  / caśāla  / khaṇḍa  /
+    dara  / viṭapa  / raṇa  / bala  / mala  / mṛṇāla  / hasta  / sūtra  / tāṇḍava  /
+    gāṇḍīva  / maṇḍapa  / paṭaha  / saudha  / pārśva  / śarīra  / phala  / chala  /
+    pūra  / rāṣṭra  / viśva  / ambara  / kuṭṭima  / maṇḍala  / kakuda  / tomara  /
+    toraṇa  / mañcaka  / puṅkha  / madhya  / bāla  / valmīka  / varṣa  / vastra  /
+    deha  / udyāna  / udyoga  / sneha  / svara  / saṅgama  / niṣka  / kṣema  / śūka  /
+    chatra  / pavitra  / yauvana  / pānaka  / mūṣika  / valkala  / kuñja  / vihāra  /
+    lohita  / viṣāṇa  / bhavana  / araṇya  / pulina  / dṛḍha  / āsana  / airāvata  /
+    śūrpa  / tīrtha  / lomaśa  / tamāla  / loha  / daṇḍaka  / śapatha  / pratisara  /
+    dāru  / dhanus  / māna  / taṅka  / vitaṅka  / mava  / sahasra  / odana  / pravāla  /
+    śakaṭa  / aparāhṇa  / nīḍa  / śakala  / iti ardharcādiḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

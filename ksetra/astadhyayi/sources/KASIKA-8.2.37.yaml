@@ -1,0 +1,40 @@
+source_id: KASIKA-8.2.37
+locator:
+  sutra: 8.2.37
+witness_text:
+  sutra: ekāco baśo bhaṣ jhaṣantasya s-dhvoḥ
+  commentary: dhātor avayavo ya ekāc jhaṣantaḥ tadavayavasya baśaḥ sthāne bhaṣ ādeśo
+    bhavati jhali sakāre dhvaśabde ca parataḥ padānte ca  / atra catvaro baśaḥ sthānino
+    bhaṣādeśāścatvāra eva, tatra saṅkhyātānudeśe prāpte ḍakārasya sthānino 'bhāvāt
+    ḍhakārādeśo na bhavati ? āntaryato vyavasthā vijñāsyate  / budha - bhotsyante  /
+    abhuddhvam  / arthabhut  / guha - nighokṣyate  / nyaghūḍhvam  / parṇaghuṭ  / duha
+    - dhokṣyate  / adhugdhvam  / godhuk  / ajarghāḥ - gudheḥ yaṅlugantasya laṅi sipi
+    labhūpadhaguṇe kṛte sipo halṅyādilope ca dhātoḥ avayavasya ekāco baśaḥ sthāne
+    bhaṣbhāvaḥ, tato dhakārasya jaśtvam, daś ca (*8,2.75) iti rutvam, ro ri (*8,3.14)
+    iti pūrvarephasya lopaḥ, ḍhralope pūrvasya dīrgho 'ṇaḥ (*6,3.111) iti dīrghatvam  /
+    gadarbhayateḥ apratyayaḥ - gardhap  / ekācaḥ iti kim ? dāmaliham icchati dāmalihyati,
+    dāmalihyater apratyayaḥ, dāmaliṭ  / asati hy ekājgrahaṇe dhātoḥ ity etad baśo
+    viśeṣaṇaṃ syāt  / baśaḥ iti kim ? krudha - krotsyati  / jhaṣantasya iti kim ?
+    dāsyati  / sdhvoḥ iti kim ? boddhā  / voddhum  / boddhavyam  / dhakārasya bakāropasṛṣṭasya
+    grahaṇaṃ kim ? dādaddhi  / dadha dhāraṇe ity etasya yaṅluki loṭi hujhalbhyo herdhiḥ
+    (*6,4.101) iti dhibhāve saty etad bhavati //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

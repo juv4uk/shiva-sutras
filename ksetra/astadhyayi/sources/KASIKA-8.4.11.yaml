@@ -1,0 +1,37 @@
+source_id: KASIKA-8.4.11
+locator:
+  sutra: 8.4.11
+witness_text:
+  sutra: prātipadikānta-num-vibhaktiṣu ca
+  commentary: vā iti vartate  / prātipadikānte numi vibhaktau ca yo nakāraḥ tasya
+    pūrvapadasthānnimittād uttarasy vā ṇakāra ādeśo bhavati  / prātipadikānte tāvat
+    - māṣavāpiṇau, māṣavāpinau  / numi - māṣavāpāṇi, māṣavāpāni  / vrīhivāpāṇi, vrīhivāpāni  /
+    vibhaktau - māṣavāpeṇa, māṣavāpena  / vrīhivāpeṇa, vrīhivāpena  / pūrvapadādhikārād
+    uttarapadasya prātipadikastho yo 'ntyo nakāraḥ tasya+idaṃ ṇatvam iṣyati  / iha
+    hina bhavati, gargāṇāṃ bhaginī gargabhaginī  / [#969] yadā tv evaṃ bhavati, gargāṇāṃ
+    bhago gargabhagaḥ, gargabhago 'syā asti iti gargabhagiṇī iti, tadā mātṛbhogīṇavannityam
+    eva ṇatvena bhavitavyam  / māṣavāpiṇī, māṣavāpinī ity atra tu gatikārakopapadānāṃ
+    kṛdbhiḥ saha samāsavacanaṃ prākṣubutpatteḥ iti kṛdantena+eva samāse sati prātipadikasya
+    uttarapadasya+eva sato nakāro bhavati  / tathā ca atra nuṃgrahaṇam kṛtam  / sa
+    hi samudāyabhaktatvād uttarapadasya anto na bhavati  / yuvādīnāṃ pratiṣedho vaktavyaḥ  /
+    āryayūnā  / kṣatriyayūnā  / prapakvāni  / dīrghāhnī śarad //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

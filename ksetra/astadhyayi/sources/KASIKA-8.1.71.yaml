@@ -1,5 +1,39 @@
 source_id: KASIKA-8.1.71
 locator:
   sutra: 8.1.71
-raw_text: Simulated Kasika raw text for 8.1.71.
-extracted_at: '2026-08-15T00:00:00Z'
+witness_text:
+  sutra: tiṅi ca+udāttavati
+  commentary: gatiḥ iti vartate  / tiṅante udāttavati parato gatiranudātto bhavati  /
+    yat prapacati  / yat prakaroti  / tiṅgrahaṇam udāttavataḥ parimāṇārtham  / anyathā
+    hi yaṃ prati gatiḥ, tatrānudātto bhavati iti dhātau eva udāttavati syāt, pratyaye
+    na syāt yat prakaroti iti  / yatkriyāprayuktāḥ prādayas teṣām taṃ prati gatyupasargasañjñe
+    bhavataḥ iti tiṅante dhātum eva prati gatisañjñā  / āmante tarhi na prāpnoti,
+    prapacatitarām, prapacatitamām iti ? atra kecidāmantena gataḥ samāsaṃ kurvanti  /
+    teṣām avyayapūrvapadaprakṛtisvaratve satyakriyamāṇe 'pi tiṅgrahaṇe paramanudāttavad
+    bhavati iti gatinighāto naiva sidhyati  / atha tarabantasy gatisamāsaḥ ? evam
+    api satiśiṣṭatvādāma eva svare sati gateḥ anudāttaṃ padam ekavarjam (*6,1.158)
+    ity evānudāttatvaṃ siddham  / yeṣāṃ gatikārakopapadānāṃ kṛdbhiḥ samāsavacanam
+    prāk subutpatteḥ ity anena vacanena kṛdantena+eva prāk subutpatteḥ samāso bhavati,
+    na anyena, iti darśanam, teṣām evaṃvidhe viṣayesamāsena na+eva bhavitavyam iti  /
+    pṛthak svarapravṛttau satyāmanena nighātena prayojanam asti  / tadarthaṃ yatnaḥ
+    kartavyaḥ  / udāttavati iti kim ? prapacati  / prakaroti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

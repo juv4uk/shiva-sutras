@@ -1,0 +1,44 @@
+source_id: KASIKA-6.1.3
+locator:
+  sutra: 6.1.3
+witness_text:
+  sutra: na ndrāḥ saṃyogādayaḥ
+  commentary: dvitīyasya iti vartate  / dvitīyasya ekāco 'vayavabhūtānāṃ ndrāṇāṃ tadantarbhāvāt
+    prāptaṃ dvirvacanaṃ pratiṣidhyate  / nakāradakārarephā dvitīyaikāco 'vayavabhūtāḥ
+    saṃyogādayo na dvir udyante  / undidiṣati  / aḍḍiḍiṣati  / [#595] arciciṣati  /
+    ndrāḥ iti kim ? īcikṣiṣate  / saṃyogādayaḥ iti kim ? prāṇiṇiṣati  / aniteḥ (*8,4.19)
+    ubhau sābhyāsasya (*8,4.21) iti ṇatvam  / ajādeḥ ity eva, didrāsati  / kecid ajādeḥ
+    ity api pañcamyantaṃ karmadhārayam anuvartayanti  / tasya prayojanam, indidrīyiṣati
+    iti  / ajāder anantaratvābhāvād dakāro dvir ucyata eva, nakāro na dvir ucyate  /
+    indram icchati iti kyac  / tadantāt indrīyitum icchati iti san  / bakārasya apy
+    ayaṃ pratiṣedho vaktavyaḥ  / ubjijiṣati  / yadā bakaropadha ubjir upadiśyate tadā
+    ayaṃ pratiṣedhaḥ  / dakāropadhopadeśe tu na vaktavyaḥ  / batvaṃ tu dakārasya vidhātavyam  /
+    yakāraparasya rephasya pratiṣedho na bhavati iti vaktavyam  / arāryate  / arteḥ
+    aṭyartiśūrṇotīnām upasaṃkhyānam (*7,4.82) iti yaṅ  / tatra yaṅi ca (*7,4.30) iti
+    guṇaḥ, tato dvirvacanam  / īrṣyates tṛtīyasya dve bhavata iti vaktavyam  / kasya
+    tṛtīyasya ? kecid āhur vyañjanasya iti  / īrṣyiyiṣati  / apare punaḥ tṛtīyasya
+    ekācaḥ iti vyācakṣate  / īrṣyiṣiṣati  / kaṇḍvādīnāṃ tṛtīyasya+eakāco dve bhavata
+    iti vaktvyam  / kaṇḍūyiyiṣati  / asuyiyiṣati  / vā nāmadhātūnāṃ tṛtīyasya+ekāc
+    dve bhavata iti vaktavyam  / aśvīyiyiṣati  / aśiśvīyiṣati  / apara āha - yathā+iṣṭaṃ
+    nāmadhātuṣv iti vaktavyam  / puputrīyiṣati  / putitrīyiṣati  / putrīyiyiṣati  /
+    puputitrīyiyiṣati  / putrīyiṣiṣati // [#596]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

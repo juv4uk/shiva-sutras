@@ -1,0 +1,44 @@
+source_id: KASIKA-5.1.59
+locator:
+  sutra: 5.1.59
+witness_text:
+  sutra: paṅkti-viṃśati-triṃśac-catvāriṃśat-pañcāśat-ṣaṣṭi-saptaty-aśīti-navati-śatam
+  commentary: tad asya parimāṇam (*5,1.47) iti vartate  / paṅktyādayaḥ śabdā nipātyante  /
+    yad iha lakṣaṇena anupapannaṃ tat sarvaṃ nipātanāt siddham  / pañcānā ṭilopaḥ
+    tiś ca pratyayaḥ  / pañca parimāṇam asya paṅktiś chandaḥ  / dvayor daśatoḥ vinbhāvaḥ
+    śatiś ca pratyayaḥ dvau daśatau praimāṇam asya saṅghasya viṃśatiḥ  / trayāṇāṃ
+    daśatāṃ trinbhāvaḥ śat ca pratyayaḥ  / trayo daśataḥ parimāṇam asya triṃśat  /
+    caturṇāṃ daśatāṃ catvārinbhāvaḥ śat ca pratyayaḥ  / catvāro daśataḥ parimāaṇasya
+    catvāriṃśat  / pañcānāṃ daśatāṃ pañcābhāvaḥ śat ca pratyayaḥ  / pañca daśataḥ
+    parimāṇām asya pañcāśat  / ṣaṇṇāṃ daśatāṃ ṣaḍbhāvaḥ, tiḥ pratyayo 'padatvaṃ ca  /
+    ṣaṅ daśataḥ parimāṇam asya ṣaṣṭiḥ  / saptānāṃ daśatāṃ saptabhāvaḥ tiḥ pratyayaś
+    ca  / sapta daśataḥ parimāṇam asya saptatiḥ  / [#481] aṣṭānāṃ daśatām aśībhāvaḥ
+    tiḥ pratyayaś ca  / [#480] aṣṭau daśataḥ parimāṇam asya aśītiḥ  / navānāṃ daśatāṃ
+    navabhāvaḥ tiḥ pratyayaś ca  / nava daśataḥ parimāṇam asya navatiḥ  / daśanāṃ
+    daśatāṃ śabhāvaḥ taś ca pratyayaḥ  / daśa daśataḥ parimāṇam asya saṅghasya śatam  /
+    viṃśatyādayo guṇa-śabdāḥ, te yathā kathaṃcid vyutpādyāḥ  / na atra avayavārthe
+    'bhiniveṣṭavyam  / tathā hi - paṅktiḥ iti kramasamniveśe 'pi vartate, brāhmaṇapaṅktiḥ,
+    papīlikāpaṅktiḥ iti  / na ca atra avayavārthaḥ kaścid asti  / yā ca+eṣāṃ viṣayabhedena
+    guṇa-mātre guṇini ca vṛttiḥ, svaliṅga-saṅkhya-anuvidhānaṃ ca, etad api sarvaṃ
+    svābhāvikam eva  / sahasrādayo 'py evaṃ jātiyakāḥ tadvad eva draṣṭavyāḥ  / udāharaṇamātram
+    etad iti // [#481]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

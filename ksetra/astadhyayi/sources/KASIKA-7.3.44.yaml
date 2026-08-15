@@ -1,0 +1,46 @@
+source_id: KASIKA-7.3.44
+locator:
+  sutra: 7.3.44
+witness_text:
+  sutra: pratyayasthāt kāt pūrvasya ata id āpy asupaḥ
+  commentary: pratyayasthāt kakārāt pūrvasya akārasya ikārādeśo bhavati āpi parataḥ,
+    sa ced āp supaḥ paro na bhavati  / jaṭilikā  / muṇḍikā  / kārikā  / hārikā  /
+    etikāścaranti  / pratyayagrahaṇaṃ kim ? śaknoti iti śakā  / sthagrahaṇam vispaṣtārtham  /
+    [#842] kakāramātraṃ pratyayo na asti iti sāmarthyāt pratyayasthasya grahaṇam śakyate
+    vijñātum  / kāt iti kim ? maṇḍanā  / ramaṇā  / pūrvasya iti kim ? parasya mā bhūt,
+    paṭukā  / mṛdukā  / ataḥ iti kim ? gokā  / naukā  / taparakaraṇaṃ kim ? rākā  /
+    dhākā  / āpi iti kim ? kārakaḥ  / dhārakaḥ  / atha āpi ity anena kim ? viśiṣyate
+    ? kakāraḥ  / yady evam, kārikā ity atra api na prāpnoti, akāreṇa vyavahitatvāt
+    ? ekādeśe kṛte na asti vyavadhānam  / ekādeśaḥ pūrvavidhau sthānivadbhavati iti
+    vyavadhānam eva ? vacanād vyavadhānamīdṛśaṃ yat sthānivadbhāvakṛtam ekena varṇena
+    tadāśrīyate  / rathakaṭyādiṣu tu śrutikṛtam anekena varṇena vyavadhānam iti itvaṃ
+    na bhavati  / asupaḥ iti kim ? bahavaḥ parivrājakā asyāṃ mathurāyām bahuparivrājakā
+    mathurā  / subantād ayaṃ bahuparivrājakaśabdāt paraḥ āp iti pratiṣedho bhavati  /
+    prasajyapratiṣedhaścāyam, na paryudāsaḥ  / paryudāse hi sati samudāyād asubantāt
+    parataḥ āp iti itvam atra syād eva  / avidyamānaḥ sup yasmin so 'yam asup iti
+    ? evam api nāśīyate  / tathā hi sati bahucarmikā ity atra api na syāt  / māmakanarakayor
+    upasaṅkhyānaṃ kartavyam apratyayasthatvāt  / mama iyaṃ māmikā narikā  / aṇi mamakādeśaḥ  /
+    kevalamāmaka iti niyamāt sañjñāchandasoḥ īkāro na asty atra, tena aṇpratyayāntād
+    api ṭāp bhavati, narān kāyati iti narikā  / āto 'nupasarge kaḥ (*3,2.3) iti kaḥ
+    pratyayaḥ  / pratyayaniṣedhe tyaktyapoś ca+upasaṅkhyānam  / udīcāmātaḥ sthāne
+    yakpūrvāyāḥ (*7,3.43) iti vikalpo mā bhūt iti  / dīkṣiṇātyikā  / ihatyikā //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,34 @@
+source_id: KASIKA-6.1.171
+locator:
+  sutra: 6.1.171
+witness_text:
+  sutra: ūḍ-idaṃ-padādy-ap-pum-rai-dyubhyaḥ
+  commentary: ūṭḥ idam padādi ap pum rai div ity etebhyo 'sarvanāmasthānavibhaktir
+    udāttā bhavati  / ūṭḥ - praṣṭauhaḥ  / praṣṭhauhā  / ūṭhyupadhāgrahaṇaṃ kartavyam  /
+    iha mā bhūt, akṣadyuvā  / akṣadyuve  / idam - ābhyām  / ebhiḥ  / antodāttāt ity
+    adhikārād anvādeśe na bhavati, atho ābhyāṃ nipuṇamadhītam iti  / padādayaḥ paddannomāsa
+    (*6,1.63) ity evam ādayo niśparyantā iha gṛhyante  / ni padaścaturo jahi  / yā
+    dato dhāvate  / asanprabhṛtibhyo vibhaktir anudāttaiva bhavati  / grīvāyāṃ baddho
+    api kakṣa āsani  / matsyaṃ na dīna udani kṣiyantam  / ap - apaḥ paśya  / adbhiḥ  /
+    adbhyaḥ  / pum - puṃsaḥ  / pumbhyām  / pumbhyaḥ  / puṃsā  / puṃse  / rai - rāyaḥ
+    paśya  / rābhyām  / rābhiḥ  / div - divaḥ paśya  / divā  / dive //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

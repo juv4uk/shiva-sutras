@@ -1,0 +1,37 @@
+source_id: KASIKA-7.3.53
+locator:
+  sutra: 7.3.53
+witness_text:
+  sutra: nyaṅkv-ādīnāṃ ca
+  commentary: nyaṅku ity evam ādīnāṃ kavargādeśo bhavati  / nyaṅkuḥ - nāvañceḥ iti
+    upratyayaḥ  / madguḥ - mimasjibhya uḥ iti masjeḥ upratyayaḥ  / bhṛguḥ - prathimadibhrasjāṃ
+    samprasāraṇaṃ salopaś ca iti upratyayaḥ  / dūrepākaḥ, phalepākaḥ - dūre pacyate
+    svayam eva, phale pacyate svayam eva  / pacādyac  / nipātanād vṛddhiḥ  / tatpuruṣe
+    iṛti bahulam (*6,3.14) iti saptamyā aluk  / kṣaṇepākaḥ ity api hi kecit paṭhanti  /
+    dūrepākā, phalepākā it ṭābantamapre 'dhīyate  / ukārāntāvapare dūrepākuḥ phalepākuḥ
+    iti  / [#846] teṣām upratyayaḥ nipātanād eva  / takram vakram iti pañcater vañcateś
+    ca sphāyitañcivañci ity ādinā sūtreṇa rak  / vyatiṣaṅgaḥ - vyatiṣajati iti pacādyac  /
+    anuṣaṅgaḥ  / avasargaḥ  / upasargaḥ  / śvapākaḥ, māṃsapākaḥ, kapotapākaḥ, ulūkapākaḥ
+    iti karmopadādaṇ pratyayaḥ  / sañjñāyā anyatra arhaḥ, avadāhaḥ, nidāhaḥ  / nyagrodhaḥ,
+    vīrud ity atra nyakpūrvasya ruheḥ pacādyaci, vipūrvasya kvipi dhakāro vidhīyate  /
+    nyagrohayati nyagrodhaḥ  / virohayati iti vīrut  //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

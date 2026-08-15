@@ -1,0 +1,43 @@
+[
+  {
+    "id": "GRETIL-KASIKA",
+    "url": "https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm",
+    "filename": "jvkasipu.htm",
+    "size_bytes": 2810997,
+    "sha256": "e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353",
+    "retrieved_at_utc": "2026-08-15T04:07:50.180229+00:00",
+    "edition": "Kāśikāvṛtti of Jayāditya & Vāmana",
+    "editor": "Aryendra Sharma",
+    "publisher": "Osmania University, Sanskrit Academy, Hyderabad",
+    "year": "1969-1985",
+    "digitizer": "Mari Minamino, Kyoto",
+    "content": "Aṣṭādhyāyī sūtras (PS_ refs) + Kāśikāvṛtti commentary (JKv_ refs)",
+    "ref_system": {
+      "sutra": "PS_adhy,pada.sutra",
+      "commentary": "JKv_adhy,pada.sutra"
+    },
+    "license": "GRETIL text file is for reference purposes only; copyright and terms of usage as for source file.",
+    "notes": "Retains sandhi/pausa inconsistencies; - = word sandhi, + = sentence sandhi.",
+    "epistemic_status": "AUTHENTICITY-VERIFIED (Attributed to cited edition; digitization by GRETIL)"
+  },
+  {
+    "id": "GRETIL-ASTADHYAYI",
+    "url": "https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/panini_u.htm",
+    "filename": "panini_u.htm",
+    "size_bytes": 177162,
+    "sha256": "9e596d215613da179beaae93b8757d4d168448e63627b2b023f3d69e4fa93d71",
+    "retrieved_at_utc": "2026-08-15T04:07:50.408083+00:00",
+    "edition": "Aṣṭādhyāyī of Pāṇini",
+    "editor": null,
+    "publisher": "TeX Users Group Eighth Annual Conference Proceedings, TeXniques 5 (Providence, 1988)",
+    "year": "1988",
+    "digitizer": "Stefan Baums",
+    "content": "Aṣṭādhyāyī sūtras only (independent transliteration)",
+    "ref_system": {
+      "sutra": "adhy.pada.sutra (zero-padded, e.g. 1.01.001)"
+    },
+    "license": "GRETIL text file is for reference purposes only; copyright and terms of usage as for source file.",
+    "notes": "Accents dropped, capital letters for technical terms, analytic hyphens retained.",
+    "epistemic_status": "AUTHENTICITY-VERIFIED (Attributed to cited edition; digitization by GRETIL)"
+  }
+]

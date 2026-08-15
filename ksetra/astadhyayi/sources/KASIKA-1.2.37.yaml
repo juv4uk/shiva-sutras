@@ -1,0 +1,46 @@
+source_id: KASIKA-1.2.37
+locator:
+  sutra: 1.2.37
+witness_text:
+  sutra: na subrahmaṇyāyāṃ svaritasya tu udāttaḥ
+  commentary: subrahmaṇyā nāma nigadas tatra yajña-karmaṇi iti vibhāṣā chandasi (*1,2.36)
+    iti ca ekaśrutiḥ prāptā pratiṣidyate  / subrahmaṇyāyām ekaśrutir na bhavati  /
+    yas tu lakṣaṇa-prāptaḥ svaritas tasya-udātta ādeśo bhavati  / subrahmanyom  /
+    indrāgaccha, hariva āgaccha, medhātithermeṣa vṛṣaṇaśvasya mene  / gaurāva-skandinnahalyāyai
+    jāra kauśikabrāhmaṇa gautamabruvāṇa śvaḥ sutyāmāgaccha maghavan  / atra subrahmaṇyom
+    ity okāras titsvareṇa svaritas tasya-udātto vidhīyate  / indra āgaccha ity āmantritam
+    ādy-udattam  / dvitīyo varṇo 'nudāttaḥ  / udāttād anudātasya svaritaḥ iti svaritaḥ
+    prasaktas tasya anena-udāttaḥ triyate  / tad evam indra āgaccha iti catvāra udāttāḥ  /
+    paścima eko 'nudāttaḥ  / hariva āgaccha ityanayaiva prakriyayā catvāra udāttāḥ
+    dvāv anudāttau  / medhātitheḥ iti ṣaṣṭyantaṃ parama-amantritam anupraviśati subāmantrite
+    parāṅgavatsvare (*2,1.2) iti  / tataḥ sakalasyā mantritādy-udāttatve iṛte dvitīyam
+    akṣaram anudāttaṃ, tasya udāttād anudāttasya svaritaḥ (*8,4.66) iti svaritatve
+    prāpte idam-udāttatvaṃ vidhīyate  / tena dvāvapy-udāttau bhavataḥ  / [#41] śeṣaman-udāttam  /
+    vṛṣaṇaśvasya mene iti samānaṃ pūrveṇa  / gaurāvaskandin iti tatha-iva dve ādye
+    akṣare udātte, śeṣam anudāttam  / ahalyāyai jāra iti subantasya amantrita-anupraveśāt
+    t advadeva svaraḥ  / dvāv udāttau śeṣam anudāttam  / kauśikabrahmaṇa iti samastamāmantritamādy-udāttaṃ
+    tatra pūrvavad dvāv udāttau śeṣam anudāttam  / evam gautama-bruvāṇa iti dvāv udāttau
+    śeṣam anudāttām  / śvaḥ sutyāmāgaccha maghavan iti śvaḥ-śabda udāttaḥ sutyām ity
+    antodāttaḥ  / sañjñāyāṃ samajaniṣadanipatamanavidaṣuñ śīṅbhṛñiṇaḥ (*3,3.99) iti
+    kyapo vidhāne udāttaḥ iti vartate  / agaccha iti dva-udāttau  / antyo 'nudattaḥ  /
+    maghavan iti padāt paramāmantritaṃ nihanyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

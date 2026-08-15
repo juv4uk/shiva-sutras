@@ -1,0 +1,37 @@
+source_id: KASIKA-5.3.22
+locator:
+  sutra: 5.3.22
+witness_text:
+  sutra: sadyaḥ parut parāry-auṣamaḥ paredyavy-adya-pūrvedyur-anyedyur-anyataredyur-itaredyur-aparedyur-adharedyur-ubhayedyur-uttaredyuḥ
+  commentary: sptamyāḥ iti kāle iti ca vartate  / sadyaḥ-prabhṛtayaḥ śabdāḥ nipātyante  /
+    prakṛtiḥ, pratyayaḥ, ādeśaḥ, kālaviśeṣaḥ iti sarvam etan nipātanāl labhyate  /
+    samānasya sabhāvo nipātyate dyaś ca pratyayaḥ ahany abhidheye  / samāne 'hani
+    sadyaḥ  / pūrvapūrvatarayoḥ parabhāvo nipātyate udārī ca pratyayau saṃvatsare
+    'bhidheye  / pūrvasmin saṃvatsare parut  / pūrvatare saṃvatsare parārī  / idama
+    iśbhāvaḥ samasaṇ pratyayaḥ nipātyate saṃvatsare 'bhidheye  / asmin saṃvatsare
+    aiṣamaḥ  / parasmād edyavi pratyayo 'hani  / parasminn ahani paredyavi  / idamo
+    'śbhāvo dyaś ca pratyayo 'hani  / asminn ahani adya  / pūrva-anya. anyatara-itara-apara-addhara-ubhaya-uttarebhya
+    edyus pratyayo nipātyate ahanyabhidheye  / pūrvasminn ahani pūrvedyuḥ  / anyasminn
+    ahani anyedyuḥ  / anyatarasminn ahani anyataredyuḥ  / itarasminn ahani itaredyuḥ  /
+    aparasminn ahani aparedyuḥ  / adharasminn ahani adharedyuḥ  / ubhayor ahnoḥ ubhayedyuḥ  /
+    uttarasminn ahani uttaredyuḥ  / dyuś ca+ubhayād vaktavyaḥ  / ubhayadyuḥ // [#536]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,39 @@
+source_id: KASIKA-2.3.29
+locator:
+  sutra: 2.3.29
+witness_text:
+  sutra: anya-ārād-itara-rte-dik-śabda-añcu-uttarapada-aj-āhi-yukte
+  commentary: anya ārāt itara ṛte dik-śabda añcu-uttarapada āc āhi ity etair yoge
+    pañcamī vibhaktir bhavati  / anya ity artha-grahanam  / tena paryāya-prayoge 'pi
+    bhavati  / anyodevadattāt  / bhinno devadattāt  / artha-antaraṃ devadattāt  /
+    [#140] vilakṣaṇe devadattāt  / ārāc-chabdo dūrāntika-arthe vartate  / tatra dūrāntikārthaiḥ
+    ṣaṣthy-anyatarasyām (*2,3.34)  / iti prāpte pañcamī vidhīyate  / ārād devadattāt  /
+    ārād yajñadattāt  / itara iti nirdiśyamāna-pratiyogī padārtha ucyate  / itaro
+    devadattāt  / ṛte iti avyayaṃ varjana-arthe  / ṛte devadattāt  / ṛte yajñadattāt  /
+    dik-śabdaḥ -- pūrvo grāmāt parvataḥ  / uttaro grāmāt  / pūrvo grīṣmāt vasantaḥ  /
+    uttaro grīṣmo vasantāt  / dvik-śabda ity atra śabda-grahanaṃ deśakālavṛttinā 'pi
+    dik-śabdena yoge yathā syāt, itarathā hi dig-vṛttinaiva syāt, ityamasyāḥ pūrvā
+    iti  / iha tu na syāt, ayam asmāt pūrvaḥ kālaḥ iti  / añcu-uttarapada -- prāg
+    grāmāt  / pratyag grāmāt  / nanu cāyam api dik-śabda eva  / ṣaṣṭhy-atasartha-prayayena
+    (*2,3.30) iti vakṣyati, tasya ayaṃ purastādapakarṣaḥ  / āc -- dakṣiṇā grāmāt  /
+    uttarā grāmāt  / āhi - dakṣiṇāhi grāmāt  / uttarāhi grāmāt //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

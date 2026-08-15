@@ -1,0 +1,42 @@
+source_id: KASIKA-7.2.98
+locator:
+  sutra: 7.2.98
+witness_text:
+  sutra: pratyaya-uttarapadayoś ca
+  commentary: ekavacane ity anuvartate  / pratyaye uttarapade ca parata ekavacane
+    vartamānayoḥ yusmadasmador maparyantasya tva ma ity etāv ādeśau bhavataḥ  / tavāyaṃ
+    tvadīyaḥ  / madīyaḥ  / atiśayena tvam tvattaraḥ  / mattaraḥ  / tvām icchati tvadyati  /
+    madyati  / tvamivācarati tvadyate  / madyate  / uttarapade - tava putraḥ tvatputraḥ  /
+    matputraḥ  / tvaṃ nātho 'sya tvannāthaḥ  / mannathaḥ  / ekavacane ity eva, yuṣmākamidam
+    yuṣmadīyam  / asmadīyam  / yuṣmākaṃ putraḥ, asmākaṃ putraḥ yuṣmatputraḥ, asmatputraḥ  /
+    vibhaktau ity adhikārāt pūrvayogo vibhaktāv eva  / tato 'nyatra api pratyaye uttarapade
+    ca yathā syāt ity ayam ārambhaḥ  / nanu cātrāpyantarvartinī vibhaktir asti, tasyām
+    eva ādeśau bhavisyataḥ ? na+evaṃ śakyam, lukā tasyā bhavitavyam  / bahiraṅgo luk,
+    antaraṅgau ādeśau, prathamaṃ tau bhaviṣyataḥ ? etad eva tarhi ādeśavacanaṃ jñāpakam
+    antaraṅgān api vidhīn bahiraṅgo 'pi luk bādhate iti  / tena gomān priyo 'sya gomatpriyaḥ
+    ity evam ādau numādi lukā bādhyate  / evaṃ ca sati tvāhau sau (*7,2.94) ity evam
+    ādayo 'pi pratyayottarpadayor ādeśā na bhavanti  / tvaṃ pradhānam eṣāṃ tvatpradhānāḥ  /
+    matpradhānāḥ  / yūyaṃ putrā asya yuṣmatputraḥ  / asmatputraḥ tubhyaṃ hitaṃ tvaddhitam  /
+    maddhitam  / tava putraḥ tvatputraḥ  / matputraḥ  / atha kimarthm eṣāṃ tvāhādīnāṃ
+    bādhanārtham etan na vijñāyate ? lakṣyasthityapekṣayā  / jñāpkārthe hy etasmin
+    bahutaramiṣṭaṃ saṅgṛhyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

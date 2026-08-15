@@ -1,0 +1,40 @@
+source_id: KASIKA-6.1.85
+locator:
+  sutra: 6.1.85
+witness_text:
+  sutra: antādivac ca
+  commentary: ekaḥ iti vartate, pūrvaparayoḥ iti ca  / ekaḥ pūrvaparayoḥ (*6,1.84)
+    iti yo 'yam ekādeśo vidhīyate sa pūrvasya antavad bhavati, parasyādivad bhavati  /
+    yathā tasyāntaḥ ādir vā tadantarbhūtaḥ tadgrahaṇena gṛhyate, tadvadekādeśo 'pi
+    tadgrahaṇena grhyate ity eṣo 'tideśārthaḥ  / brahmabandhūḥ ity atra brahmabandhu
+    iti prātipadikam, ūṅ iti aprātipadikam, tayoḥ prātipadikāprātipadikayor yaḥ ekādeśaḥ
+    sa prātipadikasya antavad bhavati, yathā śakyate kartuṃ ṅyāp prātipadikāt (*4,1.1)
+    iti svādividhiḥ  / vṛkṣau ity atra subaukāraḥ asubakāraḥ, tayoḥ subasupor ekādeśaḥ
+    supaḥ ādivad bhavati, yathā śakyate vaktuṃ subantaṃ padam iti  / varṇāśrayavidhau
+    ayam anatādivadbhāvo nisyate  / tathā hi khaṭvābhiḥ ity atra antavadbhāvābhāvāt
+    ato bhisa ais (*7,1.9) iti na bhavati  / hvayateḥ juhāva iti samprasāraṇapūrvatvasya
+    ādivadbhāvāhāvāt āta au ṇalaḥ (*7,1.34) iti na bharvāta  / asyai aśvaḥ, asyā aśvaḥ
+    iti vṛddhir eci (*6,1.88) iti vṛddhiḥ, eṅaḥ padāntādati (*6,1.109) ity atra vidhau
+    ādivan na bhavati  / pūrvaparasamudāya ekādeśasya sthānī, sa hi tena nivartayate  /
+    tatra avayavayor ānumānikaṃ sthānitvam iti tadāśrayaṃ kāryaṃ sthānivadbhāvād aprāptam
+    ity antādivadbhāvo vidhīyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,42 @@
+source_id: KASIKA-1.1.37
+locator:
+  sutra: 1.1.37
+witness_text:
+  sutra: svarādi-nipātam avyayam
+  commentary: svarādīni śabda-rūpāṇi nipātāśca avyaya-sañjñāni bhavanti  / svar, antar,
+    prātar, ete anta-udāttāḥ paṭhyante  / punar ādy-udāttaḥ  / sanutar, uccais, nīcais,
+    śanais, ṛdhak, ārāt, ṛte, yugapat, pṛthak, ete 'pi sanutarprabhṛtayo 'ntodāttāḥ
+    paṭhyante  / hyas, śvas, divā, rātrau, sāyam, ciram, manāk, īṣat, joṣam, tūṣṇīm,
+    bahis, āvis, avas, adhas, samayā, nikaṣā, svayam, mṛṣā, naktam, nañ, hetau, addhā,
+    iddhā, sāmi, ete 'pi hyasprabhṛtayo 'ntodāttāḥ paṭhyante  / vat-vadantam avyaya-sañjñaṃ
+    bhavati  / brāhmaṇavat  / kṣatriyavat  / san, sanāt, sanat, tiras, ete ādy-udāttāḥ
+    paṭhyante  / antarā-ayamantodāttaḥ  / antareṇa, jyok, kam, śam, sanā, sahasā,
+    vinā, nānā, svasti, svadhā, alam, vaṣaṭ, anyat, asti, upāṃśu, kṣamā, vihāyasā,
+    doṣā, mudhā, mithyā  / ktvātosuṅkasunaḥ, kṛnma-kārāntaḥ, sandhy-akṣarāntaḥ, avyayībhāvaś
+    ca  / purā, mitho, mithas, prabāhukam, āryahalam, abhīkṣṇam, sākam, sārdham, samama,
+    namas, hiruk, tasilādiḥ taddhita edhācparyantaḥ, śastasī, kṛtvasuc, suc, ās-thālau,
+    cvyarthāśca, am, ām, pratān, praṣān, svarādiḥ  / nipātā vakṣyante--prāg-rīśvarān-nipātāḥ
+    (*1,4.56) iti  / ca, vā, ha, aha, eva, evam ity-ādayaḥ  / avyaya-pradeśāḥ-- avyayād
+    āp-supaḥ (*2,4.82) ity evam ādayaḥ  / avyayam ity anvartha-sañjñā  / [#18] sadṛśaṃ
+    triṣu liṅgeṣu sarvāsu ca vibhaktiṣu  / vacaneṣu ca sarveṣu yanna vyeti tad-avyayam
+    //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

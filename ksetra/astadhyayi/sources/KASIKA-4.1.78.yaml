@@ -1,0 +1,37 @@
+source_id: KASIKA-4.1.78
+locator:
+  sutra: 4.1.78
+witness_text:
+  sutra: aṇ-iñor anārṣayor guru-upottamayoḥ ṣyaṅ gotre
+  commentary: gotre yāv aṇiñau vihitāv anārṣau tadantayoḥ prātipadikayor gurūpottamayoḥ
+    striyāṃ ṣyaṅ ādeśo bhavati  / nirdiṣyamānasya ādeśā bhavanti ity aṇiñor eva vijñāyate,
+    na tu samudāyasya  / ṅakāraḥ sāmānya-grahaṇa-arthaḥ  / ṣakāras tadavighātārthaḥ,
+    yaṅaś cāp (*4,1.74) iti  / uttama-śabdaḥ svabhāvāt triprabhṛtīnāmantyamakṣaramāha  /
+    uttamasya samīpam upottamam  / guru upottamaṃ yasya tad gurūpottamaṃ prātipadikam  /
+    karīṣasya+iva gandho 'sya karīṣagandhiḥ  / kumudagandhiḥ  / tasyāpatyam ityaṇ  /
+    tasya ṣyaṅ ādeśaḥ  / kārīṣagandhyā  / kaumudagandhyā  / varāhasyāpatyam  / ata
+    iñ (*4,1.95)  / vārāhiḥ  / tasya ṣyaṅ ādeśaḥ  / vārāhyā  / bālākyā  / aṇiñoḥ iti
+    kim ? ṛtabhāgasyāpatyaṃ, badāditvādañ, ārtabhāgī  / gurūpottamādikaṃ sarvam asti
+    iti na staṇiñau  / ṭiḍḍhāṇañ (*4,1.15) iti ṅīb eva bhavati  / anārṣayoḥ iti kim
+    ? vāsiṣṭhī  / vaiśvāmitrī  / gurūpottamayoḥ iti kim ? aupagavī  / kāpaṭavī  /
+    gotre iti kim ? tatra jātāḥ (*4,3.25) - āhicchatrī  / kānyakubjī //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

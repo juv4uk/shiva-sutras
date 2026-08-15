@@ -1,0 +1,835 @@
+canon_ref: siva-sutras.yaml
+relation_to_canon: comparison
+language: ukrainian
+iso_639_1: uk
+iso_639_3: ukr
+metadata:
+  description: Ukrainian phonological inventory mapped against Śiva-sūtras canonical
+    sequence
+  source: Standard Ukrainian phonology (Bulakhovsky, Shevelov, contemporary academic
+    consensus)
+  status: PROPOSED
+  version: '0.1'
+  canon_version: '1.0'
+  note: Palatalized consonants are phonemic in Ukrainian but absent in Sanskrit. This
+    is a systematic difference, not an anomaly.
+phonological_inventory:
+  vowels:
+    monophthongs:
+    - symbol: а
+      ipa: ɑ
+      type: vowel
+      height: open
+      backness: back
+      rounded: false
+      length: short
+      stressed_variants:
+      - ɑ
+      - ɐ
+      canon_mapping:
+        equivalent: a
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /a/ is central [ə] in many positions; Ukrainian /ɑ/ is back
+          and open. Both are low unrounded vowels but differ in backness and exact
+          quality.
+    - symbol: е
+      ipa: ɛ
+      type: vowel
+      height: open-mid
+      backness: front
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: e
+        sutra: 3
+        relation: approximate
+        note: Sanskrit /e/ is a long close-mid front vowel [eː]; Ukrainian /ɛ/ is
+          a short open-mid front vowel. Same frontness, different height and length.
+    - symbol: и
+      ipa: ɪ
+      type: vowel
+      height: near-high
+      backness: back
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No direct equivalent in Śiva-sūtras. Sanskrit has no near-high back
+          unrounded vowel. Closest is /i/ but /ɪ/ is significantly more back and lower.
+          This is a defining phoneme of Ukrainian.
+    - symbol: і
+      ipa: i
+      type: vowel
+      height: high
+      backness: front
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: i
+        sutra: 1
+        relation: exact
+        note: Exact match with Sanskrit /i/.
+    - symbol: о
+      ipa: ɔ
+      type: vowel
+      height: open-mid
+      backness: back
+      rounded: true
+      length: short
+      canon_mapping:
+        equivalent: o
+        sutra: 3
+        relation: approximate
+        note: Sanskrit /o/ is a long close-mid back rounded vowel [oː]; Ukrainian
+          /ɔ/ is a short open-mid back rounded vowel. Same backness and rounding,
+          different height and length.
+    - symbol: у
+      ipa: u
+      type: vowel
+      height: high
+      backness: back
+      rounded: true
+      length: short
+      canon_mapping:
+        equivalent: u
+        sutra: 1
+        relation: exact
+        note: Exact match with Sanskrit /u/.
+    diphthongoids:
+    - symbol: я
+      ipa: jɑ
+      type: vowel_sequence
+      components:
+      - j
+      - ɑ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: Sequence of palatal approximant + open back vowel. Sanskrit has no phonemic
+          diphthongoid of this type; closest is /ya/ as a consonant-vowel sequence.
+    - symbol: є
+      ipa: jɛ
+      type: vowel_sequence
+      components:
+      - j
+      - ɛ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: ї
+      ipa: ji
+      type: vowel_sequence
+      components:
+      - j
+      - i
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: ю
+      ipa: ju
+      type: vowel_sequence
+      components:
+      - j
+      - u
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: йо
+      ipa: jɔ
+      type: vowel_sequence
+      components:
+      - j
+      - ɔ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+  consonants:
+    hard:
+    - symbol: б
+      ipa: b
+      voicing: voiced
+      place: bilabial
+      manner: plosive
+      canon_mapping:
+        equivalent: b
+        sutra: 10
+        relation: exact
+        note: 'Exact match with Sanskrit /b/ (SS-10: j b g ḍ d ś).'
+    - symbol: в
+      ipa: v
+      voicing: voiced
+      place: labiodental
+      manner: fricative
+      canon_mapping:
+        equivalent: v
+        sutra: 5
+        relation: approximate
+        note: Sanskrit /v/ is a labiodental approximant [ʋ]; Ukrainian /v/ is a labiodental
+          fricative [v]. Same place, different manner.
+    - symbol: г
+      ipa: ɦ
+      voicing: voiced
+      place: glottal
+      manner: fricative
+      canon_mapping:
+        equivalent: h
+        sutra: 5
+        relation: approximate
+        note: Ukrainian /ɦ/ is a voiced glottal fricative; Sanskrit /h/ is typically
+          [h] (voiceless) or [ɦ] (voiced) depending on context. Both are glottal fricatives
+          but voicing differs systematically.
+    - symbol: ґ
+      ipa: ɡ
+      voicing: voiced
+      place: velar
+      manner: plosive
+      canon_mapping:
+        equivalent: g
+        sutra: 10
+        relation: exact
+        note: Exact match with Sanskrit /g/. Rare in native Ukrainian (mostly in loanwords
+          and onomatopoeia), but phonemically distinct from /ɦ/.
+    - symbol: д
+      ipa: d
+      voicing: voiced
+      place: alveolar
+      manner: plosive
+      canon_mapping:
+        equivalent: d
+        sutra: 10
+        relation: exact
+        note: 'Exact match with Sanskrit /d/ (SS-10: j b g ḍ d ś).'
+    - symbol: ж
+      ipa: ʒ
+      voicing: voiced
+      place: postalveolar
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No direct equivalent in Śiva-sūtras. Sanskrit has no postalveolar voiced
+          fricative.
+    - symbol: з
+      ipa: z
+      voicing: voiced
+      place: alveolar
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No direct equivalent in Śiva-sūtras. Sanskrit has no alveolar voiced
+          fricative /z/.
+    - symbol: й
+      ipa: j
+      voicing: voiced
+      place: palatal
+      manner: approximant
+      canon_mapping:
+        equivalent: y
+        sutra: 5
+        relation: exact
+        note: 'Exact match with Sanskrit /y/ [j], a palatal approximant (SS-5: h y
+          v r ṭ).'
+    - symbol: к
+      ipa: k
+      voicing: voiceless
+      place: velar
+      manner: plosive
+      canon_mapping:
+        equivalent: k
+        sutra: 12
+        relation: exact
+        note: 'Exact match with Sanskrit /k/ (SS-12: k p y).'
+    - symbol: л
+      ipa: l
+      voicing: voiced
+      place: alveolar
+      manner: lateral_approximant
+      canon_mapping:
+        equivalent: l
+        sutra: 6
+        relation: approximate
+        note: 'Sanskrit /l/ in Śiva-sūtras is retroflex [ɭ] (sutra 6: l ṇ); Ukrainian
+          /l/ is alveolar [l]. Same manner, different place.'
+    - symbol: м
+      ipa: m
+      voicing: voiced
+      place: bilabial
+      manner: nasal
+      canon_mapping:
+        equivalent: m
+        sutra: 7
+        relation: exact
+        note: 'Exact match with Sanskrit /m/ (SS-7: ñ m ṅ ṇ n m).'
+    - symbol: н
+      ipa: n
+      voicing: voiced
+      place: alveolar
+      manner: nasal
+      canon_mapping:
+        equivalent: n
+        sutra: 7
+        relation: exact
+        note: 'Exact match with Sanskrit /n/ (SS-7: ñ m ṅ ṇ n m).'
+    - symbol: п
+      ipa: p
+      voicing: voiceless
+      place: bilabial
+      manner: plosive
+      canon_mapping:
+        equivalent: p
+        sutra: 12
+        relation: exact
+        note: 'Exact match with Sanskrit /p/ (SS-12: k p y).'
+    - symbol: р
+      ipa: r
+      voicing: voiced
+      place: alveolar
+      manner: trill
+      canon_mapping:
+        equivalent: r
+        sutra: 5
+        relation: approximate
+        note: 'Sanskrit /r/ in Śiva-sūtras is retroflex [ɽ] or [ɾ] (sutra 5: h y v
+          r ṭ); Ukrainian /r/ is an alveolar trill [r]. Same broad category (coronal
+          rhotic), different sub-place and manner.'
+    - symbol: с
+      ipa: s
+      voicing: voiceless
+      place: alveolar
+      manner: fricative
+      canon_mapping:
+        equivalent: s
+        sutra: 13
+        relation: approximate
+        note: Sanskrit /s/ has multiple allophones (dental [s], retroflex [ʂ], palatal
+          [ɕ]) depending on context; Ukrainian /s/ is consistently alveolar [s].
+    - symbol: т
+      ipa: t
+      voicing: voiceless
+      place: alveolar
+      manner: plosive
+      canon_mapping:
+        equivalent: t
+        sutra: 11
+        relation: exact
+        note: 'Exact match with Sanskrit /t/ (SS-11: kh ph ch ṭh th c ṭ t v).'
+    - symbol: ф
+      ipa: f
+      voicing: voiceless
+      place: labiodental
+      manner: fricative
+      canon_mapping:
+        equivalent: ph
+        sutra: 11
+        relation: approximate
+        note: Sanskrit /ph/ is an aspirated bilabial plosive [pʰ]; Ukrainian /f/ is
+          a labiodental fricative. No true equivalent in Śiva-sūtras.
+    - symbol: х
+      ipa: x
+      voicing: voiceless
+      place: velar
+      manner: fricative
+      canon_mapping:
+        equivalent: kh
+        sutra: 11
+        relation: approximate
+        note: Sanskrit /kh/ is an aspirated velar plosive [kʰ]; Ukrainian /x/ is a
+          velar fricative. Same place, different manner (plosive vs fricative).
+    - symbol: ц
+      ipa: ts
+      voicing: voiceless
+      place: alveolar
+      manner: affricate
+      canon_mapping:
+        equivalent: c
+        sutra: 4
+        relation: approximate
+        note: Sanskrit /c/ is a palatal/velar affricate [c] ~ [tɕ]; Ukrainian /ts/
+          is an alveolar affricate. Same broad manner (affricate), different place.
+    - symbol: ч
+      ipa: tʃ
+      voicing: voiceless
+      place: postalveolar
+      manner: affricate
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No postalveolar affricate in Śiva-sūtras. Sanskrit /ch/ is a palatal
+          aspirated affricate [cʰ] ~ [tɕʰ].
+    - symbol: ш
+      ipa: ʃ
+      voicing: voiceless
+      place: postalveolar
+      manner: fricative
+      canon_mapping:
+        equivalent: ṣ
+        sutra: 9
+        relation: approximate
+        note: Sanskrit /ṣ/ is a retroflex fricative [ʂ]; Ukrainian /ʃ/ is postalveolar.
+          Both are voiceless fricatives in the coronal region but differ in sub-place.
+    - symbol: щ
+      ipa: ʃtʃ
+      voicing: voiceless
+      place: postalveolar
+      manner: affricate
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras. Some analyses treat it as /ʃː/ (long /ʃ/),
+          others as /ʃtʃ/ (affricate cluster). Either way, absent from Sanskrit phonology.
+    - symbol: дж
+      ipa: dʒ
+      voicing: voiced
+      place: postalveolar
+      manner: affricate
+      canon_mapping:
+        equivalent: j
+        sutra: 10
+        relation: approximate
+        note: Sanskrit /j/ is a palatal affricate [ɟ] ~ [dʑ]; Ukrainian /dʒ/ is a
+          postalveolar affricate. Same broad manner, different place.
+    soft:
+    - symbol: б'
+      ipa: bʲ
+      voicing: voiced
+      place: bilabial
+      manner: plosive
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: Palatalized consonants are a systematic feature of Ukrainian phonology
+          with no direct equivalent in Sanskrit. Sanskrit has palatal consonants (c,
+          ch, j, jh, ñ, y, ś) but no phonemic palatalization of non-palatal consonants.
+    - symbol: в'
+      ipa: vʲ
+      voicing: voiced
+      place: labiodental
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: г'
+      ipa: ɦʲ
+      voicing: voiced
+      place: glottal
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: ґ'
+      ipa: ɡʲ
+      voicing: voiced
+      place: velar
+      manner: plosive
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: д'
+      ipa: dʲ
+      voicing: voiced
+      place: alveolar
+      manner: plosive
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: з'
+      ipa: zʲ
+      voicing: voiced
+      place: alveolar
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: к'
+      ipa: kʲ
+      voicing: voiceless
+      place: velar
+      manner: plosive
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras. Sanskrit /c/ is a palatal affricate, not
+          a palatalized velar plosive.
+    - symbol: л'
+      ipa: lʲ
+      voicing: voiced
+      place: alveolar
+      manner: lateral_approximant
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: м'
+      ipa: mʲ
+      voicing: voiced
+      place: bilabial
+      manner: nasal
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: н'
+      ipa: nʲ
+      voicing: voiced
+      place: alveolar
+      manner: nasal
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: п'
+      ipa: pʲ
+      voicing: voiceless
+      place: bilabial
+      manner: plosive
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: р'
+      ipa: rʲ
+      voicing: voiced
+      place: alveolar
+      manner: trill
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: с'
+      ipa: sʲ
+      voicing: voiceless
+      place: alveolar
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: т'
+      ipa: tʲ
+      voicing: voiceless
+      place: alveolar
+      manner: plosive
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: ф'
+      ipa: fʲ
+      voicing: voiceless
+      place: labiodental
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: х'
+      ipa: xʲ
+      voicing: voiceless
+      place: velar
+      manner: fricative
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: ц'
+      ipa: tsʲ
+      voicing: voiceless
+      place: alveolar
+      manner: affricate
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+canon_coverage_summary:
+  description: For each sound in the Śiva-sūtras canon, its status in Ukrainian phonology
+  coverage:
+  - canon_sound: a
+    sutra: 1
+    ukrainian_status: approximate
+    ukrainian_symbol: а
+    note: Low unrounded vowel, but backness differs
+  - canon_sound: i
+    sutra: 1
+    ukrainian_status: exact
+    ukrainian_symbol: і
+    note: High front unrounded vowel
+  - canon_sound: u
+    sutra: 1
+    ukrainian_status: exact
+    ukrainian_symbol: у
+    note: High back rounded vowel
+  - canon_sound: ṛ
+    sutra: 2
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Syllabic retroflex approximant; no equivalent in Ukrainian
+  - canon_sound: ḷ
+    sutra: 2
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Syllabic retroflex lateral; no equivalent in Ukrainian
+  - canon_sound: e
+    sutra: 3
+    ukrainian_status: approximate
+    ukrainian_symbol: е
+    note: Front unrounded vowel, but height and length differ
+  - canon_sound: o
+    sutra: 3
+    ukrainian_status: approximate
+    ukrainian_symbol: о
+    note: Back rounded vowel, but height and length differ
+  - canon_sound: ai
+    sutra: 4
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Diphthong; Ukrainian has no phonemic diphthongs
+  - canon_sound: au
+    sutra: 4
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Diphthong; Ukrainian has no phonemic diphthongs
+  - canon_sound: h
+    sutra: 5
+    ukrainian_status: approximate
+    ukrainian_symbol: г
+    note: Glottal fricative, but voicing differs systematically
+  - canon_sound: y
+    sutra: 5
+    ukrainian_status: exact
+    ukrainian_symbol: й
+    note: Palatal approximant
+  - canon_sound: v
+    sutra: 5
+    ukrainian_status: approximate
+    ukrainian_symbol: в
+    note: Labiodental, but fricative vs approximant
+  - canon_sound: r
+    sutra: 5
+    ukrainian_status: approximate
+    ukrainian_symbol: р
+    note: Coronal rhotic, but retroflex vs alveolar trill
+  - canon_sound: l
+    sutra: 6
+    ukrainian_status: approximate
+    ukrainian_symbol: л
+    note: Lateral approximant, but retroflex vs alveolar
+  - canon_sound: ñ
+    sutra: 7
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Palatal nasal; Ukrainian has no palatal nasal phoneme
+  - canon_sound: m
+    sutra: 7
+    ukrainian_status: exact
+    ukrainian_symbol: м
+    note: Bilabial nasal
+  - canon_sound: ṅ
+    sutra: 7
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Velar nasal; Ukrainian has no velar nasal phoneme (only allophonic [ŋ] before
+      /k/ or /ɡ/)
+  - canon_sound: ṇ
+    sutra: 7
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Retroflex nasal; no equivalent in Ukrainian
+  - canon_sound: n
+    sutra: 7
+    ukrainian_status: exact
+    ukrainian_symbol: н
+    note: Alveolar nasal
+  - canon_sound: jh
+    sutra: 8
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiced aspirated palatal affricate; no equivalent
+  - canon_sound: bh
+    sutra: 8
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiced aspirated bilabial plosive; no equivalent
+  - canon_sound: gh
+    sutra: 9
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiced aspirated velar plosive; no equivalent
+  - canon_sound: ḍh
+    sutra: 9
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiced aspirated retroflex plosive; no equivalent
+  - canon_sound: dh
+    sutra: 9
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiced aspirated dental plosive; no equivalent
+  - canon_sound: ṣ
+    sutra: 9
+    ukrainian_status: approximate
+    ukrainian_symbol: ш
+    note: Voiceless coronal fricative, but retroflex vs postalveolar
+  - canon_sound: j
+    sutra: 10
+    ukrainian_status: approximate
+    ukrainian_symbol: дж
+    note: Voiced affricate, but palatal vs postalveolar
+  - canon_sound: b
+    sutra: 10
+    ukrainian_status: exact
+    ukrainian_symbol: б
+    note: Voiced bilabial plosive
+  - canon_sound: g
+    sutra: 10
+    ukrainian_status: exact
+    ukrainian_symbol: ґ
+    note: Voiced velar plosive (rare in Ukrainian but phonemic)
+  - canon_sound: ḍ
+    sutra: 10
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiced retroflex plosive; no equivalent
+  - canon_sound: d
+    sutra: 10
+    ukrainian_status: exact
+    ukrainian_symbol: д
+    note: Voiced alveolar plosive
+  - canon_sound: ś
+    sutra: 10
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiceless palatal fricative; Ukrainian has no palatal fricative
+  - canon_sound: kh
+    sutra: 11
+    ukrainian_status: approximate
+    ukrainian_symbol: х
+    note: Velar, but plosive aspirate vs fricative
+  - canon_sound: ph
+    sutra: 11
+    ukrainian_status: approximate
+    ukrainian_symbol: ф
+    note: Bilabial, but plosive aspirate vs labiodental fricative
+  - canon_sound: ch
+    sutra: 11
+    ukrainian_status: approximate
+    ukrainian_symbol: ч
+    note: Affricate, but palatal vs postalveolar
+  - canon_sound: ṭh
+    sutra: 11
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiceless aspirated retroflex plosive; no equivalent
+  - canon_sound: th
+    sutra: 11
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiceless aspirated dental plosive; no equivalent
+  - canon_sound: c
+    sutra: 11
+    ukrainian_status: approximate
+    ukrainian_symbol: ц
+    note: Affricate, but palatal/velar vs alveolar
+  - canon_sound: ṭ
+    sutra: 11
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiceless retroflex plosive; no equivalent
+  - canon_sound: t
+    sutra: 11
+    ukrainian_status: exact
+    ukrainian_symbol: т
+    note: Voiceless alveolar plosive
+  - canon_sound: k
+    sutra: 12
+    ukrainian_status: exact
+    ukrainian_symbol: к
+    note: Voiceless velar plosive
+  - canon_sound: p
+    sutra: 12
+    ukrainian_status: exact
+    ukrainian_symbol: п
+    note: Voiceless bilabial plosive
+  - canon_sound: ś
+    sutra: 13
+    ukrainian_status: absent
+    ukrainian_symbol: null
+    note: Voiceless palatal fricative; no equivalent
+  - canon_sound: ṣ
+    sutra: 13
+    ukrainian_status: approximate
+    ukrainian_symbol: ш
+    note: Voiceless retroflex fricative; closest Ukrainian sound is postalveolar /ʃ/
+  - canon_sound: s
+    sutra: 13
+    ukrainian_status: approximate
+    ukrainian_symbol: с
+    note: Voiceless alveolar fricative; Sanskrit /s/ has contextual allophony
+  - canon_sound: h
+    sutra: 14
+    ukrainian_status: approximate
+    ukrainian_symbol: г
+    note: Glottal fricative (second occurrence in canon)
+  statistics:
+    total_canon_sounds: 42
+    exact_matches: 10
+    approximate_matches: 12
+    absent_in_ukrainian: 20
+    unique_to_ukrainian: 22
+unique_to_ukrainian:
+- и (/ɪ/ — near-high back unrounded vowel, defining phoneme of Ukrainian)
+- я, є, ї, ю, йо (/jɑ/, /jɛ/, /ji/, /ju/, /jɔ/ — diphthongoid sequences)
+- ж (/ʒ/ — postalveolar voiced fricative)
+- з (/z/ — alveolar voiced fricative)
+- ч (/tʃ/ — postalveolar voiceless affricate)
+- щ (/ʃtʃ/ or /ʃː/ — postalveolar complex)
+- Palatalized consonants (б', в', г', ґ', д', з', к', л', м', н', п', р', с', т',
+  ф', х', ц') — systematic phonemic feature absent from Sanskrit
+- Phonemic stress (not a segmental phoneme, but a prosodic feature absent from Sanskrit's
+  pitch-accent system)
+absent_from_ukrainian:
+- Syllabic consonants (ṛ, ḷ)
+- Diphthongs (ai, au)
+- Retroflex series (ṭ, ṭh, ḍ, ḍh, ṇ, ṣ)
+- Aspirated plosives (kh, ph, ch, th, gh, bh, jh, dh)
+- Palatal nasal (ñ)
+- Velar nasal phoneme (ṅ — only allophonic [ŋ] in Ukrainian)
+- Palatal fricative (ś)

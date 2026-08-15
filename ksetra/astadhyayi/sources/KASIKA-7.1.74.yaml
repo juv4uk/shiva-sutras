@@ -1,0 +1,45 @@
+source_id: KASIKA-7.1.74
+locator:
+  sutra: 7.1.74
+witness_text:
+  sutra: tṛtīyādiṣu bhāṣitapuṃskaṃ puṃvad gālavasya
+  commentary: tṛtīyādiṣu vibhaktiṣv ajādiṣu bhāṣitapuṃskam igantaṃ napuṃsakaṃ gālavasyācāryasya
+    matena puṃvad bhavati  / yathā puṃsi hrasvanumau na bhavataḥ, tadvad atra api
+    na bhavataḥ ity arthaḥ  / grāmaṇīḥ brāhmaṇaḥ  / grāmaṇi brāhmaṇakulam  / grāmaṇyā  /
+    brāhmaṇakulena, grāmaṇinā brāhmaṇakulena  / grāmaṇye brāhmaṇakulāya, grāmaṇine
+    brāhmaṇakulāya  / grāmaṇyo brāhmaṇakulāt, grāmaṇino brāhmaṇakulāt  / grāmaṇyo
+    brāhmaṇakulasya, grāmaṇino brāhmaṇakulasya  / grāmaṇyor brāhmaṇakulayoḥ, grāmaṇinor
+    brāhmaṇakulayoḥ  / grāmaṇyāṃ brāhmaṇakulānām, numacira iti pūrvavipratiṣedhena
+    nuṭ, grāmaṇīnāṃ brāhmaṇakulānām  / grāmaṇyāṃ brāhmaṇakule, grāmaṇini brāhmaṇakule  /
+    śucirbrāhmaṇaḥ  / śuci brāhmaṇakulam  / śucaye brāhmaṇakulāya, śucine brāhmaṇakulāya  /
+    śucer brāhmaṇakulāt, śucino brāhmaṇakulāt  / śucer brāhmaṇakulasya, śucino brāhmaṇakulasya  /
+    śucyor brāhmaṇakulayoḥ, śucinor brāhmaṇakulayoḥ  / śucau brāhmaṇakule, śucini
+    brāhmaṇakule  / tṛtīyādiṣu iti kim ? grāmaṇinī brāhmaṇakule  / śucinī brāhmaṇakule  /
+    bhāṣitapuṃskam iti kim ? trapuṇe  / jatune  / iha kasmān na bhavati, pīlurvṛkṣaḥ,
+    pīlu phalam, pīlune phalāya iti ? samānāyāmākṛtau yad bhāṣītpuṃskaṃ tulye pravṛttinimatte
+    tasya puṃvadbhāvaḥ  / iha tu vṛkṣākṛtiḥ pravṛttinimittaṃ puṃsi śabdasya, phalākṛtirnapuṃsake  /
+    tad etad evaṃ kathaṃ bhavati bhāsitapuṃskam iti ? bhāṣitaḥ pumān yasminn arthe
+    pravṛttinimitte sa bhāsitapuṃskaśabdena ucyate, uadyogād abhidheyam api yad napuṃsakaṃ
+    tad api bhāṣitapuṃsakam  / tasya pratipādakaṃ yac chabdarūpaṃ tad api bhāṣitapuṃskam
+    iti ? ikaḥ ity eva, kīlālapā brāhmaṇaḥ  / kīlālapaṃ bāhmaṇakulam  / kīlālapena
+    brāhmaṇakulena  / aci ity eva, grāmaṇibhyāṃ brāhmaṇakulābhyām // [#791]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

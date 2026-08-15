@@ -1,0 +1,41 @@
+source_id: KASIKA-7.2.36
+locator:
+  sutra: 7.2.36
+witness_text:
+  sutra: snu-kramor anātmanepadanimitte
+  commentary: niyamārtham idam  / snukramoḥ ārdhadhātukasya valādeḥ iḍāgamo bhavati,
+    na cet snukramī ātmanepadasya nimittaṃ bhavataḥ  / kva ca tāvātmanepadasya nimittam
+    ? yatra ātmanepadaṃ tad āśrayaṃ bhavati, bhāvakarmakarmakartṛkarmavyatihārāḥ kramer
+    vṛttyādayaś ca  / tena ayam saty ātmanepade pratiṣedho bhavati na asati iti  /
+    pratiṣedhaphalaṃ ca+idaṃ sūtram  / snukramoruditvāt iṭ siddha eva  / prasnavitā  /
+    prasnavitum  / prasnavitavyam  / prakramitā  / prakramitum  / prakramitavyam  /
+    anātmanepadanimitte iti kim ? prasnoṣīṣṭa  / prakraṃsīṣṭa  / prasnoṣyate  / prakraṃsyate  /
+    prasusnūṣiṣyate  / pracikraṃsiṣyate  / sarvatra+eva atra snaitiḥ kramiś ca ātmanepadasya
+    nimittam  / sanantād api pūrvavatsanaḥ (*1,3.62) iti ātmanepadaṃ vidhīyate  /
+    nimittagrahaṇaṃ kim ? sīyuḍādes tatparaparasya ca pratiṣedhārtham  / iha tu prasnavitevācarati
+    iti prasnavitrīyate iti kyaṅatam ātmanepadasya nimittam, na snautiḥ  / krames
+    tu kartaryātmanepadaviṣayādasatyātmanepade kṛti pratiṣedho vaktavyaḥ  / prakrantā  /
+    upakrantā  / kartari iti kim ? prakramitavyam  / upakramitavyam  / ātmanepadaviṣayāt
+    iti kim ? niṣṭramitiā  / snauteḥ sani kiti ca pratyaye śryukaḥ kiti (*7,2.11),
+    sani grahaguhośca (*7,2.12) ity eva pratiṣedho bhavati  / prasusnūṣati  / prasnutaḥ  /
+    prasnutavān //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

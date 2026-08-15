@@ -1,0 +1,41 @@
+source_id: KASIKA-6.4.46
+locator:
+  sutra: 6.4.46
+witness_text:
+  sutra: ārdhadhātuke
+  commentary: ārdhadhātuke ity adhikāraḥ  / na lyapi (*6,4.69) iti prāg etasmād yad
+    ita ūrdhvam anukramiṣyāmaḥ ārdhahdātuke ity evaṃ tad veditavyam  / vakṣyati -
+    ato lopaḥ (*6,4.48)  / cikirṣatā  / jihīrṣitā  / ārdhadhātuke iti kim ? bhavati  /
+    bhavataḥ  / adiprabhṛtibhyaḥ śapo lugvacanaṃ (*2,4.72) pratyayalopalakṣaṇapratiṣedhārthaṃ
+    syāt ity etan na jñāpakaṃ śapo lopābhāvasya  / yasya halaḥ (*6,4.49)  / bebhiditā  /
+    bebhiditum  / bebhiditavyam  / ārdhadhātuke iti kim ? bebhidyate  / ṇeraniṭi (*6,4.51)  /
+    kāraṇā  / hāraṇā  / ārdhadhātuke iti kim ? kārayati  / hārayati  / āto lopa iṭi
+    ca (*6,4.64)  / yayatuḥ  / yayuḥ  / vavatuḥ  / vavuḥ  / ārdhadhātuke iti kim ?
+    yānti  / vānti  / ghumāsthāgāpājahātisāṃ hali (*6,4.66)  / dīyate  / dhīyate  /
+    ārdhadhātuke iti kim ? adātām  / adhātām  / vā 'nyasya saṃyogādeḥ (*6,4.68)  /
+    sneyāt, snāyāt  / ārdhadhātuke iti kim ? snāyāt  / āśīrliṅo 'nyatra na bhavati  /
+    [#743] syasicsīyuṭtāsiṣu bhāvakarmaṇor upadeśe 'jjhanagrahadṛśāṃ vā ciṇvadiṭ ca
+    (*6,4.62)  / kāriṣīṣṭa  / hāriṣīṣṭa  / ārdhadhātuke iti kim ? kriyeta  / hriyeta
+    yagantasya ajantatvāc ciṇvadbhāve sati vṛddhiḥ syāt, tataś ca yuk prasajyeta  /
+    ato lopo yalopaś ca ṇilopaś ca prayojanam  / āllopa ītvam etvam ca ciṇvadbhavaś
+    ca sīyuṭi //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

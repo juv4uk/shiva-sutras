@@ -4,6 +4,8 @@ import json
 import hashlib
 from urllib.parse import urlparse, unquote
 
+from real_evidence import load_real_source
+
 def compute_checksum(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
@@ -16,6 +18,7 @@ def source_authenticator():
         expert_sutras = yaml.safe_load(f)
         
     authenticated = 0
+    protected = 0
     failed = 0
     
     for item in expert_sutras:
@@ -24,6 +27,11 @@ def source_authenticator():
         s_file = os.path.join(sources_dir, f'{record_id}.yaml')
         
         if not os.path.exists(s_file):
+            continue
+
+        # FAIL CLOSED: never downgrade REAL GRETIL evidence (E-001 discipline).
+        if load_real_source(sid) is not None:
+            protected += 1
             continue
             
         with open(s_file, 'r', encoding='utf-8') as f:
@@ -84,7 +92,8 @@ def source_authenticator():
         with open(s_file, 'w', encoding='utf-8') as f:
             yaml.dump(source_data, f, allow_unicode=True, sort_keys=False)
             
-    print(f"Authenticator finished. {authenticated} proven REPRODUCIBLE (Authenticity Unverified). {failed} FAILED.")
+    print(f"Authenticator (legacy) finished. {authenticated} proven REPRODUCIBLE "
+          f"(Authenticity Unverified); {protected} REAL sources protected from downgrade; {failed} FAILED.")
 
 if __name__ == '__main__':
     source_authenticator()

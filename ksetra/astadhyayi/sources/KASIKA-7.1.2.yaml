@@ -1,0 +1,41 @@
+source_id: KASIKA-7.1.2
+locator:
+  sutra: 7.1.2
+witness_text:
+  sutra: āyan-ey-īn-īy-iyaḥ pha-ḍha-kha-cha-ghāṃ pratyayāadīnām
+  commentary: āyan ey īn īy iy ity ete ādeśāḥ bhavanti yathāsaṅkhyaṃ pha ḍha kha cha
+    gha ity eteṣā pratyayādīnām  / pha ity etasya āyanādeśo bhavati  / naḍa-ādibhyaḥ
+    phak (*4,1.99) - nāḍāyanaḥ  / cārāyaṇaḥ  / ḍhasya eyādeśo bhavati  / strībhyo
+    ḍhak (*4,1.130) - sauparṇeyaḥ  / vainateyaḥ  / khasya īnādeśo bhavati kulāt khaḥ
+    (*4,1.139) - āḍhyakulīnaḥ  / śrotriyakulīnaḥ  / chasya īyādeśo bhavati  / vṛddhāc
+    chaḥ (*4,2.114) - gārgīyaḥ  / vātsīyaḥ  / gha ity etasya iyādeśo bhavati  / kṣatrād
+    dhaḥ (*4,1.138) - kṣatriyaḥ  / pratyayagrahaṇaṃ kim ? phakkati  / ḍhaukate  /
+    khanati  / chinatti  / ghūrṇate  / ādigrahaṇam kim ? ūrudaghnam  / jānudaghnam  /
+    ete āyannādayaḥ pratyayopadeśakāla eva bhavanti  / kṛteṣv eteṣu pratyayādyudāttatvaṃ
+    bhavati, tathā ca ghacchau ca (*4,4.117) iti ghacaścitkaranamarthavad bhavati  /
+    śaṅkhaḥ, ṣaṇḍhaḥ ity evam ādīnāṃ hi uṇādayo bahulam iti bahulavacanād ādeśā na
+    bhavanti  / ṛter īyaṅ (*3,1.29) iti vāvacanaṃ jñāpakaṃ dhātupratyayānāmādeśābhāvasya  /
+    ejeḥ khaś (*3,2.28), padarujaviśaspṛśo ghañ (*3,3.16) ity evam ādiṣu tu itsañjñayā
+    bhavitavyam  / taddhiteṣu hi khakāraghakārayor ādeśavacanam avakāśavaditi itsañjñāṃ
+    bādhituṃ na+utsahate  / āyannīnoḥ nakārasya itsañjñāyāṃ prāptāyāṃ pratividhātavyam,
+    nitkāryaṃ hi sambhavati // [#774]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

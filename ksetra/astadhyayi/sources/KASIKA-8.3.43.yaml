@@ -1,0 +1,41 @@
+source_id: KASIKA-8.3.43
+locator:
+  sutra: 8.3.43
+witness_text:
+  sutra: dvis-triś-catur iti kṛtvo 'rthe
+  commentary: ṣaḥ iti sambadhyate  / dvis tris catur ity eteṣāṃ kṛtvo 'rthe vartamanānāṃ
+    visarjanīyasya ṣakāra ādeśo bhavati anyatarasyāṃ kupvoḥ parataḥ  / dviṣkaroti,
+    dviḥ karoti  / triṣkaroti, triḥ karoti  / catuṣkaroti, catuḥ karoti  / dviṣpacati,
+    dviḥ pacati  / triṣpacati, triḥ pacati  / catuspacati, catuḥ pacati  / kṛtvo 'rthe
+    iti kim ? catuskapālam  / catuskaṇṭakam  / pūrveṇa nityaṃ ṣatvaṃ bhavati  / idudupadhasya
+    ity etasya anuvṛttau satyāṃ krtvo 'rthaviṣayeṇa ca padena visarjanīye viśeṣyamāṇe
+    dvistriścatur iti śakyamakartum  / krtvasujarthe ṣatvaṃ bravīti kasmāccatuskapāle
+    mā  / ṣatvaṃ vibhāṣayā bhūnnanu siddhaṃ tatra pūrveṇa // siddhe hy ayaṃ vidhatte
+    caturaḥ satvaṃ yadāpi kṛtvo 'rthe  / pulte kṛtvo 'rthīye rephasya visarjanīyo
+    hi // [#948] evaṃ sati tvidānīṃ dvistriścatur ity anena kiṃ kāryam  / [#947] anyo
+    hi nedudupadhaḥ kṛtvo 'rthaḥ kaścid apy asti // akriyamāṇe grahaṇe visarjanīyas
+    tadā viśeṣyeta  / caturo na sidhyati tadā rephasya visarjanīyo hi // tasmiṃs tu
+    kriyamāṇe yuktaṃ caturo viśeṣaṇaṃ bhavati  / prakṛtaṃ padaṃ tadantaṃ tasya api
+    viśeṣaṇaṃ nyāyyam // evaṃ tu kriyamāṇe dvistriścaturgrahaṇe catuḥśabdasya kṛtvo
+    'rthe 'pi vartamanasya pūrveṇa+eva nityaṃ ṣatvaṃ syāt  / pūrvatra siddhe na asti
+    vipratiṣedho 'bhāvād uttarasya // [#948]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

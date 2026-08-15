@@ -1,0 +1,49 @@
+source_id: KASIKA-8.2.2
+locator:
+  sutra: 8.2.2
+witness_text:
+  sutra: nalopaḥ sup-svara-sañjñā-tug-vidhiṣu kṛti
+  commentary: nalopaḥ pūrvatra asiddho bhavati subvidhau, svaravidhau, sajñāvidhau,
+    tugvidhau ca kṛti  / vidhiśabdo 'yaṃ pratyekam abhisambadhyamānaḥ svarasañjñātukāṃ
+    vidheyatvāt taiḥ karmaṣaṣṭhīyuktaiḥ bhāvasādhano 'bhisambadhyate  / supā tu sambandhasāmānyavacanaṣaṣṭhyantena
+    karmasādhanaḥ  / tena supaḥ sthāne yo vidhiḥ, supi ca parabhūte, sarvo 'sau subvidhiḥ
+    iti sarvatrāsiddhatvaṃ bhavati  / subvidhau tāvat rājabhiḥ, takṣabhiḥ ity atra
+    nalopasya asiddhatvāt ato bhisa ais (*7,1.9) iti na bhavati  / rājabhyām, takṣabhyām,
+    rājasu, takṣasu iti supi ca (*7,3.102) iti, bahuvacane jhalyet (*7,3.103) iti
+    dīrghatvametvaṃ ca na bhavati  / svaravidhau - rājavatī ity atra nalopasya asiddhatvāt
+    anto 'vatyāḥ (*6,1.220) iti na bhavati  / pañcārmam, daśārmam, ity atra nalopasya
+    asiddhatvāt arme cāvarṇaṃ dvyac tryac (*6,2.90) iti pūrvapadasya ādyudāttatvaṃ
+    na bhavati  / pañcadaṇḍī ity atra nalopasya asiddhatvād igante dvigau iti pūrvapadaprakṛtisvaro
+    na bhavati  / sañjñāvidhau - pañca brāhmaṇyaḥ, daśa brāhmaṇyaḥ iti nalopasya asiddhatvāt
+    ṣṇāntā ṣaṭ (*1,1.24) iti ṣaṭsañjñā bhavati, tataś ca na ṣaṭsvasrādibhyaḥ (*4,1.10)
+    iti ṭāpaḥ pratiṣedho bhavati  / tad etat prayojanaṃ kathaṃ bhavati ? yadi pratikāryaṃ
+    sañjñāpravṛttiḥ ity etad darśanam  / yā hi jaśśasorlugarthā ṣaṭsañjñā pravṛttā,
+    tayā strīpratyayapratiṣedho na kriyate iti sā punaḥ pravartayitavyā iti  / tugvidhau
+    - vṛtrahabhyām, vṛtrahabhiḥ iti nalopasya asiddhatvāt hrasvasya piti kṛti tuk
+    (*6,1.71) iti tug na bhavati  / atra kecit sannipātalakṣaṇo vidhir animittaṃ tadvighātasya
+    iti tukaṃ prati nalopasya animittatvāt, bahiraṅgalakṣaṇena vā asiddhatvāt, tugvidhigrahaṇam
+    anarthakam iti pratipannāḥ  / tat tu kriyate paribhāṣadvayasya anityatvaṃ jñāpayitum  /
+    [#906] kṛti iti kim ? vṛtrahacchatram, vṛtrahacchāyā, che ca (*6,1.73) iti tug
+    bhavati  / atra siddhe satyārambho niyamārthaḥ, eteṣv eva nalopo asiddho bhavati,
+    na anyatra  / tena rājīyati, rājāyate, rājāśvaḥ iti ītvam, dīrghatvam, ekadeśaś
+    ca siddho bhavati //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

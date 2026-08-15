@@ -1,0 +1,35 @@
+source_id: KASIKA-4.1.73
+locator:
+  sutra: 4.1.73
+witness_text:
+  sutra: śārṅgarava-ādy-año ṅīn
+  commentary: śārṅgaravādibhyo 'ñantebhyaś ca prātipadikebhyaḥ striyāṃ ṅīn pratyayo
+    bhavati  / śārṅgaravī  / kāpaṭavī  / añanatebhyaḥ - baidī  / aurvī  / jātigrahaṇam
+    atra anuvartate  / tena jāti-lakṣaṇo ṅīṣ anena bādhyate, na puṃyoga-lakṣaṇaḥ,
+    baidasya strī baidī  / śārṅgarava  / kāpaṭava  / gaugulava  / brāhmaṇa  / gautama  /
+    ete 'ṇantāḥ  / kāmaṇḍaleya  / brāhamakṛteya  / āniceya  / ānidheya  / āśokeya  /
+    ete ḍhagantā  / vātsyāyana  / mauñjāyana  / etau phagantau jātiḥ  / kaikaseyo
+    ḍhagantaḥ  / kāvyaśaivyau yañantau  / ehi, paryehi kṛdikārāntau  / āśmarathyo
+    yañantaḥ  / audapānaḥ  / udapānaśabdaḥ śuṇḍikādyaṇantaḥ prayojayati  / arāla  /
+    caṇḍāla  / vataṇḍa  / jātiḥ  / bhogavadgaurimatoḥ sañjñāyām ghādiṣu nityaṃ hrasvārtham  /
+    nṛnarayor vṛddhiś ca  / atra yathāyogaṃ ṅībādiṣu prāpteṣu ṅīn vidhīyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,41 @@
+source_id: KASIKA-6.1.68
+locator:
+  sutra: 6.1.68
+witness_text:
+  sutra: hal-ṅy-ābbhyo dīrghāt su-ti-sy-apṛktaṃ hal
+  commentary: lopa iti vartate  / tad iha laukikena arthavat karmasādhanaṃ draṣṭavyam  /
+    lupyate iti lopaḥ  / halantād, ṅyantād ābantāc ca dīrghāt paraṃ su ti si ity etad
+    apṛktaṃ hal lupyate  / halantāt sulopaḥ - rājā  / takṣā  / ukhāsrat  / parṇadhvat  /
+    ṅyantāt - kumārī  / gaurī  / śārṅgaravī  / ābantāt - khaṭvā  / bahurājā  / kārīṣagandhyā  /
+    halantād eva tilopaḥ silopaś ca  / tatra tilopastāvat - abibhar bhavāt  / bhṛño
+    laṅi tipi ślau bhṛñāmit ity abhyāsasya ittvam  / ajāgar bhabān  / silopaḥ-abhino
+    'tra acchino 'tra  / dasya rephaḥ  / halṅyābbhyaḥ iti kim ? grāmaṇīḥ  / senanīḥ  /
+    dīrghāt iti kim ? niṣkauśāmbiḥ  / atikhaṭvaḥ  / sutisi iti kim ? abhaitsīt  /
+    tipā sahacaritasya siśabdasya grahaṇāt sico grahaṇaṃ na asti  / apṛktam iti kim
+    ? bhinatti  / chinatti  / hali iti kim ? bibheda  / ciccheda  / atha kimarthaṃ
+    halantāt sutisināṃ lopo vidhīyate, saṃyogāntalopena+eva siddham ? na sidhyati  /
+    rājā, takṣā ity atra saṃyogāntalopasya asiddhatvān nalopo na syāt  / ukhāsrat,
+    parṇadhvat ity atra apadantatvād dattvaṃ ca na syāt  / abhino 'tra ity atra ato
+    roraplutādaplute (*6,1.113) ity uttvaṃ na syāt  / abibhar bhavān ity atra tu rāt
+    sasya (*8,3.24) iti niyamāl lopa eva na syāt  / saṃyogāntasya lope hi nalopādir
+    na sidhyati  / rāttu te na+eva lopaḥ syād dhalas tasmād vidhīyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

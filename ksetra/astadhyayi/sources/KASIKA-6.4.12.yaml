@@ -1,0 +1,44 @@
+source_id: KASIKA-6.4.12
+locator:
+  sutra: 6.4.12
+witness_text:
+  sutra: in-han-pūṣa-aryamṇāṃ śau
+  commentary: in han pūṣan aryaman ity evam antānām aṅgānāṃ śau parata upadhāyā dīrgho
+    bhavati  / bahudaṇḍīni  / bahucchatrīṇi  / bahuvṛtrahāṇi  / bahubhrūṇahāni  /
+    bahupūṣāṇi  / bahvaryamāṇi  / siddhe satyārambho niyamārthaḥ, inhanpūṣāryamṇām
+    upadhāyaḥ śāv eva dīrgho bhavati na anyatra  / daṇḍinau  / chatriṇau  / vṛtrahaṇau  /
+    pūṣaṇau  / aryamaṇau  / dīrghavidhirya ihenprabhṛtīnāṃ taṃ viniyamya suṭīti suvidvān  /
+    śau niyamaṃ punar eva vidadhyāt bhrūṇahanīti tathāsya na duṣyet // śāsmi nivartya
+    suṭītyaviśeṣe śau niyamaṃ kuru vāpyasamīkṣya  / dīrghavidherupadhāniyamānme hanta
+    yi dīrghavidhau ca na doṣaḥ // suṭyapi vā prakṛte 'navakāśaḥ śau niyamo 'prakṛtapratiṣedhe  /
+    yasya hi śau niyamaḥ suṭi naitattena na tatra bhavedviniyamyam // hanteḥ anunāsikasya
+    kvijhaloḥ kṅiti (*2,4.15) iti dīrghatvaṃ yat tad api niyamena bādhyate vṛtrahaṇi,
+    bhrūṇahani iti  / katham ? yogavibhāgaḥ kriyate  / inhanpūṣāryamṇām sarvanāmasthāne
+    eva dīrgho bhavati, na anyatra iti  / tataḥ śau iti dvitīyo niyamaḥ  / [#734]
+    śau eva sarvanāmasthāne dīrgho bhavati na anyatra iti  / sarvasya+upadhālakṣaṇasya
+    dīrghasya niyamena nivṛttiḥ kriyate  / yas tu na upadhālakṣaṇaḥ sa bhavaty eva  /
+    vṛtrahāyate  / bhrūṇahāyate  / atha va anuvartamāne 'pi sarvanāmasthānagrahaṇe
+    sāmarthyādayam aviśeṣeṇa niyamaḥ  / śiśabdo hi sarvanāmasthāaṃ napuṃsakasya, na
+    ca tasya anyat sarvanāmasthānam asti ity aviśeṣeṇa niyamaḥ  / tatra tu napuṃsakasya
+    ity etan na aśrīyate  / tena anapuṃsakasya api dīrgho na bhavati  / sarvanāmasthānasañjñāvidhāne
+    tu napuṃsakasya vyāpāro 'sti iti tatra niyamaḥ kriyamaṇo napuṃsakasya syāt //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

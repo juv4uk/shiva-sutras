@@ -1,0 +1,34 @@
+source_id: KASIKA-3.1.12
+locator:
+  sutra: 3.1.12
+witness_text:
+  sutra: bhṛśādibhyo bhuvy-acver lopaś ca halaḥ
+  commentary: bhṛśa ity evam ādibhyaḥ prātipadikebhyo 'cvyantebhyo bhuvi bhavaty arthe
+    kyaṅ pratyayo bhavati, halantānāṃ ca lopaḥ  / acveḥ iti pratyekam abhisambadhyate  /
+    kim arthaṃ puna ridam ucyate, yāvatā bhavati yoge cvir vidhīyate, tenoktārthatvāc
+    cvyantebhyo na kyaṅ bhaviṣyati ? tatsādṛśyapratipattyarthaṃ tarhi cvi-pratiṣedhaḥ
+    kriyate  / abhūta-tadbhāva-viṣayebhyo bhṛśādibhyaḥ kyaṅ pratyayaḥ  / abhṛśo bhṛśo
+    bhavati bhṛśāyate  / śīghrāyate  / bhṛśa  / śīghra  / manda  / capala  / paṇḍita  /
+    utsuka  / unmanas  / abhimanas  / sumanas  / durmanas  / rahas  / rehas  / śaśvat  /
+    bṛhat  / vehat  / nṛṣat  / śudhi  / adhara  / ojas  / varcas  / bhṛśādiḥ  / acveḥ
+    iti kim ? bhṛśībhavati //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

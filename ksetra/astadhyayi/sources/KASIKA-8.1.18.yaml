@@ -1,6 +1,36 @@
 source_id: KASIKA-8.1.18
 locator:
   sutra: 8.1.18
-  text_type: vrtti
-raw_text: Simulated Kasika raw text for 8.1.18. Shows contextual application.
-extracted_at: '2026-08-15T00:00:00Z'
+witness_text:
+  sutra: anudāttaṃ sarvam apādādau
+  commentary: anudāttam iti ca, sarvam iti ca, apādādau iti ca, apādādau iti ca etat
+    trayam adhikṛtaṃ veditavyam ā pādaparisamāpteḥ  / ita uttaraṃ yad vakṣyāmaḥ anudāttaṃ
+    sarvam apādādau ity evaṃ tad veditavyam  / vakṣyati - āmantritasya ca (*7,1.19)
+    iti  / pacasi devadatta  / apādādau iti kim ? yat te niyānaṃ rajasaṃ mṛtyo anavadharṣyam  /
+    bahuvacanasya vasnasau (*8,1.21)  / grāmo vaḥ svam, janapado naḥ svam  / apādādau
+    iti kim ? rudro viśveśvaro devo yaṣmākaṃ kuladevatā  / sa eva nātho bhagavānasmākaṃ
+    śatrumardanaḥ // pādagrahaṇenātra ṛkpādaḥ ślokapādaś ca gṛhyate  / sarvagrahaṇam
+    sarvam anūdyamānaṃ vidhīyamānaṃ ca anudāttaṃ yathā syāt iti  / tena yuṣmadasmadādeśānām
+    api vākyabhedena anudāttatvaṃ vidhīyate  / yuṣmadasmadādeśāś ca sarvasya subantasya
+    padasya yathā syuḥ, yatra api svādipadaṃ padasañjñaṃ bhavati  / grāmo vāṃ dīyate  /
+    janapado nau dīyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

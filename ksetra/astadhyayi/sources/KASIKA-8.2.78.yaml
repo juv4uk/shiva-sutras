@@ -1,0 +1,35 @@
+source_id: KASIKA-8.2.78
+locator:
+  sutra: 8.2.78
+witness_text:
+  sutra: upadhāyāṃ ca
+  commentary: hali iti anuvartate  / dhātoḥ upadhābhūtau yau rephavakārau halparau
+    tayoḥ upadhāyāḥ iko dīrgho bhavati hurcchā - hūrcchitā  / murcchā - mūrchitā  /
+    urvī - ūrvitā  / dhurvī - dhūrvitā  / hali ity eva, ciri, jiri - ciriṇoti  / jiriṇoti  /
+    iha kasmān na bhavati, rī gatau riryatuḥ, riryuḥ, vī gatyādiṣu vivyatuḥ vivyuḥ
+    iti ? yaṇādeśasya sthānivattvāt asiddhatvāc ca bahiraṅgalakṣaṇatvena halparau
+    rephavakārau na bhavataḥ  / caturyitā ity atra api bahiraṅgalakṣaṇatvāt ato lopasya
+    dhātoḥ upadhābhūto repho na bhavati  / pratidīvnā ity atra tu hali ca (*8,2.77)
+    iti dīrghatvam, dīrghavidhau lopājādeśasya sthānivad bhāvapratiṣedhāt  / asiddhaṃ
+    bahiraṅgamantaraṅge ity etat tu nāśrayitavyam  / uṇādayo 'vyutpannāni prātipadikāni
+    iti jivriḥ, karyoḥ, giryoḥ ity evam ādiṣu dīrgho na bhavati // [#929]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

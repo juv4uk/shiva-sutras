@@ -1,0 +1,41 @@
+source_id: KASIKA-4.1.88
+locator:
+  sutra: 4.1.88
+witness_text:
+  sutra: dvigor lug-anapatye
+  commentary: prāgdīvyataḥ iti vartate, na bhavanāt iti  / dvigoḥ iti ṣaṣṭhī  / dvigor
+    yaḥ sambandhī nimittatvena taddhitaḥ prāgdīvyatīyo 'patya-pratyayaṃ varjayitvā
+    tasya lug bhavati  / pajcasu kapāleṣu saṃskṛtaḥ pajcakapālaḥ  / daśakapālaḥ  /
+    dvau devādadhīte dvivedaḥ  / trivedaḥ  / anapatye iti kim ? dvaidevadattiḥ  /
+    traidevadattiḥ  / prāgdivyataḥ ity eva, dvaipārāyaṇikaḥ  / dvigu-nimittavijñānād
+    iha na bhavati, pañcakapālasya+idaṃ pāñcakapālam  / atha vā dvigor eva ayaṃ lug
+    vidhīyate  / dvigoḥ iti sthāna-ṣaṣṭhī  / nanu ca pratyayādarśanasya+eṣā sañjñā
+    ? satyam etat  / upacāreṇa tu lakṣaṇayā dvigu-nimitta-bhūtaḥ pratyaya eva dviguḥ,
+    tasya lug bhavati  / dvigu-nimittako 'pi tarhi guṇakalpanayā kasmān na dvigur
+    ucyate pājcakapālam iti ? na tasya dvigutvam nimittam  / itaras tu dvigutvasya+eva
+    nimittam ity asti viśeṣaḥ  / yady evam iha kathaṃ pañcakapālyāṃ saṃskṛtaḥ pañcakapālaḥ
+    iti ? na+eva atra taddhita utpadyate  / [#342] vākyam eva bhavati  / traiśabdyaṃ
+    hi sādhyaṃ, pañcasu kapāleṣu saṃskṛtaḥ, pañcakapālyāṃ saṃskṛtaḥ pañcakapālaḥ iti  /
+    tatra dvayoḥ śabdayoḥ samānārthayor ekena vigrahaḥ  / aparasmād utpattir bhaviṣyati  /
+    atha+iha kasmān na bhavati, pañcabhyo gargebhya āgataṃ pajcagargarūpayam, pañcagargam
+    ayam iti vā ity anuvartate  / sā ca vyavasthita-vibhāṣā vijñāyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

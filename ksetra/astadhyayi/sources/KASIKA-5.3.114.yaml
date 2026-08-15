@@ -1,0 +1,33 @@
+source_id: KASIKA-5.3.114
+locator:
+  sutra: 5.3.114
+witness_text:
+  sutra: āyudha-jīvisaṅkghāññyaḍ-vāhīkeṣv abrāhmaṇa-rājanyāt
+  commentary: āyudhajīvināṃ saṅghaḥ āyudhajīvisaṅghaḥ  / sa vāhīkair viśeṣyate  /
+    vāhīkeṣu ya āyudhajīvisaṅghaḥ, tadvācinaḥ prātipadikāt brāhmaṇarājanyavarjitāt
+    svārthe ñyaṭ pratyayo bhavati  / brāhmaṇe tadviśeṣagrahaṇam  / rājanye tu svarūpagrahaṇam
+    eva  / ṭakāro ṅībarthaḥ, tena astriyām iti na anuvartate  / kauṇḍibṛsyaḥ, kauṇḍīvṛsyau,
+    kauṇḍīvṛsāḥ  / kṣaudrakyaḥ, kṣaudrakyau, kṣudrakāḥ  / mālavyaḥ, mālavyau, mālavāḥ  /
+    striyām - kauṇdivṛsī  / kṣaudrakī  / mālavī  / āyudhajīvigrahaṇaṃ kim ? mallāḥ  /
+    śayaṇḍāḥ  / saṅghagrahaṇaṃ kim ? samrāṭ  / vāhīkesu iti kim ? śabarāḥ  / pulindāḥ  /
+    abrāhmaṇarājanyāt iti kim ? gopālavā brāhmaṇāḥ  / śālaṅkāyanā rājanyāḥ // [#556]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

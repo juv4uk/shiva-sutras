@@ -1,0 +1,782 @@
+canon_ref: siva-sutras.yaml
+relation_to_canon: comparison
+language: english
+iso_639_1: en
+iso_639_3: eng
+metadata:
+  description: English phonological inventory mapped against Śiva-sūtras canonical
+    sequence
+  source: Standard English phonology (RP/General American consensus, Wells 1982, Giegerich
+    1992)
+  status: PROPOSED
+  version: '0.1'
+  canon_version: '1.0'
+  note: English has a large vowel inventory and several consonants absent from Sanskrit.
+    This file uses RP as the reference accent.
+phonological_inventory:
+  vowels:
+    monophthongs:
+    - symbol: ee
+      ipa: iː
+      type: vowel
+      height: high
+      backness: front
+      rounded: false
+      length: long
+      canon_mapping:
+        equivalent: i
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /i/ is short; English /iː/ is long. Same quality, different
+          length.
+    - symbol: i
+      ipa: ɪ
+      type: vowel
+      height: near-high
+      backness: front
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: i
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /i/ is high front; English /ɪ/ is near-high front. Same backness,
+          different height.
+    - symbol: e
+      ipa: e
+      type: vowel
+      height: mid
+      backness: front
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: e
+        sutra: 3
+        relation: approximate
+        note: Sanskrit /e/ is close-mid front long [eː]; English /e/ is mid front
+          short. Same backness, different height and length.
+    - symbol: a
+      ipa: æ
+      type: vowel
+      height: near-open
+      backness: front
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No near-open front unrounded vowel in Śiva-sūtras. Sanskrit /a/ is central/open
+          back, not front.
+    - symbol: ah
+      ipa: ɑː
+      type: vowel
+      height: open
+      backness: back
+      rounded: false
+      length: long
+      canon_mapping:
+        equivalent: a
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /a/ is short and central [ə] in many positions; English /ɑː/
+          is long and back.
+    - symbol: o
+      ipa: ɒ
+      type: vowel
+      height: open-mid
+      backness: back
+      rounded: true
+      length: short
+      canon_mapping:
+        equivalent: a
+        sutra: 1
+        relation: approximate
+        note: No exact equivalent. Sanskrit /a/ is unrounded; English /ɒ/ is rounded.
+          Some analyses relate it to /o/.
+    - symbol: aw
+      ipa: ɔː
+      type: vowel
+      height: open-mid
+      backness: back
+      rounded: true
+      length: long
+      canon_mapping:
+        equivalent: o
+        sutra: 3
+        relation: approximate
+        note: Sanskrit /o/ is close-mid back rounded long [oː]; English /ɔː/ is open-mid
+          back rounded long. Same backness and rounding, different height.
+    - symbol: u
+      ipa: ʊ
+      type: vowel
+      height: near-high
+      backness: back
+      rounded: true
+      length: short
+      canon_mapping:
+        equivalent: u
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /u/ is high back rounded; English /ʊ/ is near-high back rounded.
+          Same backness and rounding, different height.
+    - symbol: oo
+      ipa: uː
+      type: vowel
+      height: high
+      backness: back
+      rounded: true
+      length: long
+      canon_mapping:
+        equivalent: u
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /u/ is short; English /uː/ is long. Same quality, different
+          length.
+    - symbol: uh
+      ipa: ʌ
+      type: vowel
+      height: open-mid
+      backness: back
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: a
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /a/ is central/open; English /ʌ/ is open-mid back unrounded.
+          Different height and backness.
+    - symbol: schwa
+      ipa: ə
+      type: vowel
+      height: mid
+      backness: central
+      rounded: false
+      length: short
+      canon_mapping:
+        equivalent: a
+        sutra: 1
+        relation: approximate
+        note: Sanskrit /a/ in weak positions is often realized as [ə]; English /ə/
+          is a dedicated phoneme. Functional convergence, different phonological status.
+    - symbol: er
+      ipa: ɜː
+      type: vowel
+      height: mid
+      backness: central
+      rounded: false
+      length: long
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No r-colored or centralized long vowel in Śiva-sūtras. Unique to English
+          and other rhotic languages.
+    diphthongs:
+    - symbol: ay
+      ipa: eɪ
+      type: diphthong
+      components:
+      - e
+      - ɪ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras. Sanskrit has no phonemic diphthongs of
+          this type.
+    - symbol: eye
+      ipa: aɪ
+      type: diphthong
+      components:
+      - a
+      - ɪ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: oy
+      ipa: ɔɪ
+      type: diphthong
+      components:
+      - ɔ
+      - ɪ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: ow
+      ipa: aʊ
+      type: diphthong
+      components:
+      - a
+      - ʊ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: oh
+      ipa: əʊ
+      type: diphthong
+      components:
+      - ə
+      - ʊ
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: eer
+      ipa: ɪə
+      type: diphthong
+      components:
+      - ɪ
+      - ə
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras. Centering diphthong unique to English.
+    - symbol: air
+      ipa: eə
+      type: diphthong
+      components:
+      - e
+      - ə
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+    - symbol: oor
+      ipa: ʊə
+      type: diphthong
+      components:
+      - ʊ
+      - ə
+      canon_mapping:
+        equivalent: null
+        sutra: null
+        relation: unique_to_language
+        note: No equivalent in Śiva-sūtras.
+  consonants:
+  - symbol: p
+    ipa: p
+    voicing: voiceless
+    place: bilabial
+    manner: plosive
+    canon_mapping:
+      equivalent: p
+      sutra: 12
+      relation: exact
+      note: 'Exact match with Sanskrit /p/ (SS-12: k p y).'
+  - symbol: b
+    ipa: b
+    voicing: voiced
+    place: bilabial
+    manner: plosive
+    canon_mapping:
+      equivalent: b
+      sutra: 10
+      relation: exact
+      note: 'Exact match with Sanskrit /b/ (SS-10: j b g ḍ d ś).'
+  - symbol: t
+    ipa: t
+    voicing: voiceless
+    place: alveolar
+    manner: plosive
+    canon_mapping:
+      equivalent: t
+      sutra: 11
+      relation: exact
+      note: 'Exact match with Sanskrit /t/ (SS-11: kh ph ch ṭh th c ṭ t v).'
+  - symbol: d
+    ipa: d
+    voicing: voiced
+    place: alveolar
+    manner: plosive
+    canon_mapping:
+      equivalent: d
+      sutra: 10
+      relation: exact
+      note: 'Exact match with Sanskrit /d/ (SS-10: j b g ḍ d ś).'
+  - symbol: k
+    ipa: k
+    voicing: voiceless
+    place: velar
+    manner: plosive
+    canon_mapping:
+      equivalent: k
+      sutra: 12
+      relation: exact
+      note: 'Exact match with Sanskrit /k/ (SS-12: k p y).'
+  - symbol: g
+    ipa: g
+    voicing: voiced
+    place: velar
+    manner: plosive
+    canon_mapping:
+      equivalent: g
+      sutra: 10
+      relation: exact
+      note: 'Exact match with Sanskrit /g/ (SS-10: j b g ḍ d ś).'
+  - symbol: ch
+    ipa: tʃ
+    voicing: voiceless
+    place: postalveolar
+    manner: affricate
+    canon_mapping:
+      equivalent: ch
+      sutra: 11
+      relation: approximate
+      note: Sanskrit /ch/ is a palatal aspirated affricate [cʰ] ~ [tɕʰ]; English /tʃ/
+        is a postalveolar affricate. Same broad manner, different place and aspiration.
+  - symbol: j
+    ipa: dʒ
+    voicing: voiced
+    place: postalveolar
+    manner: affricate
+    canon_mapping:
+      equivalent: jh
+      sutra: 8
+      relation: approximate
+      note: Sanskrit /jh/ is a voiced aspirated palatal affricate [ɟʱ] ~ [dʑʱ]; English
+        /dʒ/ is a postalveolar affricate without aspiration. Same broad manner, different
+        place and phonation.
+  - symbol: f
+    ipa: f
+    voicing: voiceless
+    place: labiodental
+    manner: fricative
+    canon_mapping:
+      equivalent: ph
+      sutra: 11
+      relation: approximate
+      note: Sanskrit /ph/ is an aspirated bilabial plosive [pʰ]; English /f/ is a
+        labiodental fricative. No true equivalent in Śiva-sūtras.
+  - symbol: v
+    ipa: v
+    voicing: voiced
+    place: labiodental
+    manner: fricative
+    canon_mapping:
+      equivalent: v
+      sutra: 5
+      relation: approximate
+      note: Sanskrit /v/ is a labiodental approximant [ʋ]; English /v/ is a labiodental
+        fricative. Same place, different manner.
+  - symbol: th
+    ipa: θ
+    voicing: voiceless
+    place: dental
+    manner: fricative
+    canon_mapping:
+      equivalent: null
+      sutra: null
+      relation: unique_to_language
+      note: No dental fricative in Śiva-sūtras. This is one of the most distinctive
+        English phonemes, absent from most world languages.
+  - symbol: th-voiced
+    ipa: ð
+    voicing: voiced
+    place: dental
+    manner: fricative
+    canon_mapping:
+      equivalent: null
+      sutra: null
+      relation: unique_to_language
+      note: No voiced dental fricative in Śiva-sūtras. Unique to English and a few
+        other languages (e.g., Icelandic).
+  - symbol: s
+    ipa: s
+    voicing: voiceless
+    place: alveolar
+    manner: fricative
+    canon_mapping:
+      equivalent: s
+      sutra: 13
+      relation: approximate
+      note: Sanskrit /s/ has multiple allophones (dental [s], retroflex [ʂ], palatal
+        [ɕ]) depending on context; English /s/ is consistently alveolar [s].
+  - symbol: z
+    ipa: z
+    voicing: voiced
+    place: alveolar
+    manner: fricative
+    canon_mapping:
+      equivalent: null
+      sutra: null
+      relation: unique_to_language
+      note: No alveolar voiced fricative in Śiva-sūtras. Sanskrit has no /z/ phoneme.
+  - symbol: sh
+    ipa: ʃ
+    voicing: voiceless
+    place: postalveolar
+    manner: fricative
+    canon_mapping:
+      equivalent: ś
+      sutra: 10
+      relation: approximate
+      note: Sanskrit /ś/ is a palatal fricative [ɕ]; English /ʃ/ is postalveolar.
+        Both are voiceless coronal fricatives but differ in sub-place. Some scholars
+        map English /ʃ/ to Sanskrit /ṣ/ [ʂ] instead.
+  - symbol: zh
+    ipa: ʒ
+    voicing: voiced
+    place: postalveolar
+    manner: fricative
+    canon_mapping:
+      equivalent: null
+      sutra: null
+      relation: unique_to_language
+      note: No postalveolar voiced fricative in Śiva-sūtras.
+  - symbol: h
+    ipa: h
+    voicing: voiceless
+    place: glottal
+    manner: fricative
+    canon_mapping:
+      equivalent: h
+      sutra: 5
+      relation: approximate
+      note: Sanskrit /h/ is typically voiced [ɦ] in many positions; English /h/ is
+        consistently voiceless [h]. Same place, different phonation.
+  - symbol: m
+    ipa: m
+    voicing: voiced
+    place: bilabial
+    manner: nasal
+    canon_mapping:
+      equivalent: m
+      sutra: 7
+      relation: exact
+      note: 'Exact match with Sanskrit /m/ (SS-7: ñ m ṅ ṇ n m).'
+  - symbol: n
+    ipa: n
+    voicing: voiced
+    place: alveolar
+    manner: nasal
+    canon_mapping:
+      equivalent: n
+      sutra: 7
+      relation: exact
+      note: 'Exact match with Sanskrit /n/ (SS-7: ñ m ṅ ṇ n m).'
+  - symbol: ng
+    ipa: ŋ
+    voicing: voiced
+    place: velar
+    manner: nasal
+    canon_mapping:
+      equivalent: ṅ
+      sutra: 7
+      relation: approximate
+      note: Sanskrit /ṅ/ is a velar nasal phoneme; English /ŋ/ is a velar nasal phoneme.
+        Exact phonetic match, but in Sanskrit /ṅ/ occurs only before velar stops (allophonic
+        in some analyses), while in English /ŋ/ is a full phoneme (e.g., 'sing').
+  - symbol: l
+    ipa: l
+    voicing: voiced
+    place: alveolar
+    manner: lateral_approximant
+    canon_mapping:
+      equivalent: l
+      sutra: 6
+      relation: approximate
+      note: 'Sanskrit /l/ in Śiva-sūtras is retroflex [ɭ] (sutra 6: l ṇ); English
+        /l/ is alveolar [l]. Same manner, different place. English also has dark [ɫ]
+        allophone.'
+  - symbol: r
+    ipa: r
+    voicing: voiced
+    place: postalveolar
+    manner: approximant
+    canon_mapping:
+      equivalent: r
+      sutra: 5
+      relation: approximate
+      note: Sanskrit /r/ is a retroflex flap or trill [ɽ] ~ [r]; English /r/ is a
+        postalveolar approximant [ɹ]. Same broad category (rhotic), very different
+        articulation.
+  - symbol: w
+    ipa: w
+    voicing: voiced
+    place: labial-velar
+    manner: approximant
+    canon_mapping:
+      equivalent: v
+      sutra: 5
+      relation: approximate
+      note: Sanskrit /v/ is a labiodental approximant [ʋ] that functions as both /v/
+        and /w/; English /w/ is a dedicated labial-velar approximant. Different place
+        and secondary articulation.
+  - symbol: y
+    ipa: j
+    voicing: voiced
+    place: palatal
+    manner: approximant
+    canon_mapping:
+      equivalent: y
+      sutra: 5
+      relation: exact
+      note: 'Exact match with Sanskrit /y/ [j], a palatal approximant (SS-5: h y v
+        r ṭ).'
+canon_coverage_summary:
+  description: For each sound in the Śiva-sūtras canon, its status in English phonology
+  coverage:
+  - canon_sound: a
+    sutra: 1
+    english_status: approximate
+    english_symbol: ah /ɑː/ or schwa /ə/
+    note: Low unrounded vowel, but English has multiple realizations
+  - canon_sound: i
+    sutra: 1
+    english_status: approximate
+    english_symbol: ee /iː/ or i /ɪ/
+    note: High front unrounded vowel, but length and height differ
+  - canon_sound: u
+    sutra: 1
+    english_status: approximate
+    english_symbol: oo /uː/ or u /ʊ/
+    note: Back rounded vowel, but height and length differ
+  - canon_sound: ṛ
+    sutra: 2
+    english_status: absent
+    english_symbol: null
+    note: Syllabic retroflex approximant; no equivalent in English
+  - canon_sound: ḷ
+    sutra: 2
+    english_status: absent
+    english_symbol: null
+    note: Syllabic retroflex lateral; no equivalent in English
+  - canon_sound: e
+    sutra: 3
+    english_status: approximate
+    english_symbol: e /e/
+    note: Front unrounded vowel, but height and length differ
+  - canon_sound: o
+    sutra: 3
+    english_status: approximate
+    english_symbol: aw /ɔː/
+    note: Back rounded vowel, but height differs
+  - canon_sound: ai
+    sutra: 4
+    english_status: absent
+    english_symbol: null
+    note: Diphthong; English has diphthongs but not this specific one
+  - canon_sound: au
+    sutra: 4
+    english_status: absent
+    english_symbol: null
+    note: Diphthong; English has no /au/ diphthong
+  - canon_sound: h
+    sutra: 5
+    english_status: approximate
+    english_symbol: h /h/
+    note: Glottal fricative, but consistently voiceless in English vs voiced in Sanskrit
+  - canon_sound: y
+    sutra: 5
+    english_status: exact
+    english_symbol: y /j/
+    note: Palatal approximant
+  - canon_sound: v
+    sutra: 5
+    english_status: approximate
+    english_symbol: v /v/ or w /w/
+    note: Labial, but fricative/approximant and place differ
+  - canon_sound: r
+    sutra: 5
+    english_status: approximate
+    english_symbol: r /ɹ/
+    note: Coronal rhotic, but retroflex vs postalveolar approximant
+  - canon_sound: l
+    sutra: 6
+    english_status: approximate
+    english_symbol: l /l/
+    note: Lateral approximant, but retroflex vs alveolar
+  - canon_sound: ñ
+    sutra: 7
+    english_status: absent
+    english_symbol: null
+    note: Palatal nasal; English has no palatal nasal phoneme
+  - canon_sound: m
+    sutra: 7
+    english_status: exact
+    english_symbol: m /m/
+    note: Bilabial nasal
+  - canon_sound: ṅ
+    sutra: 7
+    english_status: approximate
+    english_symbol: ng /ŋ/
+    note: Velar nasal; phonemic in English, allophonic/phonemic in Sanskrit depending
+      on analysis
+  - canon_sound: ṇ
+    sutra: 7
+    english_status: absent
+    english_symbol: null
+    note: Retroflex nasal; no equivalent in English
+  - canon_sound: n
+    sutra: 7
+    english_status: exact
+    english_symbol: n /n/
+    note: Alveolar nasal
+  - canon_sound: jh
+    sutra: 8
+    english_status: approximate
+    english_symbol: j /dʒ/
+    note: Voiced affricate, but palatal aspirated vs postalveolar unaspirated
+  - canon_sound: bh
+    sutra: 8
+    english_status: absent
+    english_symbol: null
+    note: Voiced aspirated bilabial plosive; no equivalent in English
+  - canon_sound: gh
+    sutra: 9
+    english_status: absent
+    english_symbol: null
+    note: Voiced aspirated velar plosive; no equivalent in English
+  - canon_sound: ḍh
+    sutra: 9
+    english_status: absent
+    english_symbol: null
+    note: Voiced aspirated retroflex plosive; no equivalent in English
+  - canon_sound: dh
+    sutra: 9
+    english_status: absent
+    english_symbol: null
+    note: Voiced aspirated dental plosive; no equivalent in English
+  - canon_sound: ṣ
+    sutra: 9
+    english_status: approximate
+    english_symbol: sh /ʃ/
+    note: Voiceless coronal fricative, but retroflex vs postalveolar
+  - canon_sound: j
+    sutra: 10
+    english_status: approximate
+    english_symbol: j /dʒ/
+    note: Voiced affricate, but palatal vs postalveolar
+  - canon_sound: b
+    sutra: 10
+    english_status: exact
+    english_symbol: b /b/
+    note: Voiced bilabial plosive
+  - canon_sound: g
+    sutra: 10
+    english_status: exact
+    english_symbol: g /g/
+    note: Voiced velar plosive
+  - canon_sound: ḍ
+    sutra: 10
+    english_status: absent
+    english_symbol: null
+    note: Voiced retroflex plosive; no equivalent in English
+  - canon_sound: d
+    sutra: 10
+    english_status: exact
+    english_symbol: d /d/
+    note: Voiced alveolar plosive
+  - canon_sound: ś
+    sutra: 10
+    english_status: approximate
+    english_symbol: sh /ʃ/
+    note: Voiceless palatal fricative; English /ʃ/ is postalveolar. Some map /ʃ/ to
+      /ṣ/ instead.
+  - canon_sound: kh
+    sutra: 11
+    english_status: absent
+    english_symbol: null
+    note: Voiceless aspirated velar plosive; no equivalent in English
+  - canon_sound: ph
+    sutra: 11
+    english_status: approximate
+    english_symbol: f /f/
+    note: Bilabial, but plosive aspirate vs labiodental fricative
+  - canon_sound: ch
+    sutra: 11
+    english_status: approximate
+    english_symbol: ch /tʃ/
+    note: Affricate, but palatal aspirated vs postalveolar unaspirated
+  - canon_sound: ṭh
+    sutra: 11
+    english_status: absent
+    english_symbol: null
+    note: Voiceless aspirated retroflex plosive; no equivalent in English
+  - canon_sound: th
+    sutra: 11
+    english_status: absent
+    english_symbol: null
+    note: Voiceless aspirated dental plosive; no equivalent in English
+  - canon_sound: c
+    sutra: 11
+    english_status: absent
+    english_symbol: null
+    note: Palatal/velar affricate; English has no equivalent
+  - canon_sound: ṭ
+    sutra: 11
+    english_status: absent
+    english_symbol: null
+    note: Voiceless retroflex plosive; no equivalent in English
+  - canon_sound: t
+    sutra: 11
+    english_status: exact
+    english_symbol: t /t/
+    note: Voiceless alveolar plosive
+  - canon_sound: k
+    sutra: 12
+    english_status: exact
+    english_symbol: k /k/
+    note: Voiceless velar plosive
+  - canon_sound: p
+    sutra: 12
+    english_status: exact
+    english_symbol: p /p/
+    note: Voiceless bilabial plosive
+  - canon_sound: ś
+    sutra: 13
+    english_status: approximate
+    english_symbol: sh /ʃ/
+    note: Voiceless palatal fricative; English /ʃ/ is postalveolar
+  - canon_sound: ṣ
+    sutra: 13
+    english_status: approximate
+    english_symbol: sh /ʃ/
+    note: Voiceless retroflex fricative; English /ʃ/ is postalveolar
+  - canon_sound: s
+    sutra: 13
+    english_status: approximate
+    english_symbol: s /s/
+    note: Voiceless alveolar fricative; Sanskrit /s/ has contextual allophony
+  - canon_sound: h
+    sutra: 14
+    english_status: approximate
+    english_symbol: h /h/
+    note: Glottal fricative (second occurrence in canon)
+  statistics:
+    total_canon_sounds: 42
+    exact_matches: 9
+    approximate_matches: 16
+    absent_in_english: 17
+    unique_to_english: 14
+unique_to_english:
+- æ (/æ/ — near-open front unrounded vowel)
+- ɜː (/ɜː/ — mid central unrounded long vowel, r-colored)
+- eɪ, aɪ, ɔɪ, aʊ, əʊ, ɪə, eə, ʊə (diphthongs — English has 8 phonemic diphthongs,
+  Sanskrit has 2)
+- θ (/θ/ — voiceless dental fricative, e.g., 'think')
+- ð (/ð/ — voiced dental fricative, e.g., 'this')
+- z (/z/ — alveolar voiced fricative)
+- ʒ (/ʒ/ — postalveolar voiced fricative, e.g., 'measure')
+- w (/w/ — labial-velar approximant, distinct from /v/)
+- ɹ (/ɹ/ — postalveolar approximant, distinct from trill/flap)
+- Dark [ɫ] allophone of /l/
+- Phonemic stress and vowel reduction (schwa system)
+absent_from_english:
+- Syllabic consonants (ṛ, ḷ)
+- Diphthongs (ai, au) — English has its own diphthongs, not these
+- Retroflex series (ṭ, ṭh, ḍ, ḍh, ṇ, ṣ)
+- Aspirated plosives (kh, ph, ch, th, gh, bh, jh, dh) — English has no phonemic aspiration
+- Palatal nasal (ñ)
+- Palatal fricative (ś)
+- Palatal affricate (c) — English /tʃ/ is postalveolar, not palatal

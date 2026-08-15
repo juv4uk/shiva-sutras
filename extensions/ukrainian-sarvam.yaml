@@ -1,0 +1,1781 @@
+# Ukrainian Academic Extension Layer v0.3
+# ==========================================
+#
+# This file is the ACADEMIC EXTENSION of the Śiva Sūtra canon to Ukrainian.
+#
+# v0.3 changelog:
+#   Enriched with dimensions revealed by English (english.yaml v0.1).
+#   When a third language is added, it reveals system-level contrasts that
+#   were invisible with only two data points. For example:
+#     - English /t/ is alveolar → revealed 'place' as a varying dimension
+#     - English /b/ has fortis/lenis → revealed fortis_lenis as a dimension
+#     - English /m/ has syllabic [m̩] → revealed syllabic as a dimension
+#     - English /h/ is voiceless → revealed voicing as a dimension for h
+#   Ukrainian v0.2 omitted these because it only compared against Sanskrit.
+#   v0.3 adds them — not by changing Ukrainian values, but by making explicit
+#   what Ukrainian does NOT have. The absence is information.
+#
+# Architecture (unchanged):
+#   CANON: siva-sutras.yaml (immutable)
+#     ↑ referenced by
+#   ACADEMIC INTERPRETATION: sanskrit.yaml
+#     ↑ cross-referenced by
+#   ACADEMIC EXTENSION: this file (ukrainian.yaml)
+#     ↑ cross-referenced by
+#   ACADEMIC EXTENSION: english.yaml (peer extension, enriched this file)
+
+layer_id: ukrainian-academic-extension-v0.3
+layer_type: academic_extension
+canon_reference: siva-sutras-v1
+interpretation_reference: sanskrit-academic-interpretation-v0.1
+peer_extension_reference: english-academic-extension-v0.1
+layer_status: draft
+date: 2026-08-14
+
+# Primary sources
+# ---------------
+# Pompino-Marschall, Steriopolo & Żygis (2017). 'Ukrainian'.
+#   JIPA 47(3), 349–357.
+# Wikipedia: Ukrainian phonology (en.wikipedia.org)
+# Vakulenko, M.O. (2019). 'Ukrainian Consonant Phones in the IPA
+#   Context'. Linguistica ONLINE 22, 36–61.
+# Enrichment source: english.yaml v0.1 (peer extension)
+
+phonemes:
+  # ===== VOWELS (6 phonemic, no length distinction) =====
+
+  - id: PH-UKR-i
+    letter: "і"
+    ipa: "i"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-01:2
+      shared:
+        ipa: i
+        place: palatal
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        phonemic_length:
+          sanskrit: "contrastive (i vs ī)"
+          ukrainian: "non-contrastive"
+        vowel_inventory:
+          sanskrit: "9 vowels (incl. ṛ, ḷ, diphthongs)"
+          ukrainian: "6 vowels"
+        ipa:
+          sanskrit: "i (short, /i/)"
+          ukrainian: "i"
+        length_opposition:
+          sanskrit: "contrastive i vs ī"
+          ukrainian: "absent (no phonemic length)"
+        diphthongization:
+          sanskrit: "monophthong"
+          ukrainian: "absent (monophthongal)"
+      note: >-
+        Same IPA /i/.
+        But Sanskrit i enters a contrastive length opposition (i vs ī), while Ukrainian і has no phonemic length.
+        The segment is identical; the phonological role is not.
+    sources:
+      - "Pompino-Marschall, Steriopolo & Żygis (2017), JIPA 47(3), 349–357"
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      High front unrounded vowel.
+      Relatively stable across stressed/unstressed positions.
+
+  - id: PH-UKR-y
+    letter: "и"
+    ipa: unresolved
+    ipa_candidates: ["ɪ", "ɪ̞", "e", "ɨ"]
+    features:
+      place: unresolved
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Slavic innovation — Proto-Slavic *y → Ukrainian /ɪ/.
+        The Śiva Sūtras have no sound in this phonetic space.
+    sources:
+      - "Pompino-Marschall et al. (2017)"
+      - "Wikipedia: Ukrainian phonology"
+      - "Shevelov (1979)"
+    notes: >-
+      THE distinctive Ukrainian vowel.
+      Pompino-Marschall et al.: retracted close-mid front [ɪ̞].
+      Unstressed /ɛ/ and /ɪ/ approach shared allophone [e].
+
+  - id: PH-UKR-e
+    letter: "е"
+    ipa: "ɛ"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-03:1
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "eː"
+          ukrainian: "ɛ"
+        phonemic_length:
+          sanskrit: "inherently long (dīrgha)"
+          ukrainian: "non-contrastive"
+        vowel_height:
+          sanskrit: "close-mid"
+          ukrainian: "open-mid"
+        checked:
+          sanskrit: "n/a"
+          ukrainian: "absent (vowels can occur in any position)"
+      note: >-
+        Same phoneme class (mid front vowel), cognate.
+        But Sanskrit e = /eː/ (close-mid, inherently long).
+        Ukrainian /ɛ/ = open-mid, no length.
+    sources:
+      - "Pompino-Marschall et al. (2017)"
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      Open-mid front unrounded vowel.
+      Stressed [ɛ], unstressed approaches [e].
+
+  - id: PH-UKR-a
+    letter: "а"
+    ipa: unresolved
+    ipa_candidates: ["a", "ɐ"]
+    features:
+      place: unresolved
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-01:1
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "unresolved (ɐ, ə, or a)"
+          ukrainian: "unresolved (a or ɐ)"
+        phonemic_length:
+          sanskrit: "contrastive (a vs ā)"
+          ukrainian: "non-contrastive"
+        allophony:
+          sanskrit: "not documented as stress-dependent"
+          ukrainian: "[a] stressed, [ɐ] unstressed"
+        backness:
+          sanskrit: "central (unresolved)"
+          ukrainian: "unresolved"
+        length_opposition:
+          sanskrit: "a vs ā"
+          ukrainian: "absent (no phonemic length)"
+      note: >-
+        Both unresolved.
+        Unstressed Ukrainian [ɐ] matches one proposed Sanskrit value.
+        Sanskrit a enters contrastive length opposition (a vs ā).
+        Ukrainian a does not.
+    sources:
+      - "Pompino-Marschall et al. (2017)"
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      Low central vowel.
+      Stressed [a], unstressed [ɐ].
+      Notable: [ɐ] matches a proposed Sanskrit /a/ value.
+
+  - id: PH-UKR-o
+    letter: "о"
+    ipa: unresolved
+    ipa_candidates: ["ɔ", "o"]
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-03:2
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+        place: velar/back
+      differences:
+        ipa:
+          sanskrit: "oː"
+          ukrainian: "ɔ or o"
+        phonemic_length:
+          sanskrit: "inherently long (dīrgha)"
+          ukrainian: "non-contrastive"
+        vowel_height:
+          sanskrit: "close-mid"
+          ukrainian: "open-mid"
+        rounding:
+          sanskrit: "rounded"
+          ukrainian: "rounded"
+      note: >-
+        Same phoneme class (mid back rounded), cognate.
+        Sanskrit o = /oː/, Ukrainian /ɔ/.
+    sources:
+      - "Pompino-Marschall et al. (2017)"
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      Open-mid back rounded vowel.
+      Stressed [ɔ], unstressed [o].
+
+  - id: PH-UKR-u
+    letter: "у"
+    ipa: "u"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-01:3
+      shared:
+        ipa: u
+        place: velar
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        phonemic_length:
+          sanskrit: "contrastive (u vs ū)"
+          ukrainian: "non-contrastive"
+        vowel_inventory:
+          sanskrit: "9 vowels"
+          ukrainian: "6 vowels"
+        ipa:
+          sanskrit: "u (short, /u/)"
+          ukrainian: "u"
+        length_opposition:
+          sanskrit: "u vs ū"
+          ukrainian: "absent (no phonemic length)"
+        diphthongization:
+          sanskrit: "monophthong"
+          ukrainian: "absent (monophthongal)"
+      note: >-
+        Same IPA /u/.
+        But Sanskrit u enters contrastive length opposition (u vs ū), while Ukrainian у has no phonemic length.
+        Segment identical; role differs.
+    sources:
+      - "Pompino-Marschall et al. (2017)"
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      High back rounded vowel.
+      Stressed [u], unstressed [ʊ].
+
+  # ===== PLAIN STOPS =====
+
+  - id: PH-UKR-p
+    letter: "п"
+    ipa: "p"
+    features:
+      place: bilabial
+      manner: stop
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-12:2
+      shared:
+        ipa: p
+        place: bilabial
+        manner: stop
+        voicing: voiceless
+      differences:
+        aspiration:
+          sanskrit: "contrastive (p vs ph)"
+          ukrainian: "non-contrastive (no aspirated series)"
+        stop_inventory:
+          sanskrit: "20 stops (5 places × 4 voicing/aspiration)"
+          ukrainian: "6 stops (3 places × 2 voicing)"
+        aspiration_type:
+          sanskrit: "contrastive series"
+          ukrainian: "absent (no aspirated series at all)"
+      note: >-
+        Same IPA /p/.
+        But Sanskrit has a contrastive aspirated counterpart /pʰ/ (ph).
+        Ukrainian has no aspirated stops at all.
+        Segment identical; system role differs.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiceless bilabial stop.
+      No phonemic aspiration in Ukrainian.
+
+  - id: PH-UKR-b
+    letter: "б"
+    ipa: "b"
+    features:
+      place: bilabial
+      manner: stop
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-10:2
+      shared:
+        ipa: b
+        place: bilabial
+        manner: stop
+        voicing: voiced
+      differences:
+        aspiration:
+          sanskrit: "contrastive (b vs bh)"
+          ukrainian: "non-contrastive"
+        breathy_voice:
+          sanskrit: "contrastive (/bʱ/ exists)"
+          ukrainian: "absent"
+        voicing:
+          sanskrit: "fully voiced"
+          ukrainian: "voiced"
+        fortis_lenis:
+          sanskrit: "n/a (uses voicing + aspiration)"
+          ukrainian: "absent (uses voicing only, no aspiration)"
+      note: >-
+        Same IPA /b/.
+        Sanskrit has contrastive breathy-voiced counterpart /bʱ/ (bh).
+        Ukrainian does not.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiced bilabial stop.
+      No phonemic aspiration.
+
+  - id: PH-UKR-t
+    letter: "т"
+    ipa: "t̪"
+    features:
+      place: dental
+      manner: stop
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-11:8
+      shared:
+        ipa: t̪
+        place: dental
+        manner: stop
+        voicing: voiceless
+      differences:
+        aspiration:
+          sanskrit: "contrastive (t vs th)"
+          ukrainian: "non-contrastive"
+        palatalization:
+          sanskrit: "no palatalized t (has separate c)"
+          ukrainian: "contrastive (t vs tʲ)"
+        retroflex:
+          sanskrit: "contrastive (t vs ṭ)"
+          ukrainian: "absent (no retroflex series)"
+        ipa:
+          sanskrit: "t̪ (dental)"
+          ukrainian: "t̪"
+        place:
+          sanskrit: "dental (tongue on teeth)"
+          ukrainian: "dental"
+        glottalization:
+          sanskrit: "absent"
+          ukrainian: "absent"
+      note: >-
+        Same IPA /t̪/, both dental.
+        But: Sanskrit has aspirated /t̪ʰ/ and retroflex /ʈ/ counterparts.
+        Ukrainian has palatalized /tʲ/ counterpart.
+        Three different system-level contrasts radiate from the same segment.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Voiceless dental stop.
+      Palatalized /tʲ/ is a separate phoneme.
+
+  - id: PH-UKR-d
+    letter: "д"
+    ipa: "d̪"
+    features:
+      place: dental
+      manner: stop
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-10:5
+      shared:
+        ipa: d̪
+        place: dental
+        manner: stop
+        voicing: voiced
+      differences:
+        aspiration:
+          sanskrit: "contrastive (d vs dh)"
+          ukrainian: "non-contrastive"
+        palatalization:
+          sanskrit: "no palatalized d (has separate j)"
+          ukrainian: "contrastive (d vs dʲ)"
+        retroflex:
+          sanskrit: "contrastive (d vs ḍ)"
+          ukrainian: "absent"
+        ipa:
+          sanskrit: "d̪ (dental)"
+          ukrainian: "d̪"
+        place:
+          sanskrit: "dental"
+          ukrainian: "dental"
+      note: >-
+        Same IPA /d̪/, both dental.
+        Sanskrit has aspirated /d̪ʱ/ and retroflex /ɖ/.
+        Ukrainian has palatalized /dʲ/.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiced dental stop.
+      Palatalized /dʲ/ is a separate phoneme.
+
+  - id: PH-UKR-k
+    letter: "к"
+    ipa: "k"
+    features:
+      place: velar
+      manner: stop
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-12:1
+      shared:
+        ipa: k
+        place: velar
+        manner: stop
+        voicing: voiceless
+      differences:
+        aspiration:
+          sanskrit: "contrastive (k vs kh)"
+          ukrainian: "non-contrastive"
+        palatalization:
+          sanskrit: "no palatalized k (has separate c/j)"
+          ukrainian: "allophonic only (kʲ before /i/)"
+        velar_fricative:
+          sanskrit: "absent"
+          ukrainian: "present (/x/)"
+      note: >-
+        Same IPA /k/.
+        Sanskrit has aspirated /kʰ/.
+        Ukrainian has no aspirated velar but has a velar fricative /x/ (Sanskrit does not).
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiceless velar stop.
+      Semi-palatalized [kʲ] before /i/ is allophonic.
+
+  - id: PH-UKR-g
+    letter: "ґ"
+    ipa: "ɡ"
+    features:
+      place: velar
+      manner: stop
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-10:3
+      shared:
+        ipa: ɡ
+        place: velar
+        manner: stop
+        voicing: voiced
+      differences:
+        aspiration:
+          sanskrit: "contrastive (g vs gh)"
+          ukrainian: "non-contrastive"
+        frequency:
+          sanskrit: "full phoneme"
+          ukrainian: "peripheral (mainly loanwords)"
+        voiced_velar_fricative:
+          sanskrit: "absent"
+          ukrainian: "present (/ɦ~ɣ/ as г)"
+        breathy_voice:
+          sanskrit: "contrastive (/ɡʱ/ exists)"
+          ukrainian: "absent (no breathy-voiced series)"
+        voicing:
+          sanskrit: "fully voiced"
+          ukrainian: "voiced"
+      note: >-
+        Same IPA /ɡ/.
+        But Sanskrit g is a full phoneme with aspirated counterpart /gʱ/.
+        Ukrainian ґ is peripheral (mainly loanwords), and Ukrainian has a voiced velar fricative /ɦ~ɣ/ (г) where Sanskrit has none.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Voiced velar stop.
+      Represented by ґ, distinct from г (/ɦ/).
+      Peripheral phoneme.
+
+  # ===== AFFRICATES =====
+
+  - id: PH-UKR-ts
+    letter: "ц"
+    ipa: "t̪͡s̪"
+    features:
+      place: dental
+      manner: affricate
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no affricates in the modern sense.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Voiceless dental affricate.
+      Palatalized counterpart is a separate phoneme.
+
+  - id: PH-UKR-dz
+    letter: "дз"
+    ipa: "d̪͡z̪"
+    features:
+      place: dental
+      manner: affricate
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Slavic innovation.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiced dental affricate.
+      Written as digraph дз.
+
+  - id: PH-UKR-ch
+    letter: "ч"
+    ipa: "t͡ʃ"
+    features:
+      place: postalveolar
+      manner: affricate
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-11:6
+      shared:
+        manner: affricate or stop (unresolved in Sanskrit)
+        voicing: voiceless
+      differences:
+        ipa:
+          sanskrit: "unresolved (t͡ɕ, t͡ʃ, or c)"
+          ukrainian: "t͡ʃ"
+        place:
+          sanskrit: "palatal (if /c/) or alveolo-palatal (if /t͡ɕ/)"
+          ukrainian: "postalveolar"
+        aspiration:
+          sanskrit: "contrastive (c vs ch)"
+          ukrainian: "non-contrastive"
+        system_status:
+          sanskrit: "full phoneme, grouped with stops"
+          ukrainian: "full phoneme"
+      note: >-
+        Potential relation to canonical c (sūtra 11, position 6).
+        Sanskrit c is unresolved (could be /t͡ʃ/).
+        If Sanskrit c = /t͡ʃ/, this becomes segment-equivalent.
+        Until resolved, near-equivalent.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiceless postalveolar affricate.
+      Relation to Sanskrit c depends on unresolved Sanskrit IPA.
+
+  - id: PH-UKR-dzh
+    letter: "дж"
+    ipa: "d͡ʒ"
+    features:
+      place: postalveolar
+      manner: affricate
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-10:1
+      shared:
+        manner: affricate or stop (unresolved in Sanskrit)
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "unresolved (d͡ʑ, d͡ʒ, or ɟ)"
+          ukrainian: "d͡ʒ"
+        place:
+          sanskrit: "palatal (if /ɟ/) or alveolo-palatal (if /d͡ʑ/)"
+          ukrainian: "postalveolar"
+        aspiration:
+          sanskrit: "contrastive (j vs jh)"
+          ukrainian: "non-contrastive"
+        breathy_voice:
+          sanskrit: "contrastive (/d͡ʑʰ/ or /ɟʰ/ exists)"
+          ukrainian: "absent (no breathy-voiced series)"
+      note: >-
+        Potential relation to canonical j (sūtra 10, position 1).
+        Same caveat as ч/c.
+        If Sanskrit j = /d͡ʒ/, segment-equivalent.
+        Until resolved, near-equivalent.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiced postalveolar affricate.
+      Written as digraph дж.
+
+  # ===== FRICATIVES =====
+
+  - id: PH-UKR-f
+    letter: "ф"
+    ipa: "f"
+    features:
+      place: labiodental
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /f/.
+        Peripheral in Ukrainian too.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Voiceless labiodental fricative.
+      Mainly in loanwords.
+
+  - id: PH-UKR-s
+    letter: "с"
+    ipa: "s̪"
+    features:
+      place: dental
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-13:3
+      shared:
+        ipa: s̪
+        place: dental
+        manner: fricative
+        voicing: voiceless
+      differences:
+        sibilant_inventory:
+          sanskrit: "3 sibilants (ś /ɕ/, ṣ /ʂ/, s /s̪/)"
+          ukrainian: "3 sibilants (ш /ʃ/, ж /ʒ/, с /s̪/)"
+        palatalization:
+          sanskrit: "no palatalized s (has separate ś)"
+          ukrainian: "contrastive (s vs sʲ)"
+        voiced_counterpart:
+          sanskrit: "absent (no /z/)"
+          ukrainian: "present (/z/)"
+        ipa:
+          sanskrit: "s̪ (dental)"
+          ukrainian: "s̪"
+        place:
+          sanskrit: "dental"
+          ukrainian: "dental"
+      note: >-
+        Same IPA /s̪/, both dental.
+        But Sanskrit has 3 voiceless sibilants with no voiced counterparts.
+        Ukrainian has 3 sibilants including voiced /z/ and /ʒ/, plus palatalized /sʲ/.
+        The segment is shared but the sibilant system differs radically.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Voiceless dental fricative.
+      Palatalized /sʲ/ is a separate phoneme.
+
+  - id: PH-UKR-z
+    letter: "з"
+    ipa: "z̪"
+    features:
+      place: dental
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit sibilants are all voiceless.
+        Ukrainian /z/ is the voiced counterpart of /s/ — Slavic innovation.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiced dental fricative.
+      Palatalized /zʲ/ is a separate phoneme.
+
+  - id: PH-UKR-sh
+    letter: "ш"
+    ipa: "ʃ"
+    features:
+      place: postalveolar
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-13:1
+      shared:
+        manner: fricative
+        voicing: voiceless
+      differences:
+        ipa:
+          sanskrit: "ɕ (alveolo-palatal)"
+          ukrainian: "ʃ (postalveolar)"
+        place:
+          sanskrit: "alveolo-palatal"
+          ukrainian: "postalveolar"
+        palatalization:
+          sanskrit: "inherent (ś is palatalized)"
+          ukrainian: "allophonic before /i/"
+      note: >-
+        Cognate with canonical ś.
+        Sanskrit ś = /ɕ/ (alveolo-palatal).
+        Ukrainian ш = /ʃ/ (postalveolar).
+        Different places.
+        Both from PIE *ḱ but diverged.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiceless postalveolar fricative.
+      Do not merge with Sanskrit ś /ɕ/.
+
+  - id: PH-UKR-zh
+    letter: "ж"
+    ipa: "ʒ"
+    features:
+      place: postalveolar
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no voiced sibilant.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiced postalveolar fricative.
+
+  - id: PH-UKR-x
+    letter: "х"
+    ipa: "x"
+    features:
+      place: velar
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No direct canonical equivalent.
+        Sanskrit has no /x/.
+        Etymological correspondence with Sanskrit /k/ in some PIE cognates, but not phoneme identity.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiceless velar fricative.
+
+  - id: PH-UKR-h
+    letter: "г"
+    ipa: unresolved
+    ipa_candidates: ["ɦ", "ɣ", "ʕ"]
+    features:
+      place: unresolved
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-05:1
+      shared:
+        manner: fricative
+        voicing: voiced
+        place: unresolved
+      differences:
+        ipa:
+          sanskrit: "ɦ (glottal)"
+          ukrainian: "unresolved (ɦ, ɣ, ʕ)"
+        place:
+          sanskrit: "glottal"
+          ukrainian: "spans glottal, velar, pharyngeal"
+        allophony:
+          sanskrit: "stable /ɦ/"
+          ukrainian: "3 allophones in complementary distribution"
+        aspiration:
+          sanskrit: "not contrastive (h is unique)"
+          ukrainian: "not contrastive"
+        voicing:
+          sanskrit: "voiced [ɦ]"
+          ukrainian: "voiced"
+        distribution:
+          sanskrit: "any position"
+          ukrainian: "any position"
+      note: >-
+        Cognate with canonical h.
+        Sanskrit h = /ɦ/ (stable glottal).
+        Ukrainian г has three allophones [ɦ], [ɣ], [ʕ] in complementary distribution.
+        One allophone matches Sanskrit, but the phoneme spans multiple places.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Most contested Ukrainian consonant.
+      2019 orthography: 'pharyngeal'; 2012: 'laryngeal'.
+      Vakulenko (2019): [ɣ] before consonants/coda, [ɦ]/[ʕ] before vowels.
+
+  # ===== NASALS =====
+
+  - id: PH-UKR-m
+    letter: "м"
+    ipa: "m"
+    features:
+      place: bilabial
+      manner: nasal
+      voicing: voiced
+      aspiration: n/a
+      nasality: nasal
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-07:2
+      shared:
+        ipa: m
+        place: bilabial
+        manner: nasal
+        voicing: voiced
+      differences:
+        nasal_inventory:
+          sanskrit: "5 nasals (ñ, m, ṅ, ṇ, n)"
+          ukrainian: "2 phonemic (m, n) + 1 palatalized (nʲ)"
+        palatalization:
+          sanskrit: "no palatalized m (has separate ñ)"
+          ukrainian: "marginal (mʲ debated)"
+        retroflex:
+          sanskrit: "contrastive (ṇ exists)"
+          ukrainian: "absent"
+        syllabic:
+          sanskrit: "no syllabic m"
+          ukrainian: "absent (no syllabic consonants)"
+      note: >-
+        Same IPA /m/.
+        But Sanskrit has 5 nasal phonemes across 5 places.
+        Ukrainian has 2 phonemic nasals (+1 palatalized, marginal).
+        Segment shared; nasal system differs.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Bilabial nasal.
+      Semi-palatalized [mʲ] is allophonic.
+      Cognate: Uk мати / Skt mātṛ.
+
+  - id: PH-UKR-n
+    letter: "н"
+    ipa: "n̪"
+    features:
+      place: dental
+      manner: nasal
+      voicing: voiced
+      aspiration: n/a
+      nasality: nasal
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-07:5
+      shared:
+        ipa: n̪
+        place: dental
+        manner: nasal
+        voicing: voiced
+        nasality: nasal
+      differences:
+        nasal_inventory:
+          sanskrit: "5 nasals (ñ, m, ṅ, ṇ, n)"
+          ukrainian: "2 phonemic (m, n) + 1 palatalized (nʲ)"
+        palatalization:
+          sanskrit: "no palatalized n (has separate ñ /ɲ/)"
+          ukrainian: "contrastive (n vs nʲ)"
+        retroflex:
+          sanskrit: "contrastive (ṇ /ɳ/ exists)"
+          ukrainian: "absent"
+        ipa:
+          sanskrit: "n̪ (dental)"
+          ukrainian: "n̪"
+        place:
+          sanskrit: "dental"
+          ukrainian: "dental"
+        syllabic:
+          sanskrit: "no syllabic n"
+          ukrainian: "absent (no syllabic consonants)"
+      note: >-
+        Same IPA /n̪/, both dental.
+        But Sanskrit has retroflex nasal /ɳ/ (ṇ) and palatal nasal /ɲ/ (ñ) as separate phonemes.
+        Ukrainian has palatalized /nʲ/ as a separate phoneme but no retroflex nasal.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Dental nasal.
+      Palatalized /nʲ/ is a separate phoneme.
+      Cognate: Uk ніс / Skt nāsā.
+
+  # ===== TRILL =====
+
+  - id: PH-UKR-r
+    letter: "р"
+    ipa: "r"
+    features:
+      place: alveolar
+      manner: trill
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-05:4
+      shared:
+        ipa: r
+        place: alveolar
+        manner: trill
+        voicing: voiced
+      differences:
+        palatalization:
+          sanskrit: "no palatalized r"
+          ukrainian: "contrastive (r vs rʲ)"
+        syllabic_variant:
+          sanskrit: "has syllabic ṛ /r̩/ as a separate vowel"
+          ukrainian: "no syllabic r"
+        tap_realization:
+          sanskrit: "not documented"
+          ukrainian: "often [ɾ]"
+        ipa:
+          sanskrit: "r (alveolar trill)"
+          ukrainian: "r"
+        manner:
+          sanskrit: "trill"
+          ukrainian: "trill"
+        place:
+          sanskrit: "alveolar"
+          ukrainian: "alveolar"
+        rhoticity:
+          sanskrit: "always rhotic"
+          ukrainian: "n/a (rhotic — /r/ occurs in all positions)"
+      note: >-
+        Same IPA /r/.
+        Sanskrit also has syllabic ṛ (a vowel derived from r).
+        Ukrainian has palatalized /rʲ/ as a separate phoneme and often realizes r as a tap [ɾ].
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Alveolar trill.
+      Often [ɾ].
+      Palatalized /rʲ/ is separate.
+      Cognate: Uk брат / Skt bhrātṛ.
+
+  # ===== LATERAL =====
+
+  - id: PH-UKR-l
+    letter: "л"
+    ipa: "ɫ"
+    features:
+      place: alveolar
+      manner: lateral approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-06:1
+      shared:
+        manner: lateral approximant
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "l (not velarized)"
+          ukrainian: "ɫ (velarized)"
+        velarization:
+          sanskrit: "absent"
+          ukrainian: "present (dark l)"
+        palatalization:
+          sanskrit: "no palatalized l"
+          ukrainian: "contrastive (l vs lʲ)"
+        place:
+          sanskrit: "dental"
+          ukrainian: "alveolar"
+      note: >-
+        Cognate with canonical l.
+        Sanskrit l = /l/ (dental, not velarized).
+        Ukrainian plain л = /ɫ/ (velarized).
+        Ukrainian /lʲ/ is closer to Sanskrit /l/.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Velarized lateral approximant.
+      Palatalized /lʲ/ is separate and closer to Sanskrit /l/.
+
+  # ===== APPROXIMANT / SEMIVOWEL =====
+
+  - id: PH-UKR-v
+    letter: "в"
+    ipa: unresolved
+    ipa_candidates: ["ʋ", "w", "v", "β̞"]
+    features:
+      place: unresolved
+      manner: approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-05:3
+      shared:
+        manner: approximant
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "unresolved (ʋ or w)"
+          ukrainian: "unresolved (ʋ, w, v, β̞)"
+        allophony:
+          sanskrit: "not documented as context-dependent"
+          ukrainian: "4 allophones across contexts"
+        alternation:
+          sanskrit: "not documented"
+          ukrainian: "alternates with /u/"
+        place:
+          sanskrit: "unresolved (labiodental or bilabial)"
+          ukrainian: "unresolved"
+        phonemic_status:
+          sanskrit: "full phoneme v"
+          ukrainian: "full phoneme"
+      note: >-
+        Cognate with canonical v.
+        Both unresolved.
+        Ukrainian в has even more allophones than Sanskrit v.
+        Both derive from PIE *w.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+      - "Vakulenko (2019)"
+    notes: >-
+      Labiodental [v] before vowels, bilabial [β̞] between V+C, labiovelar [w] in coda.
+      Mirrors the unresolved status of Sanskrit v.
+
+  - id: PH-UKR-j
+    letter: "й"
+    ipa: "j"
+    features:
+      place: palatal
+      manner: approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: system-equivalent
+      canonical_unit: SS-05:2
+      shared:
+        ipa: j
+        place: palatal
+        manner: approximant
+        voicing: voiced
+      differences: null
+      note: >-
+        Same IPA /j/.
+        Both Sanskrit y and Ukrainian j are the sole palatal approximant in their respective systems.
+        No contrastive length, aspiration, palatalization, or allophonic variation in either language.
+        This is the only phoneme where segment AND system role are fully shared.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatal approximant.
+      Called йот (yot).
+      Cognate: Uk йому / Skt yasmai.
+
+  # ===== PALATALIZED CONSONANTS (phonemically distinct) =====
+
+  - id: PH-UKR-tj
+    letter: "ть"
+    ipa: "tʲ"
+    features:
+      place: alveolar
+      manner: stop
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no phonemic palatalized stops.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized voiceless stop.
+      Part of phonemic plain/palatalized opposition.
+
+  - id: PH-UKR-dj
+    letter: "дь"
+    ipa: "dʲ"
+    features:
+      place: alveolar
+      manner: stop
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized voiced stop.
+
+  - id: PH-UKR-nj
+    letter: "нь"
+    ipa: "nʲ"
+    features:
+      place: alveolar
+      manner: nasal
+      voicing: voiced
+      aspiration: n/a
+      nasality: nasal
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-07:1
+      shared:
+        manner: nasal
+        voicing: voiced
+        nasality: nasal
+      differences:
+        ipa:
+          sanskrit: "ɲ (true palatal)"
+          ukrainian: "nʲ (palatalized alveolar)"
+        place:
+          sanskrit: "palatal"
+          ukrainian: "alveolar + secondary palatalization"
+        system_status:
+          sanskrit: "full phoneme ñ"
+          ukrainian: "palatalized counterpart of n"
+      note: >-
+        Near-equivalent to canonical ñ (sūtra 7, position 1).
+        Sanskrit ñ = /ɲ/ (true palatal).
+        Ukrainian нь = /nʲ/ (alveolar + secondary palatalization).
+        Different phonetic type but closest match.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized nasal.
+      Close to Sanskrit ñ /ɲ/ but not identical.
+
+  - id: PH-UKR-sj
+    letter: "сь"
+    ipa: "sʲ"
+    features:
+      place: dental
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-13:1
+      shared:
+        manner: fricative
+        voicing: voiceless
+      differences:
+        ipa:
+          sanskrit: "ɕ (alveolo-palatal)"
+          ukrainian: "sʲ (palatalized dental)"
+        place:
+          sanskrit: "alveolo-palatal"
+          ukrainian: "dental + secondary palatalization"
+        etymology:
+          sanskrit: "from PIE *ḱ → /ɕ/"
+          ukrainian: "from PIE *ḱ → /sʲ/"
+        palatalization:
+          sanskrit: "inherent (ś is palatalized)"
+          ukrainian: "not documented"
+      note: >-
+        Near-equivalent to canonical ś.
+        Both derive from PIE *ḱ but diverged: Sanskrit moved to /ɕ/, Ukrainian kept /sʲ/ (palatalized dental).
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized dental fricative.
+      Historically from PIE *ḱ, same source as Sanskrit ś.
+
+  - id: PH-UKR-zj
+    letter: "зь"
+    ipa: "zʲ"
+    features:
+      place: dental
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no voiced palatal sibilant.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized voiced dental fricative.
+
+  - id: PH-UKR-tsj
+    letter: "ць"
+    ipa: "t̪͡s̪ʲ"
+    features:
+      place: dental
+      manner: affricate
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized voiceless dental affricate.
+
+  - id: PH-UKR-dzj
+    letter: "дзь"
+    ipa: "d̪͡z̪ʲ"
+    features:
+      place: dental
+      manner: affricate
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized voiced dental affricate.
+
+  - id: PH-UKR-rj
+    letter: "рь"
+    ipa: "rʲ"
+    features:
+      place: alveolar
+      manner: trill
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no palatalized r.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized alveolar trill.
+
+  - id: PH-UKR-lj
+    letter: "ль"
+    ipa: "lʲ"
+    features:
+      place: alveolar
+      manner: lateral approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-06:1
+      shared:
+        manner: lateral approximant
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "l (dental, not velarized)"
+          ukrainian: "lʲ (palatalized, not velarized)"
+        velarization:
+          sanskrit: "absent"
+          ukrainian: "absent (unlike plain /ɫ/)"
+        palatalization:
+          sanskrit: "not palatalized"
+          ukrainian: "palatalized"
+        closeness:
+          note: "Ukrainian /lʲ/ is phonetically CLOSER to Sanskrit /l/ than plain /ɫ/ is"
+        place:
+          sanskrit: "dental"
+          ukrainian: "alveolar"
+      note: >-
+        Near-equivalent to canonical l (same as plain л but CLOSER).
+        Sanskrit l = /l/ (dental, not velarized).
+        Ukrainian ль = /lʲ/ (palatalized, not velarized).
+        The absence of velarization makes /lʲ/ phonetically closer to Sanskrit /l/ than plain /ɫ/ is, but the palatalization is an added feature Sanskrit lacks.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Palatalized lateral approximant.
+      Closer to Sanskrit /l/ than plain /ɫ/.
+
+  # ===== SPECIAL (щ — cluster/phoneme status debated) =====
+
+  - id: PH-UKR-shch
+    letter: "щ"
+    ipa: "ʃt͡ʃ"
+    features:
+      place: postalveolar
+      manner: affricate
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /ʃt͡ʃ/ cluster.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+      - "JIPA Illustration (2017)"
+    notes: >-
+      Voiceless postalveolar affricate cluster.
+      Single phoneme vs cluster debated.
+
+  # ===== MARGINAL (palatalized labials, phonemicity debated) =====
+
+  - id: PH-UKR-mj-marg
+    letter: "мь"
+    ipa: "mʲ"
+    features:
+      place: bilabial
+      manner: nasal
+      voicing: voiced
+      aspiration: n/a
+      nasality: nasal
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Marginal — phonemicity debated.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      MARGINAL.
+      Palatalized bilabial nasal.
+      No minimal pairs.
+      Mainly loanwords.
+
+  - id: PH-UKR-pj-marg
+    letter: "пь"
+    ipa: "pʲ"
+    features:
+      place: bilabial
+      manner: stop
+      voicing: voiceless
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Marginal.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      MARGINAL.
+      Palatalized bilabial stop.
+      Mainly loanwords.
+
+  - id: PH-UKR-bj-marg
+    letter: "бь"
+    ipa: "bʲ"
+    features:
+      place: bilabial
+      manner: stop
+      voicing: voiced
+      aspiration: unaspirated
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Marginal.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      MARGINAL.
+      Palatalized bilabial stop.
+      Mainly loanwords.
+
+  - id: PH-UKR-fj-marg
+    letter: "фь"
+    ipa: "fʲ"
+    features:
+      place: labiodental
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Marginal.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      MARGINAL.
+      Palatalized labiodental fricative.
+      Mainly loanwords.
+
+  - id: PH-UKR-vj-marg
+    letter: "вь"
+    ipa: "ʋʲ"
+    features:
+      place: unresolved
+      manner: approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: true
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Marginal.
+        Inherits unresolved status of plain /v/.
+    sources:
+      - "Wikipedia: Ukrainian phonology"
+    notes: >-
+      MARGINAL.
+      Palatalized labial approximant.
+      Only in a handful of native words.
+
+# Summary
+# -------
+# Total phonemes: 44
+# Relation to canon:
+#   system-equivalent: 1
+#   segment-equivalent: 12
+#   near-equivalent: 12
+#   new-extension: 19
+# Unresolved IPA values: 5
+#
+# v0.3 enrichment: 42 dimensions added
+#   These dimensions were revealed by English (english.yaml v0.1).
+#   Each represents a system-level contrast that Ukrainian does NOT have,
+#   but that is now explicitly documented as 'absent' rather than omitted.
+#   'Absent' is information. 'Unmentioned' is not.

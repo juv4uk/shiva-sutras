@@ -1,0 +1,36 @@
+source_id: KASIKA-6.3.139
+locator:
+  sutra: 6.3.139
+witness_text:
+  sutra: samprasāraṇasya
+  commentary: uttarapde iti vartate  / samprasāraṇāntasya pūrvapadasya+uttarapade
+    dīrgho bhavati  / kārīṣagandhīputraḥ  / kārīṣagandhīpatiḥ  / kaumudagandhīputraḥ  /
+    kaumudīgandhīpatiḥ  / karīṣasya iva gandho 'sya, kumudasya iva gandho 'sya, alpākhyāyām
+    (*5,4.136), upamānāc ca (*5,4.137) iti ikāraḥ samāsāntaḥ  / karīṣagandherapatyam
+    kārīṣagandhyā  / kumudagandherapatyam kaumudagandhyā, tasyāḥ putraḥ kaumudagandhīputraḥ  /
+    kaumudagadhīpatiḥ  / iko hrasvo 'ṅyo gālavasya (*6,3.61) ity etan na bhavati  /
+    vyavasthitavibhāṣā hi sā  / akṛta eva dīrghatve hrasvabhāvapakṣe kṛtārthena api
+    dīrgheṇa pakṣāntare paratvād hrasvo bādhyate  / punaḥ prasaṅgavijñānaṃ ca na bhavati,
+    sakṛdgatau vipratiṣedhe yad bādhitaṃ tadbādhitam eva iti // iti śrīvāmanaviracitāyāṃ
+    kāśikāyāṃ vṛttau ṣaṣṭhādhyāyasya tṛtīyaḥ pādaḥ // [#731] ṣaṣṭhādhyāyasya caturthaḥ
+    pādaḥ  /
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,38 @@
+source_id: KASIKA-3.4.72
+locator:
+  sutra: 3.4.72
+witness_text:
+  sutra: gaty-artha-akramaka-śliṣa-śīṅ-sthā-āsa-vasa-jana-ruha-jīryatibhyaś ca
+  commentary: gaty-arthabhyo dhātubhyo 'karmakebhya śliṣādibhyaś ca yaḥ ktaḥ, sa kartari
+    bhavati  / cakārād yathāprāptaṃ ca bhāvakarmaṇoḥ  / gato devadatto grāmam, gato
+    devadattena grāman, gato devadattena grāmaḥ, gataṃ devadattena  / akarmakebhyaḥ
+    - glāno bhavān, glānaṃ bhavatā  / āsito bhavān, āsitaṃ bhavatā  / śliṣa - upaśliṣṭo
+    guruṃ bhavān, upaśliṣṭo gururbhavatā, upaśliṣṭaṃ bhavatā  / śīṅ - upaśayito guruṃ
+    bhavān, upaśayito gururbhavatā, upaśayitaṃ bhavatā  / sthā - upasthito guruṃ bhavān,
+    upasthito gururbhavatā, upasthitaṃ bhavatā  / āsa - upāsito guruṃ bhavān, upāsito
+    gururbhavatā, upāsitaṃ bhavatā  / vasa - anūṣito guruṃ bhavān, anūṣito gururbhavatā,
+    anūṣitaṃ bhavatā  / jana - anujāto māṇavako māṇa - vikām, anujātā māṇavakena māṇavikā,
+    anujātaṃ māṇavakena  / ruha - ārūḍho vṛkṣaṃ bhavān, ārūḍho vṛkṣo bhavatā, ārūḍhaṃ
+    bhavatā  / jīryati - anujīrṇo vṛṣalīṃ devadattaḥ, anujīrṇā vṛpalī devadattena,
+    anujīrṇaṃ devadattena  / śliṣādayaḥ sopasargāḥ sakarmakā bhavanti, tadartham eṣām
+    upādānam //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

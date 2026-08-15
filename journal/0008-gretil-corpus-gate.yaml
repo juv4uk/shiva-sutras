@@ -1,0 +1,33 @@
+date: "2026-08-15"
+author: "Antigravity Research Agent"
+type: "corpus-acquisition"
+status: "EVIDENCE-LOGGED"
+title: "GRETIL Corpus Gate Passed: Real Kāśikā Sources with Provenance"
+context: >
+  L-002 (independent corpus with provenance) was UNRESOLVED because external source gate
+  was blocked (404/403) and the only local Kāśikā corpus was synthetic. This entry records
+  the acquisition of two real GRETIL witnesses with full provenance and the epistemic
+  discipline used to avoid false certainty.
+findings:
+  - id: gretil-kasika-acquired
+    description: "GRETIL Kāśikāvṛtti (jvkasipu.htm), based on Aryendra Sharma's Osmania University edition (1969-1985), input by Mari Minamino. Downloaded, parsed into 3951 sūtra records (sūtra + commentary)."
+    implication: "The blind reconstruction pipeline now has REAL commentary text (the actual Kāśikā prose), replacing synthetic paraphrases in external_data/kasika_corpus.json."
+  - id: gretil-astadhyayi-second-witness
+    description: "GRETIL Aṣṭādhyāyī (panini_u.htm), Baums transcription from TeX Users Group proceedings (1988). Independent digitization, 3958 sūtras."
+    implication: "Two independent witnesses allow a transcription-fidelity cross-check rather than blind trust in a single download."
+  - id: cross-witness-diff
+    description: "Cross-witness diff: 1891 AGREES, 2013 VARIANTS, 22 CONFLICTS, 57 MISSING. Sequence alignment (Needleman-Wunsch per pāda) absorbs the pāda 8.3 numbering shift; a 'vakṣyati - ' cross-reference annotation present in the raw GRETIL Kāśikā <b> tags is stripped before comparison (5 sūtras). Most VARIANTS are notation conventions between the two GRETIL transcriptions, not textual disagreements."
+    implication: "Transcription fidelity is supported, but NOT historical authenticity. This is exactly the E-001 lesson: reproducibility of a digitized edition does not prove the text is authentic."
+  - id: conflicts-preliminary-classified
+    description: "The 22 CONFLICTS were given a preliminary (automated-hint) classification: 8 NOTATION (identical text, different transcription convention), 2 ANUVṚTTI (Sharma <b> tag carries only the operative word, e.g. 'vibhāṣā'), 9 GENUINE (substantive edition differences). This is a hint, not an expert verdict."
+    implication: "Expert adjudication queue (reports/conflicts_adjudication.md) now carries a Prelim column so an expert can focus on the 9 GENUINE candidates."
+  - id: edition-level-discrepancy
+    description: "Witness A (Kāśikā/Sharma) lacks sūtras 1.1.46-1.1.75 and 8.3.118-8.3.119 in its numbering; Witness B lacks 2.4.27. Pāda 8.3 numbering diverges after 8.3.98 (Sharma omits two sūtras). Additionally, Kāśikā 4.2.94 duplicates the 4.2.93 sūtra text in the GRETIL file (commentary differs) while Baums has the expected grāmād yakhañau."
+    implication: "For those sūtras, REAL status is NOT assigned without adjudication against a named critical edition. 3951 source files were generated; none claim REAL for the disputed sūtras."
+  - id: fail-closed-gate-kept
+    description: "fetch_verified_corpus.py placeholder and the nonexistent verified_ashtadhyayi.txt claim (AUTHENTICITY-VERIFIED) were removed. README no longer claims a file that does not exist."
+    implication: "Removed a documented instance of False Certainty from the repo; corpus pipeline now fails closed without external_data/gretil_raw/manifest.json."
+next_steps:
+  - "Adjudicate the 9 GENUINE CONFLICTS and the edition-level numbering differences (1.1.46-75, 8.3.118-119, 2.4.27, 4.2.94 duplication) against a named critical edition (e.g. Böhtlingk 1887 or Katre 1987)."
+  - "Feed the REAL Kāśikā commentary into the blind reconstruction pipeline for L-001 testing."
+  - "Optionally add a third witness (e.g. Sanskrit Library XML edition or DCS) for the disputed sūtras."

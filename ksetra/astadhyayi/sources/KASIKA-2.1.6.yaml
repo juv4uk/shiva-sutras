@@ -1,0 +1,51 @@
+source_id: KASIKA-2.1.6
+locator:
+  sutra: 2.1.6
+witness_text:
+  sutra: avyayaṃ vibhakti-samīpa-samṛddhi-vyṛddhy-arthābhāva-atyaya-asamprati-śabdaprādurbhāva-paścād-yathā-ānupūrvya-yaugapadya-sādṛśya-sampatti-sākalya-antavcaneṣu
+  commentary: sup supā iti ca vartate  / vibhaktyādiśv artheṣu yadavyayaṃ vartate
+    tat samarthena sub-antena saha samasyate, avyayībhāvaś ca samāso bhavati  / vacana-grahaṇaṃ
+    pratyekaṃ sambadhyate  / vibhaktivacane tāvat -- strīṣvadhikṛtya kathā pravartate
+    adhistri  / adhikumāri  / saptamy-arthe yadavyayaṃ tad bibhaktivacanam  / samīpavacane
+    -- kumbhasya samīpam upakumbham  / upamaṇikam  / samṛddhir ṛddher ādhikyam --
+    samṛddhir madrāṇāṃ sumadram  / sumagadhaṃ vartate  / vyṛddhir ṛddher abhāvaḥ --
+    gavadikānām ṛddher abhāvaḥ durgavadikam  / duryabanaṃ vartate  / artha-abhāvaḥ
+    vastuno 'bhāvaḥ -- abhāvo makṣikāṇāṃ nirmakṣikam  / nirmaśakam vartate  / atyayaḥ
+    abhūtatvam, atikramaḥ -- atītāni himāni atihimam  / nirhimam  / niḥśītaṃ vartate  /
+    asamprati upabhogasya vartamānakāla-pratiṣedhaḥ -- atitasṛkam  / taisṛkamācchādanam,
+    tasya ayam upabhogakālo na bhavati ity arthaḥ  / śabdaprādurbhāvaḥ prakāśatā śabdasya
+    - iti pāṇini  / tat-pāṇini  / pāṇini-śabdo loke prakāśate ity arthaḥ  / paścāt
+    -- anurathaṃ pādātam  / rathānāṃ paścāt ity arthaḥ  / yathā  / yathā-arthe yad
+    avyayaṃ vartate tat samasyate  / yogyatā vipsā padārthānativṛttiḥ sādṛśyaṃ ca
+    iti yathārthāḥ  / yogyatāyām -- anurūpam  / rūpayogyam bhavati ity arthaḥ  / vīpsāyām
+    -- arthamarthaṃ prati pratyartham  / [#102] padārthanativṛttau -- yathāśakti  /
+    ānupūrvyamanukramaḥ -- anujyeṣṭhaṃ praviśantu bhavantiaḥ  / jyeṣṭhānupūrvyā bhavantaḥ
+    praviśantu ity arthaḥ  / yaugapadyam ekakālatā -- sacakram dhehi  / yugapaccakraṃ
+    dhehi ity arthaḥ  / sādṛśyam tulyatā  / kim-artham idam ucyate, yathārtha ity
+    eva siddham ? guṇabhūte 'pi sādṛśye yathā syāt, sadṛśaḥ kikhyā rākikhi  / sampattiḥ
+    anurūpa ātmabhāvaḥ samṛddheranyaḥ -- sabrahma bābhravāṇām  / sakṣatraṃ śālaṅkāyanānām  /
+    sāklyam aśeṣatā -- satṛṇam abhyāvaharati  / sabusam  / na kiṃcid abhyāvahāryaṃ
+    parityajati ity ayamartho 'dhikārthavacanena pratipādyate  / antavacane -- antaḥ
+    iti parigraha-apekṣayā samāptirucyate  / sāgni adhīte  / seṣṭi sapaśubandham  /
+    sapaśubandhāntamadhīte ity arthaḥ  / iyaṃ samāptirasakale 'py adhyayane bhavati
+    iti sākalyāt pṛthag ucyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

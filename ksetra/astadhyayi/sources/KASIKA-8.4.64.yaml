@@ -1,0 +1,33 @@
+source_id: KASIKA-8.4.64
+locator:
+  sutra: 8.4.64
+witness_text:
+  sutra: halo yamāṃ yami lopaḥ
+  commentary: anyatarasyām iti vartate  / hala uttareṣāṃ yamāṃ yami parato lopo bhavati
+    anyatarasyām  / śayyyā ity atra dvau yakārau, kramajastṛtīyaḥ, tatra madhyamasya
+    vā lopo bhavati  / śayyā, śayyyā  / aditer apatyamādityyaḥ ity atra takārāt paraḥ
+    ekaḥ yakāraḥ, [#981] yaṇo mayaḥ iti kramajo dvitīyaḥ, tatra madhyamasya vā lopo
+    bhavati  / ādityaḥ, ādityyaḥ  / ādityo devatā asya sthālīpākasya iti ādityyaḥ
+    ity atra api dvau yakārau kramajastṛtīyaḥ  / tatra madhyamasya madhyamayor vā
+    lopo bhavati  / halaḥ iti kim ? ānnam  / yamām iti kim ? agniḥ  / ardhyam  / yami
+    iti kim ? śārṅgam //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

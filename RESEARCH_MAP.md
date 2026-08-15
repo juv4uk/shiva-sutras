@@ -16,10 +16,11 @@
 | Кількість оптимальних структурних класів = 2 | `proved in model` | Exhaustive exclusion test |
 | Canonical class (Class B) єдино можливий для безколізійної адресації | `proved in model` | Address Semantics Fingerprint |
 | Канонічні класи є лінгвістично незалежними від Śiva-sūtras | `OPEN (NOT YET)` | Заплановано: Blind Semantic Reconstruction |
+| Доступний незалежний корпус (Provenance) | `RESOLVED` | GRETIL Kāśikāvṛtti (Sharma ed.) + Aṣṭādhyāyī (Baums); manifest + sha256 |
 | **Б. Модель Епістемічного Агента** | | |
 | Автоматичний колектор здатний розрізнити нефонологічні сутри | `supported (Stage 6.0B)` | High-Recall Annotation (492 YES / 1220 MAYBE) |
 | Відтворюваність джерела доводить його історичну справжність | `FALSIFIED` | `Reproducibility ≠ Authenticity` |
-| Kāśikā corpus в репозиторії є автентичним | `UNRESOLVED` | Provenance відсутній (збережено як Synthetic) |
+| Kāśikā corpus в репозиторії є автентичним | `AUTHENTICITY-VERIFIED (Attributed)` | GRETIL Sharma ed.; attribution via academic edition, not byte-reproducibility |
 | Synthetic proposer має схильність до хибної впевненості | `MEASURED` | FCR = 83.3% на Batch 2 Pilot |
 
 ## Два проєкти в одному

@@ -1,0 +1,36 @@
+source_id: KASIKA-6.2.69
+locator:
+  sutra: 6.2.69
+witness_text:
+  sutra: gotra-antevāsi-mānava-brāhmaṇesu kṣepe
+  commentary: gotravācini antevāsivācini ca+uttarapade mānavabrāhmanayoś ca kṣepavācini
+    samāse pūrvapadam ādyudāttaṃ bhavati  / jaṅghāvātsyaḥ  / yo jaṅghādānaṃ dadānyaham
+    iti vātsyaḥ sampadyate sa jaṅghāvātsyaḥ iti kṣipyate  / bhāryāsauśrutaḥ  / suśrutāpatyasya
+    bāryāpradhānatayā kṣepaḥ  / vāśābrāhmakṛteyaḥ  / brahmakṛtaśadaḥ śubhrādisu paṭhyate  /
+    gotra  / antevāsi - kumārīdākṣāḥ  / kambalacārāyaṇīyāḥ  / ghṛtarauḍhīyāḥ  / odanapāṇinīyāḥ  /
+    kumāryādilābhakāmā ye dākṣādibhiḥ proktāni śāstrāṇy adhīyate tacchiṣyatāṃ vā pratipadyante
+    ta evaṃ kṣipyante  / antevāsi  / māṇava - bhikṣāmāṇavaḥ  / bhikṣāṃ lapsye 'hamiti
+    māṇavo bhavati  / māṇava  / brāhmaṇa - dāsībrāhmaṇaḥ  / vṛṣalībrāhmaṇaḥ  / bhayabrāhmaṇaḥ  /
+    yo bhayena brāhmaṇaḥ sampadyate  / atra yasya anyat samāsalakṣaṇaṃ na asti, supsupā
+    ity eva tatra samāsaḥ kartavyaḥ  / gotrādiṣu iti kim ? dāsīśrotriyaḥ  / kṣepe
+    iti kim ? mahābrāhmaṇaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

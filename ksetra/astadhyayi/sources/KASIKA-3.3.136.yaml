@@ -1,13 +1,36 @@
+source_id: KASIKA-3.3.136
 locator:
   sutra: 3.3.136
-raw_text: भविष्यति काले प्रत्ययो भवति। भविष्यत्कालवाचिनः धातोः प्रत्ययः विधीयते।
+witness_text:
+  sutra: bhaviṣyati maryādā-vacane 'varasmin
+  commentary: nānadyatanavat iti vartate  / akriya-prabandha-artham, asāmīpyārthaṃ
+    ca vacanam  / bhaviṣyati kāle maryādā-vacane satyavarasmin pravibhāge 'nadyatanavat
+    pratyaya-vidhir na bhavati  / yo 'yamadhvā gantavya āpāṭaliputrāt, tasya yadavaraṃ
+    kauśāmbyāḥ, tatra dvirodanaṃ bhokṣyāmahe, tatra saktūn pāsyāmaḥ  / bhaviṣyati
+    iti kim ? yo 'yamadhvā gataḥ āpāṭaliputrāt, tasya yadavaraṃ kauśāmbyāḥ, tatra
+    yuktā adhyaimahi, tatra dvirodanam abhuñjmahi, tatra saktūnapibāma  / maryādāvacane
+    iti kim ? yo 'yamadhvā niravadhiko gantavyaḥ, tasya yadavaraṃ kauśāmbyāḥ, tatra
+    dvirodanaṃ bhoktāsmahe, saktūn pātā smaḥ  / avarasmin iti kim ? yo 'yamadhvā gantavyaḥ
+    āpāṭaliputrāt, tasya yatparam kauśāmbyāḥ, tatra dvirodanaṃ bhoktāsmahe, tatra
+    saktūn pātāsmaḥ  / iha sūtre deśakṛtā maryādā, uttaratra kālakṛtā  / tatra ca
+    viśeṣaṃ vakṣyati //
 integrity:
   reproducible: true
-  sha256_match: true
-  collector_sha256: dc30fbd052664dcd72edf968756d5732c9aa14ca353574cf8b69f832bdfc18f8
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
 provenance:
-  authenticity: UNVERIFIED
-  external_source: null
-  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
-    to original external Kasika source is unverified.
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

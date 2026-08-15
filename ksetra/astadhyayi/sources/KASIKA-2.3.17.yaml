@@ -1,0 +1,37 @@
+source_id: KASIKA-2.3.17
+locator:
+  sutra: 2.3.17
+witness_text:
+  sutra: manya-karmaṇy-anādare vibhāṣā 'prāṇiṣu
+  commentary: manyateḥ karmaṇi manyakarmaṇi  / manyakarmaṇi prāṇivarjite vibhāṣā caturthī
+    vibhaktir bhavati anādare gamyamāne  / anādarastiraskāraḥ  / na tvā tṛṇaṃ manye,
+    na tvā tṛṇāya manye  / na tvā busaṃ manye, na tvā busāya manye  / manyati-grahaṇaṃ
+    kim ? na tvā tṛṇaṃ cintayāmi  / vikaraṇa-nirdeśaḥ kim arthaḥ ? na tvā tṛṇaṃ manve  /
+    anādare iti kim ? aśmānaṃ dṛṣadaṃ manye manye kaṣṭhamulūkhalam  / andhāyāstaṃ
+    sutaṃ manye yasya mātā na paśyati // aprāniṣu iti kim ? na tvā śṛgālaṃ manye  /
+    yad etad aprāṇiṣviti tad anāvādiṣviti vaktavyam  / vyavasthita-vibhāṣā ca jñeyā  /
+    na tvā nāvaṃ manye yāvad uttīrṇaṃ na nāvyam  / na tvā 'nnaṃ manye yāvan na bhuktaṃ
+    śrāddham  / prāṇiṣu tūbhayam  / na tvā kākaṃ manye  / na tvā śṛgālaṃ manye  /
+    iha caturthī dvitīyā ca bhavataḥ - na tvā śvānaṃ manye, na tvā śune manye  / yuṣmadaḥ
+    kasmān na bhavati caturthī, etad api hi manyateḥ karma ? vyavasthita-vibhāṣā-vijñānād
+    eva na bhavati // [#137]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

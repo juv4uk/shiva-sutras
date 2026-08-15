@@ -1,0 +1,44 @@
+source_id: KASIKA-6.4.22
+locator:
+  sutra: 6.4.22
+witness_text:
+  sutra: asiddhavatra-ā bhāt
+  commentary: asiddhavat ity ayam adhikāraḥ  / yad ita ūrdhvam anukramiṣyāmaḥ ā adhyāyaparisamāpteḥ
+    tad asiddhavat bhavati ity evaṃ veditavyam  / ā bhāt iti viṣayanirdeśaḥ  / ābhasaṃśabdanād
+    yad ucyate tatra kartavye  / atra it samānāśrayatvapratipattyarthaṃ  / tac ced
+    atra yatra bhavati tadā bhāt śāstrīyaṃ vidhīyate tadāśrayam eva bhavati  / vyāśrayaṃ
+    tu nāsiddhavad bhavati ity arthaḥ  / asiddhavacanam utsargalakṣaṇabhāvārtham,
+    ādeśalakaṣaṇapratiṣedhārthaṃ ca  / edhi, śādhi ity atra etvaśābhāvayoḥ kṛtayoḥ
+    jhallakṣaṇaṃ dhitvaṃ na prāpnoti, asiddhatvād bhavati  / āgahi, jahi ity atra
+    anunāsika lope jabhāve ca ato heḥ (*6,4.105) iti luk prāpnoti, asiddhatvān na
+    bhavati  / ā bhāt iti kim ? abhāji  / rāgaḥ  / ata upadhāyāḥ (*7,2.116) iti vṛddhau
+    kartavyāyāṃ nalopo nāsiddho bhavati  / atragrahaṇaṃ kim ? papuṣaḥ paśya  / cicyuṣaḥ
+    paśya  / luluvuṣaḥ paśya  / vasusaṃprasāraṇam āllope yaṇādeśe uvaṅādeśe ca kartavye
+    nāsiddhaṃ bhavati  / āllopādīni vasau, vasantasya vibhaktau saṃprasāraṇam iti
+    samānāśrayatvaṃ na asti  / asiddhaṃ bahiraṅgamantaraṅge iti ? etad apy atra na
+    bhavati  / [#737] kiṃ kāraṇam ? eṣā hi paribhāṣā ābhācchāstrīyā  / tasyāṃ pravartamānāyāṃ
+    vasusaṃprasāraṇādīnāmābhācchāstrīyāṇām eva asiddhatvād antaraṅgabahiraṅgayoḥ yugapat
+    samupasthāpanaṃ na asti iti paribhāṣa na pravartate  / vugyuṭāvuvaṅyaṇoḥ siddhau
+    bhavata iti vaktavyam  / vug uvaṅādeśe - babhūva, bahūvatuḥ, bavhūvuḥ  / yuṭ yaṇādeśe
+    - upadidīye, upadidīyāte, upadedīyire  / ābhāt ity ayam abhividhāvāṅ  / tena bhādhikāre
+    'py asiddhavad bhavati //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

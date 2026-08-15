@@ -1,0 +1,33 @@
+source_id: KASIKA-5.4.68
+locator:
+  sutra: 5.4.68
+witness_text:
+  sutra: samāsāntāḥ
+  commentary: adhikāro 'yam  / āpādaparisamāpteḥ ye pratyayāḥ vihitās te samāsāntāvayavā
+    ekadeśāḥ bhavanti, tadgrahaṇena gṛhyante iti veditavyam  / prayojanam - avyayībhāva-dvigu-dvandva-tatpuruṣa-bahuvrīhi-sañjñāḥ  /
+    uparājam  / adhirājam  / na avyayībhāvāt ity eṣa vidhir bhavati, anaś ca (*5,4.108)
+    iti ṭac  / dvipurī, tirpurī iti  / dvigoḥ (*4,1.21) iti ṅīp bhavati  / kaṭakavalayinī  /
+    śaṅkhanūpuriṇī  / kośaniṣadinī  / sraktvacinī  / dvandvopatāpagarhyāt iti inir
+    bhavati  / vidhuraḥ  / pradhuraḥ  / tatpuruṣe tulyārtha ity eṣa svaro bhavati  /
+    uccair dhuraḥ  / nīcair dhuraḥ  / bahuvrīhau prakṛtyā pūrvapadam (*6,2.1) ity
+    etad bhavati //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

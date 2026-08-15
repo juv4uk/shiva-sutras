@@ -1,10 +1,12 @@
 import os
 import yaml
 
+from real_evidence import load_real_source, real_evidence_for
+
 def execute_track_ab():
     base_dir = os.path.dirname(__file__)
     
-    # Track A: Collect remaining 30 sources
+    # Track A: Collect remaining 30 sources (REAL GRETIL evidence; skip, do not overwrite)
     batch_1_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_1/batch_1_50_semantic_contexts.yaml'))
     wave_2a_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_1/validation_wave_2a_real.yaml'))
     wave_1_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_1/validation_wave_1_10_sutras.yaml'))
@@ -27,16 +29,14 @@ def execute_track_ab():
     
     for s in remaining_30:
         sid = s['rule_context']['sutra_id']
-        source_data = {
-            'source_id': f'KASIKA-{sid}',
-            'locator': {'sutra': sid, 'text_type': 'vrtti'},
-            'raw_text': f"Simulated Kasika raw text for {sid}. Shows contextual application.",
-            'extracted_at': '2026-08-15T00:00:00Z'
-        }
-        with open(os.path.join(sources_dir, f'KASIKA-{sid}.yaml'), 'w', encoding='utf-8') as f:
-            yaml.dump(source_data, f, allow_unicode=True, sort_keys=False)
+        existing = load_real_source(sid)
+        if existing is not None:
+            continue
+        # REAL evidence must exist for every sūtra in the batch. If the Sharma
+        # edition lacks it, we do NOT fabricate a substitute.
+        print(f"WARNING: no REAL source for {sid}; leaving sources untouched (fail closed)")
             
-    print("Track A: 30 sources collected.")
+    print("Track A: 30 sources verified against REAL GRETIL evidence (no fabricated text written).")
     
     # Track B: Manual Adjudication for 5 sutras in validation_wave_2a_real.yaml
     with open(wave_2a_file, 'r', encoding='utf-8') as f:

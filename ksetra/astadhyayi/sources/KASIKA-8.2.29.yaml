@@ -1,6 +1,34 @@
 source_id: KASIKA-8.2.29
 locator:
   sutra: 8.2.29
-  text_type: vrtti
-raw_text: Simulated Kasika raw text for 8.2.29. Shows contextual application.
-extracted_at: '2026-08-15T00:00:00Z'
+witness_text:
+  sutra: s-koḥ saṃyoga-ādyor ante ca
+  commentary: padasya ante yaḥ saṃyogaḥ, jhali parato vā yaḥ saṃyogaḥ, tadādyoḥ sakārakakārayor
+    lopo bhavati  / lasjeḥ lagnaḥ  / lagnavān  / sādhulak  / masjeḥ - magnaḥ  / kakārasya
+    - takṣeḥ taṭ  / taṣṭaḥ  / taṣṭavān  / kāṣṭhatat  / jhali saṅīti vaktavyam  / kim
+    idaṃ siṅi iti ? sanaḥ saprabhṛti mahiṅo ṅakāreṇa pratyāhāraḥ  / iha mā bhūt, kaṣṭhaśakṣthātā
+    iti  / thakāre jhali kakārasya saṃyogāder lopaḥ prāpnoti  / tad atra śakeḥ kvibantasya
+    prayoga eva na asti ity āha kāṣṭhaśageva na asti, kuto 'yaṃ kāṣṭhaśaki tiṣṭhet
+    iti  / vāsyartham, kākvartham ity atra api bahiraṅgalakṣaṇasya yaṇādeśasya asiddhatvāt
+    saṃyogādilopo na bhavati  / skoḥ iti kim ? narnarti  / varvarti  / saṃyogādyoḥ
+    iti kim ? payaḥśak  / ante ca iti kim ? takṣitaḥ  / takṣakaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,37 @@
+source_id: KASIKA-6.2.148
+locator:
+  sutra: 6.2.148
+witness_text:
+  sutra: kārakād datta-śrutayor eva āśiṣi
+  commentary: sañjñāyām iti vartate, ktaḥ iti ca  / sañjñāyāṃ viṣaye āśiṣi gamyamānāyāṃ
+    kārakād uttarayoḥ dattaśrutayor eva ktāntayor anta udātto bhavati  / devā enaṃ
+    deyāsuḥ devadattaḥ  / viṣṇurenaṃ śrūyāt viṣṇuśrutaḥ  / kārakāt iti kim ? kārakān
+    niyamo mā bhūt  / sambhūto rāmāyaṇaḥ  / dattaśrutayoḥ iti kim ? devapālitaḥ  /
+    etasmān niyamād atra sañjñāyām anācitādīnām (*6,2.146) ity antodāttatvaṃ na bhavati  /
+    tṛtīyā karmaṇi (*6,2.48) ity eva atra bhavati  / evakārakaraṇaṃ kim ? kārakāvadhāraṇaṃ
+    yathā syat, dattaśrutāvadhāraṇaṃ mā bhūt  / akārakād api dattaśrutayor anta udātto
+    bhavati  / saṃśrutaḥ  / viśrutaḥ  / āśiṣi iti kim ? anāaśiṣi niyamo mā bhūt  /
+    devaiḥ khātā devakhātā  / kārakād dattaśrutayor āśisyeva ity evam atra niyama
+    iṣyate  / tena āhato nadati devadattaḥ ity atra na bhavati  / devadatta iti kasyacicchaṅkhasya
+    nāma  / tatra tṛtīyā karmaṇi (*6,2.48) iti pūrvapadaprakṛtisvaratvam eva bhavati
+    //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

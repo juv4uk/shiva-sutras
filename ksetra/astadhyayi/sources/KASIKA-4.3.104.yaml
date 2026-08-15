@@ -1,0 +1,41 @@
+source_id: KASIKA-4.3.104
+locator:
+  sutra: 4.3.104
+witness_text:
+  sutra: kalāpi-vaiśampāyana-antevāsibhyaś ca
+  commentary: kalāpyantevāsināṃ vaiśampāyanāntevāsināṃ ca ye vācakāḥ śabdās tebhyo
+    ṇiniḥ pratyayo bhavati tena proktam ity etasmin viṣaye  / aṇo 'pavādaḥ  / chaṃ
+    tu paratvād bādhate  / tatra kalāpyantevāsinaścatvāraḥ - haridruḥ, chagalī, tumburuḥ,
+    ulapaḥ iti  / vaiśampāyanāntevasinaḥ nava - ālambiḥ, palaṅgaḥ, kamalaḥ, ṛcābhaḥ,
+    āruṇiḥ, tāṇḍyaḥ, śyāmāyanaḥ, kaṭhaḥ, kalāpī iti  / pratyakṣa-kāriṇo gṛhyante na
+    tu vyavahitāḥ śaiṣyaśiṣyāḥ  / kutaḥ ? kalāpikhāṇḍāyana-grahaṇāt  / tathā hi vaiśampāyanāntevāsī
+    kalāpī, tadantevāsino vaiśampāyanāntevāsina eva bhavanti, kiṃ kalāpi-grahaṇena
+    ? tathā vaiśampāyanāntevāsī kaṭhas tadantevāsī khāṇḍāyanaḥ, tasya kiṃ śaunakādisu
+    pāṭhena ? tad etat pratyakṣakāri-grahaṇasya liṅgam  / kalāpyanatevāsibhyaḥ tāvat
+    - haridruṇā proktam adhīyate hāridraviṇaḥ  / taumburaviṇaḥ  / aulapinaḥ  / chaṅgalinaḥ
+    ḍhinukaṃ vakṣyati  / vaiśampāyanāntevāsibhyaḥ - ālambinaḥ  / pālaṅginaḥ  / kāmalinaḥ  /
+    ārcābhinaḥ  / āruṇinaḥ  / tāṇḍinaḥ  / śyāmāyaninaḥ  / kaṭhāllukaṃ vakṣyati, kalāpinaścāṇam  /
+    [#423] haridrureṣāṃ prathamastataśchagalitumburū  / ulapena caturthena kālāpakam
+    iha+ucyate // ālambiścarakaḥ prācāṃ palaṅgakamalāvubhau  / ṛcābhāruṇitāṇḍyāś ca
+    madhyamīyāstrayo 'pare // śyāmāyana udicyeṣu uktaḥ kaṭhakalāpinoḥ  / carakaḥ iti
+    vaiśampāyanasyākhyā, tatsambandhena sarve tadantevāsinaścarakāḥ ity ucyante //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

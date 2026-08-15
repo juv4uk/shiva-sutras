@@ -5,6 +5,8 @@ import re
 import time
 from datetime import datetime
 
+from real_evidence import load_real_source
+
 def acquire_real_sources():
     base_dir = os.path.dirname(__file__)
     blind_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_2/batch_2_expert_blind_30.yaml'))
@@ -13,12 +15,18 @@ def acquire_real_sources():
     with open(blind_file, 'r', encoding='utf-8') as f:
         expert_sutras = yaml.safe_load(f)
         
+    protected = 0
     for item in expert_sutras:
         sid = item['sutra_id']
         parts = sid.split('.')
         if len(parts) != 3:
             continue
-            
+
+        # FAIL CLOSED: never overwrite REAL GRETIL evidence with a scrape.
+        if load_real_source(sid) is not None:
+            protected += 1
+            continue
+
         url = f"https://ashtadhyayi.com/sutraani/{parts[0]}/{parts[1]}/{parts[2]}"
         print(f"Fetching {sid} from {url}...")
         
@@ -55,6 +63,10 @@ def acquire_real_sources():
                     
         except Exception as e:
             print(f"Failed to fetch {sid}: {e}")
+
+        if not raw_text:
+            print(f"NO authentic text recovered for {sid}; refusing to write placeholder (fail closed).")
+            continue
             
         source_data = {
             'source_id': f'KASIKA-{sid}',
@@ -65,7 +77,7 @@ def acquire_real_sources():
                 'method': 'web_scraping',
                 'retrieved_at': datetime.utcnow().isoformat() + 'Z'
             },
-            'raw_text': raw_text if raw_text else f"Failed to extract authentic Kasika for {sid}."
+            'raw_text': raw_text,
         }
         
         with open(os.path.join(sources_dir, f'KASIKA-{sid}.yaml'), 'w', encoding='utf-8') as f:
@@ -73,7 +85,7 @@ def acquire_real_sources():
             
         time.sleep(0.5) # Be gentle to the server
         
-    print("Real source acquisition completed.")
+    print(f"Real source acquisition (legacy) completed. {protected} REAL sources protected from overwrite.")
 
 if __name__ == '__main__':
     acquire_real_sources()

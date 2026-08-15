@@ -1,0 +1,35 @@
+source_id: KASIKA-5.3.93
+locator:
+  sutra: 5.3.93
+witness_text:
+  sutra: vā bahūnāṃ jātiparipraśno ḍatamac
+  commentary: kiṃyattadaḥ iti vartate nirdhārane, ekasya iti ca  / bahūnām iti nirdhārane
+    ṣaṣṭhī  / bahunāṃ madhye ekasya nirdhārane gamyamāne jātiparipraśnaviṣayebhyaḥ
+    kimādibhyaḥ vā ḍatamac pratyayo bhavati  / katamo bhavatāṃ kaṭhaḥ  / yatamo bhavatām
+    kaṭhaḥ, tatama āgacchatu  / vāvacanam akajartham  / yako bhavatāṃ kaṭhaḥ, saka
+    āgacchatu  / mahāvibhāṣā ca pratyayavikalopārthā anuvartate eva  / ko bhavatāṃ
+    kaṭhaḥ  / yo bhavatāṃ kaṭhaḥ, sa āgacchatu  / jātiparipraśne iti kim ? ko bhavatām
+    devadattaḥ  / paripraśnagrahaṇaṃ ca kima eva viśeṣaṇaṃ, na yattadoḥ, asambhavāt  /
+    jātigrahaṇaṃ tu sarvair eva sambadyate  / kimo 'smin viṣaye ḍataram api icchanti
+    kecit, kataro bhavatāṃ kālāpaḥ iti  / tatra katarakatamau jātiaparipraśne (*2,1.63)
+    iti vacanāt siddham //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

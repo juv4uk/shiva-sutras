@@ -1,0 +1,45 @@
+source_id: KASIKA-6.1.36
+locator:
+  sutra: 6.1.36
+witness_text:
+  sutra: apaspṛdhethām-ānṛcur-ānṛhuś-cicyuṣetityāja-śrātāḥ śritam-āśīrāśīrtāḥ
+  commentary: chandasi iti vartate  / apaspṛdhethām iti spardha saṅgharṣe ity asya
+    laṅi āthāmi dvivarcanaṃ rephasya saṃprasāraṇam akāralopaś ca nipātanāt  / indraś
+    ca viṣṇo yad apaspṛdhethām  / apaspardhethām iti bhāṣāyām  / apara āha - spardheḥ
+    apapūrvasya liṅi āthāmi samprasaraṇam akāralopaś ca nipātanāt  / bahulaṃ chandasyamaṅyoge
+    'pi (*6,4.75) ity aḍāgamābhāvaḥ  / atra pratyudāharaṇam apāspardhethām iti bhaṣāyām  /
+    ānṛcuḥ, ānṛhuḥ iti  / arca pūjāyām, arha pūjāyam ity anayor dhātvoliṭyusi samprasāraṇam
+    akāralopaś ca nipātanāt  / tato dvirvacanam, uradatvam, ata ādeḥ (*7,4.70) iti
+    dīrghatvam  / tasmān nuḍ dvihalaḥ (*7,4.71) iti nuḍāgamaḥ  / ya ugrā arkamānṛcuḥ  /
+    na vasūnyānṛhuḥ  / ānarcuḥ, ānarhuḥ iti bhāṣāyām  / [#606] cicyuṣe  / cyuṅ gatau
+    ity asya dhātoḥ liti seśabde abhyāsaya samprasāraṇam aniṭ ca nipātanāt  / cicyuṣe  /
+    cucyuviṣe iti bhāṣāyām  / tityāja  / tyaja hānau ity asay dhātoḥ liṭi abhyāsasya
+    samprasāraṇaṃ nipātyate  / tityāja  / tatyāja iti bhāṣāyām  / śrātāḥ iti  / śrīñ
+    pāke ity etasya dhātoḥ niṣṭhāyāṃ śrābhāvaḥ  / śrātāsta indrasomāḥ  / śritam iti
+    tasya+eva śrīṇāteḥ hrasvatvam  / somo gaurī adhiśritaḥ  / śritā no gṛhāḥ  / anayoḥ
+    śrābhāvaśribhāvayor viṣayavibhāgam icchati, someṣu bahuṣu śrābhāva eva, anyatra
+    śribhāvaḥ iti  / somād anyatra kvacid ekasminn api śrābhāvo dṛśyate  / yadi śrāto
+    juhotana  / tasya śrātāḥ iti bahuvacanasya avivakṣitatvād upasaṃgraho draṣṭavyaḥ  /
+    āśīḥ, āśīrtaḥ iti  / tasya+eva śrīṇāter āṅpūrvasya kvipi niṣṭhāyāṃ ca śīrādeśaḥ,
+    niṣṭhāyāś ca natvābhāvo nipātanāt  / tāmāśīrā duhanti  / āśīrta ūrjam  / kṣīrair
+    madhyata āśīrtaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

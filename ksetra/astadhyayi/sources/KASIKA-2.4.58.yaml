@@ -1,0 +1,44 @@
+source_id: KASIKA-2.4.58
+locator:
+  sutra: 2.4.58
+witness_text:
+  sutra: ṇya-kṣatriya-ārṣa-ñito yūni lug aṇ-iñoḥ
+  commentary: ṇya-ādayo gotra-pratyayāḥ  / ṇyāntāt kṣatriyagotrād ārṣād ñitaś ca prayoḥ
+    aṇḍañoryūni lug bhavati  / ṇyāntāt tāvat -- kurv-ādibhyo ṇyaḥ (*4,1.151) , tasmād
+    yūni iñ, tasya luk  / kauravyaḥ pitā  / kauravyaḥ putraḥ  / nanu ca kauravya-śabdaḥ
+    tikādiṣu paṭhyate, tataḥ phiñā bhavitavyam, kauravyāyaṇiḥ iti ? kṣatriyagotrasya
+    tatra grahaṇam, kuru-n-ādibhyo ṇyaḥ (*4,1.172) ity anena vihitasya, idaṃ tu brāhmaṇagotram,
+    kurv-ādibhyo ṇyaḥ (*4,1.151) iti  / kṣatriya -- ṛṣy-andhaka-vṛṣṇi-kurubhyaś ca
+    (*4,1.114) it yaṇ, tasmād yūni iñ, tasya luk  / śvāphalkaḥ pitā  / śvāphalkaḥ
+    putraḥ  / ārṣa -- ṛṣyaṇ (*4,1.114), tasmād yūni iñ, tasya luk  / vāsiṣṭhaḥ pitā  /
+    vāsiṣṭhaḥ putraḥ  / ñit - anṛṣy-ānantarye vida-ādibhyo 'ñ (*4,1.104), tasmād yūni
+    iñ, tasya luk  / baidaḥ pitā  / vaidaḥ putraḥ  / aṇaḥ khalv api -- tika-ādibhyaḥ
+    phiñ (*4,1.154), tasmād yūni prāg dīvyato 'ṇ (*4,1.83), tasya luk  / taikāyaniḥ
+    pitā  / taikāyaniḥ putraḥ  / etebhyaḥ iti kim ? śiva-ādibhyo 'ṇ (*4,1.112), tasmād
+    yūni ata iñ (*4,1.95), tasya lug na bhavati  / kauhaḍaḥ pitā  / kauhaḍi putraḥ  /
+    yūni iti kim ? vāmarathyasya chātrāḥ vāmarathāḥ  / kurv-ādibhyo ṇyaḥ (*4,1.151)
+    iti ṇyaḥ, tasmāt kaṇva-ādibhyo gotre (*4,2.111) iti śaiṣiko 'ṇ  / tasya lug na
+    bhavati  / aṇiñoḥ iti kim ? dākṣerapatyaṃ yuvā dākṣāyaṇaḥ  / abrāhmaṇagotramātramātrādyuvapratyayastopasaṅhyānam  /
+    baudhiḥ pitā  / baudhiḥ putraḥ  / jābāliḥ pitā  / jābāliḥ putraḥ  / audumbariḥ
+    pitā  / audumbariḥ putraḥ  / bhāṇḍījaṅghiḥ pitā  / bhāṇḍījaṅghiḥ putraḥ  / śālva-avayava-lakṣana
+    iñ, tasmāt phak, tasya luk  / pailādi-darśanāt siddham //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

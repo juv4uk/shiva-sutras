@@ -1,0 +1,43 @@
+source_id: KASIKA-8.2.83
+locator:
+  sutra: 8.2.83
+witness_text:
+  sutra: vakṣyati - pratyabhivāde 'śūdre
+  commentary: abhivādaye devadatto 'ham, bho āyuṣmānedhi devadatta3  / padādhikāro
+    'nuvartate eva  / vākyagrahaṇam anantyasya padasya plutanivṛttyartham  / ṭigrahaṇaṃ
+    vyañjanāntyasya api ṭeracaḥ pluto yathā syāt, agnici3t iti // pratyabhivāde 'śūdre
+    (*8,2.83)  / pratyabhivādo nāma yadabhivādyamāno gururāśiṣaṃ prayuṅkte, tatra
+    aśūdraviṣaye yad vākyaṃ vartate tasya ṭeḥ pluta udātto bhavati  / abhivādaye devadatto
+    'ham, bho āyuṣmānedhi devadatta3  / aśūdre iti kim ? abhivādaye tuṣajako 'han,
+    bho ayuṣmān edhi tuṣajaka  / striyām api pratiṣedho vaktavyaḥ  / abhivādaye gārgyaham,
+    bho āyuṣmatī bhava gārgi  / asūyake 'pi kecit pratiṣedham icchanti, abhivādaye
+    sthālyahaṃ bhoḥ, āyuṣmān edhi sthālin  / yāvac ca tasya asūyakatvaṃ na jñāyate
+    tāvad eva pratyabhivādavākyam  / tasmiṃstvasūyakatvena nirjñāte pratyabhivādaḥ
+    eva na asti, kutaḥ plutaḥ  / tathā hy uktam - asūyakastvaṃ jālma, na tvaṃ pratyabhivādanam
+    arhasi, bhidyasva vṛṣala sthālin iti  / abhivādanavākye yat saṅkīrtitaṃ nāma gotraṃ
+    vā, tad yatra pratyabhivādavākyānte prayujyate tatra plutiḥ iṣyate  / iha na bhavati,
+    devadatta kuśalyasi, devadatta āyuṣmān edhi iti  / bho rājanyaviśāḥ veti vaktavyam  /
+    bho abhivādaye devadatto 'ham, āyuṣmānedhi devadatta bhoḥ3, āyuṣmanedhi devadatta
+    bhoḥ  / rājanya - abhivādaye indravarmā ahaṃ bhoḥ, āyuṣmānedhi indravarma3n, āyuṣmānedhi
+    indravarman  / viś - abhivādaye indrapālito 'ham bhoḥ, āyusmānedhi indrapālita3,
+    āyuṣmānedhi indrapālita //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

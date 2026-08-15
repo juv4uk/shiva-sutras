@@ -1,0 +1,49 @@
+source_id: KASIKA-6.1.16
+locator:
+  sutra: 6.1.16
+witness_text:
+  sutra: grahi-jyā-vayi-vyadhi-vaṣṭi-vicati-vṛścati-pṛcchati-bhṛjjatīnāṃ ṅiti ca
+  commentary: graha upādāne, jyā vayohānau, veño vayiḥ (*2,4.41), vyadha tāḍane, vaśa
+    kāntau, vyac vyājīkaraṇe, ovraścū chedane, praccha jñīpsāyām, bhrasja pāke ity
+    eteṣāṃ dhātūnāṃ ṅīti pratyaye parataḥ cakārāt kati ca saṃprasāraṇaṃ bhavati  /
+    graha - gṛhītaḥ  / gṛhītavān  / ṅiti - gṛhṇāti jarīgṛhyate  / jyā - jīnaḥ  / jīnavān  /
+    lvādibhyaḥ (*8,2.44) iti niṣṭhānatvam  / ṅiti- jināti  / jejīyate  / halaḥ (*6,4.2)
+    iti samprasāraṇadīrghe kṛte pvādīnāṃ iti hrasvaḥ kriyate  / vayi - liṭi parataḥ
+    veño vayiḥ ādeśaḥ, tasya ṅidabhāvāt kidevodāhriyate  / ūyatuḥ  / ūyuḥ  / yady
+    evaṃ vayigrahaṇam anarthakam, yajādiṣu veñ paṭhyate ? na+evaṃ śakyam  / liṭi tasya
+    veñaḥ (*6,1.40) iti pratiṣedho vakṣyate, tatra yathā+eva sthānivadbhāvād vyervidhiḥ
+    evaṃ pratiṣedho 'pi prāpnoti ? na+eṣa doṣaḥ  / liṭi vayo yaḥ (*6,1.38) iti yakārasya
+    saṃprasāraṇapratiṣedhād vayervidhau grahaṇaṃ pratiṣedhe cāgrahaṇamanumāsyate ?
+    satyam etat  / eṣa eva arthaḥ sākṣān nirdeśena vyeḥ spaṣṭīkriyate  / vyadha -
+    viddhaḥ  / viddhavān  / ṅiti - vidhyati  / vevidhyate  / vaśa - uśitaḥ  / uśitavān  /
+    ṅiti - uṣṭaḥ  / uśanti  / vyaca - vicitaḥ  / vicitavān  / ṅiti - vicati  / vevicyate  /
+    vyaceḥ kuṭāditvamanasi pratipāditam, tena sarvatra añṇiti pratyaye samprasāraṇaṃ
+    bhavati, udvicitā, udvicitum, udvicitavyam iti  / vraśceḥ - vṛkṇaḥ  / vṛkṇavān  /
+    atha katham atra kutvaṃ, vraścabhrasja iti hi ṣatvena bhavitavyam ? niṣṭhādeśaḥ
+    ṣatvasvarapratyayavidhīḍvidhiṣu siddho vaktavyaḥ  / [#601] tatra ṣtvaṃ prati natvasya
+    siddhatvād jñalādir niṣṭhā na bhavati  / kutve tu kartavye tad asiddham eva iti
+    pravartate kutvam  / ṅiti - vṛścati  / varīvṛścyate  / praccha - pṛṣṭaḥ  / pṛṣṭavan  /
+    ṅiti - pṛcchati  / parīpṛchyate  / praśnaḥ  / naṅi tu praśne ca āsannakāle (*3,2.117)
+    iti nipātanād asaṃprasāraṇam  / bhrasja - bhṛṣṭaḥ  / bhṛṣṭavān  / ṅiti - bhṛjjati  /
+    barībhṛjyate  / sakārasya jñalāṃ jaś jñaśi (*7,4.53) iti jaśtvena dakāraḥ, stoḥ
+    ścunā ścuḥ (*8,4.40) iti ścutvena jakāraḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,39 @@
+source_id: KASIKA-4.1.178
+locator:
+  sutra: 4.1.178
+witness_text:
+  sutra: na prācya-bharga-ādi-yaudheya-ādibhyaḥ
+  commentary: prācyebhyaḥ bhargādibhyaḥ yaudheyādibhyaś ca utpannasya lugna bhavati  /
+    ataś ca (*4,1.177) ity anena striyāṃ luk prāptaḥ pratiṣidhyate  / prācyebhyaḥ
+    kṣatriyebhyas tāvat - pāñcālī  / vaidehī  / āṅgī  / vāṅgī  / magadhī  / bhargādibhyaḥ
+    - bhārgī  / kārūṣī  / kaikeyī  / yaudheyādibhyaḥ - yaudheyī  / śaubhreyī  / śaukreyī  /
+    kasya punar akārasya pratyayasya yaudheyādibhyo luk prāptaḥ pratiṣidhyate ? pāñcamikasyañaḥ,
+    parśvādiyaudheyādibhyām anañau ity etasya  / kathaṃ punas tasya bhinnaprakaraṇasthasya
+    anena luk prāpnoti ? etad eva vijñāpayati pāścamikasya api tadrājasya ataś ca
+    ity anena lug bhavati iti  / kim etasya jñāpanena prayojanam ? parśvādyāṇaḥ striyāṃ
+    luk siddho bhavati  / parśūḥ  / rakṣāḥ  / asurī  / tathā ca+uktaṃ yaudheyādi-pratiṣedho
+    jñāpakaḥ parśvādyaṇo luk iti  / [#362] bharga  / karūṣa  / kekaya  / kaśmīra  /
+    sālva  / susthāla  / uraśa  / kauravya  / iti bhargādiḥ  / yaudheya  / śaubhreya  /
+    śaukreya  / jyābāneya  / dhārteya  / dhārteya  / trigarta  / bharata  / uśīnara  /
+    yaudheyādiḥ // iti śrījayādityaviracitāyām kāśikāyāṃ vṛttau caturthādhyāyasya
+    prathamaḥ pādaḥ // caturthādhyāyasya dvitīyaḥ pādaḥ  / [#363]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

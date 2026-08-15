@@ -1,0 +1,47 @@
+source_id: KASIKA-6.2.42
+locator:
+  sutra: 6.2.42
+witness_text:
+  sutra: kurugārhapata-riktagurv-asūtajaraty-aślīladṛḍharūpā-pārevaḍavā-taitilakadrū-paṇyakambalo
+    dāsībhārāṇāṃ ca
+  commentary: kurugārhapata riktaguru asūtajaratī aślīladṛḍharūpā-pārevaḍavā taitilakadrū
+    paṇyakambala ity ete samāsāḥ, teṣāṃ dāsībhārādīnāṃ ca pūrvapadaṃ prakṛtisvaraṃ
+    bhavati  / kurūṇāṃ gārhapataṃ kurugārhapatam  / kṛgrorucca iti kuruśabdaḥ kupratyayānto
+    'ntodāttaḥ  / kuruvṛjyor gārhapata iti vaktavyam  / vṛjīnāṃ gārhapataṃ vṛjigārhapatam  /
+    vṛjiśabda ādyudāttaḥ  / rikto guruḥ riktaguruḥ, riktaguruḥ  / rikte vibhāṣā (*6,1.208)
+    iti pūrvapadam ādyudāttam antodattaṃ vā  / asūtā jaratī asūtajaratī  / aślīlā
+    dṛḍharūpā aślīladṛḍharūpā  / aślīlaśabdo nañsamāsatvād ādyudāttaḥ  / śrīḥ yasya
+    asti tat ślīlam  / sidhmāder ākṛtigaṇatvāl lac  / kapilakāditvāc ca latvam  /
+    aślīladṛḍharūpā iti hi saṃsthānamātreṇa śobhanā niḥśrīkā lāvaṇyavirahitā ucyate  /
+    pāre vaḍavā iva pārevaḍavā  / nipātanādivārthe samāso vibhaktyalopaś ca  / pāraśado
+    ghṛtāditvādantodāttaḥ  / taitilānāṃ kadrūḥ taitilakadrūḥ  / titilino 'patyaṃ chātro
+    vā taitilaḥ ity aṇantaḥ  / paṇyakambalaḥ  / paṇyaśabdo yadantatvād ādyudāttaḥ  /
+    paṇyakambalaḥ sañjñāyām iti vaktavyam  / anyatra paṇitavye kambale samāsāntodāttattvam
+    eva  / pratipadokte hi kṛtyānāṃ samāse dvitīyā dṛtyā ity eṣa vihitaḥ svaritaḥ  /
+    dāsyā bhāraḥ dāsībhāraḥ  / devahūtiḥ  / devajūtiḥ  / devasūtiḥ  / devanītiḥ  /
+    antodāttaṃ pūrvapadam  / vasunītiḥ  / vasuśadaḥ ādyudāttaḥ  / śṝsvṛsnihitrapyasivasi
+    ity atra dhānye nit iti vartate  / oṣadhiḥ  / oṣo dhīyate 'syām iti karmaṇyadhikaraṇe
+    ca (*3,3.93) iti kipratyayaḥ  / oṣaśabdo ghañantatvād ādyudāttaḥ  / candramāḥ  /
+    candre mo ḍit iti asipratyayānto 'yam  / candraśabdas tu rakpratyāntatvād antodāttaḥ  /
+    yasya tatpuruṣasya pūrvapadaprakṛtisvaratvam iṣyate, na ca vihitaṃ, sa sarvo dāsībhārādisu
+    draṣṭavyaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,20 +1,23 @@
-import urllib.request
-import os
-import sys
+# Verified Corpus Acquisition
 
-def main():
-    # Placeholder for the actual URL of the verified corpus
-    url = "URL_TO_VERIFIED_CORPUS"
-    
-    if url == "URL_TO_VERIFIED_CORPUS":
-        print("ERROR: No external source URL provided.")
-        print("FAIL CLOSED: The verified corpus cannot be created.")
-        print("Stage 6.0 remains ARMED / WAITING_FOR_CORPUS.")
-        # Exit with error code to prevent downstream pipeline execution
-        sys.exit(1)
-        
-    base_dir = os.path.dirname(__file__)
-    out_file = os.path.join(base_dir, 'verified_ashtadhyayi.txt')
+Цей скрипт є частиною гейту достовірних даних для Blind Reconstruction.
 
-if __name__ == '__main__':
-    main()
+## Статус: REPLACED
+
+Колишній плейсхолдер `verified_ashtadhyayi.txt` (фіктивна заявка `AUTHENTICITY-VERIFIED`)
+**не існує** у репозиторії та був видалений з git. Заявка про нього в README була
+False Certainty — саме та епістемічна помилка, проти якої виступає проєкт (E-001).
+
+Справжній механізм придбання корпусу тепер:
+
+1. `fetch_gretil_corpus.py` — завантажує GRETIL-джерела (Kāśikāvṛtti Sharma ed.,
+   Aṣṭādhyāyī Baums transcription) і фіксує provenance: URL, sha256, розмір, дата,
+   редакція, ліцензія → `external_data/gretil_raw/manifest.json`.
+2. `parse_gretil.py` — парсить HTML у структурований корпус
+   (`external_data/gretil_kasika_corpus.json`, `gretil_astadhyayi.json`).
+3. `cross_witness_diff.py` — порівнює два незалежні свідки та видає звіт.
+4. `generate_real_sources.py` — генерує `ksetra/astadhyayi/sources/KASIKA-*.yaml`
+   зі статусом `REAL` / `AUTHENTICITY-VERIFIED (Attributed)`.
+
+Жоден з етапів не виконується, поки попередній не створив артефакт із sha256.
+FAIL-CLOSED: без `external_data/gretil_raw/manifest.json` корпус вважається відсутнім.

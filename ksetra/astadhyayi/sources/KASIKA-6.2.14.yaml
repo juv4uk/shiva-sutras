@@ -1,0 +1,45 @@
+source_id: KASIKA-6.2.14
+locator:
+  sutra: 6.2.14
+witness_text:
+  sutra: mātropajñopakramacchāye napuṃsake
+  commentary: mātrā upajñā upakrama chāyā eteṣu uttarapadeṣu napuṃsakavācini tatpuruṣe
+    samāse pūrvapadaṃ prakṛtisvaraṃ bhavati  / bhikṣāmātraṃ na dadāti yācitaḥ  / samudramātraṃ
+    na saro 'sti kiṃcana  / mātraśabdo 'yaṃ vṛttiviṣaya eva tulyapramāṇe vartate  /
+    tatra bhikṣāyās tulyapramāṇam iti asvapadavigrahaḥ ṣaṣṭhīsamāsaḥ  / tatra bhikṣāśabdaḥ
+    guroś ca halaḥ (*3,3.103) ity apratyayānto 'ntodāttaḥ  / samudraśabdo 'pi phiṣi
+    pāṭalāpālaṅkāmbāsāgarārthānām ity antodātta eva  / upajñā - pāṇinopajñam akālakam
+    vyākaraṇam  / vyāṅyupajñaṃ duṣkaraṇam  / āpiśalyupajñaṃ gurulāghavam  / ṣaṣṭhīsamāsā
+    ete  / tatra paṇino 'ptyam ity aṇantaḥ pāṇinaśabdaḥ pratyayasvareṇa antodāttaḥ  /
+    vyāḍiriñantatvād ādyudāttaḥ  / tadvadāpiśaliḥ  / upakram - āḍhyopakramam prāsādaḥ  /
+    darśanīyoopakramam  / sukumāropakramam  / nandopakramāṇi mānāni  / ete 'pi ṣaṣṭhīsamāsā
+    eva  / tatraityainaṃ dhyāyanti ity āḍhyāḥ  / ghañarthe kavidhānam iti kapratyayaḥ  /
+    āṅpūrvād dhyāyateḥ pṛṣodarāditvāddhasya ḍhatvam  / tad ayam āḍhyaśabdaḥ thāthādisvareṇa
+    antodāttaḥ  / darśanīyaśabdo ritvādupottamodāttaḥ  / sukumāraśabdaḥ nañsubhyām
+    (*6,2.172) ity antodāttaḥ  / darśaniyaśabdo ritvādupottamodāttaḥ  / sukumāraśabdaḥ
+    nañsubhyām (*6,2.172) ity antodāttaḥ  / nandaśabdaḥ pacādyaci vyutpāditaḥ  / upajñopakramāntasya
+    tatpuruṣasya napuṃsakaliṅgatā upajñopakramaṃ tadādyācikhyāsāyām (*2,3.21) iti  /
+    [#657] chāyā - iṣucchāyam  / dhanuśchāyam  / iṣuśabdaḥ īṣeḥ kicca ity upratyayāntaḥ,
+    tatra ca dhānye nit iti vartate, tena ādyudāttaḥ  / dhanuḥ śabdo 'pi nabviṣayasya
+    anisantasya ity ādyudātta eva  / iṣūṇāṃ chāyā iti ṣaṣṭhīsamāsaḥ  / chāyā bāhulye
+    (*2,4.22) iti napuṃsakaliṅgatā  / napuṃsake iti kim ? kuḍyacchāyā //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,38 @@
+source_id: KASIKA-8.1.8
+locator:
+  sutra: 8.1.8
+witness_text:
+  sutra: vākyāder āmantritasya asūyā-sammati-kopa-kutsana-bhartsaneṣu
+  commentary: ekārthaḥ padasamūho vākyam  / vākyāder āmantritasya dve bhavataḥ asūyāsammatikopakutsanabhartsaneṣu
+    yadi tad vākyaṃ bhavati  / tatra paraguṇānāmasahanam asūyā  / pūjā sammatiḥ  /
+    kopaḥ krodhaḥ  / nindanaṃ kutsanam  / apakāraśabdairbhayotpādanaṃ bhartsanam  /
+    ete ca prayoktṛdharmāḥ, nābhidheyadharmāḥ  / asūyāyām tāvat - māṇavaka 3 māṇavaka,
+    abhirūpaka 3 abhirūpaka, riktaṃ te ābhirūpyam  / sammātau - māṇavaka 3 māṇavaka,
+    abhirūpaka 3 abhirūpaka, śobhanaḥ khalvasi  / kope - māṇavaka 3 māṇavaka, avinītaka
+    3 avinītaka, idānīṃ jñāsyasi jālma  / kutsane - śaktike 3 śaktike, yaṣṭike 3 yaṣṭike,
+    riktā te śaktiḥ  / bhartsane - caura caura 3, vṛṣala vṛṣala 3, ghātayiṣyami tvāṃ
+    bandhayiṣyāmi tvām  / asūyādiṣu svaritam āmreḍite 'sūyā-saṃmati-kopa-kutsaneṣu
+    (*8,2.103) iti pūrvapadasya plutaḥ  / bhartsane tu āmreḍitaṃ bhartsane (*8,2.95)
+    ity āmreḍitasya+eva plutaḥ  / vākyādeḥ iti kim ? antasya madhyamasya ca mā bhūt,
+    śobhanaḥ khalvasi māṇavaka  / āmantritasya iti kim ? udāro devadattaḥ  / asūyādiṣu
+    iti kim ? devadatta gāmabhyāja śuklām //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,36 @@
+source_id: KASIKA-6.1.49
+locator:
+  sutra: 6.1.49
+witness_text:
+  sutra: sidhyater apāralaukike
+  commentary: ṇau ity anuvartate  / ṣidhu hiṃsāsamrādhyoḥ ity asya dhātoḥ apāralaukike
+    'rthe vartamānasya ecaḥ sthāne ṇau parataḥ ākārādeśo bhavati  / annaṃ sādhayati  /
+    grāmaṃ sādhayati  / apāralaukike iti kim ? tapastāpasaṃ sedhayati  / svānyevainaṃ
+    karmāṇi sedhayanti  / atra hi sidhyatiḥ pāralaukike jñānaviśeṣe vartate  / tāpasaḥ
+    sidhyati jñānaviśeṣamāsādayati, taṃ tapaḥ prayuṅkte  / sa ca jñānaviśeṣaḥ utpannaḥ
+    paraloke janmāntare phalam abhyudayalakṣaṇam upasaṃharan paralokaprayojano bhavati  /
+    iha kasmān na bhavati, annaṃ sādhayati brāhmanebhyo dāsyāmi iti ? sidhyate - ratrārtho
+    niṣpattiḥ  / tasyāḥ prayojanam annam  / tasya yad dānaṃ tat pāralaukikam, na punaḥ
+    siddhir eva iti na ātvaṃ paryudasyate  / sakṣāt paralokaprayojane ca sidhyarthe
+    kṛtavakāśaṃ vacanam evaṃ viṣayaṃ na avagāhate  / sidhyateḥ iti śyanā nirdeśaḥ,
+    ṣidha gatyām ity asya bhauvādikasya nivṛttyarthaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,39 @@
+source_id: KASIKA-2.3.69
+locator:
+  sutra: 2.3.69
+witness_text:
+  sutra: na la-u-uka-avyaya-niṣṭhā-khalartha-tṛnām
+  commentary: kartṛ-karmaṇoḥ kṛti (*2,3.65) iti prāptā ṣaṣṭhī pratiṣidhyate  / la
+    u uka avyaya niṣṭhā khalartha tṛn ity eteṣāṃ prayoge ṣaṣṭhī vibhaktir na bhavati  /
+    la iti śatṛśānacau, kānac-kvasū, kikinau ca gṛhyante  / odanaṃ pacan  / odanaṃ
+    pacamānaḥ  / odanaṃ pecānaḥ  / odanaṃ pecivān  / papiḥ somaṃ dadirgāḥ  / u - kaṭaṃ
+    cikīrṣuḥ  / odanaṃ bubhukṣuḥ  / kanyāmalaṅkariṣṇuḥ  / iṣṇuco 'pi prayoge niṣedhaḥ  /
+    uka - āgāmukaṃ vārāṇasīṃ rakṣa ahuḥ  / ukapratiṣedhe kamer bhāṣāyām apratiṣedhaḥ  /
+    dāsyāḥ kāmukaḥ  / avyaya - kaṭaṃ kṛtvā  / odanaṃ bhuktvā  / avyaya-pratiṣedhe
+    tosuṅkasunorapratiṣedhaḥ  / vyuṣṭāyāṃ purā sūryasyodetoradheyaḥ  / purā krūrasya
+    visṛpo virapśin  / niṣṭhā - odanaṃ buktavān  / devadattena kṛtam  / khalartha
+    - īṣatkaraḥ kaṭo bhavatā  / īṣatpānaḥ somo bhavatā  / tṛn iti prayāhāra-grahaṇam  /
+    laṭaḥ śatṛ-śānacāv aprathamā. samānādhikaraṇe (*3,2.124) ity ārabhya ā tṛno nakārāt  /
+    tena śānañcānaśśatṛtṛnām api pratiṣedho bhavati  / somaṃ pavamānaḥ  / naḍamāghnānaḥ  /
+    adhīyan pārāyanam  / kartā kaṭān  / vaditā janāpavādān  / dviṣaḥ śaturvāvcanam  /
+    cauraṃ dviṣan, caurasya dviṣan // [#151]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

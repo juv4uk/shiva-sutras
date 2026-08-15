@@ -1,0 +1,52 @@
+source_id: KASIKA-6.1.158
+locator:
+  sutra: 6.1.158
+witness_text:
+  sutra: anudāttaṃ padam ekavarjam
+  commentary: paribhāṣā+iyam svaravidhiviṣayā  / yatra anyaḥ svaraḥ udāttaḥ svarito
+    vā vidhīyate, tatra anudāttaṃ padam ekaṃ varjayitvā bhavati ity etad upasthitaṃ
+    draṣṭavyam  / anudāttāckam anudāttam  / kaḥ punar eko varjyate ? yasya asau svaro
+    vidhīyate  / vakṣyati - dhātoḥ (*6,1.162) antaḥ udātto bhavati  / gopāyati  /
+    dhūpāyati  / dhātor antyam acaṃ varjayitvā pariśiṣṭam anudāttaṃ bhavati  / dhātusvaraṃ
+    śnāśvaro bādhate  / lunāti  / punāti  / śnāśvaraṃ tassvaraḥ  / lunītaḥ  / punītaḥ  /
+    tassvaramāṃsvaraḥ  / lunītastarām  / punītastarām  / āgamasya vikārasya prakṛteḥ
+    pratyayasya ca  / pṛthakṣvaranivṛttyartham ekavarjaṃ padasvaraḥ // āgamasya -
+    cituranuḍuhorāmudāttaḥ (*7,1.98)  / catvāraḥ  / anaḍvāhaḥ  / āgamasvaraḥ prakṛtisvaraṃ
+    bādhate  / vikārasya - asthani, dadhani ity anaṅsvaraḥ prakṛtisvaraṃ bādhate  /
+    prakṛteḥ - gopāyati  / dhūpāyati  / prakṛtisvaraḥ pratyayasvaraṃ bādhate  / pratyayasya
+    - kartavyam  / hartavyam  / pratyayasvaraḥ prakṛteḥ svarasya bādhakaḥ  / paranityāntaraṅgāpavādaiḥ
+    svarair vyāvasthā satiśiṣṭena ca  / yo hi yasmin sati śiṣyate sa tasya bādhako
+    bhavati  / tathā hi - gopāyati ity atra dhātusvarāpavādaḥ pratyayasvaraḥ, tena+eva
+    dhātusvareṇa pratyayāntasya dhātoḥ satiśiṣṭatvād bādhyate  / kārṣṇottarāsaṅgaputraḥ
+    ity atra ca samāsasvarāpavādo bahuvrihisvaraḥ satiśiṣṭena samāsāntodāttatvena
+    vādhyate  / vikaraṇasvaras tu satiśiṣṭo 'pi sārvadhātukasvaraṃ na bādhate  / lunītaḥ
+    iti tasa eva svaro bhavati  / vibhaktisvarānnañsvaro balīyān iti vaktavyam  /
+    atisraḥ ity atra tisṛbhyo jasaḥ (*6,1.166) iti satiśiṣṭo 'pi vibhaktisvaro nañsvareṇa
+    bādhyate  / [#637] vibhaktinimittasvarāc ca nañsvaro balīyān iti vaktavyam  /
+    acatvāraḥ, ananḍvāhaḥ iti  / yasya vibhaktir nimittamāmaḥ, tasya yad udāttatvaṃ
+    tanaprasvareṇa bādyate  / padagrahanaṃ kim ? devadatta gāmabhyāja śuklām iti vākye
+    hi pratipadaṃ svaraḥpṛthag bhavati  / parimāṇārthaṃ ca+idaṃ padagrahaṇam padādhikārasya
+    nivṛttiṃ karoti  / tena prāg eva padavyapadeśāt svaravidhisamakālem eva śiṣṭasya
+    anudāttatvaṃ bhavati  / tathā ca kuvalyā vikāraḥ kauvalam ity atra anudāttādilakṣaṇo
+    'ñ siddho bhavati  / tathā garbhiṇīśabdaś ca anudāttādilakṣaṇasya año bādhanarthaṃ
+    bhikṣādiṣu paṭhyate  / kuvalagarbhaśabdau ādyudāttau //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

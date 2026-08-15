@@ -1,5 +1,40 @@
 source_id: KASIKA-1.3.36
 locator:
   sutra: 1.3.36
-raw_text: Simulated Kasika raw text for 1.3.36.
-extracted_at: '2026-08-15T00:00:00Z'
+witness_text:
+  sutra: sammānana-utsañjana-ācāryakaraṇa-jñāna-bhṛti-vigaṇana-vyayeṣu niyaḥ
+  commentary: ṇīñ prāpaṇe  / asmāt kartr-abhiprāye kriyāphale siddham eva-ātmanepadam  /
+    akartr-abhiprayārtho 'yam ārambhaḥ  / ṇīñ prāpṇe ity etasmāt dhātor ātmanepadaṃ
+    bhavati sammānana-ādiṣu viśeṣaṇeṣu satsu  / sammānanaṃ pūjanam -- nayate cārvī
+    lokāyate  / cārvī buddhiḥ, tat-sambandhād acārye 'pi cārvī  / sa lokāyate śāstre
+    pada-arthān nayate, upapattibhiḥ sthirīkṛtya śiṣyebhyaḥ prāpayati  / te yuktibhiḥ
+    sthāpyamānāḥ sammānitāḥ pūjitā bhavanti  / utsañjanam utkṣepaṇam -- māṇavakam
+    udānayate  / utkṣipati ity arthaḥ  / ācārya-karaṇam ācāryakriyā -- māṇavakam īdṛśena
+    vidhinā ātma-samīpaṃ prāpyati yathā sa upanetā svayam ācāryaḥ sampadyate  / māṇavakam
+    upanayate  / ātmānam ācāryīkurvan māṇavakam ātma-samīpaṃ prāpayati ity arthaḥ  /
+    jñānaṃ prameya-niścayaḥ -- nayate carvī lokayate  / tatra prameyaṃ niścinoti ity
+    arthaḥ  / bhṛtirvetanam -- karmakarānupanayate  / bhṛtidānena samīpaṃ karoti ity
+    arthaḥ  / vigaṇanam ṛṇāder niryātanam -- madrāḥ karam vinayante  / niryātayanti
+    ity arthaḥ  / vyayo dharma-ādiṣu viniyogaḥ  / śataṃ vinayate  / sahasraṃ vinayate  /
+    dharma-ādy-arthaṃ śatam viniyuṅkte ity arthaḥ  / eteṣu iti kim ? ajāṃ nayati grāmam
+    // [#61]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,13 +1,29 @@
+source_id: KASIKA-7.2.22
 locator:
   sutra: 7.2.22
-raw_text: कृताकारस्य वा प्रत्ययो भवति। कृताकारस्य इत्यनेन पूर्वपदस्य विकारः लक्ष्यते।
+witness_text:
+  sutra: kṛcchra-gahanayoḥ kaṣaḥ
+  commentary: kṛcchra gahana ity etayor arthayoḥ kaṣer dhātoḥ niṣṭhāyām iḍāgamo na
+    bhavati  / kaṣṭo 'gniḥ  / kaṣṭaṃ vyākaraṇam  / tato 'pi kaṣṭatarāṇi sāmāni  /
+    kṛcchraṃ duḥkham, tatkāraṇam apy agnyādikaṃ kṛcchram ity ucyate  / gahane - kaṣṭāni
+    vanāni  / kaṣṭāḥ parvatāḥ  / kṛcchragahanayoḥ iti kim ? kaṣitaṃ suvarṇam //
 integrity:
   reproducible: true
-  sha256_match: true
-  collector_sha256: 5188b0a35c4b73a1daa265ec9c4c0ee119ba08680a033de9f7c103426559b2f7
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
 provenance:
-  authenticity: UNVERIFIED
-  external_source: null
-  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
-    to original external Kasika source is unverified.
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

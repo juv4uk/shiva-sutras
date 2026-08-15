@@ -1,0 +1,44 @@
+source_id: KASIKA-6.3.34
+locator:
+  sutra: 6.3.34
+witness_text:
+  sutra: striyāḥ puṃvad-bhāṣītapuṃskādanūṅ samānādhikaraṇe striyām apūraṇī-priyādiṣu
+  commentary: bhāṣitaḥ pumān yena samānāyāmākṛtāvekasmin pravṛttinimitte sa bhāṣitapuṃskaḥ
+    śabdaḥ  / tadetadevaṃ kathaṃ bhavati ? bhāsitaḥ pumān yasminn arthe pravṛttinimite
+    sa bhāṣitapuṃskaśabdena+ucyate, tasya pratipādako yaḥ śabdaḥ so 'pi bhāsitapuṃskaḥ
+    ūṅo 'bhāvaḥ anūṅ, bhāṣitapuṃskādanūṅ yasmin strīśabde sa bhāṣitapuṃskādanūṅ strīśabdaḥ  /
+    bahuvrīhirayam, alug nipātanāt pañcamyāḥ  / tasya bhāsitapuṃskāadanūṅaḥ strīśabdasya
+    puṃśabdasyeva rūpaṃ bhavati samānādhikaraṇe uttarapade strīliṅge pūraṇīpriyādivarjite  /
+    darśanīyabhāryaḥ  / śalakṣṇacūḍaḥ  / dīrghajaṅghaḥ  / striyā iti kim ? grāmaṇi
+    brāhmaṇakulaṃ dṛṣṭirasya grāmaṇidṛṣṭiḥ  / bhāṣitapuṃskāt iti kim ? khaṭvābhāryaḥ  /
+    samānāyāmākṛtau iti kim ? droṇībhāryaḥ  / kathaṃ garbhibhāryaḥ, prasūtabhāryaḥ,
+    prajātabhāryaḥ iti ? kartavyo 'tra yatnaḥ  / anūṅa iti kim ? brahmabandhūbhāryaḥ  /
+    samānādhikaraṇe iti kim ? kalyāṇā mātā kalyaṇīmātā  / striyām iti kim ? kalyāṇī
+    pradhānam eṣā kalyāṇīpradhānā ime  / apūraṇī iti kim ? kalyāṇī pañcamī yāsāṃ tāḥ
+    kalyāṇīpañcamā rātrayaḥ  / kalyāṇīdaśamāḥ  / pradhānapūraṇīgrahaṇaṃ kartavyam  /
+    iha mā bhūt, kalyāṇīpañcamīkaḥ pakṣaḥ iti  / ap pūraṇīpramāṇyoḥ (*5,4.116) ity
+    atra api pradhānapūraṇīgrahaṇam eva ity appratyayo na bhavati  / apriyādiṣu iti
+    kim ? kalyāṇīpriyaḥ  / priyā  / manojñā  / kalyāṇī  / subhagā  / durbhagā  / bhakti  /
+    sacivā  / ambā  / kāntā  / kṣāntā  / samā  / capalā  / duhitā  / vāmā  / priyādiḥ  /
+    dṛḍhabhaktiḥ ity evam ādiṣu strīpūrvapadasya avivakṣitvāt siddham iti samādheyam
+    //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

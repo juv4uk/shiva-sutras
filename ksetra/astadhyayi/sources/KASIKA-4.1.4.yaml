@@ -1,0 +1,47 @@
+source_id: KASIKA-4.1.4
+locator:
+  sutra: 4.1.4
+witness_text:
+  sutra: ajādy-ataṣ ṭāp
+  commentary: ajā  / devadattā  / striyām iti kim ? ajaḥ  / devadattaḥ // ajādy-ataṣ
+    ṭāp (*4,1.4)  / ajādibhyaḥ prātipadikebhyaḥ akārāntāc ca prātipadikāt striyāṃ
+    ṭāp pratyayo bhavati  / pakāraḥ sāmānyagrahaṇa-arthaḥ  / ṭakāraḥ sāmānyagrahaṇa-avighātārthaḥ  /
+    ajā eḍakā  / kokilā  / caṭakā  / aśvā  / khaṭvā  / devadattā  / taparakaraṇaṃ
+    t atkāla-artham  / śubhaṃyāḥ  / kīlālapāḥ brāhmaṇī  / hal-ṅy-ābbhyo dīrghāt su-ti-sy-apṛktaṃ
+    hal (*6,1.68) iti su-lopaḥ syāt  / ajādi-grahaṇaṃ tu kvacij jāti-lakṣaṇe ṅīṣi
+    prāpte, kvacit tu puṃyoga-lakṣaṇe, kvacit tu puṣpa-phala-uttaralakṣaṇe, kvacit
+    tu vayo-lakṣaṇe ṅīpi, kvaciṭ ṭillakṣaṇe  / halantānāṃ tavaprāpta eva kasmiṃścid
+    āb vidhīyate  / śūdrā ca amahatpūrvā jātiḥ iti paṭhyate  / tasya ayam arthaḥ  /
+    śūdra-śabdaṣ ṭāpam utpādayati jātiś ced bhavati  / śūdrā  / puṃyoge ṅīṣaiva bhavitavyam  /
+    śūdrasya bhāryā śūdrī  / mahatpūrvasya pratiṣedhaḥ  / mahāśūdrī  / mahāśūdra-śabdo
+    hy ābhīrajātivacanaḥ, tatra tadanta-vidhinā ṭāp prāptaḥ pratiṣidhyate  / grahaṇavatā
+    prātipadikena tadanta-vidhir na iti kathaṃ tadanta-vidhiḥ ? etad eva jñāpakaṃ
+    bhavati asmin prakaraṇe tadanta-vidhiḥ iti  / tena atidhīvarī, atipīvarī, atibhavatī,
+    atimahatī iti bhavati  / [#319] ajā, eḍakā, caṭakā, aśvā, mūsikā iti jātiḥ  /
+    bālā, hoḍhā, pākā, vatsā, mandā, vilātā iti vayaḥ  / pūrvāpahāṇā, aparāpahāṇā  /
+    ṭit, nipatanāṇ ṇatvam  / saṃbhastrājīnaśaṇapiṇḍebhyaḥ phalāt  / samphalā  / bhastraphalā  /
+    ajinaphalā  / śaṇaphalā  / piṇḍaphalā  / triphalā dvigau  / bahuvrīhau triphalī
+    saṃhatiḥ  / sadacprākkāṇḍaprāntaśtaikebhyaḥ puṣpāt  / satpuṣpā  / prākpuṣpā  /
+    kānḍapuṣpā  / prāntapuṣpā  / śatapuṣpā  / ekapuṣpā  / pākakarṇa iti ṅīṣo 'pavādaḥ  /
+    śūdrā ca amahatpūrvā jātiḥ  / kruñcā, uṣṇihā, devaviśā halantāḥ  / jyeṣṭā, kaniṣtā,
+    madhyamā puṃyogaḥ  / kokilā jātiḥ  / mūlānnañaḥ  / amūlā //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

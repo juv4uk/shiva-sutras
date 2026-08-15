@@ -1,0 +1,40 @@
+source_id: KASIKA-5.1.124
+locator:
+  sutra: 5.1.124
+witness_text:
+  sutra: guṇavacana-brāhmaṇādibhyaḥ karmaṇi ca
+  commentary: guṇam uktavanto guṇavacanāḥ  / guṇavacanedhyo brāhmaṇādibhyaś ca tasya
+    iti ṣaṣthīsamarthebhyaḥ karmaṇyabhidheye ṣyañ pratyayo bhavati  / cakārād bhāve
+    ca  / karma-śabdaḥ kriyāvacanaḥ  / jaḍasya bhāvaḥ karma vā jāḍyam  / brāhmaṇādibhyaḥ
+    khalv api - brāhmaṇyam  / māṇavyam  / āpādaparisamāpter bhāvakarmādhikāraḥ  /
+    brāhmaṇādir ākṛtigaṇaḥ  / ādi-śabdaḥ prakāravacanaḥ  / caturvarṇyādibhyaḥ svārthe
+    upasaṅkhyānam  / catvāra eva varṇāḥ cāturvarṇyam  / cāturāśramyam  / trailokyam  /
+    traisvaryam  / ṣāḍguṇyam  / sainyam  / sānnidhyam  / sāmīpyam  / aupamyam  / saukhyam  /
+    brāhmaṇa  / vāḍava  / māṇava  / cora  / mūka  / ārādhaya  / virādhaya  / aparādhaya  /
+    uparādhaya  / ekabhāva  / dvibhāva  / tribhāva  / anyabhāva  / samastha  / viṣamastha  /
+    paramastha  / madhyamastha  / anīśvara  / kuśala  / kapi  / capala  / akṣetrajña  /
+    nipuṇa  / arhato num ca ārhantyam  / saṃvādin  / saṃveśin  / bahubhāṣin  / bāliśa  /
+    duṣpuruṣa  / kāpuruṣa  / dāyād  / viśasi  / dhūrta  / rājan  / saṃbhāṣin  / śīrṣapātin  /
+    adhipati  / alasa  / piśāca  / piśuna  / viśāla  / gaṇapati  / dhanapati  / narapati  /
+    gaḍula  / niva  / nidhāna  / viṣa  / sarvavedādibhyaḥ svārthe  / caturvedasya+ubhayapada-vṛddhiś
+    ca  / cāturvaidyam  / iti brāhmaṇādiḥ // [#495]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

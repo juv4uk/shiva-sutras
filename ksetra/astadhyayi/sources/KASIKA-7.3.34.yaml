@@ -1,0 +1,36 @@
+source_id: KASIKA-7.3.34
+locator:
+  sutra: 7.3.34
+witness_text:
+  sutra: na+udātta-upadeśasya ma-antasya anācameḥ
+  commentary: udāttopadeśasya māntasya anācameḥ (*7,3.34)  / udātopadeśasya māntasya
+    aṅgasya ācamivarjitasya ciṇi kṛti ca ñṇiti yad uktaṃ tan na bhavati  / kiṃ ca
+    uktam ? ata upadhāyāḥ (*7,2.116) iti vṛddhiḥ  / aśami  / atami  / adami  / kṛti
+    khalv api - śamakaḥ  / tamakaḥ  / damakaḥ  / śamaḥ  / tamaḥ  / damaḥ  / udāttopadeśasya
+    iti kim ? yāmakaḥ  / rāmakaḥ  / katham udyamoparamau ? aḍa udyame, yama uparame
+    iti nipātanād anugantavyau  / upadeśagrahaṇam kim ? śamī, damī, tamī ity atra
+    yathā syāt, iha mā bhūt, yāmakaḥ, rāmakaḥ iti  / māntasya iti kim ? cārakaḥ  /
+    pāṭhakaḥ  / anācameḥ iti kim ? ācāmakaḥ  / anācamikamivamīnām iti vaktavyam  /
+    ācāmaḥ  / kāmaḥ  / vāmaḥ  / āmaḥ iti caurādikasya ṇici vṛddhau satyāṃ bhavati  /
+    tatra hi mittvaṃ na asti na anye mito 'hetau iti  / sūryaviśrāmā bhūmiḥ ity evam
+    ādikaṃ prayogamanyāyyam eva manyante  / ciṇkṛtoḥ ity eva, śaśāma  / tatāma //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

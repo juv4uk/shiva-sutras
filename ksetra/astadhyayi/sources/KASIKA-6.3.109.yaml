@@ -1,0 +1,50 @@
+source_id: KASIKA-6.3.109
+locator:
+  sutra: 6.3.109
+witness_text:
+  sutra: pṛṣodara-ādīni yathopadiṣṭam
+  commentary: pṛṣodaraprakārāṇi śabdarūpāṇi, yeṣu lopāgamavarnavikārāḥ śāstreṇa na
+    vihitāḥ dṛśyante ca, tāni yathopadiṣṭāni sādhūni bhavanti  / yāni yāni yathopadiṣṭāni,
+    śaṣṭair uccāritāni prayuktāni, tāni tathā+eva anugantavyāni  / pṛṣad udaraṃ yasya
+    pṛṣodaram  / pṛṣad udvānaṃ yasya pṛṣodvānam  / atra takāralopo bhavati  / vārivāhakaḥ
+    balāhakaḥ  / pūrvaśabdasya baśabda ādeśaḥ, uttarapadādeś ca latvam  / jīvanasya
+    mūtaḥ jīmūtaḥ  / vanaśabdasya lopaḥ  / śavānāṃ śayanam śmaśānam  / śavaśabdasya
+    śmādeśaḥ, śayanaśabdasya api śānaśabda ādeśaḥ  / ūrdhvaṃ khamasya iti ulūkhalam  /
+    ūrdhvakhaśabdayoḥ ulū khala ity etāv ādeśau bhavataḥ  / piśitāśaḥ piśācaḥ  / piśitāśaśabdayor
+    yathāyogaṃ piśācaśabdau ādeśau  / bruvanto 'syāṃ sīdanti iti bṛsī  / sader adhikaraṇe
+    ḍaṭ pratyayaḥ  / bruvacchabdasya copapadasya bṛśabda ādeśo bhavati  / mahyāṃ rauti
+    iti mayūraḥ  / rauter aci ṭilopaḥ  / mahīśabdasya mayūbhāvaḥ  / evamanye 'pi aśvatthakapitthaprabhṛtayo
+    yathāyogam anugantavyāḥ  / dikśabdebhya uttarasya tīrasya tārabhāvo vā bhavati  /
+    dakṣiṇatīram, dakṣiṇatāram  / uttaratīram, uttaratāram  / vāco vāde ḍatvaṃ ca
+    labhāvaś ca+uttarapadasya+iñi pratyaye bhavati  / vācaṃ vadati iti vāgvādaḥ  /
+    tasyāpatyaṃ vaḍvāliḥ  / ṣaṣa utvaṃ datṛdaśadhāsūttarapadādeṣṭutvaṃ ca bhavati  /
+    ṣaḍ dantā asya ṣoḍan  / ṣaṭ ca daśa ca ṣoḍaśa  / dhāsu vā ṣaṣa utvaṃ bhavaty uttarapadādeśca
+    ṣṭutvam  / ṣoḍhā, ṣaḍdhā kuru  / bahuvacananirdeśo nānādhikaraṇavācino dhāśabdasya
+    pratipattyarthaḥ  / iha mā bhūt, ṣaṭ dadhāti dhayati vā ṣaḍdhā iti  / duro dāśanāśadabhadhyeṣūtvaṃ
+    vaktavyam uttarapadādeśca ṣṭutvam  / kucchreṇa dāśyate nāśyate dabhyate ca yaḥ
+    sa dūḍāśaḥ  / dūṇāśaḥ  / dūḍabhyaḥ  / dambheḥ khalbanunāsikalopo nipātanāt  /
+    duṣṭaṃ dhyāyati iti dūḍhyaḥ  / duḥśabdopapadasya dhyāyateḥ ātaścopasarge (*6,1.136)
+    iti kapratyayaḥ  / [#725] svaro rohatau chandasyutvaṃ vaktavyam  / jāya ehi suvo
+    rohāva  / pīvopavasanādīnāṃ ca lopo vaktavyaḥ  / pīvopavasanānām  / payopavasanānām  /
+    varṇāgamo varṇaviparyayaś ca dvau cāparau varṇavikāranāśau  / dhātostadarthātiśayena
+    yogastaducyate pañcavidhaṃ niruktam //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

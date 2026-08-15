@@ -1,0 +1,35 @@
+source_id: KASIKA-3.4.9
+locator:
+  sutra: 3.4.9
+witness_text:
+  sutra: tumarthe se-sen-ase-asen-kṣe-kasen-adhyai-adhyain-kadhyai-kadhyain-śadhyai-śadhyain-tavai-taveṅ-tavenaḥ
+  commentary: chandasi ity eva  / tumuno 'rthas tum-arthaḥ  / tatra chandasi viṣaye
+    dhātoḥ sayādayaḥ pratyayā bhavanti  / tumartho bhāvaḥ  / kathaṃ jñāyate ? vacanasāmarthyāt
+    tāvad ayam kartur apakṛṣyate  / na ca ayam anyasminn arthe tumun ādiśyate  / anirdiṣṭa-arthāś
+    ca pratyayāḥ svārthe bhavanti  / svārthaś ca dhātūnāṃ bhāva eva  / se - vakṣe
+    rāyaḥ  / sen - tā vāmeṣe rathānām  / ase, asen - kratve dakṣāya jīvase  / svare
+    viśeṣaḥ  / kṣe - preṣe bhagāya kasen - śriyase  / adhyai, adhyain - kāmamupācaradhyai  /
+    svare viśeṣaḥ  / kadhyai - indrāgnī āhuvadhyai  / kadhyain - śriyadhyai  / śadhyai,
+    śadhyain - vāyave pibadhyai  / rādhasaḥ saha mādayadhyai  / tavai - somamindrāya
+    pātavai  / taveṅ - daśame māsi sūtave  / taven - svardeveṣu gantave  / kartave  /
+    hartave //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,41 @@
+source_id: KASIKA-5.1.20
+locator:
+  sutra: 5.1.20
+witness_text:
+  sutra: asamāse niṣka-ādibhyaḥ
+  commentary: ārhāt ity eva  / viṣkādibhyaḥ śabdebhyo 'samāse ṭhak pratyayo bhavati
+    ārhīyeṣv artheṣu  / ṭhaño 'pavādaḥ  / naiṣkikam  / pāṇikam  / pādikam  / māṣikam  /
+    asamāse iti kim ? paramanaiṣkikam  / uttamanaiṣkikam  / ṭhaj eva bhavati, arimāṇāntasya
+    ity uttarapadavṛddhiḥ  / atha kimartham asamāse ity ucyate yāvatā grahaṇavatā
+    prātipadikena tadantavidhiḥ pratiṣidhyate ? niṣkādiṣv asamāsa-grahaṇaṃ jñāpakaṃ
+    pūrvatra tadantāpratiṣedhasya  / ugavādibhyo yat (*5,1.2) - gavyam, sugavyam,
+    atisugavyam vibhāṣā havir-apūpādibhyaḥ (*5,1.4) - apūpyam, apūpīyam, yavāpūpyam,
+    yavāpūpīyam  / [#471] śarīra-avayavād yat (*5,2.6) - dantyam, rājadantyam ity
+    evamādi sidhdaṃ bhavati  / ita uttaraṃ ca saṅkhyāpūrvapadānāṃ tadantavidhir iṣyate  /
+    pārāyaṇa-turāyaṇa-cāndrāyaṇaṃ vartayati (*5,1.72) - dvaipārāyaṇikaḥ, traipārāyaṇikaḥ  /
+    lugantāyāḥ tu prakṛter na+iṣyate  / dvābhyāṃ śūrpābhyāṃ krītam dviśūrpam  / triśūrpam  /
+    dviśūrpeṇa krītam iti tadantavidhi-pratiṣedhāt śūrpād añ anyatrasyām (*5,1.26)
+    iti añ na bhavati  / sāmānyavihitaṣ ṭhañ eva bhavati  / dviśaurpikam  / ṭhaño
+    dviguṃ pratyanimittāl lugabhāvaḥ  / tathā ca+uktam, prāgvateḥ saṅkhyāpūrvapadānāṃ
+    tadant-agrahaṇam aluki iti  / niṣka  / paṇa  / pāda  / māṣa  / vāha  / droṇa  /
+    ṣaṣti  / niṣkādiḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

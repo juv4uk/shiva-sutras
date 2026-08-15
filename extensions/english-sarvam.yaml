@@ -1,0 +1,1886 @@
+# English Academic Extension Layer v0.1
+# ======================================
+#
+# This file is the ACADEMIC EXTENSION of the Śiva Sūtra canon to English.
+# Base accent: SSBE (Standard Southern British English).
+#
+# ADVERSARIAL TEST: English is the stress test for the architecture.
+# Many English phonemes LOOK canonical but differ in place, manner, or voicing:
+#   - English /t/ is ALVEOLAR, not dental like Sanskrit /t̪/
+#   - English /h/ is VOICELESS, not voiced like Sanskrit /ɦ/
+#   - English /r/ is an APPROXIMANT, not a trill like Sanskrit /r/
+#   - English /v/ is a FRICATIVE, not an approximant like Sanskrit /v/
+#   - English /θ ð/ have NO canonical equivalent at all
+#   - English schwa /ə/ has no canonical equivalent
+#   - English has 20 vowel phonemes vs Sanskrit's 9
+#
+# If the architecture survives this without modifying 0x00–0x29, it works.
+
+layer_id: english-academic-extension-v0.1
+layer_type: academic_extension
+canon_reference: siva-sutras-v1
+interpretation_reference: sanskrit-academic-interpretation-v0.1
+base_accent: SSBE (Standard Southern British English)
+layer_status: draft
+date: 2026-08-14
+
+# Primary sources
+# ---------------
+# Wells, J.C. 'Phonetic symbols for English' (phon.ucl.ac.uk)
+# Wikipedia: English phonology, Phonemes of English
+# Roach, P. (2004). English Phonetics and Phonology. CUP.
+# Collins, B. & Mees, I. (2008). Practical Phonetics and Phonology.
+# Sheffield phoneme list (learnipa.github.io)
+
+phonemes:
+  # ===== PLOSIVES (6) =====
+
+  - id: PH-ENG-p
+    letter: "p"
+    ipa: "p"
+    features:
+      place: bilabial
+      manner: stop
+      voicing: voiceless
+      aspiration: variable
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-12:2
+      shared:
+        ipa: p
+        place: bilabial
+        manner: stop
+        voicing: voiceless
+      differences:
+        aspiration:
+          sanskrit: "contrastive (p vs ph)"
+          english: "allophonic (aspirated in onset, unaspirated after /s/)"
+        aspiration_type:
+          sanskrit: "contrastive series"
+          english: "positional allophone"
+        stop_inventory:
+          sanskrit: "20 stops (5 places × 4 types)"
+          english: "6 stops (3 places × 2 fortis/lenis)"
+      note: >-
+        Same IPA /p/, both bilabial voiceless stop.
+        But Sanskrit has contrastive aspiration (p vs ph).
+        English aspiration is allophonic — aspirated [pʰ] in word-initial stressed position, unaspirated [p] after /s/ and in unstressed position.
+        The fortis/lenis contrast replaces the voicing/aspiration matrix.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+      - "Roach (2004)"
+    notes: >-
+      Voiceless bilabial stop.
+      Aspiration is allophonic, not phonemic.
+      Part of fortis/lenis opposition with /b/, not a voicing opposition.
+
+  - id: PH-ENG-b
+    letter: "b"
+    ipa: "b"
+    features:
+      place: bilabial
+      manner: stop
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-10:2
+      shared:
+        ipa: b
+        place: bilabial
+        manner: stop
+        voicing: voiced
+      differences:
+        aspiration:
+          sanskrit: "contrastive (b vs bh)"
+          english: "absent (no aspirated voiced series)"
+        breathy_voice:
+          sanskrit: "contrastive (/bʱ/ exists)"
+          english: "absent"
+        voicing:
+          sanskrit: "fully voiced"
+          english: "partially voiced (devoiced word-finally and in clusters)"
+        fortis_lenis:
+          sanskrit: "n/a (uses voicing + aspiration)"
+          english: "/b/ is lenis counterpart of /p/"
+      note: >-
+        Same IPA /b/.
+        Sanskrit has breathy-voiced /bʱ/ (bh).
+        English has no breathy voice and /b/ is only partially voiced (devoiced in coda).
+        English uses fortis/lenis, not voicing/aspiration, as primary contrast.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced bilabial stop.
+      Actually partially devoiced in many positions.
+      Lenis counterpart of /p/.
+
+  - id: PH-ENG-t
+    letter: "t"
+    ipa: "t"
+    features:
+      place: alveolar
+      manner: stop
+      voicing: voiceless
+      aspiration: variable
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-11:8
+      shared:
+        manner: stop
+        voicing: voiceless
+      differences:
+        ipa:
+          sanskrit: "t̪ (dental)"
+          english: "t (alveolar)"
+        place:
+          sanskrit: "dental (tongue on teeth)"
+          english: "alveolar (tongue on ridge)"
+        aspiration:
+          sanskrit: "contrastive (t vs th)"
+          english: "allophonic"
+        glottalization:
+          sanskrit: "absent"
+          english: "common (t-glottalization in many dialects)"
+        palatalization:
+          sanskrit: "no palatalized t (has separate c)"
+          english: "absent (no phonemic palatalized stops)"
+        retroflex:
+          sanskrit: "contrastive (ṭ exists)"
+          english: "absent"
+      note: >-
+        NEAR-EQUIVALENT, not segment-equivalent! Same IPA symbol /t/ but different place: Sanskrit t = /t̪/ (dental), English t = /t/ (alveolar).
+        This is THE adversarial case — identical IPA letter, different articulation.
+        The dental diacritic in Sanskrit is not cosmetic; it marks a real place difference.
+        English t is pronounced with the tongue on the alveolar ridge, not on the teeth.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+      - "Roach (2004)"
+    notes: >-
+      Voiceless ALVEOLAR stop.
+      Aspiration is allophonic.
+      Subject to t-glottalization ([ʔ] for /t/) in many dialects.
+      The place difference from Sanskrit is real, not notational.
+
+  - id: PH-ENG-d
+    letter: "d"
+    ipa: "d"
+    features:
+      place: alveolar
+      manner: stop
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-10:5
+      shared:
+        manner: stop
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "d̪ (dental)"
+          english: "d (alveolar)"
+        place:
+          sanskrit: "dental"
+          english: "alveolar"
+        aspiration:
+          sanskrit: "contrastive (d vs dh)"
+          english: "absent"
+        retroflex:
+          sanskrit: "contrastive (ḍ exists)"
+          english: "absent"
+      note: >-
+        NEAR-EQUIVALENT.
+        Same IPA letter but Sanskrit d = /d̪/ (dental), English d = /d/ (alveolar).
+        Same place mismatch as t/t̪.
+        Sanskrit has aspirated /d̪ʱ/ and retroflex /ɖ/.
+        English has neither.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced ALVEOLAR stop.
+      Partially devoiced in coda.
+      Lenis counterpart of /t/.
+
+  - id: PH-ENG-k
+    letter: "k"
+    ipa: "k"
+    features:
+      place: velar
+      manner: stop
+      voicing: voiceless
+      aspiration: variable
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-12:1
+      shared:
+        ipa: k
+        place: velar
+        manner: stop
+        voicing: voiceless
+      differences:
+        aspiration:
+          sanskrit: "contrastive (k vs kh)"
+          english: "allophonic"
+        palatalization:
+          sanskrit: "no palatalized k (has separate c/j)"
+          english: "allophonic before front vowels"
+        velar_fricative:
+          sanskrit: "absent"
+          english: "absent in SSBE (present in Scottish/Irish as /x/)"
+      note: >-
+        Same IPA /k/, both velar voiceless stop.
+        Sanskrit has aspirated /kʰ/.
+        English aspiration is allophonic.
+        English has no /x/ in SSBE (present in some dialects).
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiceless velar stop.
+      Aspiration allophonic.
+      Fronted [k̟] before front vowels.
+
+  - id: PH-ENG-g
+    letter: "ɡ"
+    ipa: "ɡ"
+    features:
+      place: velar
+      manner: stop
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-10:3
+      shared:
+        ipa: ɡ
+        place: velar
+        manner: stop
+        voicing: voiced
+      differences:
+        aspiration:
+          sanskrit: "contrastive (g vs gh)"
+          english: "absent"
+        breathy_voice:
+          sanskrit: "contrastive (/ɡʱ/ exists)"
+          english: "absent"
+        frequency:
+          sanskrit: "full phoneme"
+          english: "full phoneme"
+        voicing:
+          sanskrit: "fully voiced"
+          english: "partially voiced (devoiced in coda)"
+      note: >-
+        Same IPA /ɡ/.
+        Sanskrit has breathy-voiced /ɡʱ/.
+        English has no breathy voice.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced velar stop.
+      Partially devoiced in coda.
+      Lenis counterpart of /k/.
+
+  # ===== AFFRICATES (2) =====
+
+  - id: PH-ENG-tʃ
+    letter: "tʃ"
+    ipa: "t͡ʃ"
+    features:
+      place: postalveolar
+      manner: affricate
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-11:6
+      shared:
+        manner: affricate or stop (unresolved in Sanskrit)
+        voicing: voiceless
+      differences:
+        ipa:
+          sanskrit: "unresolved (t͡ɕ, t͡ʃ, or c)"
+          english: "t͡ʃ"
+        place:
+          sanskrit: "palatal or alveolo-palatal"
+          english: "postalveolar"
+        aspiration:
+          sanskrit: "contrastive (c vs ch)"
+          english: "absent (fortis/lenis only)"
+        system_status:
+          sanskrit: "grouped with stops"
+          english: "grouped with affricates"
+      note: >-
+        Potential relation to canonical c (sūtra 11, position 6).
+        Same as Ukrainian ч.
+        Sanskrit c is unresolved.
+        If Sanskrit c = /t͡ʃ/, this becomes segment-equivalent.
+        Until resolved, near-equivalent.
+        English /tʃ/ is always postalveolar affricate, never a true palatal stop.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiceless postalveolar affricate.
+      Fortis counterpart of /dʒ/.
+
+  - id: PH-ENG-dʒ
+    letter: "dʒ"
+    ipa: "d͡ʒ"
+    features:
+      place: postalveolar
+      manner: affricate
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-10:1
+      shared:
+        manner: affricate or stop (unresolved in Sanskrit)
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "unresolved (d͡ʑ, d͡ʒ, or ɟ)"
+          english: "d͡ʒ"
+        place:
+          sanskrit: "palatal or alveolo-palatal"
+          english: "postalveolar"
+        aspiration:
+          sanskrit: "contrastive (j vs jh)"
+          english: "absent"
+        breathy_voice:
+          sanskrit: "contrastive (/d͡ʑʰ/ or /ɟʰ/ exists)"
+          english: "absent"
+      note: >-
+        Potential relation to canonical j (sūtra 10, position 1).
+        Same caveat as tʃ/c.
+        Sanskrit j is unresolved.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced postalveolar affricate.
+      Lenis counterpart of /tʃ/.
+
+  # ===== FRICATIVES (9) =====
+
+  - id: PH-ENG-f
+    letter: "f"
+    ipa: "f"
+    features:
+      place: labiodental
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /f/.
+        English /f/ is a full phoneme (unlike Ukrainian where it's peripheral).
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiceless labiodental fricative.
+      Full phoneme in English.
+
+  - id: PH-ENG-v
+    letter: "v"
+    ipa: "v"
+    features:
+      place: labiodental
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-05:3
+      shared:
+        voicing: voiced
+        manner: involves labial articulation
+      differences:
+        ipa:
+          sanskrit: "unresolved (ʋ or w)"
+          english: "v (labiodental fricative)"
+        manner:
+          sanskrit: "approximant (not fricative)"
+          english: "fricative (not approximant)"
+        place:
+          sanskrit: "unresolved (labiodental or bilabial)"
+          english: "labiodental"
+        allophony:
+          sanskrit: "not documented as context-dependent"
+          english: "devoiced [v̥] in coda"
+        alternation:
+          sanskrit: "not documented"
+          english: "no alternation with /u/ (unlike Ukrainian)"
+      note: >-
+        NEAR-EQUIVALENT.
+        Sanskrit v is an approximant (/ʋ/ or /w/).
+        English v is a labiodental FRICATIVE /v/.
+        Different manner! Sanskrit v is unresolved, but even the most fricative-like interpretation (/ʋ/) is an approximant, not a true fricative.
+        English /v/ has frication noise.
+        This is the most challenging case — the canonical symbol 'v' maps to two very different phonetic types across languages.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced labiodental FRICATIVE.
+      Not an approximant like Sanskrit v.
+      Devoiced in coda.
+
+  - id: PH-ENG-θ
+    letter: "θ"
+    ipa: "θ"
+    features:
+      place: dental
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no dental fricative /θ/.
+        Sanskrit th = aspirated dental STOP /t̪ʰ/, not a fricative.
+        English /θ/ is a completely different phonological category — a fricative, not an aspirated stop.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+      - "Roach (2004)"
+    notes: >-
+      Voiceless dental fricative.
+      The 'th' sound in 'thin'.
+      Unique to English among the three languages so far.
+      No relation to Sanskrit th (which is an aspirated stop).
+
+  - id: PH-ENG-ð
+    letter: "ð"
+    ipa: "ð"
+    features:
+      place: dental
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no voiced dental fricative /ð/.
+        Sanskrit dh = breathy-voiced dental STOP /d̪ʱ/, not a fricative.
+        Same category mismatch as θ/th.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced dental fricative.
+      The 'th' sound in 'then'.
+      No Sanskrit equivalent.
+
+  - id: PH-ENG-s
+    letter: "s"
+    ipa: "s"
+    features:
+      place: alveolar
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-13:3
+      shared:
+        manner: fricative
+        voicing: voiceless
+      differences:
+        ipa:
+          sanskrit: "s̪ (dental)"
+          english: "s (alveolar)"
+        place:
+          sanskrit: "dental"
+          english: "alveolar"
+        sibilant_inventory:
+          sanskrit: "3 voiceless sibilants (ś, ṣ, s)"
+          english: "2 voiceless + 2 voiced (s, z, ʃ, ʒ)"
+      note: >-
+        NEAR-EQUIVALENT.
+        Same IPA letter but Sanskrit s = /s̪/ (dental), English s = /s/ (alveolar).
+        Same place mismatch as t/d̪.
+        The dental/alveolar distinction is systematic across all English coronals.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiceless ALVEOLAR fricative.
+      English s is alveolar, not dental like Sanskrit s.
+
+  - id: PH-ENG-z
+    letter: "z"
+    ipa: "z"
+    features:
+      place: alveolar
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no voiced sibilant.
+        English /z/ is the voiced counterpart of /s/.
+        Same category as Ukrainian /z/ — Slavic innovation, also present in English independently.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced alveolar fricative.
+      Full phoneme.
+      No Sanskrit equivalent.
+
+  - id: PH-ENG-ʃ
+    letter: "ʃ"
+    ipa: "ʃ"
+    features:
+      place: postalveolar
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-13:1
+      shared:
+        manner: fricative
+        voicing: voiceless
+      differences:
+        ipa:
+          sanskrit: "ɕ (alveolo-palatal)"
+          english: "ʃ (postalveolar)"
+        place:
+          sanskrit: "alveolo-palatal"
+          english: "postalveolar"
+        palatalization:
+          sanskrit: "inherent (ś is palatalized)"
+          english: "not palatalized"
+      note: >-
+        Cognate with canonical ś.
+        Sanskrit ś = /ɕ/ (alveolo-palatal).
+        English ʃ = /ʃ/ (postalveolar).
+        Same divergence as Ukrainian ш — different place of articulation.
+        Not identical, despite both being 'sh' sounds.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiceless postalveolar fricative.
+      The 'sh' sound.
+      Not the same as Sanskrit ś /ɕ/.
+
+  - id: PH-ENG-ʒ
+    letter: "ʒ"
+    ipa: "ʒ"
+    features:
+      place: postalveolar
+      manner: fricative
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no voiced sibilant.
+        English /ʒ/ is rare — occurs in 'leisure', 'vision', 'measure'.
+        Voiced counterpart of /ʃ/.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Voiced postalveolar fricative.
+      Rare phoneme.
+      No Sanskrit equivalent.
+
+  - id: PH-ENG-h
+    letter: "h"
+    ipa: "h"
+    features:
+      place: glottal
+      manner: fricative
+      voicing: voiceless
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-05:1
+      shared:
+        place: glottal
+        manner: fricative
+      differences:
+        ipa:
+          sanskrit: "ɦ (voiced glottal fricative)"
+          english: "h (voiceless glottal fricative)"
+        voicing:
+          sanskrit: "voiced [ɦ]"
+          english: "voiceless [h]"
+        aspiration:
+          sanskrit: "not contrastive"
+          english: "not contrastive (but /h/ only occurs in onset)"
+        distribution:
+          sanskrit: "any position"
+          english: "only in syllable onset (never in coda)"
+      note: >-
+        NEAR-EQUIVALENT — critical adversarial case.
+        Same IPA letter 'h', same place (glottal), but DIFFERENT VOICING: Sanskrit h = /ɦ/ (VOICED glottal fricative), English h = /h/ (VOICELESS glottal fricative).
+        This is not a notational difference — the two sounds are auditorily and articulatorily distinct.
+        Sanskrit h has vocal fold vibration throughout; English h is breath.
+        Additionally, English /h/ only occurs in syllable onset, never in coda.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+      - "Roach (2004)"
+    notes: >-
+      Voiceless glottal fricative.
+      Only occurs in syllable onset.
+      Not the same as Sanskrit /ɦ/ — the voicing difference is real.
+
+  # ===== NASALS (3) =====
+
+  - id: PH-ENG-m
+    letter: "m"
+    ipa: "m"
+    features:
+      place: bilabial
+      manner: nasal
+      voicing: voiced
+      aspiration: n/a
+      nasality: nasal
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-07:2
+      shared:
+        ipa: m
+        place: bilabial
+        manner: nasal
+        voicing: voiced
+      differences:
+        nasal_inventory:
+          sanskrit: "5 nasals (ñ, m, ṅ, ṇ, n)"
+          english: "3 nasals (m, n, ŋ)"
+        palatalization:
+          sanskrit: "no palatalized m (has separate ñ)"
+          english: "absent"
+        retroflex:
+          sanskrit: "contrastive (ṇ exists)"
+          english: "absent"
+        syllabic:
+          sanskrit: "no syllabic m"
+          english: "syllabic [m̩] possible (e.g., 'rhythm')"
+      note: >-
+        Same IPA /m/.
+        Sanskrit has 5 nasal phonemes; English has 3.
+        English has syllabic nasal [m̩] in unstressed position — Sanskrit does not.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Bilabial nasal.
+      Can be syllabic in unstressed position (e.g., 'rhythm' [ˈrɪðm̩]).
+
+  - id: PH-ENG-n
+    letter: "n"
+    ipa: "n"
+    features:
+      place: alveolar
+      manner: nasal
+      voicing: voiced
+      aspiration: n/a
+      nasality: nasal
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-07:5
+      shared:
+        manner: nasal
+        voicing: voiced
+        nasality: nasal
+      differences:
+        ipa:
+          sanskrit: "n̪ (dental)"
+          english: "n (alveolar)"
+        place:
+          sanskrit: "dental"
+          english: "alveolar"
+        nasal_inventory:
+          sanskrit: "5 nasals"
+          english: "3 nasals"
+        retroflex:
+          sanskrit: "contrastive (ṇ /ɳ/)"
+          english: "absent"
+        syllabic:
+          sanskrit: "no syllabic n"
+          english: "syllabic [n̩] possible (e.g., 'sudden')"
+      note: >-
+        NEAR-EQUIVALENT.
+        Same IPA letter but Sanskrit n = /n̪/ (dental), English n = /n/ (alveolar).
+        Same systematic place difference as t/d.
+        English n can be syllabic ([n̩]) in unstressed position.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Alveolar nasal.
+      Can be syllabic.
+      Not dental like Sanskrit n.
+      The alveolar place is systematic across all English coronals.
+
+  - id: PH-ENG-ŋ
+    letter: "ŋ"
+    ipa: "ŋ"
+    features:
+      place: velar
+      manner: nasal
+      voicing: voiced
+      aspiration: n/a
+      nasality: nasal
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-07:3
+      shared:
+        ipa: ŋ
+        place: velar
+        manner: nasal
+        voicing: voiced
+      differences:
+        distribution:
+          sanskrit: "any position (full phoneme ṅ)"
+          english: "only in syllable coda (sing, singer)"
+        phonemic_status:
+          sanskrit: "uncontested phoneme"
+          english: "disputed (some analyses: allophone of /n/ before velars)"
+        minimal_pairs:
+          sanskrit: "contrastive with n, ṇ"
+          english: "sin/sing, sun/sung — contrastive in most dialects"
+      note: >-
+        Same IPA /ŋ/.
+        But Sanskrit ṅ is a full phoneme in any position.
+        English ŋ is restricted to syllable coda and its phonemic status is disputed (Sapir 1925 argued it 'feels like ng').
+        In most dialects, sin/sing and sun/sung are minimal pairs, supporting phonemic status.
+        But the distribution is more restricted than Sanskrit ṅ.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+      - "Sapir (1925)"
+    notes: >-
+      Velar nasal.
+      Occurs only in coda.
+      Phonemic status debated but supported by minimal pairs (sin/sing).
+      Restricted distribution unlike Sanskrit ṅ.
+
+  # ===== APPROXIMANTS (4) =====
+
+  - id: PH-ENG-w
+    letter: "w"
+    ipa: "w"
+    features:
+      place: labiovelar
+      manner: approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-05:3
+      shared:
+        manner: approximant
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "unresolved (ʋ or w)"
+          english: "w (labiovelar approximant)"
+        place:
+          sanskrit: "unresolved (labiodental or bilabial)"
+          english: "labiovelar"
+        alternation:
+          sanskrit: "not documented"
+          english: "no alternation with /u/ in SSBE (but /w/~[u̯] in some dialects)"
+        phonemic_status:
+          sanskrit: "full phoneme v"
+          english: "full phoneme w"
+      note: >-
+        NEAR-EQUIVALENT.
+        Potential relation to canonical v (sūtra 5, position 3).
+        Sanskrit v is unresolved (/ʋ/ or /w/).
+        If Sanskrit v = /w/, this becomes segment-equivalent.
+        English /w/ is unambiguously a labiovelar approximant.
+        Unlike Ukrainian в, English /w/ does not alternate with /u/ and has stable labiovelar articulation.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Labiovelar approximant.
+      Stable articulation.
+      If Sanskrit v = /w/, this is segment-equivalent.
+      Until Sanskrit v is resolved, near-equivalent.
+
+  - id: PH-ENG-r
+    letter: "ɹ"
+    ipa: "ɹ"
+    features:
+      place: postalveolar
+      manner: approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-05:4
+      shared:
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "r (alveolar trill)"
+          english: "ɹ (postalveolar approximant)"
+        manner:
+          sanskrit: "trill"
+          english: "approximant"
+        place:
+          sanskrit: "alveolar"
+          english: "postalveolar"
+        rhoticity:
+          sanskrit: "always rhotic"
+          english: "rhotic in GA, non-rhotic in SSBE (no /r/ in coda)"
+        syllabic_variant:
+          sanskrit: "has syllabic ṛ"
+          english: "no syllabic r"
+      note: >-
+        NEAR-EQUIVALENT — major adversarial case.
+        Same IPA letter 'r' but completely different manner: Sanskrit r = /r/ (TRILL), English r = /ɹ/ (APPROXIMANT).
+        These are articulatorily very different — a trill involves rapid tongue vibration; an approximant involves a constricted but continuous airflow without vibration.
+        Additionally, SSBE is non-rhotic: /r/ only occurs before vowels, not in coda.
+        GA is rhotic.
+        The symbol 'r' in English transcription is a convention, not a phonetic description.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+      - "Roach (2004)"
+    notes: >-
+      Postalveolar approximant.
+      Not a trill.
+      In SSBE, only occurs before vowels (non-rhotic).
+      The IPA symbol 'r' is a typographic convention; the phonetic value is /ɹ/.
+
+  - id: PH-ENG-l
+    letter: "l"
+    ipa: "l"
+    features:
+      place: alveolar
+      manner: lateral approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-06:1
+      shared:
+        manner: lateral approximant
+        voicing: voiced
+      differences:
+        ipa:
+          sanskrit: "l (dental, not velarized)"
+          english: "l (alveolar, with velarized allophone)"
+        place:
+          sanskrit: "dental"
+          english: "alveolar"
+        velarization:
+          sanskrit: "absent"
+          english: "allophonic ([ɫ] in coda, [l] in onset)"
+        palatalization:
+          sanskrit: "no palatalized l"
+          english: "absent (no phonemic palatalization)"
+      note: >-
+        NEAR-EQUIVALENT.
+        Sanskrit l = /l/ (dental, never velarized).
+        English l = /l/ in onset (clear), /ɫ/ in coda (dark, velarized).
+        The velarization is allophonic in English, unlike Ukrainian where /ɫ/ is phonemic.
+        English has a clear/dark allophony that Sanskrit entirely lacks.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+      - "Roach (2004)"
+    notes: >-
+      Alveolar lateral approximant.
+      Clear [l] in onset, dark [ɫ] in coda.
+      Velarization is allophonic, not phonemic (unlike Ukrainian).
+      Not dental like Sanskrit l.
+
+  - id: PH-ENG-j
+    letter: "j"
+    ipa: "j"
+    features:
+      place: palatal
+      manner: approximant
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: non-syllabic
+    relation_to_canon:
+      type: system-equivalent
+      canonical_unit: SS-05:2
+      shared:
+        ipa: j
+        place: palatal
+        manner: approximant
+        voicing: voiced
+      differences: null
+      note: >-
+        Same IPA /j/.
+        Both Sanskrit y and English j are the sole palatal approximant in their systems.
+        No contrastive length, aspiration, palatalization, or allophonic variation in either language.
+        This is the only phoneme where segment AND system role are fully shared — same as Ukrainian /j/.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Palatal approximant.
+      Full system-equivalent with Sanskrit y and Ukrainian j.
+
+  # ===== SHORT/CHECKED VOWELS (7) =====
+
+  - id: PH-ENG-ɪ
+    letter: "ɪ"
+    ipa: "ɪ"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: short
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /ɪ/.
+        This near-close front unrounded vowel is a distinct phoneme from /iː/ in English.
+        Sanskrit i is /i/ (close), not /ɪ/ (near-close).
+        Note: Ukrainian /ɪ/ (и) is in the same phonetic space but the languages developed it independently.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Near-close front unrounded vowel.
+      Short.
+      Checked (requires following consonant).
+      The KIT vowel.
+      No Sanskrit or canonical equivalent.
+
+  - id: PH-ENG-e
+    letter: "e"
+    ipa: "e"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: short
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-03:1
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "eː (close-mid, long)"
+          english: "e (open-mid, short)"
+        vowel_height:
+          sanskrit: "close-mid"
+          english: "open-mid (often transcribed /ɛ/)"
+        phonemic_length:
+          sanskrit: "inherently long (dīrgha)"
+          english: "short (checked)"
+        checked:
+          sanskrit: "n/a"
+          english: "checked (requires following consonant)"
+      note: >-
+        NEAR-EQUIVALENT.
+        Same IPA letter 'e' but Sanskrit e = /eː/ (close-mid, long), English e = /e/ or /ɛ/ (open-mid, short, checked).
+        Different height, different length, different distribution.
+        English /e/ cannot end a word (checked).
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Open-mid front unrounded vowel.
+      Short.
+      Checked.
+      The DRESS vowel.
+      Different from Sanskrit /eː/ in height and length.
+
+  - id: PH-ENG-æ
+    letter: "æ"
+    ipa: "æ"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: short
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /æ/.
+        This near-open front unrounded vowel is the TRAP vowel — a distinctly English phoneme with no Sanskrit parallel.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Near-open front unrounded vowel.
+      Short.
+      Checked.
+      The TRAP vowel.
+      No canonical equivalent.
+
+  - id: PH-ENG-ɒ
+    letter: "ɒ"
+    ipa: "ɒ"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: short
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /ɒ/.
+        This open back rounded vowel is the LOT vowel in SSBE.
+        (In GA, LOT is unrounded /ɑ/.).
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Open back rounded vowel.
+      Short.
+      Checked.
+      The LOT vowel.
+      SSBE specific.
+
+  - id: PH-ENG-ʌ
+    letter: "ʌ"
+    ipa: "ʌ"
+    features:
+      place: central
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: short
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /ʌ/.
+        This open-mid central unrounded vowel is the STRUT vowel — a distinctly English phoneme resulting from the STRUT split.
+        No Sanskrit parallel.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Open-mid central unrounded vowel.
+      Short.
+      Checked.
+      The STRUT vowel.
+      Result of historical foot-strut split.
+      No canonical equivalent.
+
+  - id: PH-ENG-ʊ
+    letter: "ʊ"
+    ipa: "ʊ"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: short
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /ʊ/.
+        This near-close back rounded vowel is the FOOT vowel.
+        Sanskrit u = /u/ (close), not /ʊ/ (near-close).
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Near-close back rounded vowel.
+      Short.
+      Checked.
+      The FOOT vowel.
+      No canonical equivalent.
+
+  - id: PH-ENG-ə
+    letter: "ə"
+    ipa: "ə"
+    features:
+      place: central
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: short
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no schwa /ə/.
+        Schwa is THE characteristic English vowel — the unstressed vowel in 'about', 'the', 'a'.
+        It results from English's stress-timed rhythm and extreme vowel reduction.
+        Sanskrit has no equivalent phonological process.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Mid central vowel.
+      Short.
+      Unstressed only.
+      The most frequent vowel in English.
+      No Sanskrit equivalent.
+      Schwa is the hallmark of stress-timed languages.
+
+  # ===== LONG/FREE VOWELS (5) =====
+
+  - id: PH-ENG-iː
+    letter: "iː"
+    ipa: "iː"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-01:2
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+        place: palatal
+      differences:
+        ipa:
+          sanskrit: "i (short, /i/)"
+          english: "iː (long, /iː/)"
+        phonemic_length:
+          sanskrit: "short (dīrgha ī is separate)"
+          english: "long"
+        length_opposition:
+          sanskrit: "contrastive i vs ī"
+          english: "contrastive ɪ vs iː"
+        diphthongization:
+          sanskrit: "monophthong"
+          english: "often slightly diphthongal [ɪi]"
+      note: >-
+        NEAR-EQUIVALENT.
+        Same phonetic space as canonical i, but English /iː/ is long and Sanskrit /i/ is short.
+        English contrasts /ɪ/ (short, near-close) with /iː/ (long, close).
+        Sanskrit contrasts /i/ (short) with /ī/ (long).
+        The systems are different: English's short counterpart is /ɪ/ (different height), Sanskrit's short counterpart is the same /i/ at same height.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Close front unrounded vowel.
+      Long.
+      Free.
+      The FLEECE vowel.
+      Often slightly diphthongal.
+
+  - id: PH-ENG-ɑː
+    letter: "ɑː"
+    ipa: "ɑː"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-01:1
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "unresolved (ɐ, ə, or a)"
+          english: "ɑː (open back unrounded, long)"
+        phonemic_length:
+          sanskrit: "short (dīrgha ā is separate)"
+          english: "long"
+        backness:
+          sanskrit: "central (unresolved)"
+          english: "back"
+        length_opposition:
+          sanskrit: "a vs ā"
+          english: "æ vs ɑː (different height, not just length)"
+      note: >-
+        NEAR-EQUIVALENT.
+        Potential relation to canonical a.
+        English /ɑː/ is open back unrounded (the START vowel).
+        Sanskrit a is unresolved but probably central.
+        English contrasts /æ/ (front) with /ɑː/ (back) — a height+backness contrast, not just length.
+        Sanskrit a/ā is a pure length contrast.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Open back unrounded vowel.
+      Long.
+      Free.
+      The START/FATHER vowel.
+
+  - id: PH-ENG-ɔː
+    letter: "ɔː"
+    ipa: "ɔː"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-03:2
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+        place: velar/back
+      differences:
+        ipa:
+          sanskrit: "oː (close-mid, long)"
+          english: "ɔː (open-mid, long)"
+        vowel_height:
+          sanskrit: "close-mid"
+          english: "open-mid"
+        rounding:
+          sanskrit: "rounded"
+          english: "rounded"
+      note: >-
+        NEAR-EQUIVALENT.
+        Same phoneme class (mid back rounded) but different height: Sanskrit o = /oː/ (close-mid), English ɔː = /ɔː/ (open-mid).
+        The THOUGHT/NORTH vowel.
+        English ɔː is lower than Sanskrit o.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Open-mid back rounded vowel.
+      Long.
+      Free.
+      The THOUGHT/NORTH vowel.
+
+  - id: PH-ENG-uː
+    letter: "uː"
+    ipa: "uː"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-01:3
+      shared:
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+        place: velar/back
+      differences:
+        ipa:
+          sanskrit: "u (short, /u/)"
+          english: "uː (long, /uː/)"
+        phonemic_length:
+          sanskrit: "short (dīrgha ū is separate)"
+          english: "long"
+        length_opposition:
+          sanskrit: "u vs ū"
+          english: "ʊ vs uː (different height, not just length)"
+        diphthongization:
+          sanskrit: "monophthong"
+          english: "often [ʉː] or [ʊu] in SSBE"
+      note: >-
+        NEAR-EQUIVALENT.
+        Same phonetic space as canonical u, but English /uː/ is long and often diphthongized.
+        English contrasts /ʊ/ (short, near-close) with /uː/ (long, close) — different height, not just length.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Close back rounded vowel.
+      Long.
+      Free.
+      The GOOSE vowel.
+      Often fronted [ʉː] in SSBE.
+
+  - id: PH-ENG-ɜː
+    letter: "ɜː"
+    ipa: "ɜː"
+    features:
+      place: central
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /ɜː/.
+        This open-mid central unrounded long vowel is the NURSE vowel — it results from the NURSE merger (formerly separate vowels before /r/, now a single long central vowel).
+        SSBE specific.
+        GA pronounces this as /ɝ/ (r-colored).
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Open-mid central unrounded vowel.
+      Long.
+      The NURSE vowel.
+      Result of NURSE merger.
+      No Sanskrit equivalent.
+      R-colored /ɝ/ in GA.
+
+  # ===== DIPHTHONGS (8) =====
+
+  - id: PH-ENG-eɪ
+    letter: "eɪ"
+    ipa: "eɪ"
+    features:
+      place: palatal
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-04:1
+      shared:
+        manner: diphthong
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "ai (a→i movement)"
+          english: "eɪ (e→ɪ movement)"
+        starting_point:
+          sanskrit: "open /a/"
+          english: "mid /e/"
+        ending_point:
+          sanskrit: "high front /i/"
+          english: "near-high front /ɪ/"
+        phonological_status:
+          sanskrit: "unitary phoneme (ai)"
+          english: "unitary phoneme (FACE)"
+      note: >-
+        NEAR-EQUIVALENT.
+        Both are fronting diphthongs, but different starting points: Sanskrit ai starts at /a/ (open), English eɪ starts at /e/ (mid).
+        The ending also differs: Sanskrit ends at /i/, English ends at /ɪ/.
+        Different trajectories.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Closing diphthong.
+      The FACE vowel.
+      Starts mid-front, ends near-high front.
+
+  - id: PH-ENG-aɪ
+    letter: "aɪ"
+    ipa: "aɪ"
+    features:
+      place: central
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-04:1
+      shared:
+        manner: diphthong
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "ai (/a→i/)"
+          english: "aɪ (/a→ɪ/ or /ɑ→ɪ/)"
+        starting_point:
+          sanskrit: "open central /a/"
+          english: "open front or central /a/ or /ɑ/"
+        ending_point:
+          sanskrit: "high front /i/"
+          english: "near-high front /ɪ/"
+      note: >-
+        NEAR-EQUIVALENT.
+        Both are /a/ → front diphthongs.
+        Very close to Sanskrit ai.
+        Main difference: English ends at /ɪ/ (near-close), Sanskrit ends at /i/ (close).
+        Starting point may be slightly back in some dialects.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Closing diphthong.
+      The PRICE/MOUTH..
+      no, PRICE.
+      Starts open, ends near-high front.
+
+  - id: PH-ENG-ɔɪ
+    letter: "ɔɪ"
+    ipa: "ɔɪ"
+    features:
+      place: velar
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No direct canonical equivalent.
+        Sanskrit au is /au/ (a→u movement).
+        English ɔɪ is /ɔ→ɪ/ — starts at a different position (open-mid back vs open central) and ends at a different position (near-high front vs high back).
+        Different trajectory entirely.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Closing diphthong.
+      The CHOICE vowel.
+      Starts open-mid back, ends near-high front.
+      No Sanskrit equivalent — different trajectory from Sanskrit au.
+
+  - id: PH-ENG-aʊ
+    letter: "aʊ"
+    ipa: "aʊ"
+    features:
+      place: central
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: near-equivalent
+      canonical_unit: SS-04:2
+      shared:
+        manner: diphthong
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "au (/a→u/)"
+          english: "aʊ (/a→ʊ/)"
+        ending_point:
+          sanskrit: "high back /u/"
+          english: "near-high back /ʊ/"
+      note: >-
+        NEAR-EQUIVALENT.
+        Close to Sanskrit au (/a→u/).
+        English aʊ ends at /ʊ/ (near-close) instead of /u/ (close).
+        The MOUTH vowel.
+        Very similar trajectory to Sanskrit au.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Closing diphthong.
+      The MOUTH vowel.
+      Starts open, ends near-high back.
+      Close to Sanskrit au but with different ending height.
+
+  - id: PH-ENG-əʊ
+    letter: "əʊ"
+    ipa: "əʊ"
+    features:
+      place: central
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Sanskrit has no /əʊ/.
+        This mid-central to near-close back diphthong is the GOAT vowel.
+        Sanskrit o is a monophthong /oː/.
+        English GOAT is a diphthong starting at schwa — a uniquely English development.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Closing diphthong.
+      The GOAT vowel.
+      Starts schwa, ends near-close back.
+      No Sanskrit equivalent.
+      (GA: /oʊ/ — starts mid back, not schwa.).
+
+  - id: PH-ENG-ɪə
+    letter: "ɪə"
+    ipa: "ɪə"
+    features:
+      place: palatal
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Centering diphthong — a uniquely English type.
+        Sanskrit has no centering diphthongs.
+        The NEAR vowel.
+        In SSBE, historically from vowel + /r/ where /r/ was lost (non-rhoticity).
+        In GA, pronounced as /ɪr/ (with consonantal /r/).
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Centering diphthong.
+      The NEAR vowel.
+      Product of non-rhoticity.
+      No Sanskrit equivalent.
+
+  - id: PH-ENG-eə
+    letter: "eə"
+    ipa: "eə"
+    features:
+      place: palatal
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Centering diphthong.
+        The SQUARE vowel.
+        Historically from /e/ + /r/.
+        In contemporary SSBE, often monophthongized to /ɛː/.
+        No Sanskrit equivalent.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Centering diphthong (or long monophthong /ɛː/).
+      The SQUARE vowel.
+      No Sanskrit equivalent.
+
+  - id: PH-ENG-ʊə
+    letter: "ʊə"
+    ipa: "ʊə"
+    features:
+      place: velar
+      manner: diphthong
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: long
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent.
+        Centering diphthong.
+        The CURE vowel.
+        Increasingly merged with /ɔː/ in contemporary SSBE.
+        No Sanskrit equivalent.
+    sources:
+      - "Wells: phon.ucl.ac.uk"
+      - "Wikipedia: English phonology"
+    notes: >-
+      Centering diphthong.
+      The CURE vowel.
+      Merging with /ɔː/ in modern SSBE.
+      No Sanskrit equivalent.
+
+# Summary
+# -------
+# Total phonemes: 44
+#   Consonants: 24
+#   Vowels: 20
+# Relation to canon:
+#   system-equivalent: 1
+#   segment-equivalent: 6
+#   near-equivalent: 20
+#   new-extension: 17
+# Unresolved IPA values: 0
+#
+# Adversarial test result:
+#   English adds 0 modifications to canonical space (0x00–0x29).
+#   6 segment-equivalent phonemes reuse canonical codes.
+#   20 near-equivalent phonemes need new extension codes.
+#   17 new-extension phonemes need new extension codes.
+#   Total new codes needed: 37
+#
+# Critical findings:
+#   1. English /t/ and /d/ are NEAR-EQUIVALENT, not segment-equivalent —
+#      they are alveolar, not dental. Same IPA letter, different place.
+#   2. English /h/ is NEAR-EQUIVALENT — voiceless [h] vs Sanskrit voiced [ɦ].
+#      Same IPA letter, different voicing.
+#   3. English /r/ is NEAR-EQUIVALENT — approximant [ɹ] vs Sanskrit trill [r].
+#      Same IPA letter, completely different manner.
+#   4. English /v/ is NEAR-EQUIVALENT — fricative [v] vs Sanskrit approximant [ʋ/w].
+#   5. English /s/ and /n/ are NEAR-EQUIVALENT — alveolar, not dental.
+#   6. Only /j/ is system-equivalent — same as in Ukrainian.
+#   7. /θ ð ə ɪ æ ɒ ʌ ʊ ɜː/ and all diphthongs are new-extension.
+#   8. The architecture held: canonical space unchanged.

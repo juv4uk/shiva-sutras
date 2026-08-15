@@ -1,0 +1,36 @@
+source_id: KASIKA-7.3.17
+locator:
+  sutra: 7.3.17
+witness_text:
+  sutra: parimāṇāntasya asañjñā-śāṇayoḥ
+  commentary: parimāṇāntasya aṅgasya saṅkhyāyāḥ paraṃ yad uttarapadaṃ tasya acāmāder
+    acaḥ vṛddhir bhavati taddhite ñiti, ṇiti, kiti ca parataḥ, sañjñāyāṃ viṣaye śāṇe
+    ca+uttarapade na bhavati  / dvau kuḍavau prayojanam asya dvikauḍavikaḥ  / dvābhyāṃ
+    suvarṇābhyāṃ krītaṃ dvisauvarṇikam  / vibhāṣā kārṣāpaṇasahasrābhyāṃ (*5,1.29)
+    ity atra suvarṇaśatamānayor upasaṅkhyānam iti luko vikalpaḥ  / dvābhyāṃ niṣkābhyāṃ
+    krītam dvitripūrvān niṣkāt (*5,1.30) dvinaiṣkikam  / asañjñāśāṇayo iti kim ? pāñcalohitikam  /
+    pāñcakalāpikam  / pañca lohityaḥ parimāṇamasya, pañca kalāpāḥ parimāṇamasya iti
+    vihṛhya tad asya pariṃāṇam (*5,1.57) iti yogavibhāgāt pratyayaḥ, taddhitāntaścāyaṃ
+    samudāyaḥ sañjñā  / [#835] dvābhyāṃ śāṇābhyāṃ krītam dvai śāṇam  / traiśāṇam  /
+    śāṇād vā (*5,1.35), dvitripūrvādaṇ ca (*5,1.36) ityaṇ pratyayaḥ  / asañjñāśāṇakulijānām
+    iti kecit paṭhanti  / dve kulije prayojanamasya dvaikulijikaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

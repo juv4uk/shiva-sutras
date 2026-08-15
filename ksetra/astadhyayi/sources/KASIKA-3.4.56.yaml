@@ -1,5 +1,40 @@
 source_id: KASIKA-3.4.56
 locator:
   sutra: 3.4.56
-raw_text: Simulated Kasika raw text for 3.4.56.
-extracted_at: '2026-08-15T00:00:00Z'
+witness_text:
+  sutra: viśi-pati-padi-skandām vyāpyamāna-āsevyamānayoḥ
+  commentary: dvitīyāyām ity eva  / dvitīyānte upapade viśyādibhyo dhātubhyo ṇamul
+    pratyayo bhavati, vyāpyamāne āsevyamāne ca arthe gamyamāne  / viśyādibhiḥ kriyābhir
+    anavayavena padārthānāṃ sambandho vyāptiḥ  / tātparyam āsevā / dravye vyāptiḥ,
+    kriyāyāmāsevā  / geha-anupraviśam āste  / samāsena vyāptyāsevayor uktatvāt nitya-vīpsayoḥ
+    (*8,1.4) iti dvirvacanaṃ na bhavati  / asamāsapakṣe tu vyāpyamānatāyāṃ dravya-vacanasya
+    dvirvacanam, āsevyamānatāyāṃ tu kriyā-vacanasya  / tathā ca vakṣyati - supsu vīpsa,
+    tiṅkṣu nityatā iti  / gehaṃ geham anupraveśam āste  / āsevāyām - geham anupraveśam
+    anupraveśam āste  / pati - geha-anuprapātam āste gehaṃ  geham anuprapātam āste,
+    geham anuprapātam anuprapātam  āste  / padi - geha-anuprapādam āste, gehaṃ geham  anuprapādam,
+    geham anuprapādam anuprapādam  / skandi -  geha-avaskandam āste, gehaṃ geham avaskandam,
+    geham  avaskandam avaskandam  / vyāpyam ānāsevyamānayoḥ iti  kim ? geham anupraviśya
+    bhuṅkte  / nanu ābhīkṣṇye ṇamul  vihita eva, āsevā ābhīkṣṇyam eva, kim arthaṃ
+    punar  āsevāyāṃ ṇamul ucyate ? ktvānivṛtty-artham iti cet, na,  iṣṭatvāt tasya  /
+    dvitīyopapada-arthaṃ tarhi vacanam,  upapadasamāsaḥ pakṣe yathā syāt  / tena hi
+    sati  upapadābhāvaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

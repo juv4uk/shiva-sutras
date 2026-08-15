@@ -1,0 +1,39 @@
+source_id: KASIKA-5.1.16
+locator:
+  sutra: 5.1.16
+witness_text:
+  sutra: tad asya tad asmin syād iti
+  commentary: tad iti prathamā samarthavibhaktiḥ, asya iti pratyayārthaḥ, syāt iti
+    prakṛtiviśeṣaṇam  / iti-karaṇo vivakṣārthaḥ  / evaṃ dvitīye 'pi vākye  / saptamy-arthe
+    tu pratyaya ity etāvān viśeṣaḥ  / prathamāsamarthāt ṣaṣṭhyarthe saptamyarthe ca
+    yathāvihitaṃ pratyayo bhavati, yat tat prathamāsamarthaṃ syāc cet tad bhavati  /
+    iti-karaṇaḥ tataś ced vivakṣā  / prākāra āsāmiṣṭakānāṃ syāt prākārīyā iṣṭakāḥ  /
+    prāsādīyaṃ dāru  / saptamyarthe khalv api - prākāro 'smin deśe syāt prākārīyo
+    deśaḥ  / prāsādīyā bhūmiḥ  / syād iti sambhāvanāyāṃ liṅ, sambhāvane 'lam iti ced
+    ity ādinā  / iṣṭakānāṃ vahutvena tat sambhāvyate prākāra āsāmiṣṭakānāṃ syāt iti  /
+    deśasya ca guṇena sambhāvyate prāsādo 'smin deśe syāt iti  / prakṛtivikārabhāvastādarthyaṃ
+    ca+iha na vivakṣitam  / kiṃ tarhi, yogyatāmātram  / tena pūrvasya ayam aviṣayaḥ  /
+    dvistad-grahaṇaṃ nyāya-pradarśanārtham, anekasmin pratyayārthe pratyekaṃ samarthavibhaktiḥ
+    sambandhanīyā iti  / atha+iha kasmān na bhavati, prāsādo devadattasya syāt iti
+    ? guṇavānayaṃ sambhāvyate prāsādalābho 'sya iti  / iti-karaṇo vivakṣārthaḥ ity
+    uktam // [#470]
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,37 @@
+source_id: KASIKA-7.3.1
+locator:
+  sutra: 7.3.1
+witness_text:
+  sutra: devikā-śiṃśapā-dityavāḍ-dīrghasatra-śreyasām āt
+  commentary: devikā śiṃśapā dityavāṭ dīrghasatra śreyas ity etaṣām aṅgānām acāmādeḥ
+    acaḥ sthane vṛddhiprasaṅge ākāro bhavati ñiti, ṇiti, kiti taddhite parataḥ  /
+    devikāyāṃ bhavamudakaṃ dāvikamudakam  / devikākūle bhavāḥ śālayaḥ dāvikākūlāḥ
+    śālayaḥ  / pūrvadevikā nāma prācāṃ grāmaḥ, tatra bhavaḥ pūrvadāvikaḥ  / prācāṃ
+    grāma-nagarāṇām (*7,3.14) iti uttarapadavṛddhiḥ, sāpi ākāra eva bhavati  / śiṃśapā
+    - śiṃśapāyāḥ vikāraḥ camasaḥ śāṃśapaḥ camasaḥ  / palāśādirayam, tena pakṣe aṇ,
+    anudāttādilakṣaṇo vā añ  / śiṃśapāsthale bhavāḥ śāṃśapāsthalāḥ devāḥ  / pūrvaśiṃśapā
+    nāma prācāṃ grāmaḥ, tatra bhavaḥ pūrvaśāṃśapaḥ  / dityavāṭ - dityauhaḥ idam dātyauham  /
+    dīrghasatra - dīrghasatre bhavam dārghasatram  / śreyas - śreyasi bhavam śrāyasam  /
+    vahīnarasyedvacanaṃ kartavyam  / vṛddhiviṣaye 'cāmādeḥ acaḥ sthāne vahīnarasya
+    ikārādeśo bhavati  / vahīnarasya apatyam vaihīnariḥ  / kecit tu vihīnarasya+eva
+    vaihīnarim icchanti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

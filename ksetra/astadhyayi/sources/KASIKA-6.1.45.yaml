@@ -1,0 +1,35 @@
+source_id: KASIKA-6.1.45
+locator:
+  sutra: 6.1.45
+witness_text:
+  sutra: ād eca upadeśe 'śiti
+  commentary: dhātoḥ iti vartate  / ejanto yo dhātur upadeśe tasya akārādeśo bhavati,
+    śiti tu pratyaye na bhavati  / glai - glātā  / glātum  / glātavyam  / śo - niśātā  /
+    niśātum  / niśātavyam  / ecaḥ iti kim ? kartā  / hartā  / upadeśe iti kim ? cetā  /
+    stotā  / aśiti iti kim ? glāyati  / mlāyati  / kathaṃ jagle, mamle ? na+evaṃ vijñāyate,
+    śakāra id yasya so 'yaṃ śit iti, kiṃ tarhi, śa eva it śit  / tatra yasmin vidhistadādāvalgrahaṇe
+    iti śidādau pratyaye pratiṣedhaḥ  / eś śakārānto bhavati  / aśiti iti prasajyapratiṣedho
+    'yam, tena etad āttvam anaimittikaṃ prāg eva pratyayotpatter bhavati iti, suglaḥ,
+    sumlaḥ iti ātaścopasarge (*3,1.136) iti kapratyayaḥ, suglānaḥ, sumlānaḥ iti āto
+    yuc (*3,3.128) ity evam ādi siddham bhavati iti  / ākārādhikārastvayaṃ nityaṃ
+    samyateḥ (*6,1.57) iti yāvat //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

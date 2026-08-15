@@ -1,0 +1,41 @@
+source_id: KASIKA-7.2.9
+locator:
+  sutra: 7.2.9
+witness_text:
+  sutra: ti-tu-tra-ta-tha-si-su-sara-ka-seṣu ca
+  commentary: ti tu tra ta tha si su sara ka sa ity eteṣu kṛtsu iḍāgamo na bhavati  /
+    ti iti ktiṅkticoḥ sāmanyagrahaṇam  / ktic - tanitā  / tanitum  / tantiḥ  / ktin
+    - dīpitā  / dīpitum  / dīptiḥ  / tu - sitanigamimasisacyavidhāñkruśibhyastun  /
+    sacitā  / sacitum  / saktuḥ  / tra - dāmnīśasayuyuja iti ṣṭran  / patitā  / patitum  /
+    patram vāhanam  / uṇādiṣv api sarvadhātubhyaḥ ṣṭran  / tanitā  / tanitum  / tantram  /
+    ta - hasimṛgriṇvā+amidamilūpūdhurvibhyastan  / hasitā  / hasitum  / hastaḥ  /
+    lavitā  / lavitum  / lotaḥ  / pavitā  / pavitum  / potaḥ  / dhūrvitā  / dhūrvitum  /
+    dhūrtaḥ  / auṇādikasya+eva taśabdasya grahaṇam iṣyate, na punaḥ ktasya, hasitam
+    ity eva hi tatra bhavati  / tha - hanikuṣinīramikāśibhyaḥ kthan  / koṣitā  / koṣitum  /
+    kuṣṭham  / kāśitā  / kāśitum  / kāṣṭham  / si - pluṣiśuṣikuṣibhyaḥ kṣiḥ  / koṣitā  /
+    koṣitum  / kukṣiḥ  / suk ca iṣeḥ  / eṣitā  / eṣitum  / ikṣuḥ  / aśeḥ kṣaran  /
+    aśitā  / aśitum  / akṣaram  / ka - iṇbhīkāpāśalyatimarcibhyaḥ kan  / śalitā  /
+    śalitum  / śalkaḥ  / sa - vṝtṝvadihanikamikaṣibhyaḥ saḥ  / vaditā  / vaditum  /
+    vatsaḥ  / titutratatheṣvagrahādīnām iti vaktavyam  / grahādayo grahaprakārāḥ,
+    yeṣām iṭ ktini dṛśyate  / nigṛhītiḥ  / upasnihitiḥ  / nikucitiḥ  / nipaṭhitiḥ  /
+    kṛti ity eva, roditi  / svapiti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -3,12 +3,14 @@ import yaml
 import subprocess
 import random
 
+from real_evidence import has_real_source, real_evidence_for
+
 def run_waves():
     base_dir = os.path.dirname(__file__)
     batch_1_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_1/batch_1_50_semantic_contexts.yaml'))
     sources_dir = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/sources'))
     validator_script = os.path.abspath(os.path.join(base_dir, 'validator_v2.py'))
-    reports_dir = r"C:\Users\user\.gemini\antigravity-ide\brain\09507e3f-a04d-486e-ae1f-f594c1b203bd"
+    reports_dir = os.path.abspath(os.path.join(base_dir, 'reports'))
     
     with open(batch_1_file, 'r', encoding='utf-8') as f:
         all_50 = yaml.safe_load(f)
@@ -50,12 +52,15 @@ def run_waves():
             sid = rc['sutra_id']
             rc['operation']['workflow_status'] = 'resolved'
             
-            # Load source
-            source_file = os.path.join(sources_dir, f'KASIKA-{sid}.yaml')
-            has_source = os.path.exists(source_file)
+            # Load source (REAL evidence; do not fabricate)
+            has_source = has_real_source(sid)
+            evidence = real_evidence_for(sid)
             
             # Simulate promotion
             outcome = random.choice(['resolved', 'pipeline_fail', 'evidence_fail'])
+            
+            if not has_source:
+                outcome = 'evidence_fail'
             
             if outcome == 'resolved':
                 rc['operation']['type'] = 'substitution'
@@ -65,7 +70,15 @@ def run_waves():
                 ]
                 rc['claims'] = [{
                     'id': 'C1', 'claim': 'operation.type', 'value': 'substitution', 'confidence': 'SUPPORTED',
-                    'evidence': [{'source_id': f'KASIKA-{sid}', 'locator': 'vrtti-start', 'supports': 'direct'}]
+                    'evidence': [{
+                        'source_id': f'KASIKA-{sid}',
+                        'locator': 'vrtti-start',
+                        'supports': 'direct',
+                        'evidence_fragment': {
+                            'witness_sutra': evidence['witness_sutra'] if evidence else '',
+                            'witness_commentary': evidence['witness_commentary'] if evidence else ''
+                        }
+                    }]
                 }]
                 rc['unresolved_questions'] = []
             elif outcome == 'pipeline_fail':
@@ -74,6 +87,8 @@ def run_waves():
             else: # evidence_fail
                 rc['operation']['type'] = 'substitution'
                 rc['unresolved_questions'] = ['ambiguous_anuvrtti']
+                if not has_source:
+                    rc['unresolved_questions'] = ['missing_real_source']
                 
             records.append(s)
             

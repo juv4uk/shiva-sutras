@@ -1,0 +1,43 @@
+source_id: KASIKA-8.3.65
+locator:
+  sutra: 8.3.65
+witness_text:
+  sutra: upasargāt sunoti-suvati-syati-stauti-stobhati-sthā-senaya-sedha-sica-sañja-svañjām
+  commentary: mūrdhanya iti vartate, saḥ iti ca  / upasargasthān nimittāt uttarasya
+    sunoti suvati syati stauti stobhati sthā senaya sedha sica sañja svañja ity eteṣāṃ
+    sakārasya mūrdhanyādeśo bhavati  / sunoti - abhiṣuṇoti  / pariṣuṇoti  / abhyaṣuṇot  /
+    paryaṣuṇot  / suvati - abhiṣuvati  / pariṣuvati  / abhyaṣuvat  / paryaṣuvat  /
+    syati - abhiṣyati  / pariṣyati  / abhyaṣyat  / paryaṣyat  / stauti - tabhiṣṭauti  /
+    pariṣṭauti  / abhyaṣtaut  / paryaṣṭaut  / stobhati - abhiṣṭobhate  / pariṣtobhate  /
+    abhyaṣṭobhata  / paryaṣṭobhata  / sthā - abhiṣṭhāsyati  / pariṣṭhāsyati  / abhyaṣṭāt  /
+    paryaṣṭhāt  / abhitaṣṭau  / paritaṣṭhau  / senaya - abhiṣeṇayati  / pariṣeṇayati  /
+    abhyaṣeṇayat  / paryaṣeṇayat  / abhiṣiṣeṇayiṣati  / [#954] pariṣiṣeṇayiṣati  /
+    sedha - abhiṣedhati  / priṣedhati  / abhyaṣedhat  / paryaṣedhat  / sica - abhiṣiñcati  /
+    pariṣiñcati  / abhyaṣiñcat  / paryaṣiñcat  / abhiṣiṣikṣati  / pariṣiṣikṣati  /
+    sañja - abhiṣajati  / pariṣajati  / abhyaṣajat  / paryaṣajat  / abhiṣiṣaṅkṣati  /
+    priraṅkṣati  / svañja - abhiṣvajate  / pariṣvajate  / abhyaṣvajata  / paryaṣvajata  /
+    abhiṣiṣvaṅkṣate  / pariṣiṣvaṅkṣate  / sedha iti śabvikaraṇanirdeśaḥ sidhyatinivṛttyarthaḥ  /
+    upasargāt iti kim ? dadhi siñcati  / madhu siñcati  / nirgatāḥ secakā usmasad
+    deśāt niḥsecako deśaḥ iti nāyaṃ siceḥ upsargaḥ  / abhisāvakoyati ity atra api
+    na sunotiṃ prati kiryāyogaḥ, kiṃ tarhi ? sāvakīyaṃ prati  / abhiṣāvayati ity atra
+    tu sunotimeva prati kriyāyogaḥ, na sāvaryatiṃ prati iti ṣatvaṃ bhavati //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

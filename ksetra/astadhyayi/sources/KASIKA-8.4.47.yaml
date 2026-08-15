@@ -1,0 +1,34 @@
+source_id: KASIKA-8.4.47
+locator:
+  sutra: 8.4.47
+witness_text:
+  sutra: anaci ca
+  commentary: acaḥ iti vartate, yaraḥ iti ca  / anacparasya aca uttarasya yaro dve
+    vā bhavataḥ  / daddhyatra  / maddhvatra  / acaḥ ity eva, smitam  / dhmātam  /
+    yaṇo mayo dve bhavata iti vaktavyam  / kecid atra yaṇaḥ iti pañcamī, mayaḥ iti
+    ṣaṣṭhī iti vyācakṣate  / teṣām ulkkā, valmmīkaḥ ity udāharaṇam  / apare tu mayaḥ
+    iti pañcamī, yaṇaḥ iti ṣaṣṭhī iti  / teṣām dadhyyatra, madhvvatra ity udāharaṇam  /
+    śaraḥ khayo dve bhavata iti vaktavyam  / atra api yadi śaraḥ iti pañcamī, khayaḥ
+    iti ṣaṣṭhī, tadā stthālī, stthātā iti udāharaṇam  / athavā khaya uttarasya śaro
+    dve bhavataḥ  / vatssaḥ  / ikṣṣuḥ  / kṣṣīram  / apssarāḥ  / avasāne ca yaro dve
+    bhavata iti vaktavyam  / vākka, vāk  / tvakk, tvak  / ṣaṭṭ, ṣaṭ  / tatt, tat //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

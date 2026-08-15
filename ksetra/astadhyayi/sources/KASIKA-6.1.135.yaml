@@ -1,0 +1,35 @@
+source_id: KASIKA-6.1.135
+locator:
+  sutra: 6.1.135
+witness_text:
+  sutra: suṭ kāt pūrvaḥ
+  commentary: adhikāro 'yam pāraskaraprabhṛtīnāṃ ca sañjñāyām (*6,1.175) iti yāvat  /
+    ita uttaraṃ yad vakṣyāmastatra suṭ iti , kāt pūrvaḥ iti ca+etad adhikṛtaṃ veditavyam  /
+    vakṣyati - samparyupebhyaḥ karotaubhūṣaṇe (*6,1.137)  / saṃskartā  / saṃskartum  /
+    saṃskartavyam  / kāt pūrvagrahaṇaṃ suṭo 'bhaktatvajñāpanārtham  / tathā hi saṃskṛṣīṣṭa,
+    saṃskriyate iti saṃyogādilakṣaṇau iḍguṇau na bhavataḥ  / tiṅṅatiṅaḥ (*8,1.18)
+    iti nighāto 'pi tarhi na prāpnoti, suṭā vyavahitatvāt ? svaravidhau vyañjanam
+    avidyamānavat iti vacanān na asti vyavadhānam saṃcaskaratuḥ, saṃcaskaruḥ iti guṇaḥ
+    katham ? tanmadhyapatitastadgrahaṇena gṛhyate iti  / saṃyogopadhagrahaṇaṃ ca ṛtaśca
+    saṃyogāder guṇaḥ (*7,4.10) ity atra kartavyam  / ṭitkaraṇaṃ suṭstusvañjām ity
+    atra viśeṣaṇārtham //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

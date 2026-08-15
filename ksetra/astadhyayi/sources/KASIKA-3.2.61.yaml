@@ -1,0 +1,41 @@
+source_id: KASIKA-3.2.61
+locator:
+  sutra: 3.2.61
+witness_text:
+  sutra: sat-sū-dviṣa-druha-duha-yuja-vida-bhidac-chida-ji-nī-rājām uasarge 'pi kvip
+  commentary: supi ity anuvartate  / karma-grahaṇaṃ tu spṛśo 'nudake kvin (*3,2.58)
+    ity ataḥ prabhṛti na vyāpriyate  / sadādibhyaḥ dhātubhyaḥ subante upapade upasarge
+    'pi anupasarge 'pi kvip pratyayo bhavati  / upasarga-grahaṇam jñāpanārtham, anyatra
+    sub-grahaṇe upasarga-grahaṇaṃ na bhavati iti, vadaḥ supi kyap ca (*3,1.106) iti  /
+    sū iti dviṣā sāhacaryāt sūteḥ ādādikasya grahaṇaṃ, na suvateḥ taudādikasya  /
+    yujir yoge, yuja samādhau, dvayor api grahaṇam  / vida jñāne, vida sattāyām, vida
+    vicāraṇe, trayāṇām api grahaṇam  / na lābha-arthasya videḥ, akārasya vivakṣatatvāt  /
+    sad - śuciṣat  / antarikṣasat  / upasat  / sū - aṇḍasūḥ  / śatasūḥ  / prasūḥ  /
+    dviṣa - mitradviṭ  / pradviṭ  / druha - mitradhruk  / pradhruk  / duha - godhuk  /
+    pradhuk  / yuja - aśvayuk  / prayuk  / vida - vedavit  / pravit  / brahmavit  /
+    bhida - kāṣṭhabhit  / prabhit  / chida - rajjucchid  / pracchid  / ji - śatrujit  /
+    prajit  / nī - senānīḥ  / praṇīḥ  / grāmaṇīḥ  / agraṇīḥ  / katham atra ṇatvam
+    ? sa eṣāṃ grāmaṇīḥ (*5,2.78) iti nipātanāt, nayateḥ pūrvapadāt sajñāyām agaḥ (*8,4.3)
+    iti ṇatvam  / rāja - rāṭ  / virāṭ  / samrāṭ  / mo rāji samaḥ kvau (*8,2.35) iti
+    matvam  / anyebhyo 'pi dṛśyate (*3,2.178), kvip ca (*3,2.76) iti sāmānyena vakṣyati,
+    tasya+eva ayaṃ prapañcaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

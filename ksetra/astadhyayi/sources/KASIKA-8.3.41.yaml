@@ -1,0 +1,36 @@
+source_id: KASIKA-8.3.41
+locator:
+  sutra: 8.3.41
+witness_text:
+  sutra: id-ud-upadhasya ca apratyayasya
+  commentary: ikāropadhasya ukāropadhasya ca apratyayasya visarjanīyasya ṣakāra ādeśo
+    bhavati kupvoḥ parataḥ  / nirdurbahirāviścaturprādus  / nis - niṣkṛtam  / niṣpītam  /
+    dus - duṣkṛtam  / duṣpītam  / vahis - bahiṣkṛtam  / bahiṣpītam  / āvis - āviṣkṛtam  /
+    āviṣpītam  / catur - catuṣkṛtam  / catuṣkapālam  / catuṣkalam  / catuṣkaṇṭakam  /
+    prādus - prāduṣkṛtam  / prāudṣpītam  / apratyayasya iti kim ? agniḥ karoti  /
+    vāyuḥ karoti  / mātuḥ karoti, pituḥ karoti, atra rāt sasya (*8,2.24) iti sakāralope
+    kṛte rephasya yo visarjanīyaḥ, tasya apratyayavisarjanīyatvāt ṣatvaṃ prāpnoti
+    ? kaskādiṣu tu mrātuṣputragrahaṇaṃ jñāpakam ekādeśanimittatvāt ṣatvapratiṣedhasya  /
+    pummuhusoḥ pratiṣedho vaktavyaḥ  / puṃskāmā  / muhuḥ kāmā  / naiṣkulyam  / dauṣkulyam  /
+    dauṣpuruṣyam  / ni3ṣkulam  / du3ṣkulam  / du3ṣpuruṣaḥ  / bahiraṅgalakṣaṇayor vṛddhiplutayor
+    asiddhatvāt ṣatvaṃ pravartate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

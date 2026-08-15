@@ -1,0 +1,34 @@
+source_id: KASIKA-3.2.142
+locator:
+  sutra: 3.2.142
+witness_text:
+  sutra: saṃpṛca-anurudha-āṅyama-āṅyasa-parisṛ-saṃsṛja-paridevi-saṃjvara-parikṣipa-pariraṭa-parivada-paridaha-parimuha-duṣa-dviṣa-druha-duha-yuja-ākrīḍa-vivica-tyaja-raja-bhaja-aticara-apacara-āmuṣa-abhyāhanaś
+    ca
+  commentary: ghinuṇ anuvartate  / saṃpṛcādibhyo dhātubhyo ghinuṇ bhavati tacchīlādiṣu  /
+    pṛcī samparke iti rudhādir gṛhyate natvadādir lug-vikaraṇatvāt  / paridevirbhvādirgṛhyate
+    devṛ devane iti  / kṣipa preraṇe divādistudādiśca sāmānena gṛhyate  / yuja samādhau
+    divādiḥ, yujir yoge rudhādiḥ dvayor api grahaṇam  / rañja rāge ity asya nipātanād
+    anunāsika-lopaḥ  / saṃparkī  / anurodhī  / āyāmī  / āyāsī  / parisārī  / saṃsargī  /
+    paridevī  / saṃjvārī  / parikṣepī  / parirāṭī  / parivādī  / paridāhī  / parimohī  /
+    doṣī  / dveṣī  / drohī  / dohī  / yogī  / ākrīḍī  / vivekī  / tyāgī  / rāgī  /
+    bhāgī  / aticārī  / apacārī  / āmoṣī  / abhyāghātī //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

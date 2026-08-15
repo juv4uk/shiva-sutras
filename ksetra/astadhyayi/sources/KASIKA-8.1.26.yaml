@@ -1,0 +1,40 @@
+source_id: KASIKA-8.1.26
+locator:
+  sutra: 8.1.26
+witness_text:
+  sutra: sapūrvāyāḥ prathamāyā vibhāṣā
+  commentary: vidyamānapūrvāt prathamāntāt padāt uttarayoḥ yuṣmadasmadoḥ vibhāṣa vānnāvādayo
+    na bhavanti  / grāme kambalaste svam, grāme kambalastava svam  / grāme kambalo
+    me svam, grāme kambalo mama svam  / grāme kambalaste dīyate, grāme kambalastubhyaṃ
+    dīyate  / grāme kambalo me dīyate, grāme kambalo mahyaṃ dīyate  / grāme chātrāstvā
+    paśyanti, grāme chātrāstvāṃ paśyanti  / grām chātrā mā paśyanti, grāme chātrā
+    māṃ pśyanti  / supūrvāyāḥ iti kim ? kambalaste svam  / kambalo me svam  / pathamāyāḥ
+    iti kim ? kambalo grāme te svam  / kambalo grāme me svam  / [#891] yuṣmadasmador
+    vibhāṣā ananvādeś iti vaktavyam  / iha mā bhūt, atho grāme kambalaste svam, atho
+    grāme kambalo me svam  / apara āha - sarva eva vānnāvādayo 'nanvādeśe vibhāṣā
+    vaktavyāḥ  / kambalaste svam, kambalastava svam  / kambalo me svam, kambalo mama
+    svam  / ananvādeśe iti kim ? atho kambalaste svam  / atho kambalo me svam  / na
+    tarhi idānīmidaṃ vaktavyam sapūrvāyāḥ prathamāyā vibhāṣā iti ? vaktavyaṃ ca  /
+    kiṃ prayojanam ? anvādeśārtham  / anavādeśe hi vibhāṣā yathā syāt  / atho grāme
+    kambalaste svam, atho grāme kambalaste svam  / atho grāme kambalo me svam, atho
+    grāmekambalo me svam, atho grāme kambalo mama svam //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

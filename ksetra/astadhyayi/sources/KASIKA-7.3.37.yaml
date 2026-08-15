@@ -1,0 +1,35 @@
+source_id: KASIKA-7.3.37
+locator:
+  sutra: 7.3.37
+witness_text:
+  sutra: śā-cchā-sā-hvā-vyā-ve-pāṃ yuk
+  commentary: śā dhā sā hvā vyā ve pā ity eteṣam aṅgānāṃ yugāgamo bhavati ṇau parataḥ  /
+    śā - niśāyayati  / chā - avacchāyayati  / sā - avasāyayati  / hvā - hvāyayati  /
+    vyā - saṃvyāyayati  / ve - vāyayasti  / pā - pāyayati  / pāgrahaṇe pai ovai śoṣaṇe
+    ity asya api iha grahaṇam icchanti  / pā rakṣaṇe ity asya lugvikaraṇatvān na bhavati  /
+    lugāgamastu tasya vaktavyaḥ  / pālayati  / dhūñprīñor lugvaktavyaḥ  / dhūnayati  /
+    prīṇayati  / ete 'pi pūrvāntā eva kriyante, tena nyaśīśayat, apīpalat, adūdhunat,
+    apipriṇat iti upadhāhrasvatvaṃ bhavati  / śāchāsāhvāvyāvepāṃ kṛtātvānāṃ grahaṇaṃ
+    pukaḥ prāptimākhyātum  / kim etasya ākhyāne prayojanam ? etasmin prakaraṇe lakṣaṇapratipadoktaparibhāṣā
+    na asti ity upadiśyate  / tena adhyāpayati, jāpayati ity evam ādi siddhaṃ bhavati
+    //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

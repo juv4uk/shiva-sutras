@@ -1,0 +1,42 @@
+source_id: KASIKA-6.1.12
+locator:
+  sutra: 6.1.12
+witness_text:
+  sutra: dāśvān sāhvān mīḍvāṃś ca
+  commentary: dāśvān sāhvān mīḍvān ity ete śadāḥ chandasi bhāṣāyām ca aviśeṣeṇa nipāyane  /
+    dāśvān iti dāśṛ dāne ity etasya dhātoḥ kvasau advirvacanam aniṭtvaṃ ca nipātyate  /
+    dāśvāṃso dāśuṣaḥ sutam iti  / [#598] sāhvān iti ṣaha marṣaṇe ity etasya parasmaipadam,
+    upadhādīrghatvam, advirvacanam aniṭtvaṃ ca nipātanāt  / sāhvān balāhakaḥ / mīḍvān
+    iti miha secane ity etasya advirvacanam, aniṭtvam, upadhādīrghatvaṃ ḍhatvaṃ ca
+    nipātanāt  / mīḍvastokāya tanayāya mṛla  / ekavacanam atantram  / kṛñādīnāṃ ke
+    dve bhavata iti vaktavyam  / kriyate 'nena iti cakram  / ciklidam  / kṛñaḥ klideś
+    ca ghañarthe kavidhānam iti kaḥ pratyayaḥ  / caricalipativadīnāṃ dvitvamacyāk
+    ca abhyāsasya  / carādīnāṃ dhātūnām api pratyaye parataḥ dve bhavataḥ  / abhyāsasya
+    āgāgamo bhavati  / āgāgamavidhānasāmarthyāc ca halādiśeṣo na bhavati  / halādiśeṣe
+    hi sayāgamasya ādeśasya ca viśeṣo na asti  / carācaraḥ  / calācala  / patāpataḥ
+    / vacāvadaḥ  / veti vaktavyam  / tena caraḥ puruṣaḥ, calo rathaḥ , pataṃ yānam,
+    vado manuṣyaḥ ity evam ādi siddhaṃ bhavati  / hanter ghatvaṃ ca  / hanter aci
+    pratyaye parato dve bhavataḥ, abhyāsasya ca hakārasya ca ghatvam, āk cāgamo bhavati  /
+    parasya abhyāsāc ca (*7,3.55) iti kutvam ghanāghanaḥ kṣobhaṇaścarṣaṇīnām  / pāṭer
+    ṇiluk cok ca dīrghaś ca abhyāsasya  / pāṭer aci parato dve bhavato ṇiluk ca bhavati  /
+    abhyāsasya ca ūgāgamo dīrghaś ca bhavati  / pāṭūpaṭaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

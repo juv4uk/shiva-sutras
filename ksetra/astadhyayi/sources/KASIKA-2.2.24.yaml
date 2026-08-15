@@ -1,0 +1,44 @@
+source_id: KASIKA-2.2.24
+locator:
+  sutra: 2.2.24
+witness_text:
+  sutra: anekam anyapadārthe
+  commentary: anekaṃ subantamanyapdārthe vartamānaṃ supā saha samasyate, bahuvrīhiś
+    ca samāso bhavati  / prathamārtham ekaṃ varjayitvā sarveṣu vibhakty-artheṣu bahuvrīhir
+    bhavati  / prāptam udakaṃ yaṃ grāmaṃ prāptodako grāmaḥ  / ūḍharatho 'naḍvān  /
+    upagṛtapaśū rudraḥ  / udghṛtaudanā sthālī  / citragurdevadattaḥ  / vīrapuruṣako
+    grāmaḥ  / prathama-arthe tu na bhavati  / vṛṣṭe deve gataḥ  / aneka-grahanaṃ kim
+    ? bahūnām api yathā syāt, susūkṣmajaṭakeśena sugajājinavāsasā  / samantaśitir
+    andhreṇa dvayor vṛttau na sidhyati // bahuvrīhiḥ samānādhikaraṇānam iti vaktavyam  /
+    vyadhikaraṇānāṃ mā bhūt, pañcabhir bhuktamasya  / avyayānāṃ ca bahuvrīhir vaktavyaḥ  /
+    uccair mukhaḥ  / nīcair mukhaḥ  / saptamy-upamāna-pūrvapadasya+uttarapada-lopa
+    śca vaktavyaḥ  / kaṇṭhe sthitaḥ kālo 'sya kaṇṭhekalaḥ  / urasilomā  / uṣṭrasya
+    mukham iva mukhaṃ yasya sa uṣṭramukhaḥ  / kharamukhaḥ  / samudāya-vikāraṣaṣṭhyāś
+    ca bahuvrīhir uttarapada-lopaś ca+iti vaktavyam  / keśānāṃ saṅghātaḥ keśasaṅghātaḥ,
+    keśasaṅghātaḥ cūḍā 'sya keśacūḍaḥ  / suvarṇasya vikāro 'laṅkāro 'sya subarṇālaṅkāraḥ  /
+    [#126] prādibhyo dhatujasya+uttarapadasya lopaś ca vā bahuvrīhir vaktavyaḥ  /
+    prapatitaṃ parṇamasya praparṇaḥ, prapatitaparṇaḥ  / pratitaṃ palāśamasya prapalāśaḥ,
+    prapatitapalāśaḥ  / naño 'styarthānāṃ bahuvrīhir vācottarapadalopaś ca  vaktavyaḥ  /
+    āvidyamānaḥ putro yasya aputraḥ, avidyamānaputraḥ  / abhāryaḥ, avidyamānabhāryaḥ  /
+    subadhikāre 'stikṣīrādīnāṃ bahuvrīhir vaktavyaḥ  / astikṣīrā brāhmaṇī  / astyādayo
+    nipātāḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

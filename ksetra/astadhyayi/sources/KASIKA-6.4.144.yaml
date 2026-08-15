@@ -1,0 +1,43 @@
+source_id: KASIKA-6.4.144
+locator:
+  sutra: 6.4.144
+witness_text:
+  sutra: nas taddhite
+  commentary: nakārāntasya bhasya ṭeḥ lopo bhavati taddhite parataḥ  / āgniśarmiḥ  /
+    auḍulomiḥ  / bāhvāditvād iñ pratyayaḥ  / naḥ iti kim ? sātvataḥ  / taddhite iti
+    kim ? śarmaṇā  / śarmane  / nānatasya ṭilope sabrahmacāri-pīṭhasarpi-kalāpi-kuthumi.
+    taitili-jājalilāṅga-liśilāli-śikhaṇḍi-sūkarasadma-suparvaṇām upasaṅkhyānaṃ kartavyam  /
+    atra ye innantāḥ teṣām in aṇy anapatye (*6,4.164) iti prakṛtibhāvaḥ prāptaḥ, ye
+    tu anantāḥ teṣām an (*6,4.167) iti  / sabrahmacāriṇaḥ ime sābrahmacārāḥ, pīṭhasarpiṇaḥ
+    paiṭhasarpāḥ  / kalāpinā proktamadhīyate kālāpāḥ, kuthuminaḥ kauthumāḥ  / taitilijājalinau
+    ācāryau, tatkṛto granthaḥ upacārāt taitilijājaliśabdābhyām abhidhīyate, taṃ granthamadhīyate
+    taitilāḥ, jājalāḥ  / śaiśikeṣv artheṣu vṛddhatvād atra chaḥ prāpnoti  / evaṃ lāṅgalāḥ  /
+    śailālāḥ  / [#763] śikhaṇḍinaḥ śaikhaṇḍāḥ  / sūkarasadmanaḥ saukarasadmāḥ  / suparvaṇaḥ
+    sauparṇāḥ  / aśmano vikāra upasaṅkhyānam  / aśmano vikāraḥ āśmaḥ  / aśmano 'nyaḥ  /
+    carmaṇaḥ kośa upasaṅkhyānam  / cārmaḥ kośaḥ  / cārmaṇo 'nyaḥ  / śunaḥ saṅkoca
+    upasaṅkhyānam  / śauvaḥ saṅkocaḥ  / śauvano 'nyaḥ  / avyayānāṃ ca sāyaṃpratikādyartham
+    upasaṅkhyānam  / ke punaḥ sāyaṃprātikādayaḥ ? yeṣām avyayānām avihitaṣṭilopaḥ,
+    prayoge ca dṛśyate, te sāyaṃprātikaprakārāḥ grahītavyāḥ  / sāyaṃprātarbhavaḥ sāyaṃprātikaḥ  /
+    paunaḥpunikaḥ  / bāhyaḥ  / kautaskutaḥ  / kālāṭ ṭhañ (*4,3.11) iti ṭhañpratyayaḥ  /
+    ṭyuṭyulau tu neṣyete  / ārātīyaḥ, śāśvatikaḥ, śāśvataḥ ity evam ādiṣu na dṛśyate
+    ṭilopaḥ //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

@@ -1,0 +1,40 @@
+source_id: KASIKA-8.1.4
+locator:
+  sutra: 8.1.4
+witness_text:
+  sutra: nitya-vīpsayoḥ
+  commentary: nitye cārthe vipsāyāṃ ca yad vartate tasya dve bhavataḥ  / keṣu nityatā
+    ? tiṅkṣu nityatā avyayakṛtsu ca  / kuta etat  / ābhīkṣṇyam iha nityatā  / ābhīkṣṇyaṃ
+    ca kriyādharmaḥ  / yāṃ kriyāṃ kartā prādhānyena anuparaman karoti tan nityam  /
+    pacati pacati  / jalpati jalpati  / bhuktvā bhuktvā vrajati  / bhojaṃ bhojaṃ vrajati  /
+    lunīhi lunīhi ity evāyaṃ lunāti ktvāṇamulorloṭaś ca dvirvacanāpekṣāyām eva paunaḥpunyaprakāśane
+    śaktiḥ  / [#883] yaṅ tu tannirapekṣaḥ prakāśayati, punaḥ punaḥ pacati pāpacyate
+    iti  / yadā tu tatra dvirvacanam tadā kriyāsamabhihāre paunaḥpunyaṃ draṣṭavyam
+    pāpacyate pāpacyate iti  / atha keṣu vīpsā ? supsu vīpsā  / kā punar vīpsā ? vyāptiviśeṣaviṣayā
+    prayoktur icchā vīpsā  / kā punaḥ sā ? nānāvācinām adhikaraṇānāṃ kriyāguṇābhyāṃ
+    yugapat prayokturvyāptum icchā vīpsā  / nānābhūtārthavācināṃ śabdānāṃ yānyadhikaraṇāni
+    vācyāni teṣāṃ kriyāguṇābhyāṃ yugapat prayoktum icchā vīpsā  / grāmo grāmo ramaṇīyaḥ  /
+    janapado janapado ramaṇīyaḥ  / puruṣaḥ puruṣo nidhanam upaiti  / yat tiḍantaṃ
+    nityatayā prakarṣeṇa ca yuktaṃ tataḥ kṛtadvirvacanāt prakarṣapratyaya iṣyate pacati
+    pacatitarām iti  / iha tu āḍhyataramāḍhyataramānaya iti prakarṣayuktasya vīpsāyoga
+    iṣyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

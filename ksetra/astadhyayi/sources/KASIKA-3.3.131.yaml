@@ -1,0 +1,39 @@
+source_id: KASIKA-3.3.131
+locator:
+  sutra: 3.3.131
+witness_text:
+  sutra: vartamāna-sāmīpye vartamānavad vā
+  commentary: samīpam eva sāmīpyam  / ṣyañaḥ svārthikatvaṃ jñāpyate cāturvarṇyādi-siddhy-artham  /
+    vartamāna-samīpe bhūte bhaviṣyati ca vartamānād dhātoḥ vartamānavat pratyayā vā
+    bhavanti  / vartamane laṭ (*3,2.123) ity ārabhya yāvad uṇādayo bahulam (*3,3.1)
+    iti vartāmāne pratyayā uktāḥ, te bhūta-bhaviṣyator vidhīyante  / [#281] kadā devadatta
+    āgato 'si ? ayam āgacchāmi  / āgacchantam eva māṃ viddhi  / ayam āgamam  / eṣo
+    'smi āgataḥ  / kadā devadatta gamiṣyasi ? eṣa gacchāmi  / gacchantam eva mā viddhi  /
+    eṣa gamiṣyāmi  / gantāsmi  / vatkaraṇaṃ sarvasādṝśya-artham  / yena viśeṣaṇena
+    vartamāne pratyayāḥ vihitāḥ prakṛtyopapadopādhinā tathā+eva atra bhavanti  / pavamānaḥ  /
+    yajamānaḥ  / alaṅkariṣṇuḥ  / sāmīpya-grahaṇaṃ kim ? viprakarṣa-vivakṣāyāṃ mā bhūt,
+    parudagacchat pāṭaliputram  / varṣeṇa gamiṣyati  / yo manyate gacchāmi iti padaṃ
+    vartamāne kāle eva vartate, kālāntaragatis tu vākyād bhavati, na ca vākyagamyaḥ
+    kālaḥ padasaṃskāravelāyām upayujyate iti tādṛśaṃ vākyārtha-pratipattāraṃ prati
+    prakaraṇam idaṃ nārabhyate  / tathā ca śvaḥ kariṣyati, varṣeṇa gamiṣyati iti sarvam
+    upapadyate //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

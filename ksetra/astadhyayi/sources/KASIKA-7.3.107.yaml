@@ -1,0 +1,36 @@
+source_id: KASIKA-7.3.107
+locator:
+  sutra: 7.3.107
+witness_text:
+  sutra: ambārthanadyor hrasvaḥ
+  commentary: sambuddhau iti vartate  / ambārthanām aṅgānāṃ nadyantānāṃ hrasvo bhavati
+    sambuddhau parataḥ  / he amba  / he akka  / he alla  / nadyāḥ khalv api - he kumāri  /
+    he śārṅgaravi  / he brahmabandhu  / he vīrabandhu  / ḍalakavatīnāṃ pratiṣedho
+    vaktavyaḥ  / he ambāḍe  / he ambāle  / he ambike  / chandasi veti vaktavyam  /
+    he ambāḍa, he ambāḍe  / he ambāla, he ambāle  / he ambika, he ambike  / talo hrasvo
+    bā ṅisambuddhyor iti vaktavyam  / devate bhaktiḥ, devatāyāṃ bhaktiḥ  / he devata,
+    he devate  / chandasyeva hrasvatvam iṣyate  / mātṝṇāṃ mātac putrārtham arhate  /
+    mātṝṇāṃ mātajādeśo vaktavyaḥ sambuddhau, putrāya putram abhidhātum  / kīdṛśāya
+    ? arhate  / mātrā vyapadeśam arhati ślāghanīyatvād yaḥ putras tadartham  / he
+    gārgīmāta  / nadyṛtaś ca (*5,4.153) iti samāsāntāpavādo mātajādeśaḥ  / citkaraṇam
+    antodāttārtham //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

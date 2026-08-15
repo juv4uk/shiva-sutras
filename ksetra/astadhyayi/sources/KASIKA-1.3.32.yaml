@@ -1,0 +1,39 @@
+source_id: KASIKA-1.3.32
+locator:
+  sutra: 1.3.32
+witness_text:
+  sutra: gandhana-avakṣepaṇa-sevana-sāhasikya-pratithatna-prakathana-upayogeṣu kṛñaḥ
+  commentary: kartr-abhiprāye kriyāphale siddham eva-ātmanepadam  / akartr-abhipraya-artho
+    'yamārambhaḥ  / gandhana-ādiṣv artheṣu vartamānat karoter ātmanepadaṃ bhavati  /
+    gandhanam pakāra-prayuktaṃ hiṃsātmakaṃ sūcanam  / tathā hi, basta gandha ardane,
+    arda hiṃsāyām iti cur-ādau pathyate  / avakṣepaṇam bhartsanam  / sevanam anuvṛttiḥ  /
+    sāhasikyaṃ sāhasikaṃ karma  / pratiyatnaḥ sato guṇa-antarādhānam  / prakathanaṃ
+    prakarṣeṇa kathanam  / upayogo dharmādi prayojano viniyogaḥ  / gandhane tāvat
+    -- utkurute  / udākurute  / sūcayati ity arthaḥ  / avakṣepaṇe -- śyeno vartikām
+    udākurute  / bhartsayati ity arthaḥ sevate -- gaṇakānupakurute  / mahāmātrānupakurute  /
+    sevate ity arthaḥ  / sāhāsikye -- paradārān prakurute  / [#60] teṣu sahasā pravartate
+    ity arthaḥ  / pratiyatne -- edho dakasya+upaskurute  / kāṇḍaṃ guḍasya+upaskurute  /
+    tasya sato guṇantarādhānaṃ karoti ity arthaḥ  / ṣaṣṭhīsuṭau karoteḥ pratiyatna
+    eva vidhīyete  / prakathane -- gāthāḥ prakurute  / janāpavādān prakurute  / prakarṣeṇa
+    kathayati ity arthaḥ  / upayoge -- śatam prakurute  / sahasraṃ prakurute  / dharma-arthaṃ
+    śataṃ viniyuṅkte ity arthaḥ  / eteṣu iti kim ? kaṭaṃ karoti //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

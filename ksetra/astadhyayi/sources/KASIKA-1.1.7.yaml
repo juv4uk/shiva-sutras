@@ -1,0 +1,34 @@
+source_id: KASIKA-1.1.7
+locator:
+  sutra: 1.1.7
+witness_text:
+  sutra: halo 'nantarāḥ saṃyogaḥ
+  commentary: bhinna-jātīyair ajbhir avyavahitaḥ śliṣṭa-uccāritā halaḥ saṃyoga-sañjñā
+    bhavanti  / samudāyaḥ sañjñī  / jātau cedaṃ bahuvacanam  / tena dvayor bahūnāṃ
+    ca saṃyogasañjñā siddhā bhavati  / agniḥ iti ga-nau  / aśvaḥ iti śa-vau  / karṇaḥ
+    iti ra-ṇau  / indraḥ, candraḥ mandraḥ iti na-da-rāḥ  / uṣṭraḥ, rāṣṭram, bhrāṣṭram
+    iti ṣa-ṭa-rāḥ  / tilānstryāvapati iti na-sata-ra-yāḥ, na-ta-sa-ta-ra-yā vā  /
+    halaḥ iti kim ? titaucchatram - saṃyogāntasya lopaḥ (*8,2.23) iti lopaḥ syāt  /
+    anantarāḥ iti kim ? pacati panasam - skoḥ saṃyoga-ādyor ante ca (*8,2.29) iti
+    lopaḥ syāt  / saṃyoga-pradeśāḥ - samyogāntasya lopaḥ (*8,2.23) ity evam ādayaḥ
+    //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

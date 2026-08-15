@@ -1,0 +1,40 @@
+source_id: KASIKA-3.1.89
+locator:
+  sutra: 3.1.89
+witness_text:
+  sutra: na duha-snu-namāṃ yak-ciṇau
+  commentary: duha sanu nam it yeteṣaṃ karmakartari yak-ciṇau karmavadbhāva-apadiṣṭau
+    na bhavataḥ  / duher anena yak pratiṣidhyate  / ciṇ tu duhaś ca (*3,1.63) iti
+    pūrvam eva vibhāṣitaḥ  / dugdhe gauḥ svayam eva  / adugdha gauḥ svayam eva  /
+    adohi gauḥ svayam eva  / prasnute gauḥ svayam eva  / prāsnoṣṭa gauḥ svayam eva  /
+    namate daṇḍaḥ svayam eva  / anṃsta daṇḍaḥ svayam eva  / yak-ciṇoḥ pratiṣedhe ṇiśranthigranthibrūñ.
+    ātmanepadākarmakāṇām upasaṅkhyānam  / kārayati kaṭaṃ devadattaḥ  / kārayate kaṭaḥ
+    svayam eva  / acīkarat kaṭaṃ devadattaḥ  / acīkarata kaṭaḥ svayam eva  / utpucchayate
+    gāṃ gopaḥ  / utpucchayate gauḥ svayam eva  / udapupucchata gauḥ svayam eva  /
+    śrathnāti granthaṃ devadattaḥ  / śrathnīte granthaḥ svayam eva  / aśranthiṣṭa
+    granthaḥ svayam eva  / grathnāti ślokaṃ devadattaḥ  / grathnīte  ślokaḥ svayam
+    eva  / [#196] agranthiṣṭa ślokaḥ svayam eva  / bravīti ślokaṃ devadattaḥ  / brūte
+    ślokaḥ svayam eva  / avocat ślokaṃ devadattaḥ  / avocata ślokaḥ svayam eva  /
+    ātmanepada-vidhāne 'karmakāṇām - āhanti māṇavakaṃ devadattaḥ  / āhate māṇavakaḥ
+    svayam eva  / āvadhiṣṭa mānavakaḥ svayam eva, āhata iti vā  / vikurvate saindhavāḥ
+    svayam eva  / vyakṛṣata saindhavaḥ svayam eva //
+integrity:
+  reproducible: true
+  source_file: jvkasipu.htm
+  source_file_sha256: e78965557a6fad30157832af2533bae6e4219ac6a7b22d00dab834528a9ff353
+  source_file_size_bytes: 2810997
+provenance:
+  authenticity: AUTHENTICITY-VERIFIED (Attributed)
+  status: REAL
+  witness: GRETIL-KASIKA
+  external_source: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/1_gram/jvkasipu.htm
+  edition: Kāśikāvṛtti of Jayāditya & Vāmana
+  editor: Aryendra Sharma
+  publisher: Osmania University, Sanskrit Academy, Hyderabad
+  year: 1969-1985
+  digitizer: Mari Minamino, Kyoto
+  retrieved_at_utc: '2026-08-15T04:07:50.180229+00:00'
+  license: GRETIL text file is for reference purposes only; copyright and terms of
+    usage as for source file.
+  notes: Text extracted from GRETIL Kāśikāvṛtti; authenticity is attributed via the
+    cited academic edition, not proven by reproduction.

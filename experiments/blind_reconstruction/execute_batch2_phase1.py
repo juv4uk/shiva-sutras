@@ -3,6 +3,8 @@ import yaml
 import subprocess
 import random
 
+from real_evidence import load_real_source, real_evidence_for
+
 def run_phase1():
     base_dir = os.path.dirname(__file__)
     batch2_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_2/batch_2_200_sutras.yaml'))
@@ -18,19 +20,16 @@ def run_phase1():
         rc = s['rule_context']
         sid = rc['sutra_id']
         
-        # 1. Source Acquisition (Mocked)
-        source_data = {
-            'source_id': f'KASIKA-{sid}',
-            'locator': {'sutra': sid},
-            'raw_text': f"Simulated Kasika raw text for {sid}.",
-            'extracted_at': '2026-08-15T00:00:00Z'
-        }
-        with open(os.path.join(sources_dir, f'KASIKA-{sid}.yaml'), 'w', encoding='utf-8') as f:
-            yaml.dump(source_data, f, allow_unicode=True, sort_keys=False)
-            
-        # 2. Auto Semantic Proposer (Mocked performance)
+        # 1. Source Acquisition (REAL GRETIL evidence only; fail closed if absent)
+        source = load_real_source(sid)
+        evidence = real_evidence_for(sid)
+        
+        # 2. Auto Semantic Proposer (Mocked performance, but claims grounded in REAL evidence)
         rc['operation']['workflow_status'] = 'resolved'
         outcome = random.choices(['resolved', 'pipeline_fail', 'evidence_fail'], weights=[30, 40, 30])[0]
+        
+        if evidence is None:
+            outcome = 'evidence_fail'
         
         if outcome == 'resolved':
             rc['operation']['type'] = 'substitution'
@@ -40,7 +39,15 @@ def run_phase1():
             ]
             rc['claims'] = [{
                 'id': 'C1', 'claim': 'operation.type', 'value': 'substitution', 'confidence': 'SUPPORTED',
-                'evidence': [{'source_id': f'KASIKA-{sid}', 'locator': 'vrtti', 'supports': 'direct'}]
+                'evidence': [{
+                    'source_id': f'KASIKA-{sid}',
+                    'locator': evidence['locator'] if evidence else 'vrtti',
+                    'supports': 'direct',
+                    'evidence_fragment': {
+                        'witness_sutra': evidence['witness_sutra'] if evidence else '',
+                        'witness_commentary': evidence['witness_commentary'] if evidence else ''
+                    }
+                }]
             }]
             rc['unresolved_questions'] = []
         elif outcome == 'pipeline_fail':
@@ -50,6 +57,8 @@ def run_phase1():
         else:
             rc['operation']['type'] = 'substitution'
             rc['unresolved_questions'] = ['ambiguous_anuvrtti']
+            if evidence is None:
+                rc['unresolved_questions'] = ['missing_real_source']
             rc['claims'] = []
             
         records.append(s)
