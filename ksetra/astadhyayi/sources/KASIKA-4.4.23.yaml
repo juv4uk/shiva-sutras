@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-4.4.23
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 4.4.23
 raw_text: ठक् प्रत्ययो भवति। अस्मिन् विषये ठक् प्रत्ययः विधीयते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: 251eaeeaa8944f69d0c73eab81307ae0c100a9549fb6be577854b7e769864ac0
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: 251eaeeaa8944f69d0c73eab81307ae0c100a9549fb6be577854b7e769864ac0
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

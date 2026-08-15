@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-3.4.26
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 3.4.26
 raw_text: णमुल् भवति। क्रियासमभिहारे णमुल् प्रत्ययो भवति।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: d2a5233ae66618eb2d16805e687c58e535e7c6b25cac10c0568cdd3543a2ebbc
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: d2a5233ae66618eb2d16805e687c58e535e7c6b25cac10c0568cdd3543a2ebbc
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

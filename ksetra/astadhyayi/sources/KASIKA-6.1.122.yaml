@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-6.1.122
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 6.1.122
 raw_text: अवङ् स्फोटायनस्य। गोशब्दस्य अवङ् आदेशो भवति अचि परे स्फोटायनस्य मते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: 038e31578e6ec2f11f2ff20abcd71894314e1fdf1fd834a05816a82cb6a466fa
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: 038e31578e6ec2f11f2ff20abcd71894314e1fdf1fd834a05816a82cb6a466fa
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

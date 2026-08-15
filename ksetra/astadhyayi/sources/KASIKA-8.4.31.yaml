@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-8.4.31
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 8.4.31
 raw_text: णत्वं भवति। रेफषकाराभ्यां परस्य नस्य णकारो भवति।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: cfec15c2fe1c4fdd379f6cb732dc42f1cb51e5985de240a235f07a40d1a2f34f
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: cfec15c2fe1c4fdd379f6cb732dc42f1cb51e5985de240a235f07a40d1a2f34f
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

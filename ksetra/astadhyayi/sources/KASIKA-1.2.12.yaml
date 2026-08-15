@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-1.2.12
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 1.2.12
 raw_text: उष् विद् जागृ इत्येतेभ्यः प्रत्ययो भवति। अत्र विधीयते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: b6f94f631d11ccfce7abdaef6d4f120da253a46d6991301ed3e5a4f3886854c2
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: b6f94f631d11ccfce7abdaef6d4f120da253a46d6991301ed3e5a4f3886854c2
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

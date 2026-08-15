@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-1.1.10
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 1.1.10
 raw_text: नाज्झलौ। अच् च हल् च अज्झलौ सावर्णां न भवतः। परस्परं सवर्णसंज्ञा न भवति।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: e28b0c9af32c4201e5ce72070da0891783d8ea311fae9f016b21208d1f2d6895
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: e28b0c9af32c4201e5ce72070da0891783d8ea311fae9f016b21208d1f2d6895
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

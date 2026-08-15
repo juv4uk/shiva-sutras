@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-6.2.18
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 6.2.18
 raw_text: पत्यावैश्वर्ये। पतिशब्दे परे ऐश्वर्ये गम्यमाने पूर्वपदप्रकृतिस्वरो भवति।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: e77f0402275cf8ffdfe715f603fa6a16d8e260c0500e3f8a2ac4fd42d17de78c
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: e77f0402275cf8ffdfe715f603fa6a16d8e260c0500e3f8a2ac4fd42d17de78c
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

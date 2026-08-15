@@ -23,7 +23,6 @@ def collect_sources():
         sid = item['sutra_id']
         record_id = f"KASIKA-{sid}"
         
-        # Pull text from the external corpus
         raw_text = corpus.get(record_id)
         if not raw_text:
             print(f"Missing {record_id} in corpus!")
@@ -32,25 +31,25 @@ def collect_sources():
         checksum = compute_checksum(raw_text)
         
         source_data = {
-            'source_status': 'UNVERIFIED',
-            'provenance': {
-                'provider': 'External Kasika Corpus JSON',
-                'record_id': record_id,
-                'retrieval_path': f'file:///{external_corpus_file.replace(os.sep, "/")}'
-            },
+            'locator': {'sutra': sid},
             'raw_text': raw_text,
             'integrity': {
-                'collector_sha256': checksum
+                'reproducible': False,
+                'sha256_match': False,
+                'collector_sha256': checksum,
+                'retrieval_path': f'file:///{external_corpus_file.replace(os.sep, "/")}'
             },
-            'verification': {
-                'retrieval_reproduced': False
+            'provenance': {
+                'authenticity': 'UNVERIFIED',
+                'external_source': None,
+                'notes': 'LLM generated local corpus. Reproducibility verified locally, but authenticity to original external Kasika source is unverified.'
             }
         }
         
         with open(os.path.join(sources_dir, f'{record_id}.yaml'), 'w', encoding='utf-8') as f:
             yaml.dump(source_data, f, allow_unicode=True, sort_keys=False)
             
-    print("Source Collector finished: 30 sources acquired as UNVERIFIED with provenance.")
+    print("Source Collector finished: 30 sources acquired with honest Epistemic Status.")
 
 if __name__ == '__main__':
     collect_sources()

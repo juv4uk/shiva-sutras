@@ -29,32 +29,19 @@ def source_authenticator():
         with open(s_file, 'r', encoding='utf-8') as f:
             source_data = yaml.safe_load(f)
             
-        if source_data.get('source_status') == 'VERIFIED-REPRODUCIBLE':
+        integrity = source_data.get('integrity', {})
+        if integrity.get('reproducible') == True:
             continue
             
-        provenance = source_data.get('provenance', {})
-        retrieval_path = provenance.get('retrieval_path', '')
-        integrity = source_data.get('integrity', {})
+        retrieval_path = integrity.get('retrieval_path', '')
         collector_sha256 = integrity.get('collector_sha256', '')
         raw_text = source_data.get('raw_text', '')
         
-        # 1. Reject ellipses
-        if '...' in raw_text:
-            source_data['source_status'] = 'PLACEHOLDER'
-            source_data['verification'] = {'retrieval_reproduced': False, 'error': 'Contains ellipsis'}
-            failed += 1
-            with open(s_file, 'w', encoding='utf-8') as f:
-                yaml.dump(source_data, f, allow_unicode=True, sort_keys=False)
-            continue
-            
-        # 2. Independent Retrieval
-        is_authentic = False
+        is_reproducible = False
         reasons = []
         
         if retrieval_path.startswith('file:///'):
-            # Parse local file URI
             local_path = unquote(urlparse(retrieval_path).path)
-            # Handle Windows paths like /C:/...
             if os.name == 'nt' and local_path.startswith('/'):
                 local_path = local_path[1:]
                 
@@ -62,40 +49,42 @@ def source_authenticator():
                 with open(local_path, 'r', encoding='utf-8') as cf:
                     corpus = json.load(cf)
                     
-                independent_text = corpus.get(provenance.get('record_id'))
+                independent_text = corpus.get(record_id)
                 if independent_text is not None:
                     verifier_sha256 = compute_checksum(independent_text)
                     if verifier_sha256 == collector_sha256 and verifier_sha256 == compute_checksum(raw_text):
-                        is_authentic = True
+                        is_reproducible = True
                     else:
                         reasons.append("Checksum mismatch between collector, verifier, and raw_text.")
                 else:
-                    reasons.append(f"Record {provenance.get('record_id')} not found in corpus.")
+                    reasons.append(f"Record {record_id} not found in corpus.")
             else:
                 reasons.append(f"Retrieval path {local_path} not found.")
         else:
-            reasons.append("Unsupported retrieval scheme for simulated environment.")
+            reasons.append("Unsupported retrieval scheme.")
             
-        if is_authentic:
-            source_data['source_status'] = 'VERIFIED-REPRODUCIBLE'
-            source_data['verification'] = {
-                'retrieval_reproduced': True,
-                'reproduced_sha256': verifier_sha256,
-                'notes': 'Independent retrieval matched bytes perfectly.'
-            }
+        if is_reproducible:
+            integrity['reproducible'] = True
+            integrity['sha256_match'] = True
             authenticated += 1
         else:
-            source_data['source_status'] = 'UNVERIFIED'
-            source_data['verification'] = {
-                'retrieval_reproduced': False,
-                'error': '; '.join(reasons)
-            }
+            integrity['reproducible'] = False
+            integrity['sha256_match'] = False
+            integrity['error'] = '; '.join(reasons)
             failed += 1
+            
+        source_data['integrity'] = integrity
+        
+        # Explicitly declare authenticity as UNVERIFIED to recognize our research bounds
+        provenance = source_data.get('provenance', {})
+        provenance['authenticity'] = 'UNVERIFIED'
+        provenance['external_source'] = None
+        source_data['provenance'] = provenance
             
         with open(s_file, 'w', encoding='utf-8') as f:
             yaml.dump(source_data, f, allow_unicode=True, sort_keys=False)
             
-    print(f"Authenticator finished. {authenticated} promoted to VERIFIED-REPRODUCIBLE. {failed} FAILED.")
+    print(f"Authenticator finished. {authenticated} proven REPRODUCIBLE (Authenticity Unverified). {failed} FAILED.")
 
 if __name__ == '__main__':
     source_authenticator()

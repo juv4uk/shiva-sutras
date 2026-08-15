@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-6.3.91
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 6.3.91
 raw_text: पूर्वपदस्य लोपो भवति। समासविषये पूर्वपदस्य विकारः विधीयते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: f5d04b995cf7439cdf795ffa81c15e57ef129b43c7b1b7227edd26fc5d011bc4
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: f5d04b995cf7439cdf795ffa81c15e57ef129b43c7b1b7227edd26fc5d011bc4
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

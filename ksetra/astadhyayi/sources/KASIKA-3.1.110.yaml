@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-3.1.110
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 3.1.110
 raw_text: क्यप् भवति। अस्मिन् विषये क्यप् प्रत्ययः विधीयते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: f59a42b3f63dda3645d9a15accd8ea755b9e546a9d0b2e91fa727851824ec0aa
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: f59a42b3f63dda3645d9a15accd8ea755b9e546a9d0b2e91fa727851824ec0aa
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

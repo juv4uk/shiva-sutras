@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-6.4.81
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 6.4.81
 raw_text: इणो यण् भवति। इण् धातोः यणादेशो भवति अचि परे।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: ad99feee94f77d4bacfb5bd6fcefa9a6686cff6a26d8a339101ee21650eb2b5c
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: ad99feee94f77d4bacfb5bd6fcefa9a6686cff6a26d8a339101ee21650eb2b5c
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

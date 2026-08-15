@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-5.1.63
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 5.1.63
 raw_text: तदर्हति। तदर्हति इत्यस्मिन् अर्थे प्रत्ययो भवति।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: 9f6f7e59bb6a75d2c78f6650c9a5e6fbe59d752a9e00164b2036af16c687b9e8
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: 9f6f7e59bb6a75d2c78f6650c9a5e6fbe59d752a9e00164b2036af16c687b9e8
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

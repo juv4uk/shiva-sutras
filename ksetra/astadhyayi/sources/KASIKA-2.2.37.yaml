@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-2.2.37
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 2.2.37
 raw_text: कर्तधिकरणे च। कर्तृवाचके अधिकरणवाचके च प्रत्ययो भवति।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: 0d24d3d27b14b9aec6f542b8b53a188d32123f160dbe5fd1439d6cab2b8c4125
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: 0d24d3d27b14b9aec6f542b8b53a188d32123f160dbe5fd1439d6cab2b8c4125
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

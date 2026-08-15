@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-8.1.10
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 8.1.10
 raw_text: आबाधे चार्थे द्विर्वचनं भवति। आबाधः पीडा। तत्र द्विर्वचनं विधीयते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: a995f375754c047f840a670a3afb23d42d2a7bd30ca6681e8198845d319f1795
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: a995f375754c047f840a670a3afb23d42d2a7bd30ca6681e8198845d319f1795
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

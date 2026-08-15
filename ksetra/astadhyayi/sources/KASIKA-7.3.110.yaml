@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-7.3.110
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 7.3.110
 raw_text: ऋतो ङि सर्वनामस्थानेषु प्रत्ययो भवति। ऋकारान्तस्य ङिप्रत्यये परे विकारः।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: c4ac6bcc25ac418aed64adbe6ae0cf507ed1727f032b0738273667279ea65e81
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: c4ac6bcc25ac418aed64adbe6ae0cf507ed1727f032b0738273667279ea65e81
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

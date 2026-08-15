@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-3.3.136
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 3.3.136
 raw_text: भविष्यति काले प्रत्ययो भवति। भविष्यत्कालवाचिनः धातोः प्रत्ययः विधीयते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: dc30fbd052664dcd72edf968756d5732c9aa14ca353574cf8b69f832bdfc18f8
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: dc30fbd052664dcd72edf968756d5732c9aa14ca353574cf8b69f832bdfc18f8
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.

@@ -1,12 +1,13 @@
-source_status: VERIFIED-REPRODUCIBLE
-provenance:
-  provider: External Kasika Corpus JSON
-  record_id: KASIKA-6.4.54
-  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+locator:
+  sutra: 6.4.54
 raw_text: शमित्येतस्य धातोः पूर्वपदस्य लोपो भवति। अत्र शम् इति धातुः गृह्यते।
 integrity:
+  reproducible: true
+  sha256_match: true
   collector_sha256: 98319a99044dafc311c3b544ac64fe39ebffe4502676a7dab3bafd4d0f529a50
-verification:
-  retrieval_reproduced: true
-  reproduced_sha256: 98319a99044dafc311c3b544ac64fe39ebffe4502676a7dab3bafd4d0f529a50
-  notes: Independent retrieval matched bytes perfectly.
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+provenance:
+  authenticity: UNVERIFIED
+  external_source: null
+  notes: LLM generated local corpus. Reproducibility verified locally, but authenticity
+    to original external Kasika source is unverified.
