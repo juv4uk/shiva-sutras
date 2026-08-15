@@ -3,7 +3,7 @@ import yaml
 
 def validator_v2():
     base_dir = os.path.dirname(__file__)
-    in_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_1/validation_wave_1_10_sutras.yaml'))
+    in_file = os.path.abspath(os.path.join(base_dir, '../../ksetra/astadhyayi/blind/semantic_batch_1/validation_wave_2a_10_sutras.yaml'))
     
     with open(in_file, 'r', encoding='utf-8') as f:
         sutras = yaml.safe_load(f)
