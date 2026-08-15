@@ -1,0 +1,53 @@
+metadata:
+  language: "Ukrainian"
+  canon_ref: "../ksetra/canon/siva-sutras.yaml"
+  relation_to_canon: "comparison"
+  encoding: "IPA"
+
+mapping:
+  # Vowels
+  - sutra_id: 1 # a i u ṇ
+    phonemes: ["a", "i", "u"]
+  - sutra_id: 2 # ṛ ḷ k
+    phonemes: [] # Ukrainian has no syllabic consonants
+  - sutra_id: 3 # e o ṅ
+    phonemes: ["ɛ", "ɔ"]
+  - sutra_id: 4 # ai au c
+    phonemes: [] # Diphthongs are typically treated as sequences in Ukrainian
+  
+  # Semi-vowels & Liquids
+  - sutra_id: 5 # h y v r ṭ
+    phonemes: ["ɦ", "j", "ʋ", "r", "rʲ"]
+  - sutra_id: 6 # l ṇ
+    phonemes: ["l", "lʲ"]
+    
+  # Nasals
+  - sutra_id: 7 # ñ m ṅ ṇ n m
+    phonemes: ["m", "n", "nʲ"]
+    
+  # Voiced stops/fricatives/affricates
+  - sutra_id: 8 # jh bh ñ
+    phonemes: ["d͡ʒ", "b"]
+  - sutra_id: 9 # gh ḍh dh ṣ
+    phonemes: ["g", "d", "dʲ"] # g = ґ
+  - sutra_id: 10 # j b g ḍ d ś
+    phonemes: ["d͡z", "d͡zʲ", "z", "zʲ", "ʒ"]
+    
+  # Voiceless stops/fricatives/affricates
+  - sutra_id: 11 # kh ph ch ṭh th c ṭ t v
+    phonemes: ["x", "f", "t͡ʃ", "t͡s", "t͡sʲ", "t", "tʲ"]
+  - sutra_id: 12 # k p y
+    phonemes: ["k", "p"]
+    
+  # Sibilants
+  - sutra_id: 13 # ś ṣ s r
+    phonemes: ["s", "sʲ", "ʃ"]
+    
+  # Aspirates / Glottal (if separated)
+  - sutra_id: 14 # h l
+    phonemes: []
+
+unresolved_features:
+  - description: "Палаталізовані (м'які) приголосні наразі змаплені як окремі фонеми (напр. /tʲ/ поруч із /t/ в сутрі 11). У майбутньому може знадобитися окремий механізм або мета-тег для палаталізації."
+  - description: "Український /g/ (ґ) змаплений до сутри 9, оскільки сутра 10 в класичному санскриті також містить /g/ (j b g ḍ d ś). Потрібно формально обґрунтувати це рішення з точки зору пратяхар."
+  - description: "Глухий велярний фрикативний /x/ (х) і губно-губний фрикативний /f/ (ф) змаплені до сутри 11, хоча санскритські kh і ph є придиховими проривними, а не фрикативними."
