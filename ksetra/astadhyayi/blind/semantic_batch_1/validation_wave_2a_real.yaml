@@ -25,34 +25,34 @@
       productivity:
         status: UNKNOWN-BY-EVIDENCE
     operation:
-      workflow_status: REVIEWED
-      type: substitution
+      workflow_status: resolved
+      type: metalinguistic_assignment
       operands:
-      - role: source
-        validated_role: source
-        proposed_role: null
-        expression: X
+      - role: metalinguistic_subject
+        validated_role: metalinguistic_subject
+        expression: तुल्यास्यप्रयत्नं
         interpretation:
           semantic_type:
-            value: literal_or_technical
+            value: similar_articulatory_effort
             evidence_strength: SUPPORTED
         membership:
+          value: null
           knowledge_status: UNKNOWN-BY-BLINDING
-      - role: replacement
-        validated_role: replacement
-        proposed_role: null
-        expression: X
+      - role: metalinguistic_assignment
+        validated_role: metalinguistic_assignment
+        expression: सवर्णम्
         interpretation:
           semantic_type:
-            value: literal_or_technical
+            value: technical_name_savarna
             evidence_strength: SUPPORTED
         membership:
-          knowledge_status: UNKNOWN-BY-BLINDING
+          value: null
+          knowledge_status: NOT-APPLICABLE
     functional_reading:
       summary: 'PROPOSED: Pending manual validation'
       evidence_strength: SUPPORTED
     sound_set_relevance:
-      status: UNRESOLVED
+      status: NO_EVIDENCE
       basis:
       - heuristic_parser_proposal
       candidate_roles: []
@@ -60,18 +60,13 @@
     claims:
     - id: C001
       claim: operation.type
-      value: substitution
+      value: metalinguistic_assignment
       confidence: SUPPORTED
       evidence:
       - source_id: KASIKA-1.1.9
-        source_locator:
-          sutra: 1.1.9
-        evidence_fragment:
-          normalized_summary: Summary of 1.1.9
-        supports: direct
-    unresolved_questions:
-    - pending_manual_validation
-    - 'Demoted by Validator v2: pending_manual_validation in unresolved_questions'
+        locator: vrtti-start
+        supports: assigns savarna
+    unresolved_questions: []
 - rule_context:
     sutra_id: 1.2.30
     local_text:
@@ -99,34 +94,34 @@
       productivity:
         status: UNKNOWN-BY-EVIDENCE
     operation:
-      workflow_status: REVIEWED
-      type: substitution
+      workflow_status: resolved
+      type: metalinguistic_assignment
       operands:
-      - role: source
-        validated_role: source
-        proposed_role: null
-        expression: X
+      - role: metalinguistic_subject
+        validated_role: metalinguistic_subject
+        expression: नीचैः
         interpretation:
           semantic_type:
-            value: literal_or_technical
+            value: low_pitch
             evidence_strength: SUPPORTED
         membership:
-          knowledge_status: UNKNOWN-BY-BLINDING
-      - role: replacement
-        validated_role: replacement
-        proposed_role: null
-        expression: X
+          value: null
+          knowledge_status: NOT-APPLICABLE
+      - role: metalinguistic_assignment
+        validated_role: metalinguistic_assignment
+        expression: अनुदात्तः
         interpretation:
           semantic_type:
-            value: literal_or_technical
+            value: technical_name_anudatta
             evidence_strength: SUPPORTED
         membership:
-          knowledge_status: UNKNOWN-BY-BLINDING
+          value: null
+          knowledge_status: NOT-APPLICABLE
     functional_reading:
       summary: 'PROPOSED: Pending manual validation'
       evidence_strength: SUPPORTED
     sound_set_relevance:
-      status: UNRESOLVED
+      status: NO_EVIDENCE
       basis:
       - heuristic_parser_proposal
       candidate_roles: []
@@ -134,18 +129,13 @@
     claims:
     - id: C001
       claim: operation.type
-      value: substitution
+      value: metalinguistic_assignment
       confidence: SUPPORTED
       evidence:
       - source_id: KASIKA-1.2.30
-        source_locator:
-          sutra: 1.2.30
-        evidence_fragment:
-          normalized_summary: Summary of 1.2.30
-        supports: direct
-    unresolved_questions:
-    - pending_manual_validation
-    - 'Demoted by Validator v2: pending_manual_validation in unresolved_questions'
+        locator: vrtti-start
+        supports: assigns anudatta
+    unresolved_questions: []
 - rule_context:
     sutra_id: 1.2.38
     local_text:
