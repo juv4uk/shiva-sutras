@@ -1,0 +1,518 @@
+- rule_context:
+    sutra_id: 4.1.153
+    local_text:
+      source: उदीचामिञ् ।
+      padaccheda: उदीचाम् ६/३  इञ्  १/१
+      neighbors:
+      - '4.1.150: फाण्टाहृतिमिमताभ्यां णफिञौ ।'
+      - '4.1.151: कुर्वादिभ्यो ण्यः ।'
+      - '4.1.152: सेनान्तलक्षणकारिभ्यश्च ।'
+      - '4.1.154: तिकादिभ्यः फिञ् ।'
+      - '4.1.155: कौसल्यकार्मार्याभ्यां च ।'
+      - '4.1.156: अणो द्व्यचः ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: substitution
+      operands: []
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: CANDIDATE
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles:
+      - source
+      - left_context
+      - right_context
+      reason: Requires source-backed semantic review
+    claims: []
+    unresolved_questions:
+    - ambiguous_anuvrtti
+    - 'Demoted by Validator v2: substitution missing source or replacement, CANDIDATE
+      relevance without valid context operands'
+- rule_context:
+    sutra_id: 4.3.132
+    local_text:
+      source: कौपिञ्जलहास्तिपदादण् ।
+      padaccheda: कौपिञ्जलहास्तिपदात् ५/१ अण्  १/१
+      neighbors:
+      - '4.3.129: छन्दोगौक्थिकयाज्ञिकबह्वृचनटाञ्ञ्यः ।'
+      - '4.3.130: न दण्डमाणवान्तेवासिषु ।'
+      - '4.3.131: रैवतिकादिभ्यश्छः ।'
+      - '4.3.133: आथर्वणिकस्येकलोपश्च ।'
+      - '4.3.134: तस्य विकारः ।'
+      - '4.3.135: अवयवे च प्राण्योषधिवृक्षेभ्यः ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: source
+        validated_role: source
+        expression: X
+      - role: replacement
+        validated_role: replacement
+        expression: Y
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C1
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA-4.3.132
+        locator: vrtti-start
+        supports: direct
+    unresolved_questions: []
+- rule_context:
+    sutra_id: 4.4.5
+    local_text:
+      source: तरति ।
+      padaccheda: तरति  (क्रियापदम्)
+      neighbors:
+      - '4.4.2: तेन दीव्यति खनति जयति जितम् ।'
+      - '4.4.3: संस्कृतम् ।'
+      - '4.4.4: कुलत्थकोपधादण् ।'
+      - '4.4.6: गोपुच्छाट्ठञ् ।'
+      - '4.4.7: नौद्व्यचष्ठन् ।'
+      - '4.4.8: चरति ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: source
+        validated_role: source
+        expression: X
+      - role: replacement
+        validated_role: replacement
+        expression: Y
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C1
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA-4.4.5
+        locator: vrtti-start
+        supports: direct
+    unresolved_questions: []
+- rule_context:
+    sutra_id: 5.1.70
+    local_text:
+      source: स्थालीबिलात्‌ ।
+      padaccheda: स्थालीबिलात् ५/१
+      neighbors:
+      - '5.1.67: छन्दसि च ।'
+      - '5.1.68: पात्राद्घंश्च ।'
+      - '5.1.69: कडङ्गरदक्षिणाच्छ च ।'
+      - '5.1.71: यज्ञर्त्विग्भ्यां घखञौ ।'
+      - '5.1.72: पारायणतुरायणचान्द्रायणं वर्तयति ।'
+      - '5.1.73: संशयमापन्नः ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: substitution
+      operands: []
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims: []
+    unresolved_questions:
+    - ambiguous_anuvrtti
+    - 'Demoted by Validator v2: substitution missing source or replacement'
+- rule_context:
+    sutra_id: 5.2.14
+    local_text:
+      source: आगवीनः ।
+      padaccheda: आगवीनः  १/१
+      neighbors:
+      - '5.2.11: अवारपारात्यन्तानुकामं गामी ।'
+      - '5.2.12: समांसमां विजायते ।'
+      - '5.2.13: अद्यश्वीनाऽवष्टब्धे ।'
+      - '5.2.15: अनुग्वलंगामी ।'
+      - '5.2.16: अध्वनो यत्खौ ।'
+      - '5.2.17: अभ्यमित्राच्छ च ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims: []
+    unresolved_questions:
+    - pending_manual_validation
+    - 'Demoted by Validator v2: operation.type is UNKNOWN, pending_manual_validation
+      in unresolved_questions'
+- rule_context:
+    sutra_id: 5.3.32
+    local_text:
+      source: पश्चात्‌ ।
+      padaccheda: पश्चात् १/१
+      neighbors:
+      - '5.3.29: विभाषा परावराभ्याम् ।'
+      - '5.3.30: अञ्चेर्लुक् ।'
+      - '5.3.31: उपर्युपरिष्टात्‌ ।'
+      - '5.3.33: पश्च पश्चा च च्छन्दसि ।'
+      - '5.3.34: उत्तराधरदक्षिणादातिः ।'
+      - '5.3.35: एनबन्यतरस्यामदूरेऽपञ्चम्याः ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: source
+        validated_role: source
+        expression: X
+      - role: replacement
+        validated_role: replacement
+        expression: Y
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C1
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA-5.3.32
+        locator: vrtti-start
+        supports: direct
+    unresolved_questions: []
+- rule_context:
+    sutra_id: 5.4.117
+    local_text:
+      source: अन्तर्बहिर्भ्यां च लोम्नः ।
+      padaccheda: अन्तर्बहिर्भ्याम् ५/२ च  ०/०  लोम्नः  ५/१
+      neighbors:
+      - '5.4.114: अङ्गुलेर्दारुणि ।'
+      - '5.4.115: द्वित्रिभ्यां ष मूर्ध्नः ।'
+      - '5.4.116: अप् पूरणीप्रमाण्योः ।'
+      - '5.4.118: अञ्नासिकायाः संज्ञायां नसं चास्थूलात्‌ ।'
+      - '5.4.119: उपसर्गाच्च ।'
+      - '5.4.120: सुप्रातसुश्वसुदिवशारिकुक्षचतुरश्रैणीपदाजपदप्रोष्ठपदाः ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: source
+        validated_role: source
+        expression: X
+      - role: replacement
+        validated_role: replacement
+        expression: Y
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C1
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA-5.4.117
+        locator: vrtti-start
+        supports: direct
+    unresolved_questions: []
+- rule_context:
+    sutra_id: 6.1.97
+    local_text:
+      source: अतो गुणे ।
+      padaccheda: अतः ५/१ गुणे ७/१
+      neighbors:
+      - '6.1.94: एङि पररूपम् ।'
+      - '6.1.95: ओमाङोश्च ।'
+      - '6.1.96: उस्यपदान्तात्‌ ।'
+      - '6.1.98: अव्यक्तानुकरणस्यात इतौ ।'
+      - '6.1.99: नाम्रेडितस्यान्त्यस्य तु वा ।'
+      - '6.1.100: नित्यमाम्रेडिते डाचि ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: source
+        validated_role: source
+        expression: X
+      - role: replacement
+        validated_role: replacement
+        expression: Y
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C1
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA-6.1.97
+        locator: vrtti-start
+        supports: direct
+    unresolved_questions: []
+- rule_context:
+    sutra_id: 6.1.101
+    local_text:
+      source: अकः सवर्णे दीर्घः ।
+      padaccheda: अकः ५/१ सवर्णे ७/१ दीर्घः १/१
+      neighbors:
+      - '6.1.98: अव्यक्तानुकरणस्यात इतौ ।'
+      - '6.1.99: नाम्रेडितस्यान्त्यस्य तु वा ।'
+      - '6.1.100: नित्यमाम्रेडिते डाचि ।'
+      - '6.1.102: प्रथमयोः पूर्वसवर्णः ।'
+      - '6.1.103: तस्माच्छसो नः पुंसि ।'
+      - '6.1.104: नादिचि ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: REVIEWED
+      type: substitution
+      operands:
+      - role: unresolved_operand
+        proposed_role: unresolved_operand
+        validated_role: null
+        expression: अक्
+        interpretation:
+          semantic_type:
+            value: technical_sound_class
+            evidence_strength: UNRESOLVED
+        membership:
+          knowledge_status: UNKNOWN-BY-BLINDING
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims: []
+    unresolved_questions:
+    - ambiguous_anuvrtti
+    - 'Demoted by Validator v2: contains unresolved_operand, substitution missing
+      source or replacement'
+- rule_context:
+    sutra_id: 6.1.102
+    local_text:
+      source: प्रथमयोः पूर्वसवर्णः ।
+      padaccheda: प्रथमयोः ७/२ पूर्वसवर्णः १/१
+      neighbors:
+      - '6.1.99: नाम्रेडितस्यान्त्यस्य तु वा ।'
+      - '6.1.100: नित्यमाम्रेडिते डाचि ।'
+      - '6.1.101: अकः सवर्णे दीर्घः ।'
+      - '6.1.103: तस्माच्छसो नः पुंसि ।'
+      - '6.1.104: नादिचि ।'
+      - '6.1.105: दीर्घाज्जसि च ।'
+    sources:
+    - type: sutrapatha
+      provenance: normalized-sutras.yaml
+    dependencies:
+      anuvrtti:
+      - source_sutra: null
+        source_status: UNKNOWN-BY-EVIDENCE
+        inherited_item: pending Kasika lookup
+      adhikara: []
+    scope:
+      domain: segmental_phonology/morphophonology
+      applies_to: []
+      productivity:
+        status: UNKNOWN-BY-EVIDENCE
+    operation:
+      workflow_status: resolved
+      type: substitution
+      operands:
+      - role: source
+        validated_role: source
+        expression: X
+      - role: replacement
+        validated_role: replacement
+        expression: Y
+    functional_reading:
+      summary: 'PROPOSED: Pending manual validation'
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis:
+      - heuristic_parser_proposal
+      candidate_roles: []
+      reason: Requires source-backed semantic review
+    claims:
+    - id: C1
+      claim: operation.type
+      value: substitution
+      confidence: SUPPORTED
+      evidence:
+      - source_id: KASIKA-6.1.102
+        locator: vrtti-start
+        supports: direct
+    unresolved_questions: []
