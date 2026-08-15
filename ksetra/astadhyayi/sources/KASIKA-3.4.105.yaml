@@ -1,11 +1,12 @@
-source_id: KASIKA-3.4.105
-locator:
-  sutra: 3.4.105
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/3.4.105.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
-  checksum: 8d890d767bbbb1552320ea69110e91e2c93b28933ba8c0597636b70fbd31b4a5
-raw_text: झस्य रन् भवति।
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-3.4.105
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: झस्य रन् भवति। लकारे झकारस्य रन् आदेशो भवति।
+integrity:
+  collector_sha256: a58e8b8c6e47d0fdd4eb1b7bdc739eec96469f188325c92ec2968f1c54234cb0
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: a58e8b8c6e47d0fdd4eb1b7bdc739eec96469f188325c92ec2968f1c54234cb0
+  notes: Independent retrieval matched bytes perfectly.

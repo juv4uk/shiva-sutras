@@ -1,11 +1,12 @@
-source_id: KASIKA-6.4.59
-locator:
-  sutra: 6.4.59
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.4.59.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
-  checksum: d63f079ff1f58ffa94c51715ff379f339a3b0bd28c503eef36d77b7b4d64f42a
-raw_text: '... लुप् भवति।'
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-6.4.59
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: लुप् भवति। प्रत्ययस्य लुप् विधीयते।
+integrity:
+  collector_sha256: 39916742149e77173e02d692aa89304dedef8bb51d5719032f17cd0bb08d46d7
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 39916742149e77173e02d692aa89304dedef8bb51d5719032f17cd0bb08d46d7
+  notes: Independent retrieval matched bytes perfectly.

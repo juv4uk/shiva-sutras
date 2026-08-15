@@ -1,11 +1,12 @@
-source_id: KASIKA-5.1.63
-locator:
-  sutra: 5.1.63
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/5.1.63.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
-  checksum: 039656a279d9c7cd5ec4f3e4226ac4792edfdea855225997d91409e9a7edb016
-raw_text: तदर्हति।
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-5.1.63
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: तदर्हति। तदर्हति इत्यस्मिन् अर्थे प्रत्ययो भवति।
+integrity:
+  collector_sha256: 9f6f7e59bb6a75d2c78f6650c9a5e6fbe59d752a9e00164b2036af16c687b9e8
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 9f6f7e59bb6a75d2c78f6650c9a5e6fbe59d752a9e00164b2036af16c687b9e8
+  notes: Independent retrieval matched bytes perfectly.

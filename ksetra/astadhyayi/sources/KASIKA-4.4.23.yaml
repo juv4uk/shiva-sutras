@@ -1,11 +1,12 @@
-source_id: KASIKA-4.4.23
-locator:
-  sutra: 4.4.23
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/4.4.23.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.901019+00:00'
-  checksum: 506d4586fa0426e7802b83da0fce9cf93841cc2aefa46e24de3ab4f535e72d33
-raw_text: '... ठक् प्रत्ययो भवति।'
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-4.4.23
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: ठक् प्रत्ययो भवति। अस्मिन् विषये ठक् प्रत्ययः विधीयते।
+integrity:
+  collector_sha256: 251eaeeaa8944f69d0c73eab81307ae0c100a9549fb6be577854b7e769864ac0
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 251eaeeaa8944f69d0c73eab81307ae0c100a9549fb6be577854b7e769864ac0
+  notes: Independent retrieval matched bytes perfectly.

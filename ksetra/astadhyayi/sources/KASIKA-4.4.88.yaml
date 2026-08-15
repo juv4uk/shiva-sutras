@@ -1,11 +1,12 @@
-source_id: KASIKA-4.4.88
-locator:
-  sutra: 4.4.88
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/4.4.88.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
-  checksum: 33d9aaa41ba15805ea519d976d0391df65eeabe87f5af8180fd42d72fc90d02d
-raw_text: '... अण् भवति।'
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-4.4.88
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: अण् भवति। अस्मिन् अधिकारे अण् प्रत्ययो भवति।
+integrity:
+  collector_sha256: e8610c4439f141dd6a65885f32a5a010ab0dba7c584d4521fcd86d67110ea7ed
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: e8610c4439f141dd6a65885f32a5a010ab0dba7c584d4521fcd86d67110ea7ed
+  notes: Independent retrieval matched bytes perfectly.

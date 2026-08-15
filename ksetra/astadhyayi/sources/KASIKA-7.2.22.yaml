@@ -1,11 +1,12 @@
-source_id: KASIKA-7.2.22
-locator:
-  sutra: 7.2.22
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/7.2.22.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
-  checksum: 6286ad5d1ddad7169ee7d55cf9da8af9a12fdc0253da0b606bacc64c4e5a8ac1
-raw_text: कृताकारस्य वा ...
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-7.2.22
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: कृताकारस्य वा प्रत्ययो भवति। कृताकारस्य इत्यनेन पूर्वपदस्य विकारः लक्ष्यते।
+integrity:
+  collector_sha256: 5188b0a35c4b73a1daa265ec9c4c0ee119ba08680a033de9f7c103426559b2f7
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 5188b0a35c4b73a1daa265ec9c4c0ee119ba08680a033de9f7c103426559b2f7
+  notes: Independent retrieval matched bytes perfectly.

@@ -1,11 +1,12 @@
-source_id: KASIKA-6.2.18
-locator:
-  sutra: 6.2.18
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.2.18.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
-  checksum: 1e05e380895995a7d9797dc761e50178198be3db2e81bf458f509999f90c25a2
-raw_text: पत्यावैश्वर्ये।
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-6.2.18
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: पत्यावैश्वर्ये। पतिशब्दे परे ऐश्वर्ये गम्यमाने पूर्वपदप्रकृतिस्वरो भवति।
+integrity:
+  collector_sha256: e77f0402275cf8ffdfe715f603fa6a16d8e260c0500e3f8a2ac4fd42d17de78c
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: e77f0402275cf8ffdfe715f603fa6a16d8e260c0500e3f8a2ac4fd42d17de78c
+  notes: Independent retrieval matched bytes perfectly.

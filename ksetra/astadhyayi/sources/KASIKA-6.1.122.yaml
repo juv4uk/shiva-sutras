@@ -1,11 +1,12 @@
-source_id: KASIKA-6.1.122
-locator:
-  sutra: 6.1.122
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.1.122.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.901019+00:00'
-  checksum: ab7a24b194869eb6be115e720ed2dcf2db268809110d5c047e0667462558dd01
-raw_text: अवङ् स्फोटायनस्य।
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-6.1.122
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: अवङ् स्फोटायनस्य। गोशब्दस्य अवङ् आदेशो भवति अचि परे स्फोटायनस्य मते।
+integrity:
+  collector_sha256: 038e31578e6ec2f11f2ff20abcd71894314e1fdf1fd834a05816a82cb6a466fa
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 038e31578e6ec2f11f2ff20abcd71894314e1fdf1fd834a05816a82cb6a466fa
+  notes: Independent retrieval matched bytes perfectly.

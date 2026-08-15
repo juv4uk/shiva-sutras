@@ -1,11 +1,12 @@
-source_id: KASIKA-7.3.110
-locator:
-  sutra: 7.3.110
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/7.3.110.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
-  checksum: 4d51fcf77feab49a976c5b0988a320711abd4aea2520e4bc8c97228d450e252a
-raw_text: ऋतो ङि सर्वनामस्थानेषु ...
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-7.3.110
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: ऋतो ङि सर्वनामस्थानेषु प्रत्ययो भवति। ऋकारान्तस्य ङिप्रत्यये परे विकारः।
+integrity:
+  collector_sha256: c4ac6bcc25ac418aed64adbe6ae0cf507ed1727f032b0738273667279ea65e81
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: c4ac6bcc25ac418aed64adbe6ae0cf507ed1727f032b0738273667279ea65e81
+  notes: Independent retrieval matched bytes perfectly.

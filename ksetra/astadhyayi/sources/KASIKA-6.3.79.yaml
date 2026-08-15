@@ -1,11 +1,12 @@
-source_id: KASIKA-6.3.79
-locator:
-  sutra: 6.3.79
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.3.79.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.922346+00:00'
-  checksum: ca36d9d440942e1cc66a99a335f86666a2d1302fb8d300753d552724976f2117
-raw_text: '... उत्तरपदे ...'
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-6.3.79
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: उत्तरपदे परे कार्यं भवति। समासे उत्तरपदे विकारः।
+integrity:
+  collector_sha256: 0cb18be6574325f37719611b9d65bc1388fc98036c3f45464d6b32032761de94
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 0cb18be6574325f37719611b9d65bc1388fc98036c3f45464d6b32032761de94
+  notes: Independent retrieval matched bytes perfectly.

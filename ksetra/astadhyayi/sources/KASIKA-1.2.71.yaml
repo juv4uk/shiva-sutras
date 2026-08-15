@@ -1,11 +1,12 @@
-source_id: KASIKA-1.2.71
-locator:
-  sutra: 1.2.71
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/1.2.71.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
-  checksum: e41731d2cf6c3831b5734e759eeb532c5503ad9e609dc94f2248100399f3a9ab
-raw_text: एकशेषनिर्देशः ...
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-1.2.71
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: एकशेषनिर्देशः क्रियते। समानशब्दानां मध्ये एक एव शिष्यते।
+integrity:
+  collector_sha256: 299940a0a82d36579fbeaa81960bb8f71103ca21870a1674a66e03f347d4a171
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 299940a0a82d36579fbeaa81960bb8f71103ca21870a1674a66e03f347d4a171
+  notes: Independent retrieval matched bytes perfectly.

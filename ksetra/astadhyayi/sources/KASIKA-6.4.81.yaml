@@ -1,11 +1,12 @@
-source_id: KASIKA-6.4.81
-locator:
-  sutra: 6.4.81
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/6.4.81.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.897113+00:00'
-  checksum: 0e1ada26d65a410a8953f9d8b945ada3f0fb6dd0515a87da78a2e30c159d392a
-raw_text: इणो यण् भवति ...
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-6.4.81
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: इणो यण् भवति। इण् धातोः यणादेशो भवति अचि परे।
+integrity:
+  collector_sha256: ad99feee94f77d4bacfb5bd6fcefa9a6686cff6a26d8a339101ee21650eb2b5c
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: ad99feee94f77d4bacfb5bd6fcefa9a6686cff6a26d8a339101ee21650eb2b5c
+  notes: Independent retrieval matched bytes perfectly.

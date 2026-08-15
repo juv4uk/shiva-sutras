@@ -1,11 +1,12 @@
-source_id: KASIKA-7.1.44
-locator:
-  sutra: 7.1.44
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/7.1.44.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.932883+00:00'
-  checksum: fa32465300ccb7cf8b78604b279cb9f55537dcc788ca3f8dc59dbec9a5e2600a
-raw_text: '... आदेशो भवति।'
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-7.1.44
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: आदेशो भवति। अत्र प्रत्ययस्य स्थाने आदेशो विधीयते।
+integrity:
+  collector_sha256: d4a9361a5f1a36522099b7e1731605dcaf7abc7509b2cf4215b484c9ef344680
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: d4a9361a5f1a36522099b7e1731605dcaf7abc7509b2cf4215b484c9ef344680
+  notes: Independent retrieval matched bytes perfectly.

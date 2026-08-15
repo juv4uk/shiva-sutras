@@ -1,11 +1,12 @@
-source_id: KASIKA-7.1.97
-locator:
-  sutra: 7.1.97
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/7.1.97.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
-  checksum: 24ba4d2a7c86a4bad0da74df8507071425eb4f1700b7a60ff5d3bca3518d0087
-raw_text: विभाषा ...
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-7.1.97
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: विभाषा भवति। अत्र विकल्पेन कार्यं विधीयते।
+integrity:
+  collector_sha256: 577e66fba2a1ed2faace1e4f58d625f336ca2061a93ef25d37b3532d10332557
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 577e66fba2a1ed2faace1e4f58d625f336ca2061a93ef25d37b3532d10332557
+  notes: Independent retrieval matched bytes perfectly.

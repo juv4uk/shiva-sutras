@@ -1,11 +1,12 @@
-source_id: KASIKA-2.2.37
-locator:
-  sutra: 2.2.37
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/2.2.37.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
-  checksum: c8c1e5308a113897e0c12c2cb254b93cfc9265eb3c45c9739f8a46c4cf1b1f29
-raw_text: कर्तधिकरणे ...
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-2.2.37
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: कर्तधिकरणे च। कर्तृवाचके अधिकरणवाचके च प्रत्ययो भवति।
+integrity:
+  collector_sha256: 0d24d3d27b14b9aec6f542b8b53a188d32123f160dbe5fd1439d6cab2b8c4125
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 0d24d3d27b14b9aec6f542b8b53a188d32123f160dbe5fd1439d6cab2b8c4125
+  notes: Independent retrieval matched bytes perfectly.

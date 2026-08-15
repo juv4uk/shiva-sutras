@@ -66,12 +66,12 @@ def validator_v2():
                     else:
                         with open(s_file, 'r', encoding='utf-8') as sf:
                             s_data = yaml.safe_load(sf)
-                            if s_data.get('source_status') != 'REAL':
+                            if s_data.get('source_status') != 'VERIFIED-REPRODUCIBLE':
                                 demote = True
-                                reason.append(f"source {s_id} is not REAL")
-                            if "simulated" in str(s_data.get('raw_text', '')).lower():
+                                reason.append(f"source {s_id} is not VERIFIED-REPRODUCIBLE")
+                            if "simulated" in str(s_data.get('raw_text', '')).lower() or "..." in str(s_data.get('raw_text', '')):
                                 demote = True
-                                reason.append(f"source {s_id} contains simulated text")
+                                reason.append(f"source {s_id} contains simulated text or ellipsis")
                     
         if rc.get('sound_set_relevance', {}).get('status') == 'CANDIDATE':
             if not any(r in ['source', 'replacement', 'deleted_element', 'left_context', 'right_context'] for r in roles):

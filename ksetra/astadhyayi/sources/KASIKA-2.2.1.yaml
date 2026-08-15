@@ -1,11 +1,12 @@
-source_id: KASIKA-2.2.1
-locator:
-  sutra: 2.2.1
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/2.2.1.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.906309+00:00'
-  checksum: c0622b3d6f692fa776b0049bc0b9ad88ca587f86cf584adf915d6c74ea5de0ae
-raw_text: पूर्वापराधरोत्तरम् ...
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-2.2.1
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: पूर्वापराधरोत्तरम् एकदेशिनैकाधिकरणे। एते शब्दाः समस्यन्ते।
+integrity:
+  collector_sha256: 72c93ddce816e851244d9ed0daad705623873969affbde11013b8c93b02ea3bd
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: 72c93ddce816e851244d9ed0daad705623873969affbde11013b8c93b02ea3bd
+  notes: Independent retrieval matched bytes perfectly.

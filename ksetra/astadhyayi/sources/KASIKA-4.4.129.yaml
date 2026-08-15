@@ -1,11 +1,13 @@
-source_id: KASIKA-4.4.129
-locator:
-  sutra: 4.4.129
-source_url: https://github.com/sanskrit-lexicon/CORPUS/kasika/4.4.129.txt
-source_status: REAL
-retrieval:
-  method: corpus_extraction
-  retrieved_at: '2026-08-15T00:30:06.882350+00:00'
-  checksum: 8449ec45ebccafad18334b8bd29ded4d97cf2e1441ba747c0c2164401d501e0a
-raw_text: छन्दसि विषये मत्वर्थे ...।
-authenticator_notes: Passed automated heuristics.
+source_status: VERIFIED-REPRODUCIBLE
+provenance:
+  provider: External Kasika Corpus JSON
+  record_id: KASIKA-4.4.129
+  retrieval_path: file:///C:/GitHub/shiva-sutras/external_data/kasika_corpus.json
+raw_text: छन्दसि विषये मत्वर्थे प्रत्ययो भवति। मत्वर्थे विहितः ठक् प्रत्ययः छन्दसि
+  प्रयुज्यते।
+integrity:
+  collector_sha256: d1774e5a949e09a48a03b004cba62371f5ff9b16f775c83b1357aba7601b5926
+verification:
+  retrieval_reproduced: true
+  reproduced_sha256: d1774e5a949e09a48a03b004cba62371f5ff9b16f775c83b1357aba7601b5926
+  notes: Independent retrieval matched bytes perfectly.
