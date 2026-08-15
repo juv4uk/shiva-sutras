@@ -1,0 +1,4405 @@
+- rule_context:
+    sutra_id: 1.4.61
+    local_text:
+      source: ऊर्यादिच्विडाचश्च ।
+      padaccheda: ऊर्यादिच्विडाचः १/३ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.1.10
+    local_text:
+      source: आबाधे च ।
+      padaccheda: आबाधे ७/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.1.110
+    local_text:
+      source: ऋदुपधाच्चाकॢपिचृतेः ।
+      padaccheda: ऋदुपधात् ५/१ च ०/० अकॢपिचृतेः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.30
+    local_text:
+      source: नाडीमुष्ट्योश्च ।
+      padaccheda: नाडीमुष्ट्योः ७/२ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.79
+    local_text:
+      source: ग्रन्थान्ताधिके च ।
+      padaccheda: ग्रन्थान्ताधिके ७/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.1.44
+    local_text:
+      source: तस्य तात्‌ ।
+      padaccheda: तस्य ६/१ तात् ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.129
+    local_text:
+      source: मधोर्ञ च ।
+      padaccheda: ४.१२९  मधोः ५/१ ञ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.71
+    local_text:
+      source: श्वशुरः श्वश्र्वा ।
+      padaccheda: श्वशुरः १/१ श्वश्र्वा ३/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.106
+    local_text:
+      source: दन्त उन्नत उरच् ।
+      padaccheda: दन्तः १/१ (पञ्चम्यर्थे प्रथमा) उन्नतः १/१ उरच्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.59
+    local_text:
+      source: क्षियः ।
+      padaccheda: क्षियः ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.88
+    local_text:
+      source: मूलमस्याबर्हि ।
+      padaccheda: मूलम् १/१ अस्य ६/१  आबर्हि  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.32
+    local_text:
+      source: सप्तमी सिद्धशुष्कपक्वबन्धेष्वकालात्‌ ।
+      padaccheda: सप्तमी ७/१ सिद्धशुष्कपक्वबन्धेषु ७/३ अकालात् ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.88
+    local_text:
+      source: विभाषोदरे ।
+      padaccheda: विभाषा १/१ उदरे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.12
+    local_text:
+      source: अनो बहुव्रीहेः ।
+      padaccheda: अनः ५/१  बहुव्रीहेः  ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.3.123
+    local_text:
+      source: उदङ्कोऽनुदके ।
+      padaccheda: उदङ्कः १/१ अनुदके ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.74
+    local_text:
+      source: आतो मनिन्क्वनिप्वनिपश्च ।
+      padaccheda: आतः ५/१ मनिन्क्वनिप्वनिपः १/३ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.99
+    local_text:
+      source: नावो द्विगोः ।
+      padaccheda: नावः ५/१ द्विगोः  ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.2.37
+    local_text:
+      source: वाऽऽहिताग्न्यादिषु ।
+      padaccheda: वा ०/० आहिताग्न्यादिषु ७/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.167
+    local_text:
+      source: यूनश्च कुत्सायाम् ।
+      padaccheda: यूनः  च ०/० कुत्सायाम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.1.61
+    local_text:
+      source: रधिजभोरचि ।
+      padaccheda: रधिजभोः ६/२ अचि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.147
+    local_text:
+      source: गोत्रस्त्रियाः कुत्सने ण च ।
+      padaccheda: गोत्रस्त्रियाः ५/१ कुत्सने ७/१  ण (लुप्तप्रथमान्तनिर्देशः)  च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.144
+    local_text:
+      source: भावे च ।
+      padaccheda: भावे ७/१  च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.1.68
+    local_text:
+      source: कर्तरि शप्‌ ।
+      padaccheda: कर्त्तरि ७/१ शप् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.3.97
+    local_text:
+      source: बहुलं छन्दसि ।
+      padaccheda: बहुलम् १/१ छन्दसि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.136
+    local_text:
+      source: अल्पाख्यायाम् ।
+      padaccheda: अल्पाख्यायाम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.7
+    local_text:
+      source: वनो र च ।
+      padaccheda: वनः ६/१  र (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.12
+    local_text:
+      source: उश्च ।
+      padaccheda: उः ५/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.176
+    local_text:
+      source: यश्च यङः ।
+      padaccheda: यः ५/१ च ०/० यङः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.99
+    local_text:
+      source: फेनादिलच् च ।
+      padaccheda: फेनात् ५/१ इलच् १/१ च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.3.13
+    local_text:
+      source: विभाषा रोगातपयोः ।
+      padaccheda: विभाषा १/१  रोगातपयोः  ७/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.3.100
+    local_text:
+      source: जनपदिनां जनपदवत्‌ सर्वं जनपदेन समानशब्दानां बहुवचने ।
+      padaccheda: जनपदिनाम् ६/३  जनपदवत् ०/० सर्वम् १/१ जनपदेन ३/१ समानशब्दानाम् ६/३  बहुवचने
+        ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.10
+    local_text:
+      source: परोवरपरम्परपुत्रपौत्रमनुभवति ।
+      padaccheda: परोवरपरम्परपुत्रपौत्रम् २/१ अनुभवति  (क्रियापदम्)
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.122
+    local_text:
+      source: पृथ्वादिभ्य इमनिज्वा ।
+      padaccheda: पृथ्वादिभ्यः ५/३  इमनिच् १/१   वा  ०/
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.3.1
+    local_text:
+      source: उणादयो बहुलम् ।
+      padaccheda: उणादयः १/३ बहुलम् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.3.64
+    local_text:
+      source: ओक उचः के ।
+      padaccheda: ओकः १/१ उचः ६/१ के ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.64
+    local_text:
+      source: सरूपाणामेकशेष एकविभक्तौ ।
+      padaccheda: सरूपाणाम् ६/३ एकशेषः १/१ एकविभक्तौ ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.29
+    local_text:
+      source: उच्चैरुदात्तः ।
+      padaccheda: उच्चैः ०/० उदात्तः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.4.75
+    local_text:
+      source: निजां त्रयाणां गुणः श्लौ ।
+      padaccheda: निजाम् ६/३ त्रयाणाम् ६/३ गुणः १/१ श्लौ ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.4.101
+    local_text:
+      source: तस्थस्थमिपां तांतंतामः ।
+      padaccheda: तस्थस्थमिपाम् ६/३ तांतंतामः १/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.2
+    local_text:
+      source: दण्डव्यवसर्गयोश्च ।
+      padaccheda: दण्डव्यवसर्गयोः ७/२ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.1.159
+    local_text:
+      source: कर्षात्वतो घञोऽन्त उदात्तः ।
+      padaccheda: कर्षात्वतः ६/१ घञः ६/१ अन्तः १/१ उदात्तः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.3.49
+    local_text:
+      source: ग्रीष्मावरसमाद्वुञ् ।
+      padaccheda: ग्रीष्मावरसमात् ५/१  वुञ्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.1.37
+    local_text:
+      source: पञ्चमी भयेन ।
+      padaccheda: पञ्चमी १/१ भयेन ३/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.4.62
+    local_text:
+      source: तद्राजस्य बहुषु तेनैवास्त्रियाम्‌ ।
+      padaccheda: तद्राजस्य ६/१ बहुषु ७/३ तेन ३/१ एव ०/० अस्त्रियाम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.2.11
+    local_text:
+      source: संज्ञायाम् ।
+      padaccheda: संज्ञायाम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.117
+    local_text:
+      source: घच्छौ च ।
+      padaccheda: घच्छौ १/२ च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.3.160
+    local_text:
+      source: इच्छार्थेभ्यो विभाषा वर्तमाने ।
+      padaccheda: इच्छार्थेभ्यो ५/३ विभाषा १/१ वर्त्तमाने ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.2.31
+    local_text:
+      source: वाय्वृतुपित्रुषसो यत्‌ ।
+      padaccheda: वाय्वृतुपित्रुषसः ५/१  यत् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.113
+    local_text:
+      source: ऐकागारिकट् चौरे ।
+      padaccheda: ऐकागारिकट् १/१ चौरे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.1.80
+    local_text:
+      source: धातोस्तन्निमित्तस्यैव ।
+      padaccheda: धातोः ६/१ तन्निमित्तस्य ६/१ एव ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.2.33
+    local_text:
+      source: अग्नेर्ढक् ।
+      padaccheda: अग्नेः ५/१  ढक्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.149
+    local_text:
+      source: अनुदात्तेतश्च हलादेः ।
+      padaccheda: अनुदात्तेतः ५/१ च ०/० हलादेः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.1.74
+    local_text:
+      source: त्यदादीनि च ।
+      padaccheda: त्यदादीनि १/३ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.161
+    local_text:
+      source: मनोर्जातावञ्यतौ षुक् च ।
+      padaccheda: मनोः ५/१  जातौ ७/१ अञ्यतौ १/२ षुक् १/१ च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.3.136
+    local_text:
+      source: भविष्यति मर्यादावचनेऽवरस्मिन् ।
+      padaccheda: भविष्यति ७/१ मर्यादावचने ७/१ अवरस्मिन् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.3.110
+    local_text:
+      source: ऋतो ङिसर्वनामस्थानयोः ।
+      padaccheda: ऋतः ६/१ ङिसर्वनामस्थानयोः ७/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.4.97
+    local_text:
+      source: ई च गणः ।
+      padaccheda: ई (लुप्तप्रथमान्तनिर्देशः) च ०/० गणः ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.4.47
+    local_text:
+      source: अच उपसर्गात्तः ।
+      padaccheda: अचः ५/१ उपसर्गात् ५/१ तः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.3.130
+    local_text:
+      source: न दण्डमाणवान्तेवासिषु ।
+      padaccheda: न  ०/०  दण्डमाणवान्तेवासिषु ७/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.2
+    local_text:
+      source: उगवादिभ्योऽत्‌ ।
+      padaccheda: उगवादिभ्यः ५/३ यत् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.99
+    local_text:
+      source: नडादिभ्यः फक् ।
+      padaccheda: नडादिभ्यः ५/३ फक्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.1.97
+    local_text:
+      source: विभाषा तृतीयाऽऽदिष्वचि ।
+      padaccheda: विभाषा १/१ तृतीयादिषु ७/३ अचि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.136
+    local_text:
+      source: मतौ च ।
+      padaccheda: मतौ ७/१ च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.1.10
+    local_text:
+      source: बहुलं छन्दसि ।
+      padaccheda: बहुलम् १/१ छन्दसि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.1.153
+    local_text:
+      source: प्रस्कण्वहरिश्चन्द्रावृषी ।
+      padaccheda: प्रस्कण्वहरिश्चन्द्रौ १/२ ऋषी १/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.3.33
+    local_text:
+      source: अधेः प्रसहने ।
+      padaccheda: अधेः ५/१ प्रसहने ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.3.88
+    local_text:
+      source: भूसुवोस्तिङि ।
+      padaccheda: भूसुवोः ६/२ तिङि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.158
+    local_text:
+      source: वाकिनादीनां कुक् च ।
+      padaccheda: वाकिनादीनाम् ६/३  कुक् १/१ च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.2.32
+    local_text:
+      source: द्वंद्वे घि ।
+      padaccheda: द्वन्द्वे ७/१ घि १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.36
+    local_text:
+      source: हन्तेर्जः ।
+      padaccheda: हन्तेः ६/१ जः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.13
+    local_text:
+      source: छदिरुपधिबलेः ढञ् ।
+      padaccheda: छदिरुपधिबलेः ५/१ ढञ्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.35
+    local_text:
+      source: पक्षिमत्स्यमृगान् हन्ति ।
+      padaccheda: पक्षिमत्स्यमृगान् २/३ हन्ति  (क्रियापदम्)
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.184
+    local_text:
+      source: अर्तिलूधूसूखनसहचर इत्रः ।
+      padaccheda: अर्तिलूधूसूखनसहचरः ५/१ इत्रः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.94
+    local_text:
+      source: तिरसस्तिर्यलोपे ।
+      padaccheda: तिरसः ६/१ तिरि (लुप्तप्रथमान्तनिर्देशः) अलोपे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.4.44
+    local_text:
+      source: परिक्रयणे सम्प्रदानमन्यतरस्याम् ।
+      padaccheda: परिक्रयणे ७/१ सम्प्रदानम् ७/१ अन्यतरस्याम् ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.128
+    local_text:
+      source: मघवा बहुलम् ।
+      padaccheda: मघवा (सुब्व्यत्ययेनात्र षष्ट्यर्थे प्रथमा ) बहुलम् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.2.1
+    local_text:
+      source: पूर्वापराधरोत्तरमेकदेशिनैकाधिकरणे ।
+      padaccheda: पूर्वापराधरोत्तरम् १/१ एकदेशिना ३/१ एकाधिकरणे ७/१ (तृतीयार्थे सप्तमी)
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.3.118
+    local_text:
+      source: औत्‌ ।
+      padaccheda: औत् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.18
+    local_text:
+      source: पत्यावैश्वर्ये ।
+      padaccheda: पत्यौ ७/१ ऐश्वर्ये ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.3.99
+    local_text:
+      source: जीविकाऽर्थे चापण्ये ।
+      padaccheda: जीविकाऽर्थे ७/१  च ०/० अपण्ये ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.81
+    local_text:
+      source: इणो यण् ।
+      padaccheda: इणः ६/१ यण् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.3.162
+    local_text:
+      source: लोट् च ।
+      padaccheda: लोट् १/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.96
+    local_text:
+      source: अतेः शुनः ।
+      padaccheda: अतेः ५/१ शुनः  ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.130
+    local_text:
+      source: ऊर्ध्वाद्विभाषा ।
+      padaccheda: ऊर्ध्वाद् ५/१  विभाषा  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.4.20
+    local_text:
+      source: अयस्मयादीनि च्छन्दसि ।
+      padaccheda: अयस्मयादीनि १/३ छन्दसि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.94
+    local_text:
+      source: तदस्य ब्रह्मचर्यम् ।
+      padaccheda: तत् १/१ अस्य  ६/१  ब्रह्मचर्यम्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.116
+    local_text:
+      source: नहिवृतिवृषिव्यधिरुचिसहितनिषु क्वौ ।
+      padaccheda: नहिवृतिवृषिव्यधिरुचिसहितनिषु ७/३ क्वौ ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.1.38
+    local_text:
+      source: अपेतापोढमुक्तपतितापत्रस्तैरल्पशः ।
+      padaccheda: अपेतापोढमुक्तपतितापत्रस्तैः ३/३ अल्पशः ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.45
+    local_text:
+      source: तस्य वापः ।
+      padaccheda: तस्य  ६/१  वापः  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.2.111
+    local_text:
+      source: कण्वादिभ्यो गोत्रे ।
+      padaccheda: कण्वादिभ्यः ५/३  गोत्रे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.4.34
+    local_text:
+      source: निमूलसमूलयोः कषः ।
+      padaccheda: निमूलसमूलयोः ७/२ कषः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.3.21
+    local_text:
+      source: हेमन्ताच्च ।
+      padaccheda: हेमन्तात् ५/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.2.23
+    local_text:
+      source: विभाषा फाल्गुनीश्रवणाकार्त्तिकीचैत्रीभ्यः ।
+      padaccheda: विभाषा १/१  फाल्गुनीश्रवणाकार्त्तिकीचैत्रीभ्यः  ५/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.4.73
+    local_text:
+      source: भवतेरः ।
+      padaccheda: भवतेः ६/१ अः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.83
+    local_text:
+      source: प्राग्दीव्यतोऽण् ।
+      padaccheda: प्राक् ०/० दीव्यतः ५/१ अण्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.119
+    local_text:
+      source: शतसहस्रान्ताच्च निष्कात्‌ ।
+      padaccheda: शतसहस्रान्तात् ५/१ च ०/० निष्कात् ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.73
+    local_text:
+      source: ग्राम्यपशुसंघेषु अतरुणेषु स्त्री ।
+      padaccheda: ग्राम्यपशुसंघेषु ७/३ अतरुणेषु १/१ स्त्री १/१॥ ग्रामे भवा ग्राम्याः
+        ग्रामाद्यखञौ (४.२.९३) इत्यनेन यत् प्रत्ययः॥
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.3.23
+    local_text:
+      source: हेतौ ।
+      padaccheda: हेतौ ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.4.105
+    local_text:
+      source: झस्य रन् ।
+      padaccheda: झस्य ६/१ रन् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.3.92
+    local_text:
+      source: वृद्भ्यः स्यसनोः ।
+      padaccheda: वृद्‍भ्यः ५/३ स्यसनोः ७/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.174
+    local_text:
+      source: भियः क्रुक्लुकनौ ।
+      padaccheda: भियः ५/१ क्रुक्लुकनौ १/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.1.103
+    local_text:
+      source: बहुलं छन्दसि ।
+      padaccheda: बहुलम् १/१ छन्दसि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.1.71
+    local_text:
+      source: तिङि चोदात्तवति ।
+      padaccheda: तिङि ७/१ च ०/०  उदात्तवति  ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.1.60
+    local_text:
+      source: हेति क्षियायाम् ।
+      padaccheda: ह ०/० इति ०/०  क्षियायाम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.1.61
+    local_text:
+      source: अहेति विनियोगे च ।
+      padaccheda: अह ०/०  इति ०/०   विनियोगे ७/१  च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.53
+    local_text:
+      source: जनिता मन्त्रे ।
+      padaccheda: जनिता १/१ मन्त्रे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.3.128
+    local_text:
+      source: शाकलाद्वा ।
+      padaccheda: शाकलात् ५/१ वा  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.1.35
+    local_text:
+      source: तुह्योस्तातङाशिष्यन्यतरस्याम् ।
+      padaccheda: तुह्योः ६/२ तातङ् १/१ आशिषि ७/१ अन्यतरस्याम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.91
+    local_text:
+      source: आ सर्वनाम्नः ।
+      padaccheda: आ (लुप्तप्रथमान्तनिर्देशः) सर्वनाम्नः ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.48
+    local_text:
+      source: तृतीया कर्मणि ।
+      padaccheda: तृतीया १/१ कर्मणि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.136
+    local_text:
+      source: कुण्डं वनम् ।
+      padaccheda: कुण्डम् १/१ वनम् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.1.72
+    local_text:
+      source: संयसश्च ।
+      padaccheda: संयसः ५/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.145
+    local_text:
+      source: अग्रान्तशुद्धशुभ्रवृषवराहेभ्यश्च ।
+      padaccheda: अग्रान्तशुद्धशुभ्रवृषवराहेभ्यः ५/३ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.7
+    local_text:
+      source: तत्सर्वादेः पथ्यङ्गकर्मपत्रपात्रं व्याप्नोति ।
+      padaccheda: तत् २/१ सर्वादेः ५/१ पथ्यङ्गकर्मपत्रपात्रम् २/१ व्याप्नोति  (क्रियापदम्)
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.3.98
+    local_text:
+      source: रुदश्च पञ्चभ्यः ।
+      padaccheda: रुदः ५/१ (व्यत्येन् बहुवचनस्यैकत्वम्) च ०/० पञ्चभ्यः ५/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.4.16
+    local_text:
+      source: विभाषा समीपे ।
+      padaccheda: विभाषा १/१ समीपे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.4.69
+    local_text:
+      source: दीर्घ इणः किति ।
+      padaccheda: दीर्घः १/१ इणः ६/१ किति ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.1.10
+    local_text:
+      source: नाज्झलौ ।
+      padaccheda: न् ०/० अज्झलौ १/१२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.4.50
+    local_text:
+      source: तथायुक्तं चानिप्सीतम् ।
+      padaccheda: तथा ०/० युक्तम् १/१ च ०/० आनिप्सीतम् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.133
+    local_text:
+      source: ऋचि तुनुघमक्षुतङ्कुत्रोरुष्याणाम् ।
+      padaccheda: ऋचि ७/१ तुनुघमक्षुतङ्कुत्रोरुष्याणाम् ६/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.4
+    local_text:
+      source: गाधलवणयोः प्रमाणे ।
+      padaccheda: गाधलवणयोः ७/२ प्रमाणे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.70
+    local_text:
+      source: किमः क्षेपे ।
+      padaccheda: किमः १/१ क्षेपे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.54
+    local_text:
+      source: शमिता यज्ञे ।
+      padaccheda: शमिता १/१ यज्ञे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.4.56
+    local_text:
+      source: विशिपतिपदिस्कन्दां व्याप्यमानासेव्यमानयोः ।
+      padaccheda: विशिपतिपदिस्कन्दाम् ६/३ व्याप्यमानासेव्यमानयोः ७/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.104
+    local_text:
+      source: जीर्यतेरतृन् ।
+      padaccheda: जीर्यतेः ५/१ अतृन् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.4.149
+    local_text:
+      source: पूर्णाद्विभाषा ।
+      padaccheda: पूर्णात् ५/१  विभाषा  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 2.4.60
+    local_text:
+      source: इञः प्राचाम्‌ ।
+      padaccheda: इञः ५/१ प्राचाम् ६/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.2
+    local_text:
+      source: स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाम्ङ्योस्सुप्‌
+        ।
+      padaccheda: स्वौजसमौट्‍छस्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाम्ङ्योस्सुप्
+        १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.2.21
+    local_text:
+      source: प्रभौ परिवृढः ।
+      padaccheda: प्रभौ ७/१ परिवृढः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.3.115
+    local_text:
+      source: वृकाट्टेण्यण् ।
+      padaccheda: वृकात् ५/१ टेण्यण्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.1.122
+    local_text:
+      source: सर्वत्र विभाषा गोः ।
+      padaccheda: सर्वत्र ०/० विभाषा १/१ गोः ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.86
+    local_text:
+      source: कर्मणि हनः ।
+      padaccheda: कर्मणि ७/१ हनः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.1.133
+    local_text:
+      source: स्यश्छन्दसि बहुलम् ।
+      padaccheda: स्यः (षष्ठ्यर्थे प्रथमा) छन्दसि ७/१ बहुलम् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.132
+    local_text:
+      source: पुत्रः पुंभ्यः ।
+      padaccheda: पुत्रः १/१ पुम्भ्यः ५/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.1.29
+    local_text:
+      source: नित्यं संज्ञाछन्दसोः ।
+      padaccheda: नित्यम् १/१ संज्ञाछन्दसोः  ७/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.4.113
+    local_text:
+      source: तिङ्शित्सार्वधातुकम् ।
+      padaccheda: तिङ्शित् १/१ सार्वधातुकम् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.2.64
+    local_text:
+      source: मो नो धातोः ।
+      padaccheda: मः ६/१  नः १/१  धातोः  ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.3.54
+    local_text:
+      source: षष्ठ्या रूप्य च ।
+      padaccheda: षष्ठ्या ५/१ रूप्य (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.3
+    local_text:
+      source: यवयवकषष्टिकादत्‌ ।
+      padaccheda: यवयवकषष्टिकात् ५/१  यत् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.2.22
+    local_text:
+      source: कृच्छ्रगहनयोः कषः ।
+      padaccheda: कृच्छ्रगहनयोः ७/२ कषः ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.1.112
+    local_text:
+      source: भृञोऽसंज्ञायाम् ।
+      padaccheda: भृञः ५/१ असंज्ञायाम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.2.70
+    local_text:
+      source: अम्नरूधरवरित्युभयथा छन्दसि ।
+      padaccheda: अम्नरूधरवरित्युभयथा (लुप्तषष्ठ्यन्तनिर्देशः) छन्दसि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.3.84
+    local_text:
+      source: उपाच्च ।
+      padaccheda: उपात् ५/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.2.93
+    local_text:
+      source: राष्ट्रावारपाराद्घखौ ।
+      padaccheda: राष्ट्रावारपारात् ५/१ घखौ  १/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.3.59
+    local_text:
+      source: प्रत्याङ्भ्यां श्रुवः ।
+      padaccheda: प्रत्याङ्भ्याम् ५/२ श्रुवः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.2.13
+    local_text:
+      source: कौमारापूर्ववचने ।
+      padaccheda: कौमार (लुप्तप्रथमान्तनिर्देशः) अपूर्ववचने ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.2.3
+    local_text:
+      source: न मु ने ।
+      padaccheda: न  ०/०  मु (लुप्तप्रथमान्तनिर्देशः)  ने ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.3.80
+    local_text:
+      source: समासेऽङ्गुलेः सङ्गः ।
+      padaccheda: समासे ७/१ अङ्‍गुलेः ५/१ सङ्गः  १/१ (षष्ठ्याः स्थाने प्रथमाऽत्र व्यत्ययेन
+        )
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.144
+    local_text:
+      source: अपे च लषः ।
+      padaccheda: अपे ७/१ च ०/० लषः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.2.49
+    local_text:
+      source: सनीवन्तर्धभ्रस्जदम्भुश्रिस्वृयूर्णुभरज्ञपिसनाम् ।
+      padaccheda: सनि ७/१ इवन्तर्धभ्रस्जदम्भुश्रिस्वृयूर्णुभरज्ञपिसनाम् ६/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.33
+    local_text:
+      source: परिप्रत्युपापा वर्ज्यमानाहोरात्रावयवेषु ।
+      padaccheda: परिप्रत्युपापा १/३ वर्ज्यमानाहोरात्रावयवेषु ७/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.1.99
+    local_text:
+      source: शकिसहोश्च ।
+      padaccheda: शकिसहोः ६/२ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.3.75
+    local_text:
+      source: भावेऽनुपसर्गस्य ।
+      padaccheda: भावे ७/१ अनुपसर्गस्य ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.3.36
+    local_text:
+      source: सम्माननोत्सञ्जनाचार्यकरणज्ञानभृतिविगणनव्ययेषु नियः ।
+      padaccheda: सम्माननोत्सञ्जनाचार्यकरणज्ञानभृतिविगणनव्ययेषु ७/३ नियः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.113
+    local_text:
+      source: स्रोतसो विभाषा ड्यड्ड्यौ ।
+      padaccheda: स्रोतसः ५/१ विभाषा १/१  ड्यड्ड्यौ  १/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.4.51
+    local_text:
+      source: अकथितं च ।
+      padaccheda: अकथितम् १/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.1.11
+    local_text:
+      source: कर्तुः क्यङ् सलोपश्च ।
+      padaccheda: कर्तुः ५/१ क्यङ् १/१ सलोपः १/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.4.23
+    local_text:
+      source: चूर्णादिनिः ।
+      padaccheda: चूर्णात् ५/१ इनिः  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.66
+    local_text:
+      source: घुमास्थागापाजहातिसां हलि ।
+      padaccheda: घुमास्थागापाजहातिसाम् ६/३ हलि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.123
+    local_text:
+      source: वर्णदृढादिभ्यः ष्यञ् च ।
+      padaccheda: वर्णदृढादिभ्यः ५/३ ष्यञ् १/१ च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.3.65
+    local_text:
+      source: विन्मतोर्लुक् ।
+      padaccheda: विन्मतोः ६/२  लुक्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.3
+    local_text:
+      source: विभाषोर्णोः ।
+      padaccheda: विभाषा १/१ ऊर्णोः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.48
+    local_text:
+      source: गोस्त्रियोरुपसर्ज्जनस्य ।
+      padaccheda: गोस्त्रियोः ६/१ उपसर्जनस्य ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.4.19
+    local_text:
+      source: तसौ मत्वर्थे ।
+      padaccheda: तसौ १/२ मत्वर्थे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.1.63
+    local_text:
+      source: तद् अर्हति ।
+      padaccheda: तत् २/१  अर्हति  (क्रियापदम्)
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.133
+    local_text:
+      source: श्वयुवमघोनामतद्धिते ।
+      padaccheda: श्वयुवमघोनाम् ६/३ अतद्धिते ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.62
+    local_text:
+      source: गोषदादिभ्यो वुन् ।
+      padaccheda: गोषदादिभ्यः ५/३  वुन्  १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.1.29
+    local_text:
+      source: शसो न ।
+      padaccheda: शसः ६/१ न (लुप्तप्रथमान्तनिर्देशः)
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.3.14
+    local_text:
+      source: रो रि ।
+      padaccheda: रः ६/१  रि  ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.2.124
+    local_text:
+      source: जनपदतदवध्योश्च ।
+      padaccheda: जनपदतदवध्योः ६/२ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.4.27
+    local_text:
+      source: नश्च धातुस्थोरुषुभ्यः ।
+      padaccheda: नः (अविभक्त्यन्तनिर्देशः) च ०/० धातुस्थोरुषुभ्यः  ५/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.9
+    local_text:
+      source: वा षपूर्वस्य निगमे ।
+      padaccheda: वा ०/० षपूर्वस्य ६/१ निगमे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.85
+    local_text:
+      source: श्राद्धमनेन भुक्तमिनिठनौ ।
+      padaccheda: श्राद्धम् १/१ अनेन ३/१ भुक्तम् २/१ इनिठनौ  १/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.122
+    local_text:
+      source: बहुलं छन्दसि ।
+      padaccheda: बहुलम् १/१  छन्दसि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.2.33
+    local_text:
+      source: वा द्रुहमुहष्णुहष्णिहाम् ।
+      padaccheda: वा ०/०  द्रुहमुहष्णुहष्णिहाम्  ६/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.3.87
+    local_text:
+      source: नाभ्यस्तस्याचि पिति सार्वधातुके ।
+      padaccheda: न ०/० अभ्यस्तस्य ६/१ अचि ७/१ पिति ७/१ सार्वधातुके ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.3.28
+    local_text:
+      source: निरभ्योः पूल्वोः ।
+      padaccheda: निरभ्योः ७/२ पूल्वोः ६/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.4.26
+    local_text:
+      source: स्वादुमि णमुल् ।
+      padaccheda: स्वादुमि ७/१ णमुल् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.2.66
+    local_text:
+      source: स्वाङ्गेभ्यः प्रसिते ।
+      padaccheda: स्वाङ्गेभ्यः ५/१ प्रसिते ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.3.37
+    local_text:
+      source: आहि च दूरे ।
+      padaccheda: आहि (लुप्तप्रथमान्तनिर्देशः) च  ०/०  दूरे ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.2.7
+    local_text:
+      source: मृडमृदगुधकुषक्लिशवदवसः क्त्वा ।
+      padaccheda: मृडमृदगुधकुषक्लिशवदवसः ५/१ क्त्वा १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.3.44
+    local_text:
+      source: एकाद्धो ध्यमुञन्यारयाम् ।
+      padaccheda: एकात् ५/१ धः ६/१ ध्यमुञ् १/१ अन्यारयाम् ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 5.3.98
+    local_text:
+      source: लुम्मनुष्ये ।
+      padaccheda: लुप् १/१  मनुष्ये ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.1.144
+    local_text:
+      source: अपरस्पराः क्रियासातत्ये ।
+      padaccheda: अपरस्पराः १/३ क्रियासातत्ये ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.49
+    local_text:
+      source: गतिरनन्तरः ।
+      padaccheda: गतिः १/१ अनन्तरः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.134
+    local_text:
+      source: इकः सुञि ।
+      padaccheda: इकः ६/१ सुञि ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.95
+    local_text:
+      source: राजनि युधिकृञः ।
+      padaccheda: राजनि ७/१ युधिकृञः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 4.3.29
+    local_text:
+      source: पथः पन्थ च ।
+      padaccheda: पथः ६/१ पन्थ (लुप्तप्रथमान्तनिर्देशः) च  ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.19
+    local_text:
+      source: न भूवाक्चिद्दिधिषु ।
+      padaccheda: न ०/० भूवाक्-चिद्दिधिषु १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.2.22
+    local_text:
+      source: परेश्च घाङ्कयोः ।
+      padaccheda: परेः ६/१ च ०/० घाङ्कयोः  ७/२
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.2.116
+    local_text:
+      source: हशश्वतोर्लङ् च ।
+      padaccheda: हशश्वतोः ७/२ लङ् १/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.4.6
+    local_text:
+      source: ङिति ह्रस्वश्च ।
+      padaccheda: ङिति ७/१ ह्रस्वश् १/१ च ०/०
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.3.42
+    local_text:
+      source: पुंवत्‌ कर्मधारयजातीयदेशीयेषु ।
+      padaccheda: पुंवत् ०/० कर्मधारयजातीयदेशीयेषु ७/३
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.2.197
+    local_text:
+      source: द्वित्रिभ्यां पाद्दन्मूर्धसु बहुव्रीहौ ।
+      padaccheda: द्वित्रिभ्याम् ५/२ पाद्दन्मूर्धसु ७/३ बहुव्रीहौ ७/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 3.4.114
+    local_text:
+      source: आर्द्धधातुकं शेषः ।
+      padaccheda: आर्द्धधातुकम् १/१ शेषः १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.150
+    local_text:
+      source: हलस्तद्धितस्य ।
+      padaccheda: हलः ५/१ तद्धितस्य ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 8.4.31
+    local_text:
+      source: हलश्च इजुपधात्‌ ।
+      padaccheda: हलः ५/१ च ०/० इजुपधात् ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 6.4.68
+    local_text:
+      source: वाऽन्यस्य संयोगादेः ।
+      padaccheda: वा ०/० अन्यस्य ६/१ संयोगादेः ६/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 1.4.42
+    local_text:
+      source: साधकतमं करणम् ।
+      padaccheda: साधकतमम् १/१ करणम् १/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
+- rule_context:
+    sutra_id: 7.2.46
+    local_text:
+      source: निरः कुषः ।
+      padaccheda: निरः ५/१ कुषः ५/१
+    scope:
+      domain: UNKNOWN
+    dependencies:
+      anuvrtti: []
+    operation:
+      workflow_status: proposed
+      type: UNKNOWN
+      operands: []
+    functional_reading:
+      summary: ''
+      evidence_strength: UNRESOLVED
+    sound_set_relevance:
+      status: UNRESOLVED
+      basis: []
+    unresolved_questions:
+    - pending_manual_validation
+    claims: []
