@@ -2,12 +2,14 @@
 
 This directory contains scripts and data for systematically reconstructing the Śiva-sūtras from authentic traditional usage to prove their optimal ordering without relying on blind faith.
 
-## Data Provenance: `raw_ashtadhyayi.html`
+## Data Provenance: `verified_ashtadhyayi.txt`
 
-The file `raw_ashtadhyayi.html` (approx. 2MB) is the raw data source used by our extraction scripts.
+The file `verified_ashtadhyayi.txt` is the verified academic data source used by our extraction scripts, replacing the old unverified HTML scrape.
 
 **Provenance Details:**
-- **Source URL:** `https://sanskritdocuments.org/learning_tools/ashtadhyayi/`
-- **Acquisition Method:** Downloaded via `fetch_sutras.py`.
-- **Epistemic Status:** AUTHENTICITY-UNVERIFIED. 
-- **Notes:** This is a digital compilation and may not correspond strictly to a single critical print edition. In the context of our Epistemic Contract, any anomalies extracted from this file must be cross-referenced with independent critical editions (e.g., K.V. Abhyankar or S.D. Joshi) before being assigned the RESOLVED status. This HTML file is purely an operational baseline for the automated pipeline.
+- **Source:** GRETIL (Göttingen Register of Electronic Texts in Indian Languages) mirror.
+- **Base Edition:** *Kāśikāvṛtti*, edited by Aryendra Sharma (input by Ms. Mari Minamino).
+- **Format:** UTF-8 encoded text.
+- **Acquisition Method:** Downloaded via `fetch_verified_corpus.py` from the stable INDOLOGY/GRETIL-mirror on GitHub.
+- **Epistemic Status:** AUTHENTICITY-VERIFIED (Attributed).
+- **Notes:** This file contains the sūtras as established by standard critical editions. It provides the necessary epistemic foundation to test the linguistic independence of the 42-class model without the risk of *False Certainty* associated with synthetic or unverified web scrapes.
