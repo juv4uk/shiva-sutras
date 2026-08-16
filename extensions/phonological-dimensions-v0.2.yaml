@@ -1,0 +1,852 @@
+# Phonological Dimensions Registry v0.2
+# ======================================
+#
+# This file is NOT a language registry. It is a registry of the AXES along
+# which phonological systems can differ from each other.
+#
+# Extracted from three language registries:
+#   sanskrit.yaml v0.1 (academic interpretation)
+#   ukrainian.yaml v0.3 (academic extension)
+#   english.yaml  v0.1 (academic extension)
+#
+# Changes from v0.1:
+#   1. Auto-generated summary (computed from actual data)
+#   2. Epistemic states: present / absent / not-applicable / unknown / disputed
+#   3. relation_between_dimensions section (deduplication analysis)
+#   4. Two annotation models: academic_interpretation vs cross_language_comparison
+#   5. Applicability rules per dimension
+#   6. Positive comparison structure specification
+#
+# STATUS: HYPOTHESIS (H-SS-EXT-001)
+# This registry is an independent hypothesis from the sarvam agent.
+# It has NOT been adapted to the existing shiva-sutras architecture.
+# A reconciliation experiment is required before adoption.
+# See: hypotheses/independent-claims-sarvam.yaml
+
+registry_id: phonological-dimensions-v0.2
+registry_type: dimension_registry
+layer: meta
+status: hypothesis
+date: 2026-08-15
+extracted_from:
+  - sanskrit-academic-interpretation-v0.1
+  - ukrainian-academic-extension-v0.3
+  - english-academic-extension-v0.1
+
+# Auto-generated summary (do not edit by hand)
+# Total dimensions: 44
+# By level:
+#   segment-feature: 11
+#   phoneme-system-feature: 19
+#   language-system-feature: 11
+#   process-allophony: 3
+# By scope:
+#   universal: 22
+#   language-specific: 17
+#   segmental: 2
+#   language-system: 1
+#   historical: 1
+#   meta-comparative: 1
+
+dimensions_count: 44
+levels:
+  segment-feature: 11
+  phoneme-system-feature: 19
+  language-system-feature: 11
+  process-allophony: 3
+scopes:
+  universal: 22
+  language-specific: 17
+  segmental: 2
+  language-system: 1
+  historical: 1
+  meta-comparative: 1
+
+epistemic_states:
+  - id: EPI-PRESENT
+    name: present
+    description: >-
+      The dimension is attested for this phoneme in this language. A specific
+      value is assigned.
+    yaml_representation: '<specific value from dimension.values>'
+    implication: >-
+      The phoneme has this property with the specified value.
+  - id: EPI-ABSENT
+    name: absent
+    description: >-
+      The dimension is meaningful for this phoneme, but the property is
+      explicitly absent. The category exists in this language, but this phoneme
+      does not have it.
+    yaml_representation: absent
+    implication: >-
+      e.g., 'aspiration: absent' for a language that has aspiration contrasts
+      but this phoneme does not participate in one.
+  - id: EPI-NOT-APPLICABLE
+    name: not-applicable
+    description: >-
+      The dimension is not meaningful for this phoneme or this language. The
+      category itself does not apply.
+    yaml_representation: not-applicable
+    implication: >-
+      e.g., 'fortis_lenis: not-applicable' for Sanskrit, which uses
+      voicing+aspiration instead. 'checked: not-applicable' for Ukrainian,
+      where all vowels can occur in any position.
+  - id: EPI-UNKNOWN
+    name: unknown
+    description: >-
+      The dimension is meaningful, but no data has been gathered yet. This is
+      the honest 'we have not checked' state.
+    yaml_representation: unknown
+    implication: >-
+      The dimension SHOULD be classified, but hasn't been. This is a TODO
+      marker, not a final answer.
+  - id: EPI-DISPUTED
+    name: disputed
+    description: >-
+      The dimension is meaningful, but phonologists disagree on the value.
+      Candidates are listed.
+    yaml_representation: 'disputed: [<candidate1>, <candidate2>, ...]'
+    implication: >-
+      e.g., Sanskrit /c/ — manner: disputed (stop vs. affricate). Sources
+      disagree.
+
+annotation_models:
+  - id: MODEL-ACADEMIC-INTERPRETATION
+    name: academic_interpretation
+    applies_to: 'Sanskrit (canonical language)'
+    description: >-
+      Used when a language IS the canonical language. The academic layer does
+      NOT compare itself to the canon — it ANNOTATES the canon. The question
+      is not 'how does this phoneme relate to the canonical unit?' but 'what
+      does academic phonetics say about this canonical unit?' Therefore: no
+      relation_to_canon field with shared/differences. Instead:
+      academic_interpretation with direct dimension assignments.
+    key_difference: >-
+      No 'relation_to_canon' — the phoneme IS the canon. Dimensions annotate
+      directly.
+  - id: MODEL-CROSS-LANGUAGE-COMPARISON
+    name: cross_language_comparison
+    applies_to: 'Ukrainian, English, and all future non-canonical languages'
+    description: >-
+      Used when a language is NOT the canonical language. The academic
+      extension layer compares its phonemes to the canonical units. The
+      question is 'how does this phoneme relate to the canonical unit?' —
+      answered through shared and different dimensions. Dimensions are
+      organized by ontological level: segment, phoneme_system,
+      language_system, processes.
+    key_difference: >-
+      Has 'comparison' organized by ontological level
+      (segment/phoneme_system/language_system/processes), each with 'shared'
+      and 'different'. Replaces flat 'shared'/'differences' from v0.1.
+
+comparison_structure:
+  description: >-
+    The positive comparison structure for cross-language registries. Instead
+    of a flat 'differences' bag, dimensions are organized by ontological
+    level, and each level has 'shared' and 'different'.
+  levels:
+    - name: segment
+      description: Articulatory/acoustic properties of the sound itself
+      dimensions: [place, manner, voicing, nasality, ipa, backness, rounding, vowel_height, syllabicity, starting_point, ending_point]
+    - name: phoneme_system
+      description: How the phoneme participates in contrasts
+      dimensions: [aspiration, aspiration_type, breathy_voice, retroflex, palatalization, phonemic_length, phonemic_status, phonological_status, system_status, voiced_counterpart, syllabic, syllabic_variant, fortis_lenis, rhoticity, velarization, tap_realization, distribution, alternation, minimal_pairs]
+    - name: language_system
+      description: Properties of the whole phonological system
+      dimensions: [length_opposition, vowel_inventory, stop_inventory, nasal_inventory, sibilant_inventory, checked, velar_fricative, voiced_velar_fricative, frequency, etymology, closeness]
+    - name: processes
+      description: Contextual variation, allophonic processes
+      dimensions: [allophony, glottalization, diphthongization]
+  rules:
+    - 'Each level contains shared and different sub-maps.'
+    - 'shared lists dimensions where the two systems AGREE.'
+    - 'different lists dimensions where they DISAGREE, with values for both canon and language.'
+    - 'A dimension that is not-applicable for one language should be listed under different with value not-applicable.'
+    - 'A dimension that is unknown for one language should be listed under different with value unknown — this is a TODO marker.'
+    - 'A dimension that is disputed should list candidates.'
+    - 'Each phoneme entry need only include levels where there is something to say — empty levels can be omitted.'
+
+backfill_policy:
+  universal: >-
+    Backfill into ALL registries. Each language must classify its relationship
+    to this dimension. 'absent' is valid; 'unknown' is a TODO marker;
+    'not-applicable' must be justified.
+  language-specific: >-
+    Do NOT backfill into languages where it is meaningless. Use 'not-applicable'
+    if the dimension is irrelevant to the language's phonological type. Record
+    in this registry with provenance.
+  segmental: >-
+    Backfill only into languages that have phonemes in the matching domain
+    (e.g., starting_point only for languages with diphthongs). Use
+    'not-applicable' otherwise.
+  language-system: >-
+    Document once per language, not per phoneme. Backfill into all languages.
+  meta-comparative: >-
+    Do NOT backfill. This is metadata about the comparison, not a
+    phonological property.
+  historical: >-
+    Do NOT backfill. This is diachronic information, not synchronic phonology.
+
+relation_between_dimensions:
+  - group: syllabicity-cluster
+    members: [DIM-SYLLABICITY, DIM-SYLLABIC, DIM-SYLLABIC-VARIANT]
+    relation_type: distinct-but-related
+    analysis:
+      - 'DIM-SYLLABICITY is a segment-feature: Is this segment syllabic? (binary property of the segment itself).'
+      - 'DIM-SYLLABIC is a phoneme-system-feature: Can this consonant function as a syllable nucleus in certain contexts? (potential within the system).'
+      - 'DIM-SYLLABIC-VARIANT is a phoneme-system-feature: Does a separate syllabic phoneme exist? (e.g., Sanskrit r̩ from /r/).'
+    resolution: keep-separate
+    reason: >-
+      They operate at different levels: segment property vs. contextual
+      potential vs. existence of a counterpart phoneme. Merging would lose the
+      distinction between 'this segment is syllabic' and 'this segment has a
+      syllabic variant'.
+  - group: phoneme-status-cluster
+    members: [DIM-PHONEMIC-STATUS, DIM-PHONOLOGICAL-STATUS, DIM-SYSTEM-STATUS]
+    relation_type: distinct-but-related
+    analysis:
+      - 'DIM-PHONEMIC-STATUS is about: Is this segment a phoneme or an allophone? (universal, binary-ish).'
+      - 'DIM-PHONOLOGICAL-STATUS is about: Is this complex segment unitary or sequential? (e.g., is /eɪ/ one phoneme or two?).'
+      - 'DIM-SYSTEM-STATUS is about: How is this phoneme classified within the language system? (e.g., grouped with stops vs. affricates).'
+    resolution: keep-separate
+    reason: >-
+      They answer different questions: phoneme vs. allophone, unitary vs.
+      sequential, classification within system. All three are needed.
+  - group: aspiration-cluster
+    members: [DIM-ASPIRATION, DIM-ASPIRATION-TYPE]
+    relation_type: phoneme-vs-system
+    analysis:
+      - 'DIM-ASPIRATION is phoneme-level: Does THIS phoneme participate in an aspiration contrast?'
+      - 'DIM-ASPIRATION-TYPE is system-level: What kind of aspiration system does the language have?'
+    resolution: keep-separate
+    reason: >-
+      One describes the phoneme role, the other describes the system
+      architecture. They complement each other.
+  - group: length-cluster
+    members: [DIM-PHONEMIC-LENGTH, DIM-LENGTH-OPPOSITION]
+    relation_type: phoneme-vs-system
+    analysis:
+      - 'DIM-PHONEMIC-LENGTH is phoneme-level: Is THIS vowel phonemically long or short?'
+      - 'DIM-LENGTH-OPPOSITION is system-level: What is the phonemic length opposition in this language?'
+    resolution: keep-separate
+    reason: >-
+      One describes the phoneme own length status, the other describes the
+      system opposition structure.
+  - group: velar-fricative-cluster
+    members: [DIM-VELAR-FRICATIVE, DIM-VOICED-VELAR-FRICATIVE]
+    relation_type: alias-candidate
+    analysis:
+      - 'DIM-VELAR-FRICATIVE: Does the language have a phonemic voiceless velar fricative /x/?'
+      - 'DIM-VOICED-VELAR-FRICATIVE: Does the language have a phonemic voiced velar fricative /ɦ~ɣ/?'
+      - 'These could be merged into a single dimension velar_fricative with values: present-voiceless, present-voiced, present-both, absent.'
+    resolution: merge-candidate
+    reason: >-
+      They describe the same phonological category (velar fricative) split by
+      voicing. A single dimension with a voicing value would be cleaner.
+      Flagged as merge-candidate for v0.3.
+  - group: velarization-vs-velar-fricative
+    members: [DIM-VELARIZATION, DIM-VELAR-FRICATIVE]
+    relation_type: no-relation
+    analysis:
+      - 'DIM-VELARIZATION is about secondary articulation (velarized /l/ → [ɫ]).'
+      - 'DIM-VELAR-FRICATIVE is about the existence of a phonemic /x/ in the inventory.'
+      - 'Despite similar names, these are completely different dimensions.'
+    resolution: keep-separate
+    reason: >-
+      Different phenomena entirely — secondary articulation vs. inventory
+      presence.
+
+dimensions:
+  # ===== SEGMENT FEATURE =====
+  - id: DIM-PLACE
+    name: place
+    level: segment-feature
+    scope: universal
+    domain: consonant
+    description: 'Primary place of articulation — where in the vocal tract the consonant is produced.'
+    values: [bilabial, labiodental, dental, alveolar, postalveolar, alveolo-palatal, palatal, velar, labiovelar, glottal, unresolved]
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: segment is a consonant
+      backfill_trigger: 'universal — always applies; every consonant must document place'
+      na_condition: 'vowels (use vowel_height, backness, rounding instead)'
+    note: 'English revealed this as a varying dimension for coronals (dental vs alveolar) — invisible with only Sanskrit + Ukrainian.'
+
+  - id: DIM-MANNER
+    name: manner
+    level: segment-feature
+    scope: universal
+    domain: consonant
+    description: 'Manner of articulation — how airflow is obstructed.'
+    values: [stop, fricative, affricate, nasal, trill, tap, approximant, 'lateral approximant', vowel, diphthong, 'affricate or stop (unresolved)']
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: 'segment is a consonant (or vowel, where manner = vowel/diphthong)'
+      backfill_trigger: 'universal — always applies'
+      na_condition: 'none — every segment has a manner'
+
+  - id: DIM-VOICING
+    name: voicing
+    level: segment-feature
+    scope: universal
+    domain: segment
+    description: 'Vocal fold state during production.'
+    values: [voiced, voiceless, 'fully voiced', 'partially voiced (devoiced in coda)', 'partially voiced (devoiced word-finally and in clusters)']
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: all segments
+      backfill_trigger: 'universal — always applies'
+      na_condition: none
+    note: 'English revealed that voicing is not binary — partially voiced is a distinct value.'
+
+  - id: DIM-NASALITY
+    name: nasality
+    level: segment-feature
+    scope: universal
+    domain: segment
+    description: 'Whether air escapes through the nasal cavity.'
+    values: [nasal, oral]
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: all segments
+      backfill_trigger: 'universal — always applies'
+      na_condition: none
+
+  - id: DIM-SYLLABICITY
+    name: syllabicity
+    level: segment-feature
+    scope: universal
+    domain: segment
+    description: 'Whether the segment functions as a syllable nucleus in this language.'
+    values: [syllabic, non-syllabic]
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: all segments
+      backfill_trigger: 'universal — always applies'
+      na_condition: none
+    note: 'Distinct from DIM-SYLLABIC and DIM-SYLLABIC-VARIANT. See relation_between_dimensions.'
+
+  - id: DIM-IPA
+    name: ipa
+    level: segment-feature
+    scope: universal
+    domain: segment
+    description: 'The IPA symbol representing this segment. Functions as a comparative dimension: the same canonical position may map to different IPA values across languages.'
+    values: '[any IPA symbol, or unresolved]'
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: all segments
+      backfill_trigger: 'universal — every segment must have an IPA value (or unresolved)'
+      na_condition: none
+    note: 'Not a phonological feature in the traditional sense — it is the segment identity. But it functions as a comparative dimension.'
+
+  - id: DIM-BACKNESS
+    name: backness
+    level: segment-feature
+    scope: universal
+    domain: vowel
+    description: 'Tongue position on the front-back axis for vowels.'
+    values: [front, central, back, unresolved]
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is a vowel
+      backfill_trigger: 'universal — applies to all vowels'
+      na_condition: consonants
+
+  - id: DIM-ROUNDING
+    name: rounding
+    level: segment-feature
+    scope: universal
+    domain: vowel
+    description: 'Lip rounding state for vowels.'
+    values: [rounded, unrounded]
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is a vowel
+      backfill_trigger: 'universal — applies to all vowels'
+      na_condition: 'consonants (unless secondary articulation)'
+
+  - id: DIM-VOWEL-HEIGHT
+    name: vowel_height
+    level: segment-feature
+    scope: universal
+    domain: vowel
+    description: 'Tongue height (degree of jaw opening) for vowels.'
+    values: [close, close-mid, open-mid, open]
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is a vowel
+      backfill_trigger: 'universal — applies to all vowels'
+      na_condition: consonants
+
+  - id: DIM-STARTING-POINT
+    name: starting_point
+    level: segment-feature
+    scope: segmental
+    domain: diphthong
+    description: 'The starting vowel quality of a diphthong.'
+    values: ['open /a/', 'open central /a/', 'open front or central /a/ or /ɑ/', 'mid /e/']
+    provenance: [english]
+    applicability:
+      applies_when: segment is a diphthong
+      backfill_trigger: 'segmental — only backfill into languages that have diphthongs'
+      na_condition: 'languages without phonemic diphthongs (e.g., Ukrainian, Sanskrit treat ai/au as unitary)'
+
+  - id: DIM-ENDING-POINT
+    name: ending_point
+    level: segment-feature
+    scope: segmental
+    domain: diphthong
+    description: 'The ending vowel quality of a diphthong (the offglide).'
+    values: ['high front /i/', 'near-high front /ɪ/', 'high back /u/', 'near-high back /ʊ/']
+    provenance: [english]
+    applicability:
+      applies_when: segment is a diphthong
+      backfill_trigger: 'segmental — only backfill into languages that have diphthongs'
+      na_condition: 'languages without phonemic diphthongs'
+
+  # ===== PHONEME SYSTEM FEATURE =====
+  - id: DIM-ASPIRATION
+    name: aspiration
+    level: phoneme-system-feature
+    scope: universal
+    domain: consonant
+    description: 'Whether aspiration is contrastive for this phoneme, and if so, what kind.'
+    values: ['contrastive (k vs kh)', 'contrastive (p vs ph)', 'contrastive (t vs th)', 'contrastive (b vs bh)', 'contrastive (d vs dh)', 'contrastive (g vs gh)', 'contrastive (c vs ch)', 'contrastive (j vs jh)', allophonic, 'allophonic (aspirated in onset, unaspirated after /s/)', absent, 'absent (fortis/lenis only)', 'absent (no aspirated voiced series)', non-contrastive, 'non-contrastive (no aspirated series)']
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: segment is a stop or affricate
+      backfill_trigger: 'universal — applies to all stops/affricates'
+      na_condition: 'non-oral consonants (nasals, liquids, fricatives without aspiration contrast)'
+    note: 'Phoneme-level view: does THIS phoneme participate in an aspiration contrast? System-level view is DIM-ASPIRATION-TYPE.'
+
+  - id: DIM-ASPIRATION-TYPE
+    name: aspiration_type
+    level: phoneme-system-feature
+    scope: language-system
+    domain: consonant
+    description: 'What kind of aspiration system the language uses: a full contrastive series (like Sanskrit), positional allophony (like English), or none.'
+    values: ['contrastive series', 'positional allophone', 'absent (no aspirated series at all)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: language has stops/affricates
+      backfill_trigger: 'language-system — document once per language, not per phoneme'
+      na_condition: 'languages with no oral stops (none known)'
+    note: 'System-level companion to DIM-ASPIRATION.'
+
+  - id: DIM-BREATHY-VOICE
+    name: breathy_voice
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: consonant
+    description: 'Whether breathy voice (murmur) is contrastive for this phoneme.'
+    values: ['contrastive (/bʱ/ exists)', 'contrastive (/ɡʱ/ exists)', 'contrastive (/d͡ʑʰ/ or /ɟʰ/ exists)', absent, 'absent (no breathy-voiced series)']
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: 'language has voiced stops (potential for breathy-voiced counterparts)'
+      backfill_trigger: 'language-specific — backfill as absent only if the language has voiced stops but no breathy series'
+      na_condition: 'languages without voiced stops'
+    note: 'Distinct from aspiration — breathy voiced stops (ghoṣa) are a separate series in Sanskrit.'
+
+  - id: DIM-RETROFLEX
+    name: retroflex
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: consonant
+    description: 'Whether retroflex articulation is contrastive for this phoneme.'
+    values: ['contrastive (ṭ exists)', 'contrastive (ḍ exists)', 'contrastive (ṇ exists)', 'contrastive (ṇ /ɳ/ exists)', 'contrastive (t vs ṭ)', 'contrastive (d vs ḍ)', absent, 'absent (no retroflex series)']
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: 'language has coronal consonants (potential for retroflex contrast)'
+      backfill_trigger: 'language-specific — backfill as absent for languages with coronals but no retroflex series'
+      na_condition: 'languages without coronal consonants (rare)'
+    note: 'A specifically Indo-Aryan feature. Its absence in Ukrainian and English is information.'
+
+  - id: DIM-PALATALIZATION
+    name: palatalization
+    level: phoneme-system-feature
+    scope: universal
+    domain: consonant
+    description: 'Whether palatalization is contrastive for this phoneme, and if so, what kind.'
+    values: ['contrastive (t vs tʲ)', 'contrastive (d vs dʲ)', 'contrastive (n vs nʲ)', 'contrastive (s vs sʲ)', 'contrastive (l vs lʲ)', 'contrastive (r vs rʲ)', 'inherent (ś is palatalized)', 'allophonic before /i/', 'allophonic before front vowels', 'allophonic only (kʲ before /i/)', absent, 'absent (no phonemic palatalization)', 'absent (no phonemic palatalized stops)', 'marginal (mʲ debated)', 'no palatalized d (has separate j)']
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: segment is a consonant
+      backfill_trigger: 'universal — applies to all consonants'
+      na_condition: vowels
+
+  - id: DIM-PHONEMIC-LENGTH
+    name: phonemic_length
+    level: phoneme-system-feature
+    scope: universal
+    domain: vowel
+    description: 'Whether phonemic length is contrastive for this vowel phoneme.'
+    values: ['contrastive (i vs ī)', 'contrastive (u vs ū)', 'contrastive (a vs ā)', 'inherently long (dīrgha)', long, 'short (checked)', non-contrastive, 'short (dīrgha ā is separate)', 'short (dīrgha ī is separate)', 'short (dīrgha ū is separate)']
+    provenance: [sanskrit, ukrainian, english]
+    applicability:
+      applies_when: segment is a vowel
+      backfill_trigger: 'universal — applies to all vowels'
+      na_condition: 'consonants (unless length is contrastive for consonants, e.g., Finnish)'
+    note: 'Phoneme-level view: is THIS vowel phonemically long or short? System-level view is DIM-LENGTH-OPPOSITION.'
+
+  - id: DIM-PHONEMIC-STATUS
+    name: phonemic_status
+    level: phoneme-system-feature
+    scope: universal
+    domain: segment
+    description: 'Whether this segment is a full phoneme, an allophone, or disputed in this language.'
+    values: ['full phoneme', 'full phoneme v', 'full phoneme w', 'uncontested phoneme', 'disputed (some analyses: allophone of /n/ before velars)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: all segments
+      backfill_trigger: 'universal — every segment must have a phonemic status determination'
+      na_condition: none
+    note: 'About phoneme status: is this segment a phoneme or allophone? See relation_between_dimensions for distinction from DIM-PHONOLOGICAL-STATUS and DIM-SYSTEM-STATUS.'
+
+  - id: DIM-PHONOLOGICAL-STATUS
+    name: phonological_status
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: segment
+    description: 'Whether a complex segment is analyzed as a unitary phoneme or a sequence in this language.'
+    values: ['unitary phoneme (FACE)', 'unitary phoneme (ai)']
+    provenance: [english]
+    applicability:
+      applies_when: segment is a complex segment (diphthong, affricate, geminate)
+      backfill_trigger: 'language-specific — only relevant when a segment unitary vs. sequence status is contested'
+      na_condition: 'simple segments (single-stop consonants, simple vowels)'
+
+  - id: DIM-SYSTEM-STATUS
+    name: system_status
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: segment
+    description: 'How this phoneme is grouped within the language phonological system (e.g., grouped with stops vs. affricates).'
+    values: ['full phoneme', 'full phoneme ñ', 'full phoneme, grouped with stops', 'grouped with affricates', 'grouped with stops', 'palatalized counterpart of n']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: 'all phonemes (how they are classified within the system)'
+      backfill_trigger: 'language-specific — each language has its own grouping conventions'
+      na_condition: 'none — but value depends on language analysis tradition'
+
+  - id: DIM-MINIMAL-PAIRS
+    name: minimal_pairs
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: segment
+    description: 'Minimal pairs that demonstrate the phonemic contrast for this segment.'
+    values: ['contrastive with n, ṇ', 'sin/sing, sun/sung — contrastive in most dialects']
+    provenance: [english]
+    applicability:
+      applies_when: segment is a phoneme with a contested or demonstrable contrast
+      backfill_trigger: 'language-specific — only when phonemic status is contested'
+      na_condition: uncontested phonemes
+
+  - id: DIM-VOICED-COUNTERPART
+    name: voiced_counterpart
+    level: phoneme-system-feature
+    scope: universal
+    domain: consonant
+    description: 'Whether a voiced counterpart exists for this phoneme.'
+    values: ['present (/z/)', 'absent (no /z/)']
+    provenance: [ukrainian]
+    applicability:
+      applies_when: segment is a voiceless consonant (potential for voiced counterpart)
+      backfill_trigger: 'universal — applies to all voiceless consonants'
+      na_condition: 'already-voiced consonants (voiced counterpart is self)'
+
+  - id: DIM-SYLLABIC-VARIANT
+    name: syllabic_variant
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: segment
+    description: 'Whether this phoneme has a syllabic variant — a syllabic version used as a vowel (e.g., Sanskrit ṛ from /r/).'
+    values: ['has syllabic ṛ', 'has syllabic ṛ /r̩/ as a separate vowel', 'no syllabic r']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is a sonorant consonant (r, l, m, n) with potential syllabic use
+      backfill_trigger: 'language-specific — only relevant for languages where sonorants can be syllabic'
+      na_condition: 'obstruents (cannot be syllabic in any known language)'
+    note: 'About the existence of a syllabic COUNTERPART phoneme. Distinct from DIM-SYLLABICITY and DIM-SYLLABIC.'
+
+  - id: DIM-SYLLABIC
+    name: syllabic
+    level: phoneme-system-feature
+    scope: universal
+    domain: consonant
+    description: 'Whether this consonant can function as a syllable nucleus in certain contexts (syllabic consonant).'
+    values: ['syllabic [m̩] possible', 'syllabic [n̩] possible', 'no syllabic m', 'no syllabic n', 'absent (no syllabic consonants)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is a sonorant consonant
+      backfill_trigger: 'universal — all sonorant consonants must document whether they can be syllabic'
+      na_condition: obstruents
+    note: 'About contextual syllabic potential of a consonant. Distinct from DIM-SYLLABICITY and DIM-SYLLABIC-VARIANT.'
+
+  - id: DIM-FORTIS-LENIS
+    name: fortis_lenis
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme participates in a fortis/lenis opposition.'
+    values: ['/b/ is lenis counterpart of /p/', 'absent (uses voicing only, no aspiration)', 'n/a (uses voicing + aspiration)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: 'language uses fortis/lenis as a primary contrast (not voicing or aspiration)'
+      backfill_trigger: 'language-specific — do NOT backfill as absent into languages that use voicing or aspiration instead; use not-applicable'
+      na_condition: 'languages that use voicing (Sanskrit, Ukrainian) or aspiration (Sanskrit) as primary contrast — the category is not meaningful there'
+    note: 'The correct epistemic state for Sanskrit and Ukrainian is not-applicable, NOT absent.'
+
+  - id: DIM-RHOTICITY
+    name: rhoticity
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: consonant
+    description: 'Whether /r/ appears in all positions (rhotic) or is restricted (non-rhotic).'
+    values: ['always rhotic', 'rhotic in GA, non-rhotic in SSBE (no /r/ in coda)', 'n/a (rhotic — /r/ occurs in all positions)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is /r/ or a rhotic
+      backfill_trigger: 'language-specific — only relevant for languages where rhoticity is a system-level property'
+      na_condition: 'languages where /r/ occurs in all positions without restriction (most Slavic, Indic)'
+
+  - id: DIM-VELARIZATION
+    name: velarization
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme is velarized, and if so, whether phonemically or allophonically.'
+    values: ['present (dark l)', absent, 'absent (unlike plain /ɫ/)', 'allophonic ([ɫ] in coda, [l] in onset)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: 'segment is a liquid (/l/) — primary case'
+      backfill_trigger: 'language-specific — only relevant for languages with /l/'
+      na_condition: 'phonemes that cannot be velarized (stops, fricatives, etc.)'
+
+  - id: DIM-TAP-REALIZATION
+    name: tap_realization
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme has a tap realization as an allophone.'
+    values: ['often [ɾ]', 'not documented']
+    provenance: [ukrainian]
+    applicability:
+      applies_when: segment is /r/ or a rhotic
+      backfill_trigger: 'language-specific — only relevant for languages with /r/'
+      na_condition: non-rhotic consonants
+
+  - id: DIM-DISTRIBUTION
+    name: distribution
+    level: phoneme-system-feature
+    scope: universal
+    domain: segment
+    description: 'Positions in which this phoneme can occur (onset, coda, any).'
+    values: ['any position', 'any position (full phoneme ṅ)', 'only in syllable coda (sing, singer)', 'only in syllable onset (never in coda)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: all phonemes
+      backfill_trigger: 'universal — every phoneme must document its distributional constraints'
+      na_condition: none
+
+  - id: DIM-ALTERNATION
+    name: alternation
+    level: phoneme-system-feature
+    scope: language-specific
+    domain: segment
+    description: 'Whether this phoneme alternates with another in morphological processes.'
+    values: ['alternates with /u/', 'no alternation with /u/ (unlike Ukrainian)', 'no alternation with /u/ in SSBE (but /w/~[u̯] in some dialects)', 'not documented']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment participates in morphological alternations
+      backfill_trigger: 'language-specific — only when alternation is attested or denied'
+      na_condition: 'no documented alternations'
+
+  # ===== LANGUAGE SYSTEM FEATURE =====
+  - id: DIM-LENGTH-OPPOSITION
+    name: length_opposition
+    level: language-system-feature
+    scope: universal
+    domain: vowel-system
+    description: 'What the phonemic length opposition IS in this language — not just whether it exists, but what the actual opposition consists of.'
+    values: ['a vs ā', 'contrastive i vs ī', 'contrastive u vs ū', 'contrastive ɪ vs iː', 'æ vs ɑː (different height, not just length)', 'ʊ vs uː (different height, not just length)', 'absent (no phonemic length)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: language has a vowel system
+      backfill_trigger: 'universal — every language must document its length opposition (or its absence)'
+      na_condition: 'none — even absent is a valid value'
+    note: 'System-level companion to DIM-PHONEMIC-LENGTH.'
+
+  - id: DIM-VOWEL-INVENTORY
+    name: vowel_inventory
+    level: language-system-feature
+    scope: universal
+    domain: vowel-system
+    description: 'Size and composition of the vowel inventory.'
+    values: ['6 vowels', '9 vowels', '9 vowels (incl. ṛ, ḷ, diphthongs)']
+    provenance: [sanskrit, ukrainian]
+    applicability:
+      applies_when: language has a vowel system
+      backfill_trigger: 'universal — document once per language'
+      na_condition: none
+
+  - id: DIM-STOP-INVENTORY
+    name: stop_inventory
+    level: language-system-feature
+    scope: universal
+    domain: consonant-system
+    description: 'Size and structure of the stop inventory.'
+    values: ['20 stops (5 places × 4 types)', '20 stops (5 places × 4 voicing/aspiration)', '6 stops (3 places × 2 fortis/lenis)', '6 stops (3 places × 2 voicing)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: language has oral stops
+      backfill_trigger: 'universal — document once per language'
+      na_condition: none
+
+  - id: DIM-NASAL-INVENTORY
+    name: nasal_inventory
+    level: language-system-feature
+    scope: universal
+    domain: consonant-system
+    description: 'Size and composition of the nasal inventory.'
+    values: ['5 nasals', '5 nasals (ñ, m, ṅ, ṇ, n)', '3 nasals', '3 nasals (m, n, ŋ)', '2 phonemic (m, n) + 1 palatalized (nʲ)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: language has nasals
+      backfill_trigger: 'universal — document once per language'
+      na_condition: none
+
+  - id: DIM-SIBILANT-INVENTORY
+    name: sibilant_inventory
+    level: language-system-feature
+    scope: universal
+    domain: consonant-system
+    description: 'Size and composition of the sibilant inventory.'
+    values: ['3 voiceless sibilants (ś, ṣ, s)', '3 sibilants (ś /ɕ/, ṣ /ʂ/, s /s̪/)', '3 sibilants (ш /ʃ/, ж /ʒ/, с /s̪/)', '2 voiceless + 2 voiced (s, z, ʃ, ʒ)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: language has sibilants
+      backfill_trigger: 'universal — document once per language'
+      na_condition: none
+
+  - id: DIM-CHECKED
+    name: checked
+    level: language-system-feature
+    scope: language-specific
+    domain: vowel-system
+    description: 'Whether the language has a checked/free vowel opposition (vowels that require a following consonant vs those that can occur in open syllables).'
+    values: ['checked (requires following consonant)', 'absent (vowels can occur in any position)', 'n/a']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: 'language vowel system has distributional restrictions on vowels'
+      backfill_trigger: 'language-specific — do NOT backfill as absent into languages where the concept is meaningless; use not-applicable'
+      na_condition: 'languages where all vowels can occur in any position (most Slavic, Indic) — the correct epistemic state is not-applicable, not absent'
+    note: 'Primarily an English-specific system feature. Not a universal phonological property.'
+
+  - id: DIM-VELAR-FRICATIVE
+    name: velar_fricative
+    level: language-system-feature
+    scope: language-specific
+    domain: consonant-system
+    description: 'Whether the language has a phonemic voiceless velar fricative.'
+    values: ['present (/x/)', absent, 'absent in SSBE (present in Scottish/Irish as /x/)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: language has a velar consonant series
+      backfill_trigger: 'language-specific — absent is valid for languages with velar series but no fricative'
+      na_condition: 'languages without any velar consonants (rare)'
+
+  - id: DIM-VOICED-VELAR-FRICATIVE
+    name: voiced_velar_fricative
+    level: language-system-feature
+    scope: language-specific
+    domain: consonant-system
+    description: 'Whether the language has a phonemic voiced velar fricative (as Ukrainian /г/ [ɦ]).'
+    values: ['present (/ɦ~ɣ/ as г)', absent]
+    provenance: [ukrainian]
+    applicability:
+      applies_when: language has a voiced velar consonant series
+      backfill_trigger: 'language-specific — absent is valid'
+      na_condition: 'languages without any voiced velar consonants'
+
+  - id: DIM-FREQUENCY
+    name: frequency
+    level: language-system-feature
+    scope: language-specific
+    domain: segment
+    description: 'Lexical frequency of this phoneme — core vs peripheral.'
+    values: ['full phoneme', 'peripheral (mainly loanwords)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: all phonemes
+      backfill_trigger: 'language-specific — frequency is language-dependent'
+      na_condition: 'none — but values will differ per language'
+
+  - id: DIM-ETYMOLOGY
+    name: etymology
+    level: language-system-feature
+    scope: historical
+    domain: segment
+    description: 'Historical origin of this phoneme. Diachronic information, not synchronic phonology.'
+    values: ['from PIE *ḱ → /sʲ/', 'from PIE *ḱ → /ɕ/']
+    provenance: [ukrainian]
+    applicability:
+      applies_when: 'never (synchronic phonology) — always optional, always diachronic'
+      backfill_trigger: 'historical — do NOT backfill; this is metadata, not phonology'
+      na_condition: 'not applicable to synchronic description'
+    note: 'Historical dimension. Useful for understanding cognate relationships but not part of synchronic phonological description.'
+
+  - id: DIM-CLOSENESS
+    name: closeness
+    level: language-system-feature
+    scope: meta-comparative
+    domain: segment
+    description: 'A meta-comparative judgment about how close one language phoneme is to another. Describes the comparison itself, not a phonological property.'
+    values: ['Ukrainian /lʲ/ is phonetically CLOSER to Sanskrit /l/ than plain /ɫ/ is']
+    provenance: [ukrainian]
+    applicability:
+      applies_when: 'never (phonology) — this is a comparative assessment'
+      backfill_trigger: 'meta-comparative — do NOT backfill; this is not a phonological dimension'
+      na_condition: 'always — this is metadata about the comparison, not a property of the phoneme'
+    note: 'This is not a phonological dimension — it is a comparative assessment. Should not be backfilled into other languages.'
+
+  # ===== PROCESS / ALLOPHONY =====
+  - id: DIM-ALLOPHONY
+    name: allophony
+    level: process-allophony
+    scope: universal
+    domain: segment
+    description: 'Context-dependent phonetic realizations (allophones) of this phoneme.'
+    values: ['[a] stressed, [ɐ] unstressed', 'devoiced [v̥] in coda', 'stable /ɦ/', '3 allophones in complementary distribution', '4 allophones across contexts', 'not documented as context-dependent', 'not documented as stress-dependent']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: 'all phonemes (even if not documented or stable)'
+      backfill_trigger: 'universal — every phoneme must document its allophonic variation (or its absence)'
+      na_condition: 'none — stable or not documented is a valid value'
+
+  - id: DIM-GLOTTALIZATION
+    name: glottalization
+    level: process-allophony
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme undergoes glottalization (e.g., t-glottalization).'
+    values: ['common (t-glottalization in many dialects)', absent]
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is a voiceless stop (potential for glottalization)
+      backfill_trigger: 'language-specific — absent is valid for languages where the process does not occur'
+      na_condition: 'voiced consonants, non-stops'
+    note: 'English revealed this dimension. It is a process, not a segment feature.'
+
+  - id: DIM-DIPHTHONGIZATION
+    name: diphthongization
+    level: process-allophony
+    scope: language-specific
+    domain: vowel
+    description: 'Whether this vowel undergoes diphthongization (realized as a diphthong rather than a pure monophthong).'
+    values: ['often slightly diphthongal [ɪi]', 'often [ʉː] or [ʊu] in SSBE', monophthong, 'absent (monophthongal)']
+    provenance: [ukrainian, english]
+    applicability:
+      applies_when: segment is a vowel
+      backfill_trigger: 'language-specific — absent (monophthongal) is valid'
+      na_condition: consonants
