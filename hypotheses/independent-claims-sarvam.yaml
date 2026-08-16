@@ -1,0 +1,320 @@
+# Independent Research Claims from Sarvam Agent
+# ================================================
+#
+# Source: Sarvam AI agent (general-purpose assistant), working in a separate
+# conversation context. This agent had access to the shiva-sutras repository
+# and to three language registries (sanskrit, ukrainian, english) that were
+# built during that conversation.
+#
+# These claims are registered as INDEPENDENT HYPOTHESES, not as facts.
+# They represent observations made by an external agent that did not
+# participate in the design of the shiva-sutras architecture.
+#
+# Per the epistemic coordination contract (docs/epistemic-coordination.md):
+#   - These are exported as claims with scope, status, and limitations.
+#   - They are NOT architectural advice to shiva-sutras.
+#   - They should NOT be adapted to fit the existing architecture merely
+#     because the architecture already exists.
+#   - A reconciliation experiment between this agent's model and the
+#     repository's model should be conducted separately.
+#
+# Key principle:
+#   Agents should not agree — they should leave traces.
+#   The system coordinates these traces.
+#
+# Provenance:
+#   agent: sarvam-ai (general-purpose assistant)
+#   conversation: independent of shiva-sutras development
+#   date: 2026-08-15
+#   repository_accessed: juv4uk/shiva-sutras @ 51d83de
+#   artifacts_produced:
+#     - phonological-dimensions-v0.1.yaml (44 dimensions)
+#     - phonological-dimensions-v0.2.yaml (44 dimensions + epistemic states + annotation models)
+#     - sanskrit.yaml (academic interpretation, 50 entries)
+#     - ukrainian.yaml v0.3 (academic extension, 44 phonemes)
+#     - english.yaml (academic extension, 44 phonemes)
+#     - siva-sutras.yaml (pure canon, 14 sutras, 43 positions)
+
+date: 2026-08-15
+agent: sarvam-ai
+repository: juv4uk/shiva-sutras
+commit: 51d83de485c0
+
+claims:
+
+  # ================================================================
+  # CLAIM H-SS-EXT-001
+  # ================================================================
+  - id: H-SS-EXT-001
+    title: "Phonological Dimensions Registry as a meta-ontology of cross-language variation"
+    statement: >
+      The axes along which phonological systems of different languages can
+      differ from each other can be extracted from a small set of language
+      registries and classified into four ontological levels:
+      segment-feature (articulatory properties of a single sound),
+      phoneme-system-feature (how a phoneme participates in contrasts),
+      language-system-feature (properties of the whole phonological system),
+      and process-allophony (contextual variation).
+      Furthermore, each dimension has a scope (universal, language-specific,
+      segmental, historical, meta-comparative) that determines whether it
+      should be backfilled into other language registries.
+    scope: >
+      Meta-ontology of phonological comparison. Derived from three languages
+      (Sanskrit, Ukrainian, English) mapped to the Śiva Sūtra canon.
+      NOT a claim about the Śiva Sūtras themselves.
+    status: HYPOTHESIS
+    evidence:
+      - artifact: phonological-dimensions-v0.2.yaml
+        description: >
+          44 dimensions extracted from three language registries, classified
+          into four levels and six scopes. Each dimension has applicability
+          rules, provenance, and evidence from specific languages.
+      - method: >
+          Dimensions were extracted by scanning all 'shared' and 'differences'
+          fields in ukrainian.yaml and english.yaml, then classifying each
+          dimension by level and scope.
+      - coverage: >
+          All 44 dimensions found in the registries were classified.
+          Comparison structure maps all 44 dimensions to four levels
+          with perfect coverage.
+    limitations:
+      - >
+          Derived from only three languages. A fourth language (e.g., German)
+          may reveal dimensions or levels not present in this set.
+      - >
+          The four-level classification (segment / phoneme-system / language-system /
+          process) is a hypothesis about the ontology of phonological information,
+          not a proven fact. Alternative ontologies are possible.
+      - >
+          The scope assignments (universal vs language-specific) are judgments
+          made by the sarvam agent and may not match the repository owner's
+          analysis.
+      - >
+          This registry was built by an agent that had access to the
+          shiva-sutras repository, creating potential architectural
+          confirmation bias. An agent without such access might produce
+          a different ontology.
+    relation_to_repository:
+      - >
+          The shiva-sutras repository does not currently contain a
+          phonological-dimensions registry. This is a new artifact type.
+      - >
+          The repository's epistemic coordination contract (section 5:
+          "Do not duplicate downstream ontology") is relevant: this
+          ontology may belong to a downstream layer, not to shiva-sutras
+          itself.
+    reconciliation_questions:
+      - >
+          Does the repository owner independently arrive at a similar
+          four-level ontology when analyzing the same three language
+          registries?
+      - >
+          Which of the 44 dimensions are universal phonological categories
+          vs artifacts of how the sarvam agent structured the registries?
+      - >
+          Should this registry live in shiva-sutras, in a separate
+          repository, or in my-lisp-panini?
+
+  # ================================================================
+  # CLAIM H-SS-EXT-002
+  # ================================================================
+  - id: H-SS-EXT-002
+    title: "Multi-level comparison structure replaces flat differences"
+    statement: >
+      The current flat 'shared' / 'differences' structure in language
+      extension registries conflates four ontologically different types
+      of information. A positive comparison structure organized by level
+      (segment / phoneme_system / language_system / processes), each with
+      'shared' and 'different' sub-maps, would make the comparison
+      machine-readable at the ontological level: not just WHERE two
+      systems differ, but at WHAT LEVEL they differ.
+    scope: >
+      Structure of cross-language comparison registries. Applies to
+      ukrainian.yaml, english.yaml, and any future language extension.
+    status: HYPOTHESIS
+    evidence:
+      - finding: >
+          Validation of three registries against the dimension registry
+          showed that 24 of 44 Ukrainian phonemes and 22 of 44 English
+          phonemes have 'differences' fields that mix levels.
+      - example: >
+          For /t/, the differences field contains:
+            place (segment-feature)
+            aspiration (phoneme-system-feature)
+            glottalization (process-allophony)
+            stop_inventory (language-system-feature)
+          These are not the same type of information.
+      - proposal: >
+          comparison:
+            segment:
+              shared: { manner: stop, voicing: voiceless }
+              different:
+                place: { canon: dental, english: alveolar }
+            phoneme_system:
+              different:
+                aspiration: { canon: contrastive, english: non-contrastive }
+            language_system:
+              different:
+                stop_inventory: { sanskrit: "20 stops", english: "6 stops" }
+            processes:
+              different:
+                glottalization: { canon: absent, english: "common" }
+    limitations:
+      - >
+          This structure has not been tested in practice. It may introduce
+          redundancy (the same dimension appearing at multiple levels for
+          the same phoneme).
+      - >
+          The four-level split mirrors the dimension registry's four levels,
+          which creates a dependency: if the dimension ontology changes, the
+          comparison structure must change too.
+      - >
+          An alternative approach (e.g., tagging each dimension with its
+          level but keeping a flat list) may achieve the same machine-readability
+          without restructuring the YAML.
+    relation_to_repository:
+      - >
+          The existing ukrainian.yaml and english.yaml in the repository
+          use the flat structure. This hypothesis proposes replacing it.
+      - >
+          This is a structural change to the extension format, which is
+          downstream of the canon. It should not affect the canon itself.
+    reconciliation_questions:
+      - >
+          Does the repository owner encounter the same level-conflation
+          problem when reading the existing registries?
+      - >
+          Is a structural reorganization the right solution, or would
+          a lighter-weight approach (metadata tags on existing fields)
+          suffice?
+
+  # ================================================================
+  # CLAIM H-SS-EXT-003
+  # ================================================================
+  - id: H-SS-EXT-003
+    title: "Sanskrit academic layer should annotate the canon, not compare to it"
+    statement: >
+      Sanskrit, as the canonical language, should use a different
+      annotation model than non-canonical languages. Non-canonical
+      languages (Ukrainian, English) compare their phonemes to canonical
+      units through shared/different dimensions. Sanskrit should NOT
+      compare itself to the canon — it IS the canon. Instead, it should
+      annotate the canon directly: 'what does academic phonetics say
+      about this canonical unit?'
+      This creates an intentional asymmetry:
+        Sanskrit:    academic_interpretation (annotates canon)
+        Ukrainian:   cross_language_comparison (compares to canon)
+        English:     cross_language_comparison (compares to canon)
+    scope: >
+      Structure of the Sanskrit academic interpretation layer. Does not
+      affect the canon or non-canonical extensions.
+    status: HYPOTHESIS
+    evidence:
+      - observation: >
+          In the current sanskrit.yaml (v0.1), the canonical_interpretations
+          have no 'relation_to_canon' field with shared/differences. This
+          is because Sanskrit IS the canonical language.
+      - consequence: >
+          When the dimension registry was validated against all three
+          registries, Sanskrit showed 0 dimensions used — not because
+          Sanskrit lacks phonological features, but because its structure
+          does not use the comparison field.
+      - validation_gap: >
+          22 universal dimensions were found to be 'missing' from Sanskrit.
+          But this is a structural artifact: Sanskrit has never been asked
+          'how do your phonemes relate to the canon?' because it IS the
+          canon. The question should be 'what are the phonological
+          properties of each canonical unit?'
+      - proposed_structure: >
+          # Sanskrit
+          academic_interpretation:
+            canon_ref: SS-01:1
+            dimensions:
+              place: dental
+              voicing: voiceless
+              aspiration:
+                value: contrastive
+                counterpart: th
+              source: Allen (1953), Whitney (1889)
+
+          # Ukrainian (for contrast)
+          relation_to_canon:
+            canonical_unit: SS-01:1
+            comparison:
+              segment:
+                shared: { manner: stop, voicing: voiceless }
+                different:
+                  place: { canon: dental, ukrainian: dental }
+    limitations:
+      - >
+          This asymmetry has not been validated by the repository owner.
+          The repository may have a different intended structure for the
+          Sanskrit academic layer.
+      - >
+          The 'academic_interpretation' model assumes that Sanskrit phonetics
+          can be described independently of comparison. But in practice,
+          even Sanskrit phonetics is often described in relation to other
+          Indo-Aryan languages.
+      - >
+          The proposed structure uses 'dimensions' as a flat map, which
+          conflicts with H-SS-EXT-002's proposal for multi-level structure.
+          These two hypotheses need to be reconciled if both are adopted.
+    relation_to_repository:
+      - >
+          The repository's layered architecture (CANON, PĀṆINIAN FORMAL USE,
+          TRADITIONAL INTERPRETATION, MODERN SCHOLARSHIP, OUR HYPOTHESES,
+          ENGINEERING) already separates these concerns. The 'academic
+          interpretation' model proposed here may map to TRADITIONAL
+          INTERPRETATION or MODERN SCHOLARSHIP layers.
+      - >
+          The repository's epistemic coordination contract (section 1:
+          Authoritative Scope) lists 'canon 14 sūtras' and 'markers' as
+          canonical scope, but does not specify how academic phonetic
+          annotation of the canon should be structured.
+    reconciliation_questions:
+      - >
+          Does the repository owner agree that Sanskrit should not have
+          a 'relation_to_canon' field?
+      - >
+          Where in the repository's layer system does 'academic phonetic
+          annotation of canonical units' belong?
+      - >
+          Is the proposed 'academic_interpretation' model consistent with
+          how the repository already separates CANON from TRADITIONAL
+          INTERPRETATION?
+
+# ================================================================
+# META-OBSERVATION
+# ================================================================
+meta:
+  agent_identity: >
+      The sarvam agent was not instructed to follow the repository's
+      epistemic contract. It arrived at similar principles independently:
+        - "absent ≠ unknown ≠ not-applicable" maps to the repository's
+          "Reproducibility ≠ Authenticity" and "UNRESOLVED-BY-EVIDENCE"
+        - The four-level architecture maps to the repository's
+          CANON / INTERPRETATION / EXTENSION / ENGINEERING layers
+        - The "package manager for knowledge" observation maps to
+          the repository's claims-export.yaml system
+      This convergence may be evidence that the underlying principles
+      are robust — or it may be confirmation bias from an agent that
+      had access to the repository before forming its hypotheses.
+      
+      The correct epistemic stance is: BOTH are possible, and only
+      an independent agent WITHOUT repository access can distinguish
+      between them.
+  
+  experiment_proposed: >
+      Conduct a reconciliation experiment:
+        1. An independent agent builds a phonological comparison ontology
+           from the same three language registries, WITHOUT access to
+           the shiva-sutras repository or its epistemic contract.
+        2. Compare the independent ontology with H-SS-EXT-001.
+        3. If they converge on similar dimensions/levels: evidence that
+           the ontology is inherent in the data.
+        4. If they diverge: evidence that the sarvam agent's ontology was
+           shaped by the repository's architecture (confirmation bias).
+  
+  guiding_principle: >
+      Agents should not agree — they should leave traces.
+      The system coordinates these traces.
