@@ -1,0 +1,852 @@
+# Phonological Dimensions Registry v0.3 — RECONCILED
+# ============================================
+#
+# This version reconciles two independent models:
+#   - Sarvam agent's 4-level model (v0.2)
+#   - Blind agent's 6-level model (RECON-001)
+#
+# Reconciliation experiment: docs/reconciliation-sarvam-blind-001.md
+#
+# Key changes from v0.2:
+#   1. IPA moved to new 'identity' level (blind agent insight)
+#   2. Distributional dimensions separated (blind agent insight)
+#   3. Diachronic/relational dimensions separated (blind agent insight)
+#   4. Process-allophony merged into phonological_function (blind agent)
+#   5. Each dimension has provenance: both-agree | sarvam | blind-agent | reconciled | disputed
+#   6. 44 dimensions UNCHANGED — only reclassified
+
+registry_id: phonological-dimensions-v0.3
+registry_type: dimension_registry
+layer: meta
+status: reconciled
+date: 2026-08-16
+reconciled_from:
+  - phonological-dimensions-v0.2.yaml (sarvam agent, 4 levels)
+  - blind-dimensions.yaml (blind agent, 6 levels, RECON-001)
+
+# Auto-generated summary
+# Total dimensions: 44
+# By level:
+#   identity: 1
+#   articulatory_feature: 10
+#   phonological_function: 20
+#   distributional_context: 3
+#   system_inventory: 8
+#   diachronic_relational: 2
+# By provenance:
+#   both-agree: 32
+#   blind-agent: 6
+#   reconciled: 3
+#   disputed: 3
+
+provenance_legend:
+  both-agree: Both agents independently placed this dimension at the same (equivalent) level.
+  sarvam: Only sarvam agent classification was available; blind agent did not dispute.
+  blind-agent: Blind agent insight caused reclassification from v0.2.
+  reconciled: Sarvam and blind agent disagreed; a merge or restructure was applied.
+  disputed: Sarvam and blind agent disagreed; placement is contested.
+
+levels:
+  - name: identity
+    count: 1
+    description: 'Symbolic identifiers — not phonological properties. IPA is a label, not a feature.'
+    provenance: blind-agent
+  - name: articulatory_feature
+    count: 10
+    description: 'Physical/acoustic properties of a single sound.'
+    provenance: both-agree
+  - name: phonological_function
+    count: 20
+    description: 'How a phoneme participates in contrasts + contextual variation (allophony merged in).'
+    provenance: reconciled
+  - name: distributional_context
+    count: 3
+    description: 'Where/when/how-often a sound occurs.'
+    provenance: blind-agent
+  - name: system_inventory
+    count: 8
+    description: 'Properties of the whole phonological system.'
+    provenance: both-agree
+  - name: diachronic_relational
+    count: 2
+    description: 'Historical and meta-comparative information. Reaches outside the synchronic system.'
+    provenance: blind-agent
+
+relation_between_dimensions:
+  - group: syllabicity-cluster
+    members: [DIM-SYLLABICITY, DIM-SYLLABIC, DIM-SYLLABIC-VARIANT]
+    resolution: keep-separate
+  - group: phoneme-status-cluster
+    members: [DIM-PHONEMIC-STATUS, DIM-PHONOLOGICAL-STATUS, DIM-SYSTEM-STATUS]
+    resolution: keep-separate
+  - group: aspiration-cluster
+    members: [DIM-ASPIRATION, DIM-ASPIRATION-TYPE]
+    resolution: keep-separate
+  - group: length-cluster
+    members: [DIM-PHONEMIC-LENGTH, DIM-LENGTH-OPPOSITION]
+    resolution: keep-separate
+  - group: velar-fricative-cluster
+    members: [DIM-VELAR-FRICATIVE, DIM-VOICED-VELAR-FRICATIVE]
+    resolution: merge-candidate
+  - group: tap-vs-rhoticity
+    members: [DIM-TAP-REALIZATION, DIM-RHOTICITY]
+    resolution: review-candidate
+    note: 'Blind agent flagged this overlap; sarvam did not. Both describe /r/ behavior but from different angles.'
+  - group: distribution-vs-alternation
+    members: [DIM-DISTRIBUTION, DIM-ALTERNATION]
+    resolution: review-candidate
+    note: 'Blind agent flagged this overlap; both now in distributional_context level.'
+
+dimensions:
+  # ===== IDENTITY =====
+  - id: DIM-IPA
+    name: ipa
+    level: identity
+    scope: universal
+    domain: segment
+    description: >-
+      The IPA symbol representing this segment. Functions as a symbolic
+      identifier, not a phonological property. Appears in both shared (segments
+      match) and differences (segments differ) because it identifies the
+      segment, not describes a feature.
+    values: ['[any IPA symbol, or unresolved]']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: blind-agent
+    v02_placement: segment-feature
+    v03_placement: identity
+    placement_reason: >-
+      Blind agent correctly identified that IPA behaves differently from
+      articulatory features — it is an identifier, not a property. Moved to
+      its own level.
+    applies_when: all segments
+    backfill_trigger: >-
+      universal — every segment must have an IPA value (or unresolved)
+    na_condition: none
+
+  # ===== ARTICULATORY FEATURE =====
+  - id: DIM-PLACE
+    name: place
+    level: articulatory_feature
+    scope: universal
+    domain: consonant
+    description: 'Primary place of articulation — where in the vocal tract the consonant is produced.'
+    values: [bilabial, labiodental, dental, alveolar, postalveolar, alveolo-palatal, palatal, velar, labiovelar, glottal, unresolved]
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents independently placed here. No dispute.'
+    applies_when: segment is a consonant
+    backfill_trigger: 'universal — always applies; every consonant must document place'
+    na_condition: 'vowels (use vowel_height, backness, rounding instead)'
+    note: 'English revealed this as a varying dimension for coronals (dental vs alveolar).'
+
+  - id: DIM-MANNER
+    name: manner
+    level: articulatory_feature
+    scope: universal
+    domain: consonant
+    description: 'Manner of articulation — how airflow is obstructed.'
+    values: [stop, fricative, affricate, nasal, trill, tap, approximant, 'lateral approximant', vowel, diphthong, 'affricate or stop (unresolved)']
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents independently placed here. No dispute.'
+    applies_when: 'all segments (manner = vowel/diphthong for vowels)'
+    backfill_trigger: 'universal — always applies'
+    na_condition: 'none — every segment has a manner'
+
+  - id: DIM-VOICING
+    name: voicing
+    level: articulatory_feature
+    scope: universal
+    domain: segment
+    description: 'Vocal fold state during production.'
+    values: [voiced, voiceless, 'fully voiced', 'partially voiced (devoiced in coda)', 'partially voiced (devoiced word-finally and in clusters)']
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: all segments
+    backfill_trigger: 'universal — always applies'
+    na_condition: none
+    note: 'English revealed that voicing is not binary — partially voiced is a distinct value.'
+
+  - id: DIM-NASALITY
+    name: nasality
+    level: articulatory_feature
+    scope: universal
+    domain: segment
+    description: 'Whether air escapes through the nasal cavity.'
+    values: [nasal, oral]
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: all segments
+    backfill_trigger: 'universal — always applies'
+    na_condition: none
+
+  - id: DIM-SYLLABICITY
+    name: syllabicity
+    level: articulatory_feature
+    scope: universal
+    domain: segment
+    description: 'Whether the segment functions as a syllable nucleus in this language.'
+    values: [syllabic, non-syllabic]
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: all segments
+    backfill_trigger: 'universal — always applies'
+    na_condition: none
+    note: 'Distinct from DIM-SYLLABIC and DIM-SYLLABIC-VARIANT. See relation_between_dimensions.'
+
+  - id: DIM-BACKNESS
+    name: backness
+    level: articulatory_feature
+    scope: universal
+    domain: vowel
+    description: 'Tongue position on the front-back axis for vowels.'
+    values: [front, central, back, unresolved]
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a vowel
+    backfill_trigger: 'universal — applies to all vowels'
+    na_condition: consonants
+
+  - id: DIM-ROUNDING
+    name: rounding
+    level: articulatory_feature
+    scope: universal
+    domain: vowel
+    description: 'Lip rounding state for vowels.'
+    values: [rounded, unrounded]
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a vowel
+    backfill_trigger: 'universal — applies to all vowels'
+    na_condition: 'consonants (unless secondary articulation)'
+
+  - id: DIM-VOWEL-HEIGHT
+    name: vowel_height
+    level: articulatory_feature
+    scope: universal
+    domain: vowel
+    description: 'Tongue height (degree of jaw opening) for vowels.'
+    values: [close, close-mid, open-mid, open]
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a vowel
+    backfill_trigger: 'universal — applies to all vowels'
+    na_condition: consonants
+
+  - id: DIM-STARTING-POINT
+    name: starting_point
+    level: articulatory_feature
+    scope: segmental
+    domain: diphthong
+    description: 'The starting vowel quality of a diphthong.'
+    values: ['open /a/', 'open central /a/', 'open front or central /a/ or /ɑ/', 'mid /e/']
+    provenance_sources: [english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a diphthong
+    backfill_trigger: 'segmental — only backfill into languages that have diphthongs'
+    na_condition: 'languages without phonemic diphthongs'
+
+  - id: DIM-ENDING-POINT
+    name: ending_point
+    level: articulatory_feature
+    scope: segmental
+    domain: diphthong
+    description: 'The ending vowel quality of a diphthong (the offglide).'
+    values: ['high front /i/', 'near-high front /ɪ/', 'high back /u/', 'near-high back /ʊ/']
+    provenance_sources: [english]
+    provenance_classification: both-agree
+    v02_placement: segment-feature
+    v03_placement: articulatory_feature
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a diphthong
+    backfill_trigger: 'segmental — only backfill into languages that have diphthongs'
+    na_condition: 'languages without phonemic diphthongs'
+
+  # ===== PHONOLOGICAL FUNCTION =====
+  - id: DIM-ASPIRATION
+    name: aspiration
+    level: phonological_function
+    scope: universal
+    domain: consonant
+    description: 'Whether aspiration is contrastive for this phoneme, and if so, what kind.'
+    values: ['contrastive (k vs kh)', 'contrastive (p vs ph)', 'contrastive (t vs th)', 'contrastive (b vs bh)', 'contrastive (d vs dh)', 'contrastive (g vs gh)', 'contrastive (c vs ch)', 'contrastive (j vs jh)', allophonic, 'allophonic (aspirated in onset, unaspirated after /s/)', absent, 'absent (fortis/lenis only)', 'absent (no aspirated voiced series)', non-contrastive, 'non-contrastive (no aspirated series)']
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents placed in equivalent level. Renamed per blind agent terminology.'
+    applies_when: segment is a stop or affricate
+    backfill_trigger: 'universal — applies to all stops/affricates'
+    na_condition: 'non-oral consonants'
+
+  - id: DIM-ASPIRATION-TYPE
+    name: aspiration_type
+    level: phonological_function
+    scope: language-system
+    domain: consonant
+    description: 'What kind of aspiration system the language uses.'
+    values: ['contrastive series', 'positional allophone', 'absent (no aspirated series at all)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree. System-level companion to DIM-ASPIRATION.'
+    applies_when: language has stops/affricates
+    backfill_trigger: 'language-system — document once per language'
+    na_condition: 'languages with no oral stops'
+
+  - id: DIM-BREATHY-VOICE
+    name: breathy_voice
+    level: phonological_function
+    scope: language-specific
+    domain: consonant
+    description: 'Whether breathy voice (murmur) is contrastive for this phoneme.'
+    values: ['contrastive (/bʱ/ exists)', 'contrastive (/ɡʱ/ exists)', 'contrastive (/d͡ʑʰ/ or /ɟʰ/ exists)', absent, 'absent (no breathy-voiced series)']
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: language has voiced stops
+    backfill_trigger: 'language-specific'
+    na_condition: 'languages without voiced stops'
+
+  - id: DIM-RETROFLEX
+    name: retroflex
+    level: phonological_function
+    scope: language-specific
+    domain: consonant
+    description: 'Whether retroflex articulation is contrastive for this phoneme.'
+    values: ['contrastive (ṭ exists)', 'contrastive (ḍ exists)', 'contrastive (ṇ exists)', 'contrastive (ṇ /ɳ/ exists)', 'contrastive (t vs ṭ)', 'contrastive (d vs ḍ)', absent, 'absent (no retroflex series)']
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: language has coronal consonants
+    backfill_trigger: 'language-specific'
+    na_condition: 'languages without coronal consonants'
+
+  - id: DIM-PALATALIZATION
+    name: palatalization
+    level: phonological_function
+    scope: universal
+    domain: consonant
+    description: 'Whether palatalization is contrastive for this phoneme, and if so, what kind.'
+    values: ['contrastive (t vs tʲ)', 'contrastive (d vs dʲ)', 'contrastive (n vs nʲ)', 'contrastive (s vs sʲ)', 'contrastive (l vs lʲ)', 'contrastive (r vs rʲ)', 'inherent (ś is palatalized)', 'allophonic before /i/', 'allophonic before front vowels', 'allophonic only (kʲ before /i/)', absent, 'absent (no phonemic palatalization)', 'absent (no phonemic palatalized stops)', 'marginal (mʲ debated)', 'no palatalized d (has separate j)']
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: disputed
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: >-
+      Sarvam placed in phoneme-system-feature; blind agent placed in
+      articulatory_feature, noting the straddle: the property is articulatory
+      but the values are functional. Decision: placed in phonological_function
+      because the VALUES (contrastive, allophonic, absent) describe functional
+      role, not articulation. DISPUTED.
+    applies_when: segment is a consonant
+    backfill_trigger: 'universal — applies to all consonants'
+    na_condition: vowels
+
+  - id: DIM-PHONEMIC-LENGTH
+    name: phonemic_length
+    level: phonological_function
+    scope: universal
+    domain: vowel
+    description: 'Whether phonemic length is contrastive for this vowel phoneme.'
+    values: ['contrastive (i vs ī)', 'contrastive (u vs ū)', 'contrastive (a vs ā)', 'inherently long (dīrgha)', long, 'short (checked)', non-contrastive, 'short (dīrgha ā is separate)', 'short (dīrgha ī is separate)', 'short (dīrgha ū is separate)']
+    provenance_sources: [sanskrit, ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a vowel
+    backfill_trigger: 'universal — applies to all vowels'
+    na_condition: 'consonants (unless length is contrastive for consonants)'
+
+  - id: DIM-PHONEMIC-STATUS
+    name: phonemic_status
+    level: phonological_function
+    scope: universal
+    domain: segment
+    description: 'Whether this segment is a full phoneme, an allophone, or disputed in this language.'
+    values: ['full phoneme', 'full phoneme v', 'full phoneme w', 'uncontested phoneme', 'disputed (some analyses: allophone of /n/ before velars)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: all segments
+    backfill_trigger: 'universal'
+    na_condition: none
+
+  - id: DIM-PHONOLOGICAL-STATUS
+    name: phonological_status
+    level: phonological_function
+    scope: language-specific
+    domain: segment
+    description: 'Whether a complex segment is analyzed as a unitary phoneme or a sequence in this language.'
+    values: ['unitary phoneme (FACE)', 'unitary phoneme (ai)']
+    provenance_sources: [english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a complex segment
+    backfill_trigger: 'language-specific'
+    na_condition: 'simple segments'
+
+  - id: DIM-SYSTEM-STATUS
+    name: system_status
+    level: phonological_function
+    scope: language-specific
+    domain: segment
+    description: 'How this phoneme is grouped within the language phonological system.'
+    values: ['full phoneme', 'full phoneme ñ', 'full phoneme, grouped with stops', 'grouped with affricates', 'grouped with stops', 'palatalized counterpart of n']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: all phonemes
+    backfill_trigger: 'language-specific'
+    na_condition: 'none — but value depends on language analysis tradition'
+
+  - id: DIM-MINIMAL-PAIRS
+    name: minimal_pairs
+    level: phonological_function
+    scope: language-specific
+    domain: segment
+    description: 'Minimal pairs that demonstrate the phonemic contrast for this segment.'
+    values: ['contrastive with n, ṇ', 'sin/sing, sun/sung — contrastive in most dialects']
+    provenance_sources: [english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: segment with contested or demonstrable contrast
+    backfill_trigger: 'language-specific'
+    na_condition: 'uncontested phonemes'
+
+  - id: DIM-VOICED-COUNTERPART
+    name: voiced_counterpart
+    level: phonological_function
+    scope: universal
+    domain: consonant
+    description: 'Whether a voiced counterpart exists for this phoneme.'
+    values: ['present (/z/)', 'absent (no /z/)']
+    provenance_sources: [ukrainian]
+    provenance_classification: disputed
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: >-
+      Sarvam placed in phoneme-system-feature. Blind agent placed in
+      systemic_organization (inventory-level fact). Decision: kept in
+      phonological_function because it describes a contrastive relationship.
+      DISPUTED.
+    applies_when: segment is a voiceless consonant
+    backfill_trigger: 'universal'
+    na_condition: 'already-voiced consonants'
+
+  - id: DIM-SYLLABIC-VARIANT
+    name: syllabic_variant
+    level: phonological_function
+    scope: language-specific
+    domain: segment
+    description: 'Whether this phoneme has a syllabic variant (a syllabic version used as a vowel, e.g., Sanskrit ṛ from /r/).'
+    values: ['has syllabic ṛ', 'has syllabic ṛ /r̩/ as a separate vowel', 'no syllabic r']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a sonorant consonant
+    backfill_trigger: 'language-specific'
+    na_condition: obstruents
+
+  - id: DIM-SYLLABIC
+    name: syllabic
+    level: phonological_function
+    scope: universal
+    domain: consonant
+    description: 'Whether this consonant can function as a syllable nucleus in certain contexts (syllabic consonant).'
+    values: ['syllabic [m̩] possible', 'syllabic [n̩] possible', 'no syllabic m', 'no syllabic n', 'absent (no syllabic consonants)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is a sonorant consonant
+    backfill_trigger: 'universal'
+    na_condition: obstruents
+
+  - id: DIM-FORTIS-LENIS
+    name: fortis_lenis
+    level: phonological_function
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme participates in a fortis/lenis opposition.'
+    values: ['/b/ is lenis counterpart of /p/', 'absent (uses voicing only, no aspiration)', 'n/a (uses voicing + aspiration)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: language uses fortis/lenis as a primary contrast
+    backfill_trigger: 'language-specific — use not-applicable for languages using voicing or aspiration'
+    na_condition: 'languages using voicing or aspiration as primary contrast'
+
+  - id: DIM-RHOTICITY
+    name: rhoticity
+    level: phonological_function
+    scope: language-specific
+    domain: consonant
+    description: 'Whether /r/ appears in all positions (rhotic) or is restricted (non-rhotic).'
+    values: ['always rhotic', 'rhotic in GA, non-rhotic in SSBE (no /r/ in coda)', 'n/a (rhotic — /r/ occurs in all positions)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is /r/ or a rhotic
+    backfill_trigger: 'language-specific'
+    na_condition: 'languages where /r/ occurs in all positions'
+
+  - id: DIM-VELARIZATION
+    name: velarization
+    level: phonological_function
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme is velarized, and if so, whether phonemically or allophonically.'
+    values: ['present (dark l)', absent, 'absent (unlike plain /ɫ/)', 'allophonic ([ɫ] in coda, [l] in onset)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: disputed
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: >-
+      Sarvam placed in phoneme-system-feature. Blind agent placed in
+      articulatory_feature. Decision: placed in phonological_function because
+      values (present, absent, allophonic) describe functional role. DISPUTED.
+    applies_when: segment is a liquid (/l/)
+    backfill_trigger: 'language-specific'
+    na_condition: 'phonemes that cannot be velarized'
+
+  - id: DIM-TAP-REALIZATION
+    name: tap_realization
+    level: phonological_function
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme has a tap realization as an allophone.'
+    values: ['often [ɾ]', 'not documented']
+    provenance_sources: [ukrainian]
+    provenance_classification: both-agree
+    v02_placement: phoneme-system-feature
+    v03_placement: phonological_function
+    placement_reason: 'Both agents agree.'
+    applies_when: segment is /r/ or a rhotic
+    backfill_trigger: 'language-specific'
+    na_condition: 'non-rhotic consonants'
+
+  - id: DIM-ALLOPHONY
+    name: allophony
+    level: phonological_function
+    scope: universal
+    domain: segment
+    description: 'Context-dependent phonetic realizations (allophones) of this phoneme.'
+    values: ['[a] stressed, [ɐ] unstressed', 'devoiced [v̥] in coda', 'stable /ɦ/', '3 allophones in complementary distribution', '4 allophones across contexts', 'not documented as context-dependent', 'not documented as stress-dependent']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: reconciled
+    v02_placement: 'process-allophony (separate level)'
+    v03_placement: phonological_function
+    placement_reason: >-
+      Sarvam had a separate process-allophony level. Blind agent merged
+      allophony into phonological_function. Decision: MERGE — allophony is a
+      functional property, not a separate ontological category. Reconciled.
+    applies_when: all phonemes
+    backfill_trigger: 'universal'
+    na_condition: 'none — stable or not documented is valid'
+
+  - id: DIM-GLOTTALIZATION
+    name: glottalization
+    level: phonological_function
+    scope: language-specific
+    domain: consonant
+    description: 'Whether this phoneme undergoes glottalization (e.g., t-glottalization).'
+    values: ['common (t-glottalization in many dialects)', absent]
+    provenance_sources: [ukrainian, english]
+    provenance_classification: reconciled
+    v02_placement: 'process-allophony (separate level)'
+    v03_placement: phonological_function
+    placement_reason: >-
+      Sarvam had in process-allophony. Blind agent merged into
+      phonological_function. Decision: MERGE. Reconciled.
+    applies_when: segment is a voiceless stop
+    backfill_trigger: 'language-specific'
+    na_condition: 'voiced consonants, non-stops'
+
+  - id: DIM-DIPHTHONGIZATION
+    name: diphthongization
+    level: phonological_function
+    scope: language-specific
+    domain: vowel
+    description: 'Whether this vowel undergoes diphthongization.'
+    values: ['often slightly diphthongal [ɪi]', 'often [ʉː] or [ʊu] in SSBE', monophthong, 'absent (monophthongal)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: reconciled
+    v02_placement: 'process-allophony (separate level)'
+    v03_placement: phonological_function
+    placement_reason: >-
+      Sarvam had in process-allophony. Blind agent merged into
+      phonological_function. Decision: MERGE. Reconciled.
+    applies_when: segment is a vowel
+    backfill_trigger: 'language-specific'
+    na_condition: consonants
+
+  # ===== DISTRIBUTIONAL CONTEXT =====
+  - id: DIM-DISTRIBUTION
+    name: distribution
+    level: distributional_context
+    scope: universal
+    domain: segment
+    description: 'Positions in which this phoneme can occur (onset, coda, any).'
+    values: ['any position', 'any position (full phoneme ṅ)', 'only in syllable coda (sing, singer)', 'only in syllable onset (never in coda)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: blind-agent
+    v02_placement: phoneme-system-feature
+    v03_placement: distributional_context
+    placement_reason: >-
+      Blind agent separated distributional dimensions into their own level,
+      arguing they answer where/when/how-often — a different question from
+      articulatory properties or phonological function. Accepted.
+    applies_when: all phonemes
+    backfill_trigger: 'universal'
+    na_condition: none
+
+  - id: DIM-ALTERNATION
+    name: alternation
+    level: distributional_context
+    scope: language-specific
+    domain: segment
+    description: 'Whether this phoneme alternates with another in morphological processes.'
+    values: ['alternates with /u/', 'no alternation with /u/ (unlike Ukrainian)', 'no alternation with /u/ in SSBE (but /w/~[u̯] in some dialects)', 'not documented']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: blind-agent
+    v02_placement: phoneme-system-feature
+    v03_placement: distributional_context
+    placement_reason: >-
+      Blind agent separated. Alternation describes where/how a phoneme occurs
+      morphologically — distributional, not functional contrast.
+    applies_when: segment participates in morphological alternations
+    backfill_trigger: 'language-specific'
+    na_condition: 'no documented alternations'
+
+  - id: DIM-FREQUENCY
+    name: frequency
+    level: distributional_context
+    scope: language-specific
+    domain: segment
+    description: 'Lexical frequency of this phoneme — core vs peripheral.'
+    values: ['full phoneme', 'peripheral (mainly loanwords)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: blind-agent
+    v02_placement: language-system-feature
+    v03_placement: distributional_context
+    placement_reason: >-
+      Blind agent separated. Frequency describes how often a phoneme occurs —
+      distributional, not system-level property.
+    applies_when: all phonemes
+    backfill_trigger: 'language-specific'
+    na_condition: 'none'
+
+  # ===== SYSTEM INVENTORY =====
+  - id: DIM-LENGTH-OPPOSITION
+    name: length_opposition
+    level: system_inventory
+    scope: universal
+    domain: vowel-system
+    description: 'What the phonemic length opposition IS in this language.'
+    values: ['a vs ā', 'contrastive i vs ī', 'contrastive u vs ū', 'contrastive ɪ vs iː', 'æ vs ɑː (different height, not just length)', 'ʊ vs uː (different height, not just length)', 'absent (no phonemic length)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents placed in equivalent level. Renamed.'
+    applies_when: language has a vowel system
+    backfill_trigger: 'universal'
+    na_condition: 'none — even absent is valid'
+
+  - id: DIM-VOWEL-INVENTORY
+    name: vowel_inventory
+    level: system_inventory
+    scope: universal
+    domain: vowel-system
+    description: 'Size and composition of the vowel inventory.'
+    values: ['6 vowels', '9 vowels', '9 vowels (incl. ṛ, ḷ, diphthongs)']
+    provenance_sources: [sanskrit, ukrainian]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents agree.'
+    applies_when: language has a vowel system
+    backfill_trigger: 'universal'
+    na_condition: none
+
+  - id: DIM-STOP-INVENTORY
+    name: stop_inventory
+    level: system_inventory
+    scope: universal
+    domain: consonant-system
+    description: 'Size and structure of the stop inventory.'
+    values: ['20 stops (5 places × 4 types)', '20 stops (5 places × 4 voicing/aspiration)', '6 stops (3 places × 2 fortis/lenis)', '6 stops (3 places × 2 voicing)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents agree.'
+    applies_when: language has oral stops
+    backfill_trigger: 'universal'
+    na_condition: none
+
+  - id: DIM-NASAL-INVENTORY
+    name: nasal_inventory
+    level: system_inventory
+    scope: universal
+    domain: consonant-system
+    description: 'Size and composition of the nasal inventory.'
+    values: ['5 nasals', '5 nasals (ñ, m, ṅ, ṇ, n)', '3 nasals', '3 nasals (m, n, ŋ)', '2 phonemic (m, n) + 1 palatalized (nʲ)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents agree.'
+    applies_when: language has nasals
+    backfill_trigger: 'universal'
+    na_condition: none
+
+  - id: DIM-SIBILANT-INVENTORY
+    name: sibilant_inventory
+    level: system_inventory
+    scope: universal
+    domain: consonant-system
+    description: 'Size and composition of the sibilant inventory.'
+    values: ['3 voiceless sibilants (ś, ṣ, s)', '3 sibilants (ś /ɕ/, ṣ /ʂ/, s /s̪/)', '3 sibilants (ш /ʃ/, ж /ʒ/, с /s̪/)', '2 voiceless + 2 voiced (s, z, ʃ, ʒ)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents agree.'
+    applies_when: language has sibilants
+    backfill_trigger: 'universal'
+    na_condition: none
+
+  - id: DIM-CHECKED
+    name: checked
+    level: system_inventory
+    scope: language-specific
+    domain: vowel-system
+    description: 'Whether the language has a checked/free vowel opposition.'
+    values: ['checked (requires following consonant)', 'absent (vowels can occur in any position)', 'n/a']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents agree.'
+    applies_when: 'language vowel system has distributional restrictions'
+    backfill_trigger: 'language-specific'
+    na_condition: 'languages where all vowels can occur in any position'
+
+  - id: DIM-VELAR-FRICATIVE
+    name: velar_fricative
+    level: system_inventory
+    scope: language-specific
+    domain: consonant-system
+    description: 'Whether the language has a phonemic voiceless velar fricative.'
+    values: ['present (/x/)', absent, 'absent in SSBE (present in Scottish/Irish as /x/)']
+    provenance_sources: [ukrainian, english]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents agree.'
+    applies_when: language has a velar consonant series
+    backfill_trigger: 'language-specific'
+    na_condition: 'languages without any velar consonants'
+
+  - id: DIM-VOICED-VELAR-FRICATIVE
+    name: voiced_velar_fricative
+    level: system_inventory
+    scope: language-specific
+    domain: consonant-system
+    description: 'Whether the language has a phonemic voiced velar fricative (as Ukrainian /г/ [ɦ]).'
+    values: ['present (/ɦ~ɣ/ as г)', absent]
+    provenance_sources: [ukrainian]
+    provenance_classification: both-agree
+    v02_placement: language-system-feature
+    v03_placement: system_inventory
+    placement_reason: 'Both agents agree. Merge candidate with DIM-VELAR-FRICATIVE for v0.4.'
+    applies_when: language has a voiced velar consonant series
+    backfill_trigger: 'language-specific'
+    na_condition: 'languages without any voiced velar consonants'
+
+  # ===== DIACHRONIC / RELATIONAL =====
+  - id: DIM-ETYMOLOGY
+    name: etymology
+    level: diachronic_relational
+    scope: historical
+    domain: segment
+    description: 'Historical origin of this phoneme. Diachronic information, not synchronic phonology.'
+    values: ['from PIE *ḱ → /sʲ/', 'from PIE *ḱ → /ɕ/']
+    provenance_sources: [ukrainian]
+    provenance_classification: blind-agent
+    v02_placement: 'language-system-feature (with scope=historical)'
+    v03_placement: diachronic_relational
+    placement_reason: >-
+      Blind agent separated diachronic dimensions into their own level, arguing
+      they reach outside the synchronic system. Sarvam had them in
+      language-system-feature with special scope. Decision: structural
+      separation is cleaner than scope flag.
+    applies_when: 'never (synchronic phonology) — always optional'
+    backfill_trigger: 'historical — do NOT backfill'
+    na_condition: 'not applicable to synchronic description'
+
+  - id: DIM-CLOSENESS
+    name: closeness
+    level: diachronic_relational
+    scope: meta-comparative
+    domain: segment
+    description: 'A meta-comparative judgment about how close one language phoneme is to another.'
+    values: ['Ukrainian /lʲ/ is phonetically CLOSER to Sanskrit /l/ than plain /ɫ/ is']
+    provenance_sources: [ukrainian]
+    provenance_classification: blind-agent
+    v02_placement: 'language-system-feature (with scope=meta-comparative)'
+    v03_placement: diachronic_relational
+    placement_reason: >-
+      Blind agent separated. Meta-comparative judgments are not phonological
+      dimensions. Structural separation is cleaner than scope flag.
+    applies_when: 'never (phonology) — this is a comparative assessment'
+    backfill_trigger: 'meta-comparative — do NOT backfill'
+    na_condition: 'always — metadata about the comparison'
