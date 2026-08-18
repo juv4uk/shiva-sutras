@@ -373,14 +373,21 @@ class UPC8:
         if end_idx is None:
             raise ValueError(f"Could not find sutra {marker_ordinal}")
 
-        # Collect all sounds from start_idx through end_idx,
-        # excluding the marker sound itself (anubandha/it is excluded)
+        # Collect all sounds from start_idx through end_idx.
+        # The anubandha/it marker is a sutra-final tag, not a member of
+        # CANON_POSITIONS (see _build_canon() -- only each sutra's `sounds`
+        # list is inserted, the marker element never is). So there is no
+        # marker occurrence to exclude from this range by identity here;
+        # excluding by spelling is wrong, because the same SLP1 letter can
+        # legitimately be both a listed sound in an earlier sutra AND a
+        # different sutra's marker (e.g. 'l' is listed in sutra 6 but is
+        # also sutra 14's marker; same collision for y/r/m/v/Y against
+        # sutras 12/13/7/11/8). A prior version of this loop skipped any
+        # sound whose letter matched marker_slp1, silently dropping those
+        # six legitimate listed sounds whenever they fell in range.
         result = []
         seen_codes = set()
         for i in range(start_idx, end_idx + 1):
-            sound_slp1 = CANON_POSITIONS[i]["slp1"]
-            if sound_slp1 == marker_slp1:
-                continue
             code = CODE_OF_POSITION[i]
             if code not in seen_codes:
                 result.append(code)

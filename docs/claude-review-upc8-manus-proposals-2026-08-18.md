@@ -114,12 +114,15 @@ if anything it reinforces it, since Manus AI's own conclusion is
 "не масштабувати UPC-8 до English/FPGA прямо зараз" (don't scale to
 English/FPGA yet).
 
-## 5. What I'm not doing right now
+## 5. Update — bug fixed in a follow-up commit
 
-Not fixing the bug in this pass — that's a separate, deliberate code
-change that deserves its own commit and its own test-suite update
-(`test_pratyahara_hal`'s assertion needs to change from 32 to 33, and the
-6 collision families Manus AI identified need regression coverage). Filing
-this review first, as its own commit, keeps that fix reviewable on its
+The fix landed separately, as planned: `prototype/upc8.py`'s
+`pratyahara()` no longer skips by spelling, `test_pratyahara_hal` now
+asserts 33 (not 32), a new `test_pratyahara_marker_sound_collisions`
+regression-tests all 6 collision families (l/y/r/m/Y/v), and
+`README.md`/`UPC8-documentation-ua.md` no longer state the wrong
+consonant count. 21/21 tests pass. The P1/P2 architectural proposals
+(epistemic-layer header, versioned profiles, hardware experiments) are
+still **not** included — deliberately, to keep this fix reviewable on its
 own terms instead of buried in a drive-by change alongside unrelated
 review notes.

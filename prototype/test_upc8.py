@@ -104,14 +104,47 @@ def test_pratyahara_ac():
 def test_pratyahara_hal():
     u = UPC8()
     members = u.pratyahara("hal")
-    assert len(members) == 32, f"hal should have 32 members (h deduplicated), got {len(members)}"
+    # 33 consonants: 34 listed consonant positions (h through sutra 14's l),
+    # minus 1 for h's alias dedup (sutra 5 and 14 share code 0x09).
+    # Was wrongly asserted as 32 before the marker/sound spelling-collision
+    # fix -- 'l' is both sutra 6's listed sound and sutra 14's marker, and
+    # the old code dropped every 'l' by spelling, not just the marker's.
+    assert len(members) == 33, f"hal should have 33 members (h deduplicated, l included), got {len(members)}"
     sounds = [u.decode(m).get("slp1", "?") for m in members]
     assert "a" not in sounds
     assert "k" in sounds and "p" in sounds
     assert "S" in sounds and "z" in sounds and "s" in sounds
+    assert "l" in sounds, "sutra 6's listed 'l' must be included, not dropped as if it were sutra 14's marker"
     # h should appear only once (alias deduplicated)
     assert sounds.count("h") == 1, f"h should appear once, got {sounds.count('h')}"
-    print(f"  [PASS] Pratyahara 'hal' -> 32 consonants (h deduplicated)")
+    print(f"  [PASS] Pratyahara 'hal' -> 33 consonants (h deduplicated, l included)")
+
+
+def test_pratyahara_marker_sound_collisions():
+    """Regression test for the marker/sound spelling-collision bug: a
+    listed sound must not be dropped just because some OTHER sutra's
+    marker happens to have the same SLP1 letter. Six known collision
+    families, from independent review (Manus AI deep review + Sarvam
+    cross-check against traditional grammar, both confirmed 2026-08-18):
+    l/y/r/m/v/Y collide with markers of sutras 14/12/13/7/11/8."""
+    u = UPC8()
+
+    def sounds_of(notation):
+        return [u.decode(c).get("slp1", "?") for c in u.pratyahara(notation)]
+
+    # hal: marker 'l' (sutra 14) vs listed 'l' (sutra 6) -- covered above too
+    assert "l" in sounds_of("hal")
+    # ay: marker 'y' (sutra 12) vs listed 'y' (sutra 5)
+    assert "y" in sounds_of("ay"), "listed 'y' (sutra 5) must survive despite sutra 12's marker also being 'y'"
+    # ar: marker 'r' (sutra 13) vs listed 'r' (sutra 5)
+    assert "r" in sounds_of("ar"), "listed 'r' (sutra 5) must survive despite sutra 13's marker also being 'r'"
+    # am: marker 'm' (sutra 7) vs listed 'm' (sutra 7 itself)
+    assert "m" in sounds_of("am"), "listed 'm' (sutra 7) must survive despite sutra 7's own marker also being 'm'"
+    # aY: marker 'Y' (sutra 8) vs listed 'Y' (sutra 7)
+    assert "Y" in sounds_of("aY"), "listed 'Y' (sutra 7) must survive despite sutra 8's marker also being 'Y'"
+    # av: marker 'v' (sutra 11) vs listed 'v' (sutra 5)
+    assert "v" in sounds_of("av"), "listed 'v' (sutra 5) must survive despite sutra 11's marker also being 'v'"
+    print("  [PASS] All 6 marker/sound spelling-collision families resolved correctly (l/y/r/m/Y/v)")
 
 
 def test_pratyahara_ik():
@@ -249,6 +282,7 @@ def run_all():
         ("Word encoding (Ukrainian)",   test_word_encoding_ukrainian),
         ("Pratyahara: ac",              test_pratyahara_ac),
         ("Pratyahara: hal",             test_pratyahara_hal),
+        ("Pratyahara: marker/sound collisions", test_pratyahara_marker_sound_collisions),
         ("Pratyahara: ik",              test_pratyahara_ik),
         ("Pratyahara: Sar",             test_pratyahara_Sar),
         ("Pratyahara: yaR",             test_pratyahara_yaR),

@@ -56,7 +56,7 @@ info = u.decode(0x00)                # → {code: 0, layer: 'canonical', slp1: '
 
 # Pratyāhāra (natural class expansion)
 u.pratyahara('ac')                  # → [0x00, 0x01, 0x02, ...] — all 9 vowels
-u.pratyahara('hal')                 # → 32 consonants
+u.pratyahara('hal')                 # → 33 consonants
 u.pratyahara('Sar')                 # → [ś, ṣ, s] — 3 sibilants
 
 # Natural class tests
@@ -77,7 +77,7 @@ The pratyāhāra engine implements Pāṇini's 1.1.62–1.1.64 rules:
 | Pratyāhāra | Meaning       | Count | Sounds                          |
 |------------|---------------|-------|---------------------------------|
 | `ac`       | all vowels    | 9     | a i u ṛ ḷ e o ai au            |
-| `hal`      | all consonants| 32    | h y v r ... k p ś ṣ s          |
+| `hal`      | all consonants| 33    | h y v r ... k p ś ṣ s          |
 | `ik`       | close vowels  | 4     | i u ṛ ḷ                        |
 | `Sar`      | sibilants     | 3     | ś ṣ s                          |
 | `yaR`      | semivowels    | 4     | y v r l                         |
