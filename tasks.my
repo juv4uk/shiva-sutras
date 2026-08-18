@@ -84,4 +84,45 @@
     (description . "DECIDED: 'shiva-sutras-1' (with the 'h') is canonical going forward -- matches repo.my's (id shiva-sutras) and the actual repo directory name C:/GitHub/shiva-sutras. 'siva-sutras-1' was a historical join fact (not currently present/live) from before this repo.my existed; no protocol-level rename/merge exists, so it stays in the swarm's membership history as-is. If a process ever reconnects under 'siva-sutras-1' again, treat it as the same logical agent as 'shiva-sutras-1', not a second peer -- don't let both join as voters simultaneously.")
     (done . t)
   ))
+  ("SHIVA-UPC8-BUG-FIX" . (
+    (priority . 8.0)
+    (description . "DONE 2026-08-18: fixed pratyahara() marker/sound spelling-collision bug in prototype/upc8.py (CANON_POSITIONS never contains markers, so the spelling-based skip dropped legitimate listed sounds sharing a letter with some OTHER sutra's marker -- l/y/r/m/Y/v collide with sutras 14/12/13/7/11/8). Verified independently before fixing: read the source directly, then cross-checked the traditional-grammar rule with Sarvam (asked cold, no hint of the answer) -- both agree only the marker occurrence should be excluded. test_pratyahara_hal corrected 32->33, new test_pratyahara_marker_sound_collisions regression-tests all 6 families, 21/21 tests pass. README.md/UPC8-documentation-ua.md consonant counts corrected.")
+    (done . t)
+    (artifact . "docs/claude-review-upc8-manus-proposals-2026-08-18.md")
+  ))
+  ("SHIVA-UPC8-EPISTEMIC-HEADER" . (
+    (priority . 6.5)
+    (description . "DONE 2026-08-18: added epistemic_layer/status/hypothesis_ref/non_claims header to prototype/upc8.py's module docstring and a matching status callout to prototype/README.md (first line no longer says 'built on the Siva Sutras for FPGA' -- now explicit that canonical here means engineering base-code assignment, not the transmitted canon, per ECA-007).")
+    (done . t)
+  ))
+  ("SHIVA-UPC8-DATA-PROVENANCE" . (
+    (priority . 6.0)
+    (description . "DONE 2026-08-18, scoped to the lower-risk of the two options the task offered: no IAST<->SLP1 mapper exists elsewhere in this repo, and building one just to verify the manual SLP1 transcription would be its own new source of bugs -- out of proportion for this pass. Instead: CANON_SOURCE_SHA256 constant + canon_source_matches() in prototype/upc8.py, and a new test_canon_source_provenance in test_upc8.py that fails loudly if ksetra/canon/siva-sutras.yaml changes without SIVA_SUTRAS being updated to match. This is a drift detector, not a correctness proof of the transcription -- documented as such in the code comment.")
+    (done . t)
+  ))
+  ("SHIVA-UPC8-API-SCOPE-NARROWING" . (
+    (priority . 5.5)
+    (description . "README/UA-doc claim SLP1-or-IAST input support; actual API only accepts canonical SLP1 (encode_sanskrit('ai')/('a-macron')/('kh') all KeyError, per docs/upc8-prototype-deep-review.md#4, independently spot-checkable against prototype/upc8.py's char-wise encode_sanskrit_word). Split into explicit encode_sanskrit_slp1_token / encode_sanskrit_iast_token / encode_sanskrit_word(text, scheme=...) so the API stops promising more than it does. Ukrainian layer has the same gap for я/ї/є/ю/apostrophe -- declare which of the three contracts (orthographic/phonemic/transliteration) it actually implements (see review #5) before expanding coverage.")
+    (done . ())
+  ))
+  ("SHIVA-UPC8-NATURAL-CLASS-API-SPLIT" . (
+    (priority . 5.0)
+    (description . "is_vowel()/is_consonant() currently query canonical ac/hal only, so extension codes (long vowels etc.) return False for both -- silently ambiguous, per docs/claude-review-upc8-manus-proposals-2026-08-18.md and the underlying Manus review #6. Split into canonical_class(code) (Śiva-sūtras only) vs phonological_class(code, profile=...) vs language_class(code, language=...) so extensions don't silently vanish from natural-class queries.")
+    (done . ())
+  ))
+  ("SHIVA-UPC8-ARCHITECTURE-DECISION" . (
+    (priority . 4.5)
+    (description . "DECISION NEEDED (human, not agent): whether to accept the layered UPC representation architecture proposed across docs/upc-unified-architecture.md, docs/upc8-for-my-lisp.md, docs/upc8-cml-integration.md, docs/upc8-fpga-economics-and-optimization.md (all authored by Manus AI, an external tool, currently uncommitted-in-spirit -- i.e. present but not ratified as contracts). These are cross-repo proposals touching my-lisp/cml/fpga-lisp, not something shiva-sutras can unilaterally decide. fpga-lisp-1 is already waiting on an explicit go-ahead before any UPC-8 RTL work (see .local-notes and fpga-lisp's own UPC-8 assessment note) -- this task is that decision point.")
+    (done . ())
+  ))
+  ("SHIVA-UPC8-FPGA-BITMAP-EXPERIMENT" . (
+    (priority . 3.0)
+    (description . "BLOCKED on SHIVA-UPC8-ARCHITECTURE-DECISION and SHIVA-UPC8-EPISTEMIC-HEADER. Per docs/upc8-prototype-deep-review.md#7 and hypotheses/shabda/status.yaml#H2 (still PREMATURE-HYPOTHESIS): a real hardware experiment would generate a versioned 256-bit bitmap for one class set, synthesize it as ROM/LUT on a real FPGA target, and measure resource/timing against a baseline lookup -- as its own scoped, evidence-backed result, not folded into the current prototype's claims. Do not start without explicit go-ahead, same protocol already established with fpga-lisp for the rational/bignum representation work.")
+    (done . ())
+  ))
+  ("SWARM-PROTOTYPE-EPISTEMIC-AUDIT" . (
+    (priority . 6.0)
+    (description . "SWARM-WIDE task, defined via (define-task) in swarm-node (no capability gate, visible to every repo) and separately notified via emit -- not just a local shiva-sutras item. Ask: each repo owner inventories their OWN prototype/experimental-stage code for the same class of issue just found and fixed in shiva-sutras prototype/upc8.py (SHIVA-UPC8-BUG-FIX): (1) undeclared epistemic status -- README/docs claiming more than the code delivers, no PREMATURE-HYPOTHESIS/experimental marker even though a hypotheses/status file already gates it; (2) identity/spelling-confusion bugs -- two different concepts (e.g. a marker token vs a listed value) sharing a textual representation and getting silently conflated. shiva-sutras is not dictating fpga-lisp/cml/my-lisp/my-idea/my-lisp-panini internals -- each repo scopes and reports for itself. Source: docs/claude-review-upc8-manus-proposals-2026-08-18.md.")
+    (done . ())
+  ))
 )))

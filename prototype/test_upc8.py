@@ -9,7 +9,19 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from upc8 import UPC8, CANON_POSITIONS, SIVA_SUTRAS, CODE_OF_POSITION, ALIASES, canon_ref
+from upc8 import UPC8, CANON_POSITIONS, SIVA_SUTRAS, CODE_OF_POSITION, ALIASES, canon_ref, canon_source_matches
+
+
+def test_canon_source_provenance():
+    """Drift detector, not a correctness proof: SIVA_SUTRAS is a manual
+    SLP1 transcription of ksetra/canon/siva-sutras.yaml. If that source
+    file changes, this must fail loudly instead of silently going stale."""
+    assert canon_source_matches(), (
+        "ksetra/canon/siva-sutras.yaml has changed since SIVA_SUTRAS in "
+        "upc8.py was transcribed from it -- update SIVA_SUTRAS and "
+        "CANON_SOURCE_SHA256, do not just bump the hash to silence this."
+    )
+    print("  [PASS] Canon source provenance: SIVA_SUTRAS matches ksetra/canon/siva-sutras.yaml hash")
 
 
 def test_canon_completeness():
@@ -273,6 +285,7 @@ def run_all():
     print("=" * 60)
 
     tests = [
+        ("Canon source provenance",     test_canon_source_provenance),
         ("Canon completeness",          test_canon_completeness),
         ("Canonical codes",             test_canonical_codes),
         ("Sanskrit extended",           test_sanskrit_extended),

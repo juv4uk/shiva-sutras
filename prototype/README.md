@@ -1,6 +1,17 @@
 # UPC-8 Prototype
 
-Universal Phoneme Code — 8-bit phoneme encoding for FPGA, built on the Śiva Sūtras.
+> **Status: `experimental` / `engineering`, not a research or hardware result.**
+> See `hypotheses/shabda/status.yaml#H2` (`PREMATURE-HYPOTHESIS`). This
+> prototype does **not** claim: a historical encoding Pāṇini intended, a
+> universal inventory of human phonemes (see `docs/world-phonetics-and-upc.md`
+> for why no such finite list exists to claim), or an FPGA performance
+> result — it is a pure-Python engineer's sketch, no RTL, no synthesis.
+> "Canonical" below means *engineering base code assignment*
+> (`canon:code`), not the transmitted canon itself (`canon:transmitted`)
+> — see `docs/EPISTEMIC_CONSISTENCY_AUDIT_v1.md` (ECA-007) for why that
+> distinction matters.
+
+Universal Phoneme Code — an 8-bit engineering code assignment over the Śiva Sūtras, explored here as a compact representation prototype (not yet targeting any specific hardware).
 
 ## Architecture
 

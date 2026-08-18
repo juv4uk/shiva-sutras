@@ -2,11 +2,25 @@
 """
 UPC-8: Universal Phoneme Code (8-bit)
 ======================================
+
+epistemic_layer: engineering
+status: experimental
+hypothesis_ref: hypotheses/shabda/status.yaml#H2
+non_claims:
+  - no historical claim about Panini's intended numeric encoding
+  - no claim of universal phoneme inventory (see docs/world-phonetics-and-upc.md
+    for why no such finite inventory exists to claim)
+  - no FPGA performance result -- see hypotheses/shabda/status.yaml#H2,
+    still PREMATURE-HYPOTHESIS as of 2026-08-18
+  - the byte assignment (0x00-0x29 etc.) is an engineering choice over the
+    canon, not itself part of the transmitted canon -- see "canon:code" vs
+    "canon:transmitted" in docs/EPISTEMIC_CONSISTENCY_AUDIT_v1.md (ECA-007)
+
 Architecture:
   CANON (Siva Sutras) -> Sanskrit interpretation -> Language extensions -> UPC-8 encoding
 
 Code space:
-  0x00-0x29  Canonical (immutable, Siva Sutra sequence order)
+  0x00-0x29  Engineering base codes (immutable assignment, Siva Sutra sequence order)
               42 unique sounds; h in sutra 14 aliases to h in sutra 5 (code 0x09)
   0x2A-0x30  Sanskrit extended (long vowels, anusvara, visarga)
   0x31-0x4F  Ukrainian (near-equivalent + new-extension)
@@ -14,7 +28,38 @@ Code space:
   0x80-0xFF  Reserved for future languages
 """
 
+import hashlib
+import os
 from typing import Dict, List
+
+
+# ============================================================================
+# PROVENANCE
+#
+# SIVA_SUTRAS below is a MANUAL SLP1 transcription of the canonical
+# ksetra/canon/siva-sutras.yaml (IAST, no engineering codes -- see that
+# file's own header). This module does not read that YAML at runtime and
+# does not verify the transcription is correct; a correctness check would
+# need an IAST<->SLP1 mapper that does not exist elsewhere in this repo,
+# and building one just for this check would be its own new source of bugs.
+#
+# What CANON_SOURCE_SHA256 *does* catch: if ksetra/canon/siva-sutras.yaml
+# changes without this file's SIVA_SUTRAS being updated to match, the byte
+# stream this module produces silently stops corresponding to the current
+# canon. canon_source_matches() below makes that loud instead of silent.
+# This is a drift detector, not a correctness proof of the transcription.
+# ============================================================================
+CANON_SOURCE_FILE = "ksetra/canon/siva-sutras.yaml"
+CANON_SOURCE_SHA256 = "9a53d5fc3989e8748b2045c83dc275160bd0d142ba0a3b04816a5540c2cef32a"
+
+
+def canon_source_matches() -> bool:
+    """True if ksetra/canon/siva-sutras.yaml still hashes to the value
+    SIVA_SUTRAS below was manually transcribed from. False (or FileNotFoundError
+    if the repo layout changed) means SIVA_SUTRAS may be stale relative to canon."""
+    path = os.path.join(os.path.dirname(__file__), "..", CANON_SOURCE_FILE)
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest() == CANON_SOURCE_SHA256
 
 
 # ============================================================================
