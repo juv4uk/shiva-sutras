@@ -21,3 +21,17 @@ next_allowed_trigger:
 ```
 
 Будь-які спроби "згенерувати" додаткові сутри або продовжити роботу пайплайну на синтетичних даних заборонені. Система очікує підключення зовнішнього достовірного джерела.
+
+---
+
+```yaml
+status: superseded
+superseded_by: STAGE_6_1_ACTIVATION.md
+superseded_date: "2026-08-18"
+superseded_reason: >
+  Trigger fulfilled: externally attributable GRETIL corpus acquired and
+  gated into the pipeline (journal/0008-gretil-corpus-gate.yaml,
+  commit 41bed56). See STAGE_6_1_ACTIVATION.md for what this unlocks and
+  what remains forbidden. This document is kept as-is, not rewritten --
+  it accurately records the freeze state as of 2026-08-15.
+```

@@ -1,0 +1,19 @@
+date: "2026-08-18"
+type: state-transition
+status: LOGGED
+title: "Stage 6.0 Transition: ARMED -> ACTIVE"
+context: >
+  Journal 07 (epistemic_rearming, 2026-08-15) described state BEFORE
+  corpus acquisition: FROZEN -> ARMED / WAITING_FOR_CORPUS.
+  Journal 0008 (gretil-corpus-gate, commit 41bed56, 2026-08-15) records
+  corpus acquisition. Between these two facts there was no formal
+  transition document -- this entry records it, per
+  docs/REMEDIATION_PLAN_v1.md REM-003 (ECA-014).
+trigger_fulfilled: "GRETIL Kasikavrtti (Sharma ed.) + Astadhyayi (Baums) acquired, sha256 manifest, 3951 sutras parsed"
+trigger_commit: "41bed56dbaf85f71baefbd7663b07a7bc95d6819"
+activation_document: STAGE_6_1_ACTIVATION.md
+note: >
+  Journal 07 is NOT superseded and was NOT modified by this entry -- it
+  accurately records the state at the time of writing (see
+  journal/07_epistemic_rearming.md, unchanged). This entry only provides
+  the missing transition link between 07 (ARMED) and 0008 (evidence).
