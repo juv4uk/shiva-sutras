@@ -746,3 +746,44 @@ REM-014 (v0.3 clarification) ←── REM-005 (provenance)
 
 *Агент: sarvam-ai*  
 *Дата: 2026-08-16*
+
+---
+
+## Execution Log (append-only)
+
+- **2026-08-18** — **REM-008** (ECA-004, claims-export stale) executed:
+  `docs/claims-export.yaml` revision baseline updated `a8391c4` → `0f6110d`
+  (history preserved, not overwritten); H-SS-EXT-001, H-SS-EXT-002,
+  H-SS-EXT-003 added with the statuses this plan specified (`SUPPORTED`,
+  `HYPOTHESIS`, `SUPPORTED`). One addition beyond the plan's literal text:
+  H-SS-EXT-002's evidence note flags that the `shared`/`differences`
+  structure it describes no longer matches the *current*
+  `extensions/ukrainian.yaml`/`english.yaml` (checked 2026-08-18) — those
+  files carry a simpler `mapping`/`unresolved_features` shape now, so this
+  claim's applicability needs re-checking, not silently assumed still valid.
+- **2026-08-18** — **REM-009** (ECA-006, status inflation) executed:
+  `hypotheses/independent-claims-h001-h003-sarvam.yaml` — H-SS-EXT-001 and
+  H-SS-EXT-003 both moved `HYPOTHESIS` → `SUPPORTED` with a `status_history`
+  entry recording the prior value and reason (RECON-001), not a bare
+  overwrite. "STRENGTHENED" (used informally in the reconciliation report)
+  is retired in favor of the defined `SUPPORTED` status.
+- REM-004 through REM-007, REM-010 through REM-014 remain **not executed** —
+  this pass was scoped to the registry-update items only (REM-008, REM-009,
+  matching `SHIVA-PRODUCE-CLAIMS`'s task scope); the rest need their own
+  review per this plan's own principle of one atomic commit per fix.
+- **2026-08-18 (later same day)** — **REM-001/REM-002/REM-003** (ECA-001,
+  ECA-002, ECA-014 — Phase 1, all high/medium severity) executed together,
+  per this plan's own dependency note that REM-002 can't happen before
+  REM-001. Created `STAGE_6_1_ACTIVATION.md` (correcting a wrong SHA this
+  plan itself had — `trigger_commit: 636af77` was actually the audit's own
+  baseline commit, not the corpus-gate commit; the real one is `41bed56`);
+  appended a `superseded` block to `FREEZE_STAGE_6_0.md` without rewriting
+  its content; replaced the stale "Stage 6.0 заморожено" section in
+  `.agents/rules/epistemic_agent.md`; created
+  `journal/0009-stage-transition-armed-to-active.yaml` without touching
+  `journal/07`. All 5 of this section's own regression checks re-run and
+  pass. Only REM-004 through REM-007 and REM-010 through REM-014 remain
+  open now.
+
+*Vault copy of this execution log: see `.local-notes/agent-setup-guide.md`
+(gitignored — points to the actual Obsidian vault path).*
