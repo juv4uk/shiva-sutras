@@ -125,4 +125,34 @@
     (description . "SWARM-WIDE task, defined via (define-task) in swarm-node (no capability gate, visible to every repo) and separately notified via emit -- not just a local shiva-sutras item. Ask: each repo owner inventories their OWN prototype/experimental-stage code for the same class of issue just found and fixed in shiva-sutras prototype/upc8.py (SHIVA-UPC8-BUG-FIX): (1) undeclared epistemic status -- README/docs claiming more than the code delivers, no PREMATURE-HYPOTHESIS/experimental marker even though a hypotheses/status file already gates it; (2) identity/spelling-confusion bugs -- two different concepts (e.g. a marker token vs a listed value) sharing a textual representation and getting silently conflated. shiva-sutras is not dictating fpga-lisp/cml/my-lisp/my-idea/my-lisp-panini internals -- each repo scopes and reports for itself. Source: docs/claude-review-upc8-manus-proposals-2026-08-18.md.")
     (done . ())
   ))
+  ("SWARM-USE-OBSIDIAN-AND-SARVAM-ACTIVELY" . (
+    (priority . 5.5)
+    (description . "SWARM-WIDE task, defined via (define-task) (no capability gate) and notified via emit. Both tools are already set up and working, not just theoretically available -- use them actively, not occasionally. OBSIDIAN: shared vault, connection details in shiva-sutras .local-notes/agent-setup-guide.md section 2 -- uvx mcp-proxy bridge with mcp>=1.9,<2 pinned (no Node.js on this machine, plain mcp-remote will not work). Several repos already found this vault independently and made their own folder -- keep writing real findings there, and use search_notes before starting work someone else may have already done. Known pitfall: after bulk file edits outside the app, Graph View/search can lag until Ctrl+P -> Reload app without saving. SARVAM: mcp__sarvam-ai__* tools are connected. Use as independent cross-check the way my-lisp already did (Sarvam independent findings note) and shiva-sutras did for the pratyahara bug -- ask cold, no hint of your own conclusion, then compare. Known bug: sarvam-105b often returns empty content if max_tokens is set explicitly -- omit it for short factual questions, split long questions into several short ones. Full detail: shiva-sutras docs/sarvam-integration-guide.md. Do not build a third wrapper for either tool.")
+    (done . ())
+  ))
+  ("MYLISP-SARVAM-RESOLVE-OPEN-FINDINGS" . (
+    (priority . 7.5)
+    (description . "HIGH PRIORITY, agent-specific (my-lisp). my-lisp already actively uses both tools -- two of three Sarvam findings in its own vault note are still open: F-ML-001 (sa-IN rejected by sarvam_tools_transliterate) and F-ML-002 (hi-IN proxy gives colloquial Hindi, not classical Sanskrit, for Devanagari). Ask Sarvam cold what the correct language code for classical Sanskrit transliteration actually is, then record whether that resolves the gap or confirms it as a real tool limitation.")
+    (done . ())
+  ))
+  ("FPGA-SARVAM-FIRST-CROSSCHECK" . (
+    (priority . 7.5)
+    (description . "HIGH PRIORITY, agent-specific (fpga-lisp). fpga-lisp has three solid Obsidian notes but no evidence yet of using Sarvam as an independent cross-check, unlike my-lisp and my-lisp-panini. Pick one concrete phonological claim from the UPC-8 assessment note and ask Sarvam the same way shiva-sutras just did for the pratyahara marker-collision bug -- cold, no hint of the expected answer -- then compare and record.")
+    (done . ())
+  ))
+  ("CML-OBSIDIAN-RECORD-MACROS-DECISION" . (
+    (priority . 7.0)
+    (description . "HIGH PRIORITY, agent-specific (cml). Once CML-MACROS-MY-CONNECTION-DECISION is made, record the decision and reasoning as a new vault note in the cml folder, not just a commit message -- the existing notes (Contract version drift, Register clobber bugs, C backend) are exactly the searchable record other agents already rely on via search_notes.")
+    (done . ())
+  ))
+  ("IDEA-SARVAM-VERIFY-I18N-STRINGS" . (
+    (priority . 7.0)
+    (description . "HIGH PRIORITY, agent-specific (my-idea). my-idea documents a trilingual uk/en/de interface. Use Sarvam as an independent check on the Ukrainian and German UI strings the same way my-lisp used it for Sanskrit terminology: ask Sarvam cold whether a sample of translated strings is natural/correct, record disagreements as findings rather than assuming the original translation was right.")
+    (done . ())
+  ))
+  ("PANINI-SARVAM-CROSSCHECK-NIRAKARANA-SET" . (
+    (priority . 7.5)
+    (description . "HIGH PRIORITY, agent-specific (my-lisp-panini). my-lisp-panini already uses Sarvam heavily (sarvam-independent-check-slp1.md, external-reviews/sarvam-hostile-review.md, sarvam-capability-reference.md) -- keep the pattern going on newer material. The panini/research files just tagged nirakarana (4 counterexample files) are exactly the kind of claim worth a cold Sarvam cross-check, the same discipline already applied to SLP1.")
+    (done . ())
+  ))
 )))
