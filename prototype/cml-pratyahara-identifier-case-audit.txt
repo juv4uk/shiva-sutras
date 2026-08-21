@@ -1,0 +1,4 @@
+defined=41 exact=21 unresolved=17 wrong=3
+exact=ac,ak,ik,uk,ec,al,hal,val,ral,yar,yay,yam,vaw,may,am,aw,nam,xay,car,cav,caw
+unresolved=eN,Jal,Sal,Sar,iR,aR,eR,JaS,jaS,baS,Jaz,Baz,Jay,Kay,Kar,Jar,haS
+wrong=Ec->0x00000000000001E0 expected=0x0000000000000180; yaR->0x000003FFFFFFFC00 expected=0x0000000000003C00; yaY->0x0000007FFFFFFC00 expected=0x00000000001FFC00

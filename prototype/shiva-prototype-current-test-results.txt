@@ -1,0 +1,206 @@
+=== TOOLCHAIN ===
+/usr/bin/python3
+Python 3.12.3
+/home/ubuntu/.nvm/versions/node/v22.13.0/bin/node
+v22.13.0
+
+=== PYTHON TESTS ===
+
+--- prototype/test_upc8.py ---
+============================================================
+UPC-8 Test Suite
+============================================================
+  [PASS] Canon source provenance: SIVA_SUTRAS matches ksetra/canon/siva-sutras.yaml hash
+  [PASS] Canon: 14 sutras, 43 positions, 42 unique sounds, 1 alias (h)
+  [PASS] Canonical codes 0x00-0x29 (42 unique), extended starts at 0x2A
+  [PASS] Sanskrit extended codes 0x2A-0x30 (7 sounds)
+  [PASS] Ukrainian shared codes reuse canonical codes (13 shared)
+  [PASS] Ukrainian new codes 0x31-0x4F (31 new)
+  [PASS] Sanskrit word: karma -> 25 00 0c 0f 00 -> karma
+  [PASS] Ukrainian word encoding: multi-char letters (дж, ць, щ)
+  [PASS] Pratyahara 'ac' -> 9 vowels: ['a', 'i', 'u', 'f', 'x', 'e', 'o', 'E', 'O']
+  [PASS] Pratyahara 'hal' -> 33 consonants (h deduplicated, l included)
+  [PASS] All 6 marker/sound spelling-collision families resolved correctly (l/y/r/m/Y/v)
+  [PASS] Pratyahara 'ik' -> 4 close vowels: ['i', 'u', 'f', 'x']
+  [PASS] Pratyahara 'Sar' -> 3 sibilants: ['S', 'z', 's']
+  [PASS] Pratyahara 'yaR' -> 4 semivowels: ['y', 'v', 'r', 'l']
+  [PASS] Natural class tests (vowel/consonant/stop/sibilant/semivowel)
+  [PASS] Code space: 80 assigned, 176 reserved
+  [PASS] Reserved codes 0x50-0xFF are unassigned
+  [PASS] Roundtrip: karma -> 25 00 0c 0f 00 -> karma
+  [PASS] Roundtrip: сани -> 29 33 12 31
+  [PASS] Unresolved IPA tracking with candidates
+  [PASS] h alias: sutra 5 code 0x09, alias_sutras=[14]
+  [PASS] No gaps in code space: 0x00-0x4F fully assigned
+
+============================================================
+Results: 22 passed, 0 failed, 22 total
+ALL TESTS PASSED
+============================================================
+exit=0
+
+--- prototype/bitmask64/test_bitmask64.py ---
+/home/ubuntu/shiva-sutras-current/prototype/bitmask64/bitmask64.py:2: SyntaxWarning: invalid escape sequence '\ '
+  """
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK
+exit=0
+
+--- prototype/slavic_phonetics/test_slavic_phonetics.py ---
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK
+exit=0
+
+--- prototype/pvc16/test_pvc16.py ---
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+exit=0
+
+--- prototype/cml_lowering/test_cml_lowering.py ---
+Traceback (most recent call last):
+  File "/home/ubuntu/shiva-sutras-current/prototype/cml_lowering/test_cml_lowering.py", line 13, in <module>
+    from .pratyahara_masks import (
+ImportError: attempted relative import with no known parent package
+exit=1
+
+--- prototype/derivation_ir/test_derivation_ir.py ---
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK
+exit=0
+
+--- prototype/fpga_alu/test_fpga_alu.py ---
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+exit=0
+
+=== NODE TESTS ===
+
+--- prototype/ide_visualizer/test_visualizer.mjs ---
+================================================================================
+MY-IDEA VISUAL TOOLING TEST SUITE: DERIVATION DAG & PHONEME BITMASKS
+================================================================================
+
+--- 1. Derivation IR Fixtures & State Chains ---
+  ✓ PASS: bhavati derivation fixture exists
+  ✓ PASS: bhavati ID matches canonical schema
+  ✓ PASS: bhavati contains exactly 9 derivation states (S0..S8)
+  ✓ PASS: Final state term surface is 'Bavati'
+  ✓ PASS: bhavati has 8 applied Aṣṭādhyāyī rules
+  ✓ PASS: dadAti derivation fixture exists
+  ✓ PASS: dadAti ID matches canonical schema
+  ✓ PASS: dadAti contains exactly 10 derivation states (S0..S9)
+  ✓ PASS: Final state term surface is 'dadAti'
+  ✓ PASS: dadAti has 10 applied Aṣṭādhyāyī rules
+  ✓ PASS: Canonical payload contains schema
+  ✓ PASS: Canonical payload lists terms correctly
+
+--- 2. 16-Bit PVC-16 Hardware Vector Encoding ---
+  ✓ PASS: Sound 'a' has VOWEL bit [0] set
+  ✓ PASS: Sound 'k' has VOWEL bit [0] cleared (Consonant)
+  ✓ PASS: 'a' is Kaṇṭhya (1)
+  ✓ PASS: 'ā' is Kaṇṭhya (1)
+  ✓ PASS: 'i' is Tālavya (2)
+  ✓ PASS: 'a' and 'ā' are Savarṇa (homorganic vowels)
+  ✓ PASS: 'a' and 'i' are NOT Savarṇa (different Sthāna)
+  ✓ PASS: Ukrainian [т'] has MOD_PALATALIZED bit 14 set
+  ✓ PASS: Ukrainian [т'] retains Dantya (Dental 4) place of articulation
+
+--- 3. 64-Bit Pratyāhāra Bitmask Engine ---
+  ✓ PASS: Universe contains exactly 42 canonical Śiva Sūtra phonemes
+  ✓ PASS: ac ∩ hal == ∅ (Vowels and Consonants are disjoint)
+  ✓ PASS: ac ∪ hal == al (Complete phoneme universe)
+  ✓ PASS: ik ⊆ ac (Closed vowels are a strict subset of vowels)
+  ✓ PASS: yaṇ ⊆ hal (Semivowels are consonants)
+
+================================================================================
+TEST SUMMARY: 26 Passed, 0 Failed
+================================================================================
+
+exit=0
+
+--- prototype/swarm_dashboard/test_swarm_dashboard.mjs ---
+================================================================
+TAURICODE SWARM DASHBOARD & TELEMETRY PROTOCOL TEST SUITE
+================================================================
+
+1. Swarm Mesh Topology & Port Verification (:9101 - :9107):
+  ✓ PASS: Cluster registers exactly 6 active Swarm nodes
+  ✓ PASS: Active node count equals 6
+  ✓ PASS: Node my-lisp-1 is registered in topology
+  ✓ PASS: Node my-lisp-1 operates on target port 9101
+  ✓ PASS: Node my-lisp-1 health status is ONLINE
+  ✓ PASS: Node my-lisp-1 reports low latency (1.2ms)
+  ✓ PASS: Node my-lisp-1 advertises capabilities (eval, lisp, vm, ast, proof, oracle, alist-parser)
+  ✓ PASS: Node fpga-lisp-1 is registered in topology
+  ✓ PASS: Node fpga-lisp-1 operates on target port 9102
+  ✓ PASS: Node fpga-lisp-1 health status is ONLINE
+  ✓ PASS: Node fpga-lisp-1 reports low latency (0.8ms)
+  ✓ PASS: Node fpga-lisp-1 advertises capabilities (verilog, fpga, alu, synthesis, hardware, pvc16-alu, pratyahara-rom)
+  ✓ PASS: Node cml-1 is registered in topology
+  ✓ PASS: Node cml-1 operates on target port 9103
+  ✓ PASS: Node cml-1 health status is ONLINE
+  ✓ PASS: Node cml-1 reports low latency (1.5ms)
+  ✓ PASS: Node cml-1 advertises capabilities (compiler, rust, lowering, proof, phonetic, constant-folding, c99-emitter)
+  ✓ PASS: Node my-idea-1 is registered in topology
+  ✓ PASS: Node my-idea-1 operates on target port 9104
+  ✓ PASS: Node my-idea-1 health status is ONLINE
+  ✓ PASS: Node my-idea-1 reports low latency (1.8ms)
+  ✓ PASS: Node my-idea-1 advertises capabilities (ide, visualizer, clojurescript, tauri, codemirror, dag-inspector)
+  ✓ PASS: Node my-lisp-panini-1 is registered in topology
+  ✓ PASS: Node my-lisp-panini-1 operates on target port 9106
+  ✓ PASS: Node my-lisp-panini-1 health status is ONLINE
+  ✓ PASS: Node my-lisp-panini-1 reports low latency (2.1ms)
+  ✓ PASS: Node my-lisp-panini-1 advertises capabilities (grammar, panini, derivation, proof-graph, ir, paribhasha, ganapatha)
+  ✓ PASS: Node shiva-sutras-1 is registered in topology
+  ✓ PASS: Node shiva-sutras-1 operates on target port 9107
+  ✓ PASS: Node shiva-sutras-1 health status is ONLINE
+  ✓ PASS: Node shiva-sutras-1 reports low latency (0.9ms)
+  ✓ PASS: Node shiva-sutras-1 advertises capabilities (phonetics, shiva, upc8, canon, pratyahara, slavic-phonetics, tokenizers)
+
+2. Task Completion Telemetry Verification (Target >= 271):
+  ✓ PASS: Total completed tasks (298) exceeds target of 271+
+  ✓ PASS: Mesh completion rate (99%) is above 95%
+  ✓ PASS: Node task distribution sum (298) matches total (298)
+
+3. Tauri v2 IPC Command Interface Verification:
+  ✓ PASS: get_swarm_topology IPC returns 6 nodes
+  ✓ PASS: get_swarm_topology IPC returns task stats >= 271
+  ✓ PASS: query_derivation_trace returns canonical bhavati
+  ✓ PASS: bhavati derivation contains 9 states (S0 through S8)
+  ✓ PASS: bhavati cryptographic proof is marked verified
+  ✓ PASS: query_derivation_trace returns canonical dadāti
+  ✓ PASS: dadāti derivation contains 7 states (S0 through S6)
+  ✓ PASS: dadāti contains Sūtra 2.4.75 (Ślu replacement)
+  ✓ PASS: Ślu rule correctly documents Apavāda > Utsarga priority conflict resolution
+
+4. Phonetic Vector & PVC-16 / 64-Bit Bitmask Verification:
+  ✓ PASS: Phoneme "a" UPC-8 code is 0x00
+  ✓ PASS: Phoneme "a" PVC-16 marks Vowel (ac) = true
+  ✓ PASS: Phoneme "a" Sthāna is Kaṇṭhya
+  ✓ PASS: Phoneme "k" UPC-8 code is 0x19
+  ✓ PASS: Phoneme "k" PVC-16 marks Consonant (hal) = true
+  ✓ PASS: Phoneme "k" Prayatna is Spṛṣṭa (Stop)
+  ✓ PASS: Phoneme "t'" is recognized as Ukrainian extension
+  ✓ PASS: Phoneme "t'" sets PVC-16 bit 14 (MOD_PALATALIZED)
+  ✓ PASS: Sūtra 1.1.9: Phoneme "a" is savarṇa with itself
+  ✓ PASS: Sūtra 1.1.9: Phoneme "a" (vowel) is NOT savarṇa with "k" (consonant)
+
+================================================================
+TEST RUN COMPLETE: 54 PASSED, 0 FAILED
+================================================================
+exit=0

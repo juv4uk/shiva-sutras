@@ -1,0 +1,6 @@
+baseline: ACCEPTED
+mutated term surface_form: ACCEPTED
+mutated term designations: ACCEPTED
+mutated applicability event payload: ACCEPTED
+mutated term id: REJECTED
+  State state:bhavati:00-input hash mismatch: got state:sha256:9685066cec418ea1c41881191ee056c83d0dd6f3fa422eceef718787f4d0ac24, computed state:sha256:b0bc427e12fcb1d1524aec4e2118798406faaff370e683e645567649f62156c2

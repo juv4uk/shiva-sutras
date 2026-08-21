@@ -1,0 +1,9 @@
+cml_lowering: keys=41 matches=34 mismatches=6 errors=1
+  mismatches=val,ral,iR,eR,nam,xay
+  errors=caw
+bitmask64: keys=41 matches=34 mismatches=6 errors=1
+  mismatches=val,ral,iR,eR,nam,xay
+  errors=caw
+lisp_core_phonetics: keys=41 matches=34 mismatches=6 errors=1
+  mismatches=val,ral,iR,eR,nam,xay
+  errors=caw
