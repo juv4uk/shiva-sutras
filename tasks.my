@@ -54,8 +54,9 @@
   ))
   ("SHIVA-PERIODIC-DRIFT-REVERIFY" . (
     (priority . 4.0)
-    (description . "docs/cross-repo-ecosystem-findings-2026-08-18.md is a snapshot (commits d287a16/6bc53d6/c82027d as of 2026-08-18). Contract-version and coordination-protocol claims in sibling AGENTS.md files can drift again after this date. Before trusting Finding 1/2 in a future session, re-grep the sibling AGENTS.md files and re-check language-contract.my's live (major . minor) rather than assuming the 2026-08-18 snapshot still holds.")
-    (done . ())
+    (description . "DONE 2026-08-20: re-verified live state (my-lisp HEAD 3f262cc, fpga-lisp HEAD 640dfbe, cml HEAD ef4fc5c) against Finding 1/2 -- both STILL HOLD as resolved, no new drift on language-contract version (still 2.0 everywhere) or cml's swarm-node coordination note (still present, cml/AGENTS.md:9-24). Also spot-checked isa-contract.my version claim as an adjacent axis -- consistent, no drift. This is a periodic/recurring check, not a one-shot -- a future pass should re-verify again rather than trust this result indefinitely.")
+    (done . t)
+    (artifact . "docs/cross-repo-ecosystem-findings-2026-08-18.md#addendum-2026-08-20-periodic-re-verification-shiva-periodic-drift-reverify")
   ))
   ("SHIVA-SWARM-CONTRACT-01-SCOPE-CHECK" . (
     (priority . 5.5)

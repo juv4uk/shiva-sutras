@@ -174,6 +174,69 @@ standing to define or execute it.
   (b) actually building and launching `swarm-node` for shiva-sutras —
   needs explicit confirmation, since it's a running network process.
 
+## Addendum — 2026-08-20 periodic re-verification (SHIVA-PERIODIC-DRIFT-REVERIFY)
+
+Executed by a fresh ephemeral shiva-sutras agent, two days after the 2026-08-18
+snapshot, per the standing task's own instruction not to assume the snapshot
+(including its same-day 2026-08-18 "UPDATE" notes above) still holds without
+re-checking live files. All claims below are **empirically confirmed** by
+reading the live files/`git rev-parse HEAD` directly on 2026-08-20, not by
+trusting this document's own prior text.
+
+**HEAD SHAs at time of this re-verification:**
+- `my-lisp`: `3f262ccb51a15e9f995936a47488501c451b614c` (2026-08-20 09:34:23+03:00)
+- `fpga-lisp`: `640dfbe2041a66769c47ea359ccd7eabc8b17035` (2026-08-20 11:04:34+03:00)
+- `cml`: `ef4fc5cd2e8c471bd0d3f9e3496ddffb7a84f9a6` (2026-08-19 04:57:22+03:00)
+- `shiva-sutras`: `86ec9f91e45dedb625e0ca30bcb2d1f08448cbb2` (2026-08-19 04:40:28+03:00)
+
+**Finding 1 (language-contract version) — STILL HOLDS (as resolved).**
+- `my-lisp/language-contract.my:72` still declares `((major . 2) (minor . 0) ...)` — unchanged.
+- `fpga-lisp/AGENTS.md:49` now reads "Language contract version **2.0** as of
+  2026-08-15" — matches, no regression to the old "1.0" text.
+- `cml/AGENTS.md:45` now reads "Language contract version **2.0** as of
+  2026-08-15" — matches, no regression.
+- No drift has recurred since the 2026-08-18 fix commits (`6bc53d6`, `146fc1d`).
+
+**Finding 2 (cml swarm-node coordination note) — STILL HOLDS (as resolved).**
+- `cml/AGENTS.md:9-24` ("Session start — join the swarm") still documents the
+  `swarm-node` P2P mesh, `--connect 127.0.0.1:9101`, and explicitly
+  distinguishes it from `:9999` (the semantic-oracle TCP server) — matches
+  the my-lisp/fpga-lisp pattern this finding originally flagged as missing.
+- `cml/AGENTS.md:149-160` still separately documents cml's own
+  "Cross-session coordination protocol (agreed with my-lisp/fpga-lisp)"
+  (durable facts in `ecosystem-status.md`, direct messages for synchronous
+  asks) — this coexists with, rather than replaces, the swarm-node section;
+  both are present and neither contradicts the other.
+- No regression since commit `c82027d`.
+
+**New observation (not part of original Finding 1/2, reported only, not
+acted on):** `fpga-lisp/AGENTS.md:61` and `cml/AGENTS.md:53` both claim
+"ISA contract (`isa-contract.my`, version 1.0)". Cross-checked against
+`fpga-lisp/isa-contract.my:10`, which declares `(version . (1 0))` — this is
+**consistent**, no drift found on this axis either. Recorded here only
+because the re-verify task's spirit (re-grep sibling AGENTS.md rather than
+assume) extends naturally to the adjacent ISA-contract claim on the same
+lines; not a new finding requiring action.
+
+**Verdict:** both Finding 1 and Finding 2 remain resolved as of 2026-08-20.
+No new drift detected. This addendum is itself a snapshot — a future pass
+should re-verify again rather than trust this text indefinitely, per the
+same discipline this addendum just applied to the 2026-08-18 original.
+
+**Minor supporting note (Sarvam cross-check, separate from the drift
+verdict above — the drift findings stand on file/grep/git evidence alone,
+not on this):** per the existing `SHIVA-SARVAM-SIMPLE-TASKS-LOG` pattern
+of using `mcp__sarvam-ai__*` as an independent linguistic sanity-check
+(single-fact, no `max_tokens` set), called
+`mcp__sarvam-ai__transliterate_text` on Devanagari `शिव` (`hi-IN` →
+`en-IN`) → result: `"Shiva"`. This is a minor, tangential data point in
+favor of the spelling `shiva-sutras`/`shiva-sutras-1` (with the "h") as
+the more standard Roman transliteration, consistent with — not the basis
+for — the already-DECIDED `SHIVA-NODE-ID-DUPLICATE-CHECK` call that
+`shiva-sutras-1` is canonical over the historical `siva-sutras-1`. (tag:
+empirically confirmed via Sarvam MCP call, request_id
+`20260820_5c4070ef-ee08-4e9e-9894-4689a3cac8f3`)
+
 ## Provenance
 
 - Surveyed repos: `my-lisp`, `fpga-lisp`, `cml`, `my-idea`, `my-lisp-panini`,
