@@ -30,6 +30,12 @@ This report delivers the comprehensive architectural decision, formalized code s
 - **Decision Owner:** `shiva-sutras-1`
 - **Data Authority:** `ksetra/canon/siva-sutras.yaml` (SHA256: `9a53d5fc3989e8748b2045c83dc275160bd0d142ba0a3b04816a5540c2cef32a`)
 
+## 1.1 Core Epistemic Axioms
+1. **No Circular Proofs:** The number of layers implementing an assumption does not increase the epistemic validity of the assumption itself.
+2. **Model Validation Invariant:** Correct implementation of a model is not validation of the model.
+3. **Evidence Witness Invariant:** Visualizers and inspectors never decide, repair, or canonicalize silently; they display and verify supplied evidence.
+4. **Authority Boundary:** `shiva-sutras/prototype/` serves as an experimental laboratory and reference implementation, not authority over `cml`, `my-lisp`, `fpga-lisp`, or `tauricode`.
+
 ## 2. Context & Epistemic Separation
 To prevent epistemic drift (ECA-007) and unwarranted authority claims, the system enforces a strict 6-layer ontology:
 
