@@ -1,0 +1,431 @@
+---
+derived: true
+source_file: "shastra/dharmashastra/sutra/vaikhAnasadharmasUtra.txt"
+source_sha256: "b2549aee0b5b76a1db829d733b5a49756bc57b69681ba5a053270f967e7700b0"
+source_encoding: "utf-8-sig"
+source_script: "Devanagari"
+target_transliteration: "IAST"
+mapping_contract_version: "1.0"
+converter_version: "1.0.0"
+conversion_status: "partial"
+textual_status: "unreviewed"
+line_mapping: "1:1"
+---
+
+01011121| atha varṇāśramadharmaṃ
+01011121-2| brāhmaṇakṣatriyavaiśyaśūdrāmukhabāhūrupādeṣu jātāścatvāro varṇā
+01011122-3| yasmādbrāhmaṇo asya mukhamāsīditi śrutiḥ
+01011123-4| pūrveṣāṃ trayāṇāṃ niṣekādyāḥ saṃskārāvidhīyante
+01011124| teṣāṃ dvijanmanāṃ vedādhikāras
+01011124-5| tasmādbrāhmaṇasyādhyayanādhyāpanayajanayājanadānapratigrahāṇi ṣaṭkarmāṇi bhavanti
+01011126| kṣattriyavaiśyayoryajanādhyayanadānāni
+01011126-7| kṣatriyasya prajāpālayaduṣṭanigrahayuddhāḥ
+01011127| vaiśyasya pāśupālyakusīdavāṇijyāni
+01011128| śūdrasya dvijamanāṃ śuśrūṣā kṛṣiścaiva
+01011128-9| brāhmaṇasyāśramāścatvāraḥ kṣatriyasyādyāstrayo vaiśyasya dvāveva
+01011129-10| tadāśramiṇaś catvāro  brahmacārī  gṛhasthovānaprastho bhikṣuriti
+010211211-13| upanīto brahmacārīmekhalopavītājinadaṇḍadhārī snātvā tarpaṇaṃ brahmayajñaṃ sāyaṃprātaḥ sandhyopāsanasamiddhomau cakurvan guroḥ pādāvupasaṃgṛhya nityābhivandī vratenādhyayanaṃ karoti
+010211213-15 sthite gurau stheyādutthite pūrvamutthāyavrajantamanugacchedāsīne śayāne ca niyukto nīcairanvāsanaśayane kuryād
+010211215-16 nukto yatkiñcitkarma na-ācarati
+010211216| anukto-api svādhyāyanityakarmāṇyācared
+010211216-1133 uṣṇāmbusnānadantadhāvanāñjanānulepanagandhapuṣpopānaṭchatradivāsvāparetaḥskandastrīdarśanasparśanamaithunānikāmakrodhalobhamohamadamātsaryahiṃsādīni varjayitvā sadāśuśrūṣurguroḥ priyahitakarmāṇi kurvīta
+01021133| adveṣī vākcittānukūlaḥ priyaṃ satyaṃ vadaty
+01021133-4| ārto-apyasatyāpriyaṃ nindaṃ na-ācakṣīta
+01021134-5 madhumāṃsamatsyarasaśuktādyabhojyabhojanavarjī bhaikṣācaraṇaṃ kṛtvā guruṇānujñāto bhaikṣānnamaśnīyād
+01021135-6| guruvṛddhadīkṣitānāmākhyāṃ na brūyād
+01021136-7 gurvabhāve tatputre ca guruvatkarma-ācarati
+01031138-9 brahmacāriṇaścaturvidhā gāyatro brāhmaḥprājāpatyo naiṣṭhiketi
+01031139-10| gāyatropanayanādūrdhvaṃ trirātramakṣāralavaṇāśī gāyatrīmadhītyā sāvitravratasamāpteratra vratacārī
+010311310-14 brāhmaḥ sāvitravratādūrdhvamanabhiśastāpatitānāṃ gṛhasthānāṃ gṛheṣu bhaikṣācaraṇaṃ vedavratacaraṇaṃ ca kṛtvādvādaśa samā viṃśati samā vā gurukule sthitvā vedān vedau vedaṃ vā sūtrasahitamadhyayanaṃ kṛtvā gārhasthyānusaraṇaṃ kuryāt
+010311314-15| prājāpatyaḥ snātvā nityakarmabrahmacaryaśīlo nārāyaṇaparāyaṇo vedavedāṅgārthān vicārya dārasaṃgrahaṇaṃ karoti
+010311315-16| prājāpatye trisaṃvatsarādūrdhvaṃ na tiṣṭhedityṛṣayo vadanti
+010311316-1143| naiṣṭhikaḥ kāṣāyaṃ dhātuvastramajinaṃvalkalaṃ vā paridhāya jaṭī śikhī vā mekhalī daṇḍī sūtrājinadhārībrahmacārī śucirakṣāralavaṇāśī yāvadātmano viprayogastāvadgurukule sthitvāniveditabhaikṣabhojī bhavati
+01041144-7| dārān saṃgṛhya gṛhastho-apisnānādiniyamācāro nityamaupāsanaṃ kṛtvā pākayajñayājī vaiśvadevahomānte gṛhāgataṃ guruṃsnātakaṃ ca pratyutthāya-abhivandyāsanapādyācamanāni pradāyaghṛtadadhikṣīramiśraṃ madhuparkaṃ ca dattvānnādyairyathāśakti bhojayati
+01041147-10| bhikṣūn brahmacāriṇo-atithīn vedavidaḥ śrotriyān pitṛvyācāryartvijmātulaśvaśurādīnabhyāgatān bālavṛddhānanāthārtādhvaśrāntāṃśca yathārthaṃ pūjayaty
+010411410| aśakto-apy-agraṃ bhikṣāṃ vā sodakaṃ dattvāśeṣaṃ bhuñjīta
+010411411-13 dayāsatyaśaucācārayutaḥsvādhyāyatarpaṇābhyāmṛṣīn yajñnabalihomajalapuṣpādyairdevān śrāddhaiḥ putraiśca pitṛṛnbalinā bhūtānannādyairmanuṣyāṃśca nityamarcayed
+010411413| ṛṇatrayeṇa mukto-anṛṇo bhavatiVKashi Sanskrit Seriesḥṅṣ080511414| gṛhasthāścaturvidhā vārtāvṛttiḥ śālīnavṛttiryāyāvaro ghorācārikaścetiVKashi Sanskrit Seriesḥṅṣ080511414| vārtāvṛttiḥ kṛṣigorakṣyavāṇijyopajīvīVKashi Sanskrit Seriesḥṅṣ080511414-15 śālīnavṛttirniyamairyutaḥ pākayajñairṣṭvāgnīnadhāya pakṣe pakṣe darśapūrṇamāsayājī caturṣu caturṣu māseṣu
+cāturmāsyayājīṣaṭsu ṣaṭsu māseṣu paśubandhayājī pratisaṃvatsaraṃ somayājī caVKashi Sanskrit Seriesḥḍṣ01051151-3| yāyāvaro haviryajñaiḥ somayajñaiśca yajateyājayatyadhīte-adhyāpayati dadāti pratigṛhṇāti ṣaṭkarmanirato nityamagniparicaraṇamatithibhyo-abhyāgatebhyo-annādyaṃ ca kuruteVKashi Sanskrit Seriesḥḍṣ01051153-7| ghorācāriko niyamairyukto yajate nayājayaty
+adhīte na-adhyāpayati dadāti  na pratigṛhṇāty uñcchavṛttimupajīvatinārāyaṇaparāyaṇaḥ sāyaṃprātaragnihotraṃ hutvā mārgaśīrṣajyeṣṭhamāsayorasidhārāvrataṃvanauṣadhibhiragniparicaraṇaṃ karoti
+01061158-11| gṛhasthaḥ sapatnīkaḥ pañcāgnibhistretāgnibhirvā gṛhādvanāśramaṃ yāsyannāhitāgniranāhitāgniścāupāsanamaraṇyāmāropya gṛhe mathitvā śrāmaṇakīyavidhānena-ādhāyāghāraṃ hutvāśrāmaṇakāgnimādāya tṛtīyamāśramaṃ gacchet
+010611511-12| pūrvavadagnyālayaprokṣaṇollekhanādikarma kuryāt
+010611512-14 tṛtīyāmapi vediṃ parimṛjya ṣaḍaṅgulāgnerdarbhairgrathitedhastridhākṛtaṃ rajjuvat- mūle baddhaṃ ṣaṭtriṃśadaṅgulapramāṇaṃparistaraṇakūrcaṃ kṛtvā madhyavedyāṃ paristṛṇāti śrāmaṇakaṃ
+010611515-17| śrāmaṇakayajñaṃ yajñadaivaviśvān devānity-antamāvāhyājyaṃ nirūpya śrāmanakāya svāhā śrāmaṇakayajñāya svāhāyajñadaivataviśvebhyo devebhyaḥ svāhetyantaṃ hutvā caruṃ juhuyādityādhāraviśeṣaḥ
+010611518-1161 śrāmaṇakāgneścordhvavedirdvātriṃśadaṅgulyāyatā caturaṅgulivistāronnatā
+01061161-2| madhyamā tatparigatā pañcāṅgulivistārācaturaṅgulotsedhā
+01061162| adhastādūrdhvavedivistāronnatā tṛtīyā vedir
+01061162-5| dvādaśāṅgulaṃ madhye nimnaṃ trivedisahitaṃkuṇḍaṃ kṛtvā-ādhāya vanastho nityamaupāsanavatsāyaṃprātarāhutīrhutvā mahāvyāhṛtibhiḥ śrāmaṇakāgniṃ juhuyād
+01061165| patnīko dārairagnibhirvinā vanaṃ gacchet
+01071166| vānaprasthāḥ sapatnīkāpatnīkāśceti
+01071166-7| sapatnīkāścaturvidhā
+01071167| audumbaro vairiñco vālakhilyaḥ phenapaśceti
+01071167-11 audumbaro-akṛṣṭaphalāvāpyauṣadhibhojī mūlaphalāśī vāaṇahiṅgulaśunamadhumatsyamāṃsapūtyannadhānyāmlaparasparśanaparapākavarjī devarṣipitṛmanuṣyapūjī vanacaro grāmabahiṣkṛtaḥsāyaṃprātaragnihotraṃ hutvā śrāmaṇakāgnihomaṃ  vaiśvadevahomaṃ kurvaṃstapaḥ samācarati
+010711612| śrāmaṇakāgnimekamevādhāya juhotītyeke
+010711612-15| vairiñcaḥ prātryāṃ diśaṃ prekṣate tāṃ diśaṃgatvā tatra priyaṅguyavaśyāmākanīvārādibhirlabdhaiḥ svakīyānatithīṃścapoṣayitvāgnihotraśrāmaṇakavaiśvadevahomī nārāyaṇaparāyaṇastapaḥśīlobhavati
+010711615-17 vālakhilyo jaṭādharaścīravalkalavasano-arkāgniḥ kārttikyāṃ paurṇamāsyāṃ puṣkalaṃ bhuktamutsṛjyānyathā śeṣānmāsānupajīvyatapaḥ kuryāt
+010711618| asya sūryaivāgnirbhavatītyāmananti
+010711618-1172| phenapa uddaṇḍaka unmattako nirodhakaḥ śīrṇapatitapattrāhārī cāndrāyaṇavrataṃ caran pṛthivīśāyīnārāyaṇaṃ dhyāyanmokṣameva prārthayate
+01081173| apatnīkā bahuvidhāḥ
+01081173-11 kālāśikā uddaṇḍasaṃvṛttā aśmakuṭṭā udagraphalino dantolūkhalikā uñchavṛttikāḥ saṃdarśanavṛttikāḥ kapotavṛttikāmṛgacārikā hastādāyinaḥ śailaphalakādino-arkadagdhāśino bailvāśinaḥkusumāśinaḥ pāṇḍupattrāśinaḥ kālāntarabhojina ekakālikāścatuṣkālikāḥkaṇṭakaśāyino vīrāsanaśāyinaḥ pañcāgnimadhyaśāyino
+dhūmāśinaḥpāṣāṇaśāyino-abhyavagāhina udakumbhavāsino mauninaścāvākśirasaḥ sūryapratimukhā ūrdhvabāhukā ekapādasthitāśceti vividhācārā bhavantīti vijñāyate
+010911712-13| atha bhikṣukā mokṣārthinaḥ kuṭīcakābahūdakā haṃsāḥ paramahaṃsāśceti caturvidhā bhavanti
+010911713-15 atra kuṭīcakā gautamabhāradvājayājñavalkyahārītaprabhṛtīnāmāśrameṣvaṣṭau grāsāṃṣcaranto yogamārgatattvajñā mokṣamevaprārthayante
+010911715-1181 bahūdakāstridaṇḍakamaṇḍalukāṣāyadhātuvastragrahaṇaveṣadhāriṇo brahmarṣigṛheṣu  cānyeṣu  sādhuvṛtteṣu māṃsalavaṇaparyuṣitānnaṃ varjayantaḥ saptāgāreṣubhaikṣaṃ kṛtvā mokṣameva prārthayante
+01091181-4| haṃsā nāma grāme caikarātraṃ nagarepañcarātraṃ vasantastadupari na vasanto gomūtragomayāhāriṇo vā māsopvāsino vānityacāndrāyaṇavratino nityamutthānameva prārthayante
+01091184-5 paramahaṃsā nāma vṛkṣaikamūle śūnyāgāreśmaśāne ā vāsinaḥ sāmbarā digambarā vā
+01091185-6| na teṣāṃ dharmādharmau satyānṛteśuddhyaśuddhyādi dvaitaṃ
+01091186-7| sarvasamāḥ sarvātmanaḥ samaloṣṭakāñcanāḥsarvavarṇeṣu bhaikṣācaraṇaṃ kurvanti
+01091187-8| brāhmaṇānāṃ cāturāśramyaṃ kṣatriyāṇāṃtrayāśramyaṃ vaiśyānāṃ dvyāśramyaṃ vihitaṃ
+01091188-9| tatphalaṃ hi sakāmaṃ niṣkāmaṃ ceti dvividhaṃbhavati
+01091189-11 sakāmaṃ nāmeha saṃsārebhivṛddhiṃ jñātvā putralābhādyabhikāṅkṣaṇamanyatsvargādiphalakāṅkṣaṇaṃ vā
+010911811-12| niṣkāmaṃ nāma kiñcidanabhikāṅkṣya yathāvihitānuṣṭhānamiti
+010911812-13| tatra niṣkāmaṃ dvividhaṃ bhavati pravṛttirnivṛttiśceti
+010911813-15| pravṛttirnāma saṃsāramanādṛtyasaṅkhyajñānaṃ samāśritya prāṇāyāmāsanapratyāhāradhāraṇāyukto vāyujayaṃ kṛtvāṇimādyaiśvaryaprāpaṇaṃ
+010911815-1191 tatpunarapi tapaḥkṣayājjanmaprāpakatvādvyādhibāhulyācca na-ādriyante paramarṣayo
+01091191-6| nivṛttirnāma lokānāmanityatvaṃ jñātvā paramātmano-anyanna kiñcidastīti saṃsāramanādṛtya cchitvā bhāryāmayaṃ pāśaṃjitendriyo bhūtvā śarīraṃ vihāya kṣetrajñaparamātmanoryogaṃ kṛtvātīndriyaṃsarvajagadbījam  aśeṣaviśeṣaṃ nityānandamamṛtarasapānavatsarvadā tṛptkaraṃ paraṃ jyotiḥpraveśakamiti vijñāyate
+01101197-8 nivṛttyācārabhedādd-hi yoginastrividhābhavanti sāraṅgā ekārthyā visaragāśceti
+01101198-9| anirodhakā nirodhakā mārgagā vimārgagāśceti caturvidhā sāraṅgā
+01101199-10| dūragā adūragā bhrūmadhyagā asaṃbhaktāḥsaṃbhaktāścetyekārthyāḥ pañcadhā bhavanti
+011011910-11| na saṅkhyāvanto visaragās
+011011911-13| tatra sāraṅgāḥ sāraṃ kṣetrajñastaṃgacchantīti sāraṅgāsteṣvanirodhakā ahaṃ viṣṇuriti dhyātvā ye caranti teṣāṃprāṇāyāmādayo na santi
+011011913-14| ye tu nirodhakāsteṣāṃ prāṇāyāmapratyāhāradhāraṇādayaḥ ṣoḍaśa kalāḥ santi
+011011914-15| ye mārgagāsteṣāṃ ṣaḍeva prāṇāyāmādayo
+011011915-17 ye vimārgāsteṣāṃ yamaniyamāsanaprāṇāyāmapratyāhāradhāraṇādhyānasamādhayaścetyaṣṭāṅgān kalpayanto dhyeyamapyanyathā kurvanti
+01111201| athaikārṣyā
+01111201| eka evarṣiryeṣāṃ te ekārṣyās
+01111201-2| teṣu ye dūragāsteṣāmayaṃ mārgaḥ
+01111202-5| piṅgalayā nāḍikayādityamaṇḍalamanupraviśyatatrasthena puruṣeṇa saṃyujya tataścandramaṇḍalaṃ tatrasthena puruṣeṇa tatovidyutaṃ tatrasthena puruṣeṇa punaḥ krameṇa vaikuṇṭhasāyujyaṃ yanti
+01111205| yedūragāsteṣāmayaṃ dharmaḥ
+01111205-7 kṣetrajñaparamātmanoryogaṃ kṣetrajñadvāreṇakārayitvā tatraiva samastavināśaṃ dhyātvākāśavatsattāmātro-ahamiti dhyāyanti
+01111207-10| bhrūmadhyagāḥ kṣetrajñaparamātmanoryoge sattvarūpāgnidvāreṇa bhrūmadhyaṃ nītvā pañcabhyo-aṅgṣṭādibhyaḥsthānebhyākarṣaṇaṃ punaḥ piṅgalādvāreṇa niṣkramaṇaṃ pralayāntaṃkṣetrajñayogāntaṃ vā kurvanti
+011112010-11| asaṃbhaktā nāma manasā dhyānaṃ kurvanti
+011112011| tatpratipādanāgamaṃ śrotreṇa śṛṇvanti
+011112011-12| cakṣuṣā devatākāraṃ paśyanti
+011112012| ghrāṇena gandhamanubhavanti
+011112012-13| pāṇinā devatāṃ namaskurvanti
+011112013-14| saṃbhaktā nāma brāhmaṇaḥ sarvavyāpakatvādyuktamayuktaṃ yo-asau paramātmā tatsa vyāpyākāśavattiṣṭhati
+011112015 tasmādbrahmaṇo-anyanna kutracidātmānaṃpratipadyatesau
+011112016| bhrūmadhyagatasyāpi saṃśayānniṣpramāṇamevetyuktaṃ
+011112016-1211| tasmādbrahmavyatiriktamanyanna-upapadyate
+01111211-2| vividhasaraṇādvividhadarśanātkupathagāmitvādvisaragāḥ
+01111212-3| purā prajāpatirupadeśagūhanārthaṃvisaragapakṣaṃ dṛṣṭavān
+01111213| taṃ dṛṣṭvā munayo-api mohaṃ jagmuḥ kiṃ punarmanuṣyāḥ
+01111214 visaragapaśūnāmahaṃkārayuktānāṃ janmāntareṣumuktirnāsmiñjanmani
+01111215| tasmādvisaragapakṣo nānuṣṭheyo
+01111215-8| kecidvisargāḥ kāyakleśātkecinmantrajapātkecidyena kenaciddhyānena kecidyena kenacidakṣareṇa kecidvāyujayādanye paramātmanākṣetrajaṃ saṃyojya dhyāyantyete paramātmasaṃyogameva na-icchanti
+01111218-9| hṛdisthaiva puruṣeti vadanti
+01111219-10| kecinna kiñciddhyānamitiyathoktānuṣṭhānaṃ yogamiti jñātvā muktimicchanti
+011112110-11| teṣāṃ visaragapaśūnāṃntareṣu muktirnāsmiñjanmani
+011112111-12| tasminneva janmani mokṣakāṅkṣiṇāvisaragapakṣo nānuṣṭheyaḥ
+011112112-15| saguṇe brahmaṇi buddhiṃ niveśyapaścāt-nirguṇaṃ brahmāśritya yatnaṃ kuryāditi vijñāyate
+
+
+02011221| atha vanasthasya śrāmaṇakavidhānaṃ
+02011221-3| gṛhasthaḥ somayājī putraṃ pautraṃ ca dṛṣṭvātatputrādīn gṛhe saṃsthāpya mauṇḍyaṃ kṛtvā prājāpatyaṃ kṛcchraṃ caret
+02011223-4 vasante śuklapakṣe puṇyakṣetre patnyā sārdhaṃvanāśramaṃ yāti
+02011224-5| pūrvasmin divase kṛtasnānaḥ saṃkalpyakuśodakaṃ pītvopavāsaṃ kuryād
+02011225-6 aupāsanahomaṃ hutvāgnimayaṃ te yonirityaraṇyāmāropayed
+02011226-8| darśapūrṇamāsavidhānena darbhādīn saṃgṛhyapūrvavatparistaraṇakūrcān paridhīn samidhoveṇudaṇḍopavītakamaṇḍaluvalkalādīn saṃbharati
+02011228| pūrvoktavidhināgnikuṇḍaṃ kuryād
+02011228-10 aparasmin divase vaiśvānarasūktenāgniṃmathitvā prajvālyāgna-āyāhy | upāvarohetyagniṃ nidhāya pūrvavat- śrāmaṇakāgnyāghāraṃ juhoti
+020112210-13| praṇamyāgniṃ pariṣicyāgne prāyaścitte tvamiti pañcaprāyaścittaṃ hutvāpohiraṇyāvamānairātmānaṃ prokṣyabrahmadaivatyaṃ vaiṣṇavaṃ pañcavāruṇaṃ ca pradhānān vyāhṛtyantaṃ yajet
+020212214-17| agneḥ pratīcyāṃ dvau kuśau pūrvāgraunyasyordhveśmānaṃ nidhāya tatsaviturvareṇyamiti dakṣiṇapādāṅguṣṭhāgreṇāśmānamadhitiṣṭhettejovatsava ition the readingof the mantra, cf Calp122 4 valkalamajinaṃ cīraṃvā paridhāya pūrvavanmekhalādīṃstrīṇyupavītānyuttarīyaṃ kṛṣṇājinaṃ ca-ādadāty
+020212217-1231 ācamya svasti deveti- agniṃ pradakṣiṇaṃpraṇāmaṃ ca kṛtvā-āsīta
+02021231-3| śaṃ no vedīriti svamūrdhni prokṣya jayānabhyātānān rāṣṭrabhṛto vyāhṛtīśca hutvājyaśeṣaṃ prāṇāyāmena prāśnīyād
+02021233-5| yoge yoga iti dvirācamya śataminnu śaradetipraṇāmamāgantrā samaganmahīti pradakṣiṇaṃ cādityasya kurvīta
+02021235-6| rāṣṭrabhṛd-asīti- ūrdhvāgraṃ kūrcaṃ gṛhṇīyāt
+02021236-10| oṃ bhūstatsavituroṃ bhuvo bhargo devasyoṃsuvardhiyo yo na iti paccho vyastāmoṃ bhūrbhuvastatsavituroṃ suvardhiyo yo na ityardharcāmoṃ bhūrbhuvaḥ suvastatsavituriti samastāṃ casāvitrīṃ japtvā vanāśramaṃ praviśya brahmacaryavrataṃ saṃkalpayet
+0203123-11| tatpatnī ca tathā brahmacāriṇī syāt
+020312311-14 svayamevāgniṃ pradakṣiṇīkṛtyājyena prājāpatyaṃ dhātādīnmindāhutī vicchinnamaindraṃ vaiśvadevaṃ vaiśṇavaṃ bāhyaṃ viṣṇornukādīn prājāpatyasūktaṃ tadvratabandhaṃ ca punaḥ pradhānān hutvāprājāpatyavrataṃ badhnāti
+020312314-16| sthitvā devasya tvā yo me daṇḍa iti dvābhyāṃ pañcasaptanavānyatamaiḥ parvabhiryuktaṃ keśāntāyataṃvāpy-avakraṃ vaiṣṇavaṃ dvidaṇḍamādadāti
+020312316-17| yena devā iti kamaṇḍalumṛdgrahiṇyau pūrvavadupānaṭchatre ca gṛhṇāty
+020312317-20| agnīn gārhapatyādīn-cojjvālyāgnihotraṃhutvāhavanīye prājāpatyaṃ viṣṇusūktaṃ ca sarvatrāgnaye svāhā somāya viṣṇavesvāheti hutvāgnīnaraṇyāmāropayati
+020312320-1241 vanedrau vivikte nadītīre vanāśramaṃpraklpya yathoktamagnikuṇḍāni kuryāt
+02031241-2| patnyā sahāgnīnādāyapātrādisaṃbhārayukto vanāśramaṃ samāśrayatyaVKashi Sanskrit Seriesḥḍḥṣ02041243-4| agnyāyatane prokṣya khanitvā lekhāḥ ṣaḍullikhyasuvarṇaśakalaṃ vrīhīṃśca nidhāya śrāmaṇakāgniṃ nidadhyāt
+02041244-7 vanyāneva pārthivān vānaspatyānkulīrodghātāñchaṇān purāṇān kuśadarbhānūrṇāstukāṃ plakṣāgraṃ sugandhitejanaṃ gugguluṃ hiraṇyaśakalān sūryakāntaṃ ca saṃbharati
+02041247-9| vānaprasthānṛtvijo vṛtvāgniṃ mathitvāgārhapatyādīṃstretāgnīn pañcāgnīn vāgnyādheyakrameṇādhāyāhutī dve dvehutvā nityaṃ dvikālaṃ vanyaireva juhoti
+02041249-12| vanāśramī muniḥ snānaśaucasvādhyāyatapodānejyopavāsopasthanigrahavratamaunānīti niyamān daśaitānsatyānṛśaṃsyārjavakṣamādamaprītiprasādamārdavāhiṃsāmādhuryāṇīti yamāndaśāmūṃśca samācarati
+020412412-15| bhaktyā viṣṇuṃdhyāyann-agnihotraśrāmaṇakāgnihomau dvikālaṃ notsṛjan grāmyāśanaṃ tyaktvā vanyauṣadhīḥ phalaṃ mūlaṃśākaṃ vā nityāśanaṃ saṃkalpya tirodhā bhūrity-āhṛtya- aparāhṇe svayaṃ patnīvā haviṣyamāsrāvitaṃ pacati
+020412416| vaiśvadevāntethitīnabhyāgatān prāśayitvāmitaṃ prāśnāti
+02051251| rātrau na-aśnīyād
+02051251-2| adhastāddarbhāṃstṛṇāni parṇāni vāstīryasuvrataḥ suvratāṃ patnīṃ vinaikaḥ śayīta
+02051252-3| sāsya śuśrūṣāṃ karotyenāṃ na-upagacchet
+02051253| mātṛvanniṣkāmaḥ prekṣetordhvaretā jitendriyo
+02051254-5| darśapūrṇamāsau cāturmāsyaṃ nakṣatreṣṭimāgrayaṇeṣṭiṃ ca vanyauṣadhībhiḥ pūrvavadyajedanukramān
+02051255-7| mūlaiḥ phalaiḥ pattraiḥ puṣpairvātattatkālena pakvaiḥ svayameva saṃśīrṇaiḥ prāṇaṃ pravartayannuttarottarepyadhikaṃ tapaḥsaṃyogaṃphalādiviśiṣtamācared
+02051257-10| atha vāhitāgniḥ sarvānagnīnaraṇyāmāropya sarvaiḥ saṃvāpamantraiḥ pārthivān vānaspatyāṃśca sarvān samūhyanirmanthyaitena vidhināgnimagnyādheyavidhānena ca mantraiḥ sarvaiḥ sabhyāgnyāyataneśrāmaṇakāgnimādhāya-āharet
+020512510| sabhyasya bhedaḥ śrāmaṇakāgnirityāhuḥ
+020512510-13| apatnīkaśca bhikṣuvadagnau homaṃhutvāraṇyādipātrāṇi ca prakṣipya putre bhāryāṃ nidhāya tathāgnīnātmanyāropyavalkalopavītādīn bhikṣāpātraṃ ca saṃgṛhya- anagniradāro gatvā vane nivaset
+020512513-15| tapasāṃ śramaṇametanmūlaṃ tasmādetadvidhānamenamagniṃ ca śrāmaṇakamityāha vikhanāḥ
+020612516-17| saṃnyāsakramaṃ saptatyūrdhvaṃvṛddho-anapatyo vidhuro vā janmamṛtyujarādīn vicintya yogārthī yadā syāttad
+020612517-18| atha vā putre bhāryāṃ nikṣipya paramātmanibuddhiṃ niveśya vanātsaṃnyāsaṃ kuryāt
+020612519-1264| muṇḍito vidhinā snātvā grāmādbāhyeprājāpatyaṃ caritvā pūrvāhṇe tridaṇḍaṃ śikyaṃ kāṣāyaṃ kamaṇḍalumappavitraṃ mṛdgrahaṇīṃ bhikṣāpātraṃ ca saṃbhṛtya trivṛtaṃ prāśya- upavāsaṃkṛtvā  dinepare prātaḥ snātvāgnihotraṃ vaiśvadevaṃ ca hutvā vaiśvānaraṃ dvādaśakapālaṃ nirvapet
+02061264-6| gārhapatyāgnāvājyaṃ saṃskṛtyāhavanīyepūrṇāhutī puruṣasūktaṃ ca hutvāgnaye somāya dhruvāya dhruvakaraṇāya paramātmane nārāyaṇāya svāheti juhoti
+02071267-8| sruci sruveṇa caturgṛhītaṃ gṛhītvā sarvāgniṣvoṃ svāheti juhuyād
+02071268-9| agnihotrahavaṇīmāhavanīye mṛtśilāmayebhyo-anyāni  pātrāṇī gārhapatye prakṣipati
+02071269-10| gṛhastho-anāhitāgniraupāsane vanasthaścaśrāmaṇakāgnau homaṃ hutvā pātrāṇi prakṣipet
+020712610-12| paccho-ardharcaśo vyastāṃ samastāṃ casāvitrīṃ japtvā  bhikṣāśramaṃ praviśāmīti taṃ praviśati
+020712612-14 antarvedyāṃ sthitvā gārhapatyādīn yā teagne yajñiyeti pratyekaṃ trirāghrāya bhavataṃ naḥ samanasāvityātmanyāropayet
+020712614-16| bhūrbhuvaḥ suvaḥ saṃnyastaṃ mayeti trirupāṃśūccaiśca praiṣamuktvā dakṣiṇahastena sakṛt-jalaṃ pītvācamya  tathaivoktvā trirjalāñjaliṃ visṛjen
+020716-17| mekhalāṃ catvāryupavītānyekaṃ vopavītaṃkṛṣṇājinamuttarīyaṃ ca pūrvavaddadāti
+020812618-20| devasya tvā yo me daṇḍaḥ sakhā me gopāyetitribhistridaṇḍaṃ yadasya pāre rajasa iti śikyaṃ yena devāḥ pavitreṇa- ityappavitraṃ yenadevā jyotiṣeti kamaṇḍalumṛdgrahaṇyāvādadīta
+02081271| snātvāghamarṣaṇasūktenāghamarṣaṇaṃ kuryāt
+02081271-3| ācamya ṣoḍaca prāṇāyāmān kṛtvā sahasraṃ śataṃ vā  sāvitrīṃ japtvā tathā bhikṣāpātramalābu dāravaṃ mṛnmayaṃ vāgṛhṇāti
+02081273-5  praṇavādyādibhiḥcfCalp127 2 pṛthakpṛthaksaptavyāhṛtibhistarpayāmi- iti devebhyo jaledbhistarpayitvādyābhiścatasṛbhiḥsvadheti pitṛbhyastarpayet
+02081275-6| udvayaṃ tamasa ityādityamupatiṣṭheta
+02081276-7| jalāñjaliṃ visṛjyābhayaṃ sarvabhūtebhyo dadyād
+02081277-8| adhyātmarato yatirbhikṣāśī niyamayamāṃścasamācaran saṃyatendriyo dhyānayogena paramātmānamīkṣate
+02091279| dharmyaṃ sadācāraṃ
+02091279-11 nivītī dakṣiṇe karṇe yajñopavītaṃkṛtvotkaṭikamāsīno- ahanyudaṅmukho rātrau dakṣiṇāmukhastṛṇairantarite mūtrapurīṣe visṛjen-
+020912711-12| nadyāṃ goṣṭhe pathi chāyāyāṃ bhasmanyapsukuśe darbhe vā na- ācaret
+020912712-13 goviprodakāgnivāyvarkatārendūnnapaśyan kuryāt
+020912713-16 vāmahastena liṅgaṃ saṃgṛhyotthāyodakasyapārśve tathā- āsīno brahmacārī gṛhastho-api śiśne dvirhastayośca dvirdvirgudeṣaṭkṛtvas- mṛdaṃ dattvoddhṛtaireva jalaiḥ śaucaṃ kuryāt
+020912716-17| karaṃ vāmaṃ daśa kṛtvaḥ karāvubhau ca tathāmṛdādbhiḥ prakṣālayet
+020912717| vanasthasya bhikṣoścaitaddviguṇaṃ bhavati
+020912717-18| rātrau yathoktārdhaṃ vā
+020912718-1281| retovisarge mūtravat-śaucaṃ kartavyaṃretasastrirityeke
+02091281-3| sopavītī prāṅmukha udaṅmukhovānyatrāsitvā mṛdāmbunā pūrvavatpādau pāṇī ca prakṣālyācamya mantreṇa- ācamati
+02101284-5 brāhmaṇo hṛdgābhiḥ kṣatriyaḥ kaṇṭhagābhirvaiśyastālugābhiradbhirācāmeta
+02101285-6| ātmānaṃ prokṣya pratyarkamapo visṛjyārkaṃ paryety
+02101286-8| udakasyāgnervāmapārśvaṃ prāṇānāyamyapratyekamoṃkārādisaptavyāhṛtipūrvāṃ gāyatrīmante saśiraskāṃ trirjapetsa prāṇāyāmastrīnekaṃ vā prāṇāyāmaṃ kṛtvā pūtaḥ
+02101288-10 śataṃ daśa aṣṭau vā sāvitrīṃ sāyaṃprātaḥ sandhyāmupāsya naiśikamāhnikaṃ caino-apamṛjyate
+021012810| dvijātiḥ sandhyopāsanahīnaḥ śūdrasamo bhavati
+021012811| brahmacārī svanāma saṃkīrtyābhivādayedahaṃbho iti
+021012811-13| śrotre ca saṃspṛśya guroḥ pādaṃ dakṣiṇaṃdakṣiṇena pāṇinā vāmaṃ vāmena vyatyasyarāpādamgṛhṇannānataśīrṣo-abhivādayaty
+021012814| āyuṣmān bhava saumyetyenaṃ śaṃsed
+021012814| anāśīrvādī nābhivandyo
+021012814-15| mātā pitā gururvidvāṃsaśca pratyahamabhivādanīyāḥ
+021112816| anye bāndhavā viproṣya pratyāgatyābhivandyāḥ
+021112816-18| jyeṣṭho bhrātā pitṛvyo mātulaḥ śvaśuraśca pitṛvat pitṛṣvasā mātṛṣvasā jyeṣṭhabhharyā bhaginī jyeṣṭhā ca mātṛvatpūjitavyāḥ
+021112818-19| sarveṣāṃ mātā śreyasī guruśca śreyān
+021112819-1291| parastriyaṃ yuvatimaspṛśan bhūmāvabhivādayed
+02111291| vandyānāṃ vandanādāyurjñānabalārogyaśubhāni bhavanti
+02111292| yajñopavītamekhalājinadaṇḍān pareṇa dhṛtānna dhārayet
+02111292-4 pākṛtyānālasyaḥ śuciḥ praṇavādyaṃ vedamadhīyāno-amāvāsyāyāṃ paurṇamāsyāṃ caturdaśyoḥ pratipadoraṣṭamyośca nādhīyīta
+02111294-5| nityajape home cānadhyāyo nāsti
+02111295-8|mārjāranakulamaṇḍūkaśvasarpagardabhavarāhapaśvādiṣvantarāgateṣvahorātraṃ sūtakapretakayorāśauce tāvatkālaṃ tisro-aṣṭakāsu gurau prete ca trirātramanadhyāyaḥ syāt
+02121299-10| tadbhāryāputrayoḥ svaśiṣyasya coparamemanuṣyayajñe śrāddhabhojane caikāhamanadhyāyaḥ syātāpadārtyoraprāyatye
+021212910-14| vṛkṣanauyānaśayaneṣvārūḍhaḥ prasāritapādo mūtrapurīṣaretovisarge grāmentaḥśave satyabhakṣyānnabhojane chardane śmaṣānadeśe sandhyāstanite bhūkampe  digdāheśanyulkānipāte rudhiropalapāṃsuvarṣe sūryendurāhugrahaṇe ca tattatkāle na-adhīyīta
+021212914-15| paratreha śreyaskaro vedastadadhyetavyo
+021212915| ante visṛjya praṇavaṃ bravīti
+021212915-16 laukikāgnau samidhau hutvā bhikṣānnaṃmedhāpradaṃ śuddhaṃ maunī bhuñjīta
+021212916-1303| pauṣe māghe vā msāse grāmādbahirjalānte pūrvavadvratavisargahomaṃ hutvā svādhyāyamutsṛjya pakṣe śukle vedaṃ kṛṣṇevedāṅgaṃ ca yāvadantaṃ samadhītya gurordakṣiṇāṃ dattvā samāvartīsyāt
+02131304-5| madhyāhne śuddhe jale mṛdadbhiḥ pādau hastau cadhāvayitvācamyāṅgāni saṃśodhyāpaḥ punantviti jale nimajjed
+02131305-7| ācānto vaiṣṇavairmantrairviṣṇuṃ hiraṇyaśṛṅgamiti varuṇaṃ ca praṇamyāghamaṛṣaṇasūktenāghamaṛṣaṇaṃ kṛtvedamāpaḥ śivāitisnāyādVKashi Sanskrit Seriesḥḍḥṣ02131307-9 āśramiṇaścatvāraḥ snānaṃ nityamevaṃpūrvoktena vidhinā kāmyaṃ naimittikaṃ ca kurvanti
+02131309-10| dhautavastreṇāchādya pūrvavadācamyaprokṣyāsīnastiṣṭhan vā kṛtaprāṇāyāmaḥ sāvitrīṃ japtvādityamupatiṣṭheta
+021313010-14| dakṣiṇapāṇinā tīrthena brāhmeṇabhūpatyādīn daivena nārāyaṇādīn kūpyādīṃścārṣeṇa viśvāmitrādīn paitṛkeṇapitrādīnadbhistarpayitvā brahmayajñaṃ kariṣyannityamiṣe tvorje tveti yathākāmaṃyajuḥsaṃhitāmādyāṃ strīnanuvākān svādhyāyaṃ kurvīta
+021313014-15| naimittikamṛtaṃ ca satyaṃ cetyādisūktānicaturvedādimantrān vāpyadhīyīta
+021313015-16| sarvayajñānāmādirbrahmayajñaḥ
+021313016| tasmādupanayanaprabhṛty-eva dvijaiḥ kartavyo
+021313017-18| nadyāṃ tīrthe devakhāte sarasi taṭāke vāsāmānye snānaṃ kuryāt
+02141311| parasyodake mṛtpiṇḍān pañcoddhṛtya snāyāt
+02141311-2| kūpe tattīre triḥ kumbhena-abhiṣiñced
+02141312| ucchiṣṭo nagno vā na snāyāttathā na śayīta
+02141313| āturo-apsu na-avagāheta
+02141313-5| āturasya snāne naimittike daśa kṛtvo dvādaśakṛtvo vā tamanāturo jale -avagāhyācamya spṛśettataḥ sa pūto bhavati
+02141315-7| dvikālaṃ homānte pādauprakṣālyācamyāsane prāṅmukhaḥ pratyaṅmukhaḥ vā sthitvā caturaśropalipte maṇḍale śuddhaṃ pātraṃ nyaset
+02141317| tatrānnaṃ prakṣipya tatpūjayati
+02141317-9| dvau pādāvekaṃ vā bhūmau nidhāya prasannaṛtaṃ tvā satyena pariṣiñcāmīti sāyaṃ pariṣiñcati satyaṃ tvartenapariṣiñcāmīti prātar
+02141319-11| amṛtopastaraṇamasītyādhāvaṃ pītvāvidhinā prāṇāhutīrhutvānnamanindannaśnāti
+021413111 bhuktvāmṛtāpidhānamasītyapaḥpītvācamya-ācāmed
+021413111-12| ekavāsāḥ śayānastiṣṭhannasnānajapahomīśuṣkapāda udaṅmukho vā na-aśnāti
+021413113| bhinnapātrennaṃ paryuṣitaṃśayanāsanotsaṅgasthaṃ vā na bhuñjīta
+021413113-14| añjalināpo na pibed
+021413114-15| ucchiṣṭāśucyāśaucipatitataiḥ spṛṣṭhaṃsūtakapretake cānnaṃ na-aśnīyāt
+02151321| tilasaktudadhilājaṃ ca rātrāvabhakṣyam
+02151311-2| annaṃ paryuṣitamājyena dadhnā vā yuktaṃ bhojyaṃ
+02151312-3| krimikeśakīṭayutaṃ gavāghrātaṃ pakṣijagdhaṃ ca  bhasmādbhiḥ prokṣitaṃ śuddhaṃ
+02151313-5 śvakākādyupahate bahvanne  tasmin puruṣāśamanamātraṃ tatraivoddhṛtya vyapohya pavamānaḥ suvarjana iti bhasmajalaiḥ prokṣya darbholkayā sparśayitvā gṛhṇīyāt
+02151326-7| prasūtentardaśāhe gokṣīraṃsadaikaśaphoṣṭrastrīṇāṃ payaśca palāṇḍukavakalaśunagṛñcanaviḍjamanuktaṃreadinguncertain Calp132 1| matsyamāṃsaṃ ca varjanīyaṃ
+02151328| yajñaśiṣṭaṃ māṃsaṃ bhakṣaṇīyam
+02151328-9| udakyāspṛṣṭaṃ śūdrānulomaiḥ spṛṣṭaṃ teṣāmannaṃ ca varjayet
+02151329-10| svadharmānuvartināṃ śūdrānulomānāmāmaṃkṣudhitasya saṃgrāhyaṃ
+021513210-11| sarveṣāṃ pratilomāntarālavrātyānāmāmaṃpakvaṃ ca kṣudhito-api yatnānna gṛhṇīyāt
+021513211-12| taiḥ spṛṣṭisaṃmiśraṃ parapakvaṃ ca saṃtyajati
+021513212-13 nityaṃ śrutismṛtyuditaṃ karma kurvanmanovākkāyakarmabhiḥ śanairdharmaṃ samācarati
+03011331-2| gṛhasthāśramī dve yajñopavīte vaiṇavaṃdaṇḍaṃ kamaṇḍaluṃ ca dhārayet
+03011322-3| snātvā sabhāryo gṛhyāgnau gārhyāṇi karmāṇiśrautāgniṣu śrautāni kuryāt
+03011333-4| sāyaṃ ca homāntetithīnabhyāgatānprāśayitvā mitaṃ prāśya patnyā śayīta
+03011334-5| ārdrapādaḥ pratyaguttaraśirāśna svapity-
+03011335| ṛturātriṣu svabhāryāmupagacched
+03011335-6 ādau trirātramṛtumatīgamanasahāsanaśayanāni varjayet
+03011336-7| paradārānna saṃgacchet
+03011337| paradāragamanādāyuḥ śrīrbrahmavarcasaṃvinaśyati
+03011337-8| bhāryayā saha na-aśnāty
+03011338| aśnantīṃ tāṃ jṛmbhamāṇāṃ nagnāṃ ca na-avalokayet
+03011339| asatyavādaṃ varjayaty
+03011339| asatyātparaṃ pāpaṃ satyātparo dharmaśca na-asti
+030113310-11 sarvaprāṇihito-adroheṇaivajīvec-śuddhārthavān kusūladhānyaḥ kumbhīdhānyo-aśvastaniko vā syāt
+030113311-12| dvijātiḥ patitāntyajātānna spṛśed
+030113312| udayestamaye ca sūryaṃ na-īkṣeta
+030113312-13 devaguruvipraghṛtakṣīradadhimṛttoyasamiddarbhāgnivanaspatīnpradakṣiṇaṃ gacchet
+030213314|snātakarājaguruśreṣṭharogibhārabhṛdantarvatnīnāṃ deyoCalreadsjyeṣṭha instof śreṣṭha, ṭrp214 1
+030213315| vātārkaraśmibhiḥ panthānaḥ śudhyanti
+030213315-16| parasyāsanaśayanānyadattāni na-upayuñjīta
+030213316| adatteṣūpayukteṣu svapuṇyacaturthāṃśo jahāti
+030213317 nyopayuktāni vastramālyopānaṭchattrāṇinaiva dhārayed
+030213317-19| agnau pādaṃ na tāpayen| nainaṃ mukhenadhamennapādena spṛśe  adhaḥ pādato na kuryād
+030213319-1341| agnāvagniṃ vā devālayegnau jale ca mūtrapurīṣapūyaśoṇitaretaḥśleṣmocchiṣṭāṅganiṣpeṣānna prakṣipet
+03021341-2| nagnāṃ parastriyaṃ viṇmūtre ca na paśyed
+03021342-3| ucchiṣṭo devārkacandragraharkṣatārā na-īkṣeta
+03021343-4| devagurusnātakadīkṣitarājagośreṣṭhānāṃchāyāṃ na- ākramati
+03021344| indradhanuḥ parasmai na darśayenna vadet
+03021344-5| svapantaṃ na-avabodhayed
+03021345| eko-adhvānaṃ na gacchet
+03021345-6| parakṣetre carantīṃ gāṃ dhayantaṃ vatsaṃ ca navārayen| na- eva-ācakṣīta
+03021346| jīrṇamalavāsā na syāt
+03031347| akṣaiḥ krīḍāṃ pretadhūmaṃ bālātāpaṃ cavarjayet
+03031347-9| keśaromatuṣāṅgārakapālāsthiviṇmūtrapūyaśoṇitaretaḥśleṣmocchiṣṭānna-adhitiṣṭhet
+03031349-10 amedhyalipteṅge yāvattatlepagandhamanaḥśaṅkā  na syāt | tāvanmṛttoyaiḥ śodhayet
+030313410-11 patitāntyajamūrkhādhārmikavairibhiḥsārdhaṃ  na vased
+030313411| ucchiṣṭo-aśucirvā devagoviprāgnīnna spṛśet
+030313411-12| devān vedān rājagurumātāpitṛṛnvidvadbrāhmaṇānna- avamanyet na ninded
+030313412-13| avamantā nindakaśca vinaśyati
+030313413-14| sarvabhūtakutsāṃ tāḍanaṃ ca na kurvīta
+030313414-15 guruṇā mātāpitṛbhyāṃ tatpitrādyairbhrātṛpitṛbhrātṛmātulācāryartvijādyairvivādaṃ na-ācaret
+030313415-16| sarvaśuddhiṣu puruṣasyārthaśuddhiḥstrīśuddhirannaśuddhiśca śreṣṭhatamā syāt
+030313416-1351 dravyeṣu ratnasauvarṇarajatamayānyadbhiḥśodhayaty | agnau vā sparśayati
+03031351-3| tāmratrapusīsāyasādyānyamlavāribhirdārudantajātāni takṣaṇāddhāvanādvā yajñapātrāṇi dakṣiṇapāṇinā mārjanātkṣālanādvā saṃśodhyāni
+03041354-5 carmamayasaṃhatāni vastrāṇi śākamūlaphalānica prokṣaye  alpāni kṣālayet
+03041355-6| ghṛtādīni dravyāṇyutpūyolkayā darśayet
+03041356-9| kauśeyāvikānyūṣairaṃśutaṭṭāniCalreadsaṃśupaṭṭa- in histrp216| śrīphalaiḥ śaṅkhaśuktigośṛṅgāṇi sarṣapaiḥ savāribhirmṛtmayāni punardāhena gṛhaṃ mārjanopalepanāpsekairbhūmiṃ khananādanyamṛtpūraṇagovāsakādyairmārjanādyaiśca śodhayed
+03041359| gotṛptikaraṃ bhūgataṃ toyaṃ doṣavihīnaṃ supūtaṃ
+03041359-10| vākśastaṃ vārinirṇiktamadṛṣṭaṃ
+030413510-11 yoṣidāsyaṃ kāruhastaḥ prasāritapaṇyaṃ casarvadā śuddhaṃ
+030413511| śakunyucchiṣṭaṃ phalamanindyaṃ
+030413511-12| maśakamakṣikānilīnaṃ tadvipruṣaśca na dūṣyāṇi
+030413512-13| vāyvagnisūryaraśmibhiḥ spṛṣṭaṃ ca medhyam
+030413513-14| āture bāle pacanālaye ca śaucaṃ navicāraṇīyaṃ yathāśakti syād
+030413514| viṇmūtrābhyāṃ bahvāpo na dūṣyāḥ
+030413514-15 parasyācāmatastoyabindubhirbhūmaunipatyodgataiḥ pādaspṛṣtairācāmayannāśuciḥ syāt
+03051361-2| vānaprastho nityasvādhyāyī kuśedhmādīnagnyarthaṃ śākamūlaphalānyaśanārthaṃ ca śucau jātānyāhared
+03051362-3| anyādhīnamanyotsṛṣṭamaśucau jātaṃ gorasaṃca varjayet
+03051363| dhānyadhanasaṃcayaṃ na kurvīta
+03051364| vastraṃ na-āchādayet
+03051364| madhūkte toyaṃ māṃsokte paiṣṭikaṃ gṛhṇāti
+03051365-9| sarvabhūteṣu dayāluḥ samaḥ kṣāntaḥ śucirnirasūyakaḥ sukhe niḥspṛho  maṅgalyavāṇīrṣyākārpaṇyavarjī matsyādīn daṃśakānsīrakṛṣṭajātāni kandamūlaphalaśākādīni ca  tyajan-jaṭāśmaśruromanakhāni dhārayaṃstrikālasnāyī dharā āśayo vanyaireva carupuroḍaśānnirvapet
+03051369-11| palāṇḍvādīnniryāsaṃ śvetavṛntākaṃ suniṣaṇṇakaṃ śleṣmātakaṃ vrajakaliṃ citrakaṃ śigruṃ bhūstṛṇaṃ kovidāraṃ mūlakaṃ cavarjayati
+030513611-12| muneḥ sarvaṃ māṃsaṃ gomāṃsatulyaṃ dhānyāmlaṃ surāsamaṃ bhavati
+030513612| pūrvasaṃcitāśanaṃ pūrvāṇi vasanānyāśvayujemāsi tyajati
+030513613| vedavedāntena dhyānayogī tapaḥ samācarati
+030513613-1372| apatnīko-anagniradāro-aniketanovṛkṣamūle vasan vanasthāśrameṣu gṛhasthānāṃ gṛheṣu vā bhikṣāṃbhikṣitvāmbupārśve śuddhe parṇe prāṇayātrāmātramannaṃ bhikṣuvadaśnāti
+03051372| śarīraṃ śoṣayannuttaramuttaraṃ tīvraṃ tapaḥ kuryāt
+03061374| bhikṣuḥ snātvā nityaṃ praṇavenātmānaṃ tarpayet
+03061374-5| tenaiva namaskuryāt
+03061375-6| ṣaḍavarān prāṇāyāmān kṛtvā śatāvarāṃsāvitrīṃ japtvā sandhyāmupāsīta
+03061376| appavitreṇotpūtābhiradbhirācāmet
+03061376-7| kāṣāyadhāraṇaṃ sarvatyāgaṃ maithunavarjanamastainyādīnapy-ācaret
+03061377-10| asahāyo-anagniraniketano niḥsaṃśayīsaṃmānāvamānasamo vivādakrodhalobhamohānṛtavarjī grāmādbahirvivikte maṭhedevālaye vṛkṣamūle vā nivaset
+030613710| cāturmāsādanyatraikāhādūrdhvamekasmin deśe na vased
+030613710-11| varṣāḥ śaraccāturmāsyamekatraiva vaset
+030613711-13| tridaṇḍe kāṣāyāppavitrādīn yojayitvā kaṇṭhe vāmahastena dhārayan dakṣiṇena bhikṣāpātraṃ gṛhītvaikakāle viprāṇāṃśuddhānāṃ gṛheṣu vaiśvadevānte bhikṣāṃ caret
+030613714| bhūmau vīkṣya jantūn pariharan pādaṃ nyased
+030613714-15| adhomukhastiṣṭhan bhikṣāmālipsate
+030713716| godohanakālamātraṃ tadardhaṃ vā sthitvā vrajed
+030713716-17| alābhepy-avamānepy-aviṣādī labdhesaṃmānepyasaṃtoṣī syāt
+030713717-18| drutaṃ vilambitaṃ vā na gacchet
+030713718| bhikṣākālādanyatra paraveśma na gantavyaṃ
+030713719| bhikṣituṃ krośādūrdhvaṃ na gacchet
+030713719-1383| bhikṣāṃ caritvā toyapārśveprakṣālitapāṇipāda- ācamyodu tyamity-ādityāyāto devā iti viṣṇave brahma jajñāmiti brahmaṇe ca bhikṣāgraṃ dattvā sarvabhūtebhyeti baliṃ prakṣipet
+03071383-4| pāṇināgnihotravidhānenātmayajñaṃ saṃkalpya prāṇayātrāmātramaṣṭau grāsān vā-aśnīyātkāmaṃ na-aśnāti
+03071385| vastrapūtaṃ jalaṃ pītvācamya-ācāmati
+03071385| nindākrośau na kurvīta
+03071386| bandhūñjñātīṃstyajed
+03071386| vaṃśacāritraṃ tapaḥ śrutaṃ na vadet
+03071386-8 saṅgaṃ tyaktvā niyamayamī priyaṃ satyaṃ vadansarvabhūtasyāvirodhī samaḥ sadādhyātmarato dhyānayogī nārāyaṇaṃ paraṃ brahmapaśyan dhāraṇāṃ dhārayed
+03071388-9| akṣaraṃ brahma-āpnoti
+03071389| nārāyaṇaḥ paraṃ brahmeti śrutiḥ
+030813810-13| saṃnyāsino-anāhitāgnerdehaṃ mṛtaṃ putro-anyovā tṛṇairantarīkṛtya śuddhairbrāhmaṇairyantreṇa vā saṃnidhāya samudragāmyāṃnadyāṃ tīre vā saikate deśe sṛgālādibhiraspṛśyaṃ yathā tathāvaṭaṃ khanati
+030813813-1391| gāyatryā snāpayitvā tathātatrāsayitvā śāyayitvā vā dakṣiṇe haste vaiṣṇavairmantraistridaṇḍaṃ saṃnyasya savye yadasya pārerajasa iti śikyamappavitramudare sāvitryā bhikṣāpātraṃ guhyapradeśe bhūmirbhūmimiti kāṣāyaṃ mṛdgrahaṇīṃ kamaṇḍaluṃ ca saṃnyasya pidadhyāt
+03081391-2 tasmin sṛgālādibhiḥ spṛṣṭe tatkartā pāpīyānbhavati
+03081392-6| āhitāgneragnīnātmanyāropya saṃnyasino mṛtaṃdehaṃ gāyatryā snāpayitvā pūrvavadvāhayitvā śuddhe deśe  nidhāya laukikāgnau tadagnimupāvarohetyavaropya pavitraṃ teti ghṛtakṣīramāsye prakṣipya pūrvavattridaṇḍādīn vinyasya brahmamedhena pitṛmedhena vāhitāgnimantraistadagnibhirdahanamācarati
+03081397 tayorāśaucodakabalipiṇḍadānaikoddiṣṭādīnnaiva kuryāt
+03081398| nārāyaṇabaliṃ karoti
+03081398-9| tadvahanaṃ khanitvā pidhānaṃ dahanaṃnārāyaṇabaliṃ vā yaḥ kuryāt | so-aśvamedhaphalaṃ samāpnuyāt
+030913910-14 nārāyaṇabaliṃ nārāyaṇādevasarvārthasiddhiriti brahmaṇādyairnarairhatasyātmaghātinorajjuśastrodakāśanidaṃṣṭripaśusarpādibhiḥ sarvapāpamṛtasyādāhyānāmanyeṣāṃ bhikṣoścaikādaśadinādūrdhvaṃ mahāpātakināṃ pañcānāṃ dvādaśasaṃvatsarādūrdhvaṃsapiṇḍīkaraṇasthāne mṛtakārthamaparapakṣe dvādaśyāṃ śravaṇe vā
+karoti
+030913914-15| pūrvehani dvādaśa brāhmaṇānnimantrayed
+030913915-16| aparehani viṣṇorālayapārśve nadītīregṛhe vāgnyāyatanaṃ kṛtvāghāraṃ juhuyād
+030913916-1502| agniṃ paristīryāgnervāyavyāṃ viṣṭaredarbheṣu tadrūpaṃ suvarṇaṃ vā saṃsthāpya puruṣaṃ dhyāyannoṃ bhūḥ puruṣamity-ādyaiḥprāṅmukhaṃ devaṃ nārāyaṇamāvāhyāsanapādyācamanāni dadyāt
+03091402-4| puruṣasūktena snāpayitvā nārāyaṇāyavidmahetyaṣṭākṣaramantreṇa vā vastrottarīyābharaṇapādyācamanapuṣpagandhadhūpadīpākṣatācamanairarcayati
+03101405| keśavādyairdvādaśanāmabhiradbhistarpayet
+03101405-6| pariṣicya sahasraśīrṣādyairviṣṇornukādyairdvādaśanāmabhiścājyaṃ caruṃ juhuyāt
+03101407-8| guḍājyaphalayuktaṃ pāyasaṃ havirviṣṇugāyatryā deveśāya nivedya pādyācamanamukhavāsaṃ dadyāt
+03101408-13 agnerdakṣiṇe darbheṣūtarāgreṣu dakṣiṇādyarcayitvā| nārāyaṇāya sahasraśīrṣāya sahasrākṣāya sahasrapādāyaparamapuruṣāya paramātmane paraṃjyotiṣe parabrahmaṇe- avyaktāya sarvakāraṇāya yajñeśvarāyayajñātmane viśvebhyo devebhyaḥ sarvābhyo devatābhyaḥ sādhyebhyetyantaiḥ pāyasaṃ baliṃdattvā- ājyamebhirjuhoti
+031014013-16 brāhmaṇān pādau prakṣālya navānivastrottarīyābharaṇāni dattvā puṣpādyaiḥ pūjayitvā dvādaśamūrtiṃ dhyāyannupadaṃśaghṛtaguḍadadhiphalayuktaṃ śvetamannaṃ bhojayitvāyathāśakti suvarṇaṃ dakṣiṇāṃ dadāti
+031014016-1411| sahasraśīrṣādyaiḥ stutvādvādaśanāmabhiḥ praṇamedantahomaṃ juhoty
+03101411-2| abhīṣṭāṃ parāṃ gatiṃ sa gatvā viṣṇorlokemahīyate
+03111413-4| cāturvarṇyasaṃkareṇotpannānāmanulomapratilomāntarālavrātyānāmutpattiṃ nāma vṛttiṃ ca-
+03111414-5| ūrdhvajātādadhojātāyāṃ jāto-anulomo-
+03111415| adharotpannādūrdhvajātāyāṃ jātaḥ pratilomas
+03111415-6| tato-anulomādanulomyāṃ jāto-antarālaḥ
+03111416-7| pratilomātpratilomyāṃ jāto vrātyo bhavati
+03111417-8| brahmaṇo mukhādudbhūtā brāhmaṇā brāhmaṇyaśca brahmarṣayaḥ patnyo babhūvus
+03111418-9| teṣāṃ gātrotpannādbrāhmaṇyāmasagotrāyāṃvidhinā samantrakaṃ gṛhītāyāṃ jāto brāhmaṇaḥ śuddho bhavet
+031114110-11 vidhihīnamanyapūrvāyāṃ golakohartṛkāyāṃ kuṇḍaśca viprau dvau ninditau syātāṃ
+031114111-12| tasmādadho bāhubhyāmātkṣatriyātkṣatriyāyāṃ vidhivat-jātaḥ kṣatriyaḥ śuddhas
+031114112-14| tayoravidhikaṃ gūḍhotpanno-aśuddhobhojākhyo naiva-abhiṣecyaḥ paṭṭabandho rājñaḥ saināpatyaṃ karoti
+031114114-15| śuddhābhāvepaṭṭabandho nṛṛn pāyāt
+031114115| tadvṛttaṃ rājavatsyāt
+031114115-1421| adhastādūrubhyāmādvaiśyādvaiśyāyāṃ tathā vaiśyaḥ śuddho
+03111421-2| vidhivarjaṃ maṇikāro-aśuddho maṇimuktādivedhaḥ śaṅkhavalayakārī syāt
+03121423| atha padbhyāmutpannāt-śūdrāt-śudrāyāṃ nyāyenaśūdraḥ śuddhaḥ
+03121424-5| jārānmālavako ninditaḥśūdro-aśvapālo-aśvatṛṇahārī ca-
+03121425| ityete cāturvarṇikās
+03121425-6| teṣāmeva saṃskareṇotpannāḥ sarvenulomādyāḥ
+03121426-7| brāhmaṇātkṣatriyakanyāyāṃ jātaḥ savarṇo-anulomeṣu mukhyo
+03121427-8 asya vṛttirātharvaṇaṃkarmāśvahastirathasaṃvāhanamārohaṇaṃ rajñaḥ saināpatyaṃ cāyurvedakṛtyaṃ
+03121428| gūḍhotpanno-abhiniṣaktākhyo-
+03121429| abhiṣiktaścet-nṛpo bhūyādaṣṭāṅgamāyurvedaṃbhūtatantraṃ vā saṃpaṭet
+03121429-11 taduktācāro dayāyuktaḥ satyavādītadvidhānena sarvaprāṇihitaṃ kuryāt
+031214211| jyotirgaṇanādikādhikavṛttirvā
+031214211-12| viprādvaiśyāyāmambaṣṭhaḥkakṣyājīvyāgneyanartako dhvajaviśrāvī śalyacikitsī
+031214213| jarātkumbhakāraḥ kulālavṛttirnāpito nābherūrdhvavaptā ca
+031214214-15| kṣatriyādvaiśyāyāṃ madguḥ śreṣṭhitvaṃ prāpto mahānarmākhyaśca vaiśyavṛttiḥ kṣātraṃ karma na-ācarati
+031214215| gūḍhādāśviko-aśvakrayavikrayī syāt
+03131431-2| viprāt-śūdrāyāṃ pāraśavo bhadrakālīpūjanacitrakarmāṅgavidyātūryaghoṣaṇamardanavṛttir
+03131432-3| jārotpanno niṣādo vyāḍādimṛgahiṃsākārī
+03131433| rājanyataḥ śūdrāyāmugraḥ sudaṇḍyadaṇḍanakṛtyo
+03131433-4| jārāt-śūlikaḥ śūlārohaṇādiyātanākṛtyo
+03131434-5| vaiśyataḥ śūdrāyāṃ cūcukaḥ kramukatāmbūlaśarkarādikrayavikrayī
+03131435-6| gūḍhātkaṭakāraḥ kaṭakārī ceti
+03131436-7| tato-anulomādanulomāyāṃ jātaścānulomaḥpiturmāturvā jātaṃ vṛttiṃ bhajeta
+03131437-9| kṣatriyādviprakanyāyāṃ mantravat- jātaḥ sūtaḥpratilomeṣu mukhyo-ayaṃ mantrahīnopanīto dvijadharmahīno
+03131439| asya vṛttirdharmānubodhanaṃ rājño-annasaṃskāraśca
+031314310-11| jāreṇa mantrahīnajo rathakārodvijatvavihīnaḥ śūdrakṛtyo- aśvānāṃ poṣaṇadamanādiparicaryājīvī
+031314311-13| vaiśyādbrāhmaṇyāṃ māgadhaḥ śūdrairapyabhojyānno- aspṛśyaḥ sarvavandī praśaṃsākīrtanagānapreṣaṇavṛttir
+031314313| gūḍhāccakrī lavaṇatailavikretā syāt
+031414314-15| vaiśyānnṛpāyāmāyogavastantuvāyaḥ paṭakartā vastrakāṃsyoapjīvī
+031414315| gūḍhācārātpulindo-araṇyavṛttirduṣṭamṛgasattvaghātī
+031414316-17| śūdrātkṣatriyāyāṃ pulkasaḥ kṛtakāṃ vāārkṣāṃ vā surāṃ hutvā pācako vikrīnīta
+031414317| coravṛttādvelavo janbhananartanagānakṛtyaḥ
+03141441-2| śūdrādvaiśyāyāṃ vaidehakaḥ śūdrāspṛśyastairapyabhojyānno vanyavṛttirajamahiṣagopālastadrasān vikrayī
+03141442-3| cauryāccakriko lavaṇatailapiṇyākajīvī
+03141443-6| śūdrādbrāhmaṇyāṃ caṇḍālaḥsīsakālāyasābharaṇo vardhrābandhakaṇṭhaḥ kakṣerīyukto yatastataścaran sarvakarmabahiṣkṛtaḥ pūrvāhṇe grāmādau vīthyāmanyatrāpi malānyapakṛṣya bahirapohayati
+
+03141446| grāmādbahirdūre svajātīyairnivaset
+03141446-7| madhyāhnātparaṃ grāme na viśaty | ayaṃ
+03141447| viśeccedrājñā vadhyo
+03141447-8| anyathā bhrūṇahatyāmavāpnoty
+03141448| antarālvratyāśca
+03141448-10| cūcukādviprāyāṃ takṣako-aspṛśyojhallarīhasto dārukāraḥ  suvarṇakāro-ayaskāraḥ kāṃsyakāro vā
+031414410| kṣatriyāyāṃ matsyabandhurmatsyabandhī
+031414410-11 aiśyāyāṃ sāmudraḥ samudrapaṇyajīvīmatsyaghātī ca syāt
+031514412-13| ambaṣṭhādviprāyāṃ nāvikaḥsamudrapaṇyamatsyajīvī samudralaṅghanāṃ nāvaṃ plāvayati
+031514413-14| kṣatriyāyāmadhonāpito nābheradho romavaptā
+031514414| madgorviprāyāṃ veṇuko veṇuvīṇāvādī
+031514414-15| kṣatriyāyāṃ karmakaraḥ karmakārī
+031514415| vaidehakādviprāyāṃ carmakāraścarmajīvī
+031514416| nṛpāyāṃ sūcikaḥ sūcīvedhanakṛtyavān
+031514416-17| āyogavādviprāyāṃ tāmrastāmrajīvī
+031514417| nṛpāyāṃ khanakaḥ khananajīvī
+031514417-18 khananānnṛpāyāmudbandhakaḥ śūdrāspṛśyo vastranirṇejakaḥ
+031514418-19| pulkasādviprāyāṃ rajako vastrāṇāṃrajonirṇejakaś
+031514419-1452| caṇḍālādviprāyāṃ śvapacaḥ caṇḍālavaccihnayukto nityanindyaḥ sarvakarmabahiṣkāryo nagaryādau malāpohakaḥ śmaśāne vasan heyapātragrāhī pretamabandhukaṃ visṛjeta
+03151453-4| vadhyān hatvā tadvastrādigrāhīparādhīnāhāro bhinnapātrabhojī śvamāṃsabhakṣī carmavāravāṇavāṇijyakārī syāt
+03151454-5| tasmānnikṛṣṭe sute samutpanne patito naṣṭoghorānnarakān vrajati
+03151455-6| satputro narakebhyastrāyakaḥ pitṛṛnpāvayitvā| śubhāṃllokānnayati
+03151456-8| tasmādbrāhmaṇādyāḥ savarṇāyāṃ vidhivatputramutpādayeyur-iti vikhanāḥ  Endof the text
+
+
+
