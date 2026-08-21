@@ -1,0 +1,3 @@
+[submodule "ksetra/sanskritworld_texts"]
+	path = ksetra/sanskritworld_texts
+	url = https://github.com/juv4uk/sanskritworld_texts.git
