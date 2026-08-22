@@ -34,7 +34,7 @@ Revision baseline: `0f6110dd5231e55b9b4a412d457e1df6371b873c` (2026-08-17)
 - **statement**: Механізм pratyāhāra: початковий звук + кінцевий it-маркер позначає множину звуків між ними (включно, без it-маркерів), згідно з Aṣṭādhyāyī 1.1.71.
 - **scope**: Формальна механіка в системі Паніні.
 - **status**: `SUPPORTED` (текст 1.1.71 + використання в Aṣṭādhyāyī).
-- **evidence**: `ksetra/astadhyayi/pratyahara-construction.yaml`; `pratyahara-usage.yaml`; `occurrence-resolution.yaml`.
+- **evidence**: `ksetra/astadhyayi/pratyahara-construction.yaml`; `ksetra/astadhyayi/pratyahara-usage.yaml`; `ksetra/astadhyayi/occurrence-resolution.yaml`.
 - **limitations**: Чи є множини "компактним дескриптором" у сучасному CS-сенсі — не встановлено і не є предметом цього claim.
 
 ### SS-ORDER-001 — Неунікальність C1P порядку
@@ -83,7 +83,7 @@ Revision baseline: `0f6110dd5231e55b9b4a412d457e1df6371b873c` (2026-08-17)
 - **statement**: Автоматичний семантичний агент генерує FCR 83.3% на нестачі доказів (25/30 RESOLVED помилково).
 - **scope**: Synthetic Batch-2 benchmark.
 - **status**: `MEASURED` (внутрішній: `E-002`).
-- **evidence**: `reports/batch_2_synthetic_expert_gain_report.md`.
+- **evidence**: `experiments/blind_reconstruction/reports/batch_2_synthetic_expert_gain_report.md`.
 - **limitations**: Виміряно на синтетичному (відтворюваному) корпусі; перенесення на REAL-корпус — відкрите питання.
 
 ### H-SS-EXT-001 — Фонологічна онтологія вимірів (44 dimensions)

@@ -1,0 +1,66 @@
+# Preregistration: L-001 Blind Semantic Reconstruction
+#
+# This document is the precommitment gate for the blind semantic
+# reconstruction run on the real GRETIL corpus (Stage 6.1, L-001).
+# It locks BOTH the outcome space AND the measurement instrument in
+# advance, so that after the run nothing can be "adjusted with words".
+#
+# Rules:
+#   - this file is written BEFORE the first corpus annotation run;
+#   - `outcome_class` stays EMPTY until the run completes;
+#   - any change to data/annotation/stability sections after
+#     `run_started_at` is set requires a new revision of this file plus
+#     an explicit journal entry explaining why the previous registration
+#     was insufficient (epistemic_linter R5 flags a filled outcome on a
+#     still-blind registration).
+#
+# Classification (decided in advance, 2026-08-22):
+#   A - Paninian-like structure recovered  -> supports the hypothesis
+#       that the canonical classes are recoverable from text alone.
+#   B - a DIFFERENT stable structure recovered -> the METHOD succeeds,
+#       the specific hypothesis (Paninian uniqueness from text) is
+#       FALSIFIED. This is a valid scientific outcome, not a failure.
+#   C - no stable structure recovered -> negative result; the blind
+#       approach at this granularity does not determine class structure.
+#   D - the recovered structure varies across annotators/models or is
+#       sensitive to hidden priors -> the pipeline itself is invalid for
+#       this question; results carry no claim either way.
+
+schema_version: 1
+claim_target: "L-001 (linguistic independence of the 42 classes)"
+registered_at: "2026-08-22"
+run_started_at: null          # set when the first annotation run begins
+run_completed_at: null
+
+data:
+  corpus: "ksetra/sanskritworld_texts (submodule, pinned commit a8460b2...)"
+  provenance: "report-sanskritworld-texts-corpus.md + per-file sha256 manifest"
+  # GRETIL Kasiakavrtti + Astadhyayi remain the primary annotated sources;
+  # sanskritworld_texts extends coverage. Synthetic datasets
+  # (ksetra/astadhyayi/blind/semantic_batch_2/, external_data/kasika_corpus.json)
+  # are INVALID as historical evidence (see FREEZE_STAGE_6_0.md) and are
+  # permitted ONLY as instrument-calibration sets, never as findings.
+  exclusions:
+    - "ksetra/astadhyayi/blind/semantic_batch_2/"
+    - "external_data/kasika_corpus.json"
+
+annotation:
+  models:
+    - "sarvam (extensions/english-sarvam.yaml / ukrainian-sarvam.yaml prompts)"
+    - "kimi (extensions/english-kimi.yaml / ukrainian-kimi.yaml prompts)"
+  prompt_versions: "pinned by filename in extensions/ at run start"
+  sampling_policy: "temperature 0 where supported; otherwise record vendor default verbatim"
+  independent_runs: 3            # per model, per corpus slice
+
+stability:
+  similarity_metric: "pairwise class-partition agreement (adjusted Rand index) over reconstructed sound-class sets"
+  convergence_threshold: "ARI >= 0.90 between all run pairs within one model"
+  minimum_agreement: "ARI >= 0.80 across models required to call ANY structure 'stable'"
+  cross_model_requirement: "structure must be recovered independently by both model families before outcome A or B may be declared"
+
+outcome_classes:
+  taxonomy: "A / B / C / D as defined in the header comment"
+  # NOTE: intentionally empty until the run completes. Filling this while
+  # run_completed_at is null is an epistemic violation (linter R5).
+  outcome_class: ""
+  notes: ""
