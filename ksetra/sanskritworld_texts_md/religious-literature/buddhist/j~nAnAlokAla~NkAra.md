@@ -6,10 +6,14 @@ source_encoding: "utf-8-sig"
 source_script: "Devanagari"
 target_transliteration: "IAST"
 mapping_contract_version: "1.0"
-converter_version: "1.0.0"
+converter_version: "1.1.0"
 conversion_status: "exact"
 textual_status: "unreviewed"
 line_mapping: "1:1"
+tags:
+  - corpus
+  - bauddha
+  - conv-exact
 ---
 
 namo buddhāya || evaṃ mayā śrutamekasmin samaye bhagavān rājagṛhe viharati sma | gṛdhrakūṭe parvate'nantaratnaśikhare dharmadhātugarbhe prāsāde mahatā bhikṣusaṃghena sārdhaṃ pañcaviṃśatibhirbhikṣusahasraiḥ | sarvairarhadbhiḥ kṣīṇāsravairniḥkleśairvaśībhūtaiḥ suvimuktacittaiḥ suvimuktaprajñairājāneyairmahānāgaiḥ kṛtakṛtyaiḥ kṛtakaraṇīyairapahṛtabhārairanuprāptasvakārthaiḥ parikṣīṇabhavasaṃyojanaiḥ samyagājñāsuvimuktacittaiḥ sarvacetovaśiparamapāramiprāptaiḥ | ājñātakauṇḍinyapramukhaiścāṣṭaṣaṣṭibhirmahāśrāvakaiḥ, dvāsaptatibhirbodhisattvakoṭīniyutaśatasahasraiḥ | tadyathā mañjuśriyā kumārabhūtena, dhanaśriyā ca buddhiśriyā ca bhaiṣajyarājena ca bhaiṣajyasamudgatena ca bodhisattvena mahāsattvena | sarvairavaivartikadharmacakrapravartakaiḥ, sarvai ratnakūṭavaipulyasūtraparipṛcchākuśalaiḥ, dharmameghabhūmipratilabdhaiḥ, sumerubhūtaiḥ prajñayā, sarvaiḥ śūnyatānimittāpraṇihitānutpādājātābhāvadharmaparibhāvitaiḥ, mahāgaṃbhīradharmanirbhāsaiḥ, (jāa 20) tathāgateryāpathaiḥ, anyonyalokadhātuṣu tathāgatakoṭīniyutaśatasahasrasaṃpreṣitaiḥ, sarvairabhijñāparikarmanirjātaiḥ sarvadharmasvabhāvaprakṛtipratiṣṭhitaiḥ ||

@@ -6,10 +6,14 @@ source_encoding: "utf-8"
 source_script: "Devanagari"
 target_transliteration: "IAST"
 mapping_contract_version: "1.0"
-converter_version: "1.0.0"
+converter_version: "1.1.0"
 conversion_status: "exact"
 textual_status: "unreviewed"
 line_mapping: "1:1"
+tags:
+  - corpus
+  - kāvya
+  - conv-exact
 ---
 
 

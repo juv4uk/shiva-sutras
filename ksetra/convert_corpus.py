@@ -5,7 +5,65 @@ ROOT = "/home/agents/GitHub/shiva-sutras/ksetra"
 SRC_DIR = f"{ROOT}/sanskritworld_texts"
 TGT_DIR = f"{ROOT}/sanskritworld_texts_md"
 MANIFEST_FILE = f"{TGT_DIR}/manifest.jsonl"
-VERSION = "1.0.0"
+VERSION = "1.1.0"
+
+# M1.1-corpus: deterministic genre tags derived from the source folder path.
+# No semantic interpretation here — structural classification only.
+GENRE_TAGS = {
+    "vedic-literature/upanishad": "upaniṣad",
+    "vedic-literature/samhita": "saṃhitā",
+    "vedic-literature/brahmana": "brāhmaṇa",
+    "vedic-literature/vedanga": "vedāṅga",
+    "poetry/kavya": "kāvya",
+    "poetry/nataka": "nāṭaka",
+    "poetry/alankara": "alaṃkāra",
+    "poetry/subhashita": "subhāṣita",
+    "poetry/prosody": "chandas",
+    "poetry/natyashastra": "nāṭyaśāstra",
+    "poetry/narrative-literature": "kathā",
+    "purana": "purāṇa",
+    "epics": "itihāsa",
+    "religious-literature/buddhist": "bauddha",
+    "religious-literature/shaiva": "śaiva",
+    "religious-literature/vaishnava": "vaiṣṇava",
+    "religious-literature/ganapati": "gāṇapatya",
+    "religious-literature/other-deities": "devatā",
+    "shastra/grammar": "vyākaraṇa",
+    "shastra/dharmashastra": "dharmaśāstra",
+    "shastra/philosophy": "darśana",
+    "shastra/ayurveda-alchemy-etc": "āyurveda",
+    "shastra/astronomy-astrology-and-mathematics": "jyotiṣa-gaṇita",
+    "shastra/kamashastra": "kāmaśāstra",
+    "shastra/arthashastra": "arthaśāstra",
+    "shastra/lexicography": "kośa",
+    "researchpapers": "research",
+    "unpublished-books": "unpublished",
+}
+TOP_FALLBACK = {
+    "vedic-literature": "veda",
+    "poetry": "sāhitya",
+    "religious-literature": "dharma",
+    "shastra": "śāstra",
+}
+
+def derive_tags(rel_path, status):
+    """Deterministic structural tags: corpus + genre (from folder) +
+    conversion state. Never semantic."""
+    rel = rel_path.rsplit(".", 1)[0]
+    tags = ["corpus"]
+    genre = None
+    for prefix, tag in sorted(GENRE_TAGS.items(), key=lambda kv: -len(kv[0])):
+        if rel == prefix or rel.startswith(prefix + "/"):
+            genre = tag
+            break
+    if genre:
+        tags.append(genre)
+    else:
+        top = rel.split("/")[0]
+        if top in TOP_FALLBACK:
+            tags.append(TOP_FALLBACK[top])
+    tags.append("conv-exact" if status == "CONFIRMED" else "conv-partial")
+    return tags
 
 # Create output dir
 os.makedirs(TGT_DIR, exist_ok=True)
@@ -115,7 +173,9 @@ for i, f in enumerate(files):
         derived_lines.append(process_line(l))
         
     derived_body = "\n".join(derived_lines) + "\n"
-    
+
+    tags = derive_tags(rel_path, status)
+    tags_yaml = "\n".join(f"  - {t}" for t in tags)
     yaml = f"""---
 derived: true
 source_file: "{rel_path}"
@@ -128,6 +188,8 @@ converter_version: "{VERSION}"
 conversion_status: "{"partial" if status != "CONFIRMED" else "exact"}"
 textual_status: "{"unreviewed"}"
 line_mapping: "1:1"
+tags:
+{tags_yaml}
 ---
 """
     full_content = yaml + derived_body

@@ -6,10 +6,14 @@ source_encoding: "utf-8-sig"
 source_script: "Devanagari"
 target_transliteration: "IAST"
 mapping_contract_version: "1.0"
-converter_version: "1.0.0"
+converter_version: "1.1.0"
 conversion_status: "exact"
 textual_status: "unreviewed"
 line_mapping: "1:1"
+tags:
+  - corpus
+  - dharmaśāstra
+  - conv-exact
 ---
 textinputbyakihiko akamatsu
 version 1 (completedon june 30, 1991); revisedon feb.11, 1992.

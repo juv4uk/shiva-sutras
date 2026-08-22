@@ -6,10 +6,14 @@ source_encoding: "utf-8-sig"
 source_script: "Devanagari"
 target_transliteration: "IAST"
 mapping_contract_version: "1.0"
-converter_version: "1.0.0"
+converter_version: "1.1.0"
 conversion_status: "exact"
 textual_status: "unreviewed"
 line_mapping: "1:1"
+tags:
+  - corpus
+  - bauddha
+  - conv-exact
 ---
 
 (2.1) <nāhamekadharmamapi samanupaśyāmi yadevamabhāvitamamṛdu bhavati akarmaṇyaṃ yathedaṃ cittam | cittaṃ hi bhikṣavaḥ abhāvitamamṛdu bhavati akarmaṇyam |
