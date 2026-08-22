@@ -3,3 +3,6 @@
 *.jpg binary
 *.pdf binary
 *.yaml text eol=lf
+
+# my-lisp source files (see my-lisp repo contract)
+*.my linguist-language=Lisp
