@@ -8,3 +8,13 @@
 `/home/agents/ecosystem/plans/AGENT-GUARD-M0.md`
 Машинні гачки на C1/C7/C9/C11 (ox-alpha constitution v1.2).
 Статус: план. Прочитайте перед write-heavy роботою.
+
+## NLP / Embeddings tooling (2026-08-22)
+
+Для NLP-задач (ембедінги, семантична класифікація, BGE-M3): системний
+python3 НЕ має torch. Використовуй
+`/home/agents/GitHub/FlagEmbedding/.venv/bin/python`.
+Конфіг і готові індекси: `/home/agents/GitHub/vault-semantic-mcp/`
+(корпусні ембедінги вже в `data/sanskrit_embeddings.jsonl` — перевикористовуй).
+GPU лише 4GB — батчі ≤4, fp16, не перераховувати зайве.
+Повний рецепт: `/home/agents/ecosystem/memory/nlp-tooling-setup.md`.
