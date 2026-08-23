@@ -150,3 +150,58 @@ the duality of the objects indicated is well understood.»*
 6. learnsanskrit.org/guide/verbs/the-verb-system — dvivacana verb endings
 7. Whitney, Sanskrit Grammar Ch.IV §264-265 — dual usage rules
 8. wisdomlib.org/definition/dvivacana — 13 definitions from Sanskrit tradition
+
+---
+
+## 8. 🍁 Канадський вимір: діаспора як живий архів двоїни
+
+### 8.1. Ключове джерело
+
+**Pavliuc, Nicolae. "Dual Forms in Literary Ukrainian and Dialects."**
+*Journal of Ukrainian Studies*, Vol 14, No 1-2. CIUS-Archives (University of Alberta).
+→ https://cius-archives.ca/items/show/778
+
+Канадський інститут українських студій (CIUS) зафіксував двоїнні форми
+у діалектах Галичини, Буковини та Закарпаття — саме тих регіонів,
+звідки поїхала перша хвиля еміграції до Канади (1891–1914).
+Ці діалекти мали НАЙБІЛЬШЕ двоїнних форм серед усіх укр говірок.
+
+### 8.2. Канадська українська як заморожений архів
+
+Перші поселенці (Галичина, Буковина, Закарпаття) принесли
+південно-західні діалекти з найбільшим збереженням двоїни.
+У Канаді ці діалекти взаємодіяли ізольовано (без радянського тиску
+на уніфікацію) → зберегли більше старих форм ніж метрополія.
+
+| Риса | Укр літературна | Канадська укр |
+|---|---|---|
+| Двоїна -има/-ома | частково збережена | ширше вживана |
+| Наголос з 2,3,4 | залишки | стабільніший |
+| Діалектні форми | зникають у стандартизації | консервовані в ізоляції |
+
+### 8.3. Elon.io grammar resource (для англомовних)
+
+Документує двоїну для студентів української в Північній Америці:
+> «Old Ukrainian had three numbers: singular, plural, and a dual (двоїна)
+> for exactly two things — especially for natural pairs: hands, feet,
+> eyes, ears. The dual left two visible scars on modern Ukrainian.»
+>
+> Scar 1: frozen pairs (дві руці, дві нозі) — poetry/dialects
+> Scar 2: counted form end-stress (дві руки́) — everyday standard
+
+### 8.4. Загроза: Canadian Ukrainian на межі зникнення
+
+Джерело: «Ukrainian language in Canada: From prosperity to extinction?»
+(Working Papers of the Linguistics Circle, University of Victoria):
+- Ukrainian була однією з найкраще збережених heritage мов у Канаді
+- Зараз: значний спад native speakers, transmission failure
+- Молоде покоління вивчає як foreign language
+- **Діалектні форми двоїни зникають швидше ніж у самому Канадському
+  українському середовищі**
+
+### 8.5. Висновок для uk-sa roadmap
+
+Канадська діаспора = живий архів пд.-зах. укр діалектів з двоїною.
+Якщо колись робити повний реконструктивний аналіз двоїни для uk-sa
+мосту — канадські записи CIUS є незамінним джерелом даних.
+Терміновість: носії старшого покоління йдуть, дані втрачаються.
