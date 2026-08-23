@@ -5,461 +5,2323 @@ meta:
       zone: []
     sakshi:
       zone:
-        - vedic-literature
-        - religious-literature
-        - poetry
+      - vedic-literature
+      - religious-literature
+      - poetry
     vyasa:
       zone:
-        - shastra
+      - shastra
   version: '0.1'
 reviews:
-  - concepts:
-      - vāc
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/brahmana/gopathabrAhmaNa.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/brahmana/gopathabrAhmaNa_shA~NkarabhAshya.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/brahmana/kauShitakibrAhmaNa.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - padārtha
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/brahmana/pa~nchaviMshabrAhmaNa.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/brahmana/shatapathabrAhmaNa.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - mantra
-      - vāc
-    date: '2026-08-23'
-    file: vedic-literature/samhita/RRigveda.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - padārtha
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/samhita/RRigvedakhilAni.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - bheda
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/samhita/atharvaveda.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts: []
-    date: '2026-08-23'
-    file: vedic-literature/samhita/sAmaveda.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: needs-context
-  - concepts:
-      - anumāna
-      - vāc
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/ChandogyopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - vākya
-      - anumāna
-      - dṛṣṭānta
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/ChandogyopaniShad_shA~NkarabhAShya.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - viparyaya
-      - satya
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/IshAvAsyopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - viparyaya
-      - anumāna
-      - ātmajñāna
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/IshAvAsyopaniShad_shA~NkarabhAShya.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - sṛṣṭi
-      - anumāna
-      - ātman
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/aitareyopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - prakṛti
-      - dṛṣṭānta
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/aitareyopaniShad_shA~NkarabhAShya.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - dharma
-      - ānanda
-      - bheda
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/atharvashiropaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - jīva
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/bRRihadAraNyakopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - vākya
-      - prakṛti
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/bRRihadAraNyakopaniShad_shA~NkarabhAShya.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - prakṛti
-      - ātman
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/brbiuppch.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - vyabhicāribhāva
-      - kāraṇa
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/garbhopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - ātman
-      - prakṛti
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/kaivalyopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - bheda
-      - saṃśaya
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/mANDukyakArikA.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - ātmajñāna
-      - ātman
-      - viparyaya
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/mANDukyopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - dṛṣṭānta
-      - anubhāva
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/mANDukyopaniShad_bhAShyasahita.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - pakṣa
-      - viveka
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/nAdabindUpaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - prakṛti
-      - jīva
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/prashnopaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - prakṛti
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/prashnopaniShad_bhAShya.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - bheda
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/upanishad/shvetAshvataropaniShad.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - vākya
-      - dṛṣṭānta
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/Apastamba gRRihyasUtra with anukUlA,
-      tAtparyadarshana.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - vākya
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/AshvalAyana gRRihyasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - pakṣa
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/jaiminIya gRRiuhyasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - vākya
-      - anumāna
-      - oṣadhi
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/kaushikapaddhati.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/kaushikasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - pakṣa
-      - dṛṣṭānta
-      - pravṛtti
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/kauthuma gRRihyasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - pakṣa
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/mAnava gRRihyasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - vākya
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/sAMkhAyana gRRihyasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - vāc
-      - anuvṛtti
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/grhyasutra/vArAha gRRihyasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/parishishta/atharvavedaparishiShTa.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/parishishta/atharvavedaprAyashchittAni.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - bheda
-      - anubhāva
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/parishishta/dantyoShThyavidhi.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - asiddha
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/pratishakhya/RRigvidhAna.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - vākya
-      - kāraṇa
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/pratishakhya/nirukta.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - pakṣa
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - pakṣa
-      - vākya
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra kapardibhAShya.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - anumāna
-      - vākya
-      - padārtha
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/shrautasutra/AshvalAyana shrautasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - padārtha
-      - anumāna
-    date: '2026-08-23'
-    file: vedic-literature/vedanga/shrautasutra/vaitAna shrautasUtra.md
-    note: vedic-literature batch 1/46
-    reviewer: sakshi
-    verdict: confirmed
-  - concepts:
-      - nyaya
-    date: '2026-08-23'
-    file: 'shastra/philosophy/nyaya (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for nyaya block, sim threshold 0.55+
-      confirmed working'
-    reviewer: vyasa
-    verdict: confirmed
-  - concepts:
-      - vedanta
-    date: '2026-08-23'
-    file: 'shastra/philosophy/vedanta (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for vedanta block, sim threshold 0.55+
-      confirmed working'
-    reviewer: vyasa
-    verdict: confirmed
-  - concepts:
-      - samkhya
-    date: '2026-08-23'
-    file: 'shastra/philosophy/samkhya (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for samkhya block, sim threshold 0.55+
-      confirmed working'
-    reviewer: vyasa
-    verdict: confirmed
-  - concepts:
-      - yoga
-    date: '2026-08-23'
-    file: 'shastra/philosophy/yoga (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for yoga block, sim threshold 0.55+ confirmed
-      working'
-    reviewer: vyasa
-    verdict: confirmed
-  - concepts:
-      - buddhist
-    date: '2026-08-23'
-    file: 'shastra/philosophy/buddhist (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for buddhist block, sim threshold 0.55+
-      confirmed working'
-    reviewer: vyasa
-    verdict: confirmed
-  - concepts:
-      - mimamsa
-    date: '2026-08-23'
-    file: 'shastra/philosophy/mimamsa (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for mimamsa block, sim threshold 0.55+
-      confirmed working'
-    reviewer: vyasa
-    verdict: confirmed
-  - concepts:
-      - shaiva
-    date: '2026-08-23'
-    file: 'shastra/philosophy/shaiva (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for shaiva block, sim threshold 0.55+
-      confirmed working'
-    reviewer: vyasa
-    verdict: confirmed
-  - concepts:
-      - vaisheshika
-    date: '2026-08-23'
-    file: 'shastra/philosophy/vaisheshika (batch: 196 files total)'
-    note: 'vyasa batch review: tags adequate for vaisheshika block, sim threshold
-      0.55+ confirmed working'
-    reviewer: vyasa
-    verdict: confirmed
+- concepts:
+  - vāc
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/brahmana/gopathabrAhmaNa.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/brahmana/gopathabrAhmaNa_shA~NkarabhAshya.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/brahmana/kauShitakibrAhmaNa.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/brahmana/pa~nchaviMshabrAhmaNa.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/brahmana/shatapathabrAhmaNa.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - mantra
+  - vāc
+  date: '2026-08-23'
+  file: vedic-literature/samhita/RRigveda.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/samhita/RRigvedakhilAni.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/samhita/atharvaveda.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts: []
+  date: '2026-08-23'
+  file: vedic-literature/samhita/sAmaveda.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: needs-context
+- concepts:
+  - anumāna
+  - vāc
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/ChandogyopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - vākya
+  - anumāna
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/ChandogyopaniShad_shA~NkarabhAShya.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - viparyaya
+  - satya
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/IshAvAsyopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - viparyaya
+  - anumāna
+  - ātmajñāna
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/IshAvAsyopaniShad_shA~NkarabhAShya.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - sṛṣṭi
+  - anumāna
+  - ātman
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/aitareyopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakṛti
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/aitareyopaniShad_shA~NkarabhAShya.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - dharma
+  - ānanda
+  - bheda
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/atharvashiropaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - jīva
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/bRRihadAraNyakopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - prakṛti
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/bRRihadAraNyakopaniShad_shA~NkarabhAShya.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - ātman
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/brbiuppch.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vyabhicāribhāva
+  - kāraṇa
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/garbhopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - ātman
+  - prakṛti
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/kaivalyopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - saṃśaya
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/mANDukyakArikA.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - ātmajñāna
+  - ātman
+  - viparyaya
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/mANDukyopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - anubhāva
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/mANDukyopaniShad_bhAShyasahita.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - pakṣa
+  - viveka
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/nAdabindUpaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - jīva
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/prashnopaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakṛti
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/prashnopaniShad_bhAShya.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/upanishad/shvetAshvataropaniShad.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/Apastamba gRRihyasUtra with anukUlA, tAtparyadarshana.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - vākya
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/AshvalAyana gRRihyasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - pakṣa
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/jaiminIya gRRiuhyasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - vākya
+  - anumāna
+  - oṣadhi
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/kaushikapaddhati.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/kaushikasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - pakṣa
+  - dṛṣṭānta
+  - pravṛtti
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/kauthuma gRRihyasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - pakṣa
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/mAnava gRRihyasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - vākya
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/sAMkhAyana gRRihyasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - vāc
+  - anuvṛtti
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/grhyasutra/vArAha gRRihyasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/parishishta/atharvavedaparishiShTa.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/parishishta/atharvavedaprAyashchittAni.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anubhāva
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/parishishta/dantyoShThyavidhi.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - asiddha
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/pratishakhya/RRigvidhAna.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - kāraṇa
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/pratishakhya/nirukta.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - pakṣa
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - pakṣa
+  - vākya
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra kapardibhAShya.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - padārtha
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/shrautasutra/AshvalAyana shrautasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anumāna
+  date: '2026-08-23'
+  file: vedic-literature/vedanga/shrautasutra/vaitAna shrautasUtra.md
+  note: vedic-literature batch 1/46
+  reviewer: sakshi
+  verdict: confirmed
+- concepts:
+  - nyaya
+  date: '2026-08-23'
+  file: 'shastra/philosophy/nyaya (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for nyaya block, sim threshold 0.55+ confirmed
+    working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vedanta
+  date: '2026-08-23'
+  file: 'shastra/philosophy/vedanta (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for vedanta block, sim threshold 0.55+
+    confirmed working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - samkhya
+  date: '2026-08-23'
+  file: 'shastra/philosophy/samkhya (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for samkhya block, sim threshold 0.55+
+    confirmed working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - yoga
+  date: '2026-08-23'
+  file: 'shastra/philosophy/yoga (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for yoga block, sim threshold 0.55+ confirmed
+    working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - buddhist
+  date: '2026-08-23'
+  file: 'shastra/philosophy/buddhist (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for buddhist block, sim threshold 0.55+
+    confirmed working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - mimamsa
+  date: '2026-08-23'
+  file: 'shastra/philosophy/mimamsa (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for mimamsa block, sim threshold 0.55+
+    confirmed working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - shaiva
+  date: '2026-08-23'
+  file: 'shastra/philosophy/shaiva (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for shaiva block, sim threshold 0.55+ confirmed
+    working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vaisheshika
+  date: '2026-08-23'
+  file: 'shastra/philosophy/vaisheshika (batch: 196 files total)'
+  note: 'vyasa batch review: tags adequate for vaisheshika block, sim threshold 0.55+
+    confirmed working'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anubhāva
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/AlambanaparIkShA.md
+  note: 'vyasa batch review | valid: [''padārtha'', ''anubhāva'', ''dṛṣṭānta''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - anumāna
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/AlambanaparIkShAvRRitti.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''anumāna'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - siddhānta
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/ApattideshanAvidhi.md
+  note: 'vyasa batch review | valid: [''virodha'', ''siddhānta'', ''dṛṣṭānta''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhidhamakoSha.md
+  note: 'vyasa batch review | valid: [''vākya'', ''bheda'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - vibhāva
+  - vyabhicāribhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhidharmadIpa.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''vibhāva'', ''vyabhicāribhāva'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhidharmadIpakArikA.md
+  note: 'vyasa batch review | valid: [''vākya'', ''bheda'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhidharmakoShabhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''bheda''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhidharmasamuchchaya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhidharmasamuchchayabhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vyabhicāribhāva
+  - lakṣaṇa
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhisamayAla~NkAra parishiShTa.md
+  note: 'vyasa batch review | valid: [''vyabhicāribhāva'', ''lakṣaṇa'', ''anumāna'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhisamayAla~NkAra.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/abhisamayAla~NkAravRRitti.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bhāva
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/achintyastava.md
+  note: 'vyasa batch review | valid: [''bhāva'', ''prakṛti''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - dṛṣṭānta
+  - siddhānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/antarvyAptisamarthana.md
+  note: 'vyasa batch review | valid: [''dṛṣṭānta'', ''siddhānta''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - padārtha
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/apohasiddhi.md
+  note: 'vyasa batch review | valid: [''virodha'', ''padārtha'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - virodha
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/avayaviniraakaraNa.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''virodha'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - anumāna
+  - viparyaya
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bhAvanAkrama.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''anumāna'', ''viparyaya''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - anumāna
+  - bhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bhavasa~NkrAntiTIkA.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''anumāna'', ''bhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bhāva
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bhavasa~NkrAntiparikathA.md
+  note: 'vyasa batch review | valid: [''bhāva'', ''anubhāva''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - viparyaya
+  - anumāna
+  - upasarga
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bhikShukarmavAkya.md
+  note: 'vyasa batch review | valid: [''viparyaya'', ''anumāna'', ''upasarga''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bhāva
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bodhicharyAvatAra.md
+  note: 'vyasa batch review | valid: [''bhāva'', ''bheda''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - vibhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bodhicharyAvatArapa~njikA.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''vibhāva'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bodhichittavivaraNa.md
+  note: 'vyasa batch review | valid: [''bheda'', ''padārtha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vyabhicāribhāva
+  - bhakti
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bodhichittotpAdaUtrashAstra.md
+  note: 'vyasa batch review | valid: [''vyabhicāribhāva'', ''bhakti'', ''padārtha'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bhāva
+  - siddhānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bodhipathapradIpa.md
+  note: 'vyasa batch review | valid: [''bhāva'', ''siddhānta''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - asiddha
+  - ātmajñāna
+  - bhakti
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bodhisattvAdikArmikamArgAvatAradeshanA.md
+  note: 'vyasa batch review | valid: [''asiddha'', ''ātmajñāna'', ''bhakti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vyabhicāribhāva
+  - anubhāva
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/bodhisattvabhUmi.md
+  note: 'vyasa batch review | valid: [''vyabhicāribhāva'', ''anubhāva'', ''vibhāva'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - siddhānta
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/charyAmelAvaNapradIpa.md
+  note: 'vyasa batch review | valid: [''siddhānta'', ''prakṛti''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - saṃśaya
+  - asiddha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/charyAsa~NgrahapradIpa.md
+  note: 'vyasa batch review | valid: [''saṃśaya'', ''asiddha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vibhāva
+  - vyabhicāribhāva
+  - asiddha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/chatuHshatikA.md
+  note: 'vyasa batch review | valid: [''vibhāva'', ''vyabhicāribhāva'', ''asiddha'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - siddhānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/chittavishuddhiprakaraNa.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''siddhānta''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bhakti
+  - saṃpradāya
+  - ātmajñāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/chittotpAdasaMvaravidhikrama.md
+  note: 'vyasa batch review | valid: [''bhakti'', ''saṃpradāya'', ''ātmajñāna''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - pravṛtti
+  - upasarga
+  - pratyaya
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/dashAkushalakarmapathadeshanA.md
+  note: 'vyasa batch review | valid: [''pravṛtti'', ''upasarga'', ''pratyaya''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - dharma
+  - ātmajñāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/dharmadhAtugarbhavivaraNa.md
+  note: 'vyasa batch review | valid: [''bheda'', ''dharma'', ''ātmajñāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vibhāva
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/dharmasamuchchaya.md
+  note: 'vyasa batch review | valid: [''vibhāva'', ''bheda''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - vyabhicāribhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/dharmasa~Ngraha.md
+  note: 'vyasa batch review | valid: [''bheda'', ''vyabhicāribhāva'', ''anumāna'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/dharmottarapradIpa.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - saṃśaya
+  - sambandha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/garbhasa~Ngraha.md
+  note: 'vyasa batch review | valid: [''saṃśaya'', ''sambandha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - tiṅ
+  - upadeśa
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/gurukriyAkarma.md
+  note: 'vyasa batch review | valid: [''tiṅ'', ''upadeśa'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - guru
+  - saṃpradāya
+  - harṣa
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/gurupa~nchAshikA.md
+  note: 'vyasa batch review | valid: [''guru'', ''saṃpradāya'', ''harṣa''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - saṃśaya
+  - tarka
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/hastavAlaprakaraNavRRitti.md
+  note: 'vyasa batch review | valid: [''saṃśaya'', ''tarka''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - vibhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/hetubindu.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''vibhāva'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - anumāna
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/hetubinduTIkA.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''anumāna'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/hetubinduTIkAloka.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/hetutattvopadesha.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/kShaNabha~Ngasiddhi vyatirekAtmikA.md
+  note: 'vyasa batch review | valid: [''virodha'', ''padārtha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - anubhāva
+  - kāraṇa
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/kShaNabha~Ngasiddhi.md
+  note: 'vyasa batch review | valid: [''virodha'', ''anubhāva'', ''kāraṇa''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - tiṅ
+  - pada
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/kriyAsa~NgrahakArikA.md
+  note: 'vyasa batch review | valid: [''tiṅ'', ''pada''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/lokAtItastava.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - asiddha
+  - anumāna
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/mUlamAdhyamakakArikA.md
+  note: 'vyasa batch review | valid: [''asiddha'', ''anumāna'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/madhyAntavibhAgakArikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''padārtha'', ''bheda''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/madhyAntavibhAgakArikAbhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vyabhicāribhāva
+  - anubhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/madhyamakAvatAra.md
+  note: 'vyasa batch review | valid: [''vyabhicāribhāva'', ''anubhāva'', ''anumāna'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - asiddha
+  - anumāna
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/madhyamakashAstra.md
+  note: 'vyasa batch review | valid: [''asiddha'', ''anumāna'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts: []
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/mahAyAnapathasAdhanasa~Ngraha.md
+  note: 'vyasa batch review | valid: [] | unknown: []'
+  reviewer: vyasa
+  verdict: needs-context
+- concepts:
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/mahAyAnasUtrAla~NkAra.md
+  note: 'vyasa batch review | valid: [''bheda'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - viparyaya
+  - bhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/mahAyAnaviMshikA.md
+  note: 'vyasa batch review | valid: [''viparyaya'', ''bhāva''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/nibandhAvalI.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/nyAyabindu.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/nyAyapraveshapravRRitti.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''padārtha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pAramitAsamAsa.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - siddhānta
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pa~nchakrama.md
+  note: 'vyasa batch review | valid: [''vākya'', ''siddhānta'', ''prakṛti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pa~nchaskandhaprakaraNa.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - mantra
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/piNDIkrama.md
+  note: 'vyasa batch review | valid: [''virodha'', ''mantra''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - padārtha
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/praj~nApAramitApiNDArtha.md
+  note: 'vyasa batch review | valid: [''virodha'', ''padārtha'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pramANavArttika.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anumāna
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pramANavArttikaTIkA.md
+  note: 'vyasa batch review | valid: [''padārtha'', ''anumāna'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pramANavArttikakArikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pramANavArttikavRRitti.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - anumāna
+  - pratiṣedha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pramANavinishchaya.md
+  note: 'vyasa batch review | valid: [''virodha'', ''anumāna'', ''pratiṣedha''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/prasannapadA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pratItyasamutpAdahRRidayakArikA.md
+  note: 'vyasa batch review | valid: [''vibhāva''] | unknown: []'
+  reviewer: vyasa
+  verdict: pending-review
+- concepts:
+  - vibhāva
+  - anubhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/pratItyasamutpAdavyAkhyAna.md
+  note: 'vyasa batch review | valid: [''vibhāva'', ''anubhāva'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/ratnAvalI.md
+  note: 'vyasa batch review | valid: [''virodha'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - prakṛti
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/ratnagotravibhAga.md
+  note: 'vyasa batch review | valid: [''bheda'', ''prakṛti'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - anubhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/sAmAnyadUShaNadikprasAritA.md
+  note: 'vyasa batch review | valid: [''virodha'', ''anubhāva'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vyabhicāribhāva
+  - viparyaya
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/sUtrArthasamuchchayopadesha.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vyabhicāribhāva'', ''viparyaya'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - siddhi
+  - sambandha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/samAdhisambhAraparivarta.md
+  note: 'vyasa batch review | valid: [''siddhi'', ''sambandha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anubhāva
+  - sambandha
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/sambandhaparIkShA.md
+  note: 'vyasa batch review | valid: [''anubhāva'', ''sambandha'', ''vibhāva''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - dṛṣṭānta
+  - anumāna
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/santAnAntarasiddhi.md
+  note: 'vyasa batch review | valid: [''dṛṣṭānta'', ''anumāna'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/santAnAntarasiddhiTIkA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - satya
+  - viparyaya
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/satyadvayaavatAranAma.md
+  note: 'vyasa batch review | valid: [''satya'', ''viparyaya''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vibhāva
+  - anumāna
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/satyasiddhishAstra.md
+  note: 'vyasa batch review | valid: [''vibhāva'', ''anumāna'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - bheda
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/sekoddesha.md
+  note: 'vyasa batch review | valid: [''vākya'', ''bheda'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/shAlistambakamahAyAnasUtraTIkA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bhāva
+  - siddhānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/shUnyasaptati.md
+  note: 'vyasa batch review | valid: [''bhāva'', ''siddhānta''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vyabhicāribhāva
+  - mārga
+  - prayojana
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/sharaNAgamanadeshanA.md
+  note: 'vyasa batch review | valid: [''vyabhicāribhāva'', ''mārga'', ''prayojana'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts: []
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/shatagAthA.md
+  note: 'vyasa batch review | valid: [] | unknown: []'
+  reviewer: vyasa
+  verdict: needs-context
+- concepts:
+  - bhāva
+  - padārtha
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/shikShAsamuchchayakArikA.md
+  note: 'vyasa batch review | valid: [''bhāva'', ''padārtha'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/sphuTArtA abhidharmakoShavyAkhyA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - ānanda
+  - harṣa
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/suhRRillekhA.md
+  note: 'vyasa batch review | valid: [''ānanda'', ''harṣa''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - dṛṣṭānta
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/tarkabhAShA pratyakShalakShaNa.md
+  note: 'vyasa batch review | valid: [''dṛṣṭānta'', ''anumāna'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/tarkarahasya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - hetu
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/tarkashAstra.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''hetu'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/tarkasopAna.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - sūtra
+  - siddhānta
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/tattvaj~nAnasaMsiddhi.md
+  note: 'vyasa batch review | valid: [''sūtra'', ''siddhānta''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/tattvaratnAvaloka.md
+  note: 'vyasa batch review | valid: [''padārtha'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vibhāva
+  - anubhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/triMshikAvij~naptikArikA.md
+  note: 'vyasa batch review | valid: [''vibhāva'', ''anubhāva'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - anumāna
+  - hetu
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/upAyahRRidaya.md
+  note: 'vyasa batch review | valid: [''virodha'', ''anumāna'', ''hetu''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - dṛṣṭānta
+  - pratiṣedha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/vAdanyAya.md
+  note: 'vyasa batch review | valid: [''virodha'', ''dṛṣṭānta'', ''pratiṣedha''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - anumāna
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/vAdarahasya.md
+  note: 'vyasa batch review | valid: [''virodha'', ''anumāna'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vyabhicāribhāva
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/vajrasUchI.md
+  note: 'vyasa batch review | valid: [''vyabhicāribhāva'', ''bheda''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/viMshatikA vij~naptimAtratAsiddhi.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakāśa
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/viMshikAvRRitti.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''prakāśa''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - pratiṣedha
+  - anubhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/vigrahavyAvartanI.md
+  note: 'vyasa batch review | valid: [''pratiṣedha'', ''anubhāva'', ''anumāna''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - pratiṣedha
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/vigrahavyAvartanIkArikA.md
+  note: 'vyasa batch review | valid: [''pratiṣedha'', ''virodha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - siddhānta
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/yogAvatAra.md
+  note: 'vyasa batch review | valid: [''siddhānta'', ''virodha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - bheda
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/buddhist/yuktiShaShTikArikA.md
+  note: 'vyasa batch review | valid: [''vākya'', ''bheda'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/bhATTadIpikA, prabhAvalI.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''padārtha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/jaiminIyanyAyamAlAvistara.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''padārtha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/mImAMsAsUtrabhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''padārtha'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/mImAMsAshlokavArttika.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/mImAMsAshlokavArttikaTIkA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - padārtha
+  - pratyaya
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/mimAMsAsUtra.md
+  note: 'vyasa batch review | valid: [''vākya'', ''padārtha'', ''pratyaya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/prakaraNapa~nchikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/shAstradIpikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - vākya
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/mimamsa/tantravArttika.md
+  note: 'vyasa batch review | valid: [''padārtha'', ''vākya'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - hetu
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/nyAyakusumA~njali.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''hetu''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/nyAyasUtra vAtsyAyanabhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - dṛṣṭānta
+  - anumāna
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/nyAyasUtra.md
+  note: 'vyasa batch review | valid: [''dṛṣṭānta'', ''anumāna'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/nyAyasUtravArttikatAtparyaTIkA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/nyAyavArttikatAtparyaparishuddhi.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anumāna
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/tarkasa~Ngraha saTIka.md
+  note: 'vyasa batch review | valid: [''padārtha'', ''anumāna'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/tarkasa~Ngraha.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vākya'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/tarkatANDava nyAyadIpaTIkA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - padārtha
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/nyaya/tattvachintAmaNi, shabdakhaNDa.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''padārtha'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - virodha
+  - vākya
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/others/AptamImAMsA.md
+  note: 'vyasa batch review | valid: [''virodha'', ''vākya'', ''bheda''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/others/tattvopaplavasiMha.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vyabhicāribhāva
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyakArikA gauDapAdabhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vyabhicāribhāva'', ''prakṛti'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - kāraṇa
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyakArikA jayama~NgalA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''kāraṇa'', ''prakṛti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vyabhicāribhāva
+  - kāraṇa
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyakArikA paramArthaTIkA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vyabhicāribhāva'', ''kāraṇa'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - kāraṇa
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyakArikA yuktidIpikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''kāraṇa'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - vākya
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyaparibhAShA.md
+  note: 'vyasa batch review | valid: [''bheda'', ''vākya'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyasAra.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakṛti
+  - vyabhicāribhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyasUtravivaraNa.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''prakṛti'', ''vyabhicāribhāva'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - anumāna
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyatattvapradIpa.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''anumāna'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vibhāva
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyatattvapradIpikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vibhāva'', ''bheda''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakṛti
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sAMkhyatattvavivechana.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''prakṛti'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakṛti
+  - vyabhicāribhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sA~NkhyakArikA mATharavRRitti.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''prakṛti'', ''vyabhicāribhāva'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sA~NkhyakArikA.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''bheda'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sA~NkhyasUtra.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - vibhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/sarvopakAriNI.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''vibhāva'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vibhāva
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/tattvamImAMsA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vibhāva'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vibhāva
+  - vyabhicāribhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/tattvasamAsasUtravRRitti.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vibhāva'', ''vyabhicāribhāva'']
+    | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakṛti
+  - vibhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/samkhya/tattvayAthArthyadIpana.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''prakṛti'', ''vibhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - pratyakṣa
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/Ishvarapratyabhij~nAkArikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''pratyakṣa''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/Ishvarapratyabhij~nAvimarshinI.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - virodha
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/ajaDapramAtRRisiddhi.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''virodha'', ''anubhāva''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bhāva
+  - viparyaya
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/anuttarShTikA.md
+  note: 'vyasa batch review | valid: [''bhāva'', ''viparyaya''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - vākya
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/anuttaraprakAshapa~nchAshikA.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''vākya'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts: []
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/bhairavastava.md
+  note: 'vyasa batch review | valid: [] | unknown: []'
+  reviewer: vyasa
+  verdict: needs-context
+- concepts:
+  - bheda
+  - bhāva
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/bodhapa~nchadashikA.md
+  note: 'vyasa batch review | valid: [''bheda'', ''bhāva'', ''prakṛti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/gaNakArikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/janmamaraNavichAra.md
+  note: 'vyasa batch review | valid: [''bheda'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/kramastotra.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''bheda''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/mAlinIshlokavArttika.md
+  note: 'vyasa batch review | valid: [''bheda'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - siddhānta
+  - asiddha
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/parAtriMshikA.md
+  note: 'vyasa batch review | valid: [''siddhānta'', ''asiddha''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - anumāna
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/parAtriMshikAvivaraNa.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''anumāna'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - viparyaya
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/paramArthasAra, yogarAja\.as chommentary.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''viparyaya'', ''prakṛti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/paramArthasAra.md
+  note: 'vyasa batch review | valid: [''bheda'', ''prakṛti''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - bheda
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/paryantnapa~nchAshikA.md
+  note: 'vyasa batch review | valid: [''vākya'', ''bheda'', ''prakṛti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - anubhāva
+  - ātmajñāna
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/pratyabhij~nAhRRidaya.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''anubhāva'', ''ātmajñāna''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - anumāna
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/spandakArikA, kShemarAja chommentary.md
+  note: 'vyasa batch review | valid: [''vākya'', ''anumāna'', ''prakṛti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/spandakArikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vākya'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/tantrAloka.md
+  note: 'vyasa batch review | valid: [''bheda'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  - prakṛti
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/tantrasAra.md
+  note: 'vyasa batch review | valid: [''bheda'', ''anumāna'', ''prakṛti''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - anumāna
+  - asiddha
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/timirodghATana.md
+  note: 'vyasa batch review | valid: [''vākya'', ''anumāna'', ''asiddha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/vAtUlanAthasUtrANi.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - bhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/shaiva/vij~nAnabhairava.md
+  note: 'vyasa batch review | valid: [''bheda'', ''bhāva''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - padārtha
+  - anubhāva
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/vaisheshika/mAnamanohara.md
+  note: 'vyasa batch review | valid: [''padārtha'', ''anubhāva'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/vaisheshika/padArthadharmasa~Ngraha.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/vaisheshika/vaisheShikasUtra.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/Atmasiddhi.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - pratyakṣa
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/Ishvarasiddhi saTIka.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''pratyakṣa''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - pratyakṣa
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/Ishvarasiddhi.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''pratyakṣa'', ''dṛṣṭānta''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/anuvyAkhyAna.md
+  note: 'vyasa batch review | valid: [''bheda'', ''anumāna'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - virodha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/bhAmatI.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''virodha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - anumāna
+  - kāraṇa
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/bhagavadAnusharaNabhAShya.md
+  note: 'vyasa batch review | valid: [''vākya'', ''anumāna'', ''kāraṇa''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - viparyaya
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/bhagavadgItA shA~NkarabhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vākya'', ''viparyaya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - ātmajñāna
+  - anubhāva
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/bhagavadgItArAmAnujabhAShya.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''ātmajñāna'', ''anubhāva''] |
+    unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/brahmasUtra ratnaprabhA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/brahmasUtra shA~NkarabhAShya ratnaprabhAvyAkhyA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - asiddha
+  - dṛṣṭānta
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/brahmasUtra.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''asiddha'', ''dṛṣṭānta''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - anubhāva
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/brahmasiddhi.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''anubhāva'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - prakṛti
+  - ātmajñāna
+  - yoga
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/gItArthasa~Ngraha.md
+  note: 'vyasa batch review | valid: [''prakṛti'', ''ātmajñāna'', ''yoga''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - vākya
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/gauDapAdakArikA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''vākya''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - vākya
+  - padārtha
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/mokShopAyaTIkA bhAskarIyaTIkA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''vākya'', ''padārtha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - dṛṣṭānta
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/nyAyasudhA.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''dṛṣṭānta'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - virodha
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/samvitasiddhi saTIka.md
+  note: 'vyasa batch review | valid: [''bheda'', ''virodha'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - hetu
+  - pratyakṣa
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/shrIbhAShya.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''hetu'', ''pratyakṣa''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - prakṛti
+  - bheda
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/vedArthasa~Ngraha.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''prakṛti'', ''bheda''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - anumāna
+  - bheda
+  - virodha
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/vibhramaviveka.md
+  note: 'vyasa batch review | valid: [''anumāna'', ''bheda'', ''virodha''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/vedanta/vivekachuDAmaNi.md
+  note: 'vyasa batch review | valid: [''bheda'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - asiddha
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/yoga/gheraNDasaMhitA.md
+  note: 'vyasa batch review | valid: [''asiddha'', ''anumāna''] | unknown: []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - sambandha
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/yoga/haThayogapradIpikA.md
+  note: 'vyasa batch review | valid: [''vākya'', ''sambandha'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
+- concepts:
+  - vākya
+  - bheda
+  - anumāna
+  date: '2026-08-23'
+  file: shastra/philosophy/yoga/yogasUtra.md
+  note: 'vyasa batch review | valid: [''vākya'', ''bheda'', ''anumāna''] | unknown:
+    []'
+  reviewer: vyasa
+  verdict: confirmed
