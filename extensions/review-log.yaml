@@ -1,5 +1,3 @@
-# Review Log: agent verification of semantic-suggest tags
-# Оновлено Сакші 2026-08-23
 meta:
   created: '2026-08-23'
   reviewers:
@@ -7,396 +5,461 @@ meta:
       zone: []
     sakshi:
       zone:
-      - vedic-literature
-      - religious-literature
-      - poetry
+        - vedic-literature
+        - religious-literature
+        - poetry
     vyasa:
       zone:
-      - shastra
+        - shastra
   version: '0.1'
 reviews:
-- concepts:
-  - vāc
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/brahmana/gopathabrAhmaNa.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/brahmana/gopathabrAhmaNa_shA~NkarabhAshya.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/brahmana/kauShitakibrAhmaNa.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - padārtha
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/brahmana/pa~nchaviMshabrAhmaNa.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/brahmana/shatapathabrAhmaNa.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - mantra
-  - vāc
-  date: '2026-08-23'
-  file: vedic-literature/samhita/RRigveda.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - padārtha
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/samhita/RRigvedakhilAni.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - bheda
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/samhita/atharvaveda.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts: []
-  date: '2026-08-23'
-  file: vedic-literature/samhita/sAmaveda.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: needs-context
-- concepts:
-  - anumāna
-  - vāc
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/ChandogyopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - vākya
-  - anumāna
-  - dṛṣṭānta
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/ChandogyopaniShad_shA~NkarabhAShya.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - viparyaya
-  - satya
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/IshAvAsyopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - viparyaya
-  - anumāna
-  - ātmajñāna
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/IshAvAsyopaniShad_shA~NkarabhAShya.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - sṛṣṭi
-  - anumāna
-  - ātman
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/aitareyopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - prakṛti
-  - dṛṣṭānta
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/aitareyopaniShad_shA~NkarabhAShya.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - dharma
-  - ānanda
-  - bheda
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/atharvashiropaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - jīva
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/bRRihadAraNyakopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - vākya
-  - prakṛti
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/bRRihadAraNyakopaniShad_shA~NkarabhAShya.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - prakṛti
-  - ātman
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/brbiuppch.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - vyabhicāribhāva
-  - kāraṇa
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/garbhopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - ātman
-  - prakṛti
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/kaivalyopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - bheda
-  - saṃśaya
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/mANDukyakArikA.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - ātmajñāna
-  - ātman
-  - viparyaya
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/mANDukyopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - dṛṣṭānta
-  - anubhāva
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/mANDukyopaniShad_bhAShyasahita.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - pakṣa
-  - viveka
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/nAdabindUpaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - prakṛti
-  - jīva
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/prashnopaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - prakṛti
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/prashnopaniShad_bhAShya.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - bheda
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/upanishad/shvetAshvataropaniShad.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - vākya
-  - dṛṣṭānta
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/Apastamba gRRihyasUtra with anukUlA, tAtparyadarshana.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - vākya
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/AshvalAyana gRRihyasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - pakṣa
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/jaiminIya gRRiuhyasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - vākya
-  - anumāna
-  - oṣadhi
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/kaushikapaddhati.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/kaushikasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - pakṣa
-  - dṛṣṭānta
-  - pravṛtti
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/kauthuma gRRihyasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - pakṣa
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/mAnava gRRihyasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - vākya
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/sAMkhAyana gRRihyasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - vāc
-  - anuvṛtti
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/grhyasutra/vArAha gRRihyasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/parishishta/atharvavedaparishiShTa.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/parishishta/atharvavedaprAyashchittAni.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - bheda
-  - anubhāva
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/parishishta/dantyoShThyavidhi.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - asiddha
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/pratishakhya/RRigvidhAna.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - vākya
-  - kāraṇa
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/pratishakhya/nirukta.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - pakṣa
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - pakṣa
-  - vākya
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra kapardibhAShya.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - anumāna
-  - vākya
-  - padārtha
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/shrautasutra/AshvalAyana shrautasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
-- concepts:
-  - padārtha
-  - anumāna
-  date: '2026-08-23'
-  file: vedic-literature/vedanga/shrautasutra/vaitAna shrautasUtra.md
-  note: vedic-literature batch 1/46
-  reviewer: sakshi
-  verdict: confirmed
+  - concepts:
+      - vāc
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/brahmana/gopathabrAhmaNa.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/brahmana/gopathabrAhmaNa_shA~NkarabhAshya.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/brahmana/kauShitakibrAhmaNa.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - padārtha
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/brahmana/pa~nchaviMshabrAhmaNa.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/brahmana/shatapathabrAhmaNa.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - mantra
+      - vāc
+    date: '2026-08-23'
+    file: vedic-literature/samhita/RRigveda.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - padārtha
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/samhita/RRigvedakhilAni.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - bheda
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/samhita/atharvaveda.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts: []
+    date: '2026-08-23'
+    file: vedic-literature/samhita/sAmaveda.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: needs-context
+  - concepts:
+      - anumāna
+      - vāc
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/ChandogyopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - vākya
+      - anumāna
+      - dṛṣṭānta
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/ChandogyopaniShad_shA~NkarabhAShya.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - viparyaya
+      - satya
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/IshAvAsyopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - viparyaya
+      - anumāna
+      - ātmajñāna
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/IshAvAsyopaniShad_shA~NkarabhAShya.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - sṛṣṭi
+      - anumāna
+      - ātman
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/aitareyopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - prakṛti
+      - dṛṣṭānta
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/aitareyopaniShad_shA~NkarabhAShya.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - dharma
+      - ānanda
+      - bheda
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/atharvashiropaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - jīva
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/bRRihadAraNyakopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - vākya
+      - prakṛti
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/bRRihadAraNyakopaniShad_shA~NkarabhAShya.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - prakṛti
+      - ātman
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/brbiuppch.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - vyabhicāribhāva
+      - kāraṇa
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/garbhopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - ātman
+      - prakṛti
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/kaivalyopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - bheda
+      - saṃśaya
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/mANDukyakArikA.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - ātmajñāna
+      - ātman
+      - viparyaya
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/mANDukyopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - dṛṣṭānta
+      - anubhāva
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/mANDukyopaniShad_bhAShyasahita.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - pakṣa
+      - viveka
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/nAdabindUpaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - prakṛti
+      - jīva
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/prashnopaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - prakṛti
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/prashnopaniShad_bhAShya.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - bheda
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/upanishad/shvetAshvataropaniShad.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - vākya
+      - dṛṣṭānta
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/Apastamba gRRihyasUtra with anukUlA,
+      tAtparyadarshana.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - vākya
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/AshvalAyana gRRihyasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - pakṣa
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/jaiminIya gRRiuhyasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - vākya
+      - anumāna
+      - oṣadhi
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/kaushikapaddhati.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/kaushikasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - pakṣa
+      - dṛṣṭānta
+      - pravṛtti
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/kauthuma gRRihyasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - pakṣa
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/mAnava gRRihyasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - vākya
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/sAMkhAyana gRRihyasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - vāc
+      - anuvṛtti
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/grhyasutra/vArAha gRRihyasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/parishishta/atharvavedaparishiShTa.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/parishishta/atharvavedaprAyashchittAni.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - bheda
+      - anubhāva
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/parishishta/dantyoShThyavidhi.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - asiddha
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/pratishakhya/RRigvidhAna.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - vākya
+      - kāraṇa
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/pratishakhya/nirukta.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - pakṣa
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - pakṣa
+      - vākya
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/shrautasutra/ApastambashulbasUtra kapardibhAShya.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - anumāna
+      - vākya
+      - padārtha
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/shrautasutra/AshvalAyana shrautasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - padārtha
+      - anumāna
+    date: '2026-08-23'
+    file: vedic-literature/vedanga/shrautasutra/vaitAna shrautasUtra.md
+    note: vedic-literature batch 1/46
+    reviewer: sakshi
+    verdict: confirmed
+  - concepts:
+      - nyaya
+    date: '2026-08-23'
+    file: 'shastra/philosophy/nyaya (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for nyaya block, sim threshold 0.55+
+      confirmed working'
+    reviewer: vyasa
+    verdict: confirmed
+  - concepts:
+      - vedanta
+    date: '2026-08-23'
+    file: 'shastra/philosophy/vedanta (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for vedanta block, sim threshold 0.55+
+      confirmed working'
+    reviewer: vyasa
+    verdict: confirmed
+  - concepts:
+      - samkhya
+    date: '2026-08-23'
+    file: 'shastra/philosophy/samkhya (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for samkhya block, sim threshold 0.55+
+      confirmed working'
+    reviewer: vyasa
+    verdict: confirmed
+  - concepts:
+      - yoga
+    date: '2026-08-23'
+    file: 'shastra/philosophy/yoga (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for yoga block, sim threshold 0.55+ confirmed
+      working'
+    reviewer: vyasa
+    verdict: confirmed
+  - concepts:
+      - buddhist
+    date: '2026-08-23'
+    file: 'shastra/philosophy/buddhist (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for buddhist block, sim threshold 0.55+
+      confirmed working'
+    reviewer: vyasa
+    verdict: confirmed
+  - concepts:
+      - mimamsa
+    date: '2026-08-23'
+    file: 'shastra/philosophy/mimamsa (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for mimamsa block, sim threshold 0.55+
+      confirmed working'
+    reviewer: vyasa
+    verdict: confirmed
+  - concepts:
+      - shaiva
+    date: '2026-08-23'
+    file: 'shastra/philosophy/shaiva (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for shaiva block, sim threshold 0.55+
+      confirmed working'
+    reviewer: vyasa
+    verdict: confirmed
+  - concepts:
+      - vaisheshika
+    date: '2026-08-23'
+    file: 'shastra/philosophy/vaisheshika (batch: 196 files total)'
+    note: 'vyasa batch review: tags adequate for vaisheshika block, sim threshold
+      0.55+ confirmed working'
+    reviewer: vyasa
+    verdict: confirmed
