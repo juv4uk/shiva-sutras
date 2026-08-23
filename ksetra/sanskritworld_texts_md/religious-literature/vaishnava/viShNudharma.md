@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - vaiṣṇava
+  - semantic/saṅkhyā
+  - semantic/mantra
   - conv-partial
 ---
 nārāyaṇaṃ namaskṛtya  1

@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - vedāṅga
+  - semantic/pakṣa
+  - semantic/dṛṣṭānta
+  - semantic/pravṛtti
   - conv-exact
 ---
 

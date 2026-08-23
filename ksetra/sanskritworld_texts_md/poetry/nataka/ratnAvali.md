@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - nāṭaka
+  - semantic/padārtha
+  - semantic/virodha
   - conv-exact
 ---
 

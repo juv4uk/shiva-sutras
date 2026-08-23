@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - vedāṅga
+  - semantic/anumāna
+  - semantic/vākya
+  - semantic/dṛṣṭānta
   - conv-partial
 ---
 atha prathamaḥ paṭalaḥ

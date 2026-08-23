@@ -13,6 +13,7 @@ line_mapping: "1:1"
 tags:
   - corpus
   - kāvya
+  - semantic/gīta
   - conv-exact
 ---
 1.1.11 sāndrānandāvabodhātmakamanupamitaṃ kāladeśāvadhibhyāṃ

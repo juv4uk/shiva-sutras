@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - kośa
+  - semantic/anumāna
+  - semantic/tarka
   - conv-exact
 ---
 

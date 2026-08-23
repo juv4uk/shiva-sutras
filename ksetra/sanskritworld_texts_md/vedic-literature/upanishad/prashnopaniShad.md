@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - upaniṣad
+  - semantic/prakṛti
+  - semantic/jīva
   - conv-exact
 ---
 

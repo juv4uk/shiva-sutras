@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - darśana
+  - semantic/bhakti
+  - semantic/saṃpradāya
+  - semantic/ātmajñāna
   - conv-exact
 ---
 

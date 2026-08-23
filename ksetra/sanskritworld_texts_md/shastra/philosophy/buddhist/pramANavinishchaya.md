@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - darśana
+  - semantic/virodha
+  - semantic/anumāna
+  - semantic/pratiṣedha
   - conv-exact
 ---
 

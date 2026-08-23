@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - purāṇa
+  - semantic/bheda
+  - semantic/gīta
+  - semantic/bhakti
   - conv-exact
 ---
 

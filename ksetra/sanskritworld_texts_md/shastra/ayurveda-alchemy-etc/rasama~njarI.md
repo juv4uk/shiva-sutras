@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - āyurveda
+  - semantic/padārtha
+  - semantic/oṣadhi
   - conv-partial
 ---
 

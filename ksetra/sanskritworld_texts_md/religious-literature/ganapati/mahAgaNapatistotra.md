@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - gāṇapatya
+  - semantic/anumāna
+  - semantic/mantra
+  - semantic/padārtha
   - conv-exact
 ---
 śrīrāghavacaitanyaviracitaṃ mahāgaṇapatistotram‌ |

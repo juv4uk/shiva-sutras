@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - darśana
+  - semantic/tiṅ
+  - semantic/pada
   - conv-exact
 ---
 kriyāsaṃgrahakārikā

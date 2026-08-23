@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - āyurveda
+  - semantic/padārtha
+  - semantic/anumāna
+  - semantic/bheda
   - conv-partial
 ---
 athāto dīrghaṃjīvitīyamadhyāyaṃ vyākhyāsyāmaḥ || 1,1.1

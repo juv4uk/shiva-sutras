@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - purāṇa
+  - semantic/ānanda
+  - semantic/vāc
   - conv-exact
 ---
 

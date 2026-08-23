@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - darśana
+  - semantic/prakṛti
+  - semantic/anubhāva
+  - semantic/ātmajñāna
   - conv-partial
 ---
 

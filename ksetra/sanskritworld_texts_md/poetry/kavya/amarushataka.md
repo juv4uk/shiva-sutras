@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - kāvya
+  - semantic/prema
+  - semantic/anumāna
   - conv-exact
 ---
 su. = subhāṣitaratnakoṣa,

@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - bauddha
+  - semantic/padārtha
+  - semantic/vyabhicāribhāva
+  - semantic/anumāna
   - conv-exact
 ---
 pañcaviṃśatisāhasrikā prajñāpāramitā

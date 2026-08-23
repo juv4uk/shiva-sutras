@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - alaṃkāra
+  - semantic/anumāna
+  - semantic/padārtha
+  - semantic/dṛṣṭānta
   - conv-exact
 ---
 

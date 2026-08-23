@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - kāvya
+  - semantic/dṛṣṭānta
+  - semantic/nirukta
   - conv-partial
 ---
 

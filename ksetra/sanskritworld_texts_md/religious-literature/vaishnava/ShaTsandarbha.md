@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - vaiṣṇava
+  - semantic/bheda
+  - semantic/vākya
+  - semantic/bhakti
   - conv-partial
 ---
 

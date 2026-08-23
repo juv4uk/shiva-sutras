@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - darśana
+  - semantic/vibhāva
+  - semantic/bheda
   - conv-partial
 ---
 

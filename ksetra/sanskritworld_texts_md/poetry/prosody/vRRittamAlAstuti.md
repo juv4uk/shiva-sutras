@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - chandas
+  - semantic/prakṛti
+  - semantic/bheda
   - conv-exact
 ---
 || vṛttamālāstutiḥ ||

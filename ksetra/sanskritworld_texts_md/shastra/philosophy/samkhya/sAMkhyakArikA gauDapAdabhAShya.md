@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - darśana
+  - semantic/anumāna
+  - semantic/vyabhicāribhāva
+  - semantic/prakṛti
   - conv-exact
 ---
 sāṅkhyakārikā gauḍapādabhāṣya

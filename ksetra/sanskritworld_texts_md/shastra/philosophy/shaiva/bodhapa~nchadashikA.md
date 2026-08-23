@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - darśana
+  - semantic/bheda
+  - semantic/bhāva
+  - semantic/prakṛti
   - conv-exact
 ---
 anastamitabhārūpastejasāṃ tamasāmapi |

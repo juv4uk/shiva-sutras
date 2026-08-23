@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - kāmaśāstra
+  - semantic/anumāna
+  - semantic/vibhāva
   - conv-exact
 ---
 kuṭṭanīmatam

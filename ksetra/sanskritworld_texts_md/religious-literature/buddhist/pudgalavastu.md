@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - bauddha
+  - semantic/upasarga
+  - semantic/anuvṛtti
+  - semantic/pratyaya
   - conv-exact
 ---
 part3 (srinagar1943), pp. 59-88: pudgalavastu (secondedition: delhi 1984).

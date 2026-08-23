@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - kāvya
+  - semantic/ānanda
+  - semantic/kāvya
+  - semantic/citta
   - conv-exact
 ---
 śrīkulaśekharanṛpativiracitā mukundamālā

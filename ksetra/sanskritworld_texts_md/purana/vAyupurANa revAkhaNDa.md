@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - purāṇa
+  - semantic/bheda
+  - semantic/ānanda
   - conv-partial
 ---
  adhyāya 1

@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - bauddha
+  - semantic/dṛṣṭānta
+  - semantic/anuvṛtti
   - conv-exact
 ---
 cīvaravastu

@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - nāṭaka
+  - semantic/vākya
+  - semantic/padārtha
+  - semantic/dṛṣṭānta
   - conv-exact
 ---
 ******************************  aṅka 1  ******************************

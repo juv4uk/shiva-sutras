@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - āyurveda
+  - semantic/padārtha
+  - semantic/anumāna
+  - semantic/dravya
   - conv-exact
 ---
 Basedon the ed. ḍelhi: Chaukhambha Orientalia, 1989

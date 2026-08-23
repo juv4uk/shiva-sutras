@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - dharmaśāstra
+  - semantic/pratiṣedha
+  - semantic/anumāna
+  - semantic/dṛṣṭānta
   - conv-partial
 ---
 

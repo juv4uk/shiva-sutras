@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - āyurveda
+  - semantic/oṣadhi
+  - semantic/padārtha
   - conv-exact
 ---
 dakṣaṃ prajāpatiṃ vasthamaśvinau vākyamūcatuḥ |

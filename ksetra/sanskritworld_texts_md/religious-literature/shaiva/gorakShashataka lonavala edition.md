@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - śaiva
+  - semantic/ānanda
+  - semantic/yoga
   - conv-partial
 ---
 

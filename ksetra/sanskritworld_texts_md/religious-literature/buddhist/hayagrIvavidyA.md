@@ -13,6 +13,10 @@ line_mapping: "1:1"
 tags:
   - corpus
   - bauddha
+  - semantic/rakṣā
+  - semantic/vidyā
+  - semantic/nāma
+  - semantic/karma
   - conv-partial
 ---
 

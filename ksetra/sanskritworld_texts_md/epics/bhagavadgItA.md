@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - itihāsa
+  - semantic/anumāna
+  - semantic/ātmajñāna
   - conv-partial
 ---
 

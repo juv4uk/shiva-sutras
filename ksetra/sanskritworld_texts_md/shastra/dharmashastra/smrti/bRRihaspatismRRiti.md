@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - dharmaśāstra
+  - semantic/anumāna
+  - semantic/dṛṣṭānta
   - conv-exact
 ---
 

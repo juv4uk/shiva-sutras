@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - vyākaraṇa
+  - semantic/vākya
+  - semantic/padārtha
+  - semantic/anumāna
   - conv-partial
 ---
 

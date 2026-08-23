@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - bauddha
+  - semantic/vyabhicāribhāva
+  - semantic/dṛṣṭānta
+  - semantic/asiddha
   - conv-exact
 ---
 delhi 1988 (bibliotheca indo-buddhica 47).

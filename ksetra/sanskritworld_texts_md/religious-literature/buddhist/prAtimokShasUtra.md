@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - bauddha
+  - semantic/pratiṣedha
+  - semantic/vipratiṣedha
+  - semantic/dṛṣṭānta
   - conv-exact
 ---
 i

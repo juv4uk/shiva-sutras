@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - brāhmaṇa
+  - semantic/anumāna
+  - semantic/padārtha
   - conv-partial
 ---
 śatapatha brāhmaṇam

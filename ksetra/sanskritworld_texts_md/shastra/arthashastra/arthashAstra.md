@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - arthaśāstra
+  - semantic/anumāna
+  - semantic/upasarga
   - conv-partial
 ---
 oṃnamaḥśukrabṛhaspatibhyāṃ --

@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - jyotiṣa-gaṇita
+  - semantic/tiṅ
+  - semantic/phala
+  - semantic/bheda
   - conv-exact
 ---
 [paribhāṣā]

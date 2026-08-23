@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - vyākaraṇa
+  - semantic/padārtha
+  - semantic/vākya
+  - semantic/anumāna
   - conv-exact
 ---
 atha prathamādhyāye prathamaḥ pādaḥ 

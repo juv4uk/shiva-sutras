@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - brāhmaṇa
+  - semantic/vāc
+  - semantic/anumāna
   - conv-partial
 ---
 

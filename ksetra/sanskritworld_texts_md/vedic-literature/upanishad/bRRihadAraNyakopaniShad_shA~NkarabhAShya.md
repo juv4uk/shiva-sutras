@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - upaniṣad
+  - semantic/anumāna
+  - semantic/vākya
+  - semantic/prakṛti
   - conv-partial
 ---
 

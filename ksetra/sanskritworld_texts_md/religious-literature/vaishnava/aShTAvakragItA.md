@@ -13,6 +13,8 @@ line_mapping: "1:1"
 tags:
   - corpus
   - vaiṣṇava
+  - semantic/bhāva
+  - semantic/anubhāva
   - conv-exact
 ---
 

@@ -13,6 +13,9 @@ line_mapping: "1:1"
 tags:
   - corpus
   - itihāsa
+  - semantic/nāma
+  - semantic/śikṣā
+  - semantic/itihāsa
   - conv-exact
 ---
 
