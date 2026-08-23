@@ -1,0 +1,79 @@
+# Cognates: Ukrainian <-> Sanskrit (Step 1 of the uk-sa understanding roadmap)
+# Джерело: Sanskrit Terms Index (валт), зведено власником; статуси за таблицею.
+# Цей файл = data authority. Валт-нота лишається навігацією з лінком сюди.
+meta:
+  version: "0.1"
+  created: "2026-08-22"
+  source_note: "Sanskrit Terms Index.md"
+  status_vocabulary: [confirmed, pending, rejected]
+entries:
+  - sa_iast: "bhrātṛ"
+    devanagari: "भ्रातृ"
+    uk: "брат"
+    pie: "*bʰréh₂tēr"
+    status: confirmed
+  - sa_iast: "dāma / dama"
+    devanagari: "दाम"
+    uk: "дім"
+    pie: "*dṓm"
+    status: confirmed
+  - sa_iast: "daśa"
+    devanagari: "दश"
+    uk: "десять"
+    pie: "*déḱm̥t"
+    status: confirmed
+  - sa_iast: "dvā / dve"
+    devanagari: "द्वा / द्वे"
+    uk: "два"
+    pie: "*dwóh₁"
+    status: confirmed
+  - sa_iast: "hṛdayam"
+    devanagari: "हृदयम्"
+    uk: "серце"
+    pie: "*ḱērd"
+    status: confirmed
+  - sa_iast: "mātā / mātṛ"
+    devanagari: "माता / मातृ"
+    uk: "мати"
+    pie: "*méh₂tēr"
+    status: confirmed
+  - sa_iast: "nāma"
+    devanagari: "नाम"
+    uk: "ім'я"
+    pie: "*h₁nómn̥"
+    status: confirmed
+  - sa_iast: "nāsā / nāsikā"
+    devanagari: "नासा"
+    uk: "ніс"
+    pie: "*néh₂s-"
+    status: confirmed
+  - sa_iast: "naktam"
+    devanagari: "नक्तम्"
+    uk: "ніч"
+    pie: "*nókʷts"
+    status: confirmed
+  - sa_iast: "nava"
+    devanagari: "नव"
+    uk: "новий"
+    pie: "*néwos"
+    status: confirmed
+  - sa_iast: "sapta"
+    devanagari: "सप्त"
+    uk: "сім"
+    pie: "*septḿ̥"
+    status: confirmed
+  - sa_iast: "tri"
+    devanagari: "त्रि"
+    uk: "три"
+    pie: "*tréyes"
+    status: confirmed
+  - sa_iast: "√vid (veda)"
+    devanagari: "वेद"
+    uk: "відати (знати, арх.)"
+    pie: "*weyd-"
+    status: confirmed
+observations:
+  - sa: "ś (sūtra 5)"
+    uk: "ш"
+    pie: "*ḱ- (палаталізація)"
+    note: "фонема, не слово — підтверджено як звуковий закон"
