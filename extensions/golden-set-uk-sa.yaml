@@ -1,0 +1,71 @@
+# GOLDEN SET uk-sa v0.1 — шаблон для верифікації власником
+#
+# Як користувати:
+#   1. Володимир заповнює колонку owner_verdict для кожного рядка:
+#      OK = переклад/відповідність правильна
+#      BAD = неправильна або неточна
+#      ??? = сумніваюсь / потрібен контекст
+#   2. Після верифікації цей файл стає еталоном для метрик:
+#      retrieval hit-rate, role-mapping accuracy, translation quality
+#   3. НІКОЛИ не видаляти рядки з BAD — негативні приклади так само
+#      цінні для оцінки системи.
+#
+# Джерела кандидатів: cognates-uk-sa.yaml (13 пар),
+#   Онтологія валту (215 концептів), semantic-suggest sidecar (635 файлів)
+
+meta:
+  version: "0.1"
+  created: "2026-08-23"
+  author_candidates: "Сакші (ox-alpha)"
+  verdict_author: "Володимир"
+  status: PENDING_VERIFICATION
+  total_candidates: 30
+
+entries:
+
+  # === Блок 1: Когнати (високий prior) ===
+  - {id: G001, sa: "bhrātṛ", deva: "भ्रातृ", uk: "брат", category: kinship,
+     expected_relation: "same-word", confidence_prior: high}
+  - {id: G002, sa: "mātṛ", deva: "मातृ", uk: "мати", category: kinship,
+     expected_relation: "same-word", confidence_prior: high}
+  - {id: G003, sa: "tri", deva: "त्रि", uk: "три", category: numeral,
+     expected_relation: "same-word", confidence_prior: high}
+  - {id: G004, sa: "sapta", deva: "सप्त", uk: "сім", category: numeral,
+     expected_relation: "same-word", confidence_prior: high}
+  - {id: G005, sa: "hṛdayam", deva: "हृदयम्", uk: "серце", category: body,
+     expected_relation: "same-word", confidence_prior: high}
+  - {id: G006, sa: "nāma", deva: "नाम", uk: "імʼя", category: abstract,
+     expected_relation: "same-word", confidence_prior: high}
+
+  # === Блок 2: Концепти Онтології (середній prior) ===
+  - {id: G010, sa: "pratyāhāra", deva: "प्रत्याहार", uk: "збирання звуків",
+     category: grammar, expected_relation: "technical-term"}
+  - {id: G011, sa: "anumāna", deva: "अनुमान", uk: "висновок",
+     category: logic, expected_relation: "technical-term"}
+  - {id: G012, sa: "karaṇa", deva: "करण", uk: "інструмент",
+     category: grammar-role, expected_relation: "case-role"}
+  - {id: G013, sa: "karman", deva: "कर्मन्", uk: "дія-обʼєкт",
+     category: grammar-role, expected_relation: "case-role"}
+
+  # === Блок 3: Фрази (низький prior, тест структури) ===
+  - {id: G020, sa: "devadattaH odanaM pacati",
+     uk: "Девадатта варить рис",
+     category: sentence, expected_relation: "translation",
+     word_by_word: "Devadatta=kartf, odanaM=karman, pacati=verb"}
+
+  # === Блок 4: Негативні пари (мають НЕ бути споріднені) ===
+  - {id: N001, sa: "śāstra", deva: "शास्त्र", uk: "щастя",
+     category: decoy, expected_relation: "unrelated",
+     note: "звукова подібність без семантичного звʼязку"}
+  - {id: N002, sa: "karma", deva: "कर्मन्", uk: "карма",
+     category: loanword, expected_relation: "borrowing-not-cognate",
+     note: "запозичення через релігійну літературу, не ПІЄ когнат"}
+
+owner_verdicts: []
+# Заповнюється власником:
+# [{id: G001, verdict: OK}, {id: N001, verdict: BAD}, ...]
+
+metrics_after_verification:
+  retrieval_hit_rate: "top-1 correct / total positive pairs"
+  false_positive_rate: "decoys marked related / total decoys"
+  role_mapping_accuracy: "correct kāraka assignments / total tested"
