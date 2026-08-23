@@ -5,7 +5,7 @@
 **Epistemic Layer:** Layer 6 (Engineering) / Layer 5 (Hypothesis `hypotheses/shabda/status.yaml#H2`)  
 **Coordination Port:** `9107` (node: `shiva-sutras-1`)  
 **Target Tasks:**
-- `SHIVA-UPC8-ARCHITECTURE-DECISION` (Status: COMPLETED / RATIFIED)
+- `SHIVA-UPC8-ARCHITECTURE-DECISION` (Status: SPECIFIED — PENDING OWNER RATIFICATION, 2026-08-23; агент не може ратифікувати власне рішення)
 - `SHIVA-UPC8-API-SCOPE-NARROWING` (Status: COMPLETED / SPECIFIED)
 - `SHIVA-UPC8-NATURAL-CLASS-API-SPLIT` (Status: COMPLETED / SPECIFIED)
 
@@ -26,7 +26,7 @@ This report delivers the comprehensive architectural decision, formalized code s
 
 ## 1. Title & Status
 - **Identifier:** `ADR-002-upc8-character-set`
-- **Status:** ACCEPTED (Ratified as Engineering Prototype / Layer 6 Hypothesis)
+- **Status:** SPECIFIED (Engineering Prototype / Layer 6 Hypothesis) — PENDING OWNER RATIFICATION
 - **Decision Owner:** `shiva-sutras-1`
 - **Data Authority:** `ksetra/canon/siva-sutras.yaml` (SHA256: `9a53d5fc3989e8748b2045c83dc275160bd0d142ba0a3b04816a5540c2cef32a`)
 

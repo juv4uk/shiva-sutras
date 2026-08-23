@@ -41,7 +41,7 @@ Ukrainian also reuses 13 canonical codes (shared sounds like /i/, /u/, /k/, /p/,
 ## Files
 
 - `upc8.py` — encoder/decoder/pratyāhāra engine
-- `test_upc8.py` — 20-test suite (all passing)
+- `test_upc8.py` — 22-test suite (all passing)
 
 ## Usage
 
