@@ -1,0 +1,17 @@
+metadata:
+  language: Polish
+  profile_id: polish-comparison-v1
+  canon_ref: ../ksetra/canon/siva-sutras.yaml
+  relation_to_canon: comparison
+  encoding: IPA
+  profile_status: proposed
+  implementation_status: not_implemented
+  source_status: pending-authoritative-phonology-source
+  note: >-
+    This is a profile boundary, not a phoneme inventory. No Polish-to-canon
+    mapping is admitted until source selection and independent review are done.
+mapping: []
+unresolved_features:
+  - Polish inventory and analysis standard are not yet selected.
+  - Exact versus approximate relations to the Śiva-sūtra canon are unverified.
+  - UPC assignments are intentionally absent.

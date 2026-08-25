@@ -1,0 +1,45 @@
+metadata:
+  language: Hindi
+  profile_id: hindi-comparison-v1
+  canon_ref: ../ksetra/canon/siva-sutras.yaml
+  relation_to_canon: comparison
+  encoding: IPA
+  profile_status: inventory-anchored
+  implementation_status: comparison-only
+  source_status: source-anchored-inventory-only
+  source_refs:
+    - title: Linguistic Survey of India — Uttar Pradesh, Phonology
+      url: https://censusindia.gov.in/nada/index.php/catalog/45240/download/48950/LSI_UTTAR_PRADESH.pdf
+      scope: inventory reference, not canon mapping
+  inventory_summary:
+    status: reported-by-source
+    note: >-
+      The cited survey reports a Hindi segmental and suprasegmental inventory;
+      dialect scope and analysis conventions must be fixed before mapping.
+  upc8_code_space:
+    total: 256
+    assigned_before_profile: 80
+    free_before_profile: 176
+    assigned_to_this_profile: 0
+    free_after_profile: 176
+    status: no_codes_reserved_until_mapping_review
+  note: >-
+    This is a profile boundary, not a phoneme inventory. No Hindi-to-canon
+    mapping is admitted until source selection and independent review are done.
+phonological_inventory:
+  status: source-reported
+  analysis_level: phonemic-inventory
+  categories:
+    vowels: reported-by-source
+    consonants: reported-by-source
+    suprasegmentals: true
+  note: >-
+    The source reports a segmental and suprasegmental Hindi inventory. Exact
+    counts are intentionally not normalized here because dialect and analysis
+    conventions differ; this metadata does not imply UPC assignments.
+mapping: []
+unresolved_features:
+  - Hindi inventory source is anchored, but dialect scope and analysis standard are not yet selected.
+  - Individual phoneme-to-canon relations still require reviewed IPA entries.
+  - Exact versus approximate relations to the Śiva-sūtra canon are unverified.
+  - UPC assignments are intentionally absent.

@@ -1,0 +1,58 @@
+schema: language-profile-priority-v1
+status: proposed
+purpose: >-
+  Select language profiles for future UPC comparison work. Priority does not
+  assign semantic identity, UPC codes, or phonological truth.
+scoring:
+  popularity: 0.35
+  canon_proximity: 0.30
+  ecosystem_usefulness: 0.20
+  source_readiness: 0.15
+upc8_code_space:
+  total: 256
+  assigned: 80
+  free: 176
+  assignment_note: >-
+    Current prototype state: 42 canonical Sanskrit + 7 Sanskrit extensions
+    + 31 Ukrainian-specific values. Ukrainian shared values reuse canonical
+    codes. Proposed profiles do not consume codes until mapping review passes.
+profiles:
+  - language: sanskrit
+    priority: anchor
+    status: canonical-anchor
+    implementation: existing-canon
+    assigned_codes: 49
+  - language: ukrainian
+    priority: anchor
+    status: comparison-anchor
+    implementation: existing-extension
+    assigned_codes: 31
+  - language: english
+    priority: 1
+    status: comparison-existing
+    implementation: yaml-only
+    assigned_codes: 0
+  - language: hindi
+    priority: 2
+    status: proposed
+    implementation: profile-pending
+    assigned_codes: 0
+  - language: polish
+    priority: 3
+    status: proposed
+    implementation: profile-pending
+    assigned_codes: 0
+  - language: bengali
+    priority: 4
+    status: proposed-later
+    implementation: profile-pending
+  - language: marathi
+    priority: 5
+    status: proposed-later
+    implementation: profile-pending
+rules:
+  - Popularity is a planning signal, never a phonological claim.
+  - Proximity is measured through explicit canon relations, not intuition.
+  - Shared SegmentId values are preferred over language-specific duplication.
+  - A profile must record exact, approximate, absent, unique, and unresolved relations.
+  - No profile becomes UPC-encodable until source provenance and parity tests exist.
