@@ -170,4 +170,18 @@
     (description . "HIGH PRIORITY, agent-specific (my-lisp-panini). my-lisp-panini already uses Sarvam heavily (sarvam-independent-check-slp1.md, external-reviews/sarvam-hostile-review.md, sarvam-capability-reference.md) -- keep the pattern going on newer material. The panini/research files just tagged nirakarana (4 counterexample files) are exactly the kind of claim worth a cold Sarvam cross-check, the same discipline already applied to SLP1.")
     (done . ())
   ))
-)))
+
+
+  ("GUIX-WITNESS-01" . (
+    (priority . 7.0)
+    (capabilities . (shiva-sutras guix verification))
+    (description . "Run GUIX-WITNESS-01: build Guix pack and verify on Ubuntu target. Decide owner/trust model for substitute server or ecosystem channel. See VIVEKA-FINDINGS-2026-08-24.md section 7.")
+    (done . ())
+  ))
+
+  ("SANSKRITWORLD-FORK-CHECK" . (
+    (priority . 6.0)
+    (capabilities . (shiva-sutras git maintenance))
+    (description . "Periodic check: sanskritworld_texts fork vs upstream/main. See ECOSYSTEM-DAILY-REVIEW-2026-08-22.md risk R5.")
+    (done . ())
+  )))))
