@@ -26,9 +26,17 @@ REPO = "/home/agents/GitHub/shiva-sutras"
 EMB_FILE = f"{REPO}/extensions/cognates-uk-sa.embeddings.jsonl"
 
 # IAST -> this table's slp1-style keys (long vowels live as 'a:' style).
+#
+# ś/ṣ were swapped here until 2026-08-25 (SWARM-PROTOTYPE-EPISTEMIC-AUDIT):
+# per upc8.py's own canonical comment ("S = palatal sibilant, z = retroflex
+# sibilant") and its tested SLP1_TO_IAST table (encode_sanskrit_iast_token
+# ('ś') == 39, ('ṣ') == 40), S is ś (palatal) and z is ṣ (retroflex) -- this
+# file had them backwards, so any word containing ś or ṣ (e.g. the golden
+# set's daśa/десять pair) silently got the wrong UPC-8 code and a wrong
+# sound-similarity score.
 IAST_MAP = {
     "ā": "a:", "ī": "i:", "ū": "u:", "ṝ": "R:", "ḹ": "L:",
-    "ṛ": "f", "ḷ": "x", "ś": "z", "ṣ": "S", "ñ": "Y", "ṅ": "G",
+    "ṛ": "f", "ḷ": "x", "ś": "S", "ṣ": "z", "ñ": "Y", "ṅ": "G",
     "ṇ": "N", "ṃ": "~", "ḥ": "H", "ai": "E", "au": "O",
 }
 
