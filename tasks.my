@@ -117,6 +117,13 @@
     (done . ())
   ))
 
+  ("REMEDIATION-PLAN-V1-EXECUTE" . (
+    (priority . 8.0)
+    (capabilities . (shiva-sutras sanskrit documentation))
+    (description . "Execute remaining items from docs/REMEDIATION_PLAN_v1.md")
+    (done . ())
+  ))
+
   ("SAVARNA-MODEL-VALIDATION" . (
     (priority . 8.5)
     (capabilities . (shiva-sutras sanskrit verification))
