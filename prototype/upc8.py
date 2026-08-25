@@ -581,6 +581,101 @@ class UPC8:
     def is_semivowel(self, code: int) -> bool:
         return code in self.pratyahara("yaR")
 
+    # ------------------------------------------------------------------------
+    # canonical_class / phonological_class / language_class (SHIVA-UPC8-
+    # NATURAL-CLASS-API-SPLIT, docs/claude-review-upc8-manus-proposals-
+    # 2026-08-18.md review #6): is_vowel()/is_consonant() above are kept
+    # unchanged for backward compatibility, but they silently return False
+    # for every extension code (0x2A+) -- a caller can't distinguish "this
+    # code is definitely not a vowel" from "vowel/consonant membership
+    # doesn't even apply at this layer". The three methods below make that
+    # boundary explicit instead of leaving it implicit in a False.
+    # ------------------------------------------------------------------------
+
+    _CLASS_TESTS = (
+        ("vowel", "is_vowel"),
+        ("consonant", "is_consonant"),
+        ("stop", "is_stop"),
+        ("sibilant", "is_sibilant"),
+        ("nasal", "is_nasal"),
+        ("semivowel", "is_semivowel"),
+    )
+
+    def canonical_class(self, code: int) -> frozenset:
+        """Strictly Śiva-sūtras membership. Every canonical code is
+        exactly one of vowel/consonant (ac + hal = all 42 canonical
+        sounds), so an empty result unambiguously means "not a
+        canonical code at all" -- not "no class applies"."""
+        if code not in self.table or self.table[code]["layer"] != "canonical":
+            return frozenset()
+        return frozenset(name for name, method in self._CLASS_TESTS if getattr(self, method)(code))
+
+    def _code_for_canon_ref(self, ref):
+        if ref is None:
+            return None
+        _, body = ref.split("-", 1)
+        ordinal_str, position_str = body.split(":")
+        ordinal, position = int(ordinal_str), int(position_str)
+        for i, pos in enumerate(CANON_POSITIONS):
+            if pos["ordinal"] == ordinal and pos["position"] == position:
+                return CODE_OF_POSITION[i]
+        return None
+
+    def phonological_class(self, code: int, profile: str = "sanskrit") -> frozenset:
+        """profile="sanskrit" (the only profile implemented so far):
+        canonical codes classify exactly as canonical_class(). The 5
+        Sanskrit-extended dīrgha (long-vowel) codes (0x2A-0x2E) derive
+        their class from their short-vowel base via canon_ref (e.g. ā's
+        SS-01:1 points at the same position as short a) -- "long vowels
+        derive from short-base membership", per review #6. Anusvāra
+        (0x2F) and visarga (0x30) have no canon_ref and are traditionally
+        neither vowel nor consonant in Pāṇinian phonology; that is named
+        explicitly ({'anusvara'}/{'visarga'}), not left as an empty
+        result indistinguishable from "doesn't apply". Any other layer
+        (e.g. ukrainian_new) is out of scope for this profile -> empty."""
+        if profile != "sanskrit":
+            raise ValueError(f"Unknown profile {profile!r}: only 'sanskrit' is implemented")
+        entry = self.table.get(code)
+        if entry is None:
+            return frozenset()
+        if entry["layer"] == "canonical":
+            return self.canonical_class(code)
+        if entry["layer"] == "sanskrit_extended":
+            base_code = self._code_for_canon_ref(entry.get("canon_ref"))
+            if base_code is not None:
+                return self.canonical_class(base_code)
+            special = {0x2F: "anusvara", 0x30: "visarga"}.get(code)
+            return frozenset({special}) if special else frozenset()
+        return frozenset()
+
+    _UKRAINIAN_NEW_VOWEL_LETTERS = frozenset("аеои")  # а, е, о, и
+
+    def language_class(self, code: int, language: str = "ukrainian") -> frozenset:
+        """language="ukrainian" (the only language implemented so far):
+        codes shared with a canonical Sanskrit segment (UKRAINIAN_SHARED)
+        reuse that segment's canonical_class exactly. UKRAINIAN_NEW codes
+        are classified by an explicit vowel-letter set (а/е/о/и -- і and
+        у are canonical-shared, handled by the branch above), everything
+        else in that table being consonantal. This is a small, explicit
+        feature registry, not a claim that the Ukrainian layer has a
+        formalized phonological_class-style derivation yet (see review
+        #5 on encode_ukrainian_word's own contract limits)."""
+        if language != "ukrainian":
+            raise ValueError(f"Unknown language {language!r}: only 'ukrainian' is implemented")
+        entry = self.table.get(code)
+        if entry is None:
+            return frozenset()
+        if entry["layer"] == "canonical":
+            if "ukrainian" not in entry.get("languages", {}):
+                return frozenset()
+            return self.canonical_class(code)
+        if entry["layer"] == "ukrainian_new":
+            letter = entry.get("letter", "")
+            if letter in self._UKRAINIAN_NEW_VOWEL_LETTERS:
+                return frozenset({"vowel"})
+            return frozenset({"consonant"})
+        return frozenset()
+
     # ========================================================================
     # STATISTICS & DUMP
     # ========================================================================

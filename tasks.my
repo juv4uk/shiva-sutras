@@ -108,8 +108,8 @@
   ))
   ("SHIVA-UPC8-NATURAL-CLASS-API-SPLIT" . (
     (priority . 5.0)
-    (description . "is_vowel()/is_consonant() currently query canonical ac/hal only, so extension codes (long vowels etc.) return False for both -- silently ambiguous, per docs/claude-review-upc8-manus-proposals-2026-08-18.md and the underlying Manus review #6. Split into canonical_class(code) (Śiva-sūtras only) vs phonological_class(code, profile=...) vs language_class(code, language=...) so extensions don't silently vanish from natural-class queries.")
-    (done . ())
+    (description . "DONE 2026-08-25. Added canonical_class(code) (strict Śiva-sūtras membership via existing is_*/pratyahara tests, empty frozenset for any non-canonical code -- distinguishable from is_vowel/is_consonant's silent False-False), phonological_class(code, profile='sanskrit') (long-vowel dirgha codes 0x2A-0x2E derive vowel-ness from their short base via canon_ref through a new _code_for_canon_ref helper; anusvara/visarga get explicit {'anusvara'}/{'visarga'} labels instead of empty), and language_class(code, language='ukrainian') (UKRAINIAN_SHARED codes inherit canonical_class of the Sanskrit segment they reuse; UKRAINIAN_NEW codes classified via an explicit а/е/о/и vowel-letter set, everything else consonant). Old is_vowel()/is_consonant()/etc. kept unchanged for backward compat. Unknown profile/language raise ValueError rather than silently returning empty. 3 new tests (28 total, all passing), README usage section extended with the exact silent-ambiguity example from review #6.")
+    (done . t)
   ))
   ("SHIVA-UPC8-ARCHITECTURE-DECISION" . (
     (priority . 4.5)

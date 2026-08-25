@@ -41,7 +41,7 @@ Ukrainian also reuses 13 canonical codes (shared sounds like /i/, /u/, /k/, /p/,
 ## Files
 
 - `upc8.py` — encoder/decoder/pratyāhāra engine
-- `test_upc8.py` — 25-test suite (all passing)
+- `test_upc8.py` — 28-test suite (all passing)
 
 ## Usage
 
@@ -92,6 +92,26 @@ u.is_vowel(0x00)                    # → True
 u.is_stop(0x25)                     # → True (k is a stop)
 u.is_sibilant(0x29)                 # → True (s is a sibilant)
 ```
+
+> **Natural-class scope (docs/claude-review-upc8-manus-proposals-2026-08-18.md#6):**
+> `is_vowel()`/`is_consonant()`/etc. above are canonical-only and silently
+> return `False` for every extension code — you can't tell "not a vowel"
+> from "doesn't apply at this layer" from the boolean alone. For explicit
+> layer boundaries, use `canonical_class(code)` (strict Śiva-sūtras,
+> empty result for anything else), `phonological_class(code, profile=
+> "sanskrit")` (long vowels derive vowel-ness from their short base;
+> anusvāra/visarga get explicit `{"anusvara"}`/`{"visarga"}` labels
+> instead of silent emptiness), and `language_class(code, language=
+> "ukrainian")` (shared codes inherit the Sanskrit segment's class,
+> new Ukrainian codes via an explicit vowel-letter set):
+>
+> ```python
+> u.canonical_class(0x00)              # → frozenset({'vowel'})
+> u.canonical_class(0x2A)              # → frozenset() -- not canonical, not False-False
+> u.phonological_class(0x2A)           # → frozenset({'vowel'}) -- ā derives from short a
+> u.phonological_class(0x2F)           # → frozenset({'anusvara'})
+> u.language_class(0x33)               # → frozenset({'vowel'}) -- Ukrainian а
+> ```
 
 ## Pratyāhāra Engine
 

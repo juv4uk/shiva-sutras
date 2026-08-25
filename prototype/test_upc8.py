@@ -151,6 +151,57 @@ def test_encode_sanskrit_word_scheme():
     print("  [PASS] encode_sanskrit_word(scheme=...): SLP1 unchanged, IAST longest-match, bad scheme rejected")
 
 
+def test_canonical_class():
+    u = UPC8()
+    assert u.canonical_class(0x00) == frozenset({"vowel"})       # a
+    assert u.canonical_class(0x25) == frozenset({"consonant", "stop"})  # k
+    # The exact silent-ambiguity gap docs/claude-review-upc8-manus-proposals-2026-08-18.md#6
+    # reported: is_vowel(0x2A) and is_consonant(0x2A) are both False, with
+    # no way to tell "not a vowel" from "canonical class doesn't apply".
+    assert not u.is_vowel(0x2A) and not u.is_consonant(0x2A)
+    assert u.canonical_class(0x2A) == frozenset(), "extension code must be explicitly empty, not silently False-False"
+    print("  [PASS] canonical_class: strict Śiva-sūtras membership, empty (not False-False) for extensions")
+
+
+def test_phonological_class_sanskrit():
+    u = UPC8()
+    # Long vowels derive vowel-ness from their short-vowel base via canon_ref.
+    assert u.phonological_class(0x2A) == frozenset({"vowel"})  # ā from a
+    assert u.phonological_class(0x2B) == frozenset({"vowel"})  # ī from i
+    assert u.phonological_class(0x2D) == frozenset({"vowel"})  # ṝ from vocalic r
+    # Anusvara/visarga have no canon_ref -- explicit special labels, not empty.
+    assert u.phonological_class(0x2F) == frozenset({"anusvara"})
+    assert u.phonological_class(0x30) == frozenset({"visarga"})
+    # Canonical codes classify the same as canonical_class().
+    assert u.phonological_class(0x00) == u.canonical_class(0x00)
+    # Ukrainian-only codes are out of scope for the sanskrit profile.
+    assert u.phonological_class(0x35) == frozenset()  # ukrainian ц
+    try:
+        u.phonological_class(0x00, profile="klingon")
+        assert False, "unknown profile should raise ValueError"
+    except ValueError:
+        pass
+    print("  [PASS] phonological_class(profile='sanskrit'): dirgha derive from short base, anusvara/visarga explicit")
+
+
+def test_language_class_ukrainian():
+    u = UPC8()
+    # Shared codes reuse the Sanskrit segment's canonical_class exactly.
+    assert u.language_class(0x01) == frozenset({"vowel"})       # і shares canonical i
+    assert u.language_class(0x19) == frozenset({"consonant", "stop"})  # б shares canonical b
+    # New Ukrainian codes: explicit vowel-letter set vs. consonant.
+    assert u.language_class(0x33) == frozenset({"vowel"})       # а
+    assert u.language_class(0x3B) == frozenset({"consonant"})   # ш
+    # Sanskrit-extended codes are out of scope for the ukrainian language.
+    assert u.language_class(0x2A) == frozenset()
+    try:
+        u.language_class(0x00, language="english")
+        assert False, "unknown language should raise ValueError"
+    except ValueError:
+        pass
+    print("  [PASS] language_class(language='ukrainian'): shared codes inherit, new codes via explicit vowel set")
+
+
 def test_pratyahara_ac():
     u = UPC8()
     members = u.pratyahara("ac")
@@ -344,6 +395,9 @@ def run_all():
         ("encode_sanskrit_slp1_token",  test_encode_sanskrit_slp1_token),
         ("encode_sanskrit_iast_token",  test_encode_sanskrit_iast_token),
         ("encode_sanskrit_word(scheme=...)", test_encode_sanskrit_word_scheme),
+        ("canonical_class",             test_canonical_class),
+        ("phonological_class(sanskrit)", test_phonological_class_sanskrit),
+        ("language_class(ukrainian)",    test_language_class_ukrainian),
         ("Pratyahara: ac",              test_pratyahara_ac),
         ("Pratyahara: hal",             test_pratyahara_hal),
         ("Pratyahara: marker/sound collisions", test_pratyahara_marker_sound_collisions),
