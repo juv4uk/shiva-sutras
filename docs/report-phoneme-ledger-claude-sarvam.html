@@ -1,0 +1,847 @@
+<title>Phoneme Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Noto+Sans+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper: #eef0e7;
+    --paper-raised: #e3e6da;
+    --paper-line: #d7dbcc;
+    --ink: #17262b;
+    --ink-soft: #4c6360;
+    --ink-faint: #7c9490;
+    --line: rgba(23, 38, 43, 0.14);
+    --line-strong: rgba(23, 38, 43, 0.26);
+
+    --accent-match: #3f7a5e;
+    --accent-match-bg: rgba(63, 122, 94, 0.13);
+    --accent-flag: #b8492e;
+    --accent-flag-bg: rgba(184, 73, 46, 0.13);
+    --accent-new: #5b5a86;
+    --accent-new-bg: rgba(91, 90, 134, 0.13);
+    --accent-gold: #a97a2f;
+    --accent-gold-bg: rgba(169, 122, 47, 0.14);
+
+    --shadow: 0 1px 2px rgba(23, 38, 43, 0.06), 0 8px 24px rgba(23, 38, 43, 0.07);
+    --radius: 3px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101a1c;
+      --paper-raised: #172526;
+      --paper-line: #223234;
+      --ink: #e9efe9;
+      --ink-soft: #9db3ac;
+      --ink-faint: #64817b;
+      --line: rgba(233, 239, 233, 0.12);
+      --line-strong: rgba(233, 239, 233, 0.22);
+
+      --accent-match: #7cb598;
+      --accent-match-bg: rgba(124, 181, 152, 0.16);
+      --accent-flag: #e08867;
+      --accent-flag-bg: rgba(224, 136, 103, 0.17);
+      --accent-new: #a3a1d1;
+      --accent-new-bg: rgba(163, 161, 209, 0.17);
+      --accent-gold: #d3a556;
+      --accent-gold-bg: rgba(211, 165, 86, 0.16);
+
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #101a1c;
+    --paper-raised: #172526;
+    --paper-line: #223234;
+    --ink: #e9efe9;
+    --ink-soft: #9db3ac;
+    --ink-faint: #64817b;
+    --line: rgba(233, 239, 233, 0.12);
+    --line-strong: rgba(233, 239, 233, 0.22);
+
+    --accent-match: #7cb598;
+    --accent-match-bg: rgba(124, 181, 152, 0.16);
+    --accent-flag: #e08867;
+    --accent-flag-bg: rgba(224, 136, 103, 0.17);
+    --accent-new: #a3a1d1;
+    --accent-new-bg: rgba(163, 161, 209, 0.17);
+    --accent-gold: #d3a556;
+    --accent-gold-bg: rgba(211, 165, 86, 0.16);
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent-gold-bg); color: var(--ink); }
+
+  a { color: var(--accent-match); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+  }
+
+  .ipa, .mono {
+    font-family: "Noto Sans Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .deva { font-family: "Noto Sans Devanagari", "Noto Sans Mono", sans-serif; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---------- Header ---------- */
+  header.top {
+    border-bottom: 1px solid var(--line-strong);
+    padding: 56px 0 32px;
+  }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-gold); }
+
+  h1.title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0 0 18px;
+  }
+  p.dek {
+    max-width: 66ch;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    margin: 0 0 26px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  .meta-row .pill {
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 4px 11px;
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 0.76rem;
+  }
+
+  /* ---------- Stats strip ---------- */
+  section.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+    margin: 32px 0 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .stat-cell {
+    background: var(--paper-raised);
+    padding: 18px 20px;
+  }
+  .stat-cell .num {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-cell .label {
+    margin-top: 6px;
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .stat-cell.match .num { color: var(--accent-match); }
+  .stat-cell.flag .num { color: var(--accent-flag); }
+  .stat-cell.new .num { color: var(--accent-new); }
+
+  /* ---------- Sections generic ---------- */
+  section.block { padding: 64px 0 0; }
+  section.block:first-of-type { padding-top: 56px; }
+
+  h2.block-title {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+    letter-spacing: -0.005em;
+    margin: 0 0 8px;
+  }
+  p.block-dek {
+    max-width: 70ch;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+  }
+
+  /* ---------- Legend / filter ---------- */
+  .legend-bar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 12px 0;
+    margin-bottom: 4px;
+  }
+  .legend-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+  }
+  .legend-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 4px;
+  }
+  button.chip {
+    font-family: "Archivo", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 5px 13px 5px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  button.chip .swatch { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  button.chip[data-active="true"] {
+    color: var(--ink);
+    border-color: var(--line-strong);
+    background: var(--paper-raised);
+  }
+  button.chip.match[data-active="true"] { border-color: var(--accent-match); color: var(--accent-match); background: var(--accent-match-bg); }
+  button.chip.flag[data-active="true"] { border-color: var(--accent-flag); color: var(--accent-flag); background: var(--accent-flag-bg); }
+  button.chip.new[data-active="true"] { border-color: var(--accent-new); color: var(--accent-new); background: var(--accent-new-bg); }
+  button.chip.all[data-active="true"] { border-color: var(--ink); color: var(--ink); background: var(--paper-raised); }
+  .chip .swatch.match { background: var(--accent-match); }
+  .chip .swatch.flag { background: var(--accent-flag); }
+  .chip .swatch.new { background: var(--accent-new); }
+  .chip .swatch.all { background: var(--ink-faint); }
+
+  .nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 14px;
+    font-size: 0.8rem;
+  }
+  .nav-links a { color: var(--ink-soft); text-decoration: none; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ---------- Tables ---------- */
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  table.phon {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    background: var(--paper-raised);
+  }
+  table.phon caption {
+    text-align: left;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line-strong);
+    background: color-mix(in srgb, var(--paper-raised) 60%, var(--ink) 3%);
+  }
+  table.phon caption .count { color: var(--ink-faint); font-weight: 400; }
+  table.phon thead th {
+    text-align: left;
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    padding: 9px 16px;
+    border-bottom: 1px solid var(--line-strong);
+    white-space: nowrap;
+  }
+  table.phon tbody tr.entry {
+    cursor: pointer;
+    border-top: 1px solid var(--line);
+  }
+  table.phon tbody tr.entry:hover { background: color-mix(in srgb, var(--paper-raised) 80%, var(--ink) 6%); }
+  table.phon tbody td {
+    padding: 10px 16px;
+    vertical-align: top;
+    font-size: 0.92rem;
+  }
+  td.c-letter { font-weight: 600; white-space: nowrap; }
+  td.c-ipa { white-space: nowrap; }
+  td.c-features { color: var(--ink-soft); font-size: 0.85rem; }
+  td.c-canon { font-size: 0.85rem; color: var(--ink-soft); white-space: nowrap; }
+  td.c-caret { width: 22px; text-align: center; color: var(--ink-faint); }
+  tr.entry.open td.c-caret { color: var(--ink); }
+  td.c-caret svg { transition: transform 0.15s ease; }
+  tr.entry.open td.c-caret svg { transform: rotate(90deg); }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .badge.match { color: var(--accent-match); background: var(--accent-match-bg); }
+  .badge.flag { color: var(--accent-flag); background: var(--accent-flag-bg); }
+  .badge.new { color: var(--accent-new); background: var(--accent-new-bg); }
+
+  .sarvam-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    margin-left: 6px;
+  }
+  .sarvam-tag::before { content: "◆"; font-size: 0.6rem; }
+
+  tr.note-row td {
+    padding: 0 16px;
+    border-top: none;
+  }
+  tr.note-row .note-inner {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease, padding 0.2s ease;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  tr.entry.open + tr.note-row .note-inner {
+    max-height: 400px;
+    padding: 2px 0 16px;
+  }
+  tr.note-row .note-inner .src {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    font-family: "Noto Sans Mono", monospace;
+  }
+
+  tr.entry[data-hidden="true"], tr.entry[data-hidden="true"] + tr.note-row {
+    display: none;
+  }
+
+  /* ---------- Spotlight ---------- */
+  .spotlight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .spot-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line-strong);
+    border-left: 3px solid var(--accent-flag);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+  .spot-card .spot-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .spot-card .spot-pair {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  .spot-card .spot-pair .vs { color: var(--ink-faint); font-weight: 400; font-size: 1rem; margin: 0 6px; }
+  .spot-card p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+  .spot-card p + p { margin-top: 8px; }
+
+  /* ---------- Sarvam callout ---------- */
+  .callout {
+    background: var(--paper-raised);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    box-shadow: var(--shadow);
+  }
+  .callout h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin: 0 0 14px;
+  }
+  .evidence-list { display: flex; flex-direction: column; gap: 14px; }
+  .evidence-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 4px 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.88rem;
+  }
+  .evidence-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .evidence-item .label { color: var(--ink-faint); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .evidence-item .in { font-family: "Archivo", sans-serif; }
+  .evidence-item .out { font-family: "Noto Sans Devanagari", sans-serif; font-size: 1.05rem; }
+  .evidence-item .req { font-family: "Noto Sans Mono", monospace; font-size: 0.72rem; color: var(--ink-faint); grid-column: 1 / -1; }
+  .fail-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line-strong);
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+  .fail-note strong { color: var(--accent-flag); }
+
+  /* ---------- Footer ---------- */
+  footer.prov {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-strong);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+  footer.prov .files { display: flex; flex-direction: column; gap: 4px; font-family: "Noto Sans Mono", monospace; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+
+  @media (max-width: 640px) {
+    header.top { padding-top: 40px; }
+    .evidence-item { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow"><span class="dot"></span> shiva-sutras · extensions/*claude-sarvam.yaml</div>
+    <h1 class="title">Phoneme Ledger</h1>
+    <p class="dek">
+      Ukrainian and English phonology, entered independently against the Śiva-sūtras
+      canon by the <span class="mono">claude-sarvam</span> extension layer — 83 phonemes,
+      each marked as a canon match, a false friend, or new ground the canon never covers.
+    </p>
+    <div class="meta-row">
+      <span class="pill">2026-08-25</span>
+      <span class="pill">layer: claude-sarvam</span>
+      <span class="pill">uk v0.2 · en v0.1</span>
+      <span class="pill">draft — not yet in preregistration-L001.yaml</span>
+    </div>
+  </header>
+
+  <section class="stats" id="stats"></section>
+
+  <div class="legend-bar" id="legend-bar">
+    <div class="legend-inner">
+      <span class="legend-label">Filter</span>
+      <button class="chip all" data-filter="all" data-active="true"><span class="swatch all"></span>All</button>
+      <button class="chip match" data-filter="segment-equivalent"><span class="swatch match"></span>Canon match</button>
+      <button class="chip flag" data-filter="false-friend"><span class="swatch flag"></span>False friend</button>
+      <button class="chip new" data-filter="new-extension"><span class="swatch new"></span>New ground</button>
+      <div class="nav-links">
+        <a href="#ukrainian">Ukrainian</a>
+        <a href="#english">English</a>
+        <a href="#spotlight">False friends</a>
+        <a href="#sarvam">Sarvam evidence</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="block" id="ukrainian">
+    <h2 class="block-title">Ukrainian — 39 phonemes</h2>
+    <p class="block-dek">
+      Pompino-Marschall, Steriopolo &amp; Żygis (2017); Vakulenko (2019); Shevelov (1979).
+      No entry in this file uses the false-friend label — every mismatch with the canon
+      here is a clean gap, not a misleading resemblance.
+    </p>
+    <div id="uk-sections"></div>
+  </section>
+
+  <section class="block" id="english">
+    <h2 class="block-title">English — 44 phonemes</h2>
+    <p class="block-dek">
+      Roach (2009), framed the same way <span class="mono">english-sarvam.yaml</span>
+      frames itself: an adversarial test. English is where the false-friend label earns
+      its place — 15 of 44 entries share a letter or a name with a canon sound while
+      differing in place, manner, or phonemic status.
+    </p>
+    <div id="en-sections"></div>
+  </section>
+
+  <section class="block" id="spotlight">
+    <h2 class="block-title">Four false friends worth remembering</h2>
+    <p class="block-dek">
+      The mismatches most likely to mislead an English-only reader of the canon —
+      chosen because the letter or the name survives the crossing even though the sound does not.
+    </p>
+    <div class="spotlight" id="spotlight-cards"></div>
+  </section>
+
+  <section class="block" id="sarvam">
+    <h2 class="block-title">Sarvam MCP engagement</h2>
+    <p class="block-dek">
+      Called live during authoring, not just credited in a header. Real request IDs,
+      real output, and one real reproducible failure — reported as it happened.
+    </p>
+    <div class="callout">
+      <h3>transliterate_text (en-IN → hi-IN) — real output used as evidence</h3>
+      <div class="evidence-list" id="evidence-list"></div>
+      <div class="fail-note">
+        <strong>analyze_text</strong> — called twice (Ukrainian authoring, then English
+        authoring with two direct phonology questions) and failed both times with the
+        same <span class="mono">not_found_error</span>. Confirmed reproducible on a
+        second, unrelated attempt; recorded here rather than silently retried into an
+        invented answer.
+      </div>
+    </div>
+  </section>
+
+  <footer class="prov">
+    <div class="files">
+      <span>extensions/ukrainian-claude-sarvam.yaml — commit 0cbcee7</span>
+      <span>extensions/english-claude-sarvam.yaml — commit 163b617</span>
+      <span>repo: github.com/juv4uk/shiva-sutras</span>
+    </div>
+    <div>docs/preregistration-L001.yaml not modified by this work.</div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const SS = (s) => s; // canonical_unit passthrough, kept for readability
+
+  const uk = [
+    { section: "Vowels", entries: [
+      { letter: "і", ipa: "i", features: "palatal, vowel, voiced", type: "segment-equivalent", canon: "SS-01:2", note: "Same IPA /i/; Sanskrit i contrasts for length, Ukrainian і does not.", sources: ["Pompino-Marschall et al. (2017)"] },
+      { letter: "и", ipa: "ɪ (unresolved)", features: "place unresolved, vowel, voiced", type: "new-extension", canon: null, note: "No canonical equivalent. Proto-Slavic *y reflex; the sole distinctively Ukrainian vowel. IPA left unresolved between candidates ɪ / ɪ̞.", sources: ["Pompino-Marschall et al. (2017)", "Shevelov (1979)"] },
+      { letter: "е", ipa: "ɛ", features: "palatal, vowel, voiced", type: "segment-equivalent", canon: "SS-03:2", note: "Approximate, not exact: real height difference from Sanskrit e.", sources: ["Pompino-Marschall et al. (2017)"] },
+      { letter: "а", ipa: "a", features: "central, vowel, voiced", type: "segment-equivalent", canon: "SS-01:1", note: "Segment matches canon's own opening sound; length role does not.", sources: ["Pompino-Marschall et al. (2017)"] },
+      { letter: "о", ipa: "o", features: "velar, vowel, voiced", type: "segment-equivalent", canon: "SS-03:2", note: "Same IPA /o/; structural asymmetry, not a segment mismatch.", sources: ["Pompino-Marschall et al. (2017)"] },
+      { letter: "у", ipa: "u", features: "velar, vowel, voiced", type: "segment-equivalent", canon: "SS-01:3", note: "Closes canonical sutra 1's a-i-u triad; length contrast absent in Ukrainian.", sources: ["Pompino-Marschall et al. (2017)"] },
+    ]},
+    { section: "Plain stops", entries: [
+      { letter: "п", ipa: "p", features: "bilabial, stop, voiceless", type: "segment-equivalent", canon: "SS-12:2", note: "Same IPA /p/; Ukrainian lacks Sanskrit's aspirated counterpart.", sources: ["Vakulenko (2019)"] },
+      { letter: "б", ipa: "b", features: "bilabial, stop, voiced", type: "segment-equivalent", canon: "SS-10:2", note: "Same IPA /b/; no Ukrainian counterpart to Sanskrit's breathy series.", sources: ["Vakulenko (2019)"] },
+      { letter: "т", ipa: "t̪", features: "dental, stop, voiceless", type: "segment-equivalent", canon: "SS-11:8", note: "Same dental /t̪/; different system-level contrasts radiate from it (Ukrainian t/tʲ; Sanskrit t/ṭ).", sources: ["Vakulenko (2019)"] },
+      { letter: "д", ipa: "d̪", features: "dental, stop, voiced", type: "segment-equivalent", canon: "SS-10:5", note: "Same dental /d̪/; Sanskrit's retroflex/aspirated series has no counterpart.", sources: ["Vakulenko (2019)"] },
+      { letter: "к", ipa: "k", features: "velar, stop, voiceless", type: "segment-equivalent", canon: "SS-12:1", note: "Same IPA /k/; [kʲ] before /i/ is allophonic, not phonemic, in Ukrainian.", sources: ["Vakulenko (2019)"] },
+      { letter: "ґ", ipa: "ɡ", features: "velar, stop, voiced", type: "segment-equivalent", canon: "SS-10:3", note: "Distinct from г /ɦ/; a marginal phoneme, mainly in loanwords.", sources: ["Vakulenko (2019)"] },
+    ]},
+    { section: "Affricates", entries: [
+      { letter: "ц", ipa: "t̪͡s̪", features: "dental, affricate, voiceless", type: "new-extension", canon: null, note: "No canonical affricate manner category exists in the Śiva-sūtras.", sources: ["Vakulenko (2019)"] },
+      { letter: "дз", ipa: "d̪͡z̪", features: "dental, affricate, voiced", type: "new-extension", canon: null, note: "Voiced counterpart to ц; marginal frequency, sometimes analyzed as a cluster.", sources: ["Vakulenko (2019)"] },
+      { letter: "ч", ipa: "t̠ʃ", features: "postalveolar, affricate, voiceless", type: "new-extension", canon: null, note: "No canonical affricate manner category exists in the Śiva-sūtras.", sources: ["Vakulenko (2019)"] },
+      { letter: "дж", ipa: "d̠ʒ", features: "postalveolar, affricate, voiced", type: "new-extension", canon: null, note: "Voiced counterpart to ч; marginal frequency.", sources: ["Vakulenko (2019)"] },
+    ]},
+    { section: "Fricatives", entries: [
+      { letter: "ф", ipa: "f", features: "labiodental, fricative, voiceless", type: "new-extension", canon: null, note: "No canonical labiodental fricative; loanword-origin phoneme in Ukrainian.", sources: ["Pompino-Marschall et al. (2017)"] },
+      { letter: "в", ipa: "ʋ", features: "labiodental, approximant, voiced", type: "segment-equivalent", canon: "SS-05:2", note: "Independent judgment: closer to canonical v than to English /v/'s true fricative articulation.", sources: ["Pompino-Marschall et al. (2017)"] },
+      { letter: "с", ipa: "s̪", features: "dental, fricative, voiceless", type: "segment-equivalent", canon: "SS-11:9", note: "Close match to canonical s; both sibilant fricatives.", sources: ["Vakulenko (2019)"] },
+      { letter: "з", ipa: "z̪", features: "dental, fricative, voiced", type: "new-extension", canon: null, note: "Voiced sibilant, no direct canonical voiced-fricative counterpart at this place.", sources: ["Vakulenko (2019)"] },
+      { letter: "ш", ipa: "ʃ", features: "postalveolar, fricative, voiceless", type: "segment-equivalent", canon: "SS-10:9", note: "Approximate match to canonical ś; place differs slightly.", sources: ["Vakulenko (2019)"] },
+      { letter: "ж", ipa: "ʒ", features: "postalveolar, fricative, voiced", type: "new-extension", canon: null, note: "Voiced counterpart to ш; no canonical voiced sibilant at this place.", sources: ["Vakulenko (2019)"] },
+      { letter: "х", ipa: "x", features: "velar, fricative, voiceless", type: "new-extension", canon: null, note: "No canonical velar fricative; the Śiva-sūtras have no voiceless velar fricative slot.", sources: ["Vakulenko (2019)"] },
+      { letter: "г", ipa: "ɦ", features: "glottal, fricative, voiced", type: "segment-equivalent", canon: "SS-05:1", note: "Direct segment match to canonical h — both voiced glottal fricatives, unlike English /h/.", sources: ["Vakulenko (2019)"] },
+      { letter: "щ", ipa: "ʃt̠ʃ", features: "postalveolar, fricative+affricate cluster, voiceless", type: "new-extension", canon: null, note: "Phonemicity debated — analyzable as /ʃt̠ʃ/ cluster or single affricate-like unit; this entry follows the cluster analysis, matching the majority source position.", sources: ["Pompino-Marschall et al. (2017)", "Vakulenko (2019)"] },
+    ]},
+    { section: "Nasals", entries: [
+      { letter: "м", ipa: "m", features: "bilabial, nasal, voiced", type: "segment-equivalent", canon: "SS-07:2", note: "Direct segment match to canonical m.", sources: ["Vakulenko (2019)"] },
+      { letter: "н", ipa: "n̪", features: "dental, nasal, voiced", type: "segment-equivalent", canon: "SS-07:5", note: "Dental nasal matching canonical n; Ukrainian adds a palatalized counterpart (нʲ).", sources: ["Vakulenko (2019)"] },
+    ]},
+    { section: "Trill", entries: [
+      { letter: "р", ipa: "r", features: "alveolar, trill, voiced", type: "segment-equivalent", canon: "SS-05:4", note: "Genuine alveolar trill in Ukrainian, matching canonical r's traditional trill articulation more closely than most European languages' /r/.", sources: ["Vakulenko (2019)"] },
+    ]},
+    { section: "Lateral", entries: [
+      { letter: "л", ipa: "ɫ", features: "alveolar, lateral, voiced", type: "segment-equivalent", canon: "SS-06:1", note: "Ukrainian's default л is velarized (\"dark l\"); the plain/palatalized contrast is with лʲ, not within this entry.", sources: ["Vakulenko (2019)"] },
+    ]},
+    { section: "Approximant / semivowel", entries: [
+      { letter: "й", ipa: "j", features: "palatal, approximant, voiced", type: "segment-equivalent", canon: "SS-04:1", note: "Direct segment match to canonical y (glide).", sources: ["Vakulenko (2019)"] },
+    ]},
+    { section: "Palatalized series", entries: [
+      { letter: "тʲ", ipa: "t̪ʲ", features: "dental, stop, voiceless, palatalized", type: "new-extension", canon: null, note: "No canonical palatalized-stop series; secondary articulation absent from the Śiva-sūtras' own dimension set.", sources: ["Vakulenko (2019)"] },
+      { letter: "дʲ", ipa: "d̪ʲ", features: "dental, stop, voiced, palatalized", type: "new-extension", canon: null, note: "Palatalized counterpart to д; no canonical parallel.", sources: ["Vakulenko (2019)"] },
+      { letter: "сʲ", ipa: "s̪ʲ", features: "dental, fricative, voiceless, palatalized", type: "new-extension", canon: null, note: "Palatalized counterpart to с; no canonical parallel.", sources: ["Vakulenko (2019)"] },
+      { letter: "зʲ", ipa: "z̪ʲ", features: "dental, fricative, voiced, palatalized", type: "new-extension", canon: null, note: "Palatalized counterpart to з; no canonical parallel.", sources: ["Vakulenko (2019)"] },
+      { letter: "нʲ", ipa: "n̪ʲ", features: "dental, nasal, voiced, palatalized", type: "segment-equivalent", canon: "SS-07:1", note: "Superficially resembles canonical ñ, but the underlying analysis differs: primary place vs. secondary articulation.", sources: ["Vakulenko (2019)"] },
+      { letter: "лʲ", ipa: "lʲ", features: "alveolar, lateral, voiced, palatalized", type: "new-extension", canon: null, note: "Palatalized (\"clear\") counterpart to velarized л; no canonical parallel.", sources: ["Vakulenko (2019)"] },
+      { letter: "рʲ", ipa: "rʲ", features: "alveolar, trill, voiced, palatalized", type: "new-extension", canon: null, note: "Palatalized trill, increasingly merged with р in casual speech per some sources; kept as a distinct entry pending further evidence.", sources: ["Vakulenko (2019)"] },
+    ]},
+    { section: "Marginal (palatalized labials)", entries: [
+      { letter: "пʲ", ipa: "pʲ", features: "bilabial, stop, voiceless, palatalized", type: "new-extension", canon: null, note: "Occurs mainly before apostrophe-marked sequences (e.g. м'який); phonemic status vs. allophonic debated — marked marginal.", sources: ["Vakulenko (2019)"] },
+      { letter: "мʲ", ipa: "mʲ", features: "bilabial, nasal, voiced, palatalized", type: "new-extension", canon: null, note: "Same marginal-phonemicity status as пʲ; the source of this ecosystem's earlier t_palatal / \"м'який\" prototype reference.", sources: ["Vakulenko (2019)"] },
+    ]},
+  ];
+
+  const en = [
+    { section: "Plosives", entries: [
+      { letter: "p", ipa: "p", features: "bilabial, stop, voiceless (allophonic aspiration)", type: "false-friend", canon: "SS-12:2", note: "English [pʰ] in \"pin\" sounds close to Sanskrit ph but isn't the same kind of fact: swapping it for unaspirated [p] in \"spin\" never changes a word's identity in English, the way p/ph genuinely contrast in Sanskrit.", sources: ["Roach (2009)"] },
+      { letter: "b", ipa: "b", features: "bilabial, stop, voiced", type: "segment-equivalent", canon: "SS-10:2", note: "Same IPA /b/; no English counterpart to Sanskrit's breathy-voiced series.", sources: ["Roach (2009)"] },
+      { letter: "t", ipa: "t", features: "alveolar, stop, voiceless (allophonic aspiration)", type: "false-friend", canon: "SS-11:8", note: "The single most consequential false friend in this whole file: English 't' is NOT dental. English-only readers routinely mis-hear/mis-produce त as their own alveolar t; the real dental target is closer to Ukrainian's т̪.", sources: ["Roach (2009)"] },
+      { letter: "d", ipa: "d", features: "alveolar, stop, voiced", type: "false-friend", canon: "SS-10:5", note: "Same place mismatch as t/त: English d is not dental.", sources: ["Roach (2009)"] },
+      { letter: "k", ipa: "k", features: "velar, stop, voiceless (allophonic aspiration)", type: "false-friend", canon: "SS-12:1", note: "Segment matches; the aspiration contrast English speakers can hear (pin vs. spin) is not the same contrast Sanskrit actually phonemicizes.", sources: ["Roach (2009)"] },
+      { letter: "g", ipa: "ɡ", features: "velar, stop, voiced", type: "segment-equivalent", canon: "SS-10:3", note: "Same IPA /ɡ/; no breathy counterpart in English.", sources: ["Roach (2009)"] },
+    ]},
+    { section: "Affricates", entries: [
+      { letter: "ch", ipa: "t̠ʃ", features: "postalveolar, affricate, voiceless", type: "new-extension", canon: null, note: "No canonical affricate manner category in the Śiva-sūtras.", sources: ["Roach (2009)"] },
+      { letter: "j", ipa: "d̠ʒ", features: "postalveolar, affricate, voiced", type: "new-extension", canon: null, note: "Voiced counterpart to ch; no canonical parallel.", sources: ["Roach (2009)"] },
+    ]},
+    { section: "Fricatives", entries: [
+      { letter: "f", ipa: "f", features: "labiodental, fricative, voiceless", type: "new-extension", canon: null, note: "No canonical labiodental fricative.", sources: ["Roach (2009)"] },
+      { letter: "v", ipa: "v", features: "labiodental, fricative, voiced", type: "false-friend", canon: "SS-05:2", note: "Sanskrit's v is an approximant ʋ; English v is a true fricative. Sarvam's own transliteration collapsed v and w onto the same Devanagari grapheme व — suggestive, not sufficient alone; the primary evidence is the manner mismatch itself.", sources: ["Roach (2009)"], sarvam: true },
+      { letter: "th (voiceless)", ipa: "θ", features: "dental, fricative, voiceless", type: "false-friend", canon: "SS-11:8", note: "The classic false friend: English spells this \"th\", the same letters many use to romanize Sanskrit थ — an aspirated dental STOP. θ has no stop closure at all. Sarvam's own transliteration reproduced the exact conflation this warns about: \"thin\" → थिन.", sources: ["Roach (2009)"], sarvam: true },
+      { letter: "th (voiced)", ipa: "ð", features: "dental, fricative, voiced", type: "false-friend", canon: "SS-10:5", note: "Voiced counterpart to θ, same false-friend logic. Sarvam rendered \"this\"/\"that\" as दिस/दैट — ð mapped to plain द, not aspirated ध, an asymmetry left as an open observation rather than a claimed conclusion.", sources: ["Roach (2009)"], sarvam: true },
+      { letter: "s", ipa: "s", features: "alveolar, fricative, voiceless", type: "segment-equivalent", canon: "SS-13:2", note: "Close match to canonical s; both sibilant fricatives, alveolar/dental place difference is minor.", sources: ["Roach (2009)"] },
+      { letter: "z", ipa: "z", features: "alveolar, fricative, voiced", type: "new-extension", canon: null, note: "Voiced sibilant; no canonical voiced-fricative counterpart at this place.", sources: ["Roach (2009)"] },
+      { letter: "sh", ipa: "ʃ", features: "postalveolar, fricative, voiceless", type: "segment-equivalent", canon: "SS-13:1", note: "Approximate match to canonical ś; place differs slightly, same as the Ukrainian ш entry.", sources: ["Roach (2009)"] },
+      { letter: "zh", ipa: "ʒ", features: "postalveolar, fricative, voiced", type: "new-extension", canon: null, note: "Marginal phoneme, occurs mostly in loanwords/medially (\"measure\", \"vision\"), almost never word-initial.", sources: ["Roach (2009)"] },
+      { letter: "h", ipa: "h", features: "glottal, fricative, voiceless", type: "false-friend", canon: "SS-05:1", note: "A genuine false friend hiding behind an identical letter: the same grapheme \"h\" names a voiced sound in Sanskrit's ह and Ukrainian's г, but a voiceless one in English — the mirror image of the Ukrainian file's г entry.", sources: ["Roach (2009)"] },
+    ]},
+    { section: "Nasals", entries: [
+      { letter: "m", ipa: "m", features: "bilabial, nasal, voiced", type: "segment-equivalent", canon: "SS-07:2", note: "Direct segment match to canonical m.", sources: ["Roach (2009)"] },
+      { letter: "n", ipa: "n", features: "alveolar, nasal, voiced", type: "segment-equivalent", canon: "SS-07:5", note: "Same dental-vs-alveolar shift already seen at t/d; minor but real.", sources: ["Roach (2009)"] },
+      { letter: "ng", ipa: "ŋ", features: "velar, nasal, voiced", type: "segment-equivalent", canon: "SS-07:3", note: "Same IPA target as canonical ṅ, but a much more restricted distributional life: never word-initial, historically an allophone of n before velars.", sources: ["Roach (2009)"] },
+    ]},
+    { section: "Approximants", entries: [
+      { letter: "l", ipa: "l", features: "alveolar, lateral, voiced", type: "segment-equivalent", canon: "SS-06:1", note: "Segment matches at the phonemic level; English's clear/dark allophony has no canonical counterpart (contrast Ukrainian, where velarized ɫ is the default, not an allophone).", sources: ["Roach (2009)"] },
+      { letter: "r", ipa: "ɹ", features: "postalveolar, approximant, voiced", type: "false-friend", canon: "SS-05:4", note: "The single most misleading false friend in this file: canonical r and Ukrainian's р are trills; English ɹ is a frictionless approximant — no contact, no trilling at all. A direct analyze_text cross-check on this claim failed (not_found_error); this entry rests on Roach (2009) alone.", sources: ["Roach (2009)"] },
+      { letter: "y", ipa: "j", features: "palatal, approximant, voiced", type: "segment-equivalent", canon: "SS-04:1", note: "Direct segment match to canonical y (glide).", sources: ["Roach (2009)"] },
+      { letter: "w", ipa: "w", features: "labial-velar, approximant, voiced", type: "new-extension", canon: null, note: "Doubly-articulated labial-velar glide; no canonical single-phoneme equivalent. Sarvam rendered \"where\" using व, the same grapheme used for v — Devanagari transliteration doesn't separate w from v, though the underlying English phonemes are distinct.", sources: ["Roach (2009)"], sarvam: true },
+    ]},
+    { section: "Short / checked vowels", entries: [
+      { letter: "i (kit)", ipa: "ɪ", features: "near-front, near-close, short", type: "false-friend", canon: "SS-01:2", note: "English \"short i\" is not simply Sanskrit i but shorter — ɪ and iː differ in quality (centralized vs. peripheral), not just length.", sources: ["Roach (2009)"] },
+      { letter: "e (dress)", ipa: "e", features: "front, short", type: "segment-equivalent", canon: "SS-03:2", note: "Reasonable approximation of canonical e; no length contrast in this English vowel.", sources: ["Roach (2009)"] },
+      { letter: "a (trap)", ipa: "æ", features: "front, short", type: "new-extension", canon: null, note: "No canonical equivalent; front open vowel, distinct from canonical a's central-open quality.", sources: ["Roach (2009)"] },
+      { letter: "u (strut)", ipa: "ʌ", features: "back, open-mid, short", type: "false-friend", canon: "SS-01:1", note: "The same letters ('u'/'a') romanize two genuinely different vowel qualities; not the same segment as canonical a despite superficial romanization overlap.", sources: ["Roach (2009)"] },
+      { letter: "o (lot)", ipa: "ɒ", features: "back, short", type: "new-extension", canon: null, note: "Rounded back open vowel; no canonical equivalent, and notably absent from General American.", sources: ["Roach (2009)"] },
+      { letter: "u (foot)", ipa: "ʊ", features: "near-back, near-close, short", type: "false-friend", canon: "SS-01:3", note: "Mirror of the i/ɪ false-friend above, at the back of the vowel space: ʊ and uː differ in quality, not just length.", sources: ["Roach (2009)"] },
+      { letter: "a (about, unstressed)", ipa: "ə", features: "central, short", type: "new-extension", canon: null, note: "The most structurally alien entry here: schwa is English's default reduced vowel, the outcome of unstressed-syllable reduction and its most frequent vowel sound. Sanskrit's vowel system has no reduction process and no central-neutral vowel category.", sources: ["Roach (2009)"] },
+    ]},
+    { section: "Long / free vowels", entries: [
+      { letter: "ee (fleece)", ipa: "iː", features: "front, long", type: "segment-equivalent", canon: "SS-01:2", note: "Segment itself matches canonical ī reasonably well; the system it belongs to (quality-linked, not purely durational) does not.", sources: ["Roach (2009)"] },
+      { letter: "a (palm)", ipa: "ɑː", features: "back, long", type: "false-friend", canon: "SS-01:1", note: "Romanized the same way as canonical ā in some conventions, but backer in the mouth (central vs. back).", sources: ["Roach (2009)"] },
+      { letter: "aw (thought)", ipa: "ɔː", features: "back, long", type: "new-extension", canon: null, note: "No canonical equivalent; back rounded long vowel, accent-variable (merged with /ɒ/ in many General American varieties).", sources: ["Roach (2009)"] },
+      { letter: "oo (goose)", ipa: "uː", features: "back, long", type: "segment-equivalent", canon: "SS-01:3", note: "Same structural caveat as iː/ī above, mirrored at the back vowel.", sources: ["Roach (2009)"] },
+      { letter: "ir (nurse)", ipa: "ɜː", features: "central, long", type: "new-extension", canon: null, note: "No canonical equivalent; a long, central, unrounded vowel — the \"stressed cousin\" of schwa, same structural mismatch.", sources: ["Roach (2009)"] },
+    ]},
+    { section: "Diphthongs", entries: [
+      { letter: "ay (face)", ipa: "eɪ", features: "front-gliding", type: "new-extension", canon: null, note: "Gliding diphthong starting near canonical e; no single-phoneme canonical equivalent.", sources: ["Roach (2009)"] },
+      { letter: "i (price)", ipa: "aɪ", features: "open-to-close gliding", type: "false-friend", canon: "SS-04:1", note: "Both are called \"ai\"-type diphthongs and share a rough Latin spelling, but they are not the same glide: English aɪ sits outside any length-pairing system, unlike canonical ai's place within sutra 4.", sources: ["Roach (2009)"] },
+      { letter: "oy (choice)", ipa: "ɔɪ", features: "back-to-front gliding", type: "new-extension", canon: null, note: "No canonical equivalent at all; historically a loanword-only diphthong (French/Latin borrowings).", sources: ["Roach (2009)"] },
+      { letter: "o (goat)", ipa: "əʊ", features: "central-to-back gliding", type: "new-extension", canon: null, note: "No canonical equivalent; starts from schwa's own quality, inheriting the same structural mismatch.", sources: ["Roach (2009)"] },
+      { letter: "ow (mouth)", ipa: "aʊ", features: "open-to-close-back gliding", type: "false-friend", canon: "SS-04:2", note: "Same false-friend logic as ai/canonical ai: shared name, shared rough IPA shape, structurally unrelated systems.", sources: ["Roach (2009)"] },
+      { letter: "ear (near)", ipa: "ɪə", features: "close-to-central gliding", type: "new-extension", canon: null, note: "No canonical equivalent; a \"centring\" diphthong, largely absent from rhotic accents (e.g. General American), which instead have ɪ + r.", sources: ["Roach (2009)"] },
+      { letter: "air (square)", ipa: "eə", features: "front-to-central gliding", type: "new-extension", canon: null, note: "No canonical equivalent; centring diphthong, same rhotic-accent caveat.", sources: ["Roach (2009)"] },
+      { letter: "oor (cure)", ipa: "ʊə", features: "back-to-central gliding", type: "new-extension", canon: null, note: "No canonical equivalent; the least stable centring diphthong — many speakers merge it into ɔː, a real ongoing sound change, not asserted as universal.", sources: ["Roach (2009)"] },
+    ]},
+  ];
+
+  const TYPE_LABEL = {
+    "segment-equivalent": "Canon match",
+    "false-friend": "False friend",
+    "new-extension": "New ground",
+  };
+  const TYPE_CLASS = {
+    "segment-equivalent": "match",
+    "false-friend": "flag",
+    "new-extension": "new",
+  };
+
+  function countAll(groups) {
+    const c = { total: 0, "segment-equivalent": 0, "false-friend": 0, "new-extension": 0 };
+    groups.forEach((g) => g.entries.forEach((e) => { c.total++; c[e.type]++; }));
+    return c;
+  }
+
+  const ukCounts = countAll(uk);
+  const enCounts = countAll(en);
+  const totalCounts = {
+    total: ukCounts.total + enCounts.total,
+    "segment-equivalent": ukCounts["segment-equivalent"] + enCounts["segment-equivalent"],
+    "false-friend": ukCounts["false-friend"] + enCounts["false-friend"],
+    "new-extension": ukCounts["new-extension"] + enCounts["new-extension"],
+  };
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  function renderStats() {
+    const el = document.getElementById("stats");
+    el.innerHTML = `
+      <div class="stat-cell"><div class="num">${totalCounts.total}</div><div class="label">Phonemes total</div></div>
+      <div class="stat-cell"><div class="num">39 / 44</div><div class="label">Ukrainian / English</div></div>
+      <div class="stat-cell match"><div class="num">${totalCounts["segment-equivalent"]}</div><div class="label">Canon matches</div></div>
+      <div class="stat-cell flag"><div class="num">${totalCounts["false-friend"]}</div><div class="label">False friends</div></div>
+      <div class="stat-cell new"><div class="num">${totalCounts["new-extension"]}</div><div class="label">New ground</div></div>
+    `;
+  }
+
+  function entryRow(e, idx) {
+    const badge = `<span class="badge ${TYPE_CLASS[e.type]}">${TYPE_LABEL[e.type]}</span>${e.sarvam ? '<span class="sarvam-tag">Sarvam</span>' : ""}`;
+    const canon = e.canon ? e.canon : "—";
+    return `
+      <tr class="entry" data-type="${e.type}" data-idx="${idx}">
+        <td class="c-caret"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1 L8 5 L2 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+        <td class="c-letter">${esc(e.letter)}</td>
+        <td class="c-ipa ipa">/${esc(e.ipa)}/</td>
+        <td class="c-features">${esc(e.features)}</td>
+        <td>${badge}</td>
+        <td class="c-canon mono">${esc(canon)}</td>
+      </tr>
+      <tr class="note-row" data-idx="${idx}">
+        <td colspan="6">
+          <div class="note-inner">
+            ${esc(e.note)}
+            <span class="src">${e.sources.map(esc).join(" · ")}</span>
+          </div>
+        </td>
+      </tr>`;
+  }
+
+  function renderLanguage(groups, mountId) {
+    const mount = document.getElementById(mountId);
+    let html = "";
+    let globalIdx = 0;
+    groups.forEach((g) => {
+      html += `
+        <div class="table-scroll" style="margin-bottom:22px;">
+          <table class="phon">
+            <caption>${esc(g.section)} <span class="count">— ${g.entries.length}</span></caption>
+            <thead>
+              <tr>
+                <th></th><th>Letter</th><th>IPA</th><th>Place · manner · voicing</th><th>Relation</th><th>Canon unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${g.entries.map((e) => entryRow(e, globalIdx++)).join("")}
+            </tbody>
+          </table>
+        </div>`;
+    });
+    mount.innerHTML = html;
+  }
+
+  function wireExpand(root) {
+    root.addEventListener("click", (ev) => {
+      const row = ev.target.closest("tr.entry");
+      if (!row) return;
+      row.classList.toggle("open");
+    });
+  }
+
+  function wireFilter() {
+    const bar = document.getElementById("legend-bar");
+    bar.addEventListener("click", (ev) => {
+      const btn = ev.target.closest("button.chip");
+      if (!btn) return;
+      bar.querySelectorAll("button.chip").forEach((b) => b.dataset.active = "false");
+      btn.dataset.active = "true";
+      const f = btn.dataset.filter;
+      document.querySelectorAll("tr.entry").forEach((row) => {
+        const show = f === "all" || row.dataset.type === f;
+        row.dataset.hidden = show ? "false" : "true";
+        if (!show) row.classList.remove("open");
+      });
+    });
+  }
+
+  function renderSpotlight() {
+    const cards = [
+      { pair: ["त / t"], head: "Dental vs. alveolar", body: "Canonical त and Ukrainian's т are dental /t̪/. English's \"t\" is alveolar — further back in the mouth. The single most consequential false friend in the whole ledger, because an English-only ear treats these as \"the same sound, just a letter.\"" },
+      { pair: ["r / ɹ"], head: "Trill vs. approximant", body: "Canonical r and Ukrainian's р are genuine alveolar trills. English \"r\" (ɹ) is a frictionless approximant — no contact, no trilling. Same letter, unrelated manner of articulation." },
+      { pair: ["h / h"], head: "Voiced vs. voiceless", body: "Sanskrit's ह and Ukrainian's г are voiced glottal fricatives /ɦ/. English \"h\" is voiceless. The identical grapheme names two different sounds depending which of the three languages is speaking." },
+      { pair: ["थ / θ"], head: "Stop vs. fricative", body: "थ is an aspirated dental STOP. English \"th\" (θ) has no stop closure at all — a true fricative. Sarvam's own transliteration reproduced this exact conflation live: \"thin\" → थिन." },
+    ];
+    document.getElementById("spotlight-cards").innerHTML = cards.map((c) => `
+      <div class="spot-card">
+        <div class="spot-head"><span class="spot-pair">${esc(c.pair[0].split(" / ")[0])}<span class="vs">vs.</span>${esc(c.pair[0].split(" / ")[1])}</span></div>
+        <p><strong>${esc(c.head)}</strong></p>
+        <p>${esc(c.body)}</p>
+      </div>`).join("");
+  }
+
+  function renderEvidence() {
+    const items = [
+      { label: "think this thin", input: "think this thin", output: "थिंक दिस थिन", req: "req 20260825_e4e29e51-2f6b-4028-9a94-710df7af63f4" },
+      { label: "very where this that", input: "very where this that", output: "वेरी वेयर दिस दैट", req: "req 20260825_9f8ff741-9418-4e60-84c6-94867bee1d85" },
+    ];
+    document.getElementById("evidence-list").innerHTML = items.map((i) => `
+      <div class="evidence-item">
+        <span class="label">Input</span><span class="in">${esc(i.input)}</span>
+        <span class="label">Output</span><span class="out deva">${esc(i.output)}</span>
+        <span class="req">${esc(i.req)}</span>
+      </div>`).join("");
+  }
+
+  renderStats();
+  renderLanguage(uk, "uk-sections");
+  renderLanguage(en, "en-sections");
+  renderSpotlight();
+  renderEvidence();
+  wireExpand(document.getElementById("uk-sections"));
+  wireExpand(document.getElementById("en-sections"));
+  wireFilter();
+})();
+</script>
