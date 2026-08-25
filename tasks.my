@@ -116,6 +116,20 @@
     (description . "DECISION NEEDED (human, not agent): whether to accept the layered UPC representation architecture proposed across docs/upc-unified-architecture.md, docs/upc8-for-my-lisp.md, docs/upc8-cml-integration.md, docs/upc8-fpga-economics-and-optimization.md (all authored by Manus AI, an external tool, currently uncommitted-in-spirit -- i.e. present but not ratified as contracts). These are cross-repo proposals touching my-lisp/cml/fpga-lisp, not something shiva-sutras can unilaterally decide. fpga-lisp-1 is already waiting on an explicit go-ahead before any UPC-8 RTL work (see .local-notes and fpga-lisp's own UPC-8 assessment note) -- this task is that decision point.")
     (done . ())
   ))
+
+  ("SAVARNA-MODEL-VALIDATION" . (
+    (priority . 8.5)
+    (capabilities . (shiva-sutras sanskrit verification))
+    (description . "Correct implementation of savarna comparator in Verilog does NOT validate the model of sutra 1.1.9. Verify formalization against source text. See CONSOLIDATED_CRITIQUE point 4.")
+    (done . ())
+  ))
+
+  ("PVC16-DOMAIN-VALIDATION" . (
+    (priority . 8.0)
+    (capabilities . (shiva-sutras sanskrit verification))
+    (description . "Validate PVC bit-flip transforms: each phonological-transform bit toggle must have a paired sound in the target set. Bit-flip without paired voiced/unvoiced counterpart is meaningless. See CONSOLIDATED_CRITIQUE point 3.")
+    (done . ())
+  ))
   ("SHIVA-UPC8-FPGA-BITMAP-EXPERIMENT" . (
     (priority . 3.0)
     (description . "BLOCKED on SHIVA-UPC8-ARCHITECTURE-DECISION and SHIVA-UPC8-EPISTEMIC-HEADER. Per docs/upc8-prototype-deep-review.md#7 and hypotheses/shabda/status.yaml#H2 (still PREMATURE-HYPOTHESIS): a real hardware experiment would generate a versioned 256-bit bitmap for one class set, synthesize it as ROM/LUT on a real FPGA target, and measure resource/timing against a baseline lookup -- as its own scoped, evidence-backed result, not folded into the current prototype's claims. Do not start without explicit go-ahead, same protocol already established with fpga-lisp for the rational/bignum representation work.")
