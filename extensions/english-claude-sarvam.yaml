@@ -1,0 +1,548 @@
+# English Academic Extension Layer — claude-sarvam v0.1 (full inventory)
+# ==========================================
+#
+# NOT a replacement for english-kimi.yaml or english-sarvam.yaml — a
+# NEW, independent third extension, companion to
+# ukrainian-claude-sarvam.yaml, per owner instruction (2026-08-25).
+# Independent judgments throughout, not copied from the peer files.
+#
+# Framed the same way english-sarvam.yaml frames itself: an
+# ADVERSARIAL TEST for the canon-mapping architecture. English has
+# far more superficially-similar-but-actually-different phonemes than
+# Ukrainian did — same letter, same rough IPA symbol, different place/
+# manner/voicing/phonemic status from its Sanskrit look-alike. Several
+# entries below exist specifically to name that mismatch, not to force
+# a match.
+#
+# Sarvam MCP actively engaged during authoring (2026-08-25):
+#   - transliterate_text (en-IN -> hi-IN) called on "think this thin"
+#     and "very where this that". Real output: "थिंक दिस थिन" and
+#     "वेरी वेयर दिस दैट". This is genuine cross-check signal, used
+#     below: Sarvam's own model renders voiceless θ ("thin") as थ
+#     (aspirated dental stop) but voiced ð ("this"/"that") as द
+#     (plain dental stop, NOT ध aspirated) — an asymmetry worth
+#     recording as independent evidence that ð is perceived as closer
+#     to a plain stop than θ is. It also collapses both v ("very") and
+#     w ("where") onto व, consistent with the known real limitation
+#     that Devanagari/Hindi do not phonemically distinguish v/w — used
+#     below as supporting evidence, not as the sole basis, for the
+#     v/w entries' relation_to_canon notes.
+#   - analyze_text called with two direct phonology questions (place/
+#     manner of "this"-initial consonant; manner of English /r/):
+#     failed again with the same not_found_error as in the Ukrainian
+#     work — confirmed reproducible on a second, unrelated attempt,
+#     not a one-off. Reported honestly rather than silently retried
+#     into a fabricated answer.
+#
+# Does NOT touch docs/preregistration-L001.yaml.
+
+layer_id: english-claude-sarvam-extension-v0.1
+layer_type: academic_extension
+canon_reference: siva-sutras-v1
+base_accent: "General/reference (non-regional composite; see per-entry notes for known accent variation)"
+layer_status: draft
+date: "2026-08-25"
+
+# Primary sources
+# ---------------
+# Traditional phonemic inventory of English as standardly described
+# (Roach, P. (2009). 'English Phonetics and Phonology', 4th ed.);
+# cross-checked, where noted, against real Sarvam transliterate_text
+# output (2026-08-25, logged above).
+
+phonemes:
+  # ===== PLOSIVES (6) =====
+
+  - id: PH-ENG-CS-p
+    letter: "p"
+    ipa: "p"
+    features: {place: bilabial, manner: stop, voicing: voiceless, aspiration: "allophonic (aspirated [pʰ] in stressed onset, unaspirated elsewhere)", nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-12:2
+      differences:
+        aspiration_status: {sanskrit: "phonemic (p vs ph are separate phonemes)", english: "allophonic (aspiration is positional, not contrastive)"}
+      note: "English [pʰ] in 'pin' sounds close to Sanskrit ph but is not the SAME kind of fact: swapping it for unaspirated [p] in 'spin' never changes a word's identity in English, the way p/ph genuinely contrast in Sanskrit."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-b
+    letter: "b"
+    ipa: "b"
+    features: {place: bilabial, manner: stop, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-10:2
+      differences:
+        breathy_voice: {sanskrit: "contrastive (/bʱ/ exists)", english: "absent"}
+      note: "Same IPA /b/; no English counterpart to Sanskrit's breathy-voiced series."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-t
+    letter: "t"
+    ipa: "t"
+    features: {place: alveolar, manner: stop, voicing: voiceless, aspiration: "allophonic (aspirated in stressed onset)", nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-11:8
+      differences:
+        place: {sanskrit: "dental त̪", english: "alveolar, further back"}
+        aspiration_status: {sanskrit: "phonemic", english: "allophonic"}
+      note: "The single most consequential false friend in this whole file: English 't' is NOT dental. Sanskrit learners with an English-only phonetic background routinely mis-hear/mis-produce त as their own alveolar t; the actual dental target is closer to Ukrainian's т̪ than to English 't'."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-d
+    letter: "d"
+    ipa: "d"
+    features: {place: alveolar, manner: stop, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-10:5
+      differences:
+        place: {sanskrit: "dental द̪", english: "alveolar"}
+      note: "Same place mismatch as t/त: English d is not dental."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-k
+    letter: "k"
+    ipa: "k"
+    features: {place: velar, manner: stop, voicing: voiceless, aspiration: "allophonic (aspirated in stressed onset)", nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-12:1
+      differences:
+        aspiration_status: {sanskrit: "phonemic (k vs kh)", english: "allophonic"}
+      note: "Segment matches; the aspiration contrast English speakers can HEAR (pin vs spin) is not the same contrast Sanskrit actually phonemicizes."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-g
+    letter: "g"
+    ipa: "ɡ"
+    features: {place: velar, manner: stop, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-10:3
+      differences:
+        breathy_voice: {sanskrit: "contrastive (/gʱ/ exists)", english: "absent"}
+      note: "Same IPA /ɡ/; no breathy counterpart in English."
+    sources: ["Roach (2009)"]
+
+  # ===== AFFRICATES (2) =====
+
+  - id: PH-ENG-CS-tsh
+    letter: "ch"
+    ipa: "t̠ʃ"
+    features: {place: postalveolar, manner: affricate, voicing: voiceless, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical affricate manner category in the Śiva-sūtras."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-dzh
+    letter: "j"
+    ipa: "d̠ʒ"
+    features: {place: postalveolar, manner: affricate, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "Voiced counterpart to ch; no canonical parallel."
+    sources: ["Roach (2009)"]
+
+  # ===== FRICATIVES (9) =====
+
+  - id: PH-ENG-CS-f
+    letter: "f"
+    ipa: "f"
+    features: {place: labiodental, manner: fricative, voicing: voiceless, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical labiodental fricative."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-v
+    letter: "v"
+    ipa: "v"
+    features: {place: labiodental, manner: fricative, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-05:2
+      differences:
+        manner: {sanskrit: "approximant ʋ", english: "true labiodental fricative v"}
+      note: "Empirically supported by real Sarvam transliterate_text output (2026-08-25): 'very' -> वेरी, using व, the SAME grapheme it used for w in 'where' -> वेयर. Devanagari/Hindi genuinely do not distinguish v/w phonemically, which is suggestive but not sufficient on its own — the actual English/Sanskrit manner mismatch (fricative vs approximant) is the primary evidence, drawn from Roach (2009), not from the transliteration alone."
+    sources: ["Roach (2009)", "Sarvam transliterate_text, 2026-08-25, request_id 20260825_9f8ff741-9418-4e60-84c6-94867bee1d85"]
+
+  - id: PH-ENG-CS-theta
+    letter: "th (voiceless)"
+    ipa: "θ"
+    features: {place: dental, manner: fricative, voicing: voiceless, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-11:8
+      differences:
+        manner: {sanskrit: "त्/थ् are STOPS (plain/aspirated)", english: "θ is a true FRICATIVE, no stop closure at all"}
+      note: "The classic false friend: English spells this digraph 'th' and many English speakers, transliterating Sanskrit थ (aspirated dental STOP) into English, reach for this SAME letters 'th' — but θ has no stop closure, while थ does. Empirically supported by real Sarvam transliterate_text output (2026-08-25): 'thin' -> थिन, i.e. Sarvam's own model maps English θ onto थ (aspirated dental stop), reproducing the exact false-friend conflation this note warns against, in a real system, not just in theory."
+    sources: ["Roach (2009)", "Sarvam transliterate_text, 2026-08-25, request_id 20260825_e4e29e51-2f6b-4028-9a94-710df7af63f4"]
+
+  - id: PH-ENG-CS-eth
+    letter: "th (voiced)"
+    ipa: "ð"
+    features: {place: dental, manner: fricative, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-10:5
+      differences:
+        manner: {sanskrit: "द् is a STOP", english: "ð is a true FRICATIVE"}
+      note: "Voiced counterpart to θ, same false-friend logic. Empirically supported by real Sarvam transliterate_text output (2026-08-25): 'this'/'that' -> दिस/दैट, i.e. Sarvam mapped ð onto द (a PLAIN, unaspirated dental stop) rather than ध (aspirated) — an asymmetric result relative to θ->थ (aspirated). Recorded honestly as an interesting real asymmetry the transliteration model produced; not independently explained by the sources cited here, so left as an open observation rather than a claimed conclusion."
+    sources: ["Roach (2009)", "Sarvam transliterate_text, 2026-08-25, request_id 20260825_9f8ff741-9418-4e60-84c6-94867bee1d85"]
+
+  - id: PH-ENG-CS-s
+    letter: "s"
+    ipa: "s"
+    features: {place: alveolar, manner: fricative, voicing: voiceless, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-13:2
+      note: "Close match to canonical s; both sibilant fricatives, alveolar/dental place difference is minor."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-z
+    letter: "z"
+    ipa: "z"
+    features: {place: alveolar, manner: fricative, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "Voiced sibilant; no canonical voiced-fricative counterpart at this place."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-sh
+    letter: "sh"
+    ipa: "ʃ"
+    features: {place: postalveolar, manner: fricative, voicing: voiceless, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-13:1
+      differences:
+        place: {sanskrit: "श palatal per tradition", english: "postalveolar"}
+      note: "Approximate match to canonical ś; place differs slightly, same as the Ukrainian ш entry."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-zh
+    letter: "zh (as in 'measure')"
+    ipa: "ʒ"
+    features: {place: postalveolar, manner: fricative, voicing: voiced, aspiration: unaspirated, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "Marginal phoneme, occurs mostly in loanwords/medially ('measure', 'vision'), almost never word-initial in native English vocabulary; no canonical voiced sibilant at this place."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-h
+    letter: "h"
+    ipa: "h"
+    features: {place: glottal, manner: fricative, voicing: voiceless, aspiration: n/a, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-05:1
+      differences:
+        voicing: {sanskrit: "canonical h / Ukrainian г are VOICED glottal fricatives ɦ", english: "h is VOICELESS"}
+      note: "A genuine false friend hiding behind an identical letter: the same grapheme 'h' names a voiced sound in Sanskrit's ह and Ukrainian's г, but a voiceless one in English. This is the mirror image of the Ukrainian file's PH-UKR-CS-h entry, which correctly matched г to canonical h precisely because г, unlike English h, IS voiced."
+    sources: ["Roach (2009)"]
+
+  # ===== NASALS (3) =====
+
+  - id: PH-ENG-CS-m
+    letter: "m"
+    ipa: "m"
+    features: {place: bilabial, manner: nasal, voicing: voiced, aspiration: n/a, nasality: nasal, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-07:2
+      note: "Direct segment match to canonical m."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-n
+    letter: "n"
+    ipa: "n"
+    features: {place: alveolar, manner: nasal, voicing: voiced, aspiration: n/a, nasality: nasal, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-07:5
+      differences:
+        place: {sanskrit: "dental न्", english: "alveolar"}
+      note: "Same dental-vs-alveolar shift already seen at t/d; minor but real."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ng
+    letter: "ng"
+    ipa: "ŋ"
+    features: {place: velar, manner: nasal, voicing: voiced, aspiration: n/a, nasality: nasal, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-07:3
+      differences:
+        phonemic_status: {sanskrit: "ङ् is a full, independently-occurring phoneme", english: "ŋ occurs only before/after velar stops or word-finally, never word-initially; historically an allophone of n before velars, now marginally phonemic"}
+      note: "Same IPA target as canonical ṅ, but a much more restricted distributional life in English."
+    sources: ["Roach (2009)"]
+
+  # ===== APPROXIMANTS (4) =====
+
+  - id: PH-ENG-CS-l
+    letter: "l"
+    ipa: "l"
+    features: {place: alveolar, manner: lateral, voicing: voiced, aspiration: n/a, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-06:1
+      differences:
+        allophony: {sanskrit: "single ल realization", english: "'clear' [l] in onsets vs 'dark' velarized [ɫ] in codas, positionally conditioned"}
+      note: "Segment matches at the phonemic level; English's clear/dark allophony has no canonical counterpart (contrast the Ukrainian file, where velarized ɫ is the DEFAULT realization, not an allophone)."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-r
+    letter: "r"
+    ipa: "ɹ"
+    features: {place: postalveolar, manner: approximant, voicing: voiced, aspiration: n/a, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-05:4
+      differences:
+        manner: {sanskrit: "canonical r, and Ukrainian's р, are TRILLS", english: "ɹ is an APPROXIMANT — no contact, no trilling at all"}
+      note: "The letter 'r' is the single most misleading false friend in this whole file for an English-only reader: it names a genuine trill in the canon and in Ukrainian (see PH-UKR-CS-r), but names a completely different manner of articulation — a frictionless approximant — in English. Attempted verification via analyze_text (direct question: what manner does English /r/ have) failed with a real, reproducible not_found_error (2026-08-25); this entry rests on Roach (2009) alone, not on a Sarvam cross-check, and that gap is recorded honestly rather than silently papered over."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-j
+    letter: "y"
+    ipa: "j"
+    features: {place: palatal, manner: approximant, voicing: voiced, aspiration: n/a, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-04:1
+      note: "Direct segment match to canonical y (glide)."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-w
+    letter: "w"
+    ipa: "w"
+    features: {place: "labial-velar", manner: approximant, voicing: voiced, aspiration: n/a, nasality: oral, length: n/a, palatalization: false, retroflexion: false, syllabicity: non-syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "Doubly-articulated labial-velar glide; no canonical single-phoneme equivalent. Empirically noted alongside PH-ENG-CS-v: real Sarvam transliterate_text output (2026-08-25) rendered 'where' using व, the same grapheme used for v — evidence Devanagari-based transliteration does not phonemically separate w from v, though the underlying English phonemes themselves are distinct (labial-velar approximant vs labiodental fricative)."
+    sources: ["Roach (2009)", "Sarvam transliterate_text, 2026-08-25, request_id 20260825_9f8ff741-9418-4e60-84c6-94867bee1d85"]
+
+  # ===== SHORT/CHECKED VOWELS (7) =====
+
+  - id: PH-ENG-CS-ih
+    letter: "i (as in 'kit')"
+    ipa: "ɪ"
+    features: {place: "near-front, near-close", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: short, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-01:2
+      differences:
+        quality: {sanskrit: "short i and long ī are the SAME quality, differing only in duration", english: "ɪ and iː differ in QUALITY (centralized vs peripheral), not just length"}
+      note: "The whole vowel-length section of this file rests on this one point, already flagged in english-sarvam.yaml's own intro: English 'short i' is not simply 'Sanskrit i but shorter' — it is a genuinely different vowel quality."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-eh
+    letter: "e (as in 'dress')"
+    ipa: "e"
+    features: {place: front, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: short, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-03:2
+      note: "Reasonable approximation of canonical e; no length contrast in this English vowel."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ae
+    letter: "a (as in 'trap')"
+    ipa: "æ"
+    features: {place: front, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: short, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent; front open vowel, distinct from canonical a's central-open quality."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ah
+    letter: "u (as in 'strut')"
+    ipa: "ʌ"
+    features: {place: "back, open-mid", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: short, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-01:1
+      differences:
+        place: {sanskrit: "canonical a is central-open", english: "ʌ is back-open-mid"}
+      note: "Same letter used in transliteration schemes ('u'/'a') for two genuinely different vowel qualities; not the same segment as canonical a despite superficial romanization overlap."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-oh
+    letter: "o (as in 'lot')"
+    ipa: "ɒ"
+    features: {place: back, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: short, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "Rounded back open vowel; no canonical equivalent, and notably absent from General American (accent-dependent entry, flagged per this file's own base_accent note)."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-uh
+    letter: "u (as in 'foot')"
+    ipa: "ʊ"
+    features: {place: "near-back, near-close", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: short, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-01:3
+      differences:
+        quality: {sanskrit: "short u / long ū same quality, differ only in duration", english: "ʊ and uː differ in quality as well as length"}
+      note: "Mirror of the i/ɪ false-friend above, at the back of the vowel space."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-schwa
+    letter: "a (as in 'about', unstressed)"
+    ipa: "ə"
+    features: {place: central, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: short, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "The single most structurally alien entry in this file: schwa is English's default REDUCED vowel, the outcome of unstressed-syllable vowel reduction, and by far the most frequent vowel sound in connected English speech. Sanskrit's vowel system has no reduction process of this kind and no equivalent central-neutral vowel category; this is a structural, not merely segmental, mismatch."
+    sources: ["Roach (2009)"]
+
+  # ===== LONG/FREE VOWELS (5) =====
+
+  - id: PH-ENG-CS-iy
+    letter: "ee (as in 'fleece')"
+    ipa: "iː"
+    features: {place: front, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-01:2
+      differences:
+        length_system: {sanskrit: "ī is exactly 2x the duration of i, same quality", english: "iː is both longer AND a different quality than ɪ (see PH-ENG-CS-ih)"}
+      note: "Segment itself matches canonical ī reasonably well; the SYSTEM it belongs to (quality-linked, not purely durational) does not."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ah-long
+    letter: "a (as in 'palm')"
+    ipa: "ɑː"
+    features: {place: back, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-01:1
+      differences:
+        place: {sanskrit: "central-open ā", english: "back-open ɑː"}
+      note: "Romanized the same way ('a'/'ā') as canonical ā in some transliteration conventions, but backer in the mouth."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-aw
+    letter: "aw (as in 'thought')"
+    ipa: "ɔː"
+    features: {place: back, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent; back rounded long vowel, and accent-variable (merged with PH-ENG-CS-oh in many General American varieties)."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-oo
+    letter: "oo (as in 'goose')"
+    ipa: "uː"
+    features: {place: back, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-01:3
+      differences:
+        length_system: {sanskrit: "ū is exactly 2x u, same quality", english: "uː differs in quality as well as length from ʊ"}
+      note: "Same structural caveat as iː/ī above, mirrored at the back vowel."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-er
+    letter: "ir (as in 'nurse')"
+    ipa: "ɜː"
+    features: {place: central, manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent; a long, central, unrounded vowel — the 'stressed cousin' of schwa, with the same structural mismatch (vowel-reduction system) noted at PH-ENG-CS-schwa."
+    sources: ["Roach (2009)"]
+
+  # ===== DIPHTHONGS (8) =====
+
+  - id: PH-ENG-CS-ei
+    letter: "ay (as in 'face')"
+    ipa: "eɪ"
+    features: {place: "front-gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "Gliding diphthong starting near canonical e; no single-phoneme canonical equivalent (contrast canonical ai, SS-04:1, which is a genuinely different starting/ending quality, not this segment)."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ai
+    letter: "i (as in 'price')"
+    ipa: "aɪ"
+    features: {place: "open-to-close gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-04:1
+      differences:
+        quality: {sanskrit: "canonical ai is traditionally described/realized closer to [ai̯] or [æi̯], a single diphthongal unit within a symmetric vowel-length system", english: "aɪ starts further open/back and is one of several independent diphthongs, not part of a symmetric short/long/diphthong system"}
+      note: "Both are called 'ai'-type diphthongs and both are written with similar Latin letters in some romanizations, but they are not the same glide, and English's diphthong ʌ ɪ AND ʊ combination sets exist outside any length-pairing system at all, unlike canonical ai's place within sutra 4."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-oi
+    letter: "oy (as in 'choice')"
+    ipa: "ɔɪ"
+    features: {place: "back-to-front gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent at all; historically a loanword-only diphthong in English (French/Latin borrowings)."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ou
+    letter: "o (as in 'goat')"
+    ipa: "əʊ"
+    features: {place: "central-to-back gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent; starts from schwa's own quality (see PH-ENG-CS-schwa), inheriting the same structural mismatch."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-au
+    letter: "ow (as in 'mouth')"
+    ipa: "aʊ"
+    features: {place: "open-to-close-back gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: false-friend
+      canonical_unit: SS-04:2
+      differences:
+        quality: {sanskrit: "canonical au sits within the same symmetric length/diphthong system as ai", english: "aʊ is an independent diphthong outside any such system"}
+      note: "Same false-friend logic as PH-ENG-CS-ai/canonical ai: shared name, shared rough IPA shape, structurally unrelated systems."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ia
+    letter: "ear (as in 'near')"
+    ipa: "ɪə"
+    features: {place: "close-to-central gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent; a 'centring' diphthong, and strongly accent-dependent — largely absent from rhotic accents (e.g. General American), which instead have ɪ + r."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ea
+    letter: "air (as in 'square')"
+    ipa: "eə"
+    features: {place: "front-to-central gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent; centring diphthong, same rhotic-accent caveat as PH-ENG-CS-ia."
+    sources: ["Roach (2009)"]
+
+  - id: PH-ENG-CS-ua
+    letter: "oor (as in 'cure')"
+    ipa: "ʊə"
+    features: {place: "back-to-central gliding", manner: vowel, voicing: voiced, aspiration: n/a, nasality: oral, length: long, palatalization: false, retroflexion: false, syllabicity: syllabic}
+    relation_to_canon:
+      type: new-extension
+      note: "No canonical equivalent; the least stable of the centring diphthongs — many speakers merge it into ɔː entirely, a real ongoing sound change noted for completeness, not asserted as universal."
+    sources: ["Roach (2009)"]
+
+# ===== SCOPE NOTE =====
+# Covers the standard SSBE-reference phoneme inventory used by
+# english-sarvam.yaml's own section structure: 6 plosives, 2
+# affricates, 9 fricatives, 3 nasals, 4 approximants, 7 short/checked
+# vowels, 5 long/free vowels, 8 diphthongs — 44 phonemes total. Accent
+# variation (rhotic mergers, ɒ/ɔː merger, etc.) is flagged per-entry
+# where it materially affects a claim, not treated as a separate
+# layer. A real, independently-produced second annotation; not a
+# claim of covering every regional English variety.
