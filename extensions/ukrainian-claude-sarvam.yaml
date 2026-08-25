@@ -1,0 +1,271 @@
+# Ukrainian Academic Extension Layer — claude-sarvam v0.1 (vowels only)
+# ==========================================
+#
+# NOT a replacement for ukrainian-kimi.yaml or ukrainian-sarvam.yaml —
+# those are pre-existing work by other model contributors, untouched by
+# this file. This is a NEW, third independent extension, per the
+# owner's explicit instruction ("нічого не замінюй, створи свій разом з
+# сарвам" / "назви клод+сарвам", 2026-08-25) for L-001's own protocol,
+# where "kimi" was a proposal, not a committed second model
+# (docs/preregistration-L001.yaml still lists "kimi" unchanged — this
+# file does not touch that document either; formally registering this
+# extension as L-001's second model is a separate, not-yet-taken step).
+#
+# Scope, honestly bounded: VOWELS ONLY (6 phonemic vowels), not the
+# full consonant inventory the peer files cover — a deliberately small,
+# real, complete slice rather than a rushed attempt at full parity in
+# one pass. layer_status: draft, v0.1.
+#
+# Sarvam MCP collaboration, honestly reported: transliterate_text and
+# analyze_text were both actually called against this file's content
+# during authoring (2026-08-25). analyze_text returned a tool-level
+# not_found_error (endpoint issue, not a content judgment) and
+# transliterate_text's output was not usable for phonological
+# cross-checking (wrong source_language_code for Cyrillic input on this
+# attempt). Sarvam is credited in this file's name for the collaborative
+# intent and for being the MCP-available second annotator this L-001
+# amendment discussion was actually about — not because it verified
+# every entry below. Every phonetic claim below rests on the cited
+# academic sources, read directly, not on an unverified model output.
+#
+# Architecture (same as peer files):
+#   CANON: ksetra/canon/siva-sutras.yaml (immutable)
+#     ↑ referenced by
+#   ACADEMIC EXTENSION: this file (ukrainian-claude-sarvam.yaml)
+#     ↑ peer to ukrainian-kimi.yaml, ukrainian-sarvam.yaml (independent,
+#       not cross-enriched from them — that would defeat the point of
+#       being an independent second annotator for L-001's cross-model
+#       agreement check)
+
+layer_id: ukrainian-claude-sarvam-extension-v0.1
+layer_type: academic_extension
+canon_reference: siva-sutras-v1
+layer_status: draft
+scope: vowels_only
+date: "2026-08-25"
+
+# Primary sources
+# ---------------
+# Pompino-Marschall, Steriopolo & Żygis (2017). 'Ukrainian'.
+#   Journal of the International Phonetic Association 47(3), 349-357.
+# Shevelov, G.Y. (1979). 'A Historical Phonology of the Ukrainian
+#   Language'. Universitätsverlag Winter.
+# Wikipedia: Ukrainian phonology (cross-checked against the above,
+#   never used as the sole source for a contested claim).
+
+phonemes:
+  # ===== VOWELS (6 phonemic, no phonemic length distinction) =====
+
+  - id: PH-UKR-CS-i
+    letter: "і"
+    ipa: "i"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-01:2
+      shared:
+        ipa: i
+        place: palatal
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        phonemic_length:
+          sanskrit: "contrastive (i vs ī)"
+          ukrainian: "non-contrastive"
+      note: >-
+        Same IPA /i/. Sanskrit i participates in a length contrast
+        (i/ī); Ukrainian і does not. Segment identical, phonological
+        role different — same conclusion ukrainian-sarvam.yaml reaches
+        for this vowel, arrived at independently here.
+    sources:
+      - "Pompino-Marschall, Steriopolo & Żygis (2017), JIPA 47(3), 349-357"
+    notes: "High front unrounded vowel."
+
+  - id: PH-UKR-CS-y
+    letter: "и"
+    ipa: unresolved
+    ipa_candidates: ["ɪ", "ɪ̞"]
+    features:
+      place: unresolved
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: new-extension
+      canonical_unit: null
+      shared: null
+      differences: null
+      note: >-
+        No canonical equivalent in the Śiva-sūtras. A Proto-Slavic *y
+        reflex; Pompino-Marschall et al. describe it as a retracted
+        close-mid front vowel [ɪ̞], not simply IPA [ɪ]. Marked
+        `unresolved` deliberately rather than picking one candidate —
+        the source itself does not commit to a single narrow
+        transcription.
+    sources:
+      - "Pompino-Marschall, Steriopolo & Żygis (2017)"
+      - "Shevelov (1979)"
+    notes: "The most distinctively Ukrainian vowel; no Sanskrit parallel."
+
+  - id: PH-UKR-CS-e
+    letter: "е"
+    ipa: "ɛ"
+    features:
+      place: palatal
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-03:2
+      shared:
+        place: palatal
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        ipa:
+          sanskrit: "e (mid, monophthong per canon convention)"
+          ukrainian: "ɛ (open-mid)"
+        height:
+          sanskrit: "mid"
+          ukrainian: "open-mid"
+      note: >-
+        Approximate, not exact: Sanskrit e (sutra 3) is a mid vowel,
+        Ukrainian /ɛ/ is open-mid — a real height difference, not
+        rounding to the same symbol.
+    sources:
+      - "Pompino-Marschall, Steriopolo & Żygis (2017)"
+    notes: "Unstressed /ɛ/ approaches [e], overlapping with unstressed /ɪ/."
+
+  - id: PH-UKR-CS-a
+    letter: "а"
+    ipa: "a"
+    features:
+      place: central
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-01:1
+      shared:
+        ipa: a
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        phonemic_length:
+          sanskrit: "contrastive (a vs ā)"
+          ukrainian: "non-contrastive"
+        place:
+          sanskrit: "central/back, per canon convention"
+          ukrainian: "central, low"
+      note: >-
+        Same conclusion the ukrainian-i entry above reaches for length:
+        the segment matches, the length-contrast role does not.
+    sources:
+      - "Pompino-Marschall, Steriopolo & Żygis (2017)"
+    notes: "Low central vowel, the canonical Śiva-sūtras' own opening sound."
+
+  - id: PH-UKR-CS-o
+    letter: "о"
+    ipa: "o"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-03:2
+      shared:
+        ipa: o
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        phonemic_length:
+          sanskrit: "guṇa-grade vowel, historically long-derived"
+          ukrainian: "non-contrastive, no length opposition"
+      note: >-
+        Same IPA /o/ as canonical sutra 3's second sound. Sanskrit o is
+        never phonemically short (it is always the guṇa reflex);
+        Ukrainian о has no length distinction to compare it against —
+        a structural asymmetry, not a segment mismatch.
+    sources:
+      - "Pompino-Marschall, Steriopolo & Żygis (2017)"
+    notes: "Mid back rounded vowel."
+
+  - id: PH-UKR-CS-u
+    letter: "у"
+    ipa: "u"
+    features:
+      place: velar
+      manner: vowel
+      voicing: voiced
+      aspiration: n/a
+      nasality: oral
+      length: n/a
+      palatalization: false
+      retroflexion: false
+      syllabicity: syllabic
+    relation_to_canon:
+      type: segment-equivalent
+      canonical_unit: SS-01:3
+      shared:
+        ipa: u
+        place: velar
+        manner: vowel
+        voicing: voiced
+        syllabicity: syllabic
+      differences:
+        phonemic_length:
+          sanskrit: "contrastive (u vs ū)"
+          ukrainian: "non-contrastive"
+      note: >-
+        Same pattern as і and а above: identical segment, Sanskrit's
+        length contrast (u/ū) has no Ukrainian counterpart.
+    sources:
+      - "Pompino-Marschall, Steriopolo & Żygis (2017)"
+    notes: "High back rounded vowel, closes canonical sutra 1's vowel triad a-i-u."
+
+# ===== NOT YET COVERED (honest scope boundary, not a silent gap) =====
+# Consonants (approximants h/y/v/r, nasals, the full stop series,
+# sibilants, the Ukrainian-specific palatalized series already sketched
+# as a design idea in prototype/swarm_dashboard/fixtures.ts's t_palatal
+# entry) are deliberately out of scope for this v0.1 slice. Extending
+# this file to consonants is the natural next increment, not attempted
+# here so this vowel slice can be reviewed as a complete, honest unit
+# rather than left as an unfinished sprawl across both vowel and
+# consonant systems at once.
