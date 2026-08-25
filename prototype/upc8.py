@@ -153,6 +153,45 @@ SANSKRIT_EXTENDED = [
     (0x30, "PH-SKT-H",  "H",   "unresolved", ["h", "x", "c<"], None, "not in canon"),
 ]
 
+# ============================================================================
+# REAL IAST CORRESPONDENCE (for encode_sanskrit_iast_token / scheme="IAST")
+#
+# Distinct from the ad-hoc ASCII "iast" field on SANSKRIT_EXTENDED entries
+# above (e.g. "a:", "R:", "H") -- that field is an internal placeholder
+# spelling used by encode_sanskrit()'s legacy fallback and by existing
+# callers (prototype/dual-witness/dual_witness.py), kept unchanged for
+# backward compatibility. This table is genuine Unicode IAST (ā, ī, ṛ,
+# ñ, ṭh, ...), the actual notation the README/docs claimed to support
+# (docs/upc8-prototype-deep-review.md#4: encode_sanskrit("ai")/("ā")/
+# ("kh") all raised KeyError despite the "SLP1 or IAST" claim).
+# ============================================================================
+SLP1_TO_IAST = {
+    "a": "a", "i": "i", "u": "u", "f": "ṛ", "x": "ḷ",
+    "e": "e", "o": "o", "E": "ai", "O": "au",
+    "h": "h", "y": "y", "v": "v", "r": "r", "l": "l",
+    "Y": "ñ", "m": "m", "N": "ṅ", "R": "ṇ", "n": "n",
+    "J": "jh", "B": "bh",
+    "G": "gh", "Q": "ḍh", "D": "dh",
+    "j": "j", "b": "b", "g": "g", "q": "ḍ", "d": "d",
+    "K": "kh", "P": "ph", "C": "ch", "W": "ṭh", "T": "th",
+    "c": "c", "w": "ṭ", "t": "t",
+    "k": "k", "p": "p",
+    "S": "ś", "z": "ṣ", "s": "s",
+}
+assert len(SLP1_TO_IAST) == 42
+
+# code -> real IAST spelling, for the 7 Sanskrit-extended codes (0x2A-0x30).
+IAST_EXTENDED = {
+    0x2A: "ā",  # a-macron: dirgha of a
+    0x2B: "ī",  # i-macron
+    0x2C: "ū",  # u-macron
+    0x2D: "ṝ",  # r-macron-with-dot-below: dirgha of r-dot-below
+    0x2E: "ḹ",  # l-with-dot-below-macron: dirgha of l-dot-below
+    0x2F: "ṃ",  # m-with-dot-below: anusvara
+    0x30: "ḥ",  # h-with-dot-below: visarga
+}
+
+
 # (phoneme_id, letter, ipa, shared_code, canon_ref, relation)
 UKRAINIAN_SHARED = [
     ("PH-UKR-b",  "\u0431", "b",   0x19, "SS-10:2", "segment-equivalent"),
@@ -219,6 +258,7 @@ class UPC8:
 
         self._slp1_to_code = CODE_OF_SOUND.copy()
         self._iast_to_code = {}
+        self._iast_real_to_code = {}
         self._ukr_letter_to_code = {}
         self._build_indexes()
 
@@ -294,6 +334,11 @@ class UPC8:
             if entry["layer"] == "sanskrit_extended":
                 self._iast_to_code[entry["iast"]] = code
 
+        for slp1, iast in SLP1_TO_IAST.items():
+            self._iast_real_to_code[iast] = self._slp1_to_code[slp1]
+        for code, iast in IAST_EXTENDED.items():
+            self._iast_real_to_code[iast] = code
+
         for pid, letter, ipa, shared_code, cref, rel in UKRAINIAN_SHARED:
             self._ukr_letter_to_code[letter] = shared_code
         for code, pid, letter, ipa, cands, cref, rel in UKRAINIAN_NEW:
@@ -304,21 +349,89 @@ class UPC8:
     # ========================================================================
 
     def encode_sanskrit(self, slp1_or_iast: str) -> int:
+        """Legacy, deliberately kept for backward compatibility (real
+        callers: prototype/dual-witness/dual_witness.py, test_upc8.py).
+        Despite the name, the second lookup is NOT real Unicode IAST --
+        it's the ad-hoc ASCII placeholder spelling on SANSKRIT_EXTENDED
+        ("a:", "R:", "H", ...), which is what "IAST" meant historically
+        in this module. For genuine Unicode IAST ("ā", "ai", "kh", ...)
+        or an explicit SLP1-only lookup, use encode_sanskrit_slp1_token /
+        encode_sanskrit_iast_token instead -- see docs/upc8-prototype-
+        deep-review.md#4 for why this split exists (SHIVA-UPC8-API-
+        SCOPE-NARROWING)."""
         if slp1_or_iast in self._slp1_to_code:
             return self._slp1_to_code[slp1_or_iast]
         if slp1_or_iast in self._iast_to_code:
             return self._iast_to_code[slp1_or_iast]
         raise KeyError(f"Unknown Sanskrit phoneme: {slp1_or_iast}")
 
+    def encode_sanskrit_slp1_token(self, token: str) -> int:
+        """Canonical SLP1 only (the 42 single-character Śiva-sūtra
+        sounds) -- no ASCII-placeholder or IAST fallback. Use this when
+        the input is known to be SLP1 so a typo/wrong-scheme token
+        fails loudly instead of silently trying another scheme."""
+        if token in self._slp1_to_code:
+            return self._slp1_to_code[token]
+        raise KeyError(f"Unknown SLP1 token: {token!r}")
+
+    def encode_sanskrit_iast_token(self, token: str) -> int:
+        """Genuine Unicode IAST ('a', 'ā', 'ai', 'kh', 'ñ', 'ṭh', ...),
+        covering all 42 canonical sounds plus the 7 Sanskrit-extended
+        codes (long vowels, anusvara, visarga). This is real IAST, not
+        the ASCII placeholder spelling encode_sanskrit()'s legacy path
+        uses -- fixes the exact gap docs/upc8-prototype-deep-review.md#4
+        reported: encode_sanskrit("ai") / ("kh") raising KeyError despite
+        the API's own "SLP1 or IAST" claim."""
+        if token in self._iast_real_to_code:
+            return self._iast_real_to_code[token]
+        raise KeyError(f"Unknown IAST token: {token!r}")
+
     def encode_ukrainian(self, letter: str) -> int:
         if letter in self._ukr_letter_to_code:
             return self._ukr_letter_to_code[letter]
         raise KeyError(f"Unknown Ukrainian letter: {letter}")
 
-    def encode_sanskrit_word(self, slp1_word: str) -> bytes:
-        return bytes(self.encode_sanskrit(ch) for ch in slp1_word)
+    def encode_sanskrit_word(self, text: str, scheme: str = "SLP1") -> bytes:
+        """scheme="SLP1" (default, unchanged behavior): char-wise, since
+        SLP1 is one character per phoneme by design -- no tokenizer
+        needed. scheme="IAST": greedy longest-match (2-char digraphs
+        like 'kh'/'ai' before falling back to 1 char) over genuine
+        Unicode IAST, per docs/upc8-prototype-deep-review.md#4's request
+        for an explicit scheme parameter instead of one function silently
+        guessing."""
+        if scheme == "SLP1":
+            return bytes(self.encode_sanskrit_slp1_token(ch) for ch in text)
+        if scheme == "IAST":
+            result = []
+            i = 0
+            while i < len(text):
+                two = text[i:i + 2]
+                if two in self._iast_real_to_code:
+                    result.append(self._iast_real_to_code[two])
+                    i += 2
+                    continue
+                one = text[i]
+                if one in self._iast_real_to_code:
+                    result.append(self._iast_real_to_code[one])
+                    i += 1
+                    continue
+                raise KeyError(f"Unknown IAST token at position {i}: {text[i:i+2]!r}")
+            return bytes(result)
+        raise ValueError(f"Unknown scheme {scheme!r}: expected 'SLP1' or 'IAST'")
 
     def encode_ukrainian_word(self, word: str) -> bytes:
+        """Contract (docs/upc8-prototype-deep-review.md#5): a fixed
+        GRAPHEME lexicon (UKRAINIAN_SHARED + UKRAINIAN_NEW) with greedy
+        longest-match on multi-character graphemes (дж, дз, ць, льон-
+        style soft-sign clusters). This is a partial ORTHOGRAPHIC
+        contract, not a phonemic normalizer (no grapheme-to-phoneme
+        preprocessing) and not a defined transliteration scheme (no
+        reversible Latin/SLP-like spec). It does NOT cover я/ї/є/ю,
+        apostrophe, or iotation decomposition -- those raise KeyError
+        rather than being silently mishandled. Expanding coverage to a
+        full orthographic contract needs those decisions made first,
+        not added ad hoc; see review #5 for the three-way contract
+        choice (orthographic / phonemic / transliteration)."""
         multi = sorted([k for k in self._ukr_letter_to_code if len(k) > 1],
                        key=len, reverse=True)
         result = []

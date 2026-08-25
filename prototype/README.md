@@ -41,25 +41,42 @@ Ukrainian also reuses 13 canonical codes (shared sounds like /i/, /u/, /k/, /p/,
 ## Files
 
 - `upc8.py` — encoder/decoder/pratyāhāra engine
-- `test_upc8.py` — 22-test suite (all passing)
+- `test_upc8.py` — 25-test suite (all passing)
 
 ## Usage
+
+> **Input model (docs/upc8-prototype-deep-review.md#4):** `encode_sanskrit()`
+> is a legacy, narrow function — canonical SLP1 plus a small internal
+> ASCII placeholder spelling for the extended codes (`"a:"`, `"H"`, ...),
+> **not** general Unicode IAST, despite the name. For explicit, honest
+> input handling use `encode_sanskrit_slp1_token()` (canonical SLP1 only)
+> and `encode_sanskrit_iast_token()` (genuine Unicode IAST — `'ā'`, `'ai'`,
+> `'kh'`, `'ñ'`, ...). `encode_sanskrit_word(text, scheme=...)` takes an
+> explicit `scheme="SLP1"` (default, char-wise) or `scheme="IAST"`
+> (greedy longest-match) instead of guessing.
 
 ```python
 from upc8 import UPC8
 
 u = UPC8()
 
-# Encode Sanskrit (SLP1 or IAST)
-code = u.encode_sanskrit('a')        # → 0x00
-code = u.encode_sanskrit('ā')        # → 0x2A (long vowel, extended)
+# Canonical SLP1 (one character per phoneme, no ambiguity)
+code = u.encode_sanskrit_slp1_token('a')     # → 0x00
+code = u.encode_sanskrit_slp1_token('K')     # → kh, canonical code
 
-# Encode Ukrainian
+# Genuine Unicode IAST (covers the 42 canonical sounds + 7 extended codes)
+code = u.encode_sanskrit_iast_token('ā')     # → 0x2A (long vowel, extended)
+code = u.encode_sanskrit_iast_token('ai')    # → same code as SLP1 'E'
+code = u.encode_sanskrit_iast_token('kh')    # → same code as SLP1 'K'
+
+# Encode Ukrainian (partial ORTHOGRAPHIC contract — see encode_ukrainian_word's
+# own docstring; я/ї/є/ю/apostrophe are NOT covered, raise KeyError on purpose)
 code = u.encode_ukrainian('і')      # → 0x01 (shared canonical code)
 code = u.encode_ukrainian('ш')      # → 0x3B (new code)
 
 # Encode words
-u.encode_sanskrit_word('karma')     # → b'\x25\x00\x0c\x0f\x00'
+u.encode_sanskrit_word('karma')                    # → b'\x25\x00\x0c\x0f\x00' (scheme="SLP1", default)
+u.encode_sanskrit_word('khaga', scheme='IAST')      # → longest-match 'kh' as one token
 u.encode_ukrainian_word('джаз')     # → b'\x38\x33\x3a'
 
 # Decode

@@ -103,6 +103,54 @@ def test_word_encoding_ukrainian():
     print("  [PASS] Ukrainian word encoding: multi-char letters (дж, ць, щ)")
 
 
+def test_encode_sanskrit_slp1_token():
+    u = UPC8()
+    assert u.encode_sanskrit_slp1_token("a") == 0x00
+    assert u.encode_sanskrit_slp1_token("K") == u.encode_sanskrit("K")
+    try:
+        u.encode_sanskrit_slp1_token("ai")
+        assert False, "encode_sanskrit_slp1_token('ai') should reject IAST spellings"
+    except KeyError:
+        pass
+    print("  [PASS] encode_sanskrit_slp1_token: canonical SLP1 only, IAST spelling rejected")
+
+
+def test_encode_sanskrit_iast_token():
+    u = UPC8()
+    # The exact two examples docs/upc8-prototype-deep-review.md#4 reported
+    # as broken despite the API's "SLP1 or IAST" claim.
+    assert u.encode_sanskrit_iast_token("ai") == u.encode_sanskrit_slp1_token("E")
+    assert u.encode_sanskrit_iast_token("kh") == u.encode_sanskrit_slp1_token("K")
+    # Genuine Unicode IAST for the extended codes too (real diacritics,
+    # not the "a:" ASCII placeholder encode_sanskrit()'s legacy path uses).
+    assert u.encode_sanskrit_iast_token("ā") == 0x2A
+    assert u.encode_sanskrit_iast_token("ī") == 0x2B
+    assert u.encode_sanskrit_iast_token("ḥ") == 0x30
+    try:
+        u.encode_sanskrit_iast_token("a:")
+        assert False, "encode_sanskrit_iast_token('a:') should reject the ASCII placeholder spelling"
+    except KeyError:
+        pass
+    print("  [PASS] encode_sanskrit_iast_token: genuine Unicode IAST, fixes 'ai'/'kh' KeyError gap")
+
+
+def test_encode_sanskrit_word_scheme():
+    u = UPC8()
+    # Default scheme="SLP1" must be byte-identical to the pre-existing behavior.
+    assert u.encode_sanskrit_word("karma") == bytes([0x25, 0x00, 0x0C, 0x0F, 0x00])
+    assert u.encode_sanskrit_word("karma", scheme="SLP1") == bytes([0x25, 0x00, 0x0C, 0x0F, 0x00])
+    # scheme="IAST": greedy longest-match, 'kh' as one token not 'k'+'h'.
+    encoded = u.encode_sanskrit_word("khaga", scheme="IAST")
+    assert encoded == bytes([u.encode_sanskrit_iast_token("kh"), 0x00,
+                              u.encode_sanskrit_iast_token("g"), 0x00])
+    try:
+        u.encode_sanskrit_word("karma", scheme="XYZ")
+        assert False, "unknown scheme should raise ValueError"
+    except ValueError:
+        pass
+    print("  [PASS] encode_sanskrit_word(scheme=...): SLP1 unchanged, IAST longest-match, bad scheme rejected")
+
+
 def test_pratyahara_ac():
     u = UPC8()
     members = u.pratyahara("ac")
@@ -293,6 +341,9 @@ def run_all():
         ("Ukrainian new",               test_ukrainian_new),
         ("Word encoding (Sanskrit)",    test_word_encoding_sanskrit),
         ("Word encoding (Ukrainian)",   test_word_encoding_ukrainian),
+        ("encode_sanskrit_slp1_token",  test_encode_sanskrit_slp1_token),
+        ("encode_sanskrit_iast_token",  test_encode_sanskrit_iast_token),
+        ("encode_sanskrit_word(scheme=...)", test_encode_sanskrit_word_scheme),
         ("Pratyahara: ac",              test_pratyahara_ac),
         ("Pratyahara: hal",             test_pratyahara_hal),
         ("Pratyahara: marker/sound collisions", test_pratyahara_marker_sound_collisions),
