@@ -4,5 +4,8 @@
 *.pdf binary
 *.yaml text eol=lf
 
-# my-lisp source files (see my-lisp repo contract)
-*.my linguist-language=Lisp
+# WSM source files (see my-lisp repo contract). Racket is a temporary GitHub
+# Linguist display profile, not a semantic identity claim.
+*.wsm linguist-language=Racket
+*.my linguist-language=Racket
+*.lisp linguist-language=Racket
