@@ -4,6 +4,24 @@
 **Status:** Experimental Prototype & Architecture Proposal  
 **Target Repository:** `my-lisp` (Core Runtime & S-Expression Knowledge Base)  
 
+## Provenance & Copy Status (verified 2026-08-29, blob-hash)
+
+- This directory is the **original** home of the phonetics prototype.
+- The `my-lisp` copy `prototype/lisp_core_phonetics/`: the four `.py` files
+  were byte-identical duplicates of the originals here (verified by git blob
+  hash: `lisp_runtime` c423327, `pratyahara` 53cd3da, `pvc16` 3b64bbd,
+  `test_lisp_phonetics` ccd81a2). They were removed from my-lisp on
+  2026-08-29 (`33edf06`, no push) to stop duplicating the Python reference;
+  this repository remains the only copy of the `.py` files.
+- **`prototype_phonetics.my` has diverged.** The my-lisp copy carries the
+  corrected pratyahara bitmask values (my-lisp `1518786`, 2026-08-25, fixing
+  the hal/al/yar/Sar/JaS/Jal masks found wrong by the semantic audit).
+  The copy here is still the **pre-fix** version.
+- Decision (owner, 2026-08-29): the mask fix stays in my-lisp for now;
+  backport into this repository is pending. Until then, for the pratyahara
+  masks treat `my-lisp:prototype/lisp_core_phonetics/prototype_phonetics.my`
+  as the corrected reference, not this file.
+
 ---
 
 ## 1. Architectural Overview
