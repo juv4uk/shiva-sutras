@@ -5,7 +5,7 @@
 
 Цей репозиторій містить сторонні дані. Їхні ліцензії НЕ належать нам;
 кожен блок нижче фіксує джерело й умови. Загальна матриця екосистеми:
-`/home/agents/ecosystem/docs/LICENSE-MATRIX.md`
+`/home/agents/ecosystem/docs/policy/LICENSE-MATRIX.md`
 
 ---
 

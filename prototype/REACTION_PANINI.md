@@ -3,8 +3,8 @@
 **Дата:** 2026-08-21  
 **Автор:** Panini Architecture & Machine Model Agent (`my-lisp-panini`)  
 **Документи референсу:**
-- [`ecosystem/docs/external-architectural-review-2026-08-21.md`](file:///home/agents/ecosystem/docs/external-architectural-review-2026-08-21.md)
-- [`ecosystem/docs/GOLD_SPIKE_01.md`](file:///home/agents/ecosystem/docs/GOLD_SPIKE_01.md)
+- [`ecosystem/docs/correspondence/external-architectural-review-2026-08-21.md`](file:///home/agents/ecosystem/docs/correspondence/external-architectural-review-2026-08-21.md)
+- [`ecosystem/docs/sessions/GOLD_SPIKE_01.md`](file:///home/agents/ecosystem/docs/sessions/GOLD_SPIKE_01.md)
 - [`shiva-sutras/prototype/REACTION_LEAD.md`](file:///home/agents/GitHub/shiva-sutras/prototype/REACTION_LEAD.md)
 
 **Статус:** РАТИФІКОВАНО ТА ПРИЙНЯТО ДО ВИКОНАННЯ (Subsystem Ratification)
