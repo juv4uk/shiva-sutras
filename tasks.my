@@ -192,6 +192,13 @@
     (done . ())
   ))
 
+  ("VAULT-SEMANTIC-MCP-EXTERNAL-WRITE-DEPENDENCY" . (
+    (priority . 5.0)
+    (capabilities . (shiva-sutras documentation provenance))
+    (description . "Found 2026-09-04 (GUARD-REF-VAULT-SEMANTIC-MCP, ecosystem session): vault-semantic-mcp/apply_tags.py hardcodes paths under ksetra/ here (reads a suggestions file, writes semantic tags into this repo's own markdown corpus) -- an external tool actively writes into this repo by hardcoded path, not something this repo's own docs currently mention. Confirm this is expected/desired, and consider documenting it (e.g. in NOTICE.md or a short note in ksetra/) so a future agent working in ksetra/ isn't surprised by externally-written tag data.")
+    (done . ())
+  ))
+
   ("SANSKRITWORLD-FORK-CHECK" . (
     (priority . 6.0)
     (capabilities . (shiva-sutras git maintenance))
