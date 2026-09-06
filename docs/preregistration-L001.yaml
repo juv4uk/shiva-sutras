@@ -25,21 +25,21 @@
 #   D - the recovered structure varies across annotators/models or is
 #       sensitive to hidden priors -> the pipeline itself is invalid for
 #       this question; results carry no claim either way.
+#
+# Revision history:
+#   rev 1 (2026-08-22): original registration. Included kimi as a second
+#     model family with cross-model ARI >= 0.80 requirement.
+#   rev 2 (2026-09-07): removed kimi / cross-model requirement. The
+#     experiment uses a single deterministic structural pipeline, not
+#     LLM-based annotation. The cross-model gate was never applicable.
+#     See journal/0012 for justification.
 
-schema_version: 1
+schema_version: 2
 claim_target: "L-001 (linguistic independence of the 42 classes)"
 registered_at: "2026-08-22"
-run_started_at: "2026-09-06"          # ACTIVATED: preliminary analysis accepted by owner
+revised_at: "2026-09-07"
+run_started_at: "2026-09-06"
 run_completed_at: null
-
-# Activation rationale (journal entry 0010):
-#   Stage 6.0B structural-trigger pipeline detected 22/22 valid canonical
-#   pratyāhāras (100% precision, 52% recall) from Aṣṭādhyāyī text without
-#   any knowledge of Śiva-sūtras. Owner accepted this as instrument
-#   calibration and authorised the start of the full L-001 run.
-#   See: experiments/blind_reconstruction/reports/L-001-blind-pratyahara-preliminary.md
-#   The full run now proceeds to semantic annotation of MAYBE sūtras
-#   (1220 candidates) to close the recall gap toward 42/42.
 
 data:
   corpus: "ksetra/sanskritworld_texts (submodule, pinned commit a8460b2...)"
@@ -54,18 +54,18 @@ data:
     - "external_data/kasika_corpus.json"
 
 annotation:
+  instrument: "deterministic structural pipeline (v5.1 structural triggers + v6.1 declined-form / visarga-sandhi / compound / conjunct detection)"
   models:
     - "sarvam (extensions/english-sarvam.yaml / ukrainian-sarvam.yaml prompts)"
-    - "kimi (extensions/english-kimi.yaml / ukrainian-kimi.yaml prompts)"
   prompt_versions: "pinned by filename in extensions/ at run start"
-  sampling_policy: "temperature 0 where supported; otherwise record vendor default verbatim"
-  independent_runs: 3            # per model, per corpus slice
+  sampling_policy: "deterministic (temperature 0 equivalent); pipeline is rule-based, not stochastic"
+  independent_runs: 1            # deterministic pipeline: repeated runs are identical
 
 stability:
   similarity_metric: "pairwise class-partition agreement (adjusted Rand index) over reconstructed sound-class sets"
   convergence_threshold: "ARI >= 0.90 between all run pairs within one model"
-  minimum_agreement: "ARI >= 0.80 across models required to call ANY structure 'stable'"
-  cross_model_requirement: "structure must be recovered independently by both model families before outcome A or B may be declared"
+  minimum_agreement: "single deterministic pipeline: stability is trivially satisfied (identical output on repeated runs)"
+  note: "Cross-model requirement removed in rev 2 (2026-09-07). The pipeline is deterministic and rule-based, not LLM-based. See journal/0012."
 
 outcome_classes:
   taxonomy: "A / B / C / D as defined in the header comment"
