@@ -1,0 +1,47 @@
+date: "2026-09-07"
+type: experiment-evidence
+status: LOGGED
+title: "L-001-005: computational coherence evidence from my-lisp-panini"
+experiment: "L-001 (blind semantic reconstruction of pratyaharas)"
+claim: "L-001-005"
+status_assigned: "SUPPORTED"
+
+summary: >
+  The my-lisp-panini machine (9 modules, commits 756f942-0af6a56) uses
+  the canonical Siva-sutras as its sole data source via resolve-pratyahara.
+  It produces correct Sanskrit verbal forms (pacati, bhavati, labhate,
+  tudati) through sutra-cited derivation chains. 21/27 paradigm forms
+  correct (77.8%). 4 gaps precisely identified with sutra references.
+
+evidence:
+  report: "experiments/blind_reconstruction/reports/machine-state-report.md"
+  report_commit: "72046d3"
+  machine_commits: "756f942-0af6a56 (my-lisp-panini)"
+  modules: "resolver, phonology, sandhi, ting, derivation, trace, paradigm"
+
+gaps:
+  - "jhi (3rd pl): missing 8.4.62 (jhaSam jaS tribhiH)"
+  - "gam: irregular stem formation (gam to gacch)"
+  - "atmanepada duals: missing 6.1.101 (a+A to A)"
+  - "1st person: missing vrddhi 7.3.101"
+
+epistemic_note: >
+  This claim is SUPPORTED, not PROVED. The machine demonstrates that
+  the canonical system is computationally coherent — it works end-to-end.
+  This does not prove historical intent, uniqueness of the system, or
+  that alternative phonological systems could not also work.
+  The 4 gaps are auditable: each points to a specific missing sutra,
+  providing a roadmap for expansion.
+
+related_claims:
+  - "L-001-001 (blind recovery): machine operationalizes the recovered classes"
+  - "SS-CANON-001: machine uses canonical 14 sutras as sole data source"
+  - "SS-PRATYAHARA-001: resolver implements adir antyena saheta (1.1.71)"
+
+commits:
+  - "72046d3 (machine state report in shiva-sutras)"
+  - "ad67bc (claims-export.yaml update — NOTE: content needs fix)"
+
+related_journal:
+  - "0013 (L-001 complete — outcome A)"
+  - "0014 (this entry — computational coherence evidence)"
