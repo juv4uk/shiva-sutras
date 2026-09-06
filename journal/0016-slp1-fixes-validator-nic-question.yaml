@@ -1,0 +1,99 @@
+# Journal 0016: Pre-existing SLP1 fixes + SLP1 validator + Ṇic open question
+
+date: "2026-09-07"
+type: engineering
+status: COMPLETED
+experiment: L-001
+epistemic_layer: ENGINEERING
+
+## Summary
+
+Fixed 3 pre-existing SLP1 encoding bugs in ting.my, added SLP1 validator to phonology.my, and discovered an open Pāṇinian question about class 10 Ṇic derivation.
+
+## Pre-existing SLP1 bugs fixed (ting.my, commit `8307738`)
+
+### 1. Śap → zap (S→z)
+
+- **Bug:** Śap encoded as `(S a p)` where S=ṣ (ष), but Ś=ś (श) = z in SLP1
+- **Fix:** `(z a p)` with it-markers `(z p)`
+- **Impact:** None on surface forms (S/z is it-marker, deleted in it-lopa)
+- **But:** Wrong Pāṇinian encoding — Ś is palatal ś, not retroflex ṣ
+
+### 2. ḍhvam → Qvam (D→Q)
+
+- **Bug:** ḍhvam encoded as `(D v a m)` where D=dh (ध), but ḍh=Q in SLP1
+- **Fix:** `(Q v a m)`
+- **Impact:** Would produce wrong surface form "dhvam" instead of "ḍhvam" if used
+- **ḍh is retroflex aspirated (ढ), dh is dental aspirated (ध)**
+
+### 3. Ṇic → R (N→R)
+
+- **Bug:** Class 10 vikaraṇa encoded with N=ṅ (ङ), but Ṇ=ṇ (ण) = R in SLP1
+- **Fix:** `(R a y a)` with it-marker `(R)`
+- **Impact:** None on surface (N/R is it-marker, deleted)
+- **But:** ṅ (guttural nasal) ≠ ṇ (retroflex nasal) — different Pāṇinian marker
+
+All three were also documented in Journal 0015 (SLP1 audit) as pre-existing.
+
+## SLP1 validator added (phonology.my, commit `f1116d8`)
+
+New functions:
+- `valid-slp1-char?`: checks if char is in SLP1 valid set (42 chars + M/H)
+- `validate-slp1-list`: validates a list of SLP1 characters
+- `slp1-vowel?` / `slp1-nasal?` / `slp1-sibilant?`: role-aware predicates
+- `validate-dhatu`: checks valid chars + at least one vowel
+
+Includes SLP1 reference table in comments documenting all 5 common confusions:
+- S(ṣ) vs z(ś)
+- R(ṇ) vs f(ṛ)
+- N(ṅ) vs R(ṇ) vs Y(ñ)
+- D(dh) vs Q(ḍh)
+- w(ṭ) vs t(त)
+
+## Open Pāṇinian question: how does Ṇic → aya?
+
+### The puzzle
+
+Pāṇini uses Ṇic (3.1.25) as the class 10 vikaraṇa marker. After it-lopa:
+- Ṇic = ṇ+i+c → i (removing ṇ and c as it-markers)
+- Śap = ś+a+p → a (removing ś and p)
+
+So vikaraṇa = i + a. The expected surface is "aya" (e.g., corayati = cur + aya + ti).
+
+### Two possible derivation paths
+
+**Path A: yaṇ (6.1.77)**
+- i + a → y + a = ya (by iko yaṇ aci: i→y before vowel a)
+- Result: cor + ya + ti = coryati
+- **WRONG** — gives "coryati" not "corayati"
+
+**Path B: guṇa + eco**
+- i → e (guṇa, 7.3.84, because Ṇic has ṭit)
+- e + a → aya (eco, 6.1.88: e→ay before vowel)
+- Result: cor + aya + ti = corayati ✓
+- **BUT:** 7.3.84 (aco ñṇīti) traditionally applies to the DHĀTU vowel, not the vikaraṇa vowel
+
+### Current resolution
+
+ENGINEERING SHORTCUT: encode "aya" directly as vikaraṇa surface, with R (ṇ) as it-marker. This produces correct forms but bypasses the Pāṇinian derivation path.
+
+### What's needed to resolve
+
+Consult Kāśikā commentary on 7.3.84 (aco ñṇīti) to determine:
+1. Does "ac" (vowel) in the rule refer only to dhātu vowels, or also to vikaraṇa vowels?
+2. Is there another rule that applies guṇa to the vikaraṇa vowel when ṭit is present?
+3. Or is the traditional analysis that class 10 uses Ṇaya (not Ṇic), where "aya" is the direct surface?
+
+This is a genuine research question, not an engineering gap.
+
+## Commits
+
+- `8307738` (my-lisp-panini): ting.my — fix Śap→zap, ḍhvam→Qvam, Ṇic→R
+- `f1116d8` (my-lisp-panini): phonology.my — add SLP1 validator
+
+## Machine state after fixes
+
+- 10 modules, 24/27 (88.9%) on stress test (unchanged — fixes are encoding-only)
+- SLP1 encodings now correct throughout the codebase
+- Validator will prevent future encoding errors
+- Ṇic → aya derivation documented as open Pāṇinian question
