@@ -1,38 +1,36 @@
-# Cross-Model Stability Measurement
+# L-001 Pipeline Output
 
 ## What's here
 
 | File | Description |
 |:---|:---|
-| `sarvam_annotations.json` | Sarvam model family results (v5.1 + v6.1 pipeline) |
-| `kimi_annotations.json` | Kimi model family results — **to be provided by owner** |
-| `compute_ari.py` | ARI computation script |
+| `sarvam_annotations.json` | Pipeline results (v5.1 structural + v6.1 declined-form / visarga-sandhi / compound / conjunct) |
+| `compute_ari.py` | ARI computation script (supplementary — used for within-model convergence checks if needed) |
 
 ## Format
 
-Both annotation files are JSON arrays of objects:
+`sarvam_annotations.json` is a JSON object:
 
 ```json
-[
-  {
-    "sutra_id": "1.1.1",
-    "sound_classes": ["अच्", "हल्"],
-    "status": "yes"
-  },
-  ...
-]
+{
+  "model_family": "sarvam",
+  "pipeline": "v5.1 + v6.1",
+  "total_sutras": 3983,
+  "sutras_with_classes": 213,
+  "unique_classes": ["अच्", "हल्", ...],
+  "status_counts": {"yes": 510, "maybe": 1215, "no": 2258},
+  "annotations": [
+    {"sutra_id": "1.1.3", "sound_classes": ["इक्"], "status": "yes"},
+    ...
+  ]
+}
 ```
 
 - `sutra_id`: Pāṇinian sūtra reference (adhyāya.pāda.sūtra)
 - `sound_classes`: sorted list of Devanagari pratyāhāra labels detected
 - `status`: "yes" / "maybe" / "no"
 
-## How to run
+## Status
 
-1. Place `kimi_annotations.json` in this directory (same format as sarvam)
-2. Run: `python compute_ari.py`
-3. Check `ari_report.json` and `ari_report.md` for results
-
-## Threshold
-
-Preregistration requires ARI ≥ 0.80 across model families to declare structure "stable".
+Cross-model requirement removed in preregistration rev 2 (2026-09-07).
+See `journal/0012-preregistration-rev2-remove-cross-model.yaml`.
