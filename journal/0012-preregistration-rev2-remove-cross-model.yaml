@@ -1,0 +1,42 @@
+date: "2026-09-07"
+type: preregistration-revision
+status: LOGGED
+title: "L-001 preregistration rev 2: remove cross-model (kimi) requirement"
+revision_target: "docs/preregistration-L001.yaml"
+revision_commit: "f01a794"
+triggered_by: "owner directive (2026-09-07): cross-model requirement is not applicable to this experiment"
+
+context: >
+  The original preregistration (rev 1, 2026-08-22) listed two model
+  families (sarvam + kimi) and required cross-model ARI >= 0.80 before
+  outcome A or B could be declared. This was an artifact of the early
+  design stage when LLM-based annotation was contemplated. The actual
+  experiment uses a deterministic structural pipeline (v5.1 structural
+  triggers + v6.1 declined-form / visarga-sandhi / compound / conjunct
+  detection), not LLM-based stochastic annotation.
+
+changes:
+  - "Removed kimi from annotation.models"
+  - "Removed cross_model_requirement from stability section"
+  - "Changed minimum_agreement to reflect single deterministic pipeline (stability trivially satisfied)"
+  - "Changed independent_runs from 3 to 1 (deterministic pipeline: repeated runs are identical)"
+  - "Added instrument field describing the actual pipeline (v5.1 + v6.1)"
+  - "Bumped schema_version 1 -> 2"
+
+justification: >
+  The cross-model requirement was never applicable to this experiment.
+  The pipeline is deterministic and rule-based. Removing a requirement
+  that was never satisfiable (because kimi was never part of the design)
+  is NOT a relaxation of a gate to favour a desired result — it is a
+  correction of a registration error. No outcome has been declared.
+  The outcome_class remains EMPTY.
+
+epistemic_status: >
+  This revision does NOT touch the outcome taxonomy (A/B/C/D) or the
+  data section. Only the annotation and stability sections are changed,
+  to reflect the actual instrument used. The experiment remains blind:
+  no outcome has been peeked at or declared.
+
+related_commits:
+  - "f01a794 (preregistration rev 2)"
+  - "a9dafe9 (compute_ari.py + sarvam_annotations.json — now supplementary, not blocking)"
