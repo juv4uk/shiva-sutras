@@ -33,13 +33,15 @@
 #     experiment uses a single deterministic structural pipeline, not
 #     LLM-based annotation. The cross-model gate was never applicable.
 #     See journal/0012 for justification.
+#   rev 2.1 (2026-09-07): run completed. outcome_class set to A.
+#     See journal/0013 for completion record.
 
 schema_version: 2
 claim_target: "L-001 (linguistic independence of the 42 classes)"
 registered_at: "2026-08-22"
 revised_at: "2026-09-07"
 run_started_at: "2026-09-06"
-run_completed_at: null
+run_completed_at: "2026-09-07"
 
 data:
   corpus: "ksetra/sanskritworld_texts (submodule, pinned commit a8460b2...)"
@@ -69,7 +71,12 @@ stability:
 
 outcome_classes:
   taxonomy: "A / B / C / D as defined in the header comment"
-  # NOTE: intentionally empty until the run completes. Filling this while
-  # run_completed_at is null is an epistemic violation (linter R5).
-  outcome_class: ""
-  notes: ""
+  outcome_class: "A"
+  notes: >
+    Paninian-like structure recovered. Automated recall 94.9% (v5.1+v6.1
+    pipeline), blind v5.1 alone 51.3% recall with 90.9% precision.
+    5 phantom pratyaharas (formable but never used by Panini) and
+    4 virtual pratyaharas (formable but always substituted by a superset)
+    discovered. Effective target 35/35 = 100% (combined manual+automated).
+    See experiments/blind_reconstruction/reports/L-001-blind-pratyahara-final.md
+    and journal/0013 for full details.
