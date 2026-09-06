@@ -1,0 +1,94 @@
+# Journal 0015: SLP1 Encoding Audit
+
+date: "2026-09-07"
+type: audit
+status: COMPLETED
+experiment: L-001
+epistemic_layer: ENGINEERING
+
+## Trigger
+
+User requested verification of text and SLP1 encoding in files pushed during stress test (commits `3b3aeca`–`b776527`).
+
+## Audit scope
+
+Three files checked:
+1. `experiments/blind_reconstruction/reports/stress-test-10-dhatus.md` (shiva-sutras)
+2. `panini/machine/ting.my` (my-lisp-panini)
+3. `panini/machine/derivation.my` (my-lisp-panini)
+
+## Errors found (introduced this session)
+
+### 1. kfuS — extra 'u' in dhātu encoding
+
+- **Intended:** kṛṣ (कृष्) = k + ṛ + ṣ
+- **Was:** kfuS = k + f + u + S (4 chars) — f=ṛ already, extra 'u' produces nonsense
+- **Corrected:** kfS = k + f + S (3 chars)
+- **Impact:** 3 false positives (wrong input matched wrong expected output)
+
+### 2. paS — wrong sibilant
+
+- **Intended:** paś (पश्) = p + a + ś
+- **Was:** paS = p + a + S where S=ṣ (ष), not ś (श)
+- **Corrected:** paz = p + a + z where z=ś (श)
+- **Impact:** 3 false positives. paS = पष् (wrong dhātu!)
+
+### 3. dRz — wrong vowel character
+
+- **Intended:** dṛś (दृश्) = d + ṛ + ś
+- **Was:** dRz = d + R + z where R=ṇ (ण, retroflex nasal), NOT ṛ
+- **Corrected:** dfz = d + f + z where f=ṛ (ऋ)
+- **Impact:** 3 false positives. dRz = द्णश् (nonsense!)
+
+### 4. "stauti" — false expectation
+
+- **Was:** expected "stauti" for stu (class 1) 3rd sg
+- **Issue:** "stauti" is not valid SLP1 (au=O in SLP1). stu (class 1) with guṇa u→o → eco → stavati, not stauti
+- **Corrected:** expected "stavati" — which the machine already produces correctly
+- **Impact:** 1 false negative (machine was right, expectation was wrong)
+
+## Errors found (pre-existing, not introduced this session)
+
+### 5. Śap encoded as Sap
+
+- **Where:** ting.my vikarana-table: `(1 . ((S a p) (S p)))`
+- **Issue:** S=ṣ (ष), should be z=ś (श). Śap = zap, not Sap
+- **Impact:** None on surface forms (S is it-marker, deleted in it-lopa). Wrong Pāṇinian encoding.
+
+### 6. ḍhvam encoded as Dvam
+
+- **Where:** ting.my ting-atmanepada: `(Dvam . (D v a m))`
+- **Issue:** D=dh (ध), should be Q=ḍh (ढ). ḍhvam = Qvam, not Dvam
+- **Impact:** Would produce wrong surface form if this ending is used (dhvam instead of ḍhvam)
+
+### 7. Class 10 Ṇic encoded as Ṅaya
+
+- **Where:** ting.my vikarana-table: `(10 . ((N a y a) (N)))`
+- **Issue:** N=ṅ (ङ), should be R=ṇ (ण). Ṇic = Ric, not Nic
+- **Also:** Encoded surface "aya" directly instead of deriving from Ṇic → i → aya (ENGINEERING shortcut)
+- **Impact:** None on surface forms (N is it-marker, deleted). But wrong Pāṇinian encoding.
+
+## Score correction
+
+| Version | Reported score | Real score | Difference |
+|:---|:---|:---|:---|
+| Before audit (v2) | 23/27 (85.2%) | 14/27 (51.9%) | 9 false positives |
+| After audit (v3) | 24/27 (88.9%) | 24/27 (88.9%) | 0 (all verified) |
+
+The score actually IMPROVED after audit: the "stauti" false expectation was removed, and stu (class 1) is now 3/3 correct (machine produces stavati ✓).
+
+## Root cause
+
+The Python stress test prototype used string-based SLP1 without validation against a reference table. SLP1 has several characters that are easily confused:
+- S (ṣ) vs z (ś) — both sibilants, uppercase vs lowercase
+- R (ṇ) vs f (ṛ) — both "r-like" characters, but R is a consonant and f is a vowel
+- N (ṅ) vs R (ṇ) vs Y (ñ) — three different nasals
+
+## Recommendation
+
+Add SLP1 validation function to phonology.my that checks each character against the standard SLP1 table before use. Run dhātu encodings through this validator before testing.
+
+## Commits
+
+- `a1477e1` (shiva-sutras): stress test report revised
+- `865ae67` (my-lisp-panini): derivation.my SLP1 fix
