@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPC-8 class 01: Non-varga Consonants</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a18;
+    font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .c01-container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .c01-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .c01-subtitle {
+    font-size: 13px;
+    color: #8090b0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .bit-layout {
+    background: rgba(0,0,0,0.35);
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .bit-layout .layout-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .bit-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .bit-cell {
+    width: 52px;
+    height: 58px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .bit-cell .bn {
+    font-size: 9px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 2px;
+  }
+  .bc-class { background: #2a1a3a; border: 2px solid #642; color: #c8a0d8; }
+  .bc-place { background: #1a2a3a; border: 2px solid #246; color: #a0c0e8; }
+  .bc-manner { background: #1a3a2a; border: 2px solid #264; color: #a0e8a0; }
+  .bc-voice { background: #3a2a1a; border: 2px solid #642; color: #e8c8a0; }
+  .formula-line {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #7ee787;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .tables-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .def-table {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .def-table .dt-title {
+    font-size: 11px;
+    color: #ffd700;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .def-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  .def-table th {
+    color: #8090b0;
+    text-align: left;
+    padding: 4px 6px;
+    border-bottom: 1px solid #333;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+  .def-table td {
+    padding: 4px 6px;
+    color: #a0a0c0;
+    border-bottom: 1px solid #1a1a2a;
+  }
+  .def-table td:first-child {
+    font-family: 'Courier New', monospace;
+    color: #7ee787;
+    font-weight: 700;
+  }
+  .map-section {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .map-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .c01-grid {
+    display: grid;
+    grid-template-columns: 50px repeat(8, 1fr);
+    gap: 3px;
+  }
+  .c01-header {
+    font-size: 9px;
+    color: #555;
+    text-align: center;
+    padding: 3px 1px;
+  }
+  .c01-row-label {
+    font-size: 9px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .c01-cell {
+    background: #1a1a30;
+    border: 1px solid #2a2a4a;
+    border-radius: 5px;
+    padding: 5px 2px;
+    text-align: center;
+    min-height: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    line-height: 1.15;
+  }
+  .c01-cell .cc-glyph {
+    font-size: 14px;
+    color: #8ae;
+    font-weight: 700;
+  }
+  .c01-cell .cc-name {
+    font-size: 8px;
+    color: #555;
+    font-family: monospace;
+  }
+  .c01-cell .cc-hex {
+    font-size: 7px;
+    color: #333;
+    font-family: monospace;
+  }
+  .c01-cell.reserved {
+    background: #0f0f1a;
+    border-color: #1a1a2a;
+  }
+  .c01-cell.reserved .cc-glyph {
+    color: #333;
+    font-size: 10px;
+  }
+  .c01-cell.sanskrit {
+    border-color: #2a4a2a;
+  }
+  .c01-cell.sanskrit .cc-glyph {
+    color: #7ee787;
+  }
+  .c01-cell.ukrainian {
+    border-color: #2a2a4a;
+  }
+  .c01-cell.ukrainian .cc-glyph {
+    color: #aac;
+  }
+  .geo-proof {
+    background: rgba(20,60,20,0.15);
+    border: 1px dashed #252;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .geo-proof-title {
+    font-size: 12px;
+    color: #7e7;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .geo-proof-text {
+    font-size: 11px;
+    color: #a0c0a0;
+    line-height: 1.6;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+  }
+  .geo-proof-text .ok { color: #7e7; }
+  .summary-box {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .summary-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .summary-text {
+    font-size: 12px;
+    color: #a0a0c0;
+    line-height: 1.7;
+  }
+  .summary-text code {
+    background: #1a1a30;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+  }
+  .summary-text strong {
+    color: #ffd700;
+  }
+  @media (max-width: 600px) {
+    .tables-section { grid-template-columns: 1fr; }
+    .bit-cell { width: 36px; height: 46px; font-size: 12px; }
+    .c01-grid { grid-template-columns: 36px repeat(8, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="c01-container">
+  <div class="c01-title">UPC-8 class 01: Non-varga Consonants</div>
+  <div class="c01-subtitle">Fricatives, approximants, trills, laterals — та сама геометрія місця, інші манери</div>
+
+  <div class="bit-layout">
+    <div class="layout-title">Бітова структура: [CLASS][PLACE][MANNER][VOICE]</div>
+    <div class="bit-row">
+      <div class="bit-cell bc-class"><span class="bn">7</span>0</div>
+      <div class="bit-cell bc-class"><span class="bn">6</span>1</div>
+      <div class="bit-cell bc-place"><span class="bn">5</span>P2</div>
+      <div class="bit-cell bc-place"><span class="bn">4</span>P1</div>
+      <div class="bit-cell bc-place"><span class="bn">3</span>P0</div>
+      <div class="bit-cell bc-manner"><span class="bn">2</span>M1</div>
+      <div class="bit-cell bc-manner"><span class="bn">1</span>M0</div>
+      <div class="bit-cell bc-voice"><span class="bn">0</span>V</div>
+    </div>
+    <div class="formula-line">
+      code = 0b01_000_00_0 + (place &lt;&lt; 3) + (manner &lt;&lt; 1) + voice
+    </div>
+  </div>
+
+  <div class="tables-section">
+    <div class="def-table">
+      <div class="dt-title">PLACE [5:3]</div>
+      <table>
+        <tr><th>Bin</th><th>Name</th><th>Articulation</th></tr>
+        <tr><td>000</td><td>K</td><td>velar</td></tr>
+        <tr><td>001</td><td>C</td><td>palatal / postalveolar</td></tr>
+        <tr><td>010</td><td>Ṭ</td><td>retroflex</td></tr>
+        <tr><td>011</td><td>T</td><td>alveolar / dental</td></tr>
+        <tr><td>100</td><td>P</td><td>labial</td></tr>
+        <tr><td>101</td><td>G</td><td>glottal</td></tr>
+        <tr><td>110</td><td>U</td><td>uvular / pharyngeal</td></tr>
+        <tr><td>111</td><td>—</td><td>reserved</td></tr>
+      </table>
+    </div>
+    <div class="def-table">
+      <div class="dt-title">MANNER [2:1]</div>
+      <table>
+        <tr><th>Bin</th><th>Name</th><th>Examples</th></tr>
+        <tr><td>00</td><td>Fricative</td><td>s, ś, ṣ, h, ш, ж</td></tr>
+        <tr><td>01</td><td>Approximant</td><td>й, в, ɰ</td></tr>
+        <tr><td>10</td><td>Trill / Tap</td><td>р, ɾ</td></tr>
+        <tr><td>11</td><td>Lateral</td><td>л, ɬ, ɮ</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="map-section">
+    <div class="map-title">class 01 мапа (0x40–0x7F): зелений = санскрит, блакитний = українська</div>
+    <div class="c01-grid" id="c01Grid"></div>
+  </div>
+
+  <div class="geo-proof">
+    <div class="geo-proof-title">Геометрична перевірка: +8 = наступне місце</div>
+    <div class="geo-proof-text">
+х  0x40  K-fricative-vl    <span class="ok">│</span>  ś  0x48  C-fricative-vl    <span class="ok">│</span>  ṣ  0x50  Ṭ-fricative-vl    <span class="ok">│</span>  s  0x58  T-fricative-vl    <span class="ok">│</span>  ф  0x60  P-fricative-vl<br>
+г  0x41  K-fricative-vd    <span class="ok">│</span>  ж  0x49  C-fricative-vd    <span class="ok">│</span>  —  0x51  Ṭ-fricative-vd    <span class="ok">│</span>  з  0x59  T-fricative-vd    <span class="ok">│</span>  —  0x61  P-fricative-vd<br>
+—  0x42  K-approx-vl       <span class="ok">│</span>  —  0x4A  C-approx-vl       <span class="ok">│</span>  —  0x52  Ṭ-approx-vl       <span class="ok">│</span>  —  0x5A  T-approx-vl       <span class="ok">│</span>  —  0x62  P-approx-vl<br>
+—  0x43  K-approx-vd       <span class="ok">│</span>  й  0x4B  C-approx-vd       <span class="ok">│</span>  —  0x53  Ṭ-approx-vd       <span class="ok">│</span>  —  0x5B  T-approx-vd       <span class="ok">│</span>  в  0x63  P-approx-vd<br>
+—  0x44  K-trill-vl        <span class="ok">│</span>  —  0x4C  C-trill-vl        <span class="ok">│</span>  ṛ  0x54  Ṭ-trill-vd        <span class="ok">│</span>  —  0x5C  T-trill-vl        <span class="ok">│</span>  —  0x64  P-trill-vl<br>
+—  0x45  K-trill-vd        <span class="ok">│</span>  —  0x4D  C-trill-vd        <span class="ok">│</span>  —  0x55  Ṭ-trill-vd        <span class="ok">│</span>  р  0x5D  T-trill-vd        <span class="ok">│</span>  —  0x65  P-trill-vd<br>
+—  0x46  K-lateral-vl      <span class="ok">│</span>  —  0x4E  C-lateral-vl      <span class="ok">│</span>  ḷ  0x56  Ṭ-lateral-vd      <span class="ok">│</span>  —  0x5E  T-lateral-vl      <span class="ok">│</span>  —  0x66  P-lateral-vl<br>
+—  0x47  K-lateral-vd      <span class="ok">│</span>  —  0x4F  C-lateral-vd      <span class="ok">│</span>  —  0x57  Ṭ-lateral-vd      <span class="ok">│</span>  л  0x5F  T-lateral-vd      <span class="ok">│</span>  —  0x67  P-lateral-vd<br>
+    <span class="ok">↑</span>                                           <span class="ok">↑</span>                                           <span class="ok">↑</span>                                           <span class="ok">↑</span>                                           <span class="ok">↑</span><br>
+  +0x08                                     +0x08                                     +0x08                                     +0x08                                     +0x08
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Підсумок: class 01 має структуру</div>
+    <div class="summary-text">
+      <strong>Не lookup table — а формула.</strong> Кожен код <code>0x40–0x7F</code> обчислюється як:<br><br>
+      <code>code = 0x40 + (place × 8) + (manner × 2) + voice</code><br><br>
+      <strong>Геометрія місця збережена:</strong> K→C→Ṭ→T→P = +8 кожен крок, точно як у varga (class 00).<br><br>
+      <strong>Геометрія манери:</strong> fricative→approximant→trill→lateral = +2 кожен крок.<br><br>
+      <strong>Геометрія голосу:</strong> voiceless→voiced = +1.<br><br>
+      <strong>Language profile як підмножина:</strong> санскрит використовує 8 точок (ś, ṣ, s, h, й, в, ṛ, р, ḷ, л), українська — інші 8 (х, г, ш, ж, з, с, ф, в). Жодна мова не «володіє» кодом.<br><br>
+      <strong>Резерв:</strong> 64 − 16 = <strong>48 вільних точок</strong> для майбутніх мов (арабські фарингальні, африканські кліки, кавказькі ефрикати тощо).
+    </div>
+  </div>
+</div>
+
+<script>
+const places = ['K','C','Ṭ','T','P','G','U','R'];
+const manners = ['fric','appr','trill','lat'];
+
+const grid = document.getElementById('c01Grid');
+
+grid.appendChild(document.createElement('div'));
+for (let m = 0; m < 8; m++) {
+  const h = document.createElement('div');
+  h.className = 'c01-header';
+  h.textContent = (m & 1 ? 'vd ' : 'vl ') + manners[Math.floor(m/2)];
+  grid.appendChild(h);
+}
+
+const sanskrit = {
+  '0x48': {g:'ś',n:'pal fric vl'},
+  '0x50': {g:'ṣ',n:'ret fric vl'},
+  '0x58': {g:'s',n:'alv fric vl'},
+  '0x68': {g:'h',n:'glot fric vl'},
+  '0x4B': {g:'й',n:'pal appr vd'},
+  '0x63': {g:'в',n:'lab appr vd'},
+  '0x54': {g:'ṛ',n:'ret trill vd'},
+  '0x5D': {g:'р',n:'alv trill vd'},
+  '0x56': {g:'ḷ',n:'ret lat vd'},
+  '0x5F': {g:'л',n:'alv lat vd'},
+};
+
+const ukrainian = {
+  '0x40': {g:'х',n:'vel fric vl'},
+  '0x41': {g:'г',n:'vel fric vd'},
+  '0x48': {g:'ш',n:'pal fric vl'},
+  '0x49': {g:'ж',n:'pal fric vd'},
+  '0x58': {g:'с',n:'alv fric vl'},
+  '0x59': {g:'з',n:'alv fric vd'},
+  '0x60': {g:'ф',n:'lab fric vl'},
+  '0x63': {g:'в',n:'lab appr vd'},
+};
+
+for (let p = 0; p < 8; p++) {
+  const label = document.createElement('div');
+  label.className = 'c01-row-label';
+  label.textContent = places[p];
+  grid.appendChild(label);
+
+  for (let m = 0; m < 8; m++) {
+    const code = 0x40 + (p * 8) + m;
+    const hex = '0x' + code.toString(16).toUpperCase().padStart(2, '0');
+    const cell = document.createElement('div');
+    cell.className = 'c01-cell';
+
+    const sk = sanskrit[hex];
+    const uk = ukrainian[hex];
+
+    if (sk && uk) {
+      cell.className += ' sanskrit ukrainian';
+      cell.innerHTML = '<span class="cc-glyph">' + sk.g + '/' + uk.g + '</span><span class="cc-name">' + sk.n + '</span><span class="cc-hex">' + hex + '</span>';
+    } else if (sk) {
+      cell.className += ' sanskrit';
+      cell.innerHTML = '<span class="cc-glyph">' + sk.g + '</span><span class="cc-name">' + sk.n + '</span><span class="cc-hex">' + hex + '</span>';
+    } else if (uk) {
+      cell.className += ' ukrainian';
+      cell.innerHTML = '<span class="cc-glyph">' + uk.g + '</span><span class="cc-name">' + uk.n + '</span><span class="cc-hex">' + hex + '</span>';
+    } else {
+      cell.className += ' reserved';
+      cell.innerHTML = '<span class="cc-glyph">·</span><span class="cc-hex">' + hex + '</span>';
+    }
+    grid.appendChild(cell);
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPC-8: Фонемна геометрія простору</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a18;
+    font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .geo-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .geo-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .geo-subtitle {
+    font-size: 13px;
+    color: #8090b0;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .legend-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #888;
+  }
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid #333;
+  }
+  .map-grid {
+    display: grid;
+    grid-template-columns: 28px repeat(16, 1fr);
+    gap: 2px;
+    margin-bottom: 16px;
+  }
+  .map-header {
+    font-size: 9px;
+    color: #555;
+    text-align: center;
+    padding: 2px;
+  }
+  .map-row-label {
+    font-size: 9px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .map-cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    line-height: 1.1;
+    min-height: 28px;
+    position: relative;
+    cursor: default;
+    transition: transform 0.1s;
+  }
+  .map-cell:hover {
+    transform: scale(1.3);
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  }
+  .map-cell .mc-glyph {
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .map-cell .mc-hex {
+    font-size: 7px;
+    opacity: 0.6;
+    font-family: monospace;
+  }
+  .c00 { background: rgba(40, 80, 40, 0.5); border: 1px solid #353; }
+  .c00 .mc-glyph { color: #7e7; }
+  .c01 { background: rgba(40, 60, 100, 0.4); border: 1px solid #346; }
+  .c01 .mc-glyph { color: #8ae; }
+  .c10 { background: rgba(100, 80, 20, 0.4); border: 1px solid #652; }
+  .c10 .mc-glyph { color: #ec8; }
+  .c11 { background: rgba(80, 40, 80, 0.4); border: 1px solid #525; }
+  .c11 .mc-glyph { color: #c8c; }
+  .c-res { background: rgba(30, 30, 30, 0.3); border: 1px solid #222; }
+  .c-res .mc-glyph { color: #444; font-size: 8px; }
+
+  .geometry-box {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .geometry-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .geometry-text {
+    font-size: 12px;
+    color: #a0a0c0;
+    line-height: 1.7;
+  }
+  .geometry-text code {
+    background: #1a1a30;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+  }
+  .geometry-text strong {
+    color: #ffd700;
+  }
+  .profile-box {
+    background: rgba(20, 40, 60, 0.2);
+    border: 1px dashed #346;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .profile-title {
+    font-size: 12px;
+    color: #8ae;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .profile-text {
+    font-size: 12px;
+    color: #a0a0c0;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="geo-container">
+  <div class="geo-title">UPC-8: Фонемна геометрія простору</div>
+  <div class="geo-subtitle">16×16 = 256 кодів. Сусідство в просторі = фонологічна близькість.</div>
+
+  <div class="legend-row">
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(40,80,40,0.5);border-color:#353;"></div><span>class 00 — Varga</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(40,60,100,0.4);border-color:#346;"></div><span>class 01 — Non-varga C</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(100,80,20,0.4);border-color:#652;"></div><span>class 10 — Vowels</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(80,40,80,0.4);border-color:#525;"></div><span>class 11 — Signs</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(30,30,30,0.3);border-color:#222;"></div><span>reserved</span></div>
+  </div>
+
+  <div class="map-grid" id="mapGrid"></div>
+
+  <div class="geometry-box">
+    <div class="geometry-title">Вже існуюча геометрія в class 00</div>
+    <div class="geometry-text">
+      <strong>Горизонтальна близькість</strong> (в межах ряду): <code>0x00</code> к, <code>0x01</code> қ, <code>0x02</code> ґ, <code>0x03</code> ғ, <code>0x04</code> ҥ.<br>
+      Кожен крок +1 = одна фонологічна ознака змінена: придих, дзвінкість, назалізація.<br><br>
+      <strong>Вертикальна близькість</strong> (між рядами): <code>0x00</code> к → <code>0x08</code> ч → <code>0x10</code> ṭ → <code>0x18</code> т → <code>0x20</code> п.<br>
+      Кожен крок +8 = зміна місця артикуляції: велярний → палатальний → ретрофлексний → дентальний → губний.<br><br>
+      <strong>Діагональ</strong>: <code>0x00</code> к → <code>0x09</code> ҷ (K→C + asp). Це вже <em>фонологічна відстань</em> у двовимірному просторі.<br><br>
+      Тобто <strong>кодова відстань Хеммінга корелює з фонологічною відстаню</strong>. Це не випадковість — це архітектура.
+    </div>
+  </div>
+
+  <div class="geometry-box">
+    <div class="geometry-title">Пропозиція для class 01 (non-varga consonants)</div>
+    <div class="geometry-text">
+      Якщо розташувати їх за фонологічною близькістю до varga-рядів:<br><br>
+      <code>0x40–0x47</code> — K-проксимальні: й (palatal approximant ≈ C), х/г (velar fricative), ґ' (ejective?)<br>
+      <code>0x48–0x4F</code> — C-проксимальні: ш (postalveolar fricative), ж (voiced postalveolar)<br>
+      <code>0x50–0x57</code> — Ṭ-проксимальні: ша (retroflex fricative), жа (voiced retroflex)<br>
+      <code>0x58–0x5F</code> — T-проксимальні: р (trill), л (lateral), с (alveolar fricative), з (voiced alveolar)<br>
+      <code>0x60–0x67</code> — P-проксимальні: в (labial approximant), ф (labial fricative)<br><br>
+      Тоді <code>0x40 + 0x08 = 0x48</code> — перехід від K-проксимальних до C-проксимальних зберігає ту саму логіку місця, що й у varga.
+    </div>
+  </div>
+
+  <div class="geometry-box">
+    <div class="geometry-title">Пропозиція для class 10 (vowels)</div>
+    <div class="geometry-text">
+      Голосні можна структурувати за <strong>рядами артикуляції</strong> (аналог place у приголосних):<br><br>
+      <code>0x80–0x87</code> — гортанний/нейтральний: а, ā<br>
+      <code>0x88–0x8F</code> — твердопіднебінний: і, ī, е<br>
+      <code>0x90–0x97</code> — м'якопіднебінний: у, ū, о<br>
+      <code>0x98–0x9F</code> — ретрофлексний: ṛ, ṝ<br>
+      <code>0xA0–0xA7</code> — зубний: ḷ, ḹ<br>
+      <code>0xA8–0xAF</code> — дифтонги: ai, au + резерв<br><br>
+      Усередині кожного блоку: короткий, довгий, можливо назалізований. Це дозволяє <code>+1</code> = довгота, <code>+2</code> = назалізація.
+    </div>
+  </div>
+
+  <div class="profile-box">
+    <div class="profile-title">Мовний профіль як підмножина простору</div>
+    <div class="profile-text">
+      Санскритський профіль підписується на <code>0x00–0x27</code> (varga) + <code>0x80–0xAF</code> (голосні) + кілька кодів з <code>0x40–0x67</code> (й, р, л, в, ś, ṣ, s, h).<br><br>
+      Український профіль підписується на іншу підмножину: <code>0x18–0x1F</code> (T-row), <code>0x20–0x27</code> (P-row), <code>0x58–0x5F</code> (р, л, с, з), <code>0x88–0x8F</code> (і, е), <code>0x90–0x97</code> (у, о), плюс <code>0x48–0x4F</code> (ш, ж) як окремі фонеми.<br><br>
+      Жоден профіль не «володіє» кодом. Код — це <strong>точка універсального фонологічного простору</strong>, а профіль вирішує, які точки є фонемами, які — алофонами, які — недопустимими.
+    </div>
+  </div>
+</div>
+
+<script>
+const cells = [];
+for (let row = 0; row < 16; row++) {
+  cells.push({ type: 'label', text: row.toString(16).toUpperCase() + 'x' });
+  for (let col = 0; col < 16; col++) {
+    const code = row * 16 + col;
+    const cls = (code >> 6) & 3;
+    let type = 'c-res';
+    let glyph = '';
+    let title = '';
+
+    if (cls === 0) {
+      type = 'c00';
+      const place = (code >> 3) & 7;
+      const manner = (code >> 1) & 3;
+      const asp = code & 1;
+      const places = ['K','C','Ṭ','T','P'];
+      const manners = ['V','D','N','?'];
+      if (place < 5 && manner < 3) {
+        if (manner === 2) {
+          const nasals = ['ҥ','њ','?','н','м'];
+          glyph = nasals[place] || 'ṅ';
+          title = places[place] + 'N';
+        } else {
+          const v = manner === 1 ? 'D' : 'V';
+          const a = asp ? 'h' : '';
+          title = places[place] + v + a;
+          const glyphs = {
+            'KV':'к','KVh':'қ','KD':'ґ','KDh':'ғ',
+            'CV':'ч','CVh':'ҷ','CD':'џ','CDh':'○',
+            'ṬV':'?','ṬVh':'?','ṬD':'?','ṬDh':'?',
+            'TV':'т','TVh':'ꚋ','TD':'д','TDh':'ꙣ',
+            'PV':'п','PVh':'ҧ','PD':'б','PDh':'○'
+          };
+          glyph = glyphs[title] || '?';
+        }
+      }
+      if (place >= 5 || manner === 3) { type = 'c-res'; glyph = ''; }
+    } else if (cls === 1) {
+      type = 'c01';
+      glyph = '';
+    } else if (cls === 2) {
+      type = 'c10';
+      glyph = '';
+    } else {
+      type = 'c11';
+      glyph = '';
+    }
+
+    if (glyph === '?' && cls === 0) { type = 'c-res'; glyph = ''; }
+
+    cells.push({ type, glyph, hex: code.toString(16).toUpperCase().padStart(2,'0'), title });
+  }
+}
+
+const grid = document.getElementById('mapGrid');
+grid.appendChild(document.createElement('div'));
+for (let col = 0; col < 16; col++) {
+  const h = document.createElement('div');
+  h.className = 'map-header';
+  h.textContent = 'x' + col.toString(16).toUpperCase();
+  grid.appendChild(h);
+}
+
+let idx = 0;
+for (let row = 0; row < 16; row++) {
+  const label = document.createElement('div');
+  label.className = 'map-row-label';
+  label.textContent = row.toString(16).toUpperCase() + 'x';
+  grid.appendChild(label);
+  for (let col = 0; col < 16; col++) {
+    const cell = cells[idx++];
+    const div = document.createElement('div');
+    div.className = 'map-cell ' + cell.type;
+    if (cell.title) div.title = cell.title + ' = 0x' + cell.hex;
+    if (cell.glyph) {
+      div.innerHTML = '<span class="mc-glyph">' + cell.glyph + '</span><span class="mc-hex">' + cell.hex + '</span>';
+    } else {
+      div.innerHTML = '<span class="mc-hex">' + cell.hex + '</span>';
+    }
+    grid.appendChild(div);
+  }
+}
+</script>
+</body>
+</html>

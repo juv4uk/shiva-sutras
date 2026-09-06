@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Śiva Sūtras → UPC-8 Prototypes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a18;
+    font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .shiva-container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .shiva-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .shiva-subtitle {
+    font-size: 13px;
+    color: #8090b0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .shiva-quote {
+    background: rgba(255,215,0,0.05);
+    border-left: 3px solid #ffd700;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #aa8;
+    font-style: italic;
+  }
+  .sutra-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .sutra-card {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: grid;
+    grid-template-columns: 30px 1fr 120px 80px;
+    gap: 10px;
+    align-items: center;
+  }
+  .sutra-card:hover {
+    border-color: #ffd700;
+    background: rgba(255,215,0,0.03);
+  }
+  .sutra-num {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+  }
+  .sutra-sounds {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .sound-pill {
+    background: #1a1a30;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .sound-pill .sp-glyph {
+    font-size: 15px;
+    color: #fff;
+  }
+  .sound-pill .sp-upc {
+    font-size: 9px;
+    color: #555;
+    font-family: monospace;
+  }
+  .sound-pill.vowel {
+    border-color: #652;
+    background: rgba(100,80,20,0.15);
+  }
+  .sound-pill.vowel .sp-glyph {
+    color: #ec8;
+  }
+  .sound-pill.stop {
+    border-color: #353;
+    background: rgba(40,80,40,0.15);
+  }
+  .sound-pill.stop .sp-glyph {
+    color: #7ee787;
+  }
+  .sound-pill.fric {
+    border-color: #346;
+    background: rgba(40,60,100,0.15);
+  }
+  .sound-pill.fric .sp-glyph {
+    color: #8ae;
+  }
+  .sound-pill.nasal {
+    border-color: #446;
+    background: rgba(40,40,80,0.15);
+  }
+  .sound-pill.nasal .sp-glyph {
+    color: #aac;
+  }
+  .sutra-feature {
+    font-size: 10px;
+    color: #8090b0;
+    text-align: right;
+  }
+  .sutra-it {
+    font-size: 10px;
+    color: #c66;
+    font-family: monospace;
+    text-align: right;
+  }
+  .prototype-box {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .proto-title {
+    font-size: 13px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .proto-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .proto-card {
+    background: #1a1a30;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  .proto-card .pc-name {
+    font-size: 10px;
+    color: #8090b0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .proto-card .pc-sutra {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .proto-card .pc-bits {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #7ee787;
+    background: #0a0a15;
+    border-radius: 4px;
+    padding: 4px;
+    margin-bottom: 4px;
+  }
+  .proto-card .pc-formula {
+    font-size: 10px;
+    color: #555;
+    line-height: 1.4;
+  }
+  .insight-box {
+    background: rgba(20,60,20,0.15);
+    border: 1px dashed #252;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .insight-title {
+    font-size: 12px;
+    color: #7e7;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .insight-text {
+    font-size: 12px;
+    color: #a0c0a0;
+    line-height: 1.7;
+  }
+  .insight-text code {
+    background: #1a1a30;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+  }
+  .insight-text strong {
+    color: #ffd700;
+  }
+  @media (max-width: 700px) {
+    .sutra-card {
+      grid-template-columns: 30px 1fr;
+      grid-template-rows: auto auto;
+    }
+    .sutra-feature, .sutra-it {
+      text-align: left;
+      grid-column: 2;
+    }
+    .proto-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="shiva-container">
+  <div class="shiva-title">Śiva Sūtras → UPC-8 Prototypes</div>
+  <div class="shiva-subtitle">14 сутр Паніні як фонологічні прототипи для машинного кодування</div>
+
+  <div class="shiva-quote">
+    «Паніні не описував алфавіт. Він описував фонологічний простір. Ми просто додали до його простору біти.»
+  </div>
+
+  <div class="sutra-list">
+    <div class="sutra-card">
+      <div class="sutra-num">1</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill vowel"><span class="sp-glyph">а</span><span class="sp-upc">0x80</span></span>
+        <span class="sound-pill vowel"><span class="sp-glyph">і</span><span class="sp-upc">0x88</span></span>
+        <span class="sound-pill vowel"><span class="sp-glyph">у</span><span class="sp-upc">0x90</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">ṇ</span><span class="sp-upc">0x04</span></span>
+      </div>
+      <div class="sutra-feature">голосні + велярний назальний</div>
+      <div class="sutra-it">it: ṇ</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">2</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill vowel"><span class="sp-glyph">ṛ</span><span class="sp-upc">0x98</span></span>
+        <span class="sound-pill vowel"><span class="sp-glyph">ḷ</span><span class="sp-upc">0xA0</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">к</span><span class="sp-upc">0x00</span></span>
+      </div>
+      <div class="sutra-feature">сонанти + K-stop</div>
+      <div class="sutra-it">it: k</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">3</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill vowel"><span class="sp-glyph">е</span><span class="sp-upc">0x8A</span></span>
+        <span class="sound-pill vowel"><span class="sp-glyph">о</span><span class="sp-upc">0x92</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">ṅ</span><span class="sp-upc">0x04</span></span>
+      </div>
+      <div class="sutra-feature">діфтонги + велярний назальний</div>
+      <div class="sutra-it">it: ṅ</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">4</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill vowel"><span class="sp-glyph">ai</span><span class="sp-upc">0xA8</span></span>
+        <span class="sound-pill vowel"><span class="sp-glyph">au</span><span class="sp-upc">0xAA</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ч</span><span class="sp-upc">0x08</span></span>
+      </div>
+      <div class="sutra-feature">діфтонги + C-stop</div>
+      <div class="sutra-it">it: c</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">5</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill fric"><span class="sp-glyph">h</span><span class="sp-upc">0x68</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">y</span><span class="sp-upc">0x4B</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">v</span><span class="sp-upc">0x63</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">r</span><span class="sp-upc">0x5D</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ṭ</span><span class="sp-upc">0x10</span></span>
+      </div>
+      <div class="sutra-feature">semivowels + Ṭ-stop</div>
+      <div class="sutra-it">it: ṭ</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">6</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill fric"><span class="sp-glyph">l</span><span class="sp-upc">0x5F</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">ṇ</span><span class="sp-upc">0x14</span></span>
+      </div>
+      <div class="sutra-feature">lateral + retroflex nasal</div>
+      <div class="sutra-it">it: ṇ</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">7</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill nasal"><span class="sp-glyph">ñ</span><span class="sp-upc">0x0C</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">ṃ</span><span class="sp-upc">0x24</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">ṅ</span><span class="sp-upc">0x04</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">ṇ</span><span class="sp-upc">0x14</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">n</span><span class="sp-upc">0x1C</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">m</span><span class="sp-upc">0x24</span></span>
+      </div>
+      <div class="sutra-feature">усі назальні (añunāsika)</div>
+      <div class="sutra-it">it: m</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">8</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill stop"><span class="sp-glyph">jh</span><span class="sp-upc">0x0B</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">bh</span><span class="sp-upc">0x23</span></span>
+        <span class="sound-pill nasal"><span class="sp-glyph">ñ</span><span class="sp-upc">0x0C</span></span>
+      </div>
+      <div class="sutra-feature">voiced aspirated + palatal nasal</div>
+      <div class="sutra-it">it: ñ</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">9</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill stop"><span class="sp-glyph">gh</span><span class="sp-upc">0x03</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ḍh</span><span class="sp-upc">0x13</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">dh</span><span class="sp-upc">0x1B</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">ṣ</span><span class="sp-upc">0x50</span></span>
+      </div>
+      <div class="sutra-feature">voiced aspirated stops + retroflex fricative</div>
+      <div class="sutra-it">it: ṣ</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">10</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill stop"><span class="sp-glyph">j</span><span class="sp-upc">0x0A</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">b</span><span class="sp-upc">0x22</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">g</span><span class="sp-upc">0x02</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ḍ</span><span class="sp-upc">0x12</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">d</span><span class="sp-upc">0x1A</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">ś</span><span class="sp-upc">0x48</span></span>
+      </div>
+      <div class="sutra-feature">voiced unaspirated stops + palatal fricative</div>
+      <div class="sutra-it">it: ś</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">11</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill stop"><span class="sp-glyph">kh</span><span class="sp-upc">0x01</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ch</span><span class="sp-upc">0x09</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ṭh</span><span class="sp-upc">0x11</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">th</span><span class="sp-upc">0x19</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ph</span><span class="sp-upc">0x21</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">c</span><span class="sp-upc">0x08</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">ṭ</span><span class="sp-upc">0x10</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">t</span><span class="sp-upc">0x18</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">v</span><span class="sp-upc">0x63</span></span>
+      </div>
+      <div class="sutra-feature">voiceless aspirated + voiceless unaspirated + v</div>
+      <div class="sutra-it">it: v</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">12</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill stop"><span class="sp-glyph">k</span><span class="sp-upc">0x00</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">ṣ</span><span class="sp-upc">0x50</span></span>
+        <span class="sound-pill stop"><span class="sp-glyph">t</span><span class="sp-upc">0x18</span></span>
+        <span class="sound-pill fric"><span class="sp-glyph">s</span><span class="sp-upc">0x58</span></span>
+      </div>
+      <div class="sutra-feature">K-stop + retroflex fricative + T-stop + alveolar fricative</div>
+      <div class="sutra-it">it: s</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">13</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill fric"><span class="sp-glyph">h</span><span class="sp-upc">0x68</span></span>
+      </div>
+      <div class="sutra-feature">glottal fricative (visarga)</div>
+      <div class="sutra-it">it: h</div>
+    </div>
+
+    <div class="sutra-card">
+      <div class="sutra-num">14</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill vowel"><span class="sp-glyph">а</span><span class="sp-upc">0x80</span></span>
+        <span class="sound-pill vowel"><span class="sp-glyph">ā</span><span class="sp-upc">0x81</span></span>
+      </div>
+      <div class="sutra-feature">основні голосні (pratyāhāra)</div>
+      <div class="sutra-it">it: ā</div>
+    </div>
+  </div>
+
+  <div class="prototype-box">
+    <div class="proto-title">Pratyāhāra Prototypes → UPC-8 Bit Patterns</div>
+    <div class="proto-grid">
+      <div class="proto-card">
+        <div class="pc-name">ac</div>
+        <div class="pc-sutra">sūtra 1–4</div>
+        <div class="pc-bits">class 10</div>
+        <div class="pc-formula">усі голосні<br>0x80–0xAF</div>
+      </div>
+      <div class="proto-card">
+        <div class="pc-name">hal</div>
+        <div class="pc-sutra">sūtra 5–13</div>
+        <div class="pc-bits">class 00/01</div>
+        <div class="pc-formula">усі приголосні<br>0x00–0x7F</div>
+      </div>
+      <div class="proto-card">
+        <div class="pc-name">aṇ</div>
+        <div class="pc-sutra">sūtra 1</div>
+        <div class="pc-bits">class 10 + 00</div>
+        <div class="pc-formula">a,i,u + ṅ<br>0x80,88,90 + 0x04</div>
+      </div>
+      <div class="proto-card">
+        <div class="pc-name">jaś</div>
+        <div class="pc-sutra">sūtra 10</div>
+        <div class="pc-bits">class 00 D-plain</div>
+        <div class="pc-formula">voiced unaspirated<br>0x02,0x0A,0x12,0x1A,0x22</div>
+      </div>
+      <div class="proto-card">
+        <div class="pc-name">śal</div>
+        <div class="pc-sutra">sūtra 10–11</div>
+        <div class="pc-bits">class 00 V-all</div>
+        <div class="pc-formula">voiceless stops<br>0x00,0x08,0x10,0x18,0x20 + asp</div>
+      </div>
+      <div class="proto-card">
+        <div class="pc-name">ñaṇ</div>
+        <div class="pc-sutra">sūtra 7–8</div>
+        <div class="pc-bits">class 00 nasal</div>
+        <div class="pc-formula">усі назальні<br>0x04,0x0C,0x14,0x1C,0x24</div>
+      </div>
+      <div class="proto-card">
+        <div class="pc-name">yaṇ</div>
+        <div class="pc-sutra">sūtra 5–6</div>
+        <div class="pc-bits">class 01 appr/lat/trill</div>
+        <div class="pc-formula">semivowels<br>0x4B,0x5D,0x5F,0x63</div>
+      </div>
+      <div class="proto-card">
+        <div class="pc-name">ṣaṭ</div>
+        <div class="pc-sutra">sūtra 12</div>
+        <div class="pc-bits">class 00/01 fric</div>
+        <div class="pc-formula">sibilants<br>0x48,0x50,0x58</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">Головний інсайт: Паніні вже мав бітові маски</div>
+    <div class="insight-text">
+      Кожен <strong>pratyāhāra</strong> у Паніні — це не список, а <strong>фонологічний прототип</strong>:<br><br>
+      <code>hal</code> = «усі приголосні» = <code>class ∈ {00, 01}</code> — це бітова маска <code>bit[7] = 0</code><br>
+      <code>ac</code> = «усі голосні» = <code>class = 10</code> — це бітова маска <code>bit[7:6] = 10</code><br>
+      <code>ñaṇ</code> = «усі назальні» = <code>manner = 10</code> — це бітова маска <code>bit[2:1] = 10</code><br>
+      <code>jaś</code> = «voiced unaspirated» = <code>manner = 01, asp = 0</code> — маска <code>bit[2:1]=01, bit[0]=0</code><br><br>
+      <strong>Паніні описував множини ознаками, не перерахунком.</strong> Ми просто закодували ці ознаки в біти.<br><br>
+      Різниця тільки в нотації: Паніні писав «añunāsika» (з носом), ми пишемо <code>bit[2:1] = 10</code>. Семантика та сама.
+    </div>
+  </div>
+</div>
+</body>
+</html>

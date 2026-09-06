@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Паніні → UPC-8: Місток до машинної граматики</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a18;
+    font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .arch-container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .arch-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .arch-subtitle {
+    font-size: 13px;
+    color: #8090b0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .bridge-section {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .bridge-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .bridge-columns {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+  .bridge-col {
+    background: #1a1a30;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .bridge-col .bc-name {
+    font-size: 11px;
+    color: #8090b0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .bridge-col .bc-item {
+    font-size: 11px;
+    color: #a0a0c0;
+    line-height: 1.6;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+  }
+  .bridge-col .bc-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+  }
+  .bridge-col .bc-item code {
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+  }
+  .bridge-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-size: 20px;
+    padding-top: 40px;
+  }
+  .bridge-arrow .arr-label {
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .layers-box {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .layers-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .layer-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .layer-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 3px;
+  }
+  .layer-row .layer-num {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffd700;
+    min-width: 24px;
+    text-align: center;
+  }
+  .layer-row .layer-content {
+    flex: 1;
+  }
+  .layer-row .layer-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .layer-row .layer-desc {
+    font-size: 11px;
+    color: #888;
+    margin-top: 1px;
+  }
+  .layer-row .layer-tech {
+    font-size: 10px;
+    color: #555;
+    font-family: monospace;
+    margin-top: 2px;
+  }
+  .layer-1 { background: rgba(60,40,20,0.2); border: 1px solid #642; }
+  .layer-2 { background: rgba(40,60,40,0.2); border: 1px solid #353; }
+  .layer-3 { background: rgba(20,40,60,0.2); border: 1px solid #246; }
+  .layer-4 { background: rgba(40,20,60,0.2); border: 1px solid #426; }
+  .layer-arrow {
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    margin: 2px 0;
+  }
+  .example-box {
+    background: rgba(20,60,20,0.15);
+    border: 1px dashed #252;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .example-title {
+    font-size: 12px;
+    color: #7e7;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .example-rule {
+    background: #0a0a15;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #a0c0a0;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    overflow-x: auto;
+  }
+  .example-rule .rule-panini { color: #ffd700; }
+  .example-rule .rule-upc { color: #7ee787; }
+  .example-rule .rule-verilog { color: #a0c0e8; }
+  .example-rule .rule-comment { color: #555; }
+  .insight-box {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .insight-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .insight-text {
+    font-size: 12px;
+    color: #a0a0c0;
+    line-height: 1.7;
+  }
+  .insight-text strong { color: #ffd700; }
+  .insight-text code {
+    background: #1a1a30;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+  }
+  @media (max-width: 700px) {
+    .bridge-columns { grid-template-columns: 1fr; }
+    .bridge-arrow { display: none; }
+    .layer-row { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="arch-container">
+  <div class="arch-title">Паніні → UPC-8: Місток до машинної граматики</div>
+  <div class="arch-subtitle">Те, чого не вистачало Паніні — механічної виконуваності</div>
+
+  <div class="bridge-section">
+    <div class="bridge-title">Що мав Паніні vs що додає UPC-8</div>
+    <div class="bridge-columns">
+      <div class="bridge-col">
+        <div class="bc-name">Паніні (~500 BCE)</div>
+        <div class="bc-item">Śiva Sūtras — канонічний порядок фонем</div>
+        <div class="bc-item">it-маркери — метасимволи кінця діапазону</div>
+        <div class="bc-item">Pratyāhāra — скорочення як діапазони <code>[start:end]</code></div>
+        <div class="bc-item">Sūtra — текстові правила граматики</div>
+        <div class="bc-item">Інтерпретатор — людина-граматик</div>
+        <div class="bc-item" style="color:#c66;">❌ Не механізовано</div>
+        <div class="bc-item" style="color:#c66;">❌ Не виконувано автоматично</div>
+        <div class="bc-item" style="color:#c66;">❌ Не компоновано</div>
+      </div>
+      <div class="bridge-arrow">
+        →
+        <span class="arr-label">+UPC-8</span>
+      </div>
+      <div class="bridge-col">
+        <div class="bc-name">UPC-8 + FPGA (2026)</div>
+        <div class="bc-item">256 точок — фонологічний простір <code>0x00–0xFF</code></div>
+        <div class="bc-item">Бітові маски — метасимволи як проводи</div>
+        <div class="bc-item">Pratyāhāra — predicate як булева функція</div>
+        <div class="bc-item">Sūtra — машинне правило (Verilog/Clojure)</div>
+        <div class="bc-item">Інтерпретатор — FPGA + стекова машина</div>
+        <div class="bc-item" style="color:#7e7;">✅ Механізовано</div>
+        <div class="bc-item" style="color:#7e7;">✅ Виконується в такті</div>
+        <div class="bc-item" style="color:#7e7;">✅ Компонується з іншими правилами</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layers-box">
+    <div class="layers-title">Архітектура машинної граматики (4 шари)</div>
+    <div class="layer-stack">
+      <div class="layer-row layer-1">
+        <div class="layer-num">1</div>
+        <div class="layer-content">
+          <div class="layer-name">Śabda-maṇḍala — Фонологічний простір</div>
+          <div class="layer-desc">256 точок UPC-8. Кожна точка = фонема з ознаками.</div>
+          <div class="layer-tech">BRAM 256×8 / distributed RAM</div>
+        </div>
+      </div>
+      <div class="layer-arrow">↓</div>
+      <div class="layer-row layer-2">
+        <div class="layer-num">2</div>
+        <div class="layer-content">
+          <div class="layer-name">Pratyāhāra Engine — Бітові маски</div>
+          <div class="layer-desc">Кожен pratyāhāra = predicate на бітах. Zero LUT для простих.</div>
+          <div class="layer-tech">wire predicates / small LUT for complex</div>
+        </div>
+      </div>
+      <div class="layer-arrow">↓</div>
+      <div class="layer-row layer-3">
+        <div class="layer-num">3</div>
+        <div class="layer-content">
+          <div class="layer-name">Sūtra Processor — Правила як функції</div>
+          <div class="layer-desc">IF pratyāhāra(X) AND context(Y) THEN transform(Z).</div>
+          <div class="layer-tech">combinational logic + state machine</div>
+        </div>
+      </div>
+      <div class="layer-arrow">↓</div>
+      <div class="layer-row layer-4">
+        <div class="layer-num">4</div>
+        <div class="layer-content">
+          <div class="layer-name">Vākya Pipeline — Речення як потік перетворень</div>
+          <div class="layer-desc">Вхідне речення проходить через каскад sūtra. Вихід — згенерована форма.</div>
+          <div class="layer-tech">pipeline stages / dataflow graph</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-title">Приклад: Паніні 6.1.77 «iko yaṇaci» → машина</div>
+    <div class="example-rule">
+<span class="rule-panini">; Паніні (500 BCE)
+; 6.1.77: iko yaṇaci
+; «i, u, ṛ, ḷ перед голосним → y, v, r, l»
+; Приклад: madhu + a → madhva
+
+</span><span class="rule-upc">; UPC-8 (2026)
+; ik = {0x88, 0x90, 0x98, 0xA0}  ; i, u, ṛ, ḷ
+; yaṇ = {0x4B, 0x63, 0x5D, 0x5F} ; y, v, r, l
+; ac = {0x80–0xAF}               ; усі голосні
+; Умова: X ∈ ik AND Y ∈ ac → X' = map(X, yaṇ)
+
+</span><span class="rule-verilog">// Verilog для GW5A-25
+module iko_yanaci (
+    input  wire [7:0] x,      // поточний звук
+    input  wire [7:0] y,      // наступний звук
+    output reg  [7:0] x_out,  // результат
+    output reg        changed
+);
+    // Pratyāhāra predicates — zero LUT
+    wire is_ik  = (x == 8'h88) | (x == 8'h90) |
+                  (x == 8'h98) | (x == 8'hA0);
+    wire is_ac  = (y[7:6] == 2'b10);  // class 10 = vowels
+
+    // Mapping: ik → yaṇ (lookup table, 4 entries)
+    always @(*) begin
+        changed = 1'b0;
+        x_out   = x;
+        if (is_ik && is_ac) begin
+            changed = 1'b1;
+            case (x)
+                8'h88: x_out = 8'h4B;  // i → y
+                8'h90: x_out = 8'h63;  // u → v
+                8'h98: x_out = 8'h5D;  // ṛ → r
+                8'hA0: x_out = 8'h5F;  // ḷ → l
+            endcase
+        end
+    end
+endmodule</span>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">Чому це «перший крок до граматики Паніні»</div>
+    <div class="insight-text">
+      Паніні створив <strong>мову для опису мови</strong> — метамову. Але його метамова була розрахована на людину. Він міг сказати «перетвори і на я перед голосним» — і граматик розумів, що робити.<br><br>
+      UPC-8 робить те саме, але <strong>мова стає виконуваною</strong>. «Перетвори і на я» — це більше не інструкція для людини. Це:<br><br>
+      <code>if (is_ik(x) && is_ac(y)) x_out = map_ik_to_yan(x);</code><br><br>
+      І це виконується за <strong>один такт FPGA</strong> (~10 нс на GW5A-25).<br><br>
+      <strong>Наступний крок</strong> — не одне правило, а <strong>каскад</strong>. Як Паніні мав 4000 sūtra, так і машина може мати 4000 правил, організованих у pipeline. Кожне правило — одна стадія. Вхід — морфема. Вихід — згенероване слово.<br><br>
+      Це не заміна Паніні. Це <strong>механізація Паніні</strong>. Його логіка, його структура, його геометрія — але в залізі.
+    </div>
+  </div>
+</div>
+</body>
+</html>

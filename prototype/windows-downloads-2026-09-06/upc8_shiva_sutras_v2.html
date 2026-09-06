@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Śiva Sūtras v2: Canonical + UPC Experiment</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a18;
+    font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .v2-container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .v2-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .v2-subtitle {
+    font-size: 13px;
+    color: #8090b0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .three-levels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .level-card {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+  .level-card .lc-name {
+    font-size: 11px;
+    color: #ffd700;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .level-card .lc-desc {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.5;
+  }
+  .level-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-size: 18px;
+  }
+  .sutra-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .sutra-card {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 8px 12px;
+    display: grid;
+    grid-template-columns: 28px 1fr 60px;
+    gap: 8px;
+    align-items: center;
+  }
+  .sutra-card:hover {
+    border-color: #ffd700;
+  }
+  .sutra-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+  }
+  .sutra-sounds {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .sound-pill {
+    border-radius: 5px;
+    padding: 2px 7px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .sound-pill .sp-glyph {
+    font-size: 14px;
+  }
+  .sound-pill .sp-type {
+    font-size: 8px;
+    text-transform: uppercase;
+    padding: 1px 3px;
+    border-radius: 2px;
+  }
+  .pill-sound {
+    background: #1a2a3a;
+    border: 1px solid #246;
+    color: #a0c0e8;
+  }
+  .pill-sound .sp-type {
+    background: #246;
+    color: #a0c0e8;
+  }
+  .pill-it {
+    background: #2a1a1a;
+    border: 1px dashed #844;
+    color: #c66;
+  }
+  .pill-it .sp-type {
+    background: #522;
+    color: #c66;
+  }
+  .sutra-it-label {
+    font-size: 10px;
+    color: #c66;
+    font-family: monospace;
+    text-align: right;
+  }
+  .experiment-box {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .exp-title {
+    font-size: 13px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .exp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  .exp-table th {
+    color: #8090b0;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 2px solid #333;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+  .exp-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #1a1a2a;
+    vertical-align: top;
+  }
+  .exp-table td:first-child {
+    font-weight: 700;
+    color: #ffd700;
+    font-family: 'Courier New', monospace;
+  }
+  .exp-table .p-set {
+    color: #a0c0e0;
+    font-size: 10px;
+  }
+  .exp-table .u-pred {
+    font-family: 'Courier New', monospace;
+    color: #7ee787;
+    font-size: 10px;
+    background: #1a1a30;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  .exp-table .status-exact {
+    color: #7e7;
+    font-weight: 600;
+  }
+  .exp-table .status-partial {
+    color: #ec8;
+    font-weight: 600;
+  }
+  .exp-table .status-no {
+    color: #c66;
+    font-weight: 600;
+  }
+  .insight-box {
+    background: rgba(20,60,20,0.15);
+    border: 1px dashed #252;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .insight-title {
+    font-size: 12px;
+    color: #7e7;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .insight-text {
+    font-size: 12px;
+    color: #a0c0a0;
+    line-height: 1.7;
+  }
+  .insight-text code {
+    background: #1a1a30;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+  }
+  .insight-text strong {
+    color: #ffd700;
+  }
+  @media (max-width: 700px) {
+    .three-levels { grid-template-columns: 1fr; }
+    .level-arrow { display: none; }
+    .sutra-card { grid-template-columns: 28px 1fr; }
+    .sutra-it-label { text-align: left; grid-column: 2; }
+    .exp-table { font-size: 9px; }
+    .exp-table th, .exp-table td { padding: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="v2-container">
+  <div class="v2-title">Śiva Sūtras v2: Canonical + UPC Experiment</div>
+  <div class="v2-subtitle">Три рівні: канон → pratyāhāra → machine predicates. P vs U.</div>
+
+  <div class="three-levels">
+    <div class="level-card">
+      <div class="lc-name">Śiva Sūtras</div>
+      <div class="lc-desc">Canonical ordered sequence<br>+ typed markers<br>(SOUND | IT)</div>
+    </div>
+    <div class="level-arrow">↓</div>
+    <div class="level-card">
+      <div class="lc-name">Pratyāhāra</div>
+      <div class="lc-desc">Range-defined sets<br>start → it-marker<br>contiguous in canonical order</div>
+    </div>
+    <div class="level-arrow">↓</div>
+    <div class="level-card">
+      <div class="lc-name">UPC</div>
+      <div class="lc-desc">Feature geometry<br>place / manner / voice / asp<br>bit predicates</div>
+    </div>
+  </div>
+
+  <div class="sutra-list">
+    <div class="sutra-card">
+      <div class="sutra-num">1</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">a</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">i</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">u</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">ṇ</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: ṇ</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">2</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ṛ</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ḷ</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">k</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: k</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">3</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">e</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">o</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">ṅ</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: ṅ</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">4</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ai</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">au</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">c</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: c</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">5</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ya</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">va</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ra</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">ṭ</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: ṭ</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">6</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">la</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">ṇ</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: ṇ</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">7</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ña</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ma</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ṅa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ṇa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">na</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">m</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: m</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">8</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">jha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">bha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">ñ</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: ñ</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">9</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">gha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ḍha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">dha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">ṣ</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: ṣ</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">10</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ja</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ba</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ga</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ḍa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">da</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">ś</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: ś</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">11</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">kha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">cha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ṭha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">tha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">pha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ca</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ṭa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ta</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">v</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: v</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">12</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ka</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">pa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">y</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: y</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">13</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">śa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ṣa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-sound"><span class="sp-glyph">sa</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">r</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: r</div>
+    </div>
+    <div class="sutra-card">
+      <div class="sutra-num">14</div>
+      <div class="sutra-sounds">
+        <span class="sound-pill pill-sound"><span class="sp-glyph">ha</span><span class="sp-type">snd</span></span>
+        <span class="sound-pill pill-it"><span class="sp-glyph">l</span><span class="sp-type">it</span></span>
+      </div>
+      <div class="sutra-it-label">it: l</div>
+    </div>
+  </div>
+
+  <div class="experiment-box">
+    <div class="exp-title">Experiment: P (Paninian range) vs U (UPC predicate)</div>
+    <table class="exp-table">
+      <tr>
+        <th>Pratyāhāra</th>
+        <th>P = canonical expansion</th>
+        <th>U = UPC predicate</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>ac</td>
+        <td class="p-set">a, i, u, ṛ, ḷ, e, o, ai, au (+ long variants)</td>
+        <td><span class="u-pred">class == 10</span></td>
+        <td class="status-exact">EXACT ✓</td>
+      </tr>
+      <tr>
+        <td>hal</td>
+        <td class="p-set">ha–la (all consonants in sutra order)</td>
+        <td><span class="u-pred">class ∈ {00, 01}</span></td>
+        <td class="status-exact">EXACT ✓</td>
+      </tr>
+      <tr>
+        <td>jaś</td>
+        <td class="p-set">ja, ba, ga, ḍa, da (voiced unaspirated stops)</td>
+        <td><span class="u-pred">class==00 & manner==01 & asp==0</span></td>
+        <td class="status-exact">EXACT ✓</td>
+      </tr>
+      <tr>
+        <td>ñaṇ</td>
+        <td class="p-set">ña, ma, ṅa, ṇa, na (nasals)</td>
+        <td><span class="u-pred">class==00 & manner==10</span></td>
+        <td class="status-exact">EXACT ✓</td>
+      </tr>
+      <tr>
+        <td>śal</td>
+        <td class="p-set">śa, ṣa, sa, ha + voiceless stops (sutra 10–11 range)</td>
+        <td><span class="u-pred">class==00 & manner==00</span></td>
+        <td class="status-partial">PARTIAL ◆</td>
+      </tr>
+      <tr>
+        <td>yaṇ</td>
+        <td class="p-set">ya, va, ra, la (semivowels)</td>
+        <td><span class="u-pred">class==01 & manner ∈ {01,10,11}</span></td>
+        <td class="status-exact">EXACT ✓</td>
+      </tr>
+      <tr>
+        <td>ṣaṭ</td>
+        <td class="p-set">ṣa, sa (sutra 12–13 range)</td>
+        <td><span class="u-pred">class==01 & manner==00 & place ∈ {Ṭ,T}</span></td>
+        <td class="status-partial">PARTIAL ◆</td>
+      </tr>
+      <tr>
+        <td>aṇ</td>
+        <td class="p-set">a, i, u, ṛ, ḷ (sutra 1–2 range)</td>
+        <td><span class="u-pred">class==10 & code &lt; 0x88</span></td>
+        <td class="status-partial">PARTIAL ◆</td>
+      </tr>
+      <tr>
+        <td>khay</td>
+        <td class="p-set">kha–ya (sutra 11–5 range, complex)</td>
+        <td><span class="u-pred">no simple predicate</span></td>
+        <td class="status-no">NOT REPRESENTABLE ✗</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">Результат: часткова ізоморфія двох геометрій</div>
+    <div class="insight-text">
+      <strong>5 з 9</strong> pratyāhāra мають <strong>exact</strong> збіг між панінівським діапазоном і UPC feature predicate.<br><br>
+      <strong>3 з 9</strong> — <strong>partial</strong>: UPC predicate охоплює трохи більше або менше, ніж канонічний діапазон.<br><br>
+      <strong>1 з 9</strong> — <strong>not representable</strong> простим predicate: діапазон перетинає кілька feature-класів.<br><br>
+      Це не означає, що одна система «краща». Це означає, що <strong>дві незалежні геометрії фонології частково збігаються</strong> — і це саме по собі цікавий результат.<br><br>
+      Для FPGA це означає: прості класи (<code>hal</code>, <code>ac</code>, <code>jaś</code>, <code>ñaṇ</code>) — zero-LUT predicates. Складніші — потребують lookup table або канонічного порядку.
+    </div>
+  </div>
+</div>
+</body>
+</html>

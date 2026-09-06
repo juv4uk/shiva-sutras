@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPC-8 class 01: Non-varga Consonants (Corrected)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a18;
+    font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .corr-container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .corr-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .corr-subtitle {
+    font-size: 13px;
+    color: #8090b0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .fixes-box {
+    background: rgba(80,20,20,0.15);
+    border: 1px dashed #522;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .fixes-title {
+    font-size: 12px;
+    color: #c66;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .fix-item {
+    font-size: 12px;
+    color: #a0a0c0;
+    line-height: 1.7;
+    margin-bottom: 6px;
+    padding-left: 16px;
+    position: relative;
+  }
+  .fix-item::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #7e7;
+  }
+  .fix-item code {
+    background: #1a1a30;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+  }
+  .fix-item .strike {
+    text-decoration: line-through;
+    color: #844;
+  }
+  .updated-map {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .updated-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .c01-grid {
+    display: grid;
+    grid-template-columns: 50px repeat(8, 1fr);
+    gap: 3px;
+  }
+  .c01-header {
+    font-size: 9px;
+    color: #555;
+    text-align: center;
+    padding: 3px 1px;
+  }
+  .c01-row-label {
+    font-size: 9px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .c01-cell {
+    background: #1a1a30;
+    border: 1px solid #2a2a4a;
+    border-radius: 5px;
+    padding: 5px 2px;
+    text-align: center;
+    min-height: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    line-height: 1.15;
+  }
+  .c01-cell .cc-glyph {
+    font-size: 14px;
+    color: #8ae;
+    font-weight: 700;
+  }
+  .c01-cell .cc-name {
+    font-size: 8px;
+    color: #555;
+    font-family: monospace;
+  }
+  .c01-cell .cc-hex {
+    font-size: 7px;
+    color: #333;
+    font-family: monospace;
+  }
+  .c01-cell.reserved {
+    background: #0f0f1a;
+    border-color: #1a1a2a;
+  }
+  .c01-cell.reserved .cc-glyph {
+    color: #333;
+    font-size: 10px;
+  }
+  .c01-cell.sanskrit {
+    border-color: #2a4a2a;
+  }
+  .c01-cell.sanskrit .cc-glyph {
+    color: #7ee787;
+  }
+  .c01-cell.ukrainian {
+    border-color: #2a2a4a;
+  }
+  .c01-cell.ukrainian .cc-glyph {
+    color: #aac;
+  }
+  .c01-cell.both {
+    border-color: #4a4a2a;
+  }
+  .c01-cell.both .cc-glyph {
+    color: #dd8;
+  }
+  .union-box {
+    background: rgba(20,60,20,0.15);
+    border: 1px solid #252;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .union-title {
+    font-size: 12px;
+    color: #7e7;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .union-calc {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #a0c0a0;
+    line-height: 1.8;
+  }
+  .union-calc .hl {
+    color: #ffd700;
+    font-weight: 700;
+  }
+  .union-calc .sk { color: #7ee787; }
+  .union-calc .uk { color: #aac; }
+  .union-calc .both { color: #dd8; }
+  .result-box {
+    background: rgba(0,0,0,0.3);
+    border: 2px solid #ffd700;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .result-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffd700;
+  }
+  .result-label {
+    font-size: 13px;
+    color: #aa8;
+    margin-top: 4px;
+  }
+  .result-formula {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #7ee787;
+    margin-top: 8px;
+  }
+  .macro-box {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 16px;
+  }
+  .macro-title {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .macro-text {
+    font-size: 12px;
+    color: #a0a0c0;
+    line-height: 1.7;
+  }
+  .macro-text code {
+    background: #1a1a30;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7ee787;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+  }
+  .macro-text strong {
+    color: #ffd700;
+  }
+  @media (max-width: 600px) {
+    .c01-grid { grid-template-columns: 36px repeat(8, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="corr-container">
+  <div class="corr-title">UPC-8 class 01: Non-varga Consonants (Corrected)</div>
+  <div class="corr-subtitle">Чотири правки застосовано. UNION санскрит + українська підтверджений.</div>
+
+  <div class="fixes-box">
+    <div class="fixes-title">Застосовані правки</div>
+    <div class="fix-item"><span class="strike">ṛ (0x54), ḷ (0x56)</span> → повернуто в <code>class 10</code> (vowels/sonants). Це не приголосні.</div>
+    <div class="fix-item">Українське <code>г</code> → перенесено з <code>K-fricative-vd (0x41)</code> у <code>G-fricative-vd (0x69)</code>. Глотальний /ɦ/, не велярний.</div>
+    <div class="fix-item">C-place перейменовано: <span class="strike">«palatal»</span> → <strong>«palatal–postalveolar macro-place»</strong>. UPC-place ≠ IPA column.</div>
+    <div class="fix-item">48 reserved слотів — не обіцяємо clicks/affricates автоматично. Можуть вимагати іншої семантики.</div>
+  </div>
+
+  <div class="updated-map">
+    <div class="updated-title">Оновлена мапа class 01 (0x40–0x7F)</div>
+    <div class="c01-grid" id="c01Grid"></div>
+  </div>
+
+  <div class="union-box">
+    <div class="union-title">UNION: Sanskrit ∪ Ukrainian consonants</div>
+    <div class="union-calc">
+<strong>class 00 (varga stops):</strong>
+  <span class="sk">Sanskrit:</span> 25 точок (K,C,Ṭ,T,P × V,D,N + aspiration)
+  <span class="uk">Ukrainian:</span> 6 точок (т,д,н,п,б,м) — <span class="both">всі вже в санскритській матриці</span>
+  <span class="hl">→ UNION class 00 = 25 точок</span>
+
+<strong>class 01 (non-varga):</strong>
+  <span class="sk">Sanskrit (8):</span> ś ṣ s h | y r l v
+  <span class="uk">Ukrainian (11):</span> х г ш ж с з ф в р л й
+  <span class="both">Перетин (6):</span> ś/ш, s/с, y/й, r/р, l/л, v/в
+  <span class="sk">Унікальні SKR (2):</span> ṣ, h
+  <span class="uk">Унікальні UKR (5):</span> х, г, ж, з, ф
+  <span class="hl">→ UNION class 01 = 8 + 11 − 6 = 13 точок</span>
+
+<strong>Загалом приголосних UNION:</strong>
+  <span class="hl">25 + 13 = 38 точок</span>
+  <span class="hl">38 &lt; 64 ✓</span>
+    </div>
+  </div>
+
+  <div class="result-box">
+    <div class="result-number">38 / 64</div>
+    <div class="result-label">приголосних у UNION(Sanskrit, Ukrainian)</div>
+    <div class="result-formula">25 (varga) + 13 (non-varga) = 38 &lt; 64</div>
+  </div>
+
+  <div class="macro-box">
+    <div class="macro-title">UPC-place = macro-articulatory class (не IPA)</div>
+    <div class="macro-text">
+      <code>000 K</code> — dorsal / velar region (к, х, ґ)<br>
+      <code>001 C</code> — palatal–postalveolar region (ч, ш, й, ś)<br>
+      <code>010 Ṭ</code> — retroflex (ҭ, ṣ)<br>
+      <code>011 T</code> — dental–alveolar region (т, с, р, л, д, н)<br>
+      <code>100 P</code> — labial region (п, ф, б, м, в)<br>
+      <code>101 G</code> — glottal (г, h)<br>
+      <code>110 U</code> — uvular–pharyngeal region (reserved)<br>
+      <code>111 —</code> — reserved<br><br>
+      <strong>Ключова властивість:</strong> кожен перехід <code>+8</code> = рух уздовж артикуляційного тракту від заднього до переднього (K→C→Ṭ→T→P→G). Це <strong>фізична геометрія голосового тракту</strong>, закодована в арифметиці.
+    </div>
+  </div>
+</div>
+
+<script>
+const places = ['K','C','Ṭ','T','P','G','U','R'];
+const manners = ['fric','appr','trill','lat'];
+
+const grid = document.getElementById('c01Grid');
+
+grid.appendChild(document.createElement('div'));
+for (let m = 0; m < 8; m++) {
+  const h = document.createElement('div');
+  h.className = 'c01-header';
+  h.textContent = (m & 1 ? 'vd ' : 'vl ') + manners[Math.floor(m/2)];
+  grid.appendChild(h);
+}
+
+const sanskrit = {
+  '0x48': {g:'ś',n:'pal fric vl'},
+  '0x50': {g:'ṣ',n:'ret fric vl'},
+  '0x58': {g:'s',n:'alv fric vl'},
+  '0x68': {g:'h',n:'glot fric vl'},
+  '0x4B': {g:'y',n:'pal appr vd'},
+  '0x5D': {g:'r',n:'alv trill vd'},
+  '0x5F': {g:'l',n:'alv lat vd'},
+  '0x63': {g:'v',n:'lab appr vd'},
+};
+
+const ukrainian = {
+  '0x40': {g:'х',n:'vel fric vl'},
+  '0x48': {g:'ш',n:'pal fric vl'},
+  '0x49': {g:'ж',n:'pal fric vd'},
+  '0x4B': {g:'й',n:'pal appr vd'},
+  '0x58': {g:'с',n:'alv fric vl'},
+  '0x59': {g:'з',n:'alv fric vd'},
+  '0x5D': {g:'р',n:'alv trill vd'},
+  '0x5F': {g:'л',n:'alv lat vd'},
+  '0x60': {g:'ф',n:'lab fric vl'},
+  '0x63': {g:'в',n:'lab appr vd'},
+  '0x69': {g:'г',n:'glot fric vd'},
+};
+
+for (let p = 0; p < 8; p++) {
+  const label = document.createElement('div');
+  label.className = 'c01-row-label';
+  label.textContent = places[p];
+  grid.appendChild(label);
+
+  for (let m = 0; m < 8; m++) {
+    const code = 0x40 + (p * 8) + m;
+    const hex = '0x' + code.toString(16).toUpperCase().padStart(2, '0');
+    const cell = document.createElement('div');
+    cell.className = 'c01-cell';
+
+    const sk = sanskrit[hex];
+    const uk = ukrainian[hex];
+
+    if (sk && uk) {
+      cell.className += ' both';
+      cell.innerHTML = '<span class="cc-glyph">' + sk.g + '/' + uk.g + '</span><span class="cc-name">' + sk.n + '</span><span class="cc-hex">' + hex + '</span>';
+    } else if (sk) {
+      cell.className += ' sanskrit';
+      cell.innerHTML = '<span class="cc-glyph">' + sk.g + '</span><span class="cc-name">' + sk.n + '</span><span class="cc-hex">' + hex + '</span>';
+    } else if (uk) {
+      cell.className += ' ukrainian';
+      cell.innerHTML = '<span class="cc-glyph">' + uk.g + '</span><span class="cc-name">' + uk.n + '</span><span class="cc-hex">' + hex + '</span>';
+    } else {
+      cell.className += ' reserved';
+      cell.innerHTML = '<span class="cc-glyph">·</span><span class="cc-hex">' + hex + '</span>';
+    }
+    grid.appendChild(cell);
+  }
+}
+</script>
+</body>
+</html>
