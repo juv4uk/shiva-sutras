@@ -29,8 +29,17 @@
 schema_version: 1
 claim_target: "L-001 (linguistic independence of the 42 classes)"
 registered_at: "2026-08-22"
-run_started_at: null          # set when the first annotation run begins
+run_started_at: "2026-09-06"          # ACTIVATED: preliminary analysis accepted by owner
 run_completed_at: null
+
+# Activation rationale (journal entry 0010):
+#   Stage 6.0B structural-trigger pipeline detected 22/22 valid canonical
+#   pratyāhāras (100% precision, 52% recall) from Aṣṭādhyāyī text without
+#   any knowledge of Śiva-sūtras. Owner accepted this as instrument
+#   calibration and authorised the start of the full L-001 run.
+#   See: experiments/blind_reconstruction/reports/L-001-blind-pratyahara-preliminary.md
+#   The full run now proceeds to semantic annotation of MAYBE sūtras
+#   (1220 candidates) to close the recall gap toward 42/42.
 
 data:
   corpus: "ksetra/sanskritworld_texts (submodule, pinned commit a8460b2...)"
