@@ -1,0 +1,61 @@
+# Journal Entry 0011: v6/v6.1 Supplementary Detection Pass
+#
+# Created: 2026-09-07
+# Author: Sarvam AI agent
+# Related: L-001 preregistration (run_started_at: 2026-09-06)
+#
+# CONTEXT
+# After activating L-001 (journal 0010), preliminary analysis (v2-v5)
+# revealed that the frozen v5.1 structural trigger pipeline detects only
+# 22 of 41 canonical pratyāhāras (56.4% recall against text-present 39).
+#
+# Root cause: v5.1 searches for pratyāhāras in padaccheda (word-split text)
+# using virama forms only. But many pratyāhāras appear in continuous
+# source_text in declined (locative, genitive), sandhi-blurred, or
+# compound forms that the padaccheda split doesn't isolate.
+#
+# ACTION
+# Created two supplementary detection passes:
+#   v6 (declined_form_detector.py): locative, genitive, citation forms
+#   v6.1 (declined_form_detector_v6_1.py): + visarga sandhi, compound -anta, conjunct
+#
+# Both are:
+#   - Fully automated (no manual annotation)
+#   - Blind (pattern-based, no answer-key lookup)
+#   - Non-modifying (frozen v5.1 harvest preserved)
+#   - Supplementary (produce separate v6/v6.1 YAML files)
+#
+# RESULTS
+# v5.1 alone:          22/39 = 56.4% recall
+# v5.1 + v6:           31/39 = 79.5% recall (+9 pratyāhāras)
+# v5.1 + v6.1:         37/39 = 94.9% recall (+15 pratyāhāras, fully automated)
+# Conservative (excl. ambiguous चरः): 36/39 = 92.3%
+#
+# Two ambiguous detections:
+#   - छवि at 8.3.7: likely pratyāhāra CaW (phonological context supports)
+#   - चरः at 1.3.53: likely root चर् genitive (verb context, not pratyāhāra)
+# Owner adjudication needed.
+#
+# EPISTEMIC NOTE
+# The v6/v6.1 passes do NOT modify the frozen v5.1 harvest.
+# They do NOT change the preregistration data or annotation sections.
+# They are ENGINEERING tools that produce supplementary analysis artifacts.
+#
+# The preregistration question is: does the combined v5.1+v6.1 pipeline
+# count as the "blind pipeline" for L-001 outcome determination?
+# This is a protocol decision for the owner.
+#
+# CROSS-MODEL STATUS
+# Cross-model stability (ARI ≥ 0.80 between sarvam and kimi) NOT yet measured.
+# This remains a blocker for outcome A/B per preregistration.
+
+entry_id: "0011"
+date: "2026-09-07"
+type: "methodology"
+title: "v6/v6.1 supplementary detection pass — extended form recognition"
+preregistration_impact: "supplementary (no change to data/annotation/stability sections)"
+commits:
+  v6_report: "04777df"
+  v6_1_report: "4a94c95"
+  v5_analysis: "fdd0534"
+  v6_final_map: "a674114"
