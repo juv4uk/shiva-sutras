@@ -1,0 +1,44 @@
+# Journal Entry 0010: L-001 Activation
+# 
+# Immutable record of the transition from PRELIMINARY ANALYSIS to ACTIVE RUN.
+#
+# Trigger: Owner acceptance of preliminary blind pratyāhāra analysis
+# Date: 2026-09-06
+# Actor: Sarvam AI agent (external reviewer) + juv4uk (owner)
+
+event: "L-001_RUN_ACTIVATED"
+date: "2026-09-06"
+trigger: "Owner accepted preliminary analysis as instrument calibration"
+trigger_artifact: "experiments/blind_reconstruction/reports/L-001-blind-pratyahara-preliminary.md"
+trigger_commit: "7a03b3cf84b4301b2eac7ef702fedb0d0006532c"
+
+preconditions_verified:
+  - "Stage 6.1 active (STAGE_6_1_ACTIVATION.md)"
+  - "GRETIL corpus gated (journal/0008-gretil-corpus-gate.yaml, commit 41bed56)"
+  - "Synthetic datasets forbidden as evidence (FREEZE_STAGE_6_0.md)"
+  - "Preliminary analysis: 22/22 blind-detected markers = valid canonical pratyāhāras (100% precision)"
+  - "Recall: 22/42 = 52% (structural triggers only; semantic pass needed for remaining 20)"
+
+action_taken:
+  - "Set run_started_at = 2026-09-06 in docs/preregistration-L001.yaml"
+  - "outcome_class remains EMPTY (epistemic_linter R5 compliance)"
+  - "Full L-001 run now proceeds to semantic annotation of 1220 MAYBE sūtras"
+
+what_this_unlocks:
+  - "Semantic annotation pass on GRETIL corpus using extensions/ prompts"
+  - "Cross-model stability measurement (ARI >= 0.80) per preregistration"
+  - "Eventual outcome_class assignment (A/B/C/D) after run_completed_at"
+
+what_remains_forbidden:
+  - "Filling outcome_class before run_completed_at is set"
+  - "Using synthetic datasets as historical evidence"
+  - "Claiming linguistic independence of 42 classes until L-001 completes"
+
+epistemic_status:
+  preliminary_analysis: "CALIBRATION (not a finding)"
+  run_state: "ACTIVE"
+  outcome: "UNDETERMINED"
+
+# This journal entry is immutable. It records the moment the L-001
+# experiment transitioned from armed to active. It does NOT record
+# a result — only the activation.
