@@ -3,7 +3,7 @@
  */
 
 export const MOCK_SWARM_TOPOLOGY = {
-  clusterId: 'swarm:mylisp-mesh-p5-alpha',
+  clusterId: 'swarm:my-lisp-mesh-p5-alpha',
   clusterName: 'My-Lisp Autonomous Ecosystem Mesh',
   activeNodesCount: 6,
   totalTasksCompleted: 298,
