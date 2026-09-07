@@ -1,0 +1,90 @@
+# Journal 0017: Ṇic → aya resolved — guṇa on aṅga (7.3.84)
+
+date: "2026-09-07"
+type: research_finding
+status: RESOLVED
+experiment: L-001
+epistemic_layer: PĀṆINIAN FORMAL USE
+
+## Question
+
+How does Ṇic (class 10 vikaraṇa) produce surface "aya" in forms like corayati?
+
+Previously (Journal 0016) this was an OPEN PĀṆINIAN QUESTION. The machine used an ENGINEERING SHORTCUT (Ṇaya → aya directly).
+
+## Sources consulted
+
+- Aṣṭādhyāyī (Baums, GRETIL): panini_u.htm
+- Kāśikā (Sharma ed., GRETIL): jvkasipu.htm, commentary on 7.3.84
+
+## Resolution
+
+The "i" from Ṇic becomes "aya" through guṇa + eco, exactly as in "nayati" (nī + Śap + tip).
+
+### Key sūtras
+
+1. **3.1.25**: cur=ādibhyo ṆiC — class 10 takes Ṇic
+2. **1.3.5**: ādir ñiṭuḍavaḥ — ṇ (initial in Ṇic, followed by i) is ṇiṭ
+3. **7.2.115**: acaḥ ñṇīti — guṇa/vṛddhi of a vowel when ñiṭ/ṇiṭ present
+4. **7.3.84**: sārvadhātukārdhadhātukayoḥ — guṇa (not vṛddhi) for sārvadhātuka/ārdhadhātuka suffixes
+5. **6.1.78**: eCaḥ ay-av-āy-āv-aḥ — eco sandhi (e/o → ay/av before vowel)
+
+### Kāśikā on 7.3.84
+
+> "sārvadhātuke ārdhadhātuke ca pratyaye parataḥ igantasya aṅgasya guṇo bhavati"
+> 
+> "When a sārvadhātuka or ārdhadhātuka suffix follows, guṇa of the aṅga occurs"
+
+Examples given: tarati, nayati, bhavati (sārvadhātuka); kartā, cetā, stotā (ārdhadhātuka)
+
+### Derivation of corayati
+
+```
+Step 1: cur + Ṇic + Śap + tip        (3.1.25 + 3.1.68)
+Step 2: Ṇic → i                       (it-lopa: ṇ=ṇiṭ by 1.3.5, c=hal antyam by 1.3.3)
+Step 3: Śap → a                       (it-lopa: ś not ñiṭ, p=hal antyam by 1.3.3)
+Step 4: aṅga = "curi"                 (cur + i from Ṇic — the "i" is now part of the aṅga)
+        suffix = "a" from Śap         (sārvadhātuka by 3.4.113)
+Step 5: 7.3.84 fires!                 (sārvadhātuka suffix → guṇa of aṅga)
+        "u" (dhātu vowel) → "o"       (guṇa u→o, by 1.1.2 aCo guṇaḥ)
+        "i" (Ṇic residue, now aṅga) → "e"  (guṇa i→e)
+Step 6: cor + e + a + ti
+Step 7: eco (6.1.78): e + a → aya
+Step 8: cor + aya + ti = corayati ✓
+```
+
+### Key insight
+
+The "i" from Ṇic becomes part of the AṄGA (stem) after Ṇic is added to the dhātu. It is NOT part of the suffix. When Śap (sārvadhātuka) follows, 7.3.84 applies guṇa to the entire aṅga — including the "i" from Ṇic. This is the same mechanism as "nayati" (nī → guṇa ī→e → eco → aya).
+
+### Cross-verification
+
+| Form | Dhātu | Guṇa input | Guṇa output | Eco | Result |
+|:---|:---|:---|:---|:---|:---|
+| nayati | nī (class 1) | ī | e | e+a→aya | nayati ✓ |
+| bhavati | bhū (class 1) | ū | o | o+a→av | bhavati ✓ |
+| corayati | cur (class 10) | u AND i (Ṇic) | o AND e | e+a→aya | corayati ✓ |
+
+"nayati" and "corayati" use the IDENTICAL mechanism: guṇa → eco → aya. The only difference is that in class 10, the "i" comes from Ṇic (not from the dhātu), but it's part of the aṅga in both cases.
+
+## Impact on machine
+
+The ENGINEERING SHORTCUT (Ṇaya → aya directly, commit `647459e`) can now be REPLACED with the proper Pāṇinian derivation:
+
+1. Encode class 10 as Ṇic (not Ṇaya): `(R i c)` with it-markers `(R c)`
+2. After it-lopa: vikaraṇa = "i"
+3. The existing guṇa function (7.3.84) must be extended to apply to the AṄGA (dhātu + vikaraṇa), not just the dhātu
+4. Eco (6.1.78) already handles e+a → aya
+
+This requires: `apply-guṇa-to-dhatu` → `apply-guṇa-to-aṅga` (apply guṇa to the last vowel of the combined dhātu+vikaraṇa, not just the dhātu).
+
+## Epistemic status
+
+- Previous: UNRESOLVED (open Pāṇinian question, Journal 0016)
+- Now: SUPPORTED by GRETIL Kāśikā commentary on 7.3.84
+- The derivation path (Ṇic → i → guṇa → e → eco → aya) is textually grounded in the Kāśikā's own examples (nayati uses the same ī→e→aya path)
+
+## Commits
+
+- This journal entry documents the resolution
+- Machine fix (replacing Ṇaya shortcut with proper Ṇic derivation) will follow
