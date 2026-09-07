@@ -1,0 +1,90 @@
+# Journal 0026: .my machine integration — liṅ + ātmanepada + staged sandhi
+
+date: "2026-09-07"
+type: implementation
+status: PROVED-IN-MODEL
+experiment: L-001
+epistemic_layer: ENGINEERING
+
+## 1. What was done
+
+Closed the reproducibility gap between Python verification scripts and the .my machine. Before this commit, the machine-state-report claimed 116/116 = 100% but the .my files only supported laṭ + loṭ + laṅ parasmaipada. liṅ and ātmanepada were verified only in Python (lin_verify.py, atma_verify.py).
+
+## 2. Changes to ting.my
+
+Added three new tiṅ tables and dispatch functions:
+
+### liṅ tiṅ — parasmaipada (e-type, for a-final aṅga)
+- Pre-computed endings: et, eyātam, eyus, es, estām, esta, eyam, eva, ema
+- Source: sī marker → s-lopa → ī→e by guṇa (Journal 0024)
+
+### liṅ tiṅ — Śnu classes (yā-type, for u-final aṅga)
+- Pre-computed endings: yāt, yātām, yus, yās, yāstām, yāsta, yām, yāva, yāmahi
+- Source: u-final aṅga keeps u (no guṇa), yā-type endings (Journal 0024)
+
+### ātmanepada laṭ ṭere table (full ādeśa)
+- Pre-computed: te, etām, anta, se, ethām, dhve, e, āvahe, āmahe
+- Wholesale replacement (ādeśa), not phonological transformation (Journal 0025)
+
+### New dispatch functions
+- get-lat-ting-atma: laṭ ātmanepada (ṭere when ṭit, raw+hal-lopa otherwise)
+- get-ting-atma: generic ātmanepada dispatch by lakāra
+- get-lin-ting-para: liṅ parasmaipada dispatch (e-type vs yā-type)
+- get-ting-para-v2: updated generic dispatch with liṅ
+- apply-tere-full: full ṭere ādeśa using pre-computed table
+- apply-tere (original): kept for backward compatibility
+
+## 3. Changes to derivation.my
+
+### derive-verb-liN (optative derivation)
+- Replaces vikaraṇa entirely with optative endings
+- Class-specific aṅga construction:
+  - Class 10: dhātu + Ṇic(i) → guṇa ALL
+  - Class 1: dhātu only → guṇa last IK
+  - Class 5,8: dhātu + vikaraṇa (nu/u) → NO guṇa (yā-type)
+  - Class 6: dhātu only, no guṇa, no vikaraṇa
+  - Class 4: dhātu + Śya(ya) → drop final 'a'
+
+### derive-verb-atma (ātmanepada with staged sandhi)
+- Full staged sandhi pipeline:
+  1. eco on aṅga+suffix
+  2. savarṇa within aṅga
+  3. junction (a/ā + e → e; A + a → a)
+  4. combine aṅga + tiṅ
+  5. coalescence (a+a → a, NOT dīrgha)
+  6. eco on final
+  7. savarṇa on final
+  8. devoice
+
+### New helper functions
+- apply-junction: a/ā + e → e, A + a → a
+- apply-coalescence: a+a → a, A+a → a
+- drop-last-a: drop final 'a' from sound list (class 4 optative)
+- last-sound, drop-last-sound, replace-last-sound: list utilities
+
+### Named derivations
+- 11 ātmanepada: bhavate, bhavante, bhavase, bhave, bhavāmahe, corayate, corayanta, coraye, sunote, sunvanta, tanote
+- 14 liṅ: bhavet, bhaveyus, bhaveyam, pacet, paceyus, paceyam, corayet, corayeyus, corayeyam, pazyet, nayet, kfSet, sunuyAt, sunuyus, sunuyAm
+
+## 4. Commits
+
+| File | Commit | Description |
+|:---|:---|:---|
+| ting.my | `397451c` | liṅ tiṅ tables + ātmanepada ṭere + dispatch |
+| derivation.my | `dddb10c` | liṅ derivation + ātmanepada staged sandhi + named derivations |
+
+## 5. Gap status
+
+| Feature | Python | .my machine |
+|:---|:---|:---|
+| laṭ parasmaipada | ✓ 14/14 | ✓ (existing) |
+| laṭ ātmanepada | ✓ 12/12 | ✓ (this commit) |
+| loṭ parasmaipada | ✓ 60/60 | ✓ (existing) |
+| laṅ parasmaipada | ✓ 15/15 | ✓ (existing) |
+| liṅ parasmaipada | ✓ 15/15 | ✓ (this commit) |
+
+The .my machine now structurally supports all 5 feature combinations. The named derivation functions mirror the Python verification tests. Full machine-level verification (running the .my files through a my-lisp interpreter) is pending — the .my syntax has not been validated against an actual interpreter.
+
+## 6. Architectural note
+
+The staged sandhi pipeline in derive-verb-atma is the first implementation of non-flat sandhi ordering in the .my machine. The original derive-verb-lakara uses a flat pipeline (eco → savarṇa → devoice). The ātmanepada path requires staged sandhi because eco and junction are non-commutative (Journal 0025, L-001-006). This creates an architectural split: parasmaipada uses flat sandhi, ātmanepada uses staged sandhi. Future unification should stage sandhi for all paths.
