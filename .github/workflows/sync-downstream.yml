@@ -1,0 +1,45 @@
+# .github/workflows/sync-downstream.yml
+#
+# Auto-sync shiva-sutras → my-lisp-panini.
+# When journals, claims, or reports are pushed to shiva-sutras master,
+# this workflow automatically updates the pin in my-lisp-panini.
+#
+# Requires secret: SYNC_TOKEN (GitHub PAT with repo scope for my-lisp-panini)
+
+name: Sync Downstream
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'journal/**'
+      - 'docs/claims-export.yaml'
+      - 'experiments/blind_reconstruction/reports/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Get HEAD SHA
+        id: sha
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Sync downstream
+        env:
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: |
+          pip install requests
+          python coordination/sync_downstream.py \
+            --sha "${{ steps.sha.outputs.sha }}" \
+            --token "$SYNC_TOKEN"
+
+      - name: Validate sync
+        env:
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: |
+          python coordination/validate_sync.py --token "$SYNC_TOKEN" || true
