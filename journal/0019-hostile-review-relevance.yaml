@@ -1,0 +1,85 @@
+# Journal 0019: How our recent work addresses the hostile review
+
+date: "2026-09-07"
+type: audit
+status: COMPLETED
+experiment: L-001
+epistemic_layer: MODERN SCHOLARSHIP
+
+## Summary
+
+Read the hostile review (150KB, `panini/research/external-reviews/sarvam-hostile-review.md` in my-lisp-panini). The review identifies 8 areas where CS analogies distort Pāṇini, and 7 missing concepts. Our work this session addresses 4 of these directly.
+
+## Review's main thesis
+
+"The project protects My Lisp from Pāṇini, but does not yet protect Pāṇini from My Lisp."
+
+CS analogies leak into the ontology:
+- dhātu → "operator" (should be: lexical primitive with properties)
+- pratyaya → "transformer" (should be: suffix added, then independent rules operate)
+- saṃjñā → "type system" (should be: naming/classification, not restriction)
+- prakriyā → "log" (should be: proof, prescriptive not descriptive)
+
+## How our recent work addresses the critiques
+
+### 1. "Consult the Kāśikā, not reverse-engineer from sūtras"
+
+Review: "The project jumped to executable traces before reading the commentarial tradition."
+
+Our action (Journal 0017): consulted Kāśikā on 7.3.84 directly. Found: "sārvadhātuke ārdhadhātuke ca pratyaye parataḥ igantasya aṅgasya guṇo bhavati". Resolved the Ṇic→aya question that was UNRESOLVED from sūtras alone.
+
+Status: ADDRESSED.
+
+### 2. "Saṃskāra as a distinct layer is missing"
+
+Review: "The tradition distinguishes āgama (addition) from saṃskāra (conditioning). Collapsing them into one transformation is a CS simplification."
+
+Our action: pipeline IS structured as the review recommends:
+1. āgama: dhātu + vikaraṇa + tiṅ (concatenation)
+2. saṃskāra: it-lopa → ṭere → vṛddhi → guṇa → eco (independent operations)
+
+Status: ADDRESSED.
+
+### 3. "sārvadhātuka/ārdhadhātuka distinction is missing"
+
+Review: "This is the most important morphological classification. Determines guṇa/vṛddhi behavior."
+
+Our action (Journal 0018): discovered 7.3.84 applies to BOTH sārvadhātuka AND ārdhadhātuka. Class 8 ("u") is ārdhadhātuka, guṇa applies (tanoti). This distinction now drives the guṇa-on-aṅga mechanism.
+
+Status: ADDRESSED.
+
+### 4. "The Bavati 'unknowns' are artifacts of not reading the commentary"
+
+Review: "The 'unknowns' are things the Siddhāntakaumudī explains in a single sentence."
+
+Our action: the "unknown" about Śap → "a" (why ś is it) was investigated in Journal 0018. The tradition considers ś in Śap/Śnu as it by convention. Śap → a derivation now works in our machine.
+
+Status: PARTIALLY ADDRESSED. The ś-it question needs more research (which rule makes ś an it-marker?), but the derivation works.
+
+## What the review identifies as still missing
+
+| Concept | Review says | Our status |
+|:---|:---|:---|
+| lakāra | No entry at all | NOT ADDRESSED — we only do laṭ |
+| upadeśa | No concept of "form as listed" | NOT ADDRESSED |
+| lopa/ādeśa/āgama distinction | All treated as "surface mutation" | PARTIALLY ADDRESSED — pipeline has it-lopa and ādeśa, but doesn't model the distinction formally |
+| tripādī | No awareness of 8.2-8.4 metaregime | NOT ADDRESSED |
+| saṃhitā/pada | No boundary between intra-word and inter-word | NOT ADDRESSED |
+| svara (accent) | No accent field | NOT ADDRESSED |
+
+## Errors in the review (noted by the project)
+
+1. Tripādī: review claims it is "all of books 6-8." Fact: Tripādī is only 8.2-8.4 (last 3 pāda of adhyāya 8).
+2. Prakriyā uniqueness: review claims "only one correct path." May be too categorical.
+
+## Roadmap based on review + our findings
+
+1. Add lakāra to the machine — currently only laṭ (present tense)
+2. Model lopa/ādeśa/āgama distinction formally — pipeline already separates them operationally
+3. Consult Siddhāntakaumudī for standard derivation sequences
+4. Add sārvadhātuka/ārdhadhātuka as explicit machine concepts — currently implicit in vikarana-has-tit?
+
+## Sources
+
+- `panini/research/external-reviews/sarvam-hostile-review.md` (my-lisp-panini repo, 150KB)
+- GRETIL Aṣṭādhyāyī (Baums) + Kāśikā (Sharma ed.)
