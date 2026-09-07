@@ -1,0 +1,92 @@
+# Journal 0020: Classes 5, 8 working — 97.4% recall
+
+date: "2026-09-07"
+type: experiment_result
+status: COMPLETED
+experiment: L-001
+epistemic_layer: PĀṆINIAN FORMAL USE + ENGINEERING
+
+## Summary
+
+Added classes 5 (Śnu) and 8 (u) to the machine. Discovered the guṇa/yaṇ split for Śnu/Śu classes (6.4.87). Score: 38/39 (97.4%) on 13 dhātus × 3 forms across 7 classes.
+
+## Key discoveries
+
+### 1. Śnu's u is NOT it
+
+Previously marked u as it-marker (by 1.3.4: na vibhaktau tusmāḥ). This was wrong: removing u gives vikaraṇa = "n" only, producing "sonti" (guṇa on dhātu) instead of "sunoti" (guṇa on vikaraṇa).
+
+Fix: only ś is it for Śnu. The vikaraṇa is "nu" (n+u), and guṇa applies to the "u" in "nu" → "no" → sunoti.
+
+### 2. Guṇa/yaṇ split for Śnu/Śu classes (6.4.87)
+
+Kāśikā on 6.4.87: "sunvanti / sunvantu / asunvan" — yaṇ (u→v) applies for 3pl.
+
+The pattern:
+- 3sg (tip→ti): guṇa (u→o) → sunoti, tanoti
+- 3pl (jhi→nti): yaṇ (u→v) + a-insertion → sunvanti, tanvanti
+- 1sg (mip→mi): guṇa (u→o) → sunomi, tanomi
+
+The "a" in sunvanti comes from insertion between "v" and consonant-initial tiṅ. This is likely related to 7.2.35 (ārdhadhātukasya iṭ vā) or a similar rule — needs further research.
+
+### 3. Class 8 guṇa target = vikaraṇa vowel
+
+For class 8 (tan+u+ti): guṇa applies to the vikaraṇa "u" → "o" → tanoti.
+The dhātu vowel "a" stays unchanged. This is different from class 10 (Ṇic) where guṇa applies to ALL vowels.
+
+### 4. Guṇa target varies by class
+
+| Class | Aṅga | Guṇa target | Example |
+|:---|:---|:---|:---|
+| 1 (Śap) | dhātu | dhātu vowel | bhavati (ū→o) |
+| 5 (Śnu) | dhātu + nu | vikaraṇa vowel | sunoti (nu's u→o) |
+| 8 (u) | dhātu + u | vikaraṇa vowel | tanoti (u→o) |
+| 10 (Ṇic) | dhātu + i | ALL vowels | corayati (u→o AND i→e) |
+
+Hypothesis: guṇa target = LAST vowel of aṅga for classes 1, 5, 8. For class 10 (ṇiṭ), guṇa applies to ALL vowels (7.2.115: acaḥ ñṇīti).
+
+## Test results
+
+13 dhātus × 3 forms (3sg, 3pl, 1sg) = 39 tests.
+
+| Dhātu | Class | 3sg | 3pl | 1sg | Status |
+|:---|:---|:---|:---|:---|:---|
+| bhU | 1 | bhavati ✓ | bhavanti ✓ | bhavAmi ✓ | PASS |
+| nI | 1 | nayati ✓ | nayanti ✓ | nayAmi ✓ | PASS |
+| stu | 1 | stavati ✓ | stavanti ✓ | stavAmi ✓ | PASS |
+| ad | 2 | atti ✓ | adnti ✗ | admi ✓ | FAIL (3pl) |
+| paz | 4 | pazyati ✓ | pazyanti ✓ | pazyAmi ✓ | PASS |
+| dfz | 4 | dfzyati ✓ | dfzyanti ✓ | dfzyAmi ✓ | PASS |
+| su | 5 | sunoti ✓ | sunvanti ✓ | sunomi ✓ | PASS |
+| pac | 6 | pacati ✓ | pacanti ✓ | pacAmi ✓ | PASS |
+| tud | 6 | tudati ✓ | tudanti ✓ | tudAmi ✓ | PASS |
+| kfS | 6 | kfSati ✓ | kfSanti ✓ | kfSAmi ✓ | PASS |
+| tan | 8 | tanoti ✓ | tanvanti ✓ | tanomi ✓ | PASS |
+| cur | 10 | corayati ✓ | corayanti ✓ | corayAmi ✓ | PASS |
+| kruS | 10 | kroSayati ✓ | kroSayanti ✓ | kroSayAmi ✓ | PASS |
+
+**Score: 38/39 (97.4%)**
+
+## Remaining failure
+
+ad (class 2) 3pl: ad+nti → adnti. Expected: "atti" (same as 3sg).
+This requires 8.4.55 (jhalāṃ jhaśi) applied across the morpheme boundary: d before n → t.
+Then dt → tt → t (by some sandhi rule).
+This is a class 2 edge case (no vikaraṇa, direct dhātu+tiṅ).
+
+## Machine state
+
+- 7 classes working: 1, 2 (partial), 4, 5, 6, 8, 10
+- Classes 3, 7, 9: table entries exist but untested
+- Pipeline: pratyāhāra → it-lopa → ṭere → vṛddhi → guṇa/yaṇ → eco → 8.4.55
+
+## Commits
+
+- ting.my: b17f88e (all 10 classes in vikaraṇa table)
+- derivation.my: pending (Śnu/Śu guṇa/yaṇ split)
+- This journal: this commit
+
+## Sources
+
+- Aṣṭādhyāyī (Baums, GRETIL): 3.1.68-81, 6.4.87, 7.3.84
+- Kāśikā (Sharma ed., GRETIL): on 3.1.73, 6.4.87
