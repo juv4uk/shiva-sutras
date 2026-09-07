@@ -158,7 +158,7 @@
     (description . "SWARM-WIDE task, defined via (define-task) (no capability gate) and notified via emit. Both tools are already set up and working, not just theoretically available -- use them actively, not occasionally. OBSIDIAN: shared vault, connection details in shiva-sutras .local-notes/agent-setup-guide.md section 2 -- uvx mcp-proxy bridge with mcp>=1.9,<2 pinned (no Node.js on this machine, plain mcp-remote will not work). Several repos already found this vault independently and made their own folder -- keep writing real findings there, and use search_notes before starting work someone else may have already done. Known pitfall: after bulk file edits outside the app, Graph View/search can lag until Ctrl+P -> Reload app without saving. SARVAM: mcp__sarvam-ai__* tools are connected. Use as independent cross-check the way my-lisp already did (Sarvam independent findings note) and shiva-sutras did for the pratyahara bug -- ask cold, no hint of your own conclusion, then compare. Known bug: sarvam-105b often returns empty content if max_tokens is set explicitly -- omit it for short factual questions, split long questions into several short ones. Full detail: shiva-sutras docs/sarvam-integration-guide.md. Do not build a third wrapper for either tool.")
     (done . ())
   ))
-  ("MYLISP-SARVAM-RESOLVE-OPEN-FINDINGS" . (
+  ("MY-LISP-SARVAM-RESOLVE-OPEN-FINDINGS" . (
     (priority . 7.5)
     (description . "HIGH PRIORITY, agent-specific (my-lisp). my-lisp already actively uses both tools -- two of three Sarvam findings in its own vault note are still open: F-ML-001 (sa-IN rejected by sarvam_tools_transliterate) and F-ML-002 (hi-IN proxy gives colloquial Hindi, not classical Sanskrit, for Devanagari). Ask Sarvam cold what the correct language code for classical Sanskrit transliteration actually is, then record whether that resolves the gap or confirms it as a real tool limitation.")
     (done . ())
@@ -205,3 +205,4 @@
     (description . "Periodic check: sanskritworld_texts fork vs upstream/main. See ECOSYSTEM-DAILY-REVIEW-2026-08-22.md risk R5.")
     (done . ())
   )))))
+
