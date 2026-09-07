@@ -77,16 +77,7 @@ The augment a- is prepended to the FINAL derived form (after guṇa, eco, etc.),
 - The augment is a prefix that attaches to the complete verb stem.
 - Re-applying sandhi after prepending handles all vowel-initial cases.
 
-### Pipeline: laṭ derivation → prepend a- → re-apply sandhi
-
-```
-derive-verb-laN:
-  1. Run derive-verb-lakara with laN (same as laṭ)
-  2. Prepend (a) to the result
-  3. Re-apply: eco → savarṇa dīrgha → 8.4.55
-```
-
-This is a simpler approach than modifying the internal pipeline of `derive-verb-lakara`.
+The approach is simpler than modifying the internal pipeline of `derive-verb-lakara`: the laṅ derivation runs the laṭ pipeline as-is, then prepends the augment and re-applies sandhi in one pass.
 
 ## 4. Lakāra system status
 
