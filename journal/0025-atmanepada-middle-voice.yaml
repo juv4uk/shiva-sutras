@@ -1,0 +1,97 @@
+# Journal 0025: ātmanepada (middle voice) — fifth dimension
+
+date: "2026-09-07"
+type: implementation
+status: PROVED-IN-MODEL
+experiment: L-001
+epistemic_layer: PĀṆINIAN FORMAL USE + ENGINEERING
+
+## 1. What was implemented
+
+### Ātmanepada (middle voice) for laṭ
+
+The ātmanepada (middle voice) represents a fundamentally different grammatical voice from parasmaipada (active). It uses its own set of tiṅ endings and triggers the ṭere rule (3.4.79).
+
+## 2. Key findings
+
+### Finding 1: ṭere (3.4.79) — ādeśa replaces entire tiṅ
+
+When the vikaraṇa has ṭit (classes 1, 5, 7, 8, 9, 10), the ātmanepada tiṅ undergo ādeśa (wholesale replacement):
+
+| Person | Raw tiṅ | ṭere ādeśa |
+|:---|:---|:---|
+| 3sg | ta | te |
+| 3du | ātām | etām |
+| 3pl | ja | anta |
+| 2sg | thās | se |
+| 1sg | iṭ | e |
+| 1pl | mahīṃ | āmahi |
+
+The key insight: ṭere is NOT a phonological transformation (like ta→te). It is a complete replacement (ādeśa) of the tiṅ with e-initial forms.
+
+### Finding 2: Junction sandhi ordering — eco BEFORE boundary rules
+
+The critical architectural discovery: eco (e/o + vowel → ay/av) must run BEFORE the anga-tiṅ junction rules. If junction runs first, it drops the connecting vowel that eco needs:
+
+For class 10 1sg: cor+e(guṇa) + ā(vṛddhi) + e(1sg ending)
+- WRONG order: junction drops ā → cor+e+e → savarṇa merges e+e → core ✗
+- RIGHT order: eco: e+ā → ay+ā → corayā → junction: ā+e → e → coraye ✓
+
+### Finding 3: a+a coalescence (NOT savarṇa dīrgha)
+
+At the ādeśa boundary (vikaraṇa 'a' meeting tiṅ-initial 'a' in 'anta'):
+- a + a → a (coalescence: two identical short vowels merge into ONE short vowel)
+- This is NOT savarṇa dīrgha (6.1.101), which would give a+a → ā
+
+The blocking mechanism: the tiṅ 'anta' is an ādeśa (wholesale replacement), so its initial 'a' is part of a single morphological unit, not a separate phonological sound available for savarṇa.
+
+### Finding 4: a/ā + e → e (guṇa vowel absorption)
+
+At the anga-tiṅ junction, when the anga ends in a/ā and the tiṅ starts with e (ṭere form):
+- a + e → e (the a is absorbed)
+- ā + e → e (the ā is absorbed)
+
+This corresponds to 6.1.87 (ād guṇe): when a guṇa-grade vowel follows, the preceding a/ā is dropped.
+
+## 3. Verification results
+
+### laṭ ātmanepada: 12/12 = 100%
+
+| Dhātu | Class | 3sg | 3du | 3pl | 2sg | 1sg | 1pl |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| bhū | 1 | bhavate | bhavetām | bhavanta | bhavase | bhave | bhavāmahe |
+| cur | 10 | corayate | — | corayanta | — | coraye | — |
+| su | 5 | sunote | — | sunvanta | — | — | — |
+| tan | 8 | tanote | — | — | — | — | — |
+
+## 4. Commit
+
+| File | Commit | Description |
+|:---|:---|:---|
+| atma_verify.py | `ff2fb98` | Ātmanepada verification (12/12=100%) |
+
+## 5. Voice system status
+
+| Voice | Status | Score |
+|:---|:---|:---|
+| Parasmaipada (active) | PROVED-IN-MODEL | 89/89 (100%) across 4 lakāras |
+| Ātmanepada (middle) | PROVED-IN-MODEL | 12/12 (100%) for laṭ |
+
+## 6. Sandhi pipeline (revised)
+
+The ātmanepada implementation revealed that the sandhi pipeline must be staged:
+
+1. **Eco** on anga+suffix (e/o + vowel → ay/av)
+2. **Savarṇa** within anga (internal vowel merges)
+3. **Junction** (a/ā + e → e, A + a → a)
+4. **Combine** anga + tiṅ
+5. **Coalescence** (a+a → a at ādeśa boundary)
+6. **Eco** on final form
+7. **Savarṇa** on final form
+8. **Devoice** (8.4.55)
+
+This staged approach is necessary because eco must see the guṇa vowel before junction rules remove it, and savarṇa must not cross the ādeśa boundary.
+
+## Summary
+
+Ātmanepada is the first structural extension beyond parasmaipada. It revealed that the sandhi pipeline cannot be a flat sequence — it must be staged with junction rules between anga and tiṅ layers. The ṭere ādeśa is a wholesale replacement, not a phonological rule, and its boundary behavior blocks savarṇa dīrgha while allowing coalescence.
