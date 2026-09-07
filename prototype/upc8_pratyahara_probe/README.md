@@ -75,7 +75,7 @@ hand-curated, метрика одна, фонем 14 з ~35.
 - Канон: `ksetra/canon/siva-sutras.yaml`
 - Споживач результатів: `extensions/cognates-uk-sa.yaml` +
   ROADMAP-ukrainian-sanskrit-understanding.md (крок 2: kāraka ↔ відмінки)
-- Сусідній метод: WSM-24 `mylisp/lib.my` (chamfer на цілочисельній
+- Сусідній метод: WSM-24 `my-lisp/lib.my` (chamfer на цілочисельній
   сітці — та сама ідея «відстань між формами», інший простір)
 
 ## 7. Обмеження / ORIENTATIONAL
