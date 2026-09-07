@@ -1,0 +1,157 @@
+# Journal 0021: Operation types, lakāra design, Siddhāntakaumudī reference
+
+date: "2026-09-07"
+type: design + research
+status: PROPOSED
+experiment: L-001
+epistemic_layer: PĀṆINIAN FORMAL USE + OUR HYPOTHESES
+
+## 1. Lopa / Ādeśa / Āgama distinction (addresses hostile review §3c)
+
+The hostile review correctly identifies that our machine treats all operations as "surface-form mutation." The Pāṇinian tradition distinguishes three operation types:
+
+### Lopa (deletion, 1.3.9: tasya lopaḥ)
+- A sound marked as it is deleted from the surface.
+- Example: Śap's p → lopa. Ṇic's c → lopa.
+- Downstream: sthānivad-bhāva (1.1.56) does NOT apply to lopa.
+  (A deleted sound cannot "stand in" for anything.)
+
+### Ādeśa (substitution, e.g. 7.3.84: guṇa)
+- One sound is REPLACED by another.
+- Example: guṇa: ū→o, ī→e, u→o.
+- Example: jhi→nti (8.4.62).
+- Downstream: sthānivad-bhāva (1.1.56) DOES apply to ādeśa.
+  The substitute "stands in" for the original for certain purposes.
+
+### Āgama (augment insertion, e.g. iṭ-āgama)
+- A sound is INSERTED into the string.
+- Example: iṭ-āgama (7.2.35: ārdhadhātukasya iṭ vā).
+- Example: the "a" inserted in sunvanti (between v and nti).
+- Downstream: āgama has its own visibility rules.
+
+### Current machine status
+
+Our pipeline already implements these operationally:
+- it-lopa → LOPA ✓
+- guṇa/vṛddhi → ĀDEŚA ✓
+- "a" insertion in sunvanti → ĀGAMA ✓ (but not formally typed)
+
+### Proposed change
+
+Add an `operation-type` field to each derivation step:
+- `(lopa <sound> <rule>)` — deletion
+- `(ādeśa <old> <new> <rule>)` — substitution
+- `(āgama <sound> <position> <rule>)` — insertion
+
+This would let the machine correctly apply sthānivad-bhāva (1.1.56) only to ādeśa, not lopa.
+
+Status: PROPOSED. Not yet implemented in My Lisp code.
+
+## 2. Lakāra system design (addresses hostile review §3a)
+
+The hostile review notes: "Without lakāra, the entire verbal derivation system is invisible."
+
+### Current state
+
+The machine only handles laṭ (present tense). The lakāra is hardcoded as a single tiṅ set.
+
+### Proposed design
+
+Each lakāra has its own tiṅ endings and may trigger different vikaraṇa/operation cascades:
+
+| Lakāra | Tense/Mood | Sūtra | Augment? | tiṅ (3sg para) |
+|:---|:---|:---|:---|:---|
+| laṭ | Present | 3.2.123 | — | tip (→ ti) |
+| loṭ | Imperative | 3.3.162 | — | hi (2sg), others differ |
+| laṅ | Imperfect | 3.2.111 | a- prefix | tip |
+| liṭ | Perfect | 3.2.115 | — | special (reduplication) |
+| luṭ | Future (periphrastic) | 3.2.3 | — | special |
+| lṛṭ | Future (simple) | 3.3.13 | — | tip |
+| liṅ | Optative | 3.3.161 | — | special (sī-type) |
+| luṅ | Aorist | 3.2.110 | a- prefix | special |
+| lṛṅ | Conditional | 3.3.139 | a- prefix | special |
+
+### Priority for implementation
+
+1. **laṭ** (already done) — present tense, 7 classes working
+2. **loṭ** (imperative) — shares most tiṅ with laṭ, minimal changes
+3. **laṅ** (imperfect) — adds augment a- prefix + same tiṅ
+4. **liṅ** (optative) — introduces sī-type endings, different vikaraṇa behavior
+
+Status: PROPOSED. laṭ is complete; loṭ and laṅ are next priority.
+
+## 3. Siddhāntakaumudī reference
+
+Found online resources for Siddhāntakaumudī (Bhaṭṭoji Dīkṣita, ~17th c.):
+
+### Available sources
+
+1. **Siddhāntakaumudī with Tattvabodhinī** (1904, Nirnaya Sagar Press)
+   - Full text on archive.org: scanned, OCR'd
+   - URL: archive.org/stream/siddhanta-kaumudi-with-tattva-bodhini-1904-nirnaya-sagar-press
+
+2. **Siddhāntakaumudī English Translation** by S.C. Vasu (1907)
+   - Full text on archive.org
+   - 2 volumes, covers all sections
+
+3. **LINGUINDIC** (Oxford-based digital Sanskrit platform)
+   - Siddhāntakaumudī text available for browsing
+   - URL: linguindic.com/data/browse/texts/36/
+
+4. **Academic thesis** (Cagliari University, 2024)
+   - "Sustainable traditions: A reappraisal of the Vaiyākaraṇasiddhāntakaumudī"
+   - Comparative analysis of SK vs Aṣṭādhyāyī for parasmaipada prakriyā
+   - Discusses anuvṛtti, adhikāra, and aṅga in both texts
+
+### Why this matters
+
+The hostile review says: "The Śap → a derivation is completely standard. The 'unknowns' are artifacts of trying to derive from sūtras alone, without the vṛtti literature."
+
+The Siddhāntakaumudī is the standard pedagogical prakriyā text. It reorders Aṣṭādhyāyī sūtras into derivation order. Each form is derived step-by-step with explicit sūtra citations.
+
+For our machine, the SK provides:
+- The CORRECT ORDER of rule application (our pipeline order is inferred, not canonical)
+- The standard prakriyā for bhavati, sunoti, corayati etc.
+- The resolution of edge cases (like the ś-it question for Śap)
+
+### Proposed action
+
+Fetch the bhavati prakriyā from the SK English translation and compare with our pipeline:
+- Our pipeline: it-lopa → ṭere → vṛddhi → guṇa → eco → 8.4.55
+- SK order: should be verified against the canonical derivation
+
+Status: PROPOSED. Not yet fetched.
+
+## 4. Dhatu-registry-loader connection
+
+The repo already has `dhatu-registry-loader.my` (13KB) — a pure MyLisp YAML loader for the dhātu registry. It reads `panini/registry/dhatu/*.yaml` files.
+
+### Current registry: 22 dhātus with metadata
+
+Each YAML entry has: canonical, gana, pada, set_anit, traditional_meaning.
+
+Example (gam.yaml):
+```yaml
+canonical: gam
+gana: 1
+pada: parasmaipada
+set_anit: aniT
+traditional_meaning: "іти"
+```
+
+### Proposed integration
+
+The derivation engine could call `(load-dhatu-registry "panini/registry/dhatu/")` and look up class/pada/seT from the registry instead of hardcoding.
+
+This would let the machine derive ANY registered dhātu automatically, without manual test case definition.
+
+Status: PROPOSED. Loader exists, integration pending.
+
+## Summary
+
+| Item | Status | Impact |
+|:---|:---|:---|
+| Lopa/ādeśa/āgama | PROPOSED | Formal operation types in trace |
+| Lakāra system | PROPOSED | Beyond laṭ (present tense) |
+| Siddhāntakaumudī | FOUND | Canonical prakriyā reference |
+| Dhatu-registry | EXISTS | Auto-lookup of dhātu metadata |
