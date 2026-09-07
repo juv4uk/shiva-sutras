@@ -1,0 +1,92 @@
+# Journal 0018: Unified guṇa-on-aṅga across classes 1, 5, 8, 10
+
+date: "2026-09-07"
+type: research_finding
+status: SUPPORTED
+experiment: L-001
+epistemic_layer: PĀṆINIAN FORMAL USE
+
+## Summary
+
+The guṇa-on-aṅga mechanism (Journal 0017, discovered for class 10 Ṇic) is not a special case. It is a UNIFIED PRINCIPLE that applies to at least 4 verbal classes (1, 5, 8, 10). The vikaraṇa vowel in these classes becomes part of the aṅga and receives guṇa (7.3.84).
+
+## Vikaraṇa table (from Aṣṭādhyāyī 3.1.68-81)
+
+| Class | Sūtra | Vikaraṇa | After it-lopa | Ṭit? |
+|:---|:---|:---|:---|:---|
+| 1 | 3.1.68 | Śap | a | Yes |
+| 2 | — | (none) | — | — |
+| 3 | 3.1.69 | ŚyaN | sya | No |
+| 4 | 3.1.69 | ŚyaN | sya | No |
+| 5 | 3.1.73 | Śnu | nu | Yes |
+| 6 | 3.1.77 | Śa | a | No |
+| 7 | 3.1.78 | Śnā(M) | nā | Yes |
+| 8 | 3.1.79 | u | u | ārdhadhātuka |
+| 9 | 3.1.81 | Śnā | nā | Yes |
+| 10 | 3.1.25 | Ṇic | i | Yes |
+
+## Key discovery: Class 8 uses plain "u", not "Śu"
+
+3.1.79: tan-ādi-kṛÑ-bhyaḥ=u-ḥ
+= "After tan-ādi and kṛÑ-ādi dhātus — u"
+
+The class 8 vikaraṇa is just "u", with no Ś prefix. This was previously misidentified as "Śu" in our machine.
+
+## The unified guṇa-on-aṅga principle
+
+7.3.84 (sārvadhātukārdhadhātukayoḥ) applies guṇa to the AṄGA when a sārvadhātuka or ārdhadhātuka suffix follows. The aṅga includes the dhātu AND any vikaraṇa material that has been incorporated into the stem.
+
+### Class 1 (Śap, ṭit, sārvadhātuka)
+- bhū + Śap + tip → bhū + a + ti → guṇa(ū→o) → eco → bhavati
+- nī + Śap + tip → nī + a + ti → guṇa(ī→e) → eco → nayati
+- Guṇa on: dhātu vowel only (vikaraṇa "a" is the suffix, not part of aṅga)
+
+### Class 5 (Śnu, ṭit, sārvadhātuka)
+- su + Śnu + tip → su + nu + ti → guṇa(u→o on Śnu "u") → sunoti
+- Kāśikā: "śapo 'pavādaḥ / sunoti / sinoti" (Śap replaced by Śnu)
+- Guṇa on: aṅga vowel (dhātu "u" stays, Śnu "u" → "o")
+- Wait — actually dhātu "u" also gets guṇa? su → so? No, sunoti has "su" not "so".
+- The guṇa applies to the LAST vowel of the aṅga: Śnu "u" → "o"
+- su + no + ti = sunoti ✓
+
+### Class 8 (u, ārdhadhātuka)
+- tan + u + ti → guṇa(u→o) → tanoti
+- 7.3.84 applies to ārdhadhātuka suffixes too!
+- Guṇa on: vikaraṇa "u" → "o"
+- tan + o + ti = tanoti ✓
+
+### Class 10 (Ṇic, ṇiṭ, sārvadhātuka)
+- cur + Ṇic + Śap + tip → cur + i + a + ti → guṇa(u→o, i→e) → eco → corayati
+- Guṇa on: ALL vowels in aṅga (dhātu "u" AND Ṇic "i")
+- cor + e + a + ti → eco → corayati ✓ (Journal 0017)
+
+## The pattern
+
+| Class | Aṅga | Guṇa target | Result |
+|:---|:---|:---|:---|
+| 1 | dhātu | dhātu vowel | bhavati, nayati |
+| 5 | dhātu + Śnu "u" | last vowel (Śnu "u") | sunoti |
+| 8 | dhātu + "u" | vikaraṇa "u" | tanoti |
+| 10 | dhātu + Ṇic "i" | ALL vowels | corayati |
+
+The guṇa target varies:
+- Class 1: dhātu vowel (vikaraṇa "a" is the suffix, not aṅga)
+- Class 5/8: vikaraṇa vowel (becomes part of aṅga)
+- Class 10: ALL vowels in aṅga (both dhātu and Ṇic)
+
+This variation needs further investigation. One hypothesis: the guṇa target is the LAST vowel of the aṅga (upadhā position). For class 1, the last vowel is the dhātu vowel (vikaraṇa "a" is suffix). For class 5/8/10, the last vowel is the vikaraṇa vowel.
+
+But class 10 also gets guṇa on the dhātu vowel (u→o in cur→cor), which is NOT the last vowel. This suggests guṇa applies to ALL vowels in the aṅga when ṇiṭ is present (7.2.115: acaḥ ñṇīti).
+
+## Impact on machine
+
+1. Add class 5 (Śnu → nu, ṭit, guṇa-on-aṅga)
+2. Add class 8 (u, ārdhadhātuka, guṇa-on-aṅga)
+3. Fix kzu → kSu (SLP1 encoding)
+4. Class 2 (no vikaraṇa) + 8.4.55 (jhalāṃ jhaśi) for atti
+5. Class 9 and 7: complex, defer
+
+## Sources
+
+- Aṣṭādhyāyī (Baums, GRETIL): 3.1.68-81, 7.3.84, 7.2.115, 1.3.3-5
+- Kāśikā (Sharma ed., GRETIL): commentary on 3.1.73, 7.3.84
