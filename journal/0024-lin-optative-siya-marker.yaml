@@ -1,0 +1,98 @@
+# Journal 0024: liṅ (optative) — fourth lakāra
+
+date: "2026-09-07"
+type: implementation
+status: PROVED-IN-MODEL
+experiment: L-001
+epistemic_layer: PĀṆINIAN FORMAL USE + ENGINEERING
+
+## 1. What was implemented
+
+### liṅ (optative, 3.3.161: vidhi-liṅ)
+
+The fourth lakāra. The optative mood expresses possibility, wish, or prescription.
+
+## 2. Key findings
+
+### Finding 1: Optative REPLACES vikaraṇa, not just tiṅ
+
+Unlike laṭ/loṭ/laṅ which use the standard vikaraṇa (Śap→a, Śnu→nu, etc.) + tiṅ endings, the optative uses the "sī" marker which replaces the entire vikaraṇa+tiṅ complex.
+
+The aṅga for optative = dhātu (with guṇa) WITHOUT the laṭ vikaraṇa "a". The "sī" marker (s=it→lopa, ī→guṇa→e) provides the connecting vowel instead.
+
+### Finding 2: Two ending types based on aṅga final
+
+The optative has two distinct ending sets depending on the aṅga's final sound:
+
+| Aṅga final | Classes | Ending type | 3sg example |
+|:---|:---|:---|:---|
+| a (or a-derived) | 1, 4, 6, 10 | e-type: et, eyātam, eyus | bhavet |
+| u (Śnu/Śu) | 5, 8 | yā-type: yāt, yātām, yus | sunuyāt |
+
+The e-type arises because: guṇa'd dhātu vowel (o/e) + optative ī → eco → ay/av + ī → ī→e → ...et.
+The yā-type arises because: u-final aṅga + optative ī → no eco (u is not e/o) → the ī surfaces differently.
+
+### Finding 3: Class 4 (Śya) drops final 'a'
+
+Class 4 vikaraṇa is Śya→ya (ends in 'a'). In the optative, this 'a' belongs to the laṭ layer and must be dropped. Without dropping: pazya + et = pazyaet (wrong). With dropping: pazy + et = pazyet = paśyet ✓.
+
+## 3. Pāṇinian derivation trace
+
+### bhavet (bhū class 1, 3sg optative)
+
+1. bhū + sīt (optative suffix: s=it, t=ending)
+2. s → lopa: sīt → īt
+3. guṇa on dhātu vowel: ū → o → bho
+4. eco: o + ī (vowel) → av + ī → bhavīt
+5. guṇa on optative ī: ī → e → bhavet ✓
+
+### corayet (cur class 10, 3sg optative)
+
+1. cur + i(Ṇic) + sīt → īt
+2. guṇa on ALL vowels: u→o, i→e → cor + e
+3. eco: e + ī (vowel) → ay + ī → corayīt
+4. guṇa on optative ī: ī → e → corayet ✓
+
+### sunuyāt (su class 5, 3sg optative)
+
+1. su + nu(Śnu) + sīt → īt
+2. NO guṇa on dhātu vowel (u stays as u in Śnu optative)
+3. No eco (u is not e/o)
+4. Optative uses yā-type ending: sunu + yāt → sunuyāt ✓
+
+## 4. Verification results
+
+### liṅ (optative): 15/15 = 100%
+
+| Dhātu | Class | 3sg | 3pl | 1sg |
+|:---|:---|:---|:---|:---|
+| bhū | 1 | bhavet | bhaveyus | bhaveyam |
+| pac | 6 | pacet | paceyus | paceyam |
+| cur | 10 | corayet | corayeyus | corayeyam |
+| paz | 4 | paśyet | — | — |
+| nī | 1 | nayet | — | — |
+| kfS | 6 | karṣet | — | — |
+| su | 5 | sunuyāt | sunuyus | sunuyām |
+
+## 5. Commit
+
+| File | Commit | Description |
+|:---|:---|:---|
+| lin_verify.py | `4ea1c8b` | liṅ verification script (15/15=100%) |
+
+## 6. Lakāra system status
+
+| Lakāra | Tense/Mood | Status | Score |
+|:---|:---|:---|:---|
+| laṭ | Present | PROVED-IN-MODEL | 14/14 (100%) |
+| loṭ | Imperative | PROVED-IN-MODEL | 60/60 (100%) |
+| laṅ | Imperfect | PROVED-IN-MODEL | 15/15 (100%) |
+| liṅ | Optative | PROVED-IN-MODEL | 15/15 (100%) |
+| liṭ | Perfect | deferred | — |
+| lṛṭ | Future | deferred | — |
+
+Total: 4 lakāras, 104/104 = 100% across all tested forms.
+
+## Summary
+
+The optative is structurally the most complex lakāra so far. It replaces the vikaraṇa entirely (not just the tiṅ), has two ending types based on aṅga final, and requires dropping the laṭ vikaraṇa vowel for class 4. All 15 test forms verified at 100%.
