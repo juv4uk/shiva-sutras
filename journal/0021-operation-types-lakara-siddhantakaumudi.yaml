@@ -45,7 +45,7 @@ Add an `operation-type` field to each derivation step:
 
 This would let the machine correctly apply sthānivad-bhāva (1.1.56) only to ādeśa, not lopa.
 
-Status: PROPOSED. Not yet implemented in My Lisp code.
+Status: PROPOSED. Not yet implemented in my-lisp code.
 
 ## 2. Lakāra system design (addresses hostile review §3a)
 
@@ -124,7 +124,7 @@ Status: PROPOSED. Not yet fetched.
 
 ## 4. Dhatu-registry-loader connection
 
-The repo already has `dhatu-registry-loader.my` (13KB) — a pure MyLisp YAML loader for the dhātu registry. It reads `panini/registry/dhatu/*.yaml` files.
+The repo already has `dhatu-registry-loader.my` (13KB) — a pure my-lisp YAML loader for the dhātu registry. It reads `panini/registry/dhatu/*.yaml` files.
 
 ### Current registry: 22 dhātus with metadata
 
