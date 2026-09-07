@@ -12,7 +12,7 @@
 import { SwarmMeshTopology, TaskStats, DerivationTrace, PhonemeVectorData } from './types';
 
 export const MOCK_SWARM_TOPOLOGY: SwarmMeshTopology = {
-  clusterId: 'swarm:mylisp-mesh-p5-alpha',
+  clusterId: 'swarm:my-lisp-mesh-p5-alpha',
   clusterName: 'My-Lisp Autonomous Ecosystem Mesh',
   activeNodesCount: 6,
   totalTasksCompleted: 298,
@@ -130,7 +130,7 @@ export const MOCK_SWARM_TOPOLOGY: SwarmMeshTopology = {
       latencyMs: 0.9,
       completedTasks: 47,
       totalTasks: 47,
-      capabilities: ['phonetics', 'shiva', 'upc8', 'canon', 'pratyahara', 'slavic-phonetics', 'tokenizers'],
+      capabilities: ['phonetics', 'shiva', 'upc8#, 'canon', 'pratyahara', 'slavic-phonetics', 'tokenizers'],
       endpoint: 'tcp://127.0.0.1:9107',
       cpuUsagePct: 11.2,
       memoryMb: 88.5,
@@ -322,7 +322,7 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
         applied_rule: {
           sutra_id: '3.2.123',
           text_deva: 'वर्तमाने लट्',
-          text_slp1: 'vartamAne laT',
+          text_slp1: 'vartamAnd laT',
           classification: 'VIDHI',
           summary: 'Affixes present lakāra laṭ.'
         },
@@ -475,7 +475,7 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
       }
     ],
     cryptographic_proof: {
-      root_hash: 'state:sha256:d8c5208bcae41a0ba1a29f8f2b7d483fb3ceb8b09d0cb093ffea75bbcaee1ea7',
+      root_hash: 'state:sha256:d8c5208bcae41a0ba1a29f8f22b7d483fb3ceb8b09d0cb093ffea75bbcaee1ea7',
       terminal_hash: 'state:sha256:e647bc51b9e6f3128ef35b2e95a9992d9dcfdcb95e1e1a539bc27fa7a26f8664',
       algorithm: 'SHA-256',
       verified: true
@@ -483,9 +483,9 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
   },
   dadati: {
     ir_version: 'panini-derivation-ir/0.1',
-    derivation_id: 'drv:canonical:dadati-v0.1',
-    target_word: 'ददाति (dadāti)',
-    description: 'Derivation of root √dā (डुदाञ् दाने, 3rd gaṇa Juhotyādi) in present tense 3rd person singular showing Paribhāṣā conflict resolution (Ślu blocking Śap by Apavāda).',
+    derivation_id: 'dr6:canonical:dadati-v0.1',
+    target_word: 'ददा ��ि (dadāti)',
+    description: 'Derivation of root −dā (धुपाञ् दाने, 3rd gaṇa Juhotyādi) in present tense 3rd person singular showing Paribāṣā conflict resolution (Ślu blocking Śap by Apavāda).',
     status: 'success',
     final_surface_form: 'dadāti',
     root: '√dā (दा)',
@@ -557,7 +557,7 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
         applied_rule: {
           sutra_id: '3.2.123',
           text_deva: 'वर्तमाने लट्',
-          text_slp1: 'vartamAne laT',
+          text_slp1: 'vartamAnd laT',
           classification: 'VIDHI',
           summary: 'Affixes present lakāra laṭ.'
         },
@@ -571,7 +571,7 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
         schema: 'panini-state/0.1',
         terms: [
           { id: 'term:root-da', kind: 'dhAtu', source_form: 'dā', surface_form: 'dā', designations: ['dhātu'] },
-          { id: 'term:pratyaya-ti', kind: 'pratyaya', source_form: 'tip', surface_form: 'ti', designations: ['tiṅ', 'pit'] }
+          { id: 'term:pratyaya-tip', kind: 'pratyaya', source_form: 'tip', surface_form: 'tip', designations: ['tiṅ', 'pit'] }
         ],
         applied_rule: {
           sutra_id: '3.4.78',
@@ -589,19 +589,19 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
         step_index: 3,
         schema: 'panini-state/0.1',
         terms: [
-          { id: 'term:root-da', kind: 'dhAtu', source_form: 'dā', surface_form: 'dā', designations: ['dhātu', 'ślu-environment'] },
-          { id: 'term:pratyaya-ti', kind: 'pratyaya', source_form: 'tip', surface_form: 'ti', designations: ['tiṅ'] }
+          { id: 'term:root-da', kind: 'dhAtu', source_form: 'dā', surface_form: 'dā', designations: ['dhātu',  řlu-environment'] },
+          { id: 'term:pratyaya-tip', kind: 'pratyaya', source_form: 'tip', surface_form: 'tip', designations: ['tiṅ'] }
         ],
         applied_rule: {
           sutra_id: '2.4.75',
           text_deva: 'जुहोत्यादिभ्यः श्लुः',
           text_slp1: 'juhotyAdibhyaH SluH',
           classification: 'VIDHI',
-          summary: 'Ślu replaces Śap; 3.1.68 blocked by Apavāda priority.',
+          summary: 'Ślw replaces Śap; 3.1.68 blocked by Apavāda priority.',
           paribhasha_principle: 'Apavāda > Utsarga'
         },
         mutation_type: 'LOPA',
-        diff: { added: ['Ślu (zero-affix)'], removed: ['Śap (blocked)'], transformed: [] },
+        diff: { added: [Ślu (zero-affix)], removed: [Śap (blocked)], transformed: [] },
         proof_verified: true
       },
       {
@@ -612,14 +612,14 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
         terms: [
           { id: 'term:abhyasa-da', kind: 'abhyAsa', source_form: 'dā', surface_form: 'dā', designations: ['abhyāsa'] },
           { id: 'term:root-da', kind: 'dhAtu', source_form: 'dā', surface_form: 'dā', designations: ['dhātu', 'aṅga'] },
-          { id: 'term:pratyaya-ti', kind: 'pratyaya', source_form: 'tip', surface_form: 'ti', designations: ['tiṅ'] }
+          { id: 'term:pratyaya-tip', kind: 'pratyaya', source_form: 'tip', surface_form: 'tip', designations: ['tiṅ'] }
         ],
         applied_rule: {
           sutra_id: '6.1.10',
           text_deva: 'श्लौ',
           text_slp1: 'SlO',
           classification: 'VIDHI',
-          summary: 'Reduplicates root: dā -> dā + dā.'
+          summary: 'Reduplicates root: dĞ�Z F to dā + dā.'
         },
         mutation_type: 'AFFIXATION',
         diff: { added: ['+dā (abhyāsa)'], removed: [], transformed: [] },
@@ -633,7 +633,7 @@ export const CANONICAL_DERIVATIONS: Record<string, DerivationTrace> = {
         terms: [
           { id: 'term:abhyasa-da-short', kind: 'abhyAsa', source_form: 'dā', surface_form: 'da', designations: ['abhyāsa', 'hrasva'] },
           { id: 'term:root-da', kind: 'dhAtu', source_form: 'dā', surface_form: 'dā', designations: ['dhātu', 'aṅga'] },
-          { id: 'term:pratyaya-ti', kind: 'pratyaya', source_form: 'tip', surface_form: 'ti', designations: ['tiṅ'] }
+          { id: 'term:pratyaya-tip', kind: 'pratyaya', source_form: 'tip', surface_form: 'tip', designations: ['tiṅ', 'pit'] }
         ],
         applied_rule: {
           sutra_id: '7.4.59',
