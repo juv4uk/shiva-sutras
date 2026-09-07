@@ -5,9 +5,9 @@
 
 Статус: **EXPORT REGISTRY** (постійний інтерфейс)
 Протокол: `docs/epistemic-coordination.md`
-Revision baseline: `72046d395498e1e641f028327ad6aac2aa619629` (2026-09-07)
+Revision baseline: `c012ead6f7b6e0bcf4eef7250b110eaf9aefaff7` (2026-09-07)
 
-История ревізій: `a8391c4` (2026-08-15, initial) → `0f6110d` (2026-08-17, adds H-SS-EXT-001..003 per REM-008) → `cd13c85` (2026-09-07, adds L-001-001..004 per L-001 completion) → `72046d3` (2026-09-07, adds L-001-005 computational coherence).
+История ревізій: `a8391c4` (2026-08-15, initial) → `0f6110d` (2026-08-17, adds H-SS-EXT-001..003 per REM-008) → `cd13c85` (2026-09-07, adds L-001-001..004 per L-001 completion) → `72046d3` (2026-09-07, adds L-001-005 computational coherence) → `c012ead` (2026-09-07, updates L-001-005 to 116/116=100% + adds L-001-006 staged sandhi).
 
 ---
 
@@ -62,7 +62,7 @@ Revision baseline: `72046d395498e1e641f028327ad6aac2aa619629` (2026-09-07)
 - **statement**: Канонічна структура (Class B) є єдиною серед оптимальних, що дозволяє безколізійну ідентифікацію маркерів.
 - **scope**: 2 оптимальні структурні класи, семантичне іменування пратяхар.
 - **status**: `PROVED-IN-MODEL` (внутрішній: `M-005`).
-- **evidence**: Address Semantics Fingerprint.
+- *jevidence**: Address Semantics Fingerprint.
 - **limitations**: Не доводить лінгвістичну незалежність 42 класів.
 
 ### SS-CORPUS-001 — GRETIL корпус з проvenance
@@ -125,7 +125,7 @@ Revision baseline: `72046d395498e1e641f028327ad6aac2aa619629` (2026-09-07)
 - **statement**: 4 пратяхари є утворюваними з Śiva-sūtras, але Паніні завжди використовує надмножину замість них: uK, caY, CaW, caR. Система Паніні містить редундантність — декілька міток можуть адресувати ту саму множину, і Паніні послідовно обирає ширшу.
 - **scope**: Текстуальний аналіз Aṣṭādhyāyī.
 - **status**: `SUPPORTED` (внутрішній: `L-001`).
-- **evidence**: Кожна з 4 віртуальних пратяхар має відповідну надмножину, яка фіксується в тексті.
+- *jevidence**: Кожна з 4 віртуальних пратяхар має відповідну надмножину, яка фіксується в тексті.
 - **limitations**: "Завжди використовує надмножину" — емпіричне спостереження на наявному тексті; не доводить, що Паніні свідомо уникав цих міток. 2 з 4 (CaW, caR) є неоднозначними (див. epistemic caveats у L-001 фінальному звіті).
 
 ### L-001-004 — Золота сутра 8.2.37 (dens pratyāhāra sūtra)
@@ -136,11 +136,18 @@ Revision baseline: `72046d395498e1e641f028327ad6aac2aa619629` (2026-09-07)
 - **limitations**: "Найщільніша" — емпіричне спостереження, не вичерпний пошук по всіх 3983 сутрах (можливі інші з 3+, хоча малоймовірно).
 
 ### L-001-005 — Обчислювальна когерентність (computational coherence)
-- **statement**: Канонічна система пратяхар обчислювально когерентна: машина (my-lisp-panini), що використовує Śiva-sūtras як єдине джерело даних, виробляє правильні санскритські вербальні форми через ланцюжок sūtra-цитованих операцій. 21/27 парадигмальних форм коректні (77.8%), 4 gaps точно ідентифіковані з посиланнями на конкретні sūtras.
-- **scope**: Обчислювальна реалізація в my-lisp-panini (9 модулів). Не доводить історичний задум Паніні. Не доводить унікальність канонічної системи.
-- **status**: `SUPPORTED` (внутрішній: `L-001`).
-- **evidence**: `experiments/blind_reconstruction/reports/machine-state-report.md`; my-lisp-panini commits `756f942`–`0af6a56` (9 модулів: resolver, phonology, sandhi, ting, derivation, trace, paradigm).
-- **limitations**: 4 gaps (jhi 8.4.62, gam irregular, ātmanepada 6.1.101, 1st person vṛddhi 7.3.101). Покриває лише laṭ parasmaipada/ātmanepada, не повну Aṣṭādhyāyī. Не доводить, що альтернативна система не змогла б працювати.
+- **statement**: Канонічна система пратяхар обчислювально когерентна: машина (my-lisp-panini), що використовує Śiva-sūtras як єдине джерело даних, виробляє правильні санскритські вербальні форми через ланцюжок sūtra-цитованих операцій. 116/116 парадигмальних форм коректні (100%) через 4 lakāras (laṭ + loṭ + laṅ + liṅ) та 2 голоси (parasmaipada + ātmanepada), 7 вербальних класів.
+- **scope**: Обчислювальна реалізація в my-lisp-panini (10+ модулів + FPGA artifacts). Не доводить історичний задум Паніні. Не доводить унікальність канонічної системи.
+- **status**: `PROVED-IN-MODEL` (внутрішній: `L-001`).
+- **evidence**: `experiments/blind_reconstruction/reports/machine-state-report.md` (commit `c012ead`); my-lisp-panini commits `756f942`–`30511dd` (10+ модулів: resolver, phonology, sandhi, ting, derivation, trace, paradigm, pratyahara_matrix); verification scripts: `lan_verify.py`, `lin_verify.py`, `atma_verify.py`.
+- **limitations**: 1 remaining gap (ad 3pl class 2 assimilation). liṅ + ātmanepada верифіковані в Python, але не ще інтегровані в .my файли. Не доводить, що альтернативна система не змогла б працювати.
+
+### L-001-006 — Стадійність sandhi (staged sandhi pipeline)
+- **statement**: Sandhi-операції в пайплайні похідної не комутативні: eco (e/o + vowel → ay/av) та junction (a/ā + e → e) повинні застосовуватись у визначеному порядку — спочатку всередині aṅga, потім на стику aṅga/tiṅ, потім на поверхневому рівні. Порушення порядку дає неправильні форми (напр. cor+e+ā+e → core замість coraye).
+- **scope**: Обчислювальна реалізація в my-lisp-panini. Архітектурне спостереження, не історичне твердження.
+- **status**: `PROVED-IN-MODEL` (внутрішній: `L-001`).
+- **evidence**: `journal/0025-atmanepada-middle-voice.yaml`; `panini/tests/atma_verify.py` (commit `ff2fb98`).
+- **limitations**: Стадійність встановлена емпірично через тестування; формальний доказ не комутативності для всіх комбінацій правил не виконано.
 
 ---
 
@@ -164,4 +171,5 @@ Revision baseline: `72046d395498e1e641f028327ad6aac2aa619629` (2026-09-07)
 | `L-001-002` | `L-001` | `SUPPORTED` |
 | `L-001-003` | `L-001` | `SUPPORTED` |
 | `L-001-004` | `L-001` | `SUPPORTED` |
-| `L-001-005` | `L-001` | `SUPPORTED` |
+| `L-001-005` | `L-001` | `PROVED-IN-MODEL` |
+| `L-001-006` | `L-001` | `PROVED-IN-MODEL` |
