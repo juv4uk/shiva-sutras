@@ -1,0 +1,114 @@
+# Journal 0023: laṅ (imperfect) — third lakāra
+
+date: "2026-09-07"
+type: implementation
+status: PROPOSED
+experiment: L-001
+epistemic_layer: PĀṆINIAN FORMAL USE + ENGINEERING
+
+## 1. What was implemented
+
+### laṅ (imperfect tense, 3.2.111: anadyatanaṃ laṅ)
+
+The third lakāra in the Pāṇinian verbal system. laṅ (imperfect) denotes past action not occurring today.
+
+### Architecture
+
+laṅ is the simplest lakāra to add after laṭ and loṭ because:
+
+1. **Same tiṅ as laṭ**: laṅ uses the identical parasmaipada tiṅ set (tip, tas, jhi, sip, thas, tha, mip, vas, mas) with the same it-lopa and jhi→nti processing.
+2. **Augment a-**: the only structural difference is the augment a- (6.1.3+ chordasī...) prefixed to the dhātu.
+3. **No special vikaraṇa changes**: the same 10-class vikaraṇa table applies.
+
+### ting.my changes
+
+- Added `get-laN-ting-para`: identical processing to `get-lat-ting-para` (hal-lopa + jhi→nti).
+- Added `laN` dispatch in `get-ting-para`.
+- Commit: `bde2cb7`
+
+### derivation.my changes
+
+- Added `derive-verb-laN`: computes the laṭ derivation, then prepends augment a- to the result and re-applies sandhi (eco + savarṇa dīrgha + 8.4.55).
+- The augment a- is NOT part of the aṅga (no guṇa on it).
+- savarṇa dīrgha (6.1.101) handles a+a→ā if dhātu starts with vowel a.
+- eco sandhi (6.1.78) handles a+i→e, a+u→o if needed.
+- Added 14 named laṅ derivations (8 × 3sg, 4 × 3pl, 3 × 1sg).
+- Commit: `e7dbaec`
+
+## 2. Expected forms
+
+### 3sg (tip → ti → t after hal-lopa)
+
+| Dhātu | Class | laṭ (present) | laṅ (imperfect) |
+|:---|:---|:---|:---|
+| bhū | 1 | bhavati | abhavat |
+| pac | 6 | pacati | apacat |
+| su | 5 | sunoti | asunot |
+| tan | 8 | tanoti | atanot |
+| cur | 10 | corayati | acorayat |
+| nī | 1 | nayati | anayat |
+| paz | 4 | paśyati | apaśyat |
+| kfS | 6 | karṣati | akarṣat |
+
+### 3pl (jhi → nti)
+
+| Dhātu | Class | laṭ | laṅ |
+|:---|:---|:---|:---|
+| bhū | 1 | bhavanti | abhavan |
+| pac | 6 | pacanti | apacan |
+| su | 5 | sunvanti | asunvan |
+| cur | 10 | corayanti | acorayan |
+
+### 1sg (mip → mi)
+
+| Dhātu | Class | laṭ | laṅ |
+|:---|:---|:---|:---|
+| bhū | 1 | bhavāmi | abhavam |
+| pac | 6 | pacāmi | apacam |
+| cur | 10 | corayāmi | acorayam |
+
+## 3. Design decisions
+
+### Augment placement
+
+The augment a- is prepended to the FINAL derived form (after guṇa, eco, etc.), NOT to the dhātu before guṇa. This is because:
+
+- The augment is NOT part of the aṅga (7.3.84 does not apply to it).
+- The augment is a prefix that attaches to the complete verb stem.
+- Re-applying sandhi after prepending handles all vowel-initial cases.
+
+### Pipeline: laṭ derivation → prepend a- → re-apply sandhi
+
+```
+derive-verb-laN:
+  1. Run derive-verb-lakara with laN (same as laṭ)
+  2. Prepend (a) to the result
+  3. Re-apply: eco → savarṇa dīrgha → 8.4.55
+```
+
+This is a simpler approach than modifying the internal pipeline of `derive-verb-lakara`.
+
+## 4. Lakāra system status
+
+| Lakāra | Tense/Mood | Status | Score |
+|:---|:---|:---|:---|
+| laṭ | Present | COMPLETE | 60/60 (100%) |
+| loṭ | Imperative | COMPLETE | 60/60 (100%) |
+| laṅ | Imperfect | PROPOSED | pending verification |
+| liṭ | Perfect | deferred | — |
+| lṛṭ | Future | deferred | — |
+| liṅ | Optative | deferred | — |
+
+## 5. Next steps
+
+1. **Verify laṅ forms** against canonical references (Siddhāntakaumudī, Whitney)
+2. **Update machine-state-report** with laṅ score
+3. **Update dependencies + shiva_claims.my** to pin `e7dbaec`
+
+## Summary
+
+| Item | Status | Commit |
+|:---|:---|:---|
+| laṅ tiṅ dispatch | DONE | `bde2cb7` |
+| laṅ augment a- + named forms | DONE | `e7dbaec` |
+| Verification | PENDING | — |
