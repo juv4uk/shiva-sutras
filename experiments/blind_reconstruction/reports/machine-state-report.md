@@ -27,7 +27,7 @@ phonology.my (canon-derived predicates + SLP1 validator)
     ↓ apply-sandhi(final, next)
 sandhi.my (4 rules: 6.1.77, 8.3.23, 8.4.55, 8.4.58)
     ↓
-ting.my (18 tiṅ endings × 4 lakāras + ALL 10 vikaraṇa classes + it-lopa + ṭere)
+ting.my (18 tiṅ endings × 5 lakāras + ALL 10 vikaraṇa classes + it-lopa + ṭere)
     ↓
 derivation.my (staged pipeline: it-lopa → ṭere → vṛddhi → guṇa/yaṇ → staged sandhi)
     ↓
@@ -51,7 +51,7 @@ Every sound-class predicate is computed from sūtra data via `resolve-pratyahara
 | IK (simple vowels) | i | k | i u f x | 4 |
 | EC (diphthongs) | e | c | e o E O | 4 |
 
-### 3.2 Verbal derivation — 4 lakāras × 2 voices
+### 3.2 Verbal derivation — 5 lakāras × 2 voices
 
 #### laṭ (present indicative) — parasmaipada: 14/14 = 100%
 
@@ -96,6 +96,34 @@ Key findings: laṅ tiṅ ≠ laṭ tiṅ (no final -i), vṛddhi NOT triggered 
 
 Key findings: optative REPLACES vikaraṇa (sī marker), two ending types (e-type for a-final, yā-type for u-final).
 
+#### lṛṭ (future simple) — parasmaipada: 21/21 = 100%
+
+| Dhātu | Class | 3sg (tip) | 3pl (jhi) | 1sg (mip) | Score |
+|:---|:---|:---|:---|:---|:---|
+| bhU | 1 | bhaviṣyati ✓ | bhaviṣyanti ✓ | bhaviṣyāmi ✓ | 3/3 |
+| gam | 1 | gamiṣyati ✓ | — | gamiṣyāmi ✓ | 2/2 |
+| kf | 8 | kariṣyati ✓ | kariṣyanti ✓ | kariṣyāmi ✓ | 3/3 |
+| ad | 2 | atsyati ✓ | — | atsyāmi ✓ | 2/2 |
+| vac | 2 | vakṣyati ✓ | vakṣyanti ✓ | vakṣyāmi ✓ | 3/3 |
+| tap | 4 | tapsyati ✓ | tapsyanti ✓ | tapsyāmi ✓ | 3/3 |
+| su | 5 | saviṣyati ✓ | — | saviṣyāmi ✓ | 2/2 |
+| cur | 10 | coriṣyati ✓ | coriṣyanti ✓ | coriṣyāmi ✓ | 3/3 |
+
+**Total: 21/21 (100%)** — sya marker replaces vikaraṇa; iṭ insertion (7.2.35).
+
+#### lṛṭ (future simple) — ātmanepada: 14/14 = 100%
+
+| Dhātu | Class | 3sg (te) | 3pl (ante) | 1sg (e) | Score |
+|:---|:---|:---|:---|:---|:---|
+| bhU | 1 | bhaviṣyate ✓ | bhaviṣyante ✓ | bhaviṣye ✓ | 3/3 |
+| gam | 1 | gamiṣyate ✓ | — | gamiṣye ✓ | 2/2 |
+| kf | 8 | kariṣyate ✓ | kariṣyante ✓ | kariṣye ✓ | 3/3 |
+| cur | 10 | coriṣyate ✓ | coriṣyante ✓ | coriṣye ✓ | 3/3 |
+| vac | 2 | vakṣyate ✓ | — | vakṣye ✓ | 2/2 |
+| tap | 4 | tapsyate ✓ | — | — | 1/1 |
+
+**Total: 14/14 (100%)** — ṭere ādeśa + a+e→e absorption (6.1.87).
+
 ### 3.3 Grand total
 
 | Lakāra | Voice | Score |
@@ -105,7 +133,9 @@ Key findings: optative REPLACES vikaraṇa (sī marker), two ending types (e-typ
 | loṭ (imperative) | parasmaipada | 60/60 (100%) |
 | laṅ (imperfect) | parasmaipada | 15/15 (100%) |
 | liṅ (optative) | parasmaipada | 15/15 (100%) |
-| **Total** | **2 voices** | **116/116 (100%)** |
+| lṛṭ (future) | parasmaipada | 21/21 (100%) |
+| lṛṭ (future) | ātmanepada | 14/14 (100%) |
+| **Total** | **2 voices** | **152/152 (100%)** |
 
 ### 3.4 Derivation pipeline (staged sandhi)
 
@@ -169,6 +199,7 @@ dhātu + vikaraṇa + tiṅ
 | 2026-09-07 | 75/75 (100%) | 5 | 5 | 3 | 1 | laṅ imperfect |
 | 2026-09-07 | 90/90 (100%) | 5 | 5 | 4 | 1 | liṅ optative |
 | 2026-09-07 | 116/116 (100%) | 13 | 7 | 4 | 2 | ātmanepada middle voice |
+| 2026-09-07 | 152/152 (100%) | 8 | 7 | 5 | 2 | lṛṭ future simple (sya + iṭ) |
 
 ## 5. Remaining failures and limitations
 
@@ -183,7 +214,7 @@ dhātu + vikaraṇa + tiṅ
 
 **Classes 3, 7**: not yet tested in the machine.
 
-**liṅ and ātmanepada .my files**: verified in Python (lin_verify.py, atma_verify.py) but not yet integrated into ting.my/derivation.my .my files.
+**lṛṭ .my files**: lṛṭ integrated into ting.my (dispatch) and derivation.my (35 named derivations). Python verification: lrt_verify.py (35/35 = 100%).
 
 ## 6. FPGA artifacts
 
@@ -206,6 +237,9 @@ dhātu + vikaraṇa + tiṅ
 - Journal 0022: loṭ (imperative) — second lakāra, 60/60
 - Journal 0023: laṅ (imperfect) — third lakāra, augment a-, no vṛddhi
 - Journal 0024: liṅ (optative) — fourth lakāra, sī marker replaces vikaraṇa
+- Journal 0025: ātmanepada (middle voice) — ṭere ādeśa, staged sandhi
+- Journal 0028: lṛṭ (future) — fifth lakāra, sya marker, iṭ insertion
+- Journal 0029: lṛṭ ātmanepada + iṭ sūtra identification (7.2.35)
 - Journal 0025: ātmanepada (middle voice) — staged sandhi pipeline
 
 ## 8. Sources

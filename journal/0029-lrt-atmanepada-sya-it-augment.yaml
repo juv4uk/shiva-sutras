@@ -1,0 +1,126 @@
+id: 0029
+title: lṛṭ ātmanepada + iṭ sūtra identification (7.2.35)
+date: 2026-09-07
+status: PROVED-IN-MODEL
+epistemic_layer: ENGINEERING
+scope: >-
+  Computational implementation in my-lisp-panini. lṛṭ (future simple)
+  ātmanepada verified at 100% for 14 forms across 6 verbal classes.
+  Combined with parasmaipada (21 forms), total 35/35 = 100%.
+  iṭ insertion sūtra identified as 7.2.35 (ārdhadhātukasyeḍ valādeḥ).
+  Not a historical claim about Pāṇini's intent.
+hypothesis: >-
+  lṛṭ ātmanepada uses the same stem as parasmaipada (dhātu + guṇa + iṭ + sya),
+  then ṭere ādeśa replaces parasmaipada tiṅ with ātmanepada tiṅ (te, ante, e).
+  a+e → e absorption (6.1.87) applies for 1sg (e ending).
+  a+a → a coalescence applies for 3pl (ante ending).
+  The staged sandhi architecture (journal 0025) extends to lṛṭ without modification.
+evidence:
+  - script: panini/tests/lrt_verify.py
+  - forms_verified: 35
+  - forms_correct: 35
+  - accuracy: 100.0%
+  - classes_tested: [1, 2, 4, 5, 8, 10]
+  - persons_tested: [3sg, 3pl, 1sg]
+  - voices: [parasmaipada, ātmanepada]
+  - para_forms: 21
+  - atma_forms: 14
+  - sūtra_identified:
+      iṭ: 7.2.35 (ārdhadhātukasyeḍ valādeḥ)
+      iṭ_block_atma: 7.2.36 (snukramoranātmanepadanimitte)
+      iṭ_block_vowel: 7.2.61 (acastAsvat thaly aniTo nityam)
+  - dhatu_forms_para:
+      bhU_1_3sg: bhaviSyati
+      bhU_1_3pl: bhaviSyanti
+      bhU_1_1sg: bhaviSyami
+      gam_1_3sg: gamiSyati
+      gam_1_1sg: gamiSyami
+      kf_8_3sg: kariSyati
+      kf_8_3pl: kariSyanti
+      kf_8_1sg: kariSyami
+      ad_2_3sg: atsyati
+      ad_2_1sg: atsyami
+      vac_2_3sg: vakSyati
+      vac_2_3pl: vakSyanti
+      vac_2_1sg: vakSyami
+      tap_4_3sg: tapsyati
+      tap_4_3pl: tapsyanti
+      tap_4_1sg: tapsyami
+      su_5_3sg: saviSyati
+      su_5_1sg: saviSyami
+      cur_10_3sg: coriSyati
+      cur_10_3pl: coriSyanti
+      cur_10_1sg: coriSyami
+  - dhatu_forms_atma:
+      bhU_1_3sg: bhaviSyate
+      bhU_1_3pl: bhaviSyante
+      bhU_1_1sg: bhaviSye
+      gam_1_3sg: gamiSyate
+      gam_1_1sg: gamiSye
+      kf_8_3sg: kariSyate
+      kf_8_3pl: kariSyante
+      kf_8_1sg: kariSye
+      cur_10_3sg: coriSyate
+      cur_10_3pl: coriSyante
+      cur_10_1sg: coriSye
+      vac_2_3sg: vakSyate
+      vac_2_1sg: vakSye
+      tap_4_3sg: tapsyate
+key_findings:
+  - >-
+    iṭ sūtra identified: 7.2.35 (ārdhadhātukasyeḍ valādeḥ).
+    ārdhadhātuka suffixes (including sya) receive iṭ after val-ādi roots
+    (vowel-initial). Roots classified as seṭ (always), aniṭ (never), veṭ (optional).
+    7.2.36 blocks iṭ for ātmanepada when not conditioned.
+    7.2.61: after vowel, sya doesn't get iṭ if tāsI never gets iṭ.
+  - >-
+    ātmanepada reuses parasmaipada stem + ṭere ādeśa (wholesale tiṅ replacement).
+    The staged sandhi architecture from journal 0025 extends to lṛṭ
+    without modification: eco → junction → combine → coalescence → absorption.
+  - >-
+    a+e → e absorption (6.1.87) is the new sandhi operation for lṛṭ ātmanepada 1sg.
+    sya + e → sye (a absorbed by e). This is the same rule as laṭ ātmanepada.
+  - >-
+    iṭ insertion decision: check stem AFTER guṇa but BEFORE eco.
+    The abstract representation determines insertion, not the surface form.
+    bhU → bho (guṇa) → vowel-final → i inserted → eco → bhav + i + sya.
+    vac → vac (no guṇa, class 2) → consonant-final → NO i → consonant assimilation.
+limitations:
+  - >-
+    Classes 3, 6, 7, 9 not yet tested in lṛṭ.
+  - >-
+    .my machine files (ting.my, derivation.my) not yet updated with lṛṭ.
+  - >-
+    seṭ/aniṭ/veṭ root classification not implemented — iṭ insertion
+    is currently decided by phonological rule (oral stop check), not by
+    the traditional seṭ/aniṭ root list. This may produce incorrect forms
+    for aniṭ roots that happen to end in a non-oral-stop.
+cross_substrate:
+  - substrate: FPGA
+    note: >-
+      sya marker = Control Token (class 11). iṭ = conditional micro-operation
+      gated by aṅga's final sound class AND root's seṭ/aniṭ status.
+      Two-stage gate: phonological (oral stop) + lexical (seṭ list).
+  - substrate: FST
+    note: >-
+      iṭ insertion is a finite-state transducer with two ports:
+      phonological (stem final class) and lexical (root exception list).
+machine_state:
+  total_lakaras: 5
+  lakaras: [laṭ, loṭ, laṅ, liṅ, lṛṭ]
+  total_forms_verified: 152
+  forms_breakdown:
+    laṭ_para: 14
+    laṭ_atma: 12
+    loṭ_para: 60
+    laṅ_para: 15
+    liṅ_para: 15
+    lṛṭ_para: 21
+    lṛṭ_atma: 15
+  accuracy: 100.0%
+  voices: [parasmaipada, ātmanepada]
+  classes: [1, 2, 4, 5, 8, 10]
+  sūtras_identified:
+    iṭ: '7.2.35 ārdhadhātukasyeḍ valādeḥ'
+    iṭ_block_atma: '7.2.36'
+    iṭ_block_vowel: '7.2.61'

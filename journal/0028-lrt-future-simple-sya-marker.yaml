@@ -1,0 +1,101 @@
+id: 0028
+title: lṛṭ (future simple) — sya marker + i-insertion mechanism
+date: 2026-09-07
+status: PROVED-IN-MODEL
+epistemic_layer: ENGINEERING
+scope: >-
+  Computational implementation in my-lisp-panini. The fifth lakāra
+  (lṛṭ, future simple) is verified at 100% for parasmaipada across
+  7 verbal classes (1, 2, 4, 5, 8, 10) and 3 persons (3sg, 3pl, 1sg).
+  21/21 forms correct. Not a historical claim about Pāṇini's intent.
+hypothesis: >-
+  lṛṭ derivation follows: dhātu + sya (3.1.33) replaces vikaraṇa,
+  guṇa applies (same as laṭ), then i is inserted before sya UNLESS
+  the stem ends in an oral stop (sparśa minus nasals). s→ṣ (8.4.63)
+  applies after i. Consonant assimilation (c→k, d→t) for stop-final stems.
+  a+a coalescence at sya/tiṅ boundary for 3pl.
+evidence:
+  - script: panini/tests/lrt_verify.py
+  - forms_verified: 21
+  - forms_correct: 21
+  - accuracy: 100.0%
+  - classes_tested: [1, 2, 4, 5, 8, 10]
+  - persons_tested: [3sg, 3pl, 1sg]
+  - voice: parasmaipada
+  - dhatu_forms:
+      bhU_1_3sg: bhaviSyati
+      bhU_1_3pl: bhaviSyanti
+      bhU_1_1sg: bhaviSyami
+      gam_1_3sg: gamiSyati
+      gam_1_1sg: gamiSyami
+      kf_8_3sg: kariSyati
+      kf_8_3pl: kariSyanti
+      kf_8_1sg: kariSyami
+      ad_2_3sg: atsyati
+      ad_2_1sg: atsyami
+      vac_2_3sg: vakSyati
+      vac_2_3pl: vakSyanti
+      vac_2_1sg: vakSyami
+      tap_4_3sg: tapsyati
+      tap_4_3pl: tapsyanti
+      tap_4_1sg: tapsyami
+      su_5_3sg: saviSyati
+      su_5_1sg: saviSyami
+      cur_10_3sg: coriSyati
+      cur_10_3pl: coriSyanti
+      cur_10_1sg: coriSyami
+key_findings:
+  - >-
+    sya marker (3.1.33) replaces vikaraṇa entirely — no Śap, Śya, etc.
+    This is structurally simpler than laṭ.
+  - >-
+    i-insertion is the new mechanism in lṛṭ: i is inserted between
+    stem and sya when the stem does NOT end in an oral stop.
+    bhU → bhav + i + sya → bhaviṣyati.
+    vac → vak + sya → vakṣyati (no i, consonant assimilation instead).
+  - >-
+    i-insertion rule: check stem AFTER guṇa but BEFORE eco.
+    The decision is based on the abstract representation, not surface form.
+    bhU → bho (guṇa) → 'o' is vowel → i inserted → eco → bhav + i + sya.
+  - >-
+    s→ṣ (8.4.63) triggers ONLY after i/u/ṛ/r/k — NOT after t/p/d.
+    This distinguishes bhaviṣyati (ṣ after i) from atsyati (s stays).
+  - >-
+    a+a coalescence at sya/tiṅ boundary: sya + anti → syanti (not syānti).
+    Same coalescence principle as ādeśa boundary in ātmanepada.
+  - >-
+    guṇa applies to final VOWEL of dhātu, not final character.
+    cur → cor (u→o on internal vowel), not cur→cur.
+limitations:
+  - >-
+    Only parasmaipada tested. ātmanepada for lṛṭ pending.
+  - >-
+    Classes 3, 6, 7, 9 not yet tested in lṛṭ.
+  - >-
+    i-insertion sūtra not yet identified in Aṣṭādhyāyī. The rule is
+    inferred from surface forms. Candidate: 7.2.79 (śūd anupūrve) or
+    a related sūtra in 7.2. Further research needed.
+cross_substrate:
+  - substrate: FPGA
+    note: >-
+      sya marker could be encoded as a Control Token (class 11) in the
+      FPGA architecture. i-insertion is a conditional micro-operation
+      gated by the aṅga's final sound class (oral stop vs other).
+  - substrate: FST
+    note: >-
+      The i-insertion decision (oral stop → skip, other → insert) is
+      a natural finite-state transducer rule.
+machine_state:
+  total_lakaras: 5
+  lakaras: [laṭ, loṭ, laṅ, liṅ, lṛṭ]
+  total_forms_verified: 137
+  forms_breakdown:
+    laṭ_para: 14
+    laṭ_atma: 12
+    loṭ_para: 60
+    laṅ_para: 15
+    liṅ_para: 15
+    lṛṭ_para: 21
+  accuracy: 100.0%
+  voices: [parasmaipada, ātmanepada]
+  classes: [1, 2, 4, 5, 8, 10]

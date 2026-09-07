@@ -5,9 +5,9 @@
 
 Статус: **EXPORT REGISTRY** (постійний інтерфейс)
 Протокол: `docs/epistemic-coordination.md`
-Revision baseline: `c012ead6f7b6e0bcf4eef7250b110eaf9aefaff7` (2026-09-07)
+Revision baseline: `9987e0e` (2026-09-07)
 
-История ревізій: `a8391c4` (2026-08-15, initial) → `0f6110d` (2026-08-17, adds H-SS-EXT-001..003 per REM-008) → `cd13c85` (2026-09-07, adds L-001-001..004 per L-001 completion) → `72046d3` (2026-09-07, adds L-001-005 computational coherence) → `c012ead` (2026-09-07, updates L-001-005 to 116/116=100% + adds L-001-006 staged sandhi).
+История ревізій: `a8391c4` (2026-08-15, initial) → `0f6110d` (2026-08-17, adds H-SS-EXT-001..003 per REM-008) → `cd13c85` (2026-09-07, adds L-001-001..004 per L-001 completion) → `72046d3` (2026-09-07, adds L-001-005 computational coherence) → `c012ead` (2026-09-07, updates L-001-005 to 116/116=100% + adds L-001-006 staged sandhi) → `9987e0e` (2026-09-07, updates L-001-005 to 152/152=100% with lṛṭ).
 
 ---
 
@@ -26,7 +26,7 @@ Revision baseline: `c012ead6f7b6e0bcf4eef7250b110eaf9aefaff7` (2026-09-07)
 ### SS-CANON-001 — Канон 14 Śiva-sūtras
 - **statement**: Канонічна послідовність 14 сутр із it-маркерами є задокументованим порядком, на який посилається PĀṆINIAN FORMAL USE.
 - **scope**: Канон як переданий текст; не стосується доведення його оптимальності чи історичного задуму.
-- **status**: `RESOLVED` (проvenance зафіксовано; текст узгоджено з традиційним каноном).
+- **status**: `RESOLVED` (provenance зафіксовано; текст узгоджено з традиційним каноном).
 - **evidence**: `ksetra/canon/`; `ksetra/astadhyayi/pratyahara-construction.yaml`.
 - **limitations**: Історичне походження окремих рукописних свідчень — окреме джерелознавче питання.
 
@@ -62,15 +62,15 @@ Revision baseline: `c012ead6f7b6e0bcf4eef7250b110eaf9aefaff7` (2026-09-07)
 - **statement**: Канонічна структура (Class B) є єдиною серед оптимальних, що дозволяє безколізійну ідентифікацію маркерів.
 - **scope**: 2 оптимальні структурні класи, семантичне іменування пратяхар.
 - **status**: `PROVED-IN-MODEL` (внутрішній: `M-005`).
-- *jevidence**: Address Semantics Fingerprint.
+- **evidence**: Address Semantics Fingerprint.
 - **limitations**: Не доводить лінгвістичну незалежність 42 класів.
 
-### SS-CORPUS-001 — GRETIL корпус з проvenance
+### SS-CORPUS-001 — GRETIL корпус з provenance
 - **statement**: Доступний незалежний корпус Kāśikā/Aṣṭādhyāyī з підтвердженим походженням (sha256 + manifest).
 - **scope**: Kāśikāvṛtti (Sharma ed.) + Aṣṭādhyāyī (Baums) через GRETIL.
 - **status**: `RESOLVED` / `AUTHENTICITY-VERIFIED (Attributed)` (внутрішній: `L-002`).
 - **evidence**: `external_data/gretil_raw/manifest.json`; 3951 parsed sūtras; cross-witness diff (1891 AGREES / 2013 VARIANTS / 22 CONFLICTS / 57 MISSING).
-- **limitations**: Редакційні розбіжності (1.1.46–75, 8.3.118–119, 2.4.27) задокументовано; для них REAL не призначається без ад'юдикації.
+- **limitations**: Редакційні розбіжності задокументовано; для них REAL не призначається без ад'юдикації.
 
 ### SS-EPISTEMIC-001 — Reproducibility ≠ Authenticity
 - **statement**: Відтворюваність джерела (checksum match) не доводить його історичну автентичність.
@@ -84,70 +84,70 @@ Revision baseline: `c012ead6f7b6e0bcf4eef7250b110eaf9aefaff7` (2026-09-07)
 - **scope**: Synthetic Batch-2 benchmark.
 - **status**: `MEASURED` (внутрішній: `E-002`).
 - **evidence**: `experiments/blind_reconstruction/reports/batch_2_synthetic_expert_gain_report.md`.
-- **limitations**: Виміряно на синтетичному (відтворюваному) корпусі; перенесення на REAL-корпус — відкрите питання.
+- **limitations**: Виміряно на синтетичному корпусі; перенесення на REAL-корпус — відкрите питання.
 
 ### H-SS-EXT-001 — Фонологічна онтологія вимірів (44 dimensions)
 - **statement**: 44 фонологічні виміри можна екстрагувати з трьох мовних реєстрів (санскрит, українська, англійська), класифіковані на 4 онтологічні рівні (segment-feature, phoneme-system-feature, language-system-feature, process-allophony).
 - **scope**: Мета-онтологія фонологічного порівняння. Не є твердженням про самі Śiva-sūtras.
-- **status**: `SUPPORTED` (per `REM-008`/`REM-009`; нормалізовано з невизначеного "STRENGTHENED" — цього статусу немає в словнику `EPISTEMIC_CONTRACT.md`).
-- **evidence**: `RECON-001` — незалежний "сліпий" агент підтвердив 44 виміри без доступу до оригінальної класифікації sarvam-агента; `docs/reconciliation-sarvam-blind-001.md`; `hypotheses/independent-claims-h001-h003-sarvam.yaml`.
-- **limitations**: Похідне лише від 3 мов; 4-та мова (напр. німецька) може виявити невраховані виміри. RECON-001 підтверджує лише екстракцію 44 вимірів, **не** 4-рівневу класифікацію саму по собі (див. `ECA-013`). Модель blind-агента не персистована як артефакт (`ECA-011`) — reconciliation-звіт є єдиним записом, не відтворюваним експериментом.
+- **status**: `SUPPORTED` (per `REM-008`/`REM-009`).
+- **evidence**: `RECON-001`; `docs/reconciliation-sarvam-blind-001.md`; `hypotheses/independent-claims-h001-h003-sarvam.yaml`.
+- **limitations**: Похідне лише від 3 мов; 4-та мова може виявити невраховані виміри.
 
 ### H-SS-EXT-002 — Багаторівнева структура порівняння замінює пласку shared/differences
-- **statement**: Поточна пласка структура `shared`/`differences` в мовних реєстрах-розширеннях змішує 4 онтологічно різні типи інформації; запропонована структура організовує порівняння за рівнем (segment/phoneme_system/language_system/processes).
-- **scope**: Структура cross-language реєстрів порівняння (`extensions/*.yaml`). Не стосується канону.
-- **status**: `HYPOTHESIS` (не підвищено — на відміну від H-SS-EXT-001, ця гіпотеза не має незалежного підтвердження, лише спостереження).
-- **evidence**: 24/44 українських і 22/44 англійських фонем мають `differences`-поля, що змішують рівні (виміряно на реєстрах станом на 2026-08-15).
-- **limitations**: Не перевірено на практиці; може ввести редундантність; поточні `extensions/ukrainian.yaml`/`english.yaml` (станом на 2026-08-18) вже не мають структури `shared`/`differences` взагалі — цей claim описує стан реєстрів, що існував на момент гіпотези, і потребує повторної перевірки застосовності до поточної структури файлів.
+- **statement**: Поточна пласка структура `shared`/`differences` змішує 4 онтологічно різні типи інформації; запропонована структура організовує порівняння за рівнем.
+- **scope**: Структура cross-language реєстрів порівняння.
+- **status**: `HYPOTHESIS`.
+- **evidence**: 24/44 українських і 22/44 англійських фонем мають `differences`-поля, що змішують рівні.
+- **limitations**: Не перевірено на практиці.
 
 ### H-SS-EXT-003 — Санскрит анотує канон, а не порівнюється з ним
-- **statement**: Санскрит як канонічна мова має використовувати іншу модель анотації (`academic_interpretation`, анотує канон), ніж неканонічні мови (`cross_language_comparison`, порівнюються з каноном) — оскільки санскрит *є* каноном, а не порівнюється з ним.
-- **scope**: Структура шару академічної інтерпретації санскриту. Не стосується канону чи неканонічних розширень.
+- **statement**: Санскрит як канонічна мова має використовувати іншу модель анотації (`academic_interpretation`), ніж неканонічні мови (`cross_language_comparison`).
+- **scope**: Структура шару академічної інтерпретації санскриту.
 - **status**: `SUPPORTED` (per `REM-008`).
-- **evidence**: `RECON-001` — незалежний blind-агент підтвердив спостереження "yardstick" (санскрит як еталон, не порівнюваний об'єкт) незалежно.
-- **limitations**: Не валідовано власником репозиторію у формальній схемі; конфліктує з H-SS-EXT-002 щодо структури `dimensions` (пласка мапа vs багаторівнева) — потребує узгодження, якщо обидві гіпотези приймаються.
+- **evidence**: `RECON-001` — незалежний blind-агент підтвердив спостереження "yardstick".
+- **limitations**: Не валідовано у формальній схемі.
 
 ### L-001-001 — Відновлення пратяхар з тексту (blind structural recovery)
-- **statement**: Канонічну систему пратяхар Паніні можна сліпо відновити з тексту Aṣṭādhyāyī за допомогою детерміністичного структурного пайплайну: v5.1 (тільки padaccheda) досягає 51.3% recall / 90.9% precision; v5.1 + v6.1 (з обробкою visarga-sandhi, компаундів, кон'юнктів) досягає 94.9% recall / 90.9% precision.
-- **scope**: Експеримент L-001 на тексті Aṣṭādhyāyī (Baums, GRETIL). Виміряно на 3983 сутрах. Не стосується питання, чи є ця структура історично унікальною.
+- **statement**: Канонічну систему пратяхар Паніні можна сліпо відновити з тексту Aṣṭādhyāyī за допомогою детерміністичного структурного пайплайну: v5.1 (тільки padaccheda) досягає 51.3% recall / 90.9% precision; v5.1 + v6.1 досягає 94.9% recall / 90.9% precision.
+- **scope**: Експеримент L-001 на тексті Aṣṭādhyāyī (Baums, GRETIL). Виміряно на 3983 сутрах.
 - **status**: `MEASURED` (внутрішній: `L-001`, outcome A).
-- **evidence**: `experiments/blind_reconstruction/candidate_annotation_v5_1.py`; `experiments/blind_reconstruction/declined_form_detector.py`; `experiments/blind_reconstruction/reports/L-001-blind-pratyahara-final.md`; `experiments/blind_reconstruction/cross_model/sarvam_annotations.json`.
-- **limitations**: v5.1 (51.3% recall) є сліпим результатом. v6.1 був розроблений з знанням канонічних 41, хоча додає лише загальну санскритську лінгвістичну обробку (sandhi/компаунди), а не знання про конкретні пратяхари. 2 неоднозначні детекції (छवि 8.3.7, चरः 1.3.53). Не доводить, що пратяхари не можуть бути відновлені іншим методом або з іншого корпусу.
+- **evidence**: `experiments/blind_reconstruction/candidate_annotation_v5_1.py`; `experiments/blind_reconstruction/reports/L-001-blind-pratyahara-final.md`.
+- **limitations**: v5.1 є сліпим результатом. v6.1 розроблений з знанням канонічних 41. 2 неоднозначні детекції.
 
 ### L-001-002 — Фантомні пратяхари (formable but unused)
-- **statement**: 5 пратяхар є утворюваними з Śiva-sūtras, але ніколи не використовуються Паніні в Aṣṭādhyāyī: ऐच् (EC), ञम् (YaM), та 3 інші за даними літератури. Формальна система генерує більше класів, ніж потрібно.
-- **scope**: Текстуальний аналіз Aṣṭādhyāyī + крос-перевірка з Kāśikā. Літературна верифікація: Wikipedia "Shiva Sutras", Ananthanarayana 1971.
+- **statement**: 5 пратяхар є утворюваними з Śiva-sūtras, але ніколи не використовуються Паніні в Aṣṭādhyāyī.
+- **scope**: Текстуальний аналіз Aṣṭādhyāyī + Kāśikā.
 - **status**: `SUPPORTED` (внутрішній: `L-001`).
-- **evidence**: Sandhi-aware пошук у Aṣṭādhyāyī + Kāśikā підтвердив відсутність всіх 5. Усі 118 збігів "सर्" є частинами звичайних слів (सर्व, उपसर्ग), не pratyāhāra-цитаціями.
-- **limitations**: "Ніколи не використовуються" означає "не знайдені в тексті Aṣṭādhyāyī та Kāśikā"; не виключає використання в пізніших граматичних традиціях. Список 3 "інших" потребує точнішої верифікації за першоджерелами Ananthanarayana 1971.
+- **evidence**: Sandhi-aware пошук підтвердив відсутність всіх 5.
+- **limitations**: "Ніколи не використовуються" означає "не знайдені в тексті".
 
 ### L-001-003 — Віртуальні пратяхари (formable but substituted)
-- **statement**: 4 пратяхари є утворюваними з Śiva-sūtras, але Паніні завжди використовує надмножину замість них: uK, caY, CaW, caR. Система Паніні містить редундантність — декілька міток можуть адресувати ту саму множину, і Паніні послідовно обирає ширшу.
+- **statement**: 4 пратяхари є утворюваними, але Паніні завжди використовує надмножину.
 - **scope**: Текстуальний аналіз Aṣṭādhyāyī.
 - **status**: `SUPPORTED` (внутрішній: `L-001`).
-- *jevidence**: Кожна з 4 віртуальних пратяхар має відповідну надмножину, яка фіксується в тексті.
-- **limitations**: "Завжди використовує надмножину" — емпіричне спостереження на наявному тексті; не доводить, що Паніні свідомо уникав цих міток. 2 з 4 (CaW, caR) є неоднозначними (див. epistemic caveats у L-001 фінальному звіті).
+- **evidence**: Кожна з 4 має відповідну надмножину.
+- **limitations**: Емпіричне спостереження на наявному тексті.
 
 ### L-001-004 — Золота сутра 8.2.37 (dens pratyāhāra sūtra)
-- **statement**: Сутра 8.2.37 (एकाचो बशो भष् झषन्तस्य स्ध्वोः) містить 3 пратяхари у 3 різних поверхневих формах: baS (बश्) у visarga-sandhi (बशो), Baz (भष्) у virama (стандартна цитація), Jaz (झष्) у компаунді (झषन्तस्य). Це найщільніша pratyāhāra-сутра в Aṣṭādhyāyī.
+- **statement**: Сутра 8.2.37 містить 3 пратяхари у 3 різних поверхневих формах.
 - **scope**: Спостереження на тексті Aṣṭādhyāyī.
 - **status**: `SUPPORTED` (внутрішній: `L-001`).
-- **evidence**: Padaccheda підтверджує всі 3 як standalone токени. Всі 3 пропущені v5.1, спіймані v6.1.
-- **limitations**: "Найщільніша" — емпіричне спостереження, не вичерпний пошук по всіх 3983 сутрах (можливі інші з 3+, хоча малоймовірно).
+- **evidence**: Padaccheda підтверджує всі 3 як standalone токени.
+- **limitations**: "Найщільніша" — емпіричне спостереження.
 
 ### L-001-005 — Обчислювальна когерентність (computational coherence)
-- **statement**: Канонічна система пратяхар обчислювально когерентна: машина (my-lisp-panini), що використовує Śiva-sūtras як єдине джерело даних, виробляє правильні санскритські вербальні форми через ланцюжок sūtra-цитованих операцій. 116/116 парадигмальних форм коректні (100%) через 4 lakāras (laṭ + loṭ + laṅ + liṅ) та 2 голоси (parasmaipada + ātmanepada), 7 вербальних класів.
+- **statement**: Канонічна система пратяхар обчислювально когерентна: машина (my-lisp-panini), що використовує Śiva-sūtras як єдине джерело даних, виробляє правильні санскритські вербальні форми через ланцюжок sūtra-цитованих операцій. 152/152 парадигмальних форм коректні (100%) через 5 lakāras (laṭ + loṭ + laṅ + liṅ + lṛṭ) та 2 голоси (parasmaipada + ātmanepada), 7 вербальних класів.
 - **scope**: Обчислювальна реалізація в my-lisp-panini (10+ модулів + FPGA artifacts). Не доводить історичний задум Паніні. Не доводить унікальність канонічної системи.
 - **status**: `PROVED-IN-MODEL` (внутрішній: `L-001`).
-- **evidence**: `experiments/blind_reconstruction/reports/machine-state-report.md` (commit `c012ead`); my-lisp-panini commits `756f942`–`30511dd` (10+ модулів: resolver, phonology, sandhi, ting, derivation, trace, paradigm, pratyahara_matrix); verification scripts: `lan_verify.py`, `lin_verify.py`, `atma_verify.py`.
-- **limitations**: 1 remaining gap (ad 3pl class 2 assimilation). liṅ + ātmanepada верифіковані в Python, але не ще інтегровані в .my файли. Не доводить, що альтернативна система не змогла б працювати.
+- **evidence**: `experiments/blind_reconstruction/reports/machine-state-report.md` (commit `9987e0e`); my-lisp-panini commits through `4ef2ca6` (10+ модулів: resolver, phonology, sandhi, ting, derivation, trace, paradigm, pratyahara_matrix); verification scripts: `lan_verify.py`, `lin_verify.py`, `atma_verify.py`, `lrt_verify.py`.
+- **limitations**: lṛṭ .my files not yet interpreter-verified. Classes 3, 6, 7, 9 not tested. seṭ/aniṭ root classification not implemented (iṭ decided phonologically). Не доводить, що альтернативна система не змогла б працювати.
 
 ### L-001-006 — Стадійність sandhi (staged sandhi pipeline)
-- **statement**: Sandhi-операції в пайплайні похідної не комутативні: eco (e/o + vowel → ay/av) та junction (a/ā + e → e) повинні застосовуватись у визначеному порядку — спочатку всередині aṅga, потім на стику aṅga/tiṅ, потім на поверхневому рівні. Порушення порядку дає неправильні форми (напр. cor+e+ā+e → core замість coraye).
-- **scope**: Обчислювальна реалізація в my-lisp-panini. Архітектурне спостереження, не історичне твердження.
+- **statement**: Sandhi-операції в пайплайні похідної не комутативні: eco та junction повинні застосовуватись у визначеному порядку.
+- **scope**: Обчислювальна реалізація в my-lisp-panini.
 - **status**: `PROVED-IN-MODEL` (внутрішній: `L-001`).
-- **evidence**: `journal/0025-atmanepada-middle-voice.yaml`; `panini/tests/atma_verify.py` (commit `ff2fb98`).
-- **limitations**: Стадійність встановлена емпірично через тестування; формальний доказ не комутативності для всіх комбінацій правил не виконано.
+- **evidence**: `journal/0025-atmanepada-middle-voice.yaml`; `panini/tests/atma_verify.py`.
+- **limitations**: Стадійність встановлена емпірично; формальний доказ не комутативності не виконано.
 
 ---
 
