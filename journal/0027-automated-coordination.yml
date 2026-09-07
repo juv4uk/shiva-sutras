@@ -1,0 +1,102 @@
+# Journal 0027: Automated cross-repo coordination
+
+date: "2026-09-07"
+type: infrastructure
+status: PROVED-IN-MODEL
+experiment: L-001
+epistemic_layer: ENGINEERING
+
+## 1. Problem
+
+Manual coordination between shiva-sutras (upstream) and my-lisp-panini (downstream) was error-prone. Five times during this session, pins fell behind by 2-5 commits. The coordination contract requires:
+- dependencies.yaml pinned_revision matches shiva-sutras HEAD
+- shiva_claims.my revision matches dependencies.yaml pin
+- All downstream claims exist in upstream claims-export.yaml
+- No downstream status elevation (downstream status ≤ upstream status)
+
+## 2. Solution
+
+Three automated mechanisms deployed across both repos:
+
+### 2.1 sync_downstream.py (shiva-sutras)
+
+Python script that runs on every push to journal/, docs/claims-export.yaml, or reports/. It:
+1. Fetches the new HEAD SHA
+2. Updates dependencies.yaml in my-lisp-panini (pinned_revision)
+3. Updates shiva_claims.my in my-lisp-panini (revision in all claims)
+4. Commits both files with message "Auto-sync: pin shiva-sutras to {sha}"
+5. Runs validate_sync.py to verify consistency
+
+### 2.2 validate_sync.py (both repos)
+
+Validates four consistency checks:
+1. **Pin existence**: dependencies.yaml pinned_revision exists as a commit in shiva-sutras
+2. **Pin match**: shiva_claims.my revision matches dependencies.yaml pin
+3. **Claims coverage**: all downstream claims exist in upstream claims-export.yaml
+4. **No elevation**: downstream status ≤ upstream status (epistemic discipline)
+5. **HEAD drift**: reports if shiva-sutras HEAD has moved past the pin
+
+Exit codes: 0 = pass, 1 = drift detected, 2 = error.
+
+### 2.3 GitHub Actions workflows
+
+**sync-downstream.yml** (shiva-sutras):
+- Trigger: push to master on journal/, docs/claims-export.yaml, experiments/**/reports/
+- Action: runs sync_downstream.py, then validate_sync.py
+- Requires: SYNC_TOKEN secret (PAT with repo scope for my-lisp-panini)
+
+**drift-check.yml** (my-lisp-panini):
+- Trigger: daily at 09:00 UTC + manual dispatch
+- Action: runs validate_sync.py, reports drift as GitHub annotation
+- Requires: SYNC_TOKEN secret
+
+## 3. Commits
+
+| File | Repo | Commit | Description |
+|:---|:---|:---|:---|
+| coordination/sync_downstream.py | shiva-sutras | `e720909` | Auto-sync script |
+| coordination/validate_sync.py | shiva-sutras | `e726e11` | Validation script |
+| .github/workflows/sync-downstream.yml | shiva-sutras | `d0d9df1` | Actions workflow |
+| coordination/validate_sync.py | my-lisp-panini | `e3de616` | Validation script (copy) |
+| .github/workflows/drift-check.yml | my-lisp-panini | `6fef54e` | Daily drift check |
+
+## 4. Setup required
+
+The user (Володимир) needs to create a GitHub Personal Access Token (PAT) with `repo` scope and add it as a secret named `SYNC_TOKEN` in both repositories:
+- Settings → Secrets and variables → Actions → New repository secret
+- Name: SYNC_TOKEN
+- Value: <PAT with repo scope>
+
+Until SYNC_TOKEN is set, the workflows will fail at the sync step. The scripts themselves work without it (can be run locally with --token).
+
+## 5. Coordination contract enforced
+
+The automated system enforces the epistemic coordination contract:
+- Downstream never elevates status (validate_sync.py check #4)
+- Downstream never imports claims that don't exist upstream (check #3)
+- Pin drift is detected within 24 hours (drift-check.yml)
+- Pin updates happen within minutes of upstream push (sync-downstream.yml)
+
+## 6. Architecture
+
+```
+shiva-sutras (upstream)
+  │
+  ├── journal/0027-automated-coordination.yaml
+  ├── docs/claims-export.yaml          ← source of truth for claims
+  ├── coordination/sync_downstream.py   ← pushes pin updates
+  ├── coordination/validate_sync.py    ← validates consistency
+  └── .github/workflows/
+      └── sync-downstream.yml          ← triggers on journal/claims push
+          │
+          │ (GitHub API)
+          ▼
+my-lisp-panini (downstream)
+  ├── coordination/dependencies.yaml    ← pinned_revision (auto-updated)
+  ├── ecosystem/imports/shiva_claims.my ← revision (auto-updated)
+  ├── coordination/validate_sync.py    ← validates consistency
+  └── .github/workflows/
+      └── drift-check.yml              ← daily check at 09:00 UTC
+```
+
+The flow is unidirectional: shiva-sutras → my-lisp-panini. The downstream never writes back to upstream. The drift-check workflow in my-lisp-panini reports drift but does not auto-fix (it only validates, because the downstream cannot determine which upstream commit to pin to — that requires human/agent judgment about which commits are stable).
