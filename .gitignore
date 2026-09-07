@@ -4,3 +4,7 @@ __pycache__/
 .git-credentials
 .local-notes/
 .obsidian/
+
+# Windows download-origin metadata, not research evidence.
+# Метадані Windows про походження завантаження, а не дослідницький доказ.
+*:Zone.Identifier
