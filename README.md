@@ -58,4 +58,7 @@ docs/          — методологія, claims-export, coordination
 
 ## Ліцензія
 
-Див. [LICENSE](LICENSE) та [NOTICE-third-party.md](NOTICE-third-party.md).
+Авторський код, документація й дослідницькі напрацювання поширюються під
+[ВОЛЬНІСТЮ](LICENSE). Сторонні тексти, словники та корпуси не
+переліцензовуються: їхнє походження й окремі умови збережено в
+[NOTICE-third-party.md](NOTICE-third-party.md) та локальних NOTICE-файлах.
