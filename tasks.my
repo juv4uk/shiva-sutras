@@ -3,6 +3,7 @@
     ((priority . 9.0)
      (capabilities . (documentation translation audit policy))
      (origin . ecosystem)
+     (context . "2026-09-08 audit (ecosystem/memory/LANGUAGE-DEBT-REGISTRY-2026-09-08.md): body is already Ukrainian-primary in docs/ADR-002-shiva-upc8.md and docs/EPISTEMIC_CONSISTENCY_AUDIT_v1.md, but h1 headers are English -- minor P2 cosmetic debt. Does NOT include ksetra/ corpus or NOTICE-third-party.md, which are third-party data and out of language-policy scope.")
      (description . "Enforce the DOCUMENTATION LANGUAGE / МОВА ДОКУМЕНТАЦІЇ policy. Every human-authored markdown file (README, memory, plans, architecture, research) MUST have a substantive Ukrainian translation. Identify English-only documents and translate them. Do not translate machine identifiers or immutable historical records. Ensure every new or edited markdown document is bilingual.")))
 
 ("SHIVA-SWARM-CONTRACT-01" . (
