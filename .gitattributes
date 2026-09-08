@@ -6,6 +6,6 @@
 
 # WSM source files (see my-lisp repo contract). Common Lisp is a temporary
 # GitHub Linguist syntax/statistics profile, not a semantic identity claim.
-*.wsm linguist-language=Common-Lisp linguist-detectable=true
-*.my linguist-language=Common-Lisp linguist-detectable=true
-*.lisp linguist-language=Common-Lisp linguist-detectable=true
+*.wsm linguist-language=Common-Lisp linguist-detectable=true -linguist-vendored -linguist-generated -linguist-documentation
+*.my linguist-language=Common-Lisp linguist-detectable=true -linguist-vendored -linguist-generated -linguist-documentation
+*.lisp linguist-language=Common-Lisp linguist-detectable=true -linguist-vendored -linguist-generated -linguist-documentation
