@@ -13,13 +13,13 @@
   `test_lisp_phonetics` ccd81a2). They were removed from my-lisp on
   2026-08-29 (`33edf06`, no push) to stop duplicating the Python reference;
   this repository remains the only copy of the `.py` files.
-- **`prototype_phonetics.my` has diverged.** The my-lisp copy carries the
+- **`prototype_phonetics.lisp` has diverged.** The my-lisp copy carries the
   corrected pratyahara bitmask values (my-lisp `1518786`, 2026-08-25, fixing
   the hal/al/yar/Sar/JaS/Jal masks found wrong by the semantic audit).
   The copy here is still the **pre-fix** version.
 - Decision (owner, 2026-08-29): the mask fix stays in my-lisp for now;
   backport into this repository is pending. Until then, for the pratyahara
-  masks treat `my-lisp:prototype/lisp_core_phonetics/prototype_phonetics.my`
+  masks treat `my-lisp:prototype/lisp_core_phonetics/prototype_phonetics.lisp`
   as the corrected reference, not this file.
 
 ---
