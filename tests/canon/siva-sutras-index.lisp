@@ -31,25 +31,30 @@
 (require-equal (quote second-h-position) (car (cadr h-positions)) 42)
 (require-equal (quote h-sound-id) (index-of-sound "h" sound-ids) 9)
 
-; Full universes differ by exactly the repeated canonical h occurrence.
+; my-lisp's reader currently treats #x... as a symbol, so witnesses are exact
+; decimal integers. Hex equivalents are kept in comments for cross-checking.
+; 4398046511103 = 0x000003FFFFFFFFFF
+; 8796093022207 = 0x000007FFFFFFFFFF
 (require-equal (quote al-sound-id-42)
   (mask/sound-id-42 all-sounds canon)
-  #x000003FFFFFFFFFF)
+  4398046511103)
 (require-equal (quote al-canon-position-43)
   (mask/canon-position-43 positions)
-  #x000007FFFFFFFFFF)
+  8796093022207)
 
 ; hal follows the same distinction: 33 unique consonant identities versus
 ; 34 canonical consonant positions because h occurs in sutra 5 and 14.
+; 4398046510592 = 0x000003FFFFFFFE00
+; 8796093021696 = 0x000007FFFFFFFE00
 (require-equal (quote hal-unique-consonant-count)
   (length (sound-ids/42
             (drop 4 canon)))
   33)
 (require-equal (quote hal-sound-id-42)
   (mask/sound-id-42 consonant-sounds canon)
-  #x000003FFFFFFFE00)
+  4398046510592)
 (require-equal (quote hal-canon-position-43)
   (mask/canon-position-43 consonant-positions)
-  #x000007FFFFFFFE00)
+  8796093021696)
 
 (print (quote siva-sutras-index-green))
