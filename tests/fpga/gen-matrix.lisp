@@ -7,7 +7,17 @@
   (lambda (label actual expected)
     (cond
       ((equal? actual expected) (quote ok))
-      (t (fpga-matrix-regression-failed label actual expected)))))
+      (t
+       (print label)
+       (print (list (quote actual-length)
+                    (cond ((string? actual) (string-length actual)) (t (quote n/a)))))
+       (print (list (quote expected-length)
+                    (cond ((string? expected) (string-length expected)) (t (quote n/a)))))
+       (print (list (quote actual-sha256)
+                    (cond ((string? actual) (sha256-hex actual)) (t (quote n/a)))))
+       (print (list (quote expected-sha256)
+                    (cond ((string? expected) (sha256-hex expected)) (t (quote n/a)))))
+       (fpga-matrix-regression-failed label actual expected)))))
 
 (def matrix (build-pratyahara-matrix))
 
@@ -44,9 +54,11 @@
 
 ; Renderer parity is byte-exact against artifacts committed from gen_matrix.py.
 ; No normalization of whitespace/newlines is allowed here.
+(print (quote checking-c-header-byte-parity))
 (require-equal (quote c-header-byte-parity)
   (render-c-header matrix)
   (read-file "prototype/fpga/pratyahara_matrix.h"))
+(print (quote checking-verilog-byte-parity))
 (require-equal (quote verilog-byte-parity)
   (render-verilog matrix)
   (read-file "prototype/fpga/pratyahara_matrix.v"))
