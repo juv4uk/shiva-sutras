@@ -39,7 +39,20 @@ def test_jas_refuses_false_exact_without_aspiration_dimension():
     assert "aspiration" in result["reason"].lower()
 
 
+def test_hal_matches_consonants_and_collapses_duplicate_h_position():
+    """h + l spans all consonants; repeated canonical h is one set member."""
+    result = compare_pratyahara_to_upc("hl", "consonant")
+
+    assert result["status"] == "EXACT"
+    assert len(result["canonical"]) == 33
+    assert result["canonical"].count("h") == 1
+    assert result["canonical"] == result["upc"]
+    assert result["canonical_only"] == []
+    assert result["upc_only"] == []
+
+
 if __name__ == "__main__":
     test_nasal_pratyahara_matches_nasal_feature_exactly()
     test_jas_refuses_false_exact_without_aspiration_dimension()
-    print("2/2 comparison tests passed")
+    test_hal_matches_consonants_and_collapses_duplicate_h_position()
+    print("3/3 comparison tests passed")
