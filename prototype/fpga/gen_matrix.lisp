@@ -458,10 +458,10 @@
     (let* ((pa-count (length matrix))
            (sound-line
              (concat-strings
-               (list "  (quote (" (join-strings (matrix-sounds) " ") ")))"))
+               (list "  (quote (" (join-strings (matrix-sounds) " ") ")))")))
            (pa-line
              (concat-strings
-               (list "  (quote (" (join-strings (map pa-name-lisp matrix) " ") ")))"))
+               (list "  (quote (" (join-strings (map pa-name-lisp matrix) " ") ")))")))
            (lines
              (append
                (list
