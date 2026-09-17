@@ -12,6 +12,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: lisp-fpga-matrix-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   native-lisp-fpga-matrix:
     runs-on: ubuntu-latest
@@ -29,8 +33,8 @@ jobs:
 
       - name: Build my-lisp CLI
         working-directory: my-lisp
-        run: cargo build -p my-lisp-cli --bin my-lisp
+        run: cargo build --release -p my-lisp-cli --bin my-lisp
 
       - name: Test native Lisp matrix parity
         working-directory: shiva-sutras
-        run: ../my-lisp/target/debug/my-lisp tests/fpga/gen-matrix.lisp
+        run: ../my-lisp/target/release/my-lisp tests/fpga/gen-matrix.lisp
