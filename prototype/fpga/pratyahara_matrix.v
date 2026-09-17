@@ -89,7 +89,7 @@ module pratyahara_matrix (
         pa_rom[ 73] = 64'h000003FFFFF80000;  // Jr
         pa_rom[ 74] = 64'h0000001FFFF80000;  // Jv
         pa_rom[ 75] = 64'h000003FFFFF80200;  // Jw
-        pa_rom[ 76] = 64'h0000007FFFF80000;  /. Jy
+        pa_rom[ 76] = 64'h0000007FFFF80000;  // Jy
         pa_rom[ 77] = 64'h0000000000F80000;  // Jz
         pa_rom[ 78] = 64'h000003FFE0000200;  // KN
         pa_rom[ 79] = 64'h000003FFE0000200;  // KR
@@ -186,7 +186,7 @@ module pratyahara_matrix (
         pa_rom[170] = 64'h000003FE00000200;  // TR
         pa_rom[171] = 64'h000003FE00000200;  // TS
         pa_rom[172] = 64'h000003FE00000200;  // TY
-        pa_rom[173] = 64'h000003FE00000200;  /. Tc
+        pa_rom[173] = 64'h000003FE00000200;  // Tc
         pa_rom[174] = 64'h000003FE00000200;  // Tk
         pa_rom[175] = 64'h000003FE00000200;  // Tl
         pa_rom[176] = 64'h000003FE00000200;  // Tm
