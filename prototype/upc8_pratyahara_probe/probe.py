@@ -103,6 +103,9 @@ UPC_PREDICATES = {
     "nasal": {
         "selector": lambda features: features[1] == 3,
     },
+    "consonant": {
+        "selector": lambda features: features[1] != 5,
+    },
     "voiced-unaspirated-stop": {
         "selector": None,
         "reason": (
@@ -135,7 +138,7 @@ def compare_pratyahara_to_upc(name, predicate):
     if predicate not in UPC_PREDICATES:
         raise KeyError(f"Unknown UPC predicate: {predicate}")
 
-    canonical = pratyaharas[name]
+    canonical = list(dict.fromkeys(pratyaharas[name]))
     spec = UPC_PREDICATES[predicate]
     selector = spec.get("selector")
     if selector is None:
