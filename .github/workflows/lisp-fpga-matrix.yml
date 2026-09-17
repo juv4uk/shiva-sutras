@@ -1,0 +1,36 @@
+name: Lisp FPGA matrix generator
+
+on:
+  pull_request:
+    paths:
+      - 'prototype/fpga/**'
+      - 'tests/fpga/**'
+      - 'lib/canon/**'
+      - 'ksetra/canon/siva-sutras*.yaml'
+      - '.github/workflows/lisp-fpga-matrix.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  native-lisp-fpga-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout shiva-sutras
+        uses: actions/checkout@v4
+        with:
+          path: shiva-sutras
+
+      - name: Checkout my-lisp runtime
+        uses: actions/checkout@v4
+        with:
+          repository: juv4uk/my-lisp
+          path: my-lisp
+
+      - name: Build my-lisp CLI
+        working-directory: my-lisp
+        run: cargo build -p my-lisp-cli --bin my-lisp
+
+      - name: Test native Lisp matrix parity
+        working-directory: shiva-sutras
+        run: ../my-lisp/target/debug/my-lisp tests/fpga/gen-matrix.lisp
