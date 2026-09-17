@@ -42,4 +42,13 @@
   (car (reverse (matrix-members (quote hl) matrix)))
   "h")
 
+; Renderer parity is byte-exact against artifacts committed from gen_matrix.py.
+; No normalization of whitespace/newlines is allowed here.
+(require-equal (quote c-header-byte-parity)
+  (render-c-header matrix)
+  (read-file "prototype/fpga/pratyahara_matrix.h"))
+(require-equal (quote verilog-byte-parity)
+  (render-verilog matrix)
+  (read-file "prototype/fpga/pratyahara_matrix.v"))
+
 (print (quote fpga-matrix-parity-green))
