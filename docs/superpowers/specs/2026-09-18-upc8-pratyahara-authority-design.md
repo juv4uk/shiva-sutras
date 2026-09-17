@@ -1,7 +1,7 @@
 # UPC-8 Pratyāhāra Authority — дизайн
 
 **Дата:** 2026-09-18  
-**Статус:** design approved in conversation; implementation not started  
+**Статус:** first slice implemented in PR #8  
 **Гілка:** `chatgpt/upc8-pratyahara-authority`
 
 ## Мета
@@ -10,123 +10,101 @@
 
 ## Джерело істини
 
-`ksetra/canon/siva-sutras.yaml` лишається незмінним authority. Він уже правильно розділяє:
-
-- `sounds` — канонічні звукові елементи сутри;
-- `it_marker_iast` — термінальний it-маркер;
-- `text_iast` — переданий рядок для людини.
-
-Жоден похідний шар не має права перетворювати `it_marker_iast` на UPC sound code лише через збіг написання з реальною фонемою.
+`ksetra/canon/siva-sutras.yaml` лишається незмінним authority. Він уже правильно розділяє `sounds`, `it_marker_iast` і `text_iast`. Жоден похідний шар не має права перетворювати `it_marker_iast` на UPC sound code лише через збіг написання з реальною фонемою.
 
 ## Архітектура
 
-### 1. Canon adapter
+### Canonical pratyāhāra expansion
 
-Похідне представлення повинно давати типізовані елементи:
+Поточний slice повторно використовує наявні `load_sutras()`, `flat_sequence()` та `build_pratyaharas()` у `prototype/upc8_pratyahara_probe/probe.py`. Дані канону читаються безпосередньо з YAML; другої копії 14 сутр не створюємо.
 
-```text
-SOUND(sound_iast, sutra_id, sound_index)
-IT_MARKER(marker_iast, sutra_id)
-```
+Поточний probe формує ключ як literal `start sound + it-marker`, тому executable keys у цьому slice — `ñm`, `jś`, `hl`. Display/transliteration forms на кшталт `ñam` чи `jaś` не підміняють machine key.
 
-Це представлення генерується тільки з `siva-sutras.yaml`; ручної другої копії 14 сутр не створюємо.
+### UPC predicate view
 
-### 2. Canonical pratyāhāra expansion
+Окремий шар описує інженерний предикат над уже наявним `SA_FEATURES`. Predicate не є канонічним визначенням pratyāhāra; це незалежна машинна гіпотеза про те, чи можна ту саму множину отримати через feature geometry.
 
-Pratyāhāra визначається канонічною послідовністю і occurrence-aware terminal marker. Результат — впорядкована множина/послідовність `SOUND`, без `IT_MARKER` у membership.
-
-Повторні marker spellings (`ṇ` та інші неоднозначності) не вирішуються case-folding або «першим рядком у таблиці». Selector/policy має бути явним і версіонованим там, де notation сама по собі неоднозначна.
-
-### 3. UPC predicate view
-
-Окремий шар описує інженерний предикат над UPC fields, наприклад:
+Перший slice містить:
 
 ```text
-class == VOWEL
-class in {VARGA, NON_VARGA}
-manner == NASAL
-manner == VOICED && aspirated == false
+nasal     := manner == 3
+consonant := manner != 5
 ```
 
-UPC predicate не є канонічним визначенням pratyāhāra. Це незалежна машинна гіпотеза про те, чи можна ту саму множину отримати через feature geometry.
+`voiced-unaspirated-stop` навмисно не має selector: `SA_FEATURES` не містить aspiration, тому plain/aspirated voiced stops не можна чесно розділити одним поточним предикатом.
 
-### 4. Exactness classifier
+### Exactness classifier
 
-Для кожної перевірюваної pratyāhāra обчислюємо:
+Для перевірки обчислюємо:
 
 ```text
 P = canonical expansion from Śiva Sūtras
 U = UPC predicate expansion
 ```
 
-і класифікуємо:
+Статуси:
 
-- `EXACT` — `P == U`;
-- `PARTIAL` — є непорожній перетин, але множини різні;
-- `NOT_SINGLE_PREDICATE` — немає чесного одного feature predicate без lookup/special cases;
-- `AMBIGUOUS_CANONICAL_SELECTOR` — notation потребує явного selector/context до порівняння.
+- `EXACT` — множини однакові;
+- `PARTIAL` — множини різні, але predicate обчислюваний;
+- `NOT_SINGLE_PREDICATE` — поточний feature space не має потрібного виміру;
+- `AMBIGUOUS_CANONICAL_SELECTOR` — зарезервовано для наступного occurrence-aware canonical API; у цьому slice не фабрикується.
 
-Заборонено «підправляти» canonical expansion, щоб вона збіглася з UPC predicate.
+Canonical membership перед порівнянням нормалізується до унікальних звуків у порядку першого входження. Це необхідно для `hl`: переданий канон має `h` у sūtra 5 і повторне `h` у sūtra 14, але class membership містить один `h`.
 
-## Межі першої реалізації
+## Підтверджені witnesses цього slice
 
-Перший vertical slice охоплює тільки невеликий набір добре мотивованих класів:
+```text
+ñm  ↔ nasal      => EXACT
+     ñ m ṅ ṇ n
 
-- `ac`;
-- `hal`;
-- `jaś`;
-- `ñaṇ`/відповідний nasal-class case тільки після occurrence-aware перевірки notation;
-- `yaṇ` або інший semivowel class лише якщо canonical selector однозначний у поточному oracle.
+hl  ↔ consonant  => EXACT
+     33 unique consonants; duplicate canonical h collapsed
 
-Не намагаємося в першому PR класифікувати всі можливі pratyāhāra.
+jś  ↔ voiced-unaspirated-stop
+     => NOT_SINGLE_PREDICATE
+     reason: no aspiration dimension in SA_FEATURES
+```
+
+Це інженерні результати конкретного прототипу. `EXACT` не є історичною тезою про те, що Паніні використовував бітові маски.
 
 ## Взаємодія з наявними прототипами
 
-- `prototype/upc8_pratyahara_probe/probe.py` лишається дослідницьким probe; його nearest-neighbour metric не стає authority.
+- `prototype/upc8_pratyahara_probe/probe.py` лишається дослідницьким probe; nearest-neighbour metric не стає authority.
 - `prototype/CANONICAL_PRATYAHARA_ORACLE_PASS1.md` використовується як аудит/підказка, але не як machine-readable source of truth.
 - `prototype/upc8.py`, `bitmask64`, `cml_lowering`, `lisp_core_phonetics` та `fpga_alu` не отримують нових hand-maintained pratyāhāra tables.
-- Майбутні C/Lisp/RTL masks мають генеруватися з одного machine-readable result після стабілізації цього зрізу.
+- Майбутні C/Lisp/RTL masks мають генеруватися тільки після стабілізації occurrence-aware canonical result.
 
 ## Координація з активними задачами
 
-Робота не повинна конфліктувати з:
-
-- issue #3 (`ECO-LISP-SCRIPTS-1`): не створюємо довгоживучий новий Python authority; якщо тестовий Python helper потрібен тимчасово, він має бути явно migration-target і не дублювати таблиці;
-- issue #4: human-facing документація лишається українською; semantic IDs/IAST/терміни Паніні не перекладаємо;
-- issue #5: новий design/spec є активним документом і має бути discoverable при майбутньому documentation-authority cleanup.
+- issue #3 (`ECO-LISP-SCRIPTS-1`): цей PR розширює вже існуючий Python probe, але не створює нового Python authority або нової membership table; майбутній стабільний consumer має узгодитися з Lisp-migration.
+- issue #4: human-facing документація лишається українською; IAST/Pāṇinian terms і semantic IDs не перекладаються.
+- issue #5: цей spec/plan мають бути враховані під час documentation-authority cleanup.
 
 ## Інваріанти
 
 1. `ksetra/canon/siva-sutras.yaml` не змінюється.
-2. `IT_MARKER` ніколи не отримує sound membership лише через spelling collision.
+2. `IT_MARKER` не отримує sound membership через spelling collision.
 3. Canonical expansion і UPC predicate будуються незалежно.
-4. Порівняння множин детерміноване й тестоване.
-5. Case-sensitive IAST/SLP1 identifiers не case-foldяться.
-6. Жоден generated mask не стає новим authority.
-7. Невизначеність позначається явно, а не маскується «правильним» lookup value.
+4. `EXACT` вимагає рівності множин в обидва боки.
+5. Case-sensitive identifiers не case-foldяться.
+6. Generated mask/predicate не стає authority.
+7. Відсутня feature dimension дає явний негативний результат, а не спеціальний lookup.
 
-## Тестова стратегія
+## Verification boundary
 
-Мінімальний набір тестів має перевіряти:
-
-- 14 сутр читаються з canon source без ручної копії;
-- для кожної сутри `sounds` і `it_marker_iast` залишаються різними типами;
-- marker/sound spelling collisions не викидають справжні sounds;
-- canonical expansion відтворює відомі regression cases поточного root engine;
-- `EXACT` вимагає рівності множин в обидва боки;
-- навмисно неправильний UPC predicate класифікується `PARTIAL` або `NOT_SINGLE_PREDICATE`, а не `EXACT`;
-- ambiguity не вирішується неявно.
-
-## Критерій завершення першого зрізу
-
-Перший зріз завершений, коли один executable test/report для вибраних pratyāhāra показує поруч:
+Локальний isolated-replica run:
 
 ```text
-notation
-canonical members
-UPC predicate
-UPC members
-status: EXACT | PARTIAL | NOT_SINGLE_PREDICATE | AMBIGUOUS_CANONICAL_SELECTOR
+python -m pytest prototype/upc8_pratyahara_probe/test_compare.py -q
+3 passed
+
+python -m py_compile prototype/upc8_pratyahara_probe/probe.py \
+  prototype/upc8_pratyahara_probe/test_compare.py
+exit 0
 ```
 
-і всі дані канону походять безпосередньо з `ksetra/canon/siva-sutras.yaml`.
+У репозиторії немає загального Python CI workflow, тому цей PR не заявляє repository-wide CI green.
+
+## Наступний slice
+
+Occurrence-aware canonical selector для повторних it-marker spellings. Лише після цього варто генерувати спільний machine-readable result для Lisp/C/RTL і перевіряти ширший набір pratyāhāra.
