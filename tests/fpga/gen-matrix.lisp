@@ -52,15 +52,27 @@
   (car (reverse (matrix-members (quote hl) matrix)))
   "h")
 
-; Renderer parity is byte-exact against artifacts committed from gen_matrix.py.
+; Full differential parity against the still-present legacy Python generator.
+; CI materializes its four outputs under /workspace/notes before this test runs.
 ; No normalization of whitespace/newlines is allowed here.
+(print (quote checking-mif-byte-parity))
+(require-equal (quote mif-byte-parity)
+  (render-mif matrix)
+  (read-file "/workspace/notes/pratyahara_matrix.mif"))
+
 (print (quote checking-c-header-byte-parity))
 (require-equal (quote c-header-byte-parity)
   (render-c-header matrix)
-  (read-file "prototype/fpga/pratyahara_matrix.h"))
+  (read-file "/workspace/notes/pratyahara_matrix.h"))
+
 (print (quote checking-verilog-byte-parity))
 (require-equal (quote verilog-byte-parity)
   (render-verilog matrix)
-  (read-file "prototype/fpga/pratyahara_matrix.v"))
+  (read-file "/workspace/notes/pratyahara_matrix.v"))
 
-(print (quote fpga-matrix-parity-green))
+(print (quote checking-lisp-data-byte-parity))
+(require-equal (quote lisp-data-byte-parity)
+  (render-lisp-data matrix)
+  (read-file "/workspace/notes/pratyahara_matrix.my"))
+
+(print (quote fpga-matrix-full-differential-green))
