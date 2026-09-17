@@ -496,3 +496,27 @@
                    "  (lambda (sound-idx pa-idx)"
                    "    (nth sound-idx (nth pa-idx *pa-matrix*))))")))))
       (join-lines lines))))
+
+
+; Write the four legacy generator outputs. The core accepts an output directory
+; so tests and future tooling can choose one explicitly; the compatibility
+; driver keeps the historical /workspace/notes destination.
+(def artifact-path
+  (lambda (outdir filename)
+    (concat-strings (list outdir "/" filename))))
+
+(def write-pratyahara-artifacts
+  (lambda (matrix outdir)
+    (write-file
+      (artifact-path outdir "pratyahara_matrix.mif")
+      (render-mif matrix))
+    (write-file
+      (artifact-path outdir "pratyahara_matrix.h")
+      (render-c-header matrix))
+    (write-file
+      (artifact-path outdir "pratyahara_matrix.v")
+      (render-verilog matrix))
+    (write-file
+      (artifact-path outdir "pratyahara_matrix.my")
+      (render-lisp-data matrix))
+    (quote artifacts-written)))
