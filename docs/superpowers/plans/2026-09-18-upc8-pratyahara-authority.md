@@ -1,64 +1,69 @@
-# UPC-8 Pratyāhāra Authority Implementation Plan
+# UPC-8 / Pratyāhāra Lisp Migration Plan
 
-> **For agentic workers:** this plan records the implemented first slice. Future extensions must keep the same authority boundary: canon first, derived UPC view second.
+> **For agentic workers:** active repo-owned tooling moves from Python to my-lisp per issue #3. Keep Python only as a temporary parity witness until the Lisp path reproduces the same contract.
 
-**Goal:** Compare canon-derived pratyāhāra member sets with explicit UPC feature predicates without creating a second semantic authority.
+**Goal:** Replace the newly-added Python comparison direction with a native my-lisp regression slice and backport the corrected Lisp pratyāhāra masks.
 
-**Architecture:** Reuse `prototype/upc8_pratyahara_probe/probe.py`, which already reads `ksetra/canon/siva-sutras.yaml`. Canonical membership comes only from `build_pratyaharas()`. UPC membership is independently derived from `SA_FEATURES` and then classified as `EXACT`, `PARTIAL`, or `NOT_SINGLE_PREDICATE`.
+**Authority:** `ksetra/canon/siva-sutras.yaml` remains immutable canon. `prototype_phonetics.lisp` is a derived engineering representation.
 
-**Spec:** `docs/superpowers/specs/2026-09-18-upc8-pratyahara-authority-design.md`
+## Task 1 — Remove accidental new Python surface
 
-## Global constraints
+- Revert `prototype/upc8_pratyahara_probe/probe.py` to `master`.
+- Revert `prototype/upc8_pratyahara_probe/README.md` to `master`.
+- Delete `prototype/upc8_pratyahara_probe/test_compare.py`.
+- Verify branch diff has no new Python logic.
 
-- `ksetra/canon/siva-sutras.yaml` is immutable authority and is not edited.
-- `sounds` and `it_marker_iast` remain distinct.
-- Pratyāhāra keys are the probe's literal `start sound + it-marker` form (`ñm`, `jś`, `hl`), not normalized display spellings such as `ñam`/`jaś`.
-- Generated predicates/masks are derived engineering views, never canonical definitions.
-- Current `SA_FEATURES` has no aspiration dimension; no test may pretend otherwise.
-- No hard-coded pratyāhāra membership table is added.
+## Task 2 — Backport corrected Lisp masks
 
----
+Source reference:
+`juv4uk/my-lisp:prototype/lisp_core_phonetics/prototype_phonetics.lisp`
 
-### Task 1: RED comparison API
+Expected corrected values:
 
-**Files:**
-- Create: `prototype/upc8_pratyahara_probe/test_compare.py`
-- Modify: `prototype/upc8_pratyahara_probe/probe.py`
+```text
+ac  = #x00000000000001FF
+hal = #x000007FFFFFFFE00
+al  = #x000007FFFFFFFFFF
+ik  = #x000000000000001E
+ec  = #x00000000000001E0
+yar = #x000003FFFFFFFC00
+Sar = #x000003800000000000
+JaS = #x000000001F00000000
+Jal = #x000003FFFF000200
+```
 
-- [x] Add a test importing `compare_pratyahara_to_upc()` before the API exists.
-- [x] Verify RED: focused pytest fails at import because the API is missing.
-- [x] Correct the initial test notation after discovering the existing probe keys are `ñm`/`jś`, not `ñam`/`jaś`.
+Update only the derived Lisp knowledge-base copy; do not edit canon YAML.
 
-### Task 2: First EXACT and negative witness
+## Task 3 — Native Lisp RED/GREEN regression
 
-- [x] Add `nasal` predicate over existing `SA_FEATURES` (`manner == 3`).
-- [x] Derive canonical membership from the immutable YAML through existing probe functions.
-- [x] Verify `ñm ↔ nasal` is `EXACT` with `ñ m ṅ ṇ n`.
-- [x] Represent `voiced-unaspirated-stop` as unavailable in the current feature space rather than fabricating an aspiration distinction.
-- [x] Verify `jś ↔ voiced-unaspirated-stop` is `NOT_SINGLE_PREDICATE` with an explicit reason.
+Create:
+`prototype/lisp_core_phonetics/test_pratyahara_masks.lisp`
 
-### Task 3: Whole-consonant witness and duplicate canonical position
+The script must:
 
-- [x] Add RED test for `hl ↔ consonant`.
-- [x] Verify RED fails because `consonant` predicate does not yet exist.
-- [x] Add `consonant` predicate (`manner != 5`).
-- [x] Normalize repeated canonical sound positions to unique set members while preserving first-occurrence order.
-- [x] Verify `hl` produces 33 unique consonants and repeated `h` appears once.
+1. read `prototype_phonetics.lisp` with `read-file` + `read`;
+2. resolve `pratyahara-masks` and nested `mask` fields using `assoc`;
+3. compare all nine corrected masks;
+4. invoke an intentionally unbound failure symbol on mismatch;
+5. print `pratyahara-mask-regression-green` on success.
 
-### Task 4: Documentation
+Run with my-lisp-cli, for example:
 
-- [x] Document the canonical-vs-derived boundary in `prototype/upc8_pratyahara_probe/README.md`.
-- [x] Record positive witnesses (`ñm`, `hl`) and negative witness (`jś`).
-- [x] State explicitly that `EXACT` is an engineering equality of sets, not a historical claim that Pāṇini used binary encoding.
+```bash
+cargo run -p my-lisp-cli -- ../shiva-sutras/prototype/lisp_core_phonetics/test_pratyahara_masks.lisp
+```
 
-### Task 5: Verification / coordination
+Do not claim GREEN until the command has actually executed successfully.
 
-- [x] Focused command: `python -m pytest prototype/upc8_pratyahara_probe/test_compare.py -q` → `3 passed` in the isolated local replica.
-- [x] Syntax command: `python -m py_compile prototype/upc8_pratyahara_probe/probe.py prototype/upc8_pratyahara_probe/test_compare.py` → exit 0.
-- [x] GitHub compare confirms no canon file changed; production diff adds only comparison code to the existing probe.
-- [x] Draft PR #8 records the RED/GREEN evidence and coordination constraints.
-- [ ] Repository-wide automated CI remains unavailable in this repository; do not claim a full-suite CI result.
+## Task 4 — Next migration slice: `probe.py`
 
-## Next slice (not part of this PR)
+After this PR is green, migrate `prototype/upc8_pratyahara_probe/probe.py` separately:
 
-Do not add more hand-maintained Python tables. The next useful experiment is to add an occurrence-aware canonical-selector result for ambiguous repeated it-markers, then decide whether the stabilized comparison result should be emitted as a machine-readable artifact for Lisp/C/RTL consumers.
+1. capture deterministic Python fixtures/output;
+2. write Lisp RED fixture consumer;
+3. implement canon/pratyāhāra path in Lisp without changing research semantics;
+4. differential parity Python ↔ Lisp;
+5. switch documentation/automation to Lisp;
+6. delete Python only after parity is green.
+
+This keeps language migration separate from phonological-model changes.
