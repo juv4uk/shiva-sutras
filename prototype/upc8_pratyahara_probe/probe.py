@@ -96,82 +96,6 @@ SA_FEATURES = {
     "ś": (3, 2, 0, 0), "ṣ": (6, 2, 0, 0), "s": (1, 2, 0, 0), "h": (5, 2, 1, 0),
 }
 
-# ───────────── canonical pratyāhāra ↔ UPC feature comparison ─────────────
-# These are engineering predicates over SA_FEATURES. Canonical membership
-# still comes exclusively from ksetra/canon/siva-sutras.yaml.
-UPC_PREDICATES = {
-    "nasal": {
-        "selector": lambda features: features[1] == 3,
-    },
-    "consonant": {
-        "selector": lambda features: features[1] != 5,
-    },
-    "voiced-unaspirated-stop": {
-        "selector": None,
-        "reason": (
-            "SA_FEATURES has no aspiration dimension, so voiced plain and "
-            "voiced aspirated stops cannot be separated by one current predicate."
-        ),
-    },
-}
-
-
-def _canonical_sound_order(sutras):
-    """Unique canonical sounds in first-occurrence order; it-markers excluded."""
-    ordered = []
-    seen = set()
-    for sound, _marker in flat_sequence(sutras):
-        if sound not in seen:
-            seen.add(sound)
-            ordered.append(sound)
-    return ordered
-
-
-def compare_pratyahara_to_upc(name, predicate):
-    """Compare a canon-derived pratyāhāra with one UPC feature predicate."""
-    sutras = load_sutras()
-    seq = flat_sequence(sutras)
-    pratyaharas = build_pratyaharas(seq, sutras)
-
-    if name not in pratyaharas:
-        raise KeyError(f"Unknown canonical pratyāhāra: {name}")
-    if predicate not in UPC_PREDICATES:
-        raise KeyError(f"Unknown UPC predicate: {predicate}")
-
-    canonical = list(dict.fromkeys(pratyaharas[name]))
-    spec = UPC_PREDICATES[predicate]
-    selector = spec.get("selector")
-    if selector is None:
-        return {
-            "status": "NOT_SINGLE_PREDICATE",
-            "canonical": canonical,
-            "upc": None,
-            "canonical_only": None,
-            "upc_only": None,
-            "reason": spec["reason"],
-        }
-
-    order = _canonical_sound_order(sutras)
-    upc = [
-        sound
-        for sound in order
-        if sound in SA_FEATURES and selector(SA_FEATURES[sound])
-    ]
-
-    canonical_set = set(canonical)
-    upc_set = set(upc)
-    canonical_only = [sound for sound in canonical if sound not in upc_set]
-    upc_only = [sound for sound in upc if sound not in canonical_set]
-
-    return {
-        "status": "EXACT" if canonical_set == upc_set else "PARTIAL",
-        "canonical": canonical,
-        "upc": upc,
-        "canonical_only": canonical_only,
-        "upc_only": upc_only,
-        "reason": None,
-    }
-
 # Ukrainian probes: taken verbatim from prototype/slavic_phonetics
 # PhonemeFeature fields (code kept for traceability).
 UK_PROBES = {
@@ -245,6 +169,7 @@ def main():
         if got != expected_sa:
             ok = False
         print(f"  {uk} -> {got} (expected {expected_sa}) [{why}] {status}")
+
     print()
     print("VERDICT:", "anchors hold — probe is calibrated" if ok else "ANCHORS FAILED — recalibrate before interpreting anything")
 
