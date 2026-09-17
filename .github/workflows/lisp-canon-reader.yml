@@ -1,0 +1,47 @@
+name: Lisp canon reader
+
+on:
+  pull_request:
+    paths:
+      - 'lib/canon/**'
+      - 'tests/canon/**'
+      - 'ksetra/canon/siva-sutras*.yaml'
+      - '.github/workflows/lisp-canon-reader.yml'
+  push:
+    branches:
+      - master
+    paths:
+      - 'lib/canon/**'
+      - 'tests/canon/**'
+      - 'ksetra/canon/siva-sutras*.yaml'
+      - '.github/workflows/lisp-canon-reader.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  native-lisp-canon:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout shiva-sutras
+        uses: actions/checkout@v4
+        with:
+          path: shiva-sutras
+
+      - name: Checkout my-lisp runtime
+        uses: actions/checkout@v4
+        with:
+          repository: juv4uk/my-lisp
+          path: my-lisp
+
+      - name: Build my-lisp CLI
+        working-directory: my-lisp
+        run: cargo build -p my-lisp-cli --bin my-lisp
+
+      - name: Test canon YAML reader
+        working-directory: shiva-sutras
+        run: ../my-lisp/target/debug/my-lisp tests/canon/siva-sutras-reader.lisp
+
+      - name: Test 42-ID versus 43-position index models
+        working-directory: shiva-sutras
+        run: ../my-lisp/target/debug/my-lisp tests/canon/siva-sutras-index.lisp
