@@ -104,9 +104,12 @@ hand-curated, метрика одна, фонем 14 з ~35.
 - `NOT_SINGLE_PREDICATE` — поточний feature space не має потрібного
   виміру, тому один чесний предикат побудувати не можна.
 
-Перші два regression witnesses:
+Regression witnesses:
 
 - `ñm` ↔ `nasal` — `EXACT`: `ñ m ṅ ṇ n`;
+- `hl` ↔ `consonant` — `EXACT`: 33 унікальні приголосні; повторне
+  канонічне `h` у 5-й і 14-й сутрах нормалізується до одного члена
+  множини;
 - `jś` ↔ `voiced-unaspirated-stop` — `NOT_SINGLE_PREDICATE`, тому що
   `SA_FEATURES` не має виміру aspiration і не відрізняє `g` від `gh`,
   `d` від `dh` тощо.
@@ -121,5 +124,5 @@ hand-curated, метрика одна, фонем 14 з ~35.
 
 ```text
 python -m pytest prototype/upc8_pratyahara_probe/test_compare.py -q
-2 passed
+3 passed
 ```
