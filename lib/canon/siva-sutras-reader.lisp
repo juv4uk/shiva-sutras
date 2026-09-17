@@ -1,17 +1,19 @@
 ; lib/canon/siva-sutras-reader.lisp
-; Native my-lisp projection reader for ksetra/canon/siva-sutras.yaml.
+; Native my-lisp reader for the committed Śiva-sūtra canon projections.
 ;
 ; ECO-CANON-1 / ECO-LISP-SCRIPTS-1:
-;   - the YAML file remains the only canonical data authority;
-;   - this reader does NOT contain a second copy of the 14 sutras;
+;   - ksetra/canon/siva-sutras.yaml remains transmitted/canonical authority;
+;   - ksetra/canon/siva-sutras-encoded.yaml is the existing SLP1 engineering
+;     projection and explicitly points back to that authority;
+;   - this reader contains no second copy of the 14 sutras;
 ;   - sounds and it-markers remain distinct values;
 ;   - consumers receive ordinary Lisp data and no longer need Python/YAML.
 ;
 ; Supported input is intentionally the narrow committed canon schema, not
-; general YAML. Fail-closed checks belong in callers/tests when the schema
-; changes. This keeps the language-owned reader small and auditable.
+; general YAML. This is a structural projection reader, not a YAML library.
 
 (def canon-yaml-path "ksetra/canon/siva-sutras.yaml")
+(def canon-slp1-yaml-path "ksetra/canon/siva-sutras-encoded.yaml")
 
 (def split-lines-onto
   (lambda (remaining current acc)
@@ -47,7 +49,7 @@
       ((string-empty? token) acc)
       (t (cons token acc)))))
 
-; Parse the restricted YAML inline string list used by canon rows:
+; Parse the restricted YAML inline string list used by both canon files:
 ;   sounds: ["a", "i", "u"]
 ; Quotes, brackets and spaces are syntax; comma closes one token.
 (def parse-sounds-chars
@@ -87,8 +89,8 @@
            (t (parse-marker-chars rest (string-append acc ch)))))))))
 
 (def parse-marker-line
-  (lambda (line)
-    (parse-marker-chars (after-prefix "it_marker_iast:" line) "")))
+  (lambda (marker-prefix line)
+    (parse-marker-chars (after-prefix marker-prefix line) "")))
 
 (def canon-row
   (lambda (id sounds marker)
@@ -98,7 +100,7 @@
       (cons (quote it-marker) marker))))
 
 (def parse-canon-lines-onto
-  (lambda (lines next-id pending-sounds acc)
+  (lambda (lines marker-prefix next-id pending-sounds acc)
     (cond
       ((atom lines) (reverse acc))
       (t
@@ -107,29 +109,43 @@
            ((string-prefix? "sounds:" line)
             (parse-canon-lines-onto
               (cdr lines)
+              marker-prefix
               next-id
               (parse-sounds-line line)
               acc))
-           ((string-prefix? "it_marker_iast:" line)
+           ((string-prefix? marker-prefix line)
             (cond
               ((atom pending-sounds)
                (canon-reader-marker-without-sounds next-id line))
               (t
                (parse-canon-lines-onto
                  (cdr lines)
+                 marker-prefix
                  (+ next-id 1)
                  (quote ())
                  (cons
-                   (canon-row next-id pending-sounds (parse-marker-line line))
+                   (canon-row
+                     next-id
+                     pending-sounds
+                     (parse-marker-line marker-prefix line))
                    acc)))))
            (t
             (parse-canon-lines-onto
-              (cdr lines) next-id pending-sounds acc))))))))
+              (cdr lines) marker-prefix next-id pending-sounds acc))))))))
 
 (def parse-siva-sutras-yaml
-  (lambda (text)
-    (parse-canon-lines-onto (split-lines text) 1 (quote ()) (quote ()))))
+  (lambda (text marker-prefix)
+    (parse-canon-lines-onto
+      (split-lines text) marker-prefix 1 (quote ()) (quote ()))))
 
 (def read-siva-sutras-canon
   (lambda ()
-    (parse-siva-sutras-yaml (read-file canon-yaml-path))))
+    (parse-siva-sutras-yaml
+      (read-file canon-yaml-path)
+      "it_marker_iast:")))
+
+(def read-siva-sutras-slp1
+  (lambda ()
+    (parse-siva-sutras-yaml
+      (read-file canon-slp1-yaml-path)
+      "it_marker_slp1:")))
