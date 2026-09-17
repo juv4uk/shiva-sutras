@@ -169,7 +169,6 @@ def main():
         if got != expected_sa:
             ok = False
         print(f"  {uk} -> {got} (expected {expected_sa}) [{why}] {status}")
-
     print()
     print("VERDICT:", "anchors hold — probe is calibrated" if ok else "ANCHORS FAILED — recalibrate before interpreting anything")
 
