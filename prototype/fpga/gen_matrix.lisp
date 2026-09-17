@@ -13,6 +13,7 @@
 (load "lib/canon/siva-sutras-index.lisp")
 
 (def fpga-canon (read-siva-sutras-slp1))
+(def fpga-sound-id-rows (sound-ids/42 fpga-canon))
 
 (def fpga-row-sounds
   (lambda (row) (cdr (assoc (quote sounds) (cdr row)))))
@@ -55,13 +56,13 @@
   (lambda (values) (sort-strings-onto values (quote ()))))
 
 (def matrix-sound-rows
-  (lambda () (sound-ids/42 fpga-canon)))
+  (lambda () fpga-sound-id-rows))
 
 (def matrix-sounds
-  (lambda () (map cadr (matrix-sound-rows))))
+  (lambda () (map cadr fpga-sound-id-rows)))
 
 (def matrix-sound-count
-  (lambda () (length (matrix-sounds))))
+  (lambda () (length fpga-sound-id-rows)))
 
 (def matrix-markers
   (lambda ()
@@ -113,7 +114,7 @@
       (list
         (string->symbol (string-append start marker))
         members
-        (mask/sound-id-42 members fpga-canon)))))
+        (mask42-onto members fpga-sound-id-rows (quote ()) 0)))))
 
 (def entries-for-sound
   (lambda (sound markers)
