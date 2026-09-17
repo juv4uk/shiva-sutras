@@ -55,10 +55,16 @@
 ; The old Python generator was retired only after run #14 proved byte-for-byte
 ; differential parity for all four outputs. These pinned lengths + SHA-256
 ; values are that proven legacy contract, now checked without Python.
-(def mif-output (render-mif matrix))
-(def c-header-output (render-c-header matrix))
-(def verilog-output (render-verilog matrix))
-(def lisp-data-output (render-lisp-data matrix))
+;
+; Exercise the production writer ONCE, then hash the bytes it actually wrote.
+; This avoids rendering all four large outputs twice inside the interpreted
+; test while giving a stronger end-to-end writer witness.
+(write-pratyahara-artifacts matrix "/workspace/notes")
+
+(def mif-output (read-file "/workspace/notes/pratyahara_matrix.mif"))
+(def c-header-output (read-file "/workspace/notes/pratyahara_matrix.h"))
+(def verilog-output (read-file "/workspace/notes/pratyahara_matrix.v"))
+(def lisp-data-output (read-file "/workspace/notes/pratyahara_matrix.my"))
 
 (require-equal (quote mif-length) (string-length mif-output) 18284)
 (require-equal (quote mif-sha256)
@@ -78,21 +84,6 @@
 (require-equal (quote lisp-data-length) (string-length lisp-data-output) 81791)
 (require-equal (quote lisp-data-sha256)
   (sha256-hex lisp-data-output)
-  "188d7da12cbc3b513060a08be24b3ea6698ed6041e860fec3b676d27d4a1af2d")
-
-; Exercise the production writer, not just pure renderers.
-(write-pratyahara-artifacts matrix "/workspace/notes")
-(require-equal (quote written-mif)
-  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.mif"))
-  "c6b78e19acf2d258fd22bbaf645d340890503aa7ed7dea574920aee594e42fc7")
-(require-equal (quote written-c-header)
-  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.h"))
-  "f3fb5c874d1fce207c50cb950a4973a44697aa8eda81320e18eb12233dea735f")
-(require-equal (quote written-verilog)
-  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.v"))
-  "e1a25ecba0a1410452d2a912476cbb3388d7e14ee6057000f267d2928468a900")
-(require-equal (quote written-lisp-data)
-  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.my"))
   "188d7da12cbc3b513060a08be24b3ea6698ed6041e860fec3b676d27d4a1af2d")
 
 (print (quote fpga-matrix-native-generator-green))
