@@ -226,9 +226,12 @@
     (cond
       ((eq n 0) acc)
       (t
-       (integer-hex-onto
-         (quotient n 16)
-         (string-append (nth (mod n 16) hex-digits) acc))))))
+       (let ((q (quotient n 16)))
+         (integer-hex-onto
+           q
+           (string-append
+             (nth (- n (* q 16)) hex-digits)
+             acc)))))))
 
 (def integer-hex
   (lambda (n)
