@@ -26,11 +26,7 @@
          (+ local-index 1)
          (+ global-index 1)
          (cons
-           (list
-             global-index
-             (car sounds)
-             sutra-id
-             local-index)
+           (list global-index (car sounds) sutra-id local-index)
            acc))))))
 
 (def canonical-positions-onto
@@ -56,7 +52,7 @@
     (canonical-positions-onto canon 0 (quote ()))))
 
 (def sound-id-rows-onto
-  (positions next-id seen acc)
+  (lambda (positions next-id seen acc)
     (cond
       ((atom positions) (reverse acc))
       (t
@@ -71,7 +67,7 @@
               (cdr positions)
               (+ next-id 1)
               (cons sound seen)
-              (cons (list next-id sound position-index) acc))))))))
+              (cons (list next-id sound position-index) acc)))))))))
 
 (def sound-ids/42
   (lambda (canon)
@@ -95,7 +91,7 @@
       (t (* 2 (pow2 (- n 1)))))))
 
 (def mask42-onto
-  (sounds sound-id-rows seen acc)
+  (lambda (sounds sound-id-rows seen acc)
     (cond
       ((atom sounds) acc)
       ((member? (car sounds) seen)
@@ -105,33 +101,29 @@
          (cdr sounds)
          sound-id-rows
          (cons (car sounds) seen)
-         (+ acc (pow2 (index-of-sound (car sounds) sound-id-rows)))))))
+         (+ acc (pow2 (index-of-sound (car sounds) sound-id-rows))))))))
 
+; Identity-set mask: duplicate sound occurrences collapse to one bit.
 (def mask/sound-id-42
   (lambda (sounds canon)
     (mask42-onto sounds (sound-ids/42 canon) (quote ()) 0)))
 
 (def mask43-positions-onto
-  (positions selected-sounds acc)
+  (lambda (positions acc)
     (cond
       ((atom positions) acc)
       (t
-       (let ((position (car positions)))
-         (cond
-           ((member? (cadr position) selected-sounds)
-            (mask43-positions-onto
-              (cdr positions)
-              selected-sounds
-              (+ acc (pow2 (car position)))))
-           (t
-            (mask43-positions-onto
-              (cdr positions) selected-sounds acc)))))))
+       (mask43-positions-onto
+         (cdr positions)
+         (+ acc (pow2 (car (car positions)))))))))
 
-; This selects every canonical POSITION whose sound identity is in the set.
-; Therefore a selected h sets both the sutra-5 and sutra-14 h positions.
+; Occurrence mask: caller must supply concrete canonical position records,
+; not sound identities. This preserves cases where only one of the two h
+; occurrences belongs to a range.
 (def mask/canon-position-43
-  (lambda (sounds canon)
-    (mask43-positions-onto
-      (canonical-positions/43 canon)
-      sounds
-      0)))
+  (lambda (positions)
+    (mask43-positions-onto positions 0)))
+
+(def all-sounds-from-canon
+  (lambda (canon)
+    (reduce append (quote ()) (map index-row-sounds canon))))
