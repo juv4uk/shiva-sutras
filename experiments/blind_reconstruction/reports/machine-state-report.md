@@ -222,7 +222,7 @@ dhātu + vikaraṇa + tiṅ
 |:---|:---|:---|:---|
 | pratyahara_matrix.v | Verilog | — | BRAM module (18Kb BRAM, O(1) lookup) |
 | pratyahara_matrix.h | C header | — | 42×546×64-bit bitmask constants |
-| gen_matrix.py | Python | — | Generator script |
+| generate_matrix_artifacts.lisp | my-lisp | — | Generator script |
 | pratyahara_matrix.my | my-lisp | 4368 bytes | Compact hex bitmask data |
 
 **Pratyāhāra Membership Matrix**: 42 sounds × 546 pratyāhāras × 64-bit bitmask = 4368 bytes ROM. Fits in single 18Kb BRAM. Lookup: `is_member = pa_rom[pa_idx][sound_idx]`.
