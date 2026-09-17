@@ -31,6 +31,13 @@ jobs:
           repository: juv4uk/my-lisp
           path: my-lisp
 
+      - name: Generate legacy Python oracle
+        working-directory: shiva-sutras
+        run: |
+          sudo mkdir -p /workspace/notes
+          sudo chown "$USER" /workspace/notes
+          python3 prototype/fpga/gen_matrix.py
+
       - name: Build my-lisp CLI
         working-directory: my-lisp
         run: cargo build --release -p my-lisp-cli --bin my-lisp
