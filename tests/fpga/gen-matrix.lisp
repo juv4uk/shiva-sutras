@@ -52,27 +52,47 @@
   (car (reverse (matrix-members (quote hl) matrix)))
   "h")
 
-; Full differential parity against the still-present legacy Python generator.
-; CI materializes its four outputs under /workspace/notes before this test runs.
-; No normalization of whitespace/newlines is allowed here.
-(print (quote checking-mif-byte-parity))
-(require-equal (quote mif-byte-parity)
-  (render-mif matrix)
-  (read-file "/workspace/notes/pratyahara_matrix.mif"))
+; The old Python generator was retired only after run #14 proved byte-for-byte
+; differential parity for all four outputs. These pinned lengths + SHA-256
+; values are that proven legacy contract, now checked without Python.
+(def mif-output (render-mif matrix))
+(def c-header-output (render-c-header matrix))
+(def verilog-output (render-verilog matrix))
+(def lisp-data-output (render-lisp-data matrix))
 
-(print (quote checking-c-header-byte-parity))
-(require-equal (quote c-header-byte-parity)
-  (render-c-header matrix)
-  (read-file "/workspace/notes/pratyahara_matrix.h"))
+(require-equal (quote mif-length) (string-length mif-output) 18284)
+(require-equal (quote mif-sha256)
+  (sha256-hex mif-output)
+  "c6b78e19acf2d258fd22bbaf645d340890503aa7ed7dea574920aee594e42fc7")
 
-(print (quote checking-verilog-byte-parity))
-(require-equal (quote verilog-byte-parity)
-  (render-verilog matrix)
-  (read-file "/workspace/notes/pratyahara_matrix.v"))
+(require-equal (quote c-header-length) (string-length c-header-output) 28935)
+(require-equal (quote c-header-sha256)
+  (sha256-hex c-header-output)
+  "f3fb5c874d1fce207c50cb950a4973a44697aa8eda81320e18eb12233dea735f")
 
-(print (quote checking-lisp-data-byte-parity))
-(require-equal (quote lisp-data-byte-parity)
-  (render-lisp-data matrix)
-  (read-file "/workspace/notes/pratyahara_matrix.my"))
+(require-equal (quote verilog-length) (string-length verilog-output) 28360)
+(require-equal (quote verilog-sha256)
+  (sha256-hex verilog-output)
+  "e1a25ecba0a1410452d2a912476cbb3388d7e14ee6057000f267d2928468a900")
 
-(print (quote fpga-matrix-full-differential-green))
+(require-equal (quote lisp-data-length) (string-length lisp-data-output) 81791)
+(require-equal (quote lisp-data-sha256)
+  (sha256-hex lisp-data-output)
+  "188d7da12cbc3b513060a08be24b3ea6698ed6041e860fec3b676d27d4a1af2d")
+
+; Exercise the production writer, not just pure renderers.
+(write-pratyahara-artifacts matrix "/workspace/notes")
+(require-equal (quote written-mif)
+  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.mif"))
+  "c6b78e19acf2d258fd22bbaf645d340890503aa7ed7dea574920aee594e42fc7")
+(require-equal (quote written-c-header)
+  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.h"))
+  "f3fb5c874d1fce207c50cb950a4973a44697aa8eda81320e18eb12233dea735f")
+(require-equal (quote written-verilog)
+  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.v"))
+  "e1a25ecba0a1410452d2a912476cbb3388d7e14ee6057000f267d2928468a900")
+(require-equal (quote written-lisp-data)
+  (sha256-hex (read-file "/workspace/notes/pratyahara_matrix.my"))
+  "188d7da12cbc3b513060a08be24b3ea6698ed6041e860fec3b676d27d4a1af2d")
+
+(print (quote fpga-matrix-native-generator-green))
