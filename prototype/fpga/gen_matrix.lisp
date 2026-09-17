@@ -367,3 +367,129 @@
                    ""
                    "endmodule")))))
       (join-lines lines))))
+
+
+; ---------------------------------------------------------------------------
+; Remaining legacy projections from gen_matrix.py. These are kept byte-stable
+; during migration; changing formats/extensions is a separate policy change.
+
+(def hex3
+  (lambda (n) (pad-left (integer-hex n) 3 "0")))
+
+(def mif-lines-onto
+  (lambda (remaining index acc)
+    (cond
+      ((atom remaining) (reverse acc))
+      (t
+       (let ((entry (car remaining)))
+         (mif-lines-onto
+           (cdr remaining)
+           (+ index 1)
+           (cons
+             (concat-strings
+               (list
+                 "  " (hex3 index)
+                 " : " (hex16 (third entry))
+                 ";  -- " (entry-name-text entry)))
+             acc)))))))
+
+(def render-mif
+  (lambda (matrix)
+    (let* ((pa-count (length matrix))
+           (lines
+             (append
+               (list
+                 "-- Pratyahara Membership Matrix - BRAM initialization data"
+                 "-- Generated from Siva Sutras (14 sutras, 42 sounds)"
+                 (concat-strings
+                   (list "-- " (number->string pa-count)
+                         " pratyaharas x 64-bit bitmask (42 bits used)"))
+                 (concat-strings
+                   (list "-- Total: " (number->string (* pa-count 8)) " bytes"))
+                 (concat-strings (list "DEPTH = " (number->string pa-count) ";"))
+                 "WIDTH = 64;"
+                 "ADDRESS_RADIX = HEX;"
+                 "DATA_RADIX = HEX;"
+                 "CONTENT BEGIN")
+               (append (mif-lines-onto matrix 0 (quote ())) (list "END;")))))
+      (join-lines lines))))
+
+(def pa-name-lisp
+  (lambda (entry)
+    (let* ((name (entry-name-text entry))
+           (a (string-first name))
+           (m (string-first (string-rest name))))
+      (concat-strings (list "(" a " " m ")")))))
+
+(def mask-bit-string
+  (lambda (mask bit)
+    (cond
+      ((eq (mod (quotient mask bit) 2) 1) "1")
+      (t "0"))))
+
+(def mask-bit-strings
+  (lambda (mask)
+    (map
+      (lambda (row) (mask-bit-string mask (cadr row)))
+      fpga-sound-bit-rows)))
+
+(def mask-member-sounds
+  (lambda (mask)
+    (map
+      car
+      (filter
+        (lambda (row) (eq (mod (quotient mask (cadr row)) 2) 1))
+        fpga-sound-bit-rows))))
+
+(def lisp-matrix-line
+  (lambda (entry)
+    (let ((mask (third entry)))
+      (concat-strings
+        (list
+          "    ("
+          (join-strings (mask-bit-strings mask) " ")
+          ")  ; "
+          (entry-name-text entry)
+          ": "
+          (join-strings (mask-member-sounds mask) ", "))))))
+
+(def render-lisp-data
+  (lambda (matrix)
+    (let* ((pa-count (length matrix))
+           (sound-line
+             (concat-strings
+               (list "  (quote (" (join-strings (matrix-sounds) " ") ")))"))
+           (pa-line
+             (concat-strings
+               (list "  (quote (" (join-strings (map pa-name-lisp matrix) " ") ")))"))
+           (lines
+             (append
+               (list
+                 ";; Pratyahara Membership Matrix - my-lisp data structure"
+                 ";; Auto-generated from Siva Sutras (14 sutras, 42 sounds)"
+                 (concat-strings
+                   (list ";; " (number->string pa-count)
+                         " pratyaharas x 64-bit bitmask (42 bits used)"))
+                 ";;"
+                 ";; Epistemic layer: ENGINEERING"
+                 ";; Upstream: SS-CANON-001, SS-PRATYAHARA-001"
+                 ""
+                 "(def *sound-index*"
+                 sound-line
+                 ""
+                 "(def *pa-names*"
+                 pa-line
+                 ""
+                 ";; Membership: pa-matrix[i] = list of 42 bits"
+                 "(def *pa-matrix*"
+                 "  (quote (")
+               (append
+                 (map lisp-matrix-line matrix)
+                 (list
+                   "  )))"
+                   ""
+                   ";; Fast lookup: (nth sound-idx (nth pa-idx *pa-matrix*))"
+                   "(def in-pratyahara-fast?"
+                   "  (lambda (sound-idx pa-idx)"
+                   "    (nth sound-idx (nth pa-idx *pa-matrix*))))")))))
+      (join-lines lines))))
