@@ -421,37 +421,40 @@
            (m (string-first (string-rest name))))
       (concat-strings (list "(" a " " m ")")))))
 
-(def mask-bit-string
-  (lambda (mask bit)
+; The legacy Lisp projection is a 42-ID membership view. Do not decode the
+; already-built integer mask back through 22k+ quotient/mod calls: every matrix
+; entry already retains its canonical expansion. Project that list directly
+; onto the stable 42 sound-ID order; duplicate final h naturally aliases.
+(def member-bit-string
+  (lambda (sound members)
     (cond
-      ((eq (mod (quotient mask bit) 2) 1) "1")
+      ((member? sound members) "1")
       (t "0"))))
 
-(def mask-bit-strings
-  (lambda (mask)
-    (map
-      (lambda (row) (mask-bit-string mask (cadr row)))
-      fpga-sound-bit-rows)))
+(def entry-bit-strings
+  (lambda (entry)
+    (let ((members (cadr entry)))
+      (map
+        (lambda (sound) (member-bit-string sound members))
+        (matrix-sounds)))))
 
-(def mask-member-sounds
-  (lambda (mask)
-    (map
-      car
+(def entry-member-sounds
+  (lambda (entry)
+    (let ((members (cadr entry)))
       (filter
-        (lambda (row) (eq (mod (quotient mask (cadr row)) 2) 1))
-        fpga-sound-bit-rows))))
+        (lambda (sound) (member? sound members))
+        (matrix-sounds)))))
 
 (def lisp-matrix-line
   (lambda (entry)
-    (let ((mask (third entry)))
-      (concat-strings
-        (list
-          "    ("
-          (join-strings (mask-bit-strings mask) " ")
-          ")  ; "
-          (entry-name-text entry)
-          ": "
-          (join-strings (mask-member-sounds mask) ", "))))))
+    (concat-strings
+      (list
+        "    ("
+        (join-strings (entry-bit-strings entry) " ")
+        ")  ; "
+        (entry-name-text entry)
+        ": "
+        (join-strings (entry-member-sounds entry) ", ")))))
 
 (def render-lisp-data
   (lambda (matrix)
