@@ -10,7 +10,7 @@
 ;
 ; No hard-coded copy of the 14 sutras lives here.
 
-(load "lib/canon/siva-sutras-index.lisp")
+(load "lib/canon/pratyahara.lisp")
 
 (def fpga-canon (read-siva-sutras-slp1))
 (def fpga-sound-id-rows (sound-ids/42 fpga-canon))
@@ -21,12 +21,6 @@
   (map
     (lambda (row) (list (cadr row) (pow2 (car row))))
     fpga-sound-id-rows))
-
-(def fpga-row-sounds
-  (lambda (row) (cdr (assoc (quote sounds) (cdr row)))))
-
-(def fpga-row-marker
-  (lambda (row) (cdr (assoc (quote it-marker) (cdr row)))))
 
 (def unique-strings-onto
   (lambda (values seen acc)
@@ -74,46 +68,7 @@
 (def matrix-markers
   (lambda ()
     (sort-strings
-      (unique-strings (map fpga-row-marker fpga-canon)))))
-
-(def drop-until-sound
-  (lambda (sound sounds)
-    (cond
-      ((atom sounds) (quote ()))
-      ((equal? sound (car sounds)) sounds)
-      (t (drop-until-sound sound (cdr sounds))))))
-
-(def resolve-pratyahara-onto
-  (lambda (rows start marker started acc)
-    (cond
-      ((atom rows) acc)
-      (t
-       (let* ((row (car rows))
-              (sounds (fpga-row-sounds row))
-              (it-marker (fpga-row-marker row)))
-         (cond
-           (started
-            (let ((next (append acc sounds)))
-              (cond
-                ((equal? it-marker marker) next)
-                (t (resolve-pratyahara-onto
-                     (cdr rows) start marker t next)))))
-           (t
-            (let ((from-start (drop-until-sound start sounds)))
-              (cond
-                ((atom from-start)
-                 (resolve-pratyahara-onto
-                   (cdr rows) start marker (quote ()) acc))
-                ((equal? it-marker marker)
-                 (append acc from-start))
-                (t
-                 (resolve-pratyahara-onto
-                   (cdr rows) start marker t (append acc from-start))))))))))))
-
-(def resolve-pratyahara
-  (lambda (start marker)
-    (resolve-pratyahara-onto
-      fpga-canon start marker (quote ()) (quote ()))))
+      (unique-strings (map pratyahara-row-marker fpga-canon)))))
 
 (def fpga-sound-bit
   (lambda (sound rows)
@@ -140,7 +95,9 @@
 
 (def make-matrix-entry
   (lambda (start marker)
-    (let ((members (resolve-pratyahara start marker)))
+    (let ((members
+            (resolve-pratyahara/first-after-start
+              fpga-canon start marker)))
       (list
         (string->symbol (string-append start marker))
         members

@@ -2,7 +2,15 @@
 
 **Статус:** engineering prototype · **Дата:** 2026-08-23
 **Автор:** Оксі (Vyasa) · **Дистанції:** ORIENTATIONAL (див. §7)
-**Запуск:** `python3 probe.py` (потрібен PyYAML)
+**Запуск:** через `my-lisp`: `my-lisp tests/upc8/pratyahara-probe.lisp`
+
+**Міграція 2026-09-18:** `probe.py` замінено нативним
+`probe.lisp`. Перед видаленням Python-версії differential CI довів
+byte-for-byte parity повного звіту: **1342 bytes**, SHA-256
+`d6a87ed981a1ce93365db71508f16a29751b2a6a988c90eaf34f1c90b8682e39`.
+Повторний it-маркер `ṇ` має explicit legacy policy
+`last-global` у цьому probe; це міграційний контракт, а не нове
+твердження про нормативну інтерпретацію.
 
 ## 1. Питання прототипу
 
@@ -17,11 +25,11 @@ immutable) ↔ UPC-8 розширення для словʼянських зву
 ## 2. Метод
 
 1. **Канон.** `ksetra/canon/siva-sutras.yaml` (IMMUTABLE v1.0)
-   читається як послідовність `(звук, it-маркер)` у порядку сутрапāṭхи.
+   читається нативним Lisp reader-ом як послідовність `(звук, it-маркер)` у порядку сутрапāṭхи.
 2. **Пратьяхари.** Pāṇini 1.1.71: pratyāhāra XY = усі звуки від
-   першого входження X до **кінця сутри, чиїм it-маркером є Y**
-   (маркер належить останньому звуку сутри — це була помилка v1:
-   брався перший звук із маркером, і `ac` втрачав `au`).
+   першого входження X до **кінця сутри, чиїм it-маркером є Y**.
+   Для повторного `ṇ` цей prototype зберігає historical Python policy
+   **last-global**; shared Lisp resolver робить цю occurrence policy явною.
 3. **Спільний ознаковий простір.** 4 виміри для обох мов:
    - place: 0 labial · 1 dental · 2 postalveolar · 3 palatal ·
      4 velar · 5 glottal · **6 retroflex** (тільки санскрит;
