@@ -144,7 +144,7 @@
          (cdr remaining)
          separator
          (quote ())
-         (string-append acc (string-append separator (car remaining)))))))))
+         (string-append acc (string-append separator (car remaining))))))))
 
 (def probe-join
   (lambda (values separator)
@@ -273,7 +273,7 @@
           (probe-pad-left (probe-distance-text (third row)) 6)
           (string-append
             "  "
-            (probe-join (fourth row) ", "))))))))
+            (probe-join (fourth row) ", ")))))))
 
 (def probe-anchor-text
   (lambda (rows uk expected why)
@@ -296,7 +296,7 @@
                     ") ["
                     (string-append
                       why
-                      (string-append "] " status)))))))))))))
+                      (string-append "] " status))))))))))))
 
 (def probe-anchors-ok?
   (lambda (rows)
