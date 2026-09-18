@@ -22,9 +22,19 @@
   (lambda (code)
     (and (>= code 0) (< code (bitmask64-sound-count)))))
 
+(def bitmask64-find-sound-row
+  (lambda (sound rows)
+    (cond
+      ((atom rows) (quote ()))
+      ((equal? sound (cadr (car rows))) (car rows))
+      (t (bitmask64-find-sound-row sound (cdr rows))))))
+
 (def bitmask64-sound-index
   (lambda (sound)
-    (index-of-sound sound bitmask64-sound-rows)))
+    (let ((row (bitmask64-find-sound-row sound bitmask64-sound-rows)))
+      (cond
+        ((atom row) (bitmask64-unknown-sound sound))
+        (t (car row))))))
 
 (def bitmask64-sound-mask
   (lambda (sound-or-code)
@@ -44,9 +54,13 @@
   (lambda (sound-or-code mask)
     (cond
       ((string? sound-or-code)
-       (bitmask64-bit-present?
-         mask
-         (bitmask64-sound-index sound-or-code)))
+       (let ((row
+               (bitmask64-find-sound-row
+                 sound-or-code
+                 bitmask64-sound-rows)))
+         (cond
+           ((atom row) (quote ()))
+           (t (bitmask64-bit-present? mask (car row))))))
       ((bitmask64-code-valid? sound-or-code)
        (bitmask64-bit-present? mask sound-or-code))
       (t (quote ())))))
@@ -118,9 +132,29 @@
           (bitmask64-bit-present? mask (car row)))
         bitmask64-sound-rows))))
 
+(def bitmask64-sounds-to-mask-onto
+  (lambda (sounds seen acc)
+    (cond
+      ((atom sounds) acc)
+      ((member? (car sounds) seen)
+       (bitmask64-sounds-to-mask-onto
+         (cdr sounds) seen acc))
+      (t
+       (let ((row
+               (bitmask64-find-sound-row
+                 (car sounds)
+                 bitmask64-sound-rows)))
+         (bitmask64-sounds-to-mask-onto
+           (cdr sounds)
+           (cons (car sounds) seen)
+           (cond
+             ((atom row) acc)
+             (t (+ acc (pow2 (car row)))))))))))
+
 (def bitmask64-sounds-to-mask
   (lambda (sounds)
-    (mask/sound-id-42 sounds bitmask64-canon)))
+    (bitmask64-sounds-to-mask-onto
+      sounds (quote ()) 0)))
 
 ; Explicit occurrence policy: callers cannot obtain a named range without
 ; choosing how repeated markers are interpreted.
