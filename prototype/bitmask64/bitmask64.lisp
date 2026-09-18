@@ -137,3 +137,24 @@
       (resolve-pratyahara/last-global
         bitmask64-canon start marker)
       bitmask64-canon)))
+
+
+; This exporter is independent of the disputed named-mask table and therefore
+; can preserve the legacy target byte-for-byte safely.
+(def bitmask64-export-verilog-lut
+  (lambda ()
+    (string-append
+      "// Auto-generated synthesizable Verilog ROM/LUT for Pratyahara Membership\n"
+      (string-append
+        "module pratyahara_lut (\n"
+        (string-append
+          "    input  wire [5:0]  sound_code,    // 0x00 to 0x29 (6-bit code)\n"
+          (string-append
+            "    input  wire [63:0] pratyahara_mask,\n"
+            (string-append
+              "    output wire        is_member\n"
+              (string-append
+                ");\n"
+                (string-append
+                  "    assign is_member = pratyahara_mask[sound_code];\n"
+                  "endmodule")))))))))
