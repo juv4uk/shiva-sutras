@@ -58,6 +58,13 @@
 (require-true (quote code-37-in-hal) (bitmask64-member? 37 hal))
 (require-false (quote k-not-in-ac) (bitmask64-member? "k" ac))
 (require-false (quote invalid-code-not-member) (bitmask64-member? 42 al))
+(require-false
+  (quote unknown-sound-not-member)
+  (bitmask64-member? "?" al))
+(require-equal
+  (quote sounds-to-mask-ignores-unknown-legacy)
+  (bitmask64-sounds-to-mask (quote ("a" "?" "i")))
+  3)
 
 (require-true (quote ac-hal-disjoint)
   (bitmask64-disjoint? ac hal))
