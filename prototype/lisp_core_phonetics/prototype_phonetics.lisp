@@ -14,8 +14,11 @@
    (oshthya   . ((code . 5) (name . "Labial")           (slp1-sounds . ("u" "U" "p" "P" "b" "B" "m" "v"))))
  ))
 
- ;; 2. Classical Pratyāhāra 64-Bit Bitmask Specifications
- (pratyahara-masks . (
+ ;; 2. HISTORICAL INVALID Pratyāhāra Bitmask Snapshot
+ ;; DO NOT consume as current authority. Audit #13 proved these copied
+ ;; constants do not consistently inhabit sound-id/42 or canon-position/43.
+ ;; Current masks must be derived from the canon-backed index/generator API.
+ (legacy-invalid-pratyahara-masks . (
    (ac  . ((mask . #x00000000000001FF) (description . "All 9 vowels (sūtras 1-4)")))
    (hal . ((mask . #x000003FFFFFFFFFE00) (description . "All 33 consonants (sūtras 5-14)")))
    (al  . ((mask . #x000003FFFFFFFFFFFF) (description . "All 42 canonical sounds")))

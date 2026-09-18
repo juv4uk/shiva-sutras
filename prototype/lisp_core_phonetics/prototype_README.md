@@ -13,14 +13,19 @@
   `test_lisp_phonetics` ccd81a2). They were removed from my-lisp on
   2026-08-29 (`33edf06`, no push) to stop duplicating the Python reference;
   this repository remains the only copy of the `.py` files.
-- **`prototype_phonetics.lisp` has diverged.** The my-lisp copy carries the
-  corrected pratyahara bitmask values (my-lisp `1518786`, 2026-08-25, fixing
-  the hal/al/yar/Sar/JaS/Jal masks found wrong by the semantic audit).
-  The copy here is still the **pre-fix** version.
-- Decision (owner, 2026-08-29): the mask fix stays in my-lisp for now;
-  backport into this repository is pending. Until then, for the pratyahara
-  masks treat `my-lisp:prototype/lisp_core_phonetics/prototype_phonetics.lisp`
-  as the corrected reference, not this file.
+- **2026-09-18 authority correction (#13): neither hand-written
+  `prototype_phonetics.lisp` mask block is a semantic authority.** The copy in
+  this repository contains pre-fix values, but the later `my-lisp` copy also
+  mixes incompatible bit widths/index models. Historical provenance remains
+  useful evidence; the constants themselves are not safe to backport.
+- The executable authority boundary is now the canon-derived index API merged
+  by PR #14: `sound-id/42` (42 unique sounds; repeated final `h` aliases the
+  first) and `canon-position/43` (43 canonical positions; repeated `h`
+  remains a distinct position). Generated mask consumers must name which model
+  they use.
+- The stale block below is therefore exposed only as
+  `legacy-invalid-pratyahara-masks`. New code must derive masks from the
+  canonical index/generator path rather than copying either historical table.
 
 ---
 
