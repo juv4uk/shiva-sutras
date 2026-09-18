@@ -40,6 +40,10 @@ jobs:
         working-directory: my-lisp
         run: cargo build --release -p my-lisp-cli --bin my-lisp
 
+      - name: Test explicit pratyahara marker policies
+        working-directory: shiva-sutras
+        run: ../my-lisp/target/release/my-lisp tests/canon/pratyahara-policy.lisp
+
       - name: Test native Lisp matrix parity
         working-directory: shiva-sutras
         run: ../my-lisp/target/release/my-lisp tests/fpga/gen-matrix.lisp
