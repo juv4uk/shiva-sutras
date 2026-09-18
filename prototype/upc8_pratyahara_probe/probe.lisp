@@ -268,12 +268,16 @@
     (string-append
       (probe-pad-right (car row) 4)
       (string-append
-        (probe-pad-right (cadr row) 10)
+        " "
         (string-append
-          (probe-pad-left (probe-distance-text (third row)) 6)
+          (probe-pad-right (cadr row) 10)
           (string-append
-            "  "
-            (probe-join (fourth row) ", ")))))))
+            " "
+            (string-append
+              (probe-pad-left (probe-distance-text (third row)) 6)
+              (string-append
+                "  "
+                (probe-join (fourth row) ", ")))))))))
 
 (def probe-anchor-text
   (lambda (rows uk expected why)
