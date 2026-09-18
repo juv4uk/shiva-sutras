@@ -459,7 +459,7 @@
         ": "
         (join-strings (entry-member-sounds entry) ", ")))))
 
-(def render-lisp-data
+(def lisp-data-lines
   (lambda (matrix)
     (let* ((pa-count (length matrix))
            (sound-line
@@ -498,7 +498,36 @@
                    "(def in-pratyahara-fast?"
                    "  (lambda (sound-idx pa-idx)"
                    "    (nth sound-idx (nth pa-idx *pa-matrix*))))")))))
-      (join-lines lines))))
+      lines)))
+
+(def render-lisp-data
+  (lambda (matrix)
+    (join-lines (lisp-data-lines matrix))))
+
+; Large generated text is emitted line-wise so UTF-8 meaning stays in Lisp
+; without one recursive encoder walk over the full ~82 KiB artifact.
+(def lines->utf8-bytes-reversed-onto
+  (lambda (remaining acc)
+    (cond
+      ((atom remaining) acc)
+      (t
+       (lines->utf8-bytes-reversed-onto
+         (cdr remaining)
+         (append
+           (utf8-encode-string (car remaining))
+           (cond
+             ((atom acc) acc)
+             (t (cons 10 acc)))))))))
+
+(def lines->utf8-bytes
+  (lambda (lines)
+    (lines->utf8-bytes-reversed-onto
+      (reverse lines)
+      (quote ()))))
+
+(def write-lines
+  (lambda (path lines)
+    (write-file-bytes path (lines->utf8-bytes lines))))
 
 
 ; Write the four legacy generator outputs. The core accepts an output directory
@@ -519,7 +548,7 @@
     (write-file
       (artifact-path outdir "pratyahara_matrix.v")
       (render-verilog matrix))
-    (write-file
+    (write-lines
       (artifact-path outdir "pratyahara_matrix.my")
-      (render-lisp-data matrix))
+      (lisp-data-lines matrix))
     (quote artifacts-written)))
