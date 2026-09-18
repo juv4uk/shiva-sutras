@@ -42,23 +42,16 @@ jobs:
         working-directory: my-lisp
         run: cargo build --release -p my-lisp-cli --bin my-lisp
 
-      - name: Capture legacy Python UPC8 probe oracle
-        working-directory: shiva-sutras
-        run: |
-          python3 -m pip install --quiet PyYAML
-          python3 prototype/upc8_pratyahara_probe/probe.py > /workspace/notes/upc8-pratyahara-probe-python.txt
-
       - name: Test native Lisp UPC8 probe
         working-directory: shiva-sutras
         run: ../my-lisp/target/release/my-lisp tests/upc8/pratyahara-probe.lisp
 
-      - name: Compare Python and Lisp UPC8 probe reports
+      - name: Verify UPC8 probe byte contract
         shell: bash
         run: |
           set -euo pipefail
-          cmp /workspace/notes/upc8-pratyahara-probe-python.txt /workspace/notes/upc8-pratyahara-probe-lisp.txt
-          sha256sum /workspace/notes/upc8-pratyahara-probe-python.txt
-          wc -c /workspace/notes/upc8-pratyahara-probe-python.txt
+          test "$(wc -c < /workspace/notes/upc8-pratyahara-probe-lisp.txt)" -eq 1342
+          test "$(sha256sum /workspace/notes/upc8-pratyahara-probe-lisp.txt | awk '{print $1}')" = "d6a87ed981a1ce93365db71508f16a29751b2a6a988c90eaf34f1c90b8682e39"
 
       - name: Test explicit pratyahara marker policies
         working-directory: shiva-sutras
