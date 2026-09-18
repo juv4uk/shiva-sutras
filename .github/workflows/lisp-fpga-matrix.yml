@@ -4,7 +4,9 @@ on:
   pull_request:
     paths:
       - 'prototype/fpga/**'
+      - 'prototype/upc8_pratyahara_probe/**'
       - 'tests/fpga/**'
+      - 'tests/upc8/**'
       - 'lib/canon/**'
       - 'ksetra/canon/siva-sutras*.yaml'
       - '.github/workflows/lisp-fpga-matrix.yml'
@@ -39,6 +41,24 @@ jobs:
       - name: Build my-lisp CLI
         working-directory: my-lisp
         run: cargo build --release -p my-lisp-cli --bin my-lisp
+
+      - name: Capture legacy Python UPC8 probe oracle
+        working-directory: shiva-sutras
+        run: |
+          python3 -m pip install --quiet PyYAML
+          python3 prototype/upc8_pratyahara_probe/probe.py > /workspace/notes/upc8-pratyahara-probe-python.txt
+
+      - name: Test native Lisp UPC8 probe
+        working-directory: shiva-sutras
+        run: ../my-lisp/target/release/my-lisp tests/upc8/pratyahara-probe.lisp
+
+      - name: Compare Python and Lisp UPC8 probe reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp /workspace/notes/upc8-pratyahara-probe-python.txt /workspace/notes/upc8-pratyahara-probe-lisp.txt
+          sha256sum /workspace/notes/upc8-pratyahara-probe-python.txt
+          wc -c /workspace/notes/upc8-pratyahara-probe-python.txt
 
       - name: Test explicit pratyahara marker policies
         working-directory: shiva-sutras
