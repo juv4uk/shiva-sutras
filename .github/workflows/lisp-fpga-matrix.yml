@@ -5,7 +5,9 @@ on:
     paths:
       - 'prototype/fpga/**'
       - 'prototype/upc8_pratyahara_probe/**'
+      - 'prototype/bitmask64/**'
       - 'tests/fpga/**'
+      - 'tests/bitmask64/**'
       - 'tests/upc8/**'
       - 'lib/canon/**'
       - 'ksetra/canon/siva-sutras*.yaml'
@@ -41,6 +43,10 @@ jobs:
       - name: Build my-lisp CLI
         working-directory: my-lisp
         run: cargo build --release -p my-lisp-cli --bin my-lisp
+
+      - name: Test native Lisp bitmask64 semantics
+        working-directory: shiva-sutras
+        run: ../my-lisp/target/release/my-lisp tests/bitmask64/bitmask64.lisp
 
       - name: Test native Lisp UPC8 probe
         working-directory: shiva-sutras
