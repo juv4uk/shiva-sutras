@@ -100,4 +100,9 @@
 (require-false (quote repeated-marker-masks-diverge)
   (equal? aR-first aR-last))
 
+(require-equal
+  (quote verilog-export)
+  (bitmask64-export-verilog-lut)
+  "// Auto-generated synthesizable Verilog ROM/LUT for Pratyahara Membership\nmodule pratyahara_lut (\n    input  wire [5:0]  sound_code,    // 0x00 to 0x29 (6-bit code)\n    input  wire [63:0] pratyahara_mask,\n    output wire        is_member\n);\n    assign is_member = pratyahara_mask[sound_code];\nendmodule")
+
 (print (quote bitmask64-lisp-correctness-green))
