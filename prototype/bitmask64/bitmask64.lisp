@@ -18,6 +18,12 @@
 (def bitmask64-sound-count
   (lambda () (length bitmask64-sound-rows)))
 
+; The semantic sound universe uses bits 0..41, but the mechanism is a 64-bit
+; word. Set algebra must preserve reserved/high bits exactly like the legacy
+; Python integer-mask operations within the documented 64-bit domain.
+(def bitmask64-word-width
+  (lambda () 64))
+
 (def bitmask64-code-valid?
   (lambda (code)
     (and (>= code 0) (< code (bitmask64-sound-count)))))
@@ -68,7 +74,7 @@
 (def bitmask64-combine-onto
   (lambda (mode m1 m2 bit acc)
     (cond
-      ((eq bit (bitmask64-sound-count)) acc)
+      ((eq bit (bitmask64-word-width)) acc)
       (t
        (let* ((a (bitmask64-bit-present? m1 bit))
               (b (bitmask64-bit-present? m2 bit))
@@ -110,7 +116,7 @@
 (def bitmask64-count-onto
   (lambda (mask bit acc)
     (cond
-      ((eq bit (bitmask64-sound-count)) acc)
+      ((eq bit (bitmask64-word-width)) acc)
       (t
        (bitmask64-count-onto
          mask
