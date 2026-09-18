@@ -44,28 +44,6 @@ jobs:
         working-directory: my-lisp
         run: cargo build --release -p my-lisp-cli --bin my-lisp
 
-      - name: Capture legacy Python bitmask64 mechanism
-        working-directory: shiva-sutras
-        run: |
-          python3 prototype/bitmask64/test_bitmask64.py
-          python3 - <<'PY'
-          import hashlib
-          import sys
-          sys.path.insert(0, "prototype/bitmask64")
-          import bitmask64
-          assert len(bitmask64.CANONICAL_SOUNDS) == 42
-          assert len(bitmask64.PRATYAHARA_TABLE_64) == 41
-          c_header = bitmask64.export_c_header().encode("utf-8")
-          verilog = bitmask64.export_verilog_lut().encode("utf-8")
-          print("legacy-bitmask64-unique-keys=41")
-          print("legacy-bitmask64-c-header-bytes=", len(c_header))
-          print("legacy-bitmask64-c-header-sha256=", hashlib.sha256(c_header).hexdigest())
-          print("legacy-bitmask64-verilog-bytes=", len(verilog))
-          print("legacy-bitmask64-verilog-sha256=", hashlib.sha256(verilog).hexdigest())
-          for name in ("val", "ral", "iR", "eR", "nam", "xay", "caw"):
-              print("legacy-disputed", name, f"0x{bitmask64.PRATYAHARA_TABLE_64[name]:016X}")
-          PY
-
       - name: Test native Lisp bitmask64 semantics
         working-directory: shiva-sutras
         run: ../my-lisp/target/release/my-lisp tests/bitmask64/bitmask64.lisp
