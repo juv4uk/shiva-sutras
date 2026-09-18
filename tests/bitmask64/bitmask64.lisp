@@ -129,4 +129,13 @@
   (bitmask64-export-verilog-lut)
   "// Auto-generated synthesizable Verilog ROM/LUT for Pratyahara Membership\nmodule pratyahara_lut (\n    input  wire [5:0]  sound_code,    // 0x00 to 0x29 (6-bit code)\n    input  wire [63:0] pratyahara_mask,\n    output wire        is_member\n);\n    assign is_member = pratyahara_mask[sound_code];\nendmodule")
 
+(require-equal
+  (quote verilog-export-bytes-ascii)
+  (string-length (bitmask64-export-verilog-lut))
+  302)
+(require-equal
+  (quote verilog-export-legacy-sha)
+  (sha256-hex (bitmask64-export-verilog-lut))
+  "ed8a9f26363d38c2049ced46606ff8f03f63786ff1ae66a78ca934822f948a05")
+
 (print (quote bitmask64-lisp-correctness-green))
