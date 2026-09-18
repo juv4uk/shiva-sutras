@@ -23,6 +23,7 @@
 
 ; Canon-derived universe: 42 unique sound IDs, no local copied ordering.
 (require-equal (quote sound-count) (bitmask64-sound-count) 42)
+(require-equal (quote word-width) (bitmask64-word-width) 64)
 (require-equal (quote a-index) (bitmask64-sound-index "a") 0)
 (require-equal (quote s-index) (bitmask64-sound-index "s") 41)
 (require-equal (quote a-mask) (bitmask64-sound-mask "a") 1)
@@ -87,6 +88,22 @@
   (bitmask64-subset? yaR hal))
 (require-true (quote ik-ec-disjoint)
   (bitmask64-disjoint? ik ec))
+
+; Reserved/high mask bits belong to the 64-bit mechanism even though they do
+; not map to canonical sounds.
+(def high63 9223372036854775808)
+(require-equal
+  (quote high-bit-union-preserved)
+  (bitmask64-union 1 high63)
+  9223372036854775809)
+(require-equal
+  (quote high-bit-counted)
+  (bitmask64-count (bitmask64-union 1 high63))
+  2)
+(require-equal
+  (quote mask-to-sounds-ignores-reserved-high-bit)
+  (bitmask64-mask-to-sounds (bitmask64-union 1 high63))
+  (quote ("a")))
 
 (require-equal
   (quote roundtrip-ac)
