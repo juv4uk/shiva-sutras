@@ -32,7 +32,7 @@ jobs:
       - name: Checkout my-lisp runtime
         uses: actions/checkout@v4
         with:
-          repository: juv4uk/my-lisp
+          repository: juv4uk/sens
           path: my-lisp
 
       - name: Prepare legacy output directory
