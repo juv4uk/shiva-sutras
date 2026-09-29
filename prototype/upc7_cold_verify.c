@@ -84,7 +84,7 @@ static int copy_spelling(char dst[SPELLING_CAP], const char *src, size_t line_no
 }
 
 static int check_layout_injective(
-    const char values[CELL_COUNT][SPELLING_CAP],
+    char values[CELL_COUNT][SPELLING_CAP],
     const char *layout_name
 ) {
     size_t i, j;
