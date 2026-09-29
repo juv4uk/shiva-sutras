@@ -8,6 +8,10 @@ on:
       - "prototype/upc8.py"
       - "prototype/upc7_geometry.py"
       - "prototype/test_upc7_geometry.py"
+      - "prototype/upc7_layouts.py"
+      - "prototype/test_upc7_layouts.py"
+      - "prototype/upc7_table.py"
+      - "prototype/upc7-table.tsv"
       - "prototype/UPC7.md"
       - "prototype/UPC7-GEOMETRY-v2.md"
       - ".github/workflows/upc7-prototype.yml"
@@ -20,6 +24,10 @@ on:
       - "prototype/upc8.py"
       - "prototype/upc7_geometry.py"
       - "prototype/test_upc7_geometry.py"
+      - "prototype/upc7_layouts.py"
+      - "prototype/test_upc7_layouts.py"
+      - "prototype/upc7_table.py"
+      - "prototype/upc7-table.tsv"
       - "prototype/UPC7.md"
       - "prototype/UPC7-GEOMETRY-v2.md"
       - ".github/workflows/upc7-prototype.yml"
@@ -29,6 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Run UPC-7 identity and layout witnesses
+      - name: Run UPC-7 identity, geometry and layout witnesses
         working-directory: prototype
-        run: python3 -m unittest -v test_upc7.py test_upc7_geometry.py
+        run: python3 -m unittest -v test_upc7.py test_upc7_geometry.py test_upc7_layouts.py
+      - name: Machine table is current
+        working-directory: prototype
+        run: python3 upc7_table.py --check
