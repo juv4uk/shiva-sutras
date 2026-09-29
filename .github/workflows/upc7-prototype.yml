@@ -12,6 +12,8 @@ on:
       - "prototype/test_upc7_layouts.py"
       - "prototype/upc7_table.py"
       - "prototype/upc7-table.tsv"
+      - "prototype/upc7-table.sha256"
+      - "prototype/upc7_cold_verify.c"
       - "prototype/UPC7.md"
       - "prototype/UPC7-GEOMETRY-v2.md"
       - ".github/workflows/upc7-prototype.yml"
@@ -28,6 +30,8 @@ on:
       - "prototype/test_upc7_layouts.py"
       - "prototype/upc7_table.py"
       - "prototype/upc7-table.tsv"
+      - "prototype/upc7-table.sha256"
+      - "prototype/upc7_cold_verify.c"
       - "prototype/UPC7.md"
       - "prototype/UPC7-GEOMETRY-v2.md"
       - ".github/workflows/upc7-prototype.yml"
@@ -43,3 +47,27 @@ jobs:
       - name: Machine table is current
         working-directory: prototype
         run: python3 upc7_table.py --check
+      - name: Pinned machine table SHA is current
+        working-directory: prototype
+        run: sha256sum -c upc7-table.sha256
+      - name: Build independent cold witness
+        working-directory: prototype
+        run: cc -std=c11 -Wall -Wextra -Werror -pedantic upc7_cold_verify.c -o /tmp/upc7-cold
+      - name: Run independent cold witness
+        working-directory: prototype
+        run: /tmp/upc7-cold upc7-table.tsv
+      - name: Mutation must fail closed
+        working-directory: prototype
+        run: |
+          sed '2s/^0000000/0000001/' upc7-table.tsv > /tmp/upc7-mutated.tsv
+          if /tmp/upc7-cold /tmp/upc7-mutated.tsv; then
+            echo "cold witness accepted a mutated identity row" >&2
+            exit 1
+          fi
+          expected="$(cut -d' ' -f1 upc7-table.sha256)"
+          cp upc7-table.tsv /tmp/upc7-sha-mutated.tsv
+          printf '\nmutation\n' >> /tmp/upc7-sha-mutated.tsv
+          if printf '%s  %s\n' "$expected" /tmp/upc7-sha-mutated.tsv | sha256sum -c -; then
+            echo "SHA witness accepted mutated table bytes" >&2
+            exit 1
+          fi
