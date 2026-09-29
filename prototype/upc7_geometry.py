@@ -153,6 +153,23 @@ CURRENT_UPC8_NONVARGA = {
 }
 
 
+# Ukrainian extension cells in class 01 (shiva-sutras#31).
+# Affricates fill the four cells of the reserved place 7; softness is the
+# palatal place's fourth slot (place 1 already holds ś ж й in slots 0..2).
+UK_AFFRICATES = ("ts", "tsh", "dz", "dzh")
+SOFTNESS_CODE_PLACE, SOFTNESS_CODE_SLOT = 1, 3
+
+
+def uk_affricate_code(index: int) -> int:
+    if not 0 <= index < len(UK_AFFRICATES):
+        raise UPC7GeometryError(f"invalid affricate index: {index}")
+    return nonvarga_code(7, index)
+
+
+def softness_code() -> int:
+    return nonvarga_code(SOFTNESS_CODE_PLACE, SOFTNESS_CODE_SLOT)
+
+
 def compress_upc8_nonvarga(code: int) -> int:
     """Compress a currently representable UPC-8 class-01 point.
 
@@ -200,7 +217,7 @@ VOWEL_ROWS = ("a", "i", "u", "r-vocalic", "l-vocalic", "e", "o")
 
 def vowel_code(row: int, nasal: bool = False, length: bool = False) -> int:
     if not 0 <= row < 7:
-        raise UPC7GeometryError(f"invalid/reserved vowel row: {row}")
+        raise UPC7GeometryError(f"invalid Sanskrit vowel row: {row}")
     payload = (row << 2) | (int(bool(nasal)) << 1) | int(bool(length))
     return make_code(CLASS_VOWEL, payload)
 
@@ -211,8 +228,22 @@ def decode_vowel(code: int) -> Tuple[int, bool, bool]:
     payload = payload_of(code)
     row = payload >> 2
     if row == 7:
-        raise UPC7GeometryError("reserved vowel row")
+        raise UPC7GeometryError(
+            "UPC-7 row 7 is a language-extension row, not Sanskrit nasal/length geometry"
+        )
     return row, bool((payload >> 1) & 1), bool(payload & 1)
+
+
+# Row 7 is the language-extension row (shiva-sutras#31). Its low two bits are
+# an index, NOT nasal/length: the Sanskrit predicates (ac, aṇ, ik ...) read
+# rows 0..6 only, so they never see these cells.
+UK_EXT_VOWELS = ("a", "e", "o", "y")
+
+
+def uk_ext_vowel_code(index: int) -> int:
+    if not 0 <= index < len(UK_EXT_VOWELS):
+        raise UPC7GeometryError(f"invalid extension vowel index: {index}")
+    return make_code(CLASS_VOWEL, (7 << 2) | index)
 
 
 def compress_upc8_vowel(code: int) -> int:
@@ -226,7 +257,9 @@ def compress_upc8_vowel(code: int) -> int:
     UPC-7:
         10 ppp n l
 
-    The only discarded bit must be zero. Reserved row 7 is rejected.
+    The only discarded bit must be zero. UPC-8 row 7 has no
+    identity-preserving Sanskrit mapping: UPC-7 row 7 is owned by the
+    language-extension geometry instead.
     """
     if not 0x80 <= code <= 0xBF:
         raise UPC7GeometryError(f"not UPC-8 class-10: 0x{code:02X}")
@@ -242,7 +275,8 @@ def compress_upc8_vowel(code: int) -> int:
         )
     if row == 7:
         raise UPC7GeometryError(
-            f"UPC-8 vowel 0x{code:02X} is in reserved row 7"
+            f"UPC-8 vowel 0x{code:02X} row 7 has no identity-preserving "
+            "Sanskrit mapping into the UPC-7 language-extension row"
         )
 
     return vowel_code(row, nasal=nasal, length=length)
@@ -354,6 +388,11 @@ __all__ = [
     "CLASS_VOWEL",
     "CODE_SIGN",
     "CURRENT_UPC8_NONVARGA",
+    "UK_AFFRICATES",
+    "UK_EXT_VOWELS",
+    "softness_code",
+    "uk_affricate_code",
+    "uk_ext_vowel_code",
     "SIGN_CODE",
     "SIGN_NAMES",
     "UPC7GeometryError",

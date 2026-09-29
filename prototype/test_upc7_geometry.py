@@ -18,6 +18,7 @@ from upc7_geometry import (
     decode_varga,
     decode_vowel,
     sign_name,
+    uk_ext_vowel_code,
     varga_code,
     vowel_code,
 )
@@ -58,6 +59,18 @@ class UPC7GeometryTests(unittest.TestCase):
                     self.assertEqual(decode_vowel(code), (row, nasal, length))
         self.assertEqual(len(codes), 28)
         self.assertEqual(len(set(codes)), 28)
+
+    def test_extension_vowel_row_is_disjoint_from_sanskrit_decoder(self):
+        codes = [uk_ext_vowel_code(index) for index in range(4)]
+        self.assertEqual(codes, list(range(0x5C, 0x60)))
+        self.assertEqual(len(set(codes)), 4)
+        for code in codes:
+            self.assertEqual(class_of(code), CLASS_VOWEL)
+            with self.assertRaisesRegex(UPC7GeometryError, "language-extension row"):
+                decode_vowel(code)
+
+        with self.assertRaisesRegex(UPC7GeometryError, "invalid Sanskrit vowel row"):
+            vowel_code(7)
 
     def test_upc8_vowel_compression_drops_only_free_zero_bit(self):
         compressed = []

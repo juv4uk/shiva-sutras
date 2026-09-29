@@ -118,6 +118,12 @@ def build_cells() -> Tuple[Cell, ...]:
                     f"vowel.{row_name}.{_oral_or_nasal(nasal)}.{_short_or_long(length)}"
                 )
 
+    for index, ext in enumerate(geo.UK_EXT_VOWELS):
+        names[geo.uk_ext_vowel_code(index)] = f"vowel.uk-ext.{ext}"
+    for index, ext in enumerate(geo.UK_AFFRICATES):
+        names[geo.uk_affricate_code(index)] = f"non-varga.uk-ext.{ext}"
+    names[geo.softness_code()] = "non-varga.uk-ext.softness"
+
     for sign in SIGN_NAMES:
         names[geo.sign_code(sign)] = f"sign.{sign}"
 
@@ -171,7 +177,24 @@ _UK_VOWELS = {"і": 1, "у": 2}
 # Ukrainian letters the project knows but the geometry has not placed. They are
 # rejected explicitly. Base letters first, then the multi-letter phonemes the
 # donor lists (palatalised consonants, affricates).
-_UK_UNASSIGNED_LETTERS = ("а", "е", "о", "и", "є", "ї", "ю", "я", "ц", "ч", "щ", "ь")
+_UK_UNASSIGNED_LETTERS: Tuple[str, ...] = ()
+
+# shiva-sutras#31. Ukrainian sounds with a cell of their own in the extension
+# row / extension cells (not identity aliases of a Sanskrit sound).
+_UK_EXT_VOWELS = {"а": 0, "е": 1, "о": 2, "и": 3}
+_UK_EXT_AFFRICATES = {"ц": 0, "ч": 1, "дз": 2, "дж": 3}
+_UK_SOFTNESS = "ь"
+
+# Spellings that are *sequences* of placed cells, not sounds of their own:
+# palatalised consonants are consonant + `ь`; iotated vowels are й + vowel;
+# щ is ш + ч. They encode; they are never rendered back as one letter.
+_UK_SEQUENCES = {
+    "щ": ("ш", "ч"),
+    "є": ("й", "е"),
+    "ї": ("й", "і"),
+    "ю": ("й", "у"),
+    "я": ("й", "а"),
+}
 
 
 def _is_cyrillic(text: str) -> bool:
@@ -185,7 +208,20 @@ def _uk_known_unassigned(assigned: Iterable[str]) -> FrozenSet[str]:
         known.add(letter)
     for row in UKRAINIAN_NEW:
         known.add(row[2])
-    return frozenset(s for s in known if s not in have and _is_cyrillic(s))
+    placed = have | set(_UK_SEQUENCES)
+    return frozenset(
+        s for s in known if s not in have and _is_cyrillic(s) and not _decomposes(s, placed)
+    )
+
+
+def _decomposes(spelling: str, placed: set) -> bool:
+    """True when `spelling` is fully covered by placed spellings (longest match)."""
+    if not spelling:
+        return True
+    for length in range(len(spelling), 0, -1):
+        if spelling[:length] in placed and _decomposes(spelling[length:], placed):
+            return True
+    return False
 
 
 @dataclass(frozen=True)
@@ -199,6 +235,7 @@ class Layout:
     name: str
     code_to_spelling: Mapping[int, str]
     known_unassigned: FrozenSet[str] = frozenset()
+    sequences: Mapping[str, Tuple[str, ...]] = None  # type: ignore[assignment]
 
     def __post_init__(self) -> None:
         seen: Dict[str, int] = {}
@@ -212,6 +249,14 @@ class Layout:
                     f"{geo.code_bits(seen[spelling])} and {geo.code_bits(code)}"
                 )
             seen[spelling] = code
+        if self.sequences is None:
+            object.__setattr__(self, "sequences", {})
+        for key, parts in self.sequences.items():
+            if key in seen:
+                raise UPC7LayoutError(f"{self.name}: {key!r} is both a cell and a sequence")
+            missing = [p for p in parts if p not in seen]
+            if missing:
+                raise UPC7LayoutError(f"{self.name}: sequence {key!r} uses unplaced {missing}")
         clash = self.known_unassigned & set(seen)
         if clash:
             raise UPC7LayoutError(f"{self.name}: assigned and unassigned: {sorted(clash)}")
@@ -251,9 +296,16 @@ def _uk() -> Layout:
         for form in forms:
             if _is_cyrillic(form):
                 spellings[geo.compress_upc8_nonvarga(legacy_code)] = form
+    for letter, index in _UK_EXT_VOWELS.items():
+        spellings[geo.uk_ext_vowel_code(index)] = letter
+    for letter, index in _UK_EXT_AFFRICATES.items():
+        spellings[geo.uk_affricate_code(index)] = letter
+    spellings[geo.softness_code()] = _UK_SOFTNESS
     for sign, glyph in ASCII_SURFACE_GLYPHS.items():
         spellings[geo.sign_code(sign)] = glyph
-    return Layout("uk", spellings, _uk_known_unassigned(spellings.values()))
+    return Layout(
+        "uk", spellings, _uk_known_unassigned(spellings.values()), dict(_UK_SEQUENCES)
+    )
 
 
 LAYOUT_NAMES = ("sa-slp1", "uk", "bits")
@@ -287,7 +339,10 @@ class UPC7Text:
             return self._encode_bits(text)
         chosen = self.layout(layout)
         table = chosen.spelling_to_code
-        candidates = sorted(set(table) | chosen.known_unassigned, key=len, reverse=True)
+        sequences = chosen.sequences
+        candidates = sorted(
+            set(table) | set(sequences) | chosen.known_unassigned, key=len, reverse=True
+        )
         codes: List[int] = []
         index = 0
         while index < len(text):
@@ -297,7 +352,10 @@ class UPC7Text:
                         raise UnassignedSpelling(
                             f"{layout}: {spelling!r} at offset {index} has no UPC-7 cell yet"
                         )
-                    codes.append(table[spelling])
+                    if spelling in sequences:
+                        codes.extend(table[part] for part in sequences[spelling])
+                    else:
+                        codes.append(table[spelling])
                     index += len(spelling)
                     break
             else:
