@@ -1,26 +1,31 @@
-# UPC-7 prototype: 7-bit identities, switchable human layouts
+# UPC-7: 7-bit text identities, switchable human layouts
 
-**Status:** experimental engineering prototype for #27.
+**Status:** experimental engineering prototype for #27 and #29.
 
-UPC-7 is derived from the existing UPC-8 prototype without renumbering its
-currently assigned lower-plane codes.
-
-## Identity law
+UPC-7 is the text domain candidate for SENS Text7. Its identities are the
+seven-bit cells of **geometry v2** (`UPC7-GEOMETRY-v2.md`, `upc7_geometry.py`):
 
 ```text
-UPC-7 identity = exactly 7 bits
-0000000 .. 1111111
-0x00    .. 0x7F
+CCxxxxx
+00xxxxx  varga consonants        25 placed, 7 reserved
+01xxxxx  non-varga consonants    13 placed, 19 reserved
+10xxxxx  vowels                  28 placed, 4 reserved
+11xxxxx  signs / operator glyphs 32 placed
 ```
 
-Current UPC-8 assigned entries are already entirely below `0x80`, so the
-first UPC-7 prototype uses an identity-preserving projection:
+98 cells are placed, 30 are reserved. Nothing here renumbers or invents a cell:
+a sound the owner has not placed in the geometry stays **unassigned** and fails
+closed.
 
-```text
-UPC7(code) = UPC8(code), code <= 0x7F
-```
+## Two stages, one of them legacy
 
-No modulo, truncation, aliasing, or high-bit stripping is allowed.
+| stage | files | what it proves | status |
+|---|---|---|---|
+| **A: legacy donor** | `upc7.py`, `test_upc7.py` | the flat UPC-8 table lives below `0x80`; a layout can change without changing the code stream; near-equivalent sounds fail closed | **legacy**: a layout experiment against the old flat numbers. **Not** the final identity assignment |
+| **B: geometry v2** | `upc7_geometry.py`, `test_upc7_geometry.py` | the class geometry partitions all 128 codes and compresses the owner-designed UPC-8 classes injectively | preferred assignment |
+| **C: layouts on v2** | `upc7_layouts.py`, `test_upc7_layouts.py`, `upc7_table.py`, `upc7-table.tsv` | human spellings, built on the v2 cells; a generated machine table | current |
+
+New work uses B and C. Stage A stays only as a donor witness.
 
 ## Layout law
 
@@ -31,37 +36,99 @@ the identity.
 host spelling --encode(layout)--> UPC-7 codes --render(layout)--> host spelling
 ```
 
-Changing a layout must leave the middle sequence unchanged.
+Changing the layout leaves the middle sequence unchanged. Host `str` is UI
+transport; the value is the tuple of integers 0..127.
 
-Initial layouts:
+Layouts:
 
-- `sa-slp1`: Sanskrit engineering SLP1 spellings inherited from UPC-8;
-- `uk`: Ukrainian mappings inherited from UPC-8;
-- `bits`: exact 7-bit diagnostic cells, e.g. `0100101 0000001`.
+- `sa-slp1`: Sanskrit SLP1, complete for the geometry (below);
+- `uk`: Ukrainian, partial (below);
+- `bits`: exact seven-bit diagnostic cells, e.g. `0100101 0000001`.
 
-The human layouts are intentionally partial. If a code has no justified
-spelling in the requested layout, rendering fails. This prevents a
-near-equivalent phoneme from silently becoming an identity alias.
+Rules, each proved in `test_upc7_layouts.py`:
+
+- a layout is injective: one spelling names one code;
+- encoding uses the longest match and never normalises (SLP1 `K` is not `k`);
+- a spelling the project knows but the geometry has not placed is rejected **as a
+  whole**. `дж` is never silently read as `д` + `ж`;
+- an unplaced or reserved code cannot be rendered in a spelling layout, only in
+  `bits`.
 
 Example:
 
 ```text
-sa-slp1: kim
-              \
-               -> same UPC-7 code stream -> uk: кім
+sa-slp1: kit  ---->  the same code stream  ---->  uk: кіт
 ```
 
-This works because `k`/к, `i`/і and `m`/м already share explicit UPC-8
-identities.
+## Coverage today
 
-By contrast Sanskrit `a` and Ukrainian `а` currently have different codes
-(`0x00` vs `0x33`, the latter classified as near-equivalent), so switching
-that code to the Ukrainian layout fails closed instead of silently merging
-them.
+**Sanskrit is complete.** All 42 canonical Śiva-sūtra sounds (25 varga, 8
+non-varga, and the nine vowels a i u ṛ ḷ e o ai au) plus the long vowels ā ī ū ṝ ḹ,
+anusvāra and visarga have a cell and an SLP1 spelling. `ai` and `au` are the long
+forms of the `e` and `o` rows (class-10 spec §3.3).
+
+**Ukrainian has 21 letters:** к ґ т д н п б м (varga), і у (vowels) and х ш ж й з с
+р л ф в г (non-varga). The 13 letters the donor calls identity aliases of a
+Sanskrit sound (`UKRAINIAN_SHARED`) land on the same cell as the Sanskrit sound;
+`test_donor_identity_aliases_share_the_sanskrit_code` checks all 13 against the
+legacy donor.
+
+So `кіт`, `кум`, `ніс`, `тут` encode and switch layout; `привіт`, `мама`, `цар`,
+`час` do not.
+
+## Gaps (open questions, not assignments)
+
+These sounds have **no cell** in geometry v2, so their Ukrainian spellings are
+rejected with `UnassignedSpelling`:
+
+| sounds | what is missing |
+|---|---|
+| vowels **а е о и** | v2 vowel rows are the Sanskrit rows. Row 7 (4 cells) is reserved, and v2 removed the FREE bit that the class-10 spec (§1, bit 2) had kept "for language extensions" |
+| affricates **ц ч дз дж щ** | the class-00 and class-01 reserved cells are not assigned |
+| softness **ь**, every palatalised consonant (ть дь ль …) | no place for palatalisation |
+| iotated **є ї ю я** | they are й + vowel sequences and depend on the vowel gap |
+
+This document does **not** propose where they go. That changes code identity, so it
+is the owner's decision. Reserved cells available today: 7 in class 00, 19 in class
+01, 4 in class 10.
+
+Other facts a reader should know:
+
+- **Nasal vowel cells exist** (28 = 7 rows × oral/nasal × short/long) but SLP1 has no
+  single spelling for them: `aM` is two cells, the vowel and the anusvāra sign. They
+  are reachable only through `bits`.
+- **Class 11 has both avagraha and apostrophe, danda and dot,** written with the same
+  ASCII glyph. `sa-slp1` gives `'` and `.` (and `..`) to the Sanskrit signs; `uk` gives
+  them to the apostrophe and the dot. The same glyph is therefore a different code in
+  the two layouts.
+
+## Signs are Text codes, not function identities
+
+Class 11 holds `( ) " \ + - * / = < > ? ! ' . , : ; # @` and more. These are UPC-7
+**Text** codes. In Text they are data. In SENS operator position the reader may take
+`+` as human surface for a Function8 and lower it; the UPC-7 code is never the
+function identity. Whether `(` and `)` are structure or text is decided by reader
+context, not by this table.
+
+## Machine table and pinning
+
+`upc7-table.tsv` is the complete 128-cell table, **generated** by `upc7_table.py`:
+
+```text
+python3 upc7_table.py --write     regenerate
+python3 upc7_table.py --check     exit 1 if the file is stale (CI runs this)
+python3 upc7_table.py --sha256    print the SHA-256
+```
+
+Columns: `bits hex class payload status name sa-slp1 uk`. Spellings are projections; a
+blank cell means the layout has no spelling. Letters are written as themselves;
+backslash, space and control characters are escaped as `\\` and `\xNN`.
+
+A consumer such as SENS Text7 should **pin the SHA-256 of this file** and regenerate
+against a new one, not copy the table by hand. Any change of a cell, a name or a
+spelling changes the SHA.
 
 ## Relation to SENS
-
-Candidate target:
 
 ```text
 SENS
@@ -71,20 +138,17 @@ SENS
   Text      : sequence of UPC-7 identities
 ```
 
-Python/Unicode strings in this prototype are only host UI transport. They are
-not UPC-7 identities and are not proposed as SENS Text.
+Python/Unicode strings in these prototypes are host UI transport only. They are not
+UPC-7 identities and are not proposed as SENS Text.
 
 ## Storage width
 
-UPC-7 is logically seven bits. This first Python prototype returns integer
-tuples (and the donor UPC-8 uses bytes), so host memory may temporarily spend
-8+ bits per cell. Bit-packing is a separate transport/storage problem and must
-not be confused with the semantic code width.
-
-A future packed form can store 8 UPC-7 cells in 7 bytes without changing code
-identity, but it needs its own round-trip and boundary tests.
+UPC-7 is logically seven bits. The Python prototype returns integer tuples, so host
+memory may spend 8+ bits per cell. Bit-packing is a separate transport problem and
+must not be confused with the code width; a packed form can store 8 cells in 7 bytes
+without changing identity, but it needs its own round-trip tests.
 
 ## Non-claim
 
-This is an engineering codec/projection. It is not evidence that Pāṇini used
+This is an engineering codec and projection. It is not evidence that Pāṇini used
 binary codes, and it does not modify the transmitted Śiva-sūtra canon.

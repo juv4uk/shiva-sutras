@@ -1,0 +1,129 @@
+bits	hex	class	payload	status	name	sa-slp1	uk
+0000000	0x00	varga	00000	assigned	varga.K.voiceless	k	к
+0000001	0x01	varga	00001	assigned	varga.K.voiceless-aspirated	K	
+0000010	0x02	varga	00010	assigned	varga.K.voiced	g	ґ
+0000011	0x03	varga	00011	assigned	varga.K.voiced-aspirated	G	
+0000100	0x04	varga	00100	assigned	varga.K.nasal	N	
+0000101	0x05	varga	00101	assigned	varga.C.voiceless	c	
+0000110	0x06	varga	00110	assigned	varga.C.voiceless-aspirated	C	
+0000111	0x07	varga	00111	assigned	varga.C.voiced	j	
+0001000	0x08	varga	01000	assigned	varga.C.voiced-aspirated	J	
+0001001	0x09	varga	01001	assigned	varga.C.nasal	Y	
+0001010	0x0A	varga	01010	assigned	varga.T-retroflex.voiceless	w	
+0001011	0x0B	varga	01011	assigned	varga.T-retroflex.voiceless-aspirated	W	
+0001100	0x0C	varga	01100	assigned	varga.T-retroflex.voiced	q	
+0001101	0x0D	varga	01101	assigned	varga.T-retroflex.voiced-aspirated	Q	
+0001110	0x0E	varga	01110	assigned	varga.T-retroflex.nasal	R	
+0001111	0x0F	varga	01111	assigned	varga.T-dental.voiceless	t	т
+0010000	0x10	varga	10000	assigned	varga.T-dental.voiceless-aspirated	T	
+0010001	0x11	varga	10001	assigned	varga.T-dental.voiced	d	д
+0010010	0x12	varga	10010	assigned	varga.T-dental.voiced-aspirated	D	
+0010011	0x13	varga	10011	assigned	varga.T-dental.nasal	n	н
+0010100	0x14	varga	10100	assigned	varga.P.voiceless	p	п
+0010101	0x15	varga	10101	assigned	varga.P.voiceless-aspirated	P	
+0010110	0x16	varga	10110	assigned	varga.P.voiced	b	б
+0010111	0x17	varga	10111	assigned	varga.P.voiced-aspirated	B	
+0011000	0x18	varga	11000	assigned	varga.P.nasal	m	м
+0011001	0x19	varga	11001	reserved	reserved.varga.11001		
+0011010	0x1A	varga	11010	reserved	reserved.varga.11010		
+0011011	0x1B	varga	11011	reserved	reserved.varga.11011		
+0011100	0x1C	varga	11100	reserved	reserved.varga.11100		
+0011101	0x1D	varga	11101	reserved	reserved.varga.11101		
+0011110	0x1E	varga	11110	reserved	reserved.varga.11110		
+0011111	0x1F	varga	11111	reserved	reserved.varga.11111		
+0100000	0x20	non-varga	00000	assigned	non-varga.K.primary-voiceless-fricative		х
+0100001	0x21	non-varga	00001	reserved	reserved.non-varga.00001		
+0100010	0x22	non-varga	00010	reserved	reserved.non-varga.00010		
+0100011	0x23	non-varga	00011	reserved	reserved.non-varga.00011		
+0100100	0x24	non-varga	00100	assigned	non-varga.C.primary-voiceless-fricative	S	ш
+0100101	0x25	non-varga	00101	assigned	non-varga.C.voiced-fricative		ж
+0100110	0x26	non-varga	00110	assigned	non-varga.C.primary-sonorant	y	й
+0100111	0x27	non-varga	00111	reserved	reserved.non-varga.00111		
+0101000	0x28	non-varga	01000	assigned	non-varga.T-retroflex.primary-voiceless-fricative	z	
+0101001	0x29	non-varga	01001	reserved	reserved.non-varga.01001		
+0101010	0x2A	non-varga	01010	reserved	reserved.non-varga.01010		
+0101011	0x2B	non-varga	01011	reserved	reserved.non-varga.01011		
+0101100	0x2C	non-varga	01100	assigned	non-varga.T-dental.primary-voiceless-fricative	s	с
+0101101	0x2D	non-varga	01101	assigned	non-varga.T-dental.voiced-fricative		з
+0101110	0x2E	non-varga	01110	assigned	non-varga.T-dental.primary-sonorant	r	р
+0101111	0x2F	non-varga	01111	assigned	non-varga.T-dental.lateral-or-secondary-sonorant	l	л
+0110000	0x30	non-varga	10000	assigned	non-varga.P.primary-voiceless-fricative		ф
+0110001	0x31	non-varga	10001	reserved	reserved.non-varga.10001		
+0110010	0x32	non-varga	10010	assigned	non-varga.P.primary-sonorant	v	в
+0110011	0x33	non-varga	10011	reserved	reserved.non-varga.10011		
+0110100	0x34	non-varga	10100	assigned	non-varga.G-glottal.primary-voiceless-fricative	h	
+0110101	0x35	non-varga	10101	assigned	non-varga.G-glottal.voiced-fricative		г
+0110110	0x36	non-varga	10110	reserved	reserved.non-varga.10110		
+0110111	0x37	non-varga	10111	reserved	reserved.non-varga.10111		
+0111000	0x38	non-varga	11000	reserved	reserved.non-varga.11000		
+0111001	0x39	non-varga	11001	reserved	reserved.non-varga.11001		
+0111010	0x3A	non-varga	11010	reserved	reserved.non-varga.11010		
+0111011	0x3B	non-varga	11011	reserved	reserved.non-varga.11011		
+0111100	0x3C	non-varga	11100	reserved	reserved.non-varga.11100		
+0111101	0x3D	non-varga	11101	reserved	reserved.non-varga.11101		
+0111110	0x3E	non-varga	11110	reserved	reserved.non-varga.11110		
+0111111	0x3F	non-varga	11111	reserved	reserved.non-varga.11111		
+1000000	0x40	vowel	00000	assigned	vowel.a.oral.short	a	
+1000001	0x41	vowel	00001	assigned	vowel.a.oral.long	A	
+1000010	0x42	vowel	00010	assigned	vowel.a.nasal.short		
+1000011	0x43	vowel	00011	assigned	vowel.a.nasal.long		
+1000100	0x44	vowel	00100	assigned	vowel.i.oral.short	i	і
+1000101	0x45	vowel	00101	assigned	vowel.i.oral.long	I	
+1000110	0x46	vowel	00110	assigned	vowel.i.nasal.short		
+1000111	0x47	vowel	00111	assigned	vowel.i.nasal.long		
+1001000	0x48	vowel	01000	assigned	vowel.u.oral.short	u	у
+1001001	0x49	vowel	01001	assigned	vowel.u.oral.long	U	
+1001010	0x4A	vowel	01010	assigned	vowel.u.nasal.short		
+1001011	0x4B	vowel	01011	assigned	vowel.u.nasal.long		
+1001100	0x4C	vowel	01100	assigned	vowel.r-vocalic.oral.short	f	
+1001101	0x4D	vowel	01101	assigned	vowel.r-vocalic.oral.long	F	
+1001110	0x4E	vowel	01110	assigned	vowel.r-vocalic.nasal.short		
+1001111	0x4F	vowel	01111	assigned	vowel.r-vocalic.nasal.long		
+1010000	0x50	vowel	10000	assigned	vowel.l-vocalic.oral.short	x	
+1010001	0x51	vowel	10001	assigned	vowel.l-vocalic.oral.long	X	
+1010010	0x52	vowel	10010	assigned	vowel.l-vocalic.nasal.short		
+1010011	0x53	vowel	10011	assigned	vowel.l-vocalic.nasal.long		
+1010100	0x54	vowel	10100	assigned	vowel.e.oral.short	e	
+1010101	0x55	vowel	10101	assigned	vowel.e.oral.long	E	
+1010110	0x56	vowel	10110	assigned	vowel.e.nasal.short		
+1010111	0x57	vowel	10111	assigned	vowel.e.nasal.long		
+1011000	0x58	vowel	11000	assigned	vowel.o.oral.short	o	
+1011001	0x59	vowel	11001	assigned	vowel.o.oral.long	O	
+1011010	0x5A	vowel	11010	assigned	vowel.o.nasal.short		
+1011011	0x5B	vowel	11011	assigned	vowel.o.nasal.long		
+1011100	0x5C	vowel	11100	reserved	reserved.vowel.11100		
+1011101	0x5D	vowel	11101	reserved	reserved.vowel.11101		
+1011110	0x5E	vowel	11110	reserved	reserved.vowel.11110		
+1011111	0x5F	vowel	11111	reserved	reserved.vowel.11111		
+1100000	0x60	sign/operator	00000	assigned	sign.space	\x20	\x20
+1100001	0x61	sign/operator	00001	assigned	sign.newline	\x0a	\x0a
+1100010	0x62	sign/operator	00010	assigned	sign.tab	\x09	\x09
+1100011	0x63	sign/operator	00011	assigned	sign.left-paren	(	(
+1100100	0x64	sign/operator	00100	assigned	sign.right-paren	)	)
+1100101	0x65	sign/operator	00101	assigned	sign.double-quote	"	"
+1100110	0x66	sign/operator	00110	assigned	sign.backslash	\\	\\
+1100111	0x67	sign/operator	00111	assigned	sign.underscore	_	_
+1101000	0x68	sign/operator	01000	assigned	sign.anusvara	M	
+1101001	0x69	sign/operator	01001	assigned	sign.visarga	H	
+1101010	0x6A	sign/operator	01010	assigned	sign.avagraha	'	
+1101011	0x6B	sign/operator	01011	assigned	sign.danda	.	
+1101100	0x6C	sign/operator	01100	assigned	sign.double-danda	..	
+1101101	0x6D	sign/operator	01101	assigned	sign.ampersand	&	&
+1101110	0x6E	sign/operator	01110	assigned	sign.pipe	|	|
+1101111	0x6F	sign/operator	01111	assigned	sign.backquote	`	`
+1110000	0x70	sign/operator	10000	assigned	sign.plus	+	+
+1110001	0x71	sign/operator	10001	assigned	sign.minus	-	-
+1110010	0x72	sign/operator	10010	assigned	sign.star	*	*
+1110011	0x73	sign/operator	10011	assigned	sign.slash	/	/
+1110100	0x74	sign/operator	10100	assigned	sign.equals	=	=
+1110101	0x75	sign/operator	10101	assigned	sign.less	<	<
+1110110	0x76	sign/operator	10110	assigned	sign.greater	>	>
+1110111	0x77	sign/operator	10111	assigned	sign.question	?	?
+1111000	0x78	sign/operator	11000	assigned	sign.bang	!	!
+1111001	0x79	sign/operator	11001	assigned	sign.apostrophe		'
+1111010	0x7A	sign/operator	11010	assigned	sign.dot		.
+1111011	0x7B	sign/operator	11011	assigned	sign.comma	,	,
+1111100	0x7C	sign/operator	11100	assigned	sign.colon	:	:
+1111101	0x7D	sign/operator	11101	assigned	sign.semicolon	;	;
+1111110	0x7E	sign/operator	11110	assigned	sign.hash	#	#
+1111111	0x7F	sign/operator	11111	assigned	sign.at	@	@

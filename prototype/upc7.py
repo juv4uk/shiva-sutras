@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """
-UPC-7: 7-bit text-code prototype derived from UPC-8
-====================================================
+UPC-7: 7-bit text-code prototype derived from UPC-8  (LEGACY DONOR, stage A)
+============================================================================
+
+LEGACY: this is the first layout experiment against the *flat* legacy UPC-8
+table. It is **not** the final UPC-7 identity assignment. The preferred
+assignment is geometry v2 (`upc7_geometry.py`) and its layouts are in
+`upc7_layouts.py`. Kept as a donor witness only; see `UPC7.md`.
 
 Status: experimental engineering prototype for shiva-sutras#27.
 
