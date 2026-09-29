@@ -1,0 +1,45 @@
+name: UPC-7 prototype
+
+on:
+  pull_request:
+    paths:
+      - "prototype/upc7.py"
+      - "prototype/test_upc7.py"
+      - "prototype/upc8.py"
+      - "prototype/upc7_geometry.py"
+      - "prototype/test_upc7_geometry.py"
+      - "prototype/upc7_layouts.py"
+      - "prototype/test_upc7_layouts.py"
+      - "prototype/upc7_table.py"
+      - "prototype/upc7-table.tsv"
+      - "prototype/UPC7.md"
+      - "prototype/UPC7-GEOMETRY-v2.md"
+      - ".github/workflows/upc7-prototype.yml"
+  push:
+    branches:
+      - "prototype/27-upc7-layouts"
+    paths:
+      - "prototype/upc7.py"
+      - "prototype/test_upc7.py"
+      - "prototype/upc8.py"
+      - "prototype/upc7_geometry.py"
+      - "prototype/test_upc7_geometry.py"
+      - "prototype/upc7_layouts.py"
+      - "prototype/test_upc7_layouts.py"
+      - "prototype/upc7_table.py"
+      - "prototype/upc7-table.tsv"
+      - "prototype/UPC7.md"
+      - "prototype/UPC7-GEOMETRY-v2.md"
+      - ".github/workflows/upc7-prototype.yml"
+
+jobs:
+  upc7:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Run UPC-7 identity, geometry and layout witnesses
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc7.py test_upc7_geometry.py test_upc7_layouts.py
+      - name: Machine table is current
+        working-directory: prototype
+        run: python3 upc7_table.py --check
