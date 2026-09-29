@@ -24,8 +24,8 @@ CODEC = UPC7Text()
 SANSKRIT = CODEC.layout("sa-slp1")
 UKRAINIAN = CODEC.layout("uk")
 
-# Ukrainian letters the geometry gives a cell today (see UPC7.md, "Gaps").
-UKRAINIAN_PLACED = set("кґтднпбм" + "іу" + "хшжйзсрлфвг")
+# Ukrainian spellings the geometry gives a cell today (see UPC7.md, "Gaps").
+UKRAINIAN_PLACED = set("кґтднпбм" + "іу" + "хшжйзсрлфвг") | {"а", "е", "о", "и", "ц", "ч", "дз", "дж", "ь"}
 
 
 def unescape(field: str) -> str:
@@ -51,10 +51,9 @@ class CellTableTests(unittest.TestCase):
             {
                 ("varga", ASSIGNED): 25,
                 ("varga", RESERVED): 7,
-                ("non-varga", ASSIGNED): 13,
-                ("non-varga", RESERVED): 19,
-                ("vowel", ASSIGNED): 28,
-                ("vowel", RESERVED): 4,
+                ("non-varga", ASSIGNED): 18,
+                ("non-varga", RESERVED): 14,
+                ("vowel", ASSIGNED): 32,
                 ("sign/operator", ASSIGNED): 32,
             },
         )
@@ -85,8 +84,9 @@ class LayoutShapeTests(unittest.TestCase):
     def test_spelling_counts_are_pinned(self):
         # 25 varga + 8 non-varga + 14 oral vowels + 5 Sanskrit signs + 25 ASCII signs
         self.assertEqual(len(SANSKRIT.code_to_spelling), 25 + 8 + 14 + 5 + 25)
-        # 8 varga + 11 non-varga + 2 vowels + 27 ASCII signs
-        self.assertEqual(len(UKRAINIAN.code_to_spelling), 8 + 11 + 2 + 27)
+        # 8 varga + 11 non-varga + 2 aliased vowels + 27 ASCII signs
+        # + 4 extension vowels + 4 affricates + 1 softness (shiva-sutras#31)
+        self.assertEqual(len(UKRAINIAN.code_to_spelling), 8 + 11 + 2 + 27 + 4 + 4 + 1)
 
     def test_every_layout_spelling_names_an_assigned_cell(self):
         status = {cell.code: cell.status for cell in build_cells()}
@@ -146,21 +146,53 @@ class UkrainianTests(unittest.TestCase):
             self.assertEqual(CODEC.switch_layout(word, "uk", "sa-slp1"), sanskrit)
             self.assertEqual(CODEC.encode(sanskrit, "sa-slp1"), codes)
 
-    def test_unplaced_sounds_fail_closed_with_a_named_error(self):
-        # и, а, ц, ч, щ, ь have no cell yet: they must never be guessed.
-        for word in ("привіт", "мама", "цар", "час", "щука", "ь"):
-            with self.assertRaises(UnassignedSpelling, msg=word):
-                CODEC.encode(word, "uk")
+    def test_extension_sounds_have_their_own_cells(self):
+        # shiva-sutras#31: а е о и, ц ч дз дж and ь are cells of their own.
+        singles = ("а", "е", "о", "и", "ц", "ч", "дз", "дж", "ь")
+        codes = [CODEC.encode(s, "uk") for s in singles]
+        for s, c in zip(singles, codes):
+            self.assertEqual(len(c), 1, s)
+        self.assertEqual(len({c[0] for c in codes}), len(singles))  # injective
+        for s, c in zip(singles, codes):
+            self.assertEqual(CODEC.render(c, "uk"), s)
 
-    def test_a_known_multi_letter_phoneme_is_not_split_into_letters(self):
-        # `д` and `ж` are each placed, but `дж` is one phoneme the geometry has
-        # no cell for. It must fail as a whole, never read as д + ж.
-        self.assertEqual(len(CODEC.encode("д", "uk")), 1)
-        self.assertEqual(len(CODEC.encode("ж", "uk")), 1)
-        with self.assertRaises(UnassignedSpelling):
-            CODEC.encode("дж", "uk")
-        with self.assertRaises(UnassignedSpelling):
-            CODEC.encode("ль", "uk")
+    def test_words_that_used_to_fail_now_encode_and_round_trip(self):
+        for word in ("привіт", "мама", "цар", "час", "дзвін", "джміль", "тінь", "сіль"):
+            codes = CODEC.encode(word, "uk")
+            self.assertEqual(CODEC.render(codes, "uk"), word, word)
+
+    def test_iotated_vowels_and_shch_are_sequences_not_cells(self):
+        iota = CODEC.encode("й", "uk")
+        self.assertEqual(CODEC.encode("я", "uk"), iota + CODEC.encode("а", "uk"))
+        self.assertEqual(CODEC.encode("ю", "uk"), iota + CODEC.encode("у", "uk"))
+        self.assertEqual(CODEC.encode("є", "uk"), iota + CODEC.encode("е", "uk"))
+        self.assertEqual(CODEC.encode("ї", "uk"), iota + CODEC.encode("і", "uk"))
+        self.assertEqual(CODEC.encode("щ", "uk"), CODEC.encode("шч", "uk"))
+        # They never render back as one letter: `я` and `йа` are one code stream.
+        self.assertEqual(CODEC.render(CODEC.encode("я", "uk"), "uk"), "йа")
+
+    def test_palatalised_consonant_is_consonant_plus_softness(self):
+        self.assertEqual(
+            CODEC.encode("ть", "uk"), CODEC.encode("т", "uk") + CODEC.encode("ь", "uk")
+        )
+        self.assertEqual(len(CODEC.encode("ль", "uk")), 2)
+
+    def test_affricate_is_one_cell_not_a_pair_of_letters(self):
+        self.assertEqual(len(CODEC.encode("дж", "uk")), 1)
+        self.assertNotEqual(CODEC.encode("дж", "uk"), CODEC.encode("д", "uk") + CODEC.encode("ж", "uk"))
+        self.assertEqual(len(CODEC.encode("дз", "uk")), 1)
+
+    def test_extension_cells_are_invisible_to_sanskrit_predicates(self):
+        # Row 7 has its own indexing; rows 0..6 (ac, aṇ, ik ...) are untouched.
+        for index in range(4):
+            code = geo.uk_ext_vowel_code(index)
+            self.assertEqual(geo.payload_of(code) >> 2, 7)
+            with self.assertRaises(geo.UPC7GeometryError):
+                geo.decode_vowel(code)
+
+    def test_sanskrit_and_earlier_ukrainian_codes_are_unchanged(self):
+        # Adding extension cells must not move any previously assigned code.
+        self.assertEqual(CODEC.encode("кіт", "uk"), (0, 68, 15))  # pinned from origin/master before #31
 
     def test_the_apostrophe_is_a_sign_not_a_letter(self):
         codes = CODEC.encode("к'у", "uk")
@@ -181,7 +213,7 @@ class FailClosedTests(unittest.TestCase):
 
     def test_reserved_cells_render_only_as_bits(self):
         reserved = [c.code for c in build_cells() if c.status == RESERVED]
-        self.assertEqual(len(reserved), 30)
+        self.assertEqual(len(reserved), 21)
         for code in reserved:
             self.assertEqual(len(CODEC.render([code], "bits")), 7)
             for layout in ("sa-slp1", "uk"):

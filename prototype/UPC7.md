@@ -73,24 +73,32 @@ Sanskrit sound (`UKRAINIAN_SHARED`) land on the same cell as the Sanskrit sound;
 `test_donor_identity_aliases_share_the_sanskrit_code` checks all 13 against the
 legacy donor.
 
-So `кіт`, `кум`, `ніс`, `тут` encode and switch layout; `привіт`, `мама`, `цар`,
-`час` do not.
+**Extension cells (shiva-sutras#31, proposal awaiting owner sign-off).** Nine of the 30
+reserved cells are used; 21 stay reserved:
 
-## Gaps (open questions, not assignments)
+| sound | cell | why there |
+|---|---|---|
+| а е о и | class 10, row 7 (4 cells) | the reserved vowel row; its low 2 bits are an *index*, not nasal/length; `ac aṇ ik` read rows 0..6 and never see it |
+| ц ч дз дж | class 01, place 7 (4 cells) | the reserved non-varga place, exactly 4 cells |
+| ь (softness) | class 01, place 1 (palatal), slot 3 | next to ś ж й, the palatal place; class 11 is full (32/32) |
 
-These sounds have **no cell** in geometry v2, so their Ukrainian spellings are
-rejected with `UnassignedSpelling`:
+Everything else is a **sequence of placed cells**, never a cell of its own:
+palatalised consonants are consonant + `ь` (`ть`, `ль`); iotated `є ї ю я` are `й` +
+`е і у а`; `щ` is `ш` + `ч`. Sequences encode but never render back as one letter
+(`я` renders `йа`). `дж` is one cell and is never read as `д`+`ж`.
 
-| sounds | what is missing |
-|---|---|
-| vowels **а е о и** | v2 vowel rows are the Sanskrit rows. Row 7 (4 cells) is reserved, and v2 removed the FREE bit that the class-10 spec (§1, bit 2) had kept "for language extensions" |
-| affricates **ц ч дз дж щ** | the class-00 and class-01 reserved cells are not assigned |
-| softness **ь**, every palatalised consonant (ть дь ль …) | no place for palatalisation |
-| iotated **є ї ю я** | they are й + vowel sequences and depend on the vowel gap |
+Cost: no previously assigned code moved; the 9 changed table rows were all
+`reserved`. The table SHA-256 changes, so consumers must re-pin.
 
-This document does **not** propose where they go. That changes code identity, so it
-is the owner's decision. Reserved cells available today: 7 in class 00, 19 in class
-01, 4 in class 10.
+So `кіт`, `привіт`, `мама`, `цар`, `час`, `дзвін`, `тінь` encode, switch layout and
+round-trip.
+
+## Open points
+
+- The phonemic identity of а е о (Ukrainian [ɑ ɛ ɔ]) versus the Sanskrit rows is
+  **not** claimed: they get their own cells rather than aliases, so no Sanskrit
+  code is reinterpreted.
+- Long/nasal Ukrainian vowels do not exist, so row 7 needs no such bits.
 
 Other facts a reader should know:
 

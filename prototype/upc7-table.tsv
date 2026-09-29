@@ -38,7 +38,7 @@ bits	hex	class	payload	status	name	sa-slp1	uk
 0100100	0x24	non-varga	00100	assigned	non-varga.C.primary-voiceless-fricative	S	ш
 0100101	0x25	non-varga	00101	assigned	non-varga.C.voiced-fricative		ж
 0100110	0x26	non-varga	00110	assigned	non-varga.C.primary-sonorant	y	й
-0100111	0x27	non-varga	00111	reserved	reserved.non-varga.00111		
+0100111	0x27	non-varga	00111	assigned	non-varga.uk-ext.softness		ь
 0101000	0x28	non-varga	01000	assigned	non-varga.T-retroflex.primary-voiceless-fricative	z	
 0101001	0x29	non-varga	01001	reserved	reserved.non-varga.01001		
 0101010	0x2A	non-varga	01010	reserved	reserved.non-varga.01010		
@@ -59,10 +59,10 @@ bits	hex	class	payload	status	name	sa-slp1	uk
 0111001	0x39	non-varga	11001	reserved	reserved.non-varga.11001		
 0111010	0x3A	non-varga	11010	reserved	reserved.non-varga.11010		
 0111011	0x3B	non-varga	11011	reserved	reserved.non-varga.11011		
-0111100	0x3C	non-varga	11100	reserved	reserved.non-varga.11100		
-0111101	0x3D	non-varga	11101	reserved	reserved.non-varga.11101		
-0111110	0x3E	non-varga	11110	reserved	reserved.non-varga.11110		
-0111111	0x3F	non-varga	11111	reserved	reserved.non-varga.11111		
+0111100	0x3C	non-varga	11100	assigned	non-varga.uk-ext.ts		ц
+0111101	0x3D	non-varga	11101	assigned	non-varga.uk-ext.tsh		ч
+0111110	0x3E	non-varga	11110	assigned	non-varga.uk-ext.dz		дз
+0111111	0x3F	non-varga	11111	assigned	non-varga.uk-ext.dzh		дж
 1000000	0x40	vowel	00000	assigned	vowel.a.oral.short	a	
 1000001	0x41	vowel	00001	assigned	vowel.a.oral.long	A	
 1000010	0x42	vowel	00010	assigned	vowel.a.nasal.short		
@@ -91,10 +91,10 @@ bits	hex	class	payload	status	name	sa-slp1	uk
 1011001	0x59	vowel	11001	assigned	vowel.o.oral.long	O	
 1011010	0x5A	vowel	11010	assigned	vowel.o.nasal.short		
 1011011	0x5B	vowel	11011	assigned	vowel.o.nasal.long		
-1011100	0x5C	vowel	11100	reserved	reserved.vowel.11100		
-1011101	0x5D	vowel	11101	reserved	reserved.vowel.11101		
-1011110	0x5E	vowel	11110	reserved	reserved.vowel.11110		
-1011111	0x5F	vowel	11111	reserved	reserved.vowel.11111		
+1011100	0x5C	vowel	11100	assigned	vowel.uk-ext.a		а
+1011101	0x5D	vowel	11101	assigned	vowel.uk-ext.e		е
+1011110	0x5E	vowel	11110	assigned	vowel.uk-ext.o		о
+1011111	0x5F	vowel	11111	assigned	vowel.uk-ext.y		и
 1100000	0x60	sign/operator	00000	assigned	sign.space	\x20	\x20
 1100001	0x61	sign/operator	00001	assigned	sign.newline	\x0a	\x0a
 1100010	0x62	sign/operator	00010	assigned	sign.tab	\x09	\x09

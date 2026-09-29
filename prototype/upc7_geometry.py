@@ -153,6 +153,23 @@ CURRENT_UPC8_NONVARGA = {
 }
 
 
+# Ukrainian extension cells in class 01 (shiva-sutras#31).
+# Affricates fill the four cells of the reserved place 7; softness is the
+# palatal place's fourth slot (place 1 already holds ś ж й in slots 0..2).
+UK_AFFRICATES = ("ts", "tsh", "dz", "dzh")
+SOFTNESS_CODE_PLACE, SOFTNESS_CODE_SLOT = 1, 3
+
+
+def uk_affricate_code(index: int) -> int:
+    if not 0 <= index < len(UK_AFFRICATES):
+        raise UPC7GeometryError(f"invalid affricate index: {index}")
+    return nonvarga_code(7, index)
+
+
+def softness_code() -> int:
+    return nonvarga_code(SOFTNESS_CODE_PLACE, SOFTNESS_CODE_SLOT)
+
+
 def compress_upc8_nonvarga(code: int) -> int:
     """Compress a currently representable UPC-8 class-01 point.
 
@@ -213,6 +230,18 @@ def decode_vowel(code: int) -> Tuple[int, bool, bool]:
     if row == 7:
         raise UPC7GeometryError("reserved vowel row")
     return row, bool((payload >> 1) & 1), bool(payload & 1)
+
+
+# Row 7 is the language-extension row (shiva-sutras#31). Its low two bits are
+# an index, NOT nasal/length: the Sanskrit predicates (ac, aṇ, ik ...) read
+# rows 0..6 only, so they never see these cells.
+UK_EXT_VOWELS = ("a", "e", "o", "y")
+
+
+def uk_ext_vowel_code(index: int) -> int:
+    if not 0 <= index < len(UK_EXT_VOWELS):
+        raise UPC7GeometryError(f"invalid extension vowel index: {index}")
+    return make_code(CLASS_VOWEL, (7 << 2) | index)
 
 
 def compress_upc8_vowel(code: int) -> int:
@@ -354,6 +383,11 @@ __all__ = [
     "CLASS_VOWEL",
     "CODE_SIGN",
     "CURRENT_UPC8_NONVARGA",
+    "UK_AFFRICATES",
+    "UK_EXT_VOWELS",
+    "softness_code",
+    "uk_affricate_code",
+    "uk_ext_vowel_code",
     "SIGN_CODE",
     "SIGN_NAMES",
     "UPC7GeometryError",
