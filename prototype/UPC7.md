@@ -8,12 +8,12 @@ seven-bit cells of **geometry v2** (`UPC7-GEOMETRY-v2.md`, `upc7_geometry.py`):
 ```text
 CCxxxxx
 00xxxxx  varga consonants        25 placed, 7 reserved
-01xxxxx  non-varga consonants    13 placed, 19 reserved
-10xxxxx  vowels                  28 placed, 4 reserved
+01xxxxx  non-varga consonants    18 placed, 14 reserved
+10xxxxx  vowels                  32 placed, 0 reserved
 11xxxxx  signs / operator glyphs 32 placed
 ```
 
-98 cells are placed, 30 are reserved. Nothing here renumbers or invents a cell:
+107 cells are placed, 21 are reserved. Nothing here renumbers or invents a cell:
 a sound the owner has not placed in the geometry stays **unassigned** and fails
 closed.
 
@@ -47,10 +47,14 @@ Layouts:
 
 Rules, each proved in `test_upc7_layouts.py`:
 
-- a layout is injective: one spelling names one code;
-- encoding uses the longest match and never normalises (SLP1 `K` is not `k`);
+- the **direct cell spelling map** is injective: one direct spelling names one code;
+- encoding uses the longest match and never performs implicit case/Unicode
+  normalization (SLP1 `K` is not `k`);
+- a layout may define an **explicit sequence normalization** whose spelling lowers
+  to multiple already-placed cells; this makes source spelling intentionally
+  many-to-one at the code-stream level, without creating a cell collision;
 - a spelling the project knows but the geometry has not placed is rejected **as a
-  whole**. `дж` is never silently read as `д` + `ж`;
+  whole**. `дж` has a dedicated cell and is never silently read as `д` + `ж`;
 - an unplaced or reserved code cannot be rendered in a spelling layout, only in
   `bits`.
 
@@ -67,11 +71,12 @@ non-varga, and the nine vowels a i u ṛ ḷ e o ai au) plus the long vowels ā 
 anusvāra and visarga have a cell and an SLP1 spelling. `ai` and `au` are the long
 forms of the `e` and `o` rows (class-10 spec §3.3).
 
-**Ukrainian has 21 letters:** к ґ т д н п б м (varga), і у (vowels) and х ш ж й з с
-р л ф в г (non-varga). The 13 letters the donor calls identity aliases of a
-Sanskrit sound (`UKRAINIAN_SHARED`) land on the same cell as the Sanskrit sound;
-`test_donor_identity_aliases_share_the_sanskrit_code` checks all 13 against the
-legacy donor.
+**The base Ukrainian donor mapping has 21 letters:** к ґ т д н п б м (varga), і у
+(vowels) and х ш ж й з с р л ф в г (non-varga). The 13 letters the donor calls
+identity aliases of a Sanskrit sound (`UKRAINIAN_SHARED`) land on the same cell
+as the Sanskrit sound; `test_donor_identity_aliases_share_the_sanskrit_code`
+checks all 13 against the legacy donor. The #31 extension adds four vowels, four
+affricates and softness `ь` without moving those base assignments.
 
 **Extension cells (shiva-sutras#31, proposal awaiting owner sign-off).** Nine of the 30
 reserved cells are used; 21 stay reserved:
@@ -86,6 +91,29 @@ Everything else is a **sequence of placed cells**, never a cell of its own:
 palatalised consonants are consonant + `ь` (`ть`, `ль`); iotated `є ї ю я` are `й` +
 `е і у а`; `щ` is `ш` + `ч`. Sequences encode but never render back as one letter
 (`я` renders `йа`). `дж` is one cell and is never read as `д`+`ж`.
+
+### Ukrainian normalization law
+
+For the proposed Ukrainian layout, canonical identity is the UPC-7 code stream,
+not exact Unicode orthography. Therefore the explicit sequence spellings are
+intentional normalizations:
+
+```text
+я  == йа
+ю  == йу
+є  == йе
+ї  == йі
+щ  == шч
+```
+
+The equalities above mean “encode to the same UPC-7 stream”, not “the Unicode
+strings are identical”. Rendering uses the placed-cell spellings, so these streams
+render as `йа`, `йу`, `йе`, `йі`, `шч`.
+
+This is a boundary/layout rule, not a cell alias and not a Sanskrit identity claim.
+A consumer such as SENS Text7 that adopts this layout therefore adopts this
+normalization as part of human-source lowering. Exact original orthography, if a
+caller needs it for provenance/editor fidelity, must stay outside canonical Text7.
 
 Cost: no previously assigned code moved; the 9 changed table rows were all
 `reserved`. The table SHA-256 changes, so consumers must re-pin.
