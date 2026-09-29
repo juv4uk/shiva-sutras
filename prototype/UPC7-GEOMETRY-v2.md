@@ -53,7 +53,10 @@ payload[1:0] = local slot
 This intentionally preserves the currently used Sanskrit/Ukrainian
 distinctions, not all 64 hypothetical points of UPC-8 class 01.
 
-The current 13-point union compresses injectively.
+The current 13-point donor union compresses injectively. Ukrainian extension
+cells added by #31 deliberately use five cells that were previously reserved:
+place 7 holds ц/ч/дз/дж, and palatal place 1 slot 3 holds softness `ь`.
+These assignments do not reinterpret any donor point.
 
 ### 10 — vowels
 
@@ -66,8 +69,16 @@ UPC-7     10 ppp n l
              remove only FREE bit
 ```
 
-Rows 0..6 × {plain,nasal} × {short,long} = 28 cells. Row 7 remains four
-reserved cells.
+Rows 0..6 × {plain,nasal} × {short,long} = 28 Sanskrit geometry cells.
+
+Row 7 is the **language-extension row**. For #31 its four cells are Ukrainian
+а/е/о/и. In row 7 the low two payload bits are an extension index `0..3`,
+**not** nasal/length flags.
+
+This distinction is enforced by the API: `decode_vowel()` decodes only rows
+0..6 and rejects row 7; extension cells are constructed through
+`uk_ext_vowel_code()`. Therefore a generic `class == 10` test is not enough
+to infer Sanskrit nasal/length semantics — consumers must also be in rows 0..6.
 
 ### 11 — signs/operators
 
