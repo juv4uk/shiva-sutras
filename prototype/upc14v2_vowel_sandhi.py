@@ -13,7 +13,8 @@ savarna = equal place and aperture) and every substitution is a query on it.
     6.1.77  iko yan aci               ik + ac                -> the nearest semivowel (yan)
     6.1.78  eco 'yavayavah            ec + ac                -> decompose the join, yan the second
     6.1.109 enah padantad ati         e/o (word-final) + a   -> the e/o stays, a is elided (apavada of 6.1.78)
-    6.1.97  ato gune                  a (inside a word) + a/e/o -> the following sound (apavada of 6.1.101)
+    6.1.97  ato gune                  a (inside a word) + a/e/o -> the following sound; it blocks BOTH
+                                      6.1.101 (dirgha) and 6.1.88 (vrddhi): pace, yaje (Kasika 53302)
 
 Rules are tried in this order (the savarna case first: it is what stops 6.1.87
 from also firing on a + a). A result is the SEQUENCE of sounds that replaces
@@ -28,7 +29,12 @@ stand BEFORE 6.1.84 and replace a single sound, so the result carries `ekadesa`.
 Not implemented, on purpose: 6.1.94 (eni pararupam), the plutapurva exception of 6.1.77,
 the optional elision of y/v (8.3.19), the avagraha sign after e/o, and every condition
 that needs morphology (a dhatu, an upasarga, a suffix). `padanta` says whether the pair
-is at a word boundary (default) or inside a word.
+is at a word boundary (default) or inside a word. **The Kasika's examples of 6.1.78 (cayanam,
+lavanam, cayakah, lavakah) are inside a word: with the default `padanta=True` the pair e + a
+gives `e` (6.1.109), so call `vowel_sandhi(..., padanta=False)` for them.**
+The optional elision 8.3.19 is optional for both y and v in the Kasika (dva atra ~ dvavatra; word
+final, after avarna, before as); the vidyut oracle drops only y (o + a stays `Av a`), so "the 27
+rows are the y-elision" is true of vidyut, not a claim about the Kasika.
 """
 
 from __future__ import annotations
@@ -75,6 +81,14 @@ class Result:
     @property
     def text(self) -> str:
         return "".join(self.sounds)
+
+    @property
+    def variants(self) -> Tuple[Tuple[str, ...], ...]:
+        """ALL results of the rule; for a `va` (optional) rule none of them is primary.
+
+        `sounds` is only the first one, kept for convenience (the long ṛ of the vartika).
+        """
+        return (self.sounds,) + self.options
 
     @property
     def ekadesa(self) -> bool:
