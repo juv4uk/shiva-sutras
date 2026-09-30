@@ -41,9 +41,14 @@ transport; the value is the tuple of integers 0..127.
 
 Layouts:
 
-- `sa-slp1`: Sanskrit SLP1, complete for the geometry (below);
-- `uk`: Ukrainian, partial (below);
+- `sa-slp1`: Sanskrit SLP1, ASCII-oriented programming/transliteration projection;
+- `sa-iast`: Sanskrit IAST projection;
+- `sa-deva`: Devanagari **direct cell-glyph** projection;
+- `uk`: Ukrainian projection;
 - `bits`: exact seven-bit diagnostic cells, e.g. `0100101 0000001`.
+
+All four human layouts are projections over the same identities. Adding a
+spelling never allocates or renumbers a UPC-7 cell.
 
 Rules, each proved in `test_upc7_layouts.py`:
 
@@ -70,6 +75,39 @@ sa-slp1: kit  ---->  the same code stream  ---->  uk: кіт
 non-varga, and the nine vowels a i u ṛ ḷ e o ai au) plus the long vowels ā ī ū ṝ ḹ,
 anusvāra and visarga have a cell and an SLP1 spelling. `ai` and `au` are the long
 forms of the `e` and `o` rows (class-10 spec §3.3).
+
+### Sanskrit projections: SLP1, IAST, Devanagari
+
+The same cell may now be rendered through three Sanskrit views.  The first
+kavarga row is the owner-pinned witness:
+
+| UPC-7 | SLP1 | IAST | Devanagari |
+|---|---|---|---|
+| `0000000` | `k` | `k` | `क` |
+| `0000001` | `K` | `kh` | `ख` |
+| `0000010` | `g` | `g` | `ग` |
+| `0000011` | `G` | `gh` | `घ` |
+| `0000100` | `N` | `ṅ` | `ङ` |
+
+The projection extends across all 25 varga cells, the eight assigned Sanskrit
+non-varga cells, the 14 oral short/long vowel cells, and the Sanskrit signs.
+IAST uses multi-character spellings such as `kh`, `gh`, `ṭh`, `dh`, and
+`ai`; longest-match encoding keeps each of these on its single intended cell.
+
+`sa-deva` is intentionally **not yet a full Sanskrit orthographic compositor**.
+For example `क` directly displays the /k/ cell. Natural word spelling with
+mātrā, virāma, conjuncts and orthographic shaping belongs to a later rendering
+layer. Those mechanisms must never change the underlying UPC-7 stream.
+
+Sanskrit signs use distinct projections where possible:
+
+| identity | SLP1 | IAST | Devanagari |
+|---|---|---|---|
+| anusvāra | `M` | `ṃ` | `ं` |
+| visarga | `H` | `ḥ` | `ः` |
+| avagraha | `'` | `’` | `ऽ` |
+| daṇḍa | `.` | `।` | `।` |
+| double daṇḍa | `..` | `॥` | `॥` |
 
 **The base Ukrainian donor mapping has 21 letters:** к ґ т д н п б м (varga), і у
 (vowels) and х ш ж й з с р л ф в г (non-varga). The 13 letters the donor calls
@@ -130,9 +168,10 @@ round-trip.
 
 Other facts a reader should know:
 
-- **Nasal vowel cells exist** (28 = 7 rows × oral/nasal × short/long) but SLP1 has no
-  single spelling for them: `aM` is two cells, the vowel and the anusvāra sign. They
-  are reachable only through `bits`.
+- **Nasal vowel cells exist** (28 = 7 rows × oral/nasal × short/long), but the
+  Sanskrit spelling layouts do not invent a single spelling for them. In SLP1
+  `aM` is two cells, the vowel and the anusvāra sign. The nasal-vowel cells
+  remain reachable only through `bits` until a separately justified projection exists.
 - **Class 11 has both avagraha and apostrophe, danda and dot,** written with the same
   ASCII glyph. `sa-slp1` gives `'` and `.` (and `..`) to the Sanskrit signs; `uk` gives
   them to the apostrophe and the dot. The same glyph is therefore a different code in
@@ -156,8 +195,8 @@ python3 upc7_table.py --check     exit 1 if the file is stale (CI runs this)
 python3 upc7_table.py --sha256    print the SHA-256
 ```
 
-Columns: `bits hex class payload status name sa-slp1 uk`. Spellings are projections; a
-blank cell means the layout has no spelling. Letters are written as themselves;
+Columns: `bits hex class payload status name sa-slp1 sa-iast sa-deva uk`.
+Spellings are projections; a blank cell means the layout has no spelling. Letters are written as themselves;
 backslash, space and control characters are escaped as `\\` and `\xNN`.
 
 A consumer such as SENS Text7 should **pin the SHA-256 of this file** and regenerate
@@ -177,7 +216,7 @@ It independently checks:
 - assigned versus unassigned (`reserved` in the current table vocabulary);
 - class-consistent stable machine names;
 - no human spelling on an unassigned cell;
-- injectivity of the `sa-slp1` and `uk` projections.
+- injectivity of the `sa-slp1`, `sa-iast`, `sa-deva`, and `uk` projections.
 
 `upc7-table.sha256` pins the exact table bytes. CI compiles the verifier with a
 plain C11 compiler, checks the pin, runs the cold witness, and proves that both a
