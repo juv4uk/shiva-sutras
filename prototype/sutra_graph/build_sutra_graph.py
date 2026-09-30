@@ -70,6 +70,10 @@ def main():
             refs = [latin_digits(m.group(1)) for m in ref_rx.finditer(sent)]
             for r in refs:
                 edges.append((me, r, "kasika_ref", flags))
+            if "धिकार" in sent:                        # scope declared in the Kasika (e.g. 6.1.77: "aci" up to 6.1.108)
+                for r in refs:
+                    if r != me:
+                        edges.append((me, r, "adhikara_kasika", (sent.split() or [""])[0]))
             if "पवाद" not in sent:
                 continue
             if refs:                                   # (a) the sentence names the sutra it is an exception to
@@ -90,6 +94,7 @@ def main():
         f.write("sutra\tmentions\n")
         for s, n in sorted(unresolved.items()):
             f.write(f"{s}\t{n}\n")
+    edges = list(dict.fromkeys(edges))                    # exact duplicates removed, order kept
     os.makedirs(a.out_dir, exist_ok=True)
     with open(os.path.join(a.out_dir, "edges.tsv"), "w", encoding="utf-8") as f:
         f.write("src\tdst\tkind\tlabel\n")
