@@ -164,6 +164,29 @@ A consumer such as SENS Text7 should **pin the SHA-256 of this file** and regene
 against a new one, not copy the table by hand. Any change of a cell, a name or a
 spelling changes the SHA.
 
+### Independent cold witness
+
+`upc7_cold_verify.c` is a second implementation substrate for the serialized
+machine contract. It deliberately imports no Python UPC-7 module and treats
+`upc7-table.tsv` as opaque external input.
+
+It independently checks:
+
+- exactly 128 ordered seven-bit cells;
+- agreement of binary code, hexadecimal code, 2-bit class and 5-bit payload;
+- assigned versus unassigned (`reserved` in the current table vocabulary);
+- class-consistent stable machine names;
+- no human spelling on an unassigned cell;
+- injectivity of the `sa-slp1` and `uk` projections.
+
+`upc7-table.sha256` pins the exact table bytes. CI compiles the verifier with a
+plain C11 compiler, checks the pin, runs the cold witness, and proves that both a
+mutated identity row and mutated table bytes fail closed.
+
+The C verifier is a conformance witness, not a second UPC-7 authority. Cell
+identity still comes from the generated table/geometry and changes only through
+an explicit owner-ratified assignment.
+
 ## Relation to SENS
 
 ```text
