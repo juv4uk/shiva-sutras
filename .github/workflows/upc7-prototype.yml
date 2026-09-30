@@ -14,6 +14,7 @@ on:
       - "prototype/upc7-table.tsv"
       - "prototype/upc7-table.sha256"
       - "prototype/upc7_cold_verify.c"
+      - "prototype/upc7_cold_witness.lisp"
       - "prototype/UPC7.md"
       - "prototype/UPC7-GEOMETRY-v2.md"
       - ".github/workflows/upc7-prototype.yml"
@@ -32,6 +33,7 @@ on:
       - "prototype/upc7-table.tsv"
       - "prototype/upc7-table.sha256"
       - "prototype/upc7_cold_verify.c"
+      - "prototype/upc7_cold_witness.lisp"
       - "prototype/UPC7.md"
       - "prototype/UPC7-GEOMETRY-v2.md"
       - ".github/workflows/upc7-prototype.yml"
@@ -71,3 +73,23 @@ jobs:
             echo "SHA witness accepted mutated table bytes" >&2
             exit 1
           fi
+      # The SENS-native witness runs on a PINNED sens revision (provenance), so
+      # a later sens runtime change cannot silently change what this proves.
+      - name: Checkout SENS (pinned revision)
+        uses: actions/checkout@v5
+        with:
+          repository: juv4uk/sens
+          ref: 9adb654bb7902427a56d86c055f6a9dc859bff2e
+          path: sens-src
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: sens-src
+          shared-key: upc7-sens-witness
+      - name: Build the SENS runtime
+        working-directory: sens-src
+        run: cargo build --release -p sens-cli --bin sens
+      - name: Run SENS-native cold witness
+        run: sens-src/target/release/sens prototype/upc7_cold_witness.lisp | tee /tmp/upc7-sens-witness.txt
+      - name: SENS-native witness must have reached its final line
+        run: grep -q 'all witnesses hold' /tmp/upc7-sens-witness.txt

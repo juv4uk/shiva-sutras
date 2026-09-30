@@ -250,3 +250,43 @@ without changing identity, but it needs its own round-trip tests.
 
 This is an engineering codec and projection. It is not evidence that Pāṇini used
 binary codes, and it does not modify the transmitted Śiva-sūtra canon.
+
+## SENS-native cold witness (second witness for #33)
+
+The C11 witness (`upc7_cold_verify.c`, #36) already closed #33. This is a **second, SENS-native**
+witness, so the table is read by three substrates: the Python producer, the C verifier and
+SENS itself (the #33 issue text preferred a SENS reader; a SENS consumer of Text7 can run it).
+
+`upc7_cold_witness.lisp` is an independent reader of the generated `upc7-table.tsv`,
+written in SENS Lisp. It imports nothing from `upc7_geometry.py`, `upc7_layouts.py` or
+`upc7_table.py`; it re-derives every cell's bits, hex, class and payload from the **row
+position alone** and checks the table against the geometry laws (25 varga cells, the
+vowel nasal/length bits with row 7 as the extension row, class/name agreement), not
+against Python output.
+
+```
+sens prototype/upc7_cold_witness.lisp        # from the repository root
+```
+
+It checks: the table's SHA-256 against a pin in the witness; exactly 128 cells, once each,
+in ascending order; bits/hex/class/payload per row; assigned vs reserved (a reserved cell
+has no spelling and a canonical `reserved.<class>.<payload>` name); the varga 5x5 law; the
+vowel law; uniqueness of stable names and of `sa-slp1`/`uk` spellings among assigned
+cells. It then proves it is not vacuous: it rejects a dropped row, a flipped status, a
+wrong bits field, a wrong hex field, a name that contradicts the class, and any one-field
+change (by the pin).
+
+**The pin is a decision, not a convenience.** When the table changes on purpose, update
+`pinned-sha256` in the witness in the same commit as `upc7-table.sha256` and the C witness; a table that changes without the pin
+fails.
+
+Evidence on record (local run, `sens` release built from sens `9adb654b`, not CI):
+- current table (`8ce2339a…`): all 8 witness lines pass;
+- pre-#32 table (`aa46e37f…`) against the current pin: fails on the SHA pin only; with
+  its own SHA as the pin it passes every structural witness, i.e. the geometry laws hold
+  for both revisions.
+
+Not covered (open, do not read this as done): encoding text through a layout and
+round-tripping code streams (the witness reads the table, it does not implement a
+layout encoder); a CI job (needs a `sens` checkout, see #26); independence is between two
+implementations by the same author, not two parties.
