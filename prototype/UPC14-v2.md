@@ -67,6 +67,36 @@ that name their place on the sūtra path.
 `e o ai au` because those are *defined* as joins of places. `e` has no unique nearest
 `a`/`i` (correctly `Ambiguous`).
 
+## Reference implementations surveyed (added after cloning them locally)
+
+Owner suggestion: look at how others encoded Pāṇini. Cloned read-only (no fork needed to
+read): `ambuda-org/vidyut` (Rust, MIT per its `Cargo.toml`, commit `8da2f90b`, 3 MB),
+`ashtadhyayi-com/data` (no license declared; 1.7 GB, so 6 directories sparse-cloned, commit
+`5744762f`), `kmadathil/sanskrit_parser` (MIT; surveyed, not used).
+
+**Results** (`test_upc14v2_oracles.py`, 9 tests, all pass, local run):
+- **43 of 43** phonetic pratyāhāras of ashtadhyayi.com equal an interval of the path. The two
+  `aṇ` entries are the first and the second `ṇ`; `iṇ` uses the second. This also confirms
+  that the three bad entries in `ksetra/.../pratyahara-usage.yaml` (`yaṇ`, `has`, `jhas`) are
+  errors there: ashtadhyayi.com gives `yaṇ = {y v r l}`.
+- vidyut's own unit-test vectors, copied as data with attribution: 8 pratyāhāras (`ac ec iṇ
+  iṇ2 yaṇ hal ñam śar`), the savarṇa rows, and **all 24 pairs of `map(jhal → jaś)` and all 6 of
+  `map(ku~ h → cu~)`**, which this graph's `nearest` reproduces (including `ś→j, ṣ→ḍ, s→d,
+  h→g` and `h→jh`).
+- **Robustness:** vidyut classifies the sibilants as unaspirated and with the semivowels, and
+  `h` with the vowels; this graph puts them on one aperture step and aspirated. Re-running the
+  natural-class experiment with vidyut's assignment gives **54 / 55 / 54** intervals (mine,
+  sibilants unaspirated, vidyut-like), all above the ≤ 40 of random orders. The result is not
+  an artifact of one school's feature choices.
+
+**What vidyut shows** (source-confirmed, `vidyut-prakriya/src/sounds.rs`): it has the same
+three ingredients in a different form. A per-sound record (`sthāna` list, `ghoṣa`, `prāṇa`,
+`prayatna`), a `pratyahara()` that scans the sūtra list (`R2` = the second ṇ, our `nth=2`),
+and a `map()` that picks the nearest sound by a **summed** distance that its own comment says
+is **not symmetric** (a TODO). Here the distance is lexicographic, place first, symmetric, and
+an exact tie raises `Ambiguous` instead of picking one. Vidyut's *identity* is a Latin letter
+in a 128-byte table (SLP1); it does not define a code space.
+
 ## Honest limits
 
 - The feature assignment (place of each sound, aperture, which sounds are aspirated or
