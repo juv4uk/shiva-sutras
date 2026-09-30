@@ -45,7 +45,7 @@
 | Кодек | savarṇa | Запити 1.1.50, guṇa/vṛddhi |
 |---|---|---|
 | upc14v2 | функція: те саме місце й aperture; ṛ~ḷ лише з `vartika=True` | `nearest` (Ambiguous на нічиїй), guṇa/vṛddhi як join місць |
-| PRĀṆA-14 | маска `(a & b) & 0x1FE0` = effort+wide+place; `e~ai` **False** завдяки біту wide | `nearest`, guṇa, vṛddhi, dirgha |
+| PRĀṆA-14 | маска `(a & 0x1FE0) == (b & 0x1FE0)` = effort+wide+place (біти 5-12); `e~ai` **False** завдяки біту wide | `nearest`, guṇa, vṛddhi, dirgha |
 | VARṆA-7 | `savarna_key`; `e~ai` **True** («межа 7 біт», як і в UPC-7, записано в README) | немає |
 | Trishula-14, Bandha-14, Tantu-7, Akshara-7 | не реалізовано | не реалізовано |
 
