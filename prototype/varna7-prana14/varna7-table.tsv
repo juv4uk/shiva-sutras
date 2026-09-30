@@ -1,0 +1,129 @@
+bits	hex	region	payload	status	name	sa-slp1
+0000000	0x00	sparsa	00000	assigned	sparsa.throat.unvoiced	k
+0000001	0x01	sparsa	00001	assigned	sparsa.throat.unvoiced-aspirated	K
+0000010	0x02	sparsa	00010	assigned	sparsa.throat.voiced	g
+0000011	0x03	sparsa	00011	assigned	sparsa.throat.voiced-aspirated	G
+0000100	0x04	sparsa	00100	assigned	sparsa.throat.nasal	N
+0000101	0x05	sparsa	00101	assigned	sparsa.palate.unvoiced	c
+0000110	0x06	sparsa	00110	assigned	sparsa.palate.unvoiced-aspirated	C
+0000111	0x07	sparsa	00111	assigned	sparsa.palate.voiced	j
+0001000	0x08	sparsa	01000	assigned	sparsa.palate.voiced-aspirated	J
+0001001	0x09	sparsa	01001	assigned	sparsa.palate.nasal	Y
+0001010	0x0A	sparsa	01010	assigned	sparsa.roof.unvoiced	w
+0001011	0x0B	sparsa	01011	assigned	sparsa.roof.unvoiced-aspirated	W
+0001100	0x0C	sparsa	01100	assigned	sparsa.roof.voiced	q
+0001101	0x0D	sparsa	01101	assigned	sparsa.roof.voiced-aspirated	Q
+0001110	0x0E	sparsa	01110	assigned	sparsa.roof.nasal	R
+0001111	0x0F	sparsa	01111	assigned	sparsa.teeth.unvoiced	t
+0010000	0x10	sparsa	10000	assigned	sparsa.teeth.unvoiced-aspirated	T
+0010001	0x11	sparsa	10001	assigned	sparsa.teeth.voiced	d
+0010010	0x12	sparsa	10010	assigned	sparsa.teeth.voiced-aspirated	D
+0010011	0x13	sparsa	10011	assigned	sparsa.teeth.nasal	n
+0010100	0x14	sparsa	10100	assigned	sparsa.lips.unvoiced	p
+0010101	0x15	sparsa	10101	assigned	sparsa.lips.unvoiced-aspirated	P
+0010110	0x16	sparsa	10110	assigned	sparsa.lips.voiced	b
+0010111	0x17	sparsa	10111	assigned	sparsa.lips.voiced-aspirated	B
+0011000	0x18	sparsa	11000	assigned	sparsa.lips.nasal	m
+0011001	0x19	sparsa	11001	reserved	reserved.sparsa.11001	
+0011010	0x1A	sparsa	11010	reserved	reserved.sparsa.11010	
+0011011	0x1B	sparsa	11011	reserved	reserved.sparsa.11011	
+0011100	0x1C	sparsa	11100	reserved	reserved.sparsa.11100	
+0011101	0x1D	sparsa	11101	reserved	reserved.sparsa.11101	
+0011110	0x1E	sparsa	11110	reserved	reserved.sparsa.11110	
+0011111	0x1F	sparsa	11111	reserved	reserved.sparsa.11111	
+0100000	0x20	antas	00000	reserved	reserved.antas.00000	
+0100001	0x21	antas	00001	assigned	antas.throat.voiced-fricative	h
+0100010	0x22	antas	00010	reserved	reserved.antas.00010	
+0100011	0x23	antas	00011	reserved	reserved.antas.00011	
+0100100	0x24	antas	00100	assigned	antas.palate.voiceless-fricative	S
+0100101	0x25	antas	00101	reserved	reserved.antas.00101	
+0100110	0x26	antas	00110	assigned	antas.palate.sonorant	y
+0100111	0x27	antas	00111	reserved	reserved.antas.00111	
+0101000	0x28	antas	01000	assigned	antas.roof.voiceless-fricative	z
+0101001	0x29	antas	01001	reserved	reserved.antas.01001	
+0101010	0x2A	antas	01010	assigned	antas.roof.sonorant	r
+0101011	0x2B	antas	01011	reserved	reserved.antas.01011	
+0101100	0x2C	antas	01100	assigned	antas.teeth.voiceless-fricative	s
+0101101	0x2D	antas	01101	reserved	reserved.antas.01101	
+0101110	0x2E	antas	01110	reserved	reserved.antas.01110	
+0101111	0x2F	antas	01111	assigned	antas.teeth.lateral	l
+0110000	0x30	antas	10000	reserved	reserved.antas.10000	
+0110001	0x31	antas	10001	reserved	reserved.antas.10001	
+0110010	0x32	antas	10010	assigned	antas.lips.sonorant	v
+0110011	0x33	antas	10011	reserved	reserved.antas.10011	
+0110100	0x34	antas	10100	reserved	reserved.antas.10100	
+0110101	0x35	antas	10101	reserved	reserved.antas.10101	
+0110110	0x36	antas	10110	reserved	reserved.antas.10110	
+0110111	0x37	antas	10111	reserved	reserved.antas.10111	
+0111000	0x38	antas	11000	reserved	reserved.antas.11000	
+0111001	0x39	antas	11001	reserved	reserved.antas.11001	
+0111010	0x3A	antas	11010	reserved	reserved.antas.11010	
+0111011	0x3B	antas	11011	reserved	reserved.antas.11011	
+0111100	0x3C	antas	11100	reserved	reserved.antas.11100	
+0111101	0x3D	antas	11101	reserved	reserved.antas.11101	
+0111110	0x3E	antas	11110	reserved	reserved.antas.11110	
+0111111	0x3F	antas	11111	reserved	reserved.antas.11111	
+1000000	0x40	svara	00000	assigned	svara.a.oral.short	a
+1000001	0x41	svara	00001	assigned	svara.a.oral.long	A
+1000010	0x42	svara	00010	assigned	svara.a.nasal.short	
+1000011	0x43	svara	00011	assigned	svara.a.nasal.long	
+1000100	0x44	svara	00100	assigned	svara.i.oral.short	i
+1000101	0x45	svara	00101	assigned	svara.i.oral.long	I
+1000110	0x46	svara	00110	assigned	svara.i.nasal.short	
+1000111	0x47	svara	00111	assigned	svara.i.nasal.long	
+1001000	0x48	svara	01000	assigned	svara.u.oral.short	u
+1001001	0x49	svara	01001	assigned	svara.u.oral.long	U
+1001010	0x4A	svara	01010	assigned	svara.u.nasal.short	
+1001011	0x4B	svara	01011	assigned	svara.u.nasal.long	
+1001100	0x4C	svara	01100	assigned	svara.ṛ.oral.short	f
+1001101	0x4D	svara	01101	assigned	svara.ṛ.oral.long	F
+1001110	0x4E	svara	01110	assigned	svara.ṛ.nasal.short	
+1001111	0x4F	svara	01111	assigned	svara.ṛ.nasal.long	
+1010000	0x50	svara	10000	assigned	svara.ḷ.oral.short	x
+1010001	0x51	svara	10001	assigned	svara.ḷ.oral.long	X
+1010010	0x52	svara	10010	assigned	svara.ḷ.nasal.short	
+1010011	0x53	svara	10011	assigned	svara.ḷ.nasal.long	
+1010100	0x54	svara	10100	assigned	svara.e.oral.short	e
+1010101	0x55	svara	10101	assigned	svara.e.oral.long	E
+1010110	0x56	svara	10110	assigned	svara.e.nasal.short	
+1010111	0x57	svara	10111	assigned	svara.e.nasal.long	
+1011000	0x58	svara	11000	assigned	svara.o.oral.short	o
+1011001	0x59	svara	11001	assigned	svara.o.oral.long	O
+1011010	0x5A	svara	11010	assigned	svara.o.nasal.short	
+1011011	0x5B	svara	11011	assigned	svara.o.nasal.long	
+1011100	0x5C	svara	11100	reserved	reserved.svara.11100	
+1011101	0x5D	svara	11101	reserved	reserved.svara.11101	
+1011110	0x5E	svara	11110	reserved	reserved.svara.11110	
+1011111	0x5F	svara	11111	reserved	reserved.svara.11111	
+1100000	0x60	samjna	00000	assigned	samjna.space	
+1100001	0x61	samjna	00001	assigned	samjna.newline	
+1100010	0x62	samjna	00010	assigned	samjna.tab	
+1100011	0x63	samjna	00011	assigned	samjna.left-paren	
+1100100	0x64	samjna	00100	assigned	samjna.right-paren	
+1100101	0x65	samjna	00101	assigned	samjna.double-quote	
+1100110	0x66	samjna	00110	assigned	samjna.backslash	
+1100111	0x67	samjna	00111	assigned	samjna.underscore	
+1101000	0x68	samjna	01000	assigned	samjna.anusvara	M
+1101001	0x69	samjna	01001	assigned	samjna.visarga	H
+1101010	0x6A	samjna	01010	assigned	samjna.avagraha	
+1101011	0x6B	samjna	01011	assigned	samjna.danda	
+1101100	0x6C	samjna	01100	assigned	samjna.double-danda	
+1101101	0x6D	samjna	01101	assigned	samjna.ampersand	
+1101110	0x6E	samjna	01110	assigned	samjna.pipe	
+1101111	0x6F	samjna	01111	assigned	samjna.backquote	
+1110000	0x70	samjna	10000	assigned	samjna.plus	
+1110001	0x71	samjna	10001	assigned	samjna.minus	
+1110010	0x72	samjna	10010	assigned	samjna.star	
+1110011	0x73	samjna	10011	assigned	samjna.slash	
+1110100	0x74	samjna	10100	assigned	samjna.equals	
+1110101	0x75	samjna	10101	assigned	samjna.less	
+1110110	0x76	samjna	10110	assigned	samjna.greater	
+1110111	0x77	samjna	10111	assigned	samjna.question	
+1111000	0x78	samjna	11000	assigned	samjna.bang	
+1111001	0x79	samjna	11001	assigned	samjna.apostrophe	
+1111010	0x7A	samjna	11010	assigned	samjna.dot	
+1111011	0x7B	samjna	11011	assigned	samjna.comma	
+1111100	0x7C	samjna	11100	assigned	samjna.colon	
+1111101	0x7D	samjna	11101	assigned	samjna.semicolon	
+1111110	0x7E	samjna	11110	assigned	samjna.hash	
+1111111	0x7F	samjna	11111	assigned	samjna.at	
