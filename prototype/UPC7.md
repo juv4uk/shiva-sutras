@@ -212,7 +212,11 @@ without changing identity, but it needs its own round-trip tests.
 This is an engineering codec and projection. It is not evidence that Pāṇini used
 binary codes, and it does not modify the transmitted Śiva-sūtra canon.
 
-## Cold witness (shiva-sutras#33)
+## SENS-native cold witness (second witness for #33)
+
+The C11 witness (`upc7_cold_verify.c`, #36) already closed #33. This is a **second, SENS-native**
+witness, so the table is read by three substrates: the Python producer, the C verifier and
+SENS itself (the #33 issue text preferred a SENS reader; a SENS consumer of Text7 can run it).
 
 `upc7_cold_witness.lisp` is an independent reader of the generated `upc7-table.tsv`,
 written in SENS Lisp. It imports nothing from `upc7_geometry.py`, `upc7_layouts.py` or
@@ -234,7 +238,7 @@ wrong bits field, a wrong hex field, a name that contradicts the class, and any 
 change (by the pin).
 
 **The pin is a decision, not a convenience.** When the table changes on purpose, update
-`pinned-sha256` in the witness in the same commit; a table that changes without the pin
+`pinned-sha256` in the witness in the same commit as `upc7-table.sha256` and the C witness; a table that changes without the pin
 fails.
 
 Evidence on record (local run, `sens` release built from sens `9adb654b`, not CI):
