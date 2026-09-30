@@ -17,6 +17,7 @@ on:
       - "prototype/upc7_cold_witness.lisp"
       - "prototype/upc14v2.py"
       - "prototype/upc14v2_sandhi.py"
+      - "prototype/sutra_graph/**"
       - "prototype/test_upc14v2_it.py"
       - "prototype/upc14v2_vowel_sandhi.py"
       - "prototype/test_upc14v2_vowel_sandhi.py"
@@ -62,6 +63,9 @@ jobs:
       - name: Run the graph canon (UPC-14 v2) witnesses
         working-directory: prototype
         run: python3 -m unittest -v test_upc14v2.py test_upc14v2_oracles.py test_upc14v2_sandhi.py test_upc14v2_vowel_sandhi.py test_upc14v2_it.py
+      - name: Sutra graph extractor logic (synthetic fixture)
+        working-directory: prototype/sutra_graph
+        run: python3 -m unittest -v test_sutra_graph.py
       - name: Machine table is current
         working-directory: prototype
         run: python3 upc7_table.py --check
