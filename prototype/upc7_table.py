@@ -12,7 +12,7 @@ and detect drift instead of copying it.
     python3 upc7_table.py --check         exit 1 if upc7-table.tsv is stale
     python3 upc7_table.py --sha256        print the SHA-256 of the current table
 
-Columns: bits, hex, class, payload, status, name, sa-slp1, uk.
+Columns: bits, hex, class, payload, status, name, sa-slp1, sa-iast, sa-deva, uk.
 Spellings are projections; a blank cell means the layout has no spelling.
 Control characters are written as escapes (a space is ``\\x20``).
 """
@@ -28,7 +28,7 @@ import upc7_geometry as geo
 from upc7_layouts import UPC7Text
 
 TABLE_PATH = Path(__file__).with_name("upc7-table.tsv")
-COLUMNS = ("bits", "hex", "class", "payload", "status", "name", "sa-slp1", "uk")
+COLUMNS = ("bits", "hex", "class", "payload", "status", "name", "sa-slp1", "sa-iast", "sa-deva", "uk")
 
 
 def _escape(spelling: str) -> str:
@@ -49,6 +49,8 @@ def _escape(spelling: str) -> str:
 def render_table() -> str:
     codec = UPC7Text()
     sanskrit = codec.layout("sa-slp1").code_to_spelling
+    iast = codec.layout("sa-iast").code_to_spelling
+    devanagari = codec.layout("sa-deva").code_to_spelling
     ukrainian = codec.layout("uk").code_to_spelling
     lines: List[str] = ["\t".join(COLUMNS)]
     for cell in codec.cells:
@@ -62,6 +64,8 @@ def render_table() -> str:
                     cell.status,
                     cell.name,
                     _escape(sanskrit.get(cell.code, "")),
+                    _escape(iast.get(cell.code, "")),
+                    _escape(devanagari.get(cell.code, "")),
                     _escape(ukrainian.get(cell.code, "")),
                 )
             )

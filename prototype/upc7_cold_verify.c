@@ -17,7 +17,7 @@
 #include <string.h>
 
 #define CELL_COUNT 128
-#define FIELD_COUNT 8
+#define FIELD_COUNT 10
 #define LINE_CAP 2048
 #define SPELLING_CAP 128
 
@@ -107,7 +107,7 @@ static int check_layout_injective(
 int main(int argc, char **argv) {
     const char *path = argc > 1 ? argv[1] : "upc7-table.tsv";
     const char *expected_header =
-        "bits\thex\tclass\tpayload\tstatus\tname\tsa-slp1\tuk";
+        "bits\thex\tclass\tpayload\tstatus\tname\tsa-slp1\tsa-iast\tsa-deva\tuk";
     const char *class_names[4] = {
         "varga", "non-varga", "vowel", "sign/operator"
     };
@@ -117,6 +117,8 @@ int main(int argc, char **argv) {
     FILE *fp;
     char line[LINE_CAP];
     char sa[CELL_COUNT][SPELLING_CAP] = {{0}};
+    char iast[CELL_COUNT][SPELLING_CAP] = {{0}};
+    char deva[CELL_COUNT][SPELLING_CAP] = {{0}};
     char uk[CELL_COUNT][SPELLING_CAP] = {{0}};
     size_t row = 0;
     size_t assigned = 0;
@@ -166,7 +168,7 @@ int main(int argc, char **argv) {
         trim_eol(line);
         if (!split_tsv(line, fields)) {
             fclose(fp);
-            return fail(line_no, "expected exactly 8 TSV fields");
+            return fail(line_no, "expected exactly 10 TSV fields");
         }
 
         if (!parse_bits(fields[0], 7, &code_bits)) {
@@ -228,7 +230,8 @@ int main(int argc, char **argv) {
                 fclose(fp);
                 return fail(line_no, "unassigned cell lacks reserved.* marker");
             }
-            if (fields[6][0] != '\0' || fields[7][0] != '\0') {
+            if (fields[6][0] != '\0' || fields[7][0] != '\0' ||
+                fields[8][0] != '\0' || fields[9][0] != '\0') {
                 fclose(fp);
                 return fail(line_no, "unassigned cell must not render in a human layout");
             }
@@ -239,7 +242,9 @@ int main(int argc, char **argv) {
         }
 
         if (!copy_spelling(sa[row], fields[6], line_no) ||
-            !copy_spelling(uk[row], fields[7], line_no)) {
+            !copy_spelling(iast[row], fields[7], line_no) ||
+            !copy_spelling(deva[row], fields[8], line_no) ||
+            !copy_spelling(uk[row], fields[9], line_no)) {
             fclose(fp);
             return 1;
         }
@@ -270,11 +275,13 @@ int main(int argc, char **argv) {
     }
 
     if (!check_layout_injective(sa, "sa-slp1") ||
+        !check_layout_injective(iast, "sa-iast") ||
+        !check_layout_injective(deva, "sa-deva") ||
         !check_layout_injective(uk, "uk")) {
         return 1;
     }
 
     printf("UPC7 cold witness OK: 128 cells, 107 assigned, 21 unassigned; "
-           "uk/sa-slp1 projections injective\n");
+           "sa-slp1/sa-iast/sa-deva/uk projections injective\n");
     return 0;
 }
