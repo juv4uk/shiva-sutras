@@ -13,6 +13,7 @@ Two implementations written by others, neither of which this code has seen:
   onto the short vowel before comparing.
 """
 
+import itertools
 import os
 import unittest
 
@@ -135,6 +136,40 @@ class WhereTheImplementationsDifferTests(unittest.TestCase):
 
     def test_vidyut_treats_the_sibilants_as_unaspirated_this_graph_as_aspirated(self):
         self.assertEqual({g.unpack(S[x]).asp for x in "Szs"}, {1})
+
+
+class KasikaSavarnaTests(unittest.TestCase):
+    """Closes the gap named in docs/savarna-model-validation-2026-08-30.md (Sakshi, verifier).
+
+    That report checked the older 16-bit vector model against the Kasika on 1.1.9 and found
+    it PARTIAL: it folds the four inward efforts into one bit, cannot say that `r` and the
+    sibilants have no savarna (`refosmanam savarna na santi`), and can give false positives
+    for non-stop sounds. The Kasika lines are quoted there; they were not re-read here.
+    """
+
+    def klass(self, letter):
+        return {x for x in S if g.savarna(S[letter], S[x])}
+
+    def test_r_and_the_sibilants_have_no_savarna(self):
+        for letter in "rSzsh":
+            self.assertEqual(self.klass(letter), {letter}, letter)
+
+    def test_a_vowel_and_a_consonant_are_never_savarna_1_1_10(self):
+        vowels = set("aiufxeoEO")
+        for x in S:
+            for y in S:
+                if g.savarna(S[x], S[y]):
+                    self.assertEqual(x in vowels, y in vowels, (x, y))
+
+    def test_the_effort_steps_keep_apart_sounds_of_one_place(self):
+        # palate: i (vowel) y (semivowel) S (sibilant) j (stop) share the place, not the effort.
+        for a, b in itertools.combinations("iySj", 2):
+            self.assertFalse(g.savarna(S[a], S[b]), (a, b))
+        self.assertTrue(g.savarna(S["j"], S["c"]))            # two stops of one varga
+
+    def test_no_false_positive_savarna_among_the_non_stop_consonants(self):
+        for a, b in itertools.combinations("yvrlSzsh", 2):
+            self.assertFalse(g.savarna(S[a], S[b]), (a, b))
 
 
 class SensitivityTests(unittest.TestCase):
