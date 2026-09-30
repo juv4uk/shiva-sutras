@@ -153,6 +153,66 @@ _SLP1_VOWELS = (("a", "A"), ("i", "I"), ("u", "U"), ("f", "F"), ("x", "X"), ("e"
 # IAST spellings that the corrected class-01 union pairs with a Sanskrit sound.
 _IAST_TO_SLP1 = {"ś": "S", "ṣ": "z", "y": "y", "s": "s", "r": "r", "l": "l", "v": "v", "h": "h"}
 
+# Additional Sanskrit human projections.  These are spellings only: the UPC-7
+# cell remains the identity.  Devanagari here is deliberately a direct
+# cell-glyph projection, not a full orthographic compositor with matras/virama.
+_IAST_VARGA = (
+    ("k", "kh", "g", "gh", "ṅ"),
+    ("c", "ch", "j", "jh", "ñ"),
+    ("ṭ", "ṭh", "ḍ", "ḍh", "ṇ"),
+    ("t", "th", "d", "dh", "n"),
+    ("p", "ph", "b", "bh", "m"),
+)
+_DEVA_VARGA = (
+    ("क", "ख", "ग", "घ", "ङ"),
+    ("च", "छ", "ज", "झ", "ञ"),
+    ("ट", "ठ", "ड", "ढ", "ण"),
+    ("त", "थ", "द", "ध", "न"),
+    ("प", "फ", "ब", "भ", "म"),
+)
+_IAST_VOWELS = (
+    ("a", "ā"),
+    ("i", "ī"),
+    ("u", "ū"),
+    ("ṛ", "ṝ"),
+    ("ḷ", "ḹ"),
+    ("e", "ai"),
+    ("o", "au"),
+)
+_DEVA_VOWELS = (
+    ("अ", "आ"),
+    ("इ", "ई"),
+    ("उ", "ऊ"),
+    ("ऋ", "ॠ"),
+    ("ऌ", "ॡ"),
+    ("ए", "ऐ"),
+    ("ओ", "औ"),
+)
+_SA_NONVARGA_PROJECTIONS = {
+    "S": ("ś", "श"),
+    "z": ("ṣ", "ष"),
+    "y": ("y", "य"),
+    "s": ("s", "स"),
+    "r": ("r", "र"),
+    "l": ("l", "ल"),
+    "v": ("v", "व"),
+    "h": ("h", "ह"),
+}
+_IAST_SA_SIGNS = {
+    "anusvara": "ṃ",
+    "visarga": "ḥ",
+    "avagraha": "’",
+    "danda": "।",
+    "double-danda": "॥",
+}
+_DEVA_SA_SIGNS = {
+    "anusvara": "ं",
+    "visarga": "ः",
+    "avagraha": "ऽ",
+    "danda": "।",
+    "double-danda": "॥",
+}
+
 # Sanskrit-only signs (class 11). SLP1 writes these with ASCII characters that
 # the ASCII sign layer also uses, so they take priority inside `sa-slp1`.
 _SA_SIGNS = {
@@ -334,6 +394,45 @@ def _sa_slp1() -> Layout:
     return Layout("sa-slp1", spellings)
 
 
+def _sa_projection(
+    name: str,
+    varga_rows: Tuple[Tuple[str, ...], ...],
+    vowel_rows: Tuple[Tuple[str, str], ...],
+    nonvarga_index: int,
+    signs: Mapping[str, str],
+) -> Layout:
+    """Build a Sanskrit human projection over the already assigned cells."""
+    spellings: Dict[int, str] = {}
+    for place, row in enumerate(varga_rows):
+        for member, spelling in enumerate(row):
+            spellings[geo.varga_code(place, member)] = spelling
+    for row, (short, long_) in enumerate(vowel_rows):
+        spellings[geo.vowel_code(row)] = short
+        spellings[geo.vowel_code(row, length=True)] = long_
+    for legacy_code, forms in CURRENT_UPC8_NONVARGA.items():
+        for form in forms:
+            slp1 = _IAST_TO_SLP1.get(form)
+            if slp1 in _SA_NONVARGA_PROJECTIONS:
+                spellings[geo.compress_upc8_nonvarga(legacy_code)] = (
+                    _SA_NONVARGA_PROJECTIONS[slp1][nonvarga_index]
+                )
+    for sign, glyph in signs.items():
+        spellings[geo.sign_code(sign)] = glyph
+    # These layouts use distinct Sanskrit glyphs for avagraha/danda, so all
+    # generic ASCII text-sign cells can remain directly available as text.
+    for sign, glyph in ASCII_SURFACE_GLYPHS.items():
+        spellings[geo.sign_code(sign)] = glyph
+    return Layout(name, spellings)
+
+
+def _sa_iast() -> Layout:
+    return _sa_projection("sa-iast", _IAST_VARGA, _IAST_VOWELS, 0, _IAST_SA_SIGNS)
+
+
+def _sa_deva() -> Layout:
+    return _sa_projection("sa-deva", _DEVA_VARGA, _DEVA_VOWELS, 1, _DEVA_SA_SIGNS)
+
+
 def _uk() -> Layout:
     spellings: Dict[int, str] = {}
     for letter, (place, member) in _UK_VARGA.items():
@@ -361,12 +460,17 @@ def _uk() -> Layout:
     )
 
 
-LAYOUT_NAMES = ("sa-slp1", "uk", "bits")
+LAYOUT_NAMES = ("sa-slp1", "sa-iast", "sa-deva", "uk", "bits")
 
 
 def build_layouts() -> Dict[str, Layout]:
     """The spelling layouts. `bits` is a diagnostic view, not a language."""
-    return {"sa-slp1": _sa_slp1(), "uk": _uk()}
+    return {
+        "sa-slp1": _sa_slp1(),
+        "sa-iast": _sa_iast(),
+        "sa-deva": _sa_deva(),
+        "uk": _uk(),
+    }
 
 
 # ---------------------------------------------------------------------------
