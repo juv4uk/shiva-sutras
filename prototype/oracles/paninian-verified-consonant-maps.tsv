@@ -1,0 +1,37 @@
+# External oracle: consonant maps from the Coq formalization paninian-verified (MIT).
+# Source: https://github.com/CharlesCNorton/paninian-verified  paninian.v  commit 9d2e3efa7c77ac2f3310f657406afdddd6bd4b61
+# Parsed mechanically from `Definition palatalize|retroflexize|voiced_of|voiceless_of` (SLP1 letters).
+# Coq was not run here (no coqc): these are the definitions as written, not proof results.
+rule	coq_definition	input_slp1	output_slp1
+8.4.40	palatalize	s	S
+8.4.40	palatalize	t	c
+8.4.40	palatalize	T	C
+8.4.40	palatalize	d	j
+8.4.40	palatalize	D	J
+8.4.40	palatalize	n	Y
+8.4.41	retroflexize	s	z
+8.4.41	retroflexize	t	w
+8.4.41	retroflexize	T	W
+8.4.41	retroflexize	d	q
+8.4.41	retroflexize	D	Q
+8.4.41	retroflexize	n	R
+8.4.53	voiced_of	k	g
+8.4.53	voiced_of	K	G
+8.4.53	voiced_of	c	j
+8.4.53	voiced_of	C	J
+8.4.53	voiced_of	w	q
+8.4.53	voiced_of	W	Q
+8.4.53	voiced_of	t	d
+8.4.53	voiced_of	T	D
+8.4.53	voiced_of	p	b
+8.4.53	voiced_of	P	B
+8.4.55	voiceless_of	g	k
+8.4.55	voiceless_of	G	k
+8.4.55	voiceless_of	j	c
+8.4.55	voiceless_of	J	c
+8.4.55	voiceless_of	q	w
+8.4.55	voiceless_of	Q	w
+8.4.55	voiceless_of	d	t
+8.4.55	voiceless_of	D	t
+8.4.55	voiceless_of	b	p
+8.4.55	voiceless_of	B	p

@@ -97,6 +97,43 @@ is **not symmetric** (a TODO). Here the distance is lexicographic, place first, 
 an exact tie raises `Ambiguous` instead of picking one. Vidyut's *identity* is a Latin letter
 in a 128-byte table (SLP1); it does not define a code space.
 
+## Consonant sandhi as graph queries (`upc14v2_sandhi.py`)
+
+Every class a rule needs is **computed from the graph**, not listed: `jhal jaś jhaś khar car
+yar ñam jhay aṭ` are intervals of the sūtra path; `ku cu ṭu tu pu` are savarṇa classes of a
+varga. Every substitution is the same query, the nearest vertex of a target set. Rules
+implemented: 8.2.39, 8.4.40, 8.4.41, 8.4.45, 8.4.53/55, 8.4.60, 8.4.62, 8.4.63 for a pada-final
+stop meeting the next sound, and ṇatva (8.4.2) inside a word. A result carries the trace of
+sūtras that fired (`t + ca` → 8.2.39 t→d, 8.4.40 d→j, 8.4.55 j→c). Rules apply once each in
+ascending sūtra number; that order is one choice (see below).
+
+**Evidence** (`test_upc14v2_sandhi.py`, 15 tests, local run):
+- vs **vidyut's generated sandhi rules** (99 rows for a final k, ṭ, t, p, obtained by running
+  `create_sandhi_rules` at commit `8da2f90b`): **97 of 99 agree**. The 2 that differ (`t+ñ`,
+  `t+ṇ`) are a rule-order choice: ascending sūtra order gives `ñ ñ` (8.4.40 then 8.4.45),
+  vidyut gives `n ñ`.
+- vs the Coq formalization **paninian-verified** (`CharlesCNorton`, MIT; definitions parsed as
+  written, Coq not run): palatalization, retroflexion and devoicing maps equal the nearest
+  vertex (22 pairs).
+- **Where the Coq file departs from the sūtra, and this graph does not:**
+  (a) `voiced_of` maps kh → gh; 8.4.53 says jhal → jaś and jaś = j b g ḍ d has **no aspirate**,
+  so the sūtra (and vidyut, and the nearest vertex) give kh → g. Exactly the five aspirates
+  differ. (b) its ṇatva blocker list names palatals, retroflexes, dentals and `l` but not the
+  sibilants, so `kṛśānu` would become `kṛśāṇu`; Pāṇini's own set (aṭ, ku, pu) excludes ś, and
+  the graph-computed set keeps `n` (source-confirmed by reading; the Coq was not executed).
+- The ṇatva word list (rāmeṇa, varṇa, purāṇa, brāhmaṇa; arjuna, arthana, kṛśānu unchanged) is
+  standard spelling from my own knowledge, not an oracle; the Coq file's 4 examples are.
+
+**Not implemented, on purpose:** 8.4.44 śāt (the Coq file encodes it as a positive
+palatalization; I could not confirm that reading, so I do not claim it), 8.4.65, the optional
+(vā) alternatives of 8.4.45 and 8.4.62 as a set, anusvāra and visarga, `n`-final insertions
+(`n + c → ṃś c`), and `āṅ`/`num` in ṇatva.
+
+**Also surveyed:** `SandhiKosh` (LREC benchmark corpus in `.xls`; not parsed, no reader
+installed), `shantanuo/sandhi` (GPL-3: read only, nothing copied), `eGangotri/indicTools`
+(MIT, transliteration and sandhi tooling; not evaluated), `nileshshrivastava/Maheshwara`
+(MIT, six documents, no code: a vision statement aligned with "derive, do not assume").
+
 ## Honest limits
 
 - The feature assignment (place of each sound, aperture, which sounds are aspirated or

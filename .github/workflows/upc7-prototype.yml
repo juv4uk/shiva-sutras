@@ -16,6 +16,10 @@ on:
       - "prototype/upc7_cold_verify.c"
       - "prototype/upc7_cold_witness.lisp"
       - "prototype/upc14v2.py"
+      - "prototype/upc14v2_sandhi.py"
+      - "prototype/test_upc14v2_sandhi.py"
+      - "prototype/oracles/vidyut-sandhi-final-stops.tsv"
+      - "prototype/oracles/paninian-verified-consonant-maps.tsv"
       - "prototype/test_upc14v2_oracles.py"
       - "prototype/oracles/ashtadhyayi-com-pratyahara.tsv"
       - "prototype/test_upc14v2.py"
@@ -53,7 +57,7 @@ jobs:
         run: python3 -m unittest -v test_upc7.py test_upc7_geometry.py test_upc7_layouts.py
       - name: Run the graph canon (UPC-14 v2) witnesses
         working-directory: prototype
-        run: python3 -m unittest -v test_upc14v2.py test_upc14v2_oracles.py
+        run: python3 -m unittest -v test_upc14v2.py test_upc14v2_oracles.py test_upc14v2_sandhi.py
       - name: Machine table is current
         working-directory: prototype
         run: python3 upc7_table.py --check
