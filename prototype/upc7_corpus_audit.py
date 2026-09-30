@@ -154,6 +154,9 @@ def _audit(tokens: List[str], digits: Counter, layout: str, other: str) -> Dict:
         "used_code_bits": [f"{code:07b}" for code in sorted(used_codes)],
         "emitted_code_cells": emitted_cells,
         "case_projection_recoverable_tokens": recoverable_by_lowercase,
+        "coverage_with_explicit_lowercase_projection_percent": _pct(
+            covered_total + recoverable_by_lowercase, total
+        ),
         "cross_layout": {
             "renderable_tokens": cross_ok,
             "unrenderable_tokens": cross_fail,
