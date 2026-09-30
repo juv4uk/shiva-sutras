@@ -1,0 +1,338 @@
+{
+  "issue": "shiva-sutras#35",
+  "policy": {
+    "case_folding": "not applied; separately counted as diagnostic recoverability",
+    "corpus_authority": "evidence only; cannot assign UPC-7 identities",
+    "digits": "counted as text glyph demand; never coerced to Number",
+    "failure": "fail closed; every failed token remains in inventory",
+    "identity_authority": "UPC7Text encoder only",
+    "normalization": "none",
+    "unicode_role": "input fixture transport only"
+  },
+  "provenance": {
+    "sa-slp1": {
+      "fixture": "prototype/corpus/upc7-sa-slp1.txt",
+      "fixture_sha256": "3ff18ffdef514a39a8e9d8cdaab90a5e1be7b3823a6b17379fbf7ba18d1ef4cb",
+      "sources": [
+        {
+          "git_blob": "746d1a23a15153725beafac870fc287913a2a4a2",
+          "path": "ksetra/canon/siva-sutras-encoded.yaml",
+          "selection": "all 14 text_slp1 rows"
+        }
+      ]
+    },
+    "uk": {
+      "fixture": "prototype/corpus/upc7-uk-own.txt",
+      "fixture_sha256": "c1d3003a61df02c18f6b643383b3ed599a159334f54c652068c55b33548a1f55",
+      "sources": [
+        {
+          "git_blob": "44d2c678fe2debd290a210f3289bea443df10a4b",
+          "path": "extensions/COMPARATIVE-GRAMMAR-uk-sa.md",
+          "selection": "project-authored Ukrainian grammar prose and examples"
+        },
+        {
+          "git_blob": "428134bb31302534244292b9e7b3d1b313b3dbee",
+          "path": "docs/sarvam-integration-guide.uk.md",
+          "selection": "project-authored technical Ukrainian prose"
+        }
+      ]
+    }
+  },
+  "sa-slp1": {
+    "case_projection_recoverable_tokens": 0,
+    "coverage_with_explicit_lowercase_projection_percent": 100.0,
+    "covered_tokens": 57,
+    "cross_layout": {
+      "renderable_percent_of_covered": 40.351,
+      "renderable_tokens": 23,
+      "unrenderable_tokens": 34
+    },
+    "digit_glyphs": {
+      "by_glyph": {},
+      "total": 0
+    },
+    "emitted_code_cells": 57,
+    "failed_tokens": 0,
+    "failures": [],
+    "layout": "sa-slp1",
+    "other_layout": "uk",
+    "sequence_expansion": {
+      "added_cells": 0,
+      "occurrences_by_spelling": {}
+    },
+    "token_coverage_percent": 100.0,
+    "tokens": 57,
+    "unique_covered_tokens": 42,
+    "unique_failed_tokens": 0,
+    "unique_token_coverage_percent": 100.0,
+    "unique_tokens": 42,
+    "used_code_bits": [
+      "0000000",
+      "0000001",
+      "0000010",
+      "0000011",
+      "0000100",
+      "0000101",
+      "0000110",
+      "0000111",
+      "0001000",
+      "0001001",
+      "0001010",
+      "0001011",
+      "0001100",
+      "0001101",
+      "0001110",
+      "0001111",
+      "0010000",
+      "0010001",
+      "0010010",
+      "0010011",
+      "0010100",
+      "0010101",
+      "0010110",
+      "0010111",
+      "0011000",
+      "0100100",
+      "0100110",
+      "0101000",
+      "0101100",
+      "0101110",
+      "0101111",
+      "0110010",
+      "0110100",
+      "1000000",
+      "1000100",
+      "1001000",
+      "1001100",
+      "1010000",
+      "1010100",
+      "1010101",
+      "1011000",
+      "1011001"
+    ],
+    "used_code_cells": 42
+  },
+  "schema": "upc7-corpus-audit-v1",
+  "uk": {
+    "case_projection_recoverable_tokens": 30,
+    "coverage_with_explicit_lowercase_projection_percent": 100.0,
+    "covered_tokens": 163,
+    "cross_layout": {
+      "renderable_percent_of_covered": 7.362,
+      "renderable_tokens": 12,
+      "unrenderable_tokens": 151
+    },
+    "digit_glyphs": {
+      "by_glyph": {
+        "0": 2,
+        "2": 5,
+        "3": 2,
+        "4": 2,
+        "6": 1,
+        "7": 1,
+        "8": 1,
+        "9": 1
+      },
+      "total": 15
+    },
+    "emitted_code_cells": 1007,
+    "failed_tokens": 30,
+    "failures": [
+      {
+        "count": 2,
+        "error": "UnknownSpelling",
+        "token": "Українська"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Інструкція"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Інтеграція"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Агенти"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Аштадх'яї"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Важливо"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Всі"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Відмінкові"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Давальний"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Дані"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Заборонено"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Знахідний"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Кличний"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Конфіденційність"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Мета"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Місцевий"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "НЕ"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Називний"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Обов'язкове"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Обробка"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Орудний"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Порівняльна"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Родовий"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Санскрит"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Семантичний"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Усі"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Формотворчі"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Цей"
+      },
+      {
+        "count": 1,
+        "error": "UnknownSpelling",
+        "token": "Частки"
+      }
+    ],
+    "layout": "uk",
+    "other_layout": "sa-slp1",
+    "sequence_expansion": {
+      "added_cells": 39,
+      "occurrences_by_spelling": {
+        "щ": 2,
+        "ю": 4,
+        "я": 22,
+        "є": 3,
+        "ї": 8
+      }
+    },
+    "token_coverage_percent": 84.456,
+    "tokens": 193,
+    "unique_covered_tokens": 138,
+    "unique_failed_tokens": 29,
+    "unique_token_coverage_percent": 82.635,
+    "unique_tokens": 167,
+    "used_code_bits": [
+      "0000000",
+      "0001111",
+      "0010001",
+      "0010011",
+      "0010100",
+      "0010110",
+      "0011000",
+      "0100000",
+      "0100100",
+      "0100101",
+      "0100110",
+      "0100111",
+      "0101100",
+      "0101101",
+      "0101110",
+      "0101111",
+      "0110000",
+      "0110010",
+      "0110101",
+      "0111100",
+      "0111101",
+      "0111111",
+      "1000100",
+      "1001000",
+      "1011100",
+      "1011101",
+      "1011110",
+      "1011111",
+      "1110001"
+    ],
+    "used_code_cells": 29
+  }
+}

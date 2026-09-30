@@ -1,0 +1,16 @@
+# UPC-7 Sanskrit SLP1 corpus snapshot for shiva-sutras#35
+# Source: ksetra/canon/siva-sutras-encoded.yaml @ blob 746d1a23a15153725beafac870fc287913a2a4a2
+a i u R
+f x k
+e o N
+E O c
+h y v r w
+l R
+Y m N R n m
+J B Y
+G Q D z
+j b g q d S
+K P C W T c w t v
+k p y
+S z s r
+h l

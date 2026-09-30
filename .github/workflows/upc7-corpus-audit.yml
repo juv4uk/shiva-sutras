@@ -1,0 +1,20 @@
+name: UPC-7 corpus audit
+
+on:
+  pull_request:
+    paths:
+      - "prototype/upc7_corpus_audit.py"
+      - "prototype/upc7-corpus-report.json"
+      - "prototype/corpus/**"
+      - "prototype/upc7_layouts.py"
+      - "prototype/upc7_geometry.py"
+      - ".github/workflows/upc7-corpus-audit.yml"
+
+jobs:
+  corpus-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Corpus report is reproducible and current
+        working-directory: prototype
+        run: python3 upc7_corpus_audit.py --check
