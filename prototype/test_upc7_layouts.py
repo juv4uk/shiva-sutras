@@ -22,6 +22,8 @@ from upc8 import CODE_OF_SOUND, UKRAINIAN_SHARED, UPC8
 
 CODEC = UPC7Text()
 SANSKRIT = CODEC.layout("sa-slp1")
+IAST = CODEC.layout("sa-iast")
+DEVANAGARI = CODEC.layout("sa-deva")
 UKRAINIAN = CODEC.layout("uk")
 
 # Ukrainian spellings the geometry gives a cell today (see UPC7.md, "Gaps").
@@ -90,15 +92,19 @@ class LayoutShapeTests(unittest.TestCase):
             Layout("broken", {0: "x"}, input_aliases={"X": ("missing",)})
 
     def test_spelling_counts_are_pinned(self):
-        # 25 varga + 8 non-varga + 14 oral vowels + 5 Sanskrit signs + 25 ASCII signs
+        # SLP1: 25 varga + 8 non-varga + 14 oral vowels + 5 Sanskrit signs + 25 ASCII signs
         self.assertEqual(len(SANSKRIT.code_to_spelling), 25 + 8 + 14 + 5 + 25)
+        # IAST/Devanagari use distinct avagraha/danda glyphs, so all 27 generic
+        # ASCII signs remain independently renderable.
+        self.assertEqual(len(IAST.code_to_spelling), 25 + 8 + 14 + 5 + 27)
+        self.assertEqual(len(DEVANAGARI.code_to_spelling), 25 + 8 + 14 + 5 + 27)
         # 8 varga + 11 non-varga + 2 aliased vowels + 27 ASCII signs
         # + 4 extension vowels + 4 affricates + 1 softness (shiva-sutras#31)
         self.assertEqual(len(UKRAINIAN.code_to_spelling), 8 + 11 + 2 + 27 + 4 + 4 + 1)
 
     def test_every_layout_spelling_names_an_assigned_cell(self):
         status = {cell.code: cell.status for cell in build_cells()}
-        for layout in (SANSKRIT, UKRAINIAN):
+        for layout in (SANSKRIT, IAST, DEVANAGARI, UKRAINIAN):
             for code in layout.code_to_spelling:
                 self.assertEqual(status[code], ASSIGNED, (layout.name, code))
 
@@ -131,6 +137,98 @@ class SanskritCoverageTests(unittest.TestCase):
     def test_ai_and_au_are_the_long_forms_of_e_and_o(self):
         self.assertEqual(CODEC.encode("E", "sa-slp1"), (geo.vowel_code(5, length=True),))
         self.assertEqual(CODEC.encode("O", "sa-slp1"), (geo.vowel_code(6, length=True),))
+
+
+class SanskritProjectionTests(unittest.TestCase):
+    def test_owner_kavarga_example_is_exact(self):
+        expected = (
+            ("0000000", "k", "k", "क"),
+            ("0000001", "K", "kh", "ख"),
+            ("0000010", "g", "g", "ग"),
+            ("0000011", "G", "gh", "घ"),
+            ("0000100", "N", "ṅ", "ङ"),
+        )
+        for bits, slp1, iast, deva in expected:
+            code = int(bits, 2)
+            self.assertEqual(CODEC.render([code], "sa-slp1"), slp1)
+            self.assertEqual(CODEC.render([code], "sa-iast"), iast)
+            self.assertEqual(CODEC.render([code], "sa-deva"), deva)
+            self.assertEqual(CODEC.encode(iast, "sa-iast"), (code,))
+            self.assertEqual(CODEC.encode(deva, "sa-deva"), (code,))
+
+    def test_all_varga_cells_preserve_identity_across_three_sanskrit_layouts(self):
+        for place in range(5):
+            for member in range(5):
+                code = geo.varga_code(place, member)
+                for layout in ("sa-slp1", "sa-iast", "sa-deva"):
+                    spelling = CODEC.render([code], layout)
+                    self.assertEqual(CODEC.encode(spelling, layout), (code,))
+
+    def test_iast_aspirates_use_longest_match(self):
+        for iast, slp1 in (
+            ("kh", "K"), ("gh", "G"), ("ch", "C"), ("jh", "J"),
+            ("ṭh", "W"), ("ḍh", "Q"), ("th", "T"), ("dh", "D"),
+            ("ph", "P"), ("bh", "B"),
+        ):
+            self.assertEqual(
+                CODEC.encode(iast, "sa-iast"), CODEC.encode(slp1, "sa-slp1"), iast
+            )
+            self.assertEqual(len(CODEC.encode(iast, "sa-iast")), 1)
+
+    def test_oral_vowels_switch_without_changing_cells(self):
+        rows = (
+            ("a", "ā", "अ", "आ"),
+            ("i", "ī", "इ", "ई"),
+            ("u", "ū", "उ", "ऊ"),
+            ("ṛ", "ṝ", "ऋ", "ॠ"),
+            ("ḷ", "ḹ", "ऌ", "ॡ"),
+            ("e", "ai", "ए", "ऐ"),
+            ("o", "au", "ओ", "औ"),
+        )
+        for row, (short_iast, long_iast, short_deva, long_deva) in enumerate(rows):
+            short = geo.vowel_code(row)
+            long_ = geo.vowel_code(row, length=True)
+            self.assertEqual(CODEC.encode(short_iast, "sa-iast"), (short,))
+            self.assertEqual(CODEC.encode(long_iast, "sa-iast"), (long_,))
+            self.assertEqual(CODEC.encode(short_deva, "sa-deva"), (short,))
+            self.assertEqual(CODEC.encode(long_deva, "sa-deva"), (long_,))
+
+    def test_nonvarga_sanskrit_projection_is_same_identity(self):
+        for slp1, iast, deva in (
+            ("S", "ś", "श"),
+            ("z", "ṣ", "ष"),
+            ("y", "y", "य"),
+            ("s", "s", "स"),
+            ("r", "r", "र"),
+            ("l", "l", "ल"),
+            ("v", "v", "व"),
+            ("h", "h", "ह"),
+        ):
+            code = CODEC.encode(slp1, "sa-slp1")
+            self.assertEqual(CODEC.encode(iast, "sa-iast"), code)
+            self.assertEqual(CODEC.encode(deva, "sa-deva"), code)
+
+    def test_sanskrit_signs_have_honest_distinct_projections(self):
+        signs = (
+            ("M", "ṃ", "ं", "anusvara"),
+            ("H", "ḥ", "ः", "visarga"),
+            ("'", "’", "ऽ", "avagraha"),
+            (".", "।", "।", "danda"),
+            ("..", "॥", "॥", "double-danda"),
+        )
+        for slp1, iast, deva, name in signs:
+            code = (geo.sign_code(name),)
+            self.assertEqual(CODEC.encode(slp1, "sa-slp1"), code)
+            self.assertEqual(CODEC.encode(iast, "sa-iast"), code)
+            self.assertEqual(CODEC.encode(deva, "sa-deva"), code)
+
+    def test_devanagari_is_a_cell_glyph_view_not_word_orthography(self):
+        # Direct cell projection: क is the /k/ cell. Full matra/virama composition
+        # belongs to a later orthographic renderer and is intentionally absent here.
+        k = CODEC.encode("k", "sa-slp1")
+        self.assertEqual(CODEC.render(k, "sa-deva"), "क")
+        with self.assertRaises(UnknownSpelling):
+            CODEC.encode("्", "sa-deva")
 
 
 class UkrainianTests(unittest.TestCase):
@@ -264,7 +362,7 @@ class FailClosedTests(unittest.TestCase):
         self.assertEqual(len(reserved), 21)
         for code in reserved:
             self.assertEqual(len(CODEC.render([code], "bits")), 7)
-            for layout in ("sa-slp1", "uk"):
+            for layout in ("sa-slp1", "sa-iast", "sa-deva", "uk"):
                 with self.assertRaises(UnrenderableCode):
                     CODEC.render([code], layout)
 
@@ -272,8 +370,9 @@ class FailClosedTests(unittest.TestCase):
         for row in range(7):
             for length in (False, True):
                 code = geo.vowel_code(row, nasal=True, length=length)
-                with self.assertRaises(UnrenderableCode):
-                    CODEC.render([code], "sa-slp1")
+                for layout in ("sa-slp1", "sa-iast", "sa-deva"):
+                    with self.assertRaises(UnrenderableCode):
+                        CODEC.render([code], layout)
         # `aM` is two cells: the vowel a and the anusvara sign.
         self.assertEqual(
             CODEC.encode("aM", "sa-slp1"), (geo.vowel_code(0), geo.sign_code("anusvara"))
@@ -343,11 +442,13 @@ class TableFileTests(unittest.TestCase):
             code = int(fields["bits"], 2)
             self.assertEqual(fields["hex"], f"0x{code:02X}")
             self.assertEqual(unescape(fields["sa-slp1"]), SANSKRIT.code_to_spelling.get(code, ""))
+            self.assertEqual(unescape(fields["sa-iast"]), IAST.code_to_spelling.get(code, ""))
+            self.assertEqual(unescape(fields["sa-deva"]), DEVANAGARI.code_to_spelling.get(code, ""))
             self.assertEqual(unescape(fields["uk"]), UKRAINIAN.code_to_spelling.get(code, ""))
 
     def test_the_table_file_has_no_stray_whitespace(self):
         for line in TABLE_PATH.read_text(encoding="utf-8").splitlines():
-            self.assertEqual(len(line.split("\t")), 8, line)
+            self.assertEqual(len(line.split("\t")), 10, line)
             self.assertEqual(line, line.rstrip("\n\r"))
 
 
