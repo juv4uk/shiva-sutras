@@ -364,6 +364,8 @@ def dirgha(a: int, b: int) -> int:
     va = unpack(a)
     if not savarna(a, b) or va.aperture != VOWEL:
         raise GraphError("dirgha needs two savarna simple vowels")
+    if va.place == D:
+        raise GraphError("ḷ has no long form (Kasika: lṛvarṇasya dīrghā na santi)")
     return Vertex(va.place, va.nasal, va.aperture, LONG, va.voice, va.asp).code
 
 

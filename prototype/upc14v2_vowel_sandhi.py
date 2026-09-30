@@ -69,6 +69,8 @@ def under_ekadesa(sutra: str) -> bool:
 class Result:
     sounds: Tuple[str, ...]
     trace: Tuple[str, ...]
+    options: Tuple[Tuple[str, ...], ...] = ()   # the other results of a `va` (optional) rule
+    note: str = ""
 
     @property
     def text(self) -> str:
@@ -99,17 +101,31 @@ def decompose(code: int) -> Tuple[int, int]:
     return first, second
 
 
-def vowel_sandhi(left: str, right: str, *, padanta: bool = True) -> Result:
-    """Two vowels meet; return the sounds that replace them. `padanta`: at a word boundary."""
+def vowel_sandhi(left: str, right: str, *, padanta: bool = True, vartika: bool = False) -> Result:
+    """Two vowels meet; return the sounds that replace them. `padanta`: at a word boundary.
+
+    `vartika=True` adds the vartikas of 6.1.101 for ṛ and ḷ ("rti r va", "lrti lr va"): the
+    long ṛ, or the short vowel that follows. `sounds` is the long-ṛ variant; the other is in
+    `options`. ḷ has no long form (Kasika 389), so the long variant of ḷ + ḷ is long ṛ.
+    Without the vartika, ṛ + ḷ and ḷ + ḷ get no 6.1.101 and fall to 6.1.77, which the Kasika
+    does not attest (see `note`).
+    """
     l, r = code_of(left), code_of(right)
     bl, br = base(l), base(r)
     if not padanta and l == S["a"] and r in (S["a"], S["e"], S["o"]):   # 6.1.97 ato gune (a is tapara: short)
         return Result((label_of(r),), ("6.1.97",))
     if padanta and bl in (S["e"], S["o"]) and r == S["a"]:           # 6.1.109 (apavada of 6.1.78; ati is tapara: short a)
         return Result((label_of(l),), ("6.1.109",))
+    if vartika and bl in (S["f"], S["x"]) and br in (S["f"], S["x"]):   # 6.1.101 vartikas
+        return Result((label_of(g.e_long(S["f"])),), ("6.1.101", "vartika"),
+                      options=((label_of(r),),))
     if bl in AK and br in AC and g.savarna(l, r):                    # 6.1.101
-        merged = g.dirgha(bl, br)
-        return Result((label_of(merged),), ("6.1.101",))
+        try:
+            merged = g.dirgha(bl, br)
+        except g.GraphError:                                         # ḷ + ḷ: no long ḷ exists
+            merged = None
+        if merged is not None:
+            return Result((label_of(merged),), ("6.1.101",))
     if bl == S["a"] and br in EC:                                    # 6.1.88
         return Result((label_of(g.vrddhi(bl, br)),), ("6.1.88",))
     if bl == S["a"] and br in IK:                                    # 6.1.87
@@ -117,7 +133,10 @@ def vowel_sandhi(left: str, right: str, *, padanta: bool = True) -> Result:
             return Result((label_of(bl), label_of(g.nearest(br, YAN))), ("6.1.87", "1.1.51"))
         return Result((label_of(g.guna(bl, br)),), ("6.1.87",))
     if bl in IK and br in AC:                                        # 6.1.77
-        return Result((label_of(g.nearest(bl, YAN)), label_of(r)), ("6.1.77",))
+        note = ""
+        if bl in (S["f"], S["x"]) and br in (S["f"], S["x"]):
+            note = "not attested in the Kasika without the vartika (there: hotṝkāraḥ / hotṛkāraḥ / hotlṛkāraḥ)"
+        return Result((label_of(g.nearest(bl, YAN)), label_of(r)), ("6.1.77",), note=note)
     if bl in EC and br in AC:                                        # 6.1.78
         first, second = decompose(bl)
         return Result((label_of(first), label_of(g.nearest(second, YAN)), label_of(r)), ("6.1.78",))

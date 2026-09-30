@@ -152,8 +152,10 @@ def final_stop(left: str, right: str, after: Optional[str] = "a") -> Result:
     if l in TU and right == "l":                                    # 8.4.60 tor li
         l = fire("8.4.60", l, S["l"])
     if l in YAR and r in NAM:                                       # 8.4.45 yaro'nunasike'nunasiko va
-        if l in YAN:                                                # y v r l: their own nasal form,
-            v = g.unpack(l)                                         # not a varga nasal (v has two places)
+        if l == S["r"]:                                             # Kasika 391: r has no nasal form
+            pass
+        elif l in YAN:                                              # y v l: their own nasal form (an
+            v = g.unpack(l)                                         # inference from 391), not a varga nasal
             l = fire("8.4.45", l, g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code)
         else:
             l = fire("8.4.45", l, g.nearest(l, NAM))

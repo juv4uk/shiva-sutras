@@ -24,7 +24,7 @@ class ClassTests(unittest.TestCase):
 
 class RuleTests(unittest.TestCase):
     def test_dirgha_6_1_101(self):
-        for x, want in (("a", "A"), ("A", "A"), ("i", "I"), ("I", "I"), ("u", "U"), ("f", "F")):
+        for x, want in (("a", "A"), ("A", "A"), ("i", "I"), ("I", "I"), ("u", "U"), ("f", "F")):  # no ḷ + ḷ here
             self.assertEqual(vs.vowel_sandhi(x, x).text, want, x)
         self.assertEqual(vs.vowel_sandhi("a", "A").sounds, ("A",))
 
@@ -110,6 +110,33 @@ class VidyutTests(unittest.TestCase):
         self.assertEqual(len(elided), 27)
         self.assertTrue(all(ok for _, _, ok in elided), elided)      # 8.3.19: y dropped after a / A
         self.assertEqual({first for first, _, _ in elided}, {"e", "E"})
+
+
+class RVocalicTests(unittest.TestCase):
+    """6.1.101 for ṛ and ḷ. Kasika, tabulated by the shiva agent: ḷ has no long form (line 389);
+    'rti r va', 'lrti lr va': hotṝkāraḥ / hotṛkāraḥ, hotṝkāraḥ / hotlṛkāraḥ."""
+
+    def test_the_vartika_gives_the_long_r_or_the_short_vowel_that_follows(self):
+        for left, right in (("f", "f"), ("f", "x"), ("x", "x"), ("x", "f")):
+            r = vs.vowel_sandhi(left, right, vartika=True)
+            self.assertEqual(r.sounds, ("F",), (left, right))            # the dirgha variant
+            self.assertEqual(r.options, ((right,),), (left, right))      # the va variant: the following vowel
+            self.assertEqual(r.trace, ("6.1.101", "vartika"))
+
+    def test_there_is_no_long_l(self):
+        with self.assertRaises(g.GraphError):
+            g.dirgha(S["x"], S["x"])
+        for left, right in (("f", "f"), ("f", "x"), ("x", "x"), ("x", "f")):
+            for vartika in (False, True):
+                self.assertNotIn("X", vs.vowel_sandhi(left, right, vartika=vartika).text)
+
+    def test_without_the_vartika_r_l_pairs_fall_to_yan_and_are_marked_unattested(self):
+        for left, right, want in (("f", "x", "rx"), ("x", "f", "lf"), ("x", "x", "lx")):
+            r = vs.vowel_sandhi(left, right)
+            self.assertEqual((r.text, r.trace), (want, ("6.1.77",)))
+            self.assertIn("not attested", r.note)
+        r = vs.vowel_sandhi("f", "f")                                    # the sutra alone: long r
+        self.assertEqual((r.text, r.note), ("F", ""))
 
 
 class SavarnaVartikaTests(unittest.TestCase):

@@ -199,9 +199,16 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   each and no short forms), **not a quotation**; no line says "e is not savarṇa to ai". The
   default `savarna` gives 22 classes: five vargas, the singletons y r l v ś ṣ s h, and the vowel
   groups a, i, u, ṛ, ḷ, e, o, ai, au (50 pairs).
-- **8.4.45 for the semivowels** (y v r l become their own nasal form, `v~`) was implemented to
-  keep `nearest` inside its domain; it has **not** been checked against the Kāśikā text on
-  8.4.45 (line 83774 of the corpus, not read).
+- **8.4.45 for the semivowels.** Kāśikā 8.4.45 (lines 83774-83787, read by the reviewer) has only
+  stop examples (vāṅnayati, vāgnayati, agnicin nayati, ...). Line 391 says y v l have a nasal and
+  a non-nasal form and **r has no nasal form**. So y v l become `y~ v~ l~` (an **inference from 391**,
+  not an example of 8.4.45) and r is left alone.
+- **ṛ and ḷ in 6.1.101** (lines 389, 6.1.101 and its vārttikas, tabulated by the reviewer): **ḷ has
+  no long form** (`lṛvarṇasya dīrghā na santi`), so `dirgha(ḷ, ḷ)` raises. With `vartika=True` the
+  pairs give the long ṛ or the vowel that follows (hotṝkāraḥ / hotṛkāraḥ; hotṝkāraḥ / hotlṛkāraḥ),
+  as `sounds` and `options`; ḷ+ḷ and ṛ+ḷ, ḷ+ṛ have no Kāśikā example (ḷ+ḷ and ḷ+ṛ follow by
+  symmetry, an inference). Without the vartika, ṛ+ḷ, ḷ+ṛ, ḷ+ḷ fall to 6.1.77 and are marked
+  `not attested` in `Result.note`.
 - A pratyāhāra whose start sound is recited twice (h): the default takes the first recitation,
   as `occurrence-resolution.yaml` does for aṭ aś haś iṇ hal. `strict=True` raises
   `AmbiguousStart` instead of guessing, which is what case `later-h-is-not-initial-h-for-hR` of

@@ -251,10 +251,12 @@ class GrammarQueryTests(unittest.TestCase):
         self.assertFalse(g.savarna(S["k"], S["c"]))
 
     def test_dirgha_merges_savarna_simple_vowels(self):
-        for x in "aiufx":
+        for x in "aiuf":
             long_form = g.dirgha(S[x], S[x])
             self.assertEqual(g.unpack(long_form).length, g.LONG)
             self.assertEqual(g.unpack(long_form).place, g.unpack(S[x]).place)
+        with self.assertRaises(g.GraphError):
+            g.dirgha(S["x"], S["x"])          # the Kasika (389): ḷ has no long form
         with self.assertRaises(g.GraphError):
             g.dirgha(S["a"], S["i"])
 

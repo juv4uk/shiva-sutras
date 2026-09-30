@@ -203,6 +203,13 @@ class DomainTests(unittest.TestCase):
         r = sd.final_stop("v", "n")
         self.assertEqual((r.left, r.sutras), ("v~", ("8.4.45",)))
         self.assertEqual(sd.final_stop("y", "m").left, "y~")
+        self.assertEqual(sd.final_stop("l", "n").left, "l~")
+
+    def test_r_has_no_nasal_form_so_8_4_45_leaves_it_alone(self):
+        # Kasika line 391: y v l have a nasal and a non-nasal form, r has not. The y v l nasal
+        # forms are an inference from 391 (the examples of 8.4.45 are all stops).
+        r = sd.final_stop("r", "n")
+        self.assertEqual((r.left, r.sutras), ("r", ()))
 
     def test_nearest_is_ambiguous_for_sounds_outside_the_domain_of_yan(self):
         for x in "kKgGNha":
