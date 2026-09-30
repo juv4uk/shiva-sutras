@@ -16,7 +16,7 @@
 ; A consumer pins this SHA-256 of the table it trusts. Changing the table
 ; without changing this pin fails the witness on purpose.
 (00001001 w-pinned-sha256
-  "8ce2339a4a98c2b671af4b945e3b0da1100a465dc97e54dc3e97180d541883d4")
+  "dbceb2733247801e2434aad27427138bacd35b7755faa0223f3cbf91240ccca6")
 
 (00001001 w-table-path "prototype/upc7-table.tsv")
 
@@ -75,7 +75,6 @@
       (w-yes (w-s+ (00000101 l) (w-s+ sep (w-join (00000110 l) sep)))))))
 
 ; Force a row to exactly 8 fields; extra fields are reported separately.
-(00001001 w-eight-blank (00001000 () (00000100 "" (00000100 "" (00000100 "" (00000100 "" (00000100 "" (00000100 "" (00000100 "" (00000100 "" ()))))))))))
 (00001001 w-pad-to
   (00001000 (template l)
     (00000111
@@ -162,7 +161,31 @@
 (00001001 w-nth1 (00001000 (l) (00000101 l)))
 (00001001 w-nth2 w-second)
 
-; One row, already w-split into its 8 fields, against its position `e`.
+;---- header-driven columns ---------------------------------------------
+; The first six columns (bits hex class payload status name) are the contract of the table.
+; Every spelling column (sa-slp1, sa-iast, sa-deva, uk, ...) is found BY NAME in the header,
+; so a new layout column cannot silently shift another one (it did once: #42).
+(00001001 w-field
+  (00001000 (header row name)
+    (00000111
+      ((w-nul? header) "")
+      ((w-same? (00000101 header) name) (00000101 row))
+      (w-yes (w-field (00000110 header) (00000110 row) name)))))
+
+(00001001 w-blanks
+  (00001000 (header)
+    (00000111
+      ((w-nul? header) ())
+      (w-yes (00000100 "" (w-blanks (00000110 header)))))))
+
+; All spellings of a row, joined: a reserved cell must have none in ANY layout.
+(00001001 w-spellings
+  (00001000 (header row)
+    (w-s+ (w-field header row "sa-slp1")
+      (w-s+ (w-field header row "sa-iast")
+        (w-s+ (w-field header row "sa-deva") (w-field header row "uk"))))))
+
+; One row, already w-split into its fields, against its position `e`.
 (00001001 w-row-failures8
   (00001000 (bits hex klass payload status name sa uk e)
     (w-append
@@ -220,19 +243,20 @@
       (w-yes ()))))
 
 (00001001 w-row-failures
-  (00001000 (f e)
+  (00001000 (header f e)
     (00000111
-      ((w-longer? f (w-eight-blank)) (00000100 (w-s+ "more than 8 fields: " e) ()))
-      (w-yes (w-row-failures8 (w-nth1 f) (w-nth2 f) (w-nth3 f) (w-nth4 f) (w-nth5 f) (w-nth6 f) (w-nth7 f) (w-nth8 f) e)))))
+      ((w-longer? f (w-blanks header)) (00000100 (w-s+ "more fields than the header: " e) ()))
+      (w-yes (w-row-failures8 (w-nth1 f) (w-nth2 f) (w-nth3 f) (w-nth4 f) (w-nth5 f) (w-nth6 f)
+                              (w-spellings header f) "" e)))))
 
 ; Apply w-row-failures to every (row, expected-bits) pair.
 (00001001 w-rows-failures
-  (00001000 (rows expected)
+  (00001000 (header rows expected)
     (00000111
       ((w-nul? rows) ())
       ((w-nul? expected) (00000100 "more rows than 128 cells" ()))
-      (w-yes (w-append (w-row-failures (00000101 rows) (00000101 expected))
-                 (w-rows-failures (00000110 rows) (00000110 expected)))))))
+      (w-yes (w-append (w-row-failures header (00000101 rows) (00000101 expected))
+                 (w-rows-failures header (00000110 rows) (00000110 expected)))))))
 
 (00001001 w-assigned-only
   (00001000 (rows pick)
@@ -249,33 +273,46 @@
       ((w-nul? b) w-no)
       (w-yes (w-same-length? (00000110 a) (00000110 b))))))
 
-; Data rows: every line after the header, each padded to 8 fields.
+; Data rows: every line after the header, each padded to the header's length.
 (00001001 w-pad-all
-  (00001000 (lines)
+  (00001000 (header lines)
     (00000111
       ((w-nul? lines) ())
-      (w-yes (00000100 (w-pad-to (w-eight-blank) (w-split (00000101 lines) "\t")) (w-pad-all (00000110 lines)))))))
+      (w-yes (00000100 (w-pad-to (w-blanks header) (w-split (00000101 lines) "\t")) (w-pad-all header (00000110 lines)))))))
 
-(00001001 w-data-rows (00001000 (w-text) (w-pad-all (00000110 (w-split w-text "\n")))))
+(00001001 w-header (00001000 (w-text) (w-split (00000101 (w-split w-text "\n")) "\t")))
+(00001001 w-data-rows (00001000 (w-text) (w-pad-all (w-header w-text) (00000110 (w-split w-text "\n")))))
 
 ; All failures of one table w-text against a pin. `()` means every witness holds.
 (00001001 w-table-failures
   (00001000 (w-text pin)
     (w-table-failures-of w-text pin (w-data-rows w-text))))
 
+(00001001 w-column-of
+  (00001000 (header name)
+    (00001000 (row) (w-field header row name))))
+
 (00001001 w-table-failures-of
   (00001000 (w-text pin rows)
+    (w-table-failures-with (w-header w-text) w-text pin rows)))
+
+(00001001 w-table-failures-with
+  (00001000 (header w-text pin rows)
     (w-append
       (w-need (w-same? (10100001 w-text) pin) "SHA-256 of the table differs from the pinned SHA-256")
       (w-append
         (w-need (w-same-length? rows (w-all-bits (w-seven-slots))) "the table does not have exactly 128 cells")
         (w-append
-          (w-rows-failures rows (w-all-bits (w-seven-slots)))
+          (w-rows-failures header rows (w-all-bits (w-seven-slots)))
           (w-append
             (w-need (w-nul? (w-duplicates (w-assigned-only rows w-nth6))) "two assigned cells share a stable name")
             (w-append
-              (w-need (w-nul? (w-duplicates (w-assigned-only rows w-nth7))) "sa-slp1 spelling names two cells")
-              (w-need (w-nul? (w-duplicates (w-assigned-only rows w-nth8))) "uk spelling names two cells"))))))))
+              (w-need (w-nul? (w-duplicates (w-assigned-only rows (w-column-of header "sa-slp1")))) "sa-slp1 spelling names two cells")
+              (w-append
+                (w-need (w-nul? (w-duplicates (w-assigned-only rows (w-column-of header "sa-iast")))) "sa-iast spelling names two cells")
+                (w-append
+                  (w-need (w-nul? (w-duplicates (w-assigned-only rows (w-column-of header "sa-deva")))) "sa-deva spelling names two cells")
+                  (w-need (w-nul? (w-duplicates (w-assigned-only rows (w-column-of header "uk")))) "uk spelling names two cells"))))))))))
 
 ; ---- deliberate mutations: the witness must reject each one -------------
 (00001001 w-drop-last
