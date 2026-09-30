@@ -17,7 +17,7 @@ python3 -m unittest prototype/sutra_graph/test_sutra_graph.py    # synthetic fix
 Edge kinds: `anuvrtti` and `adhikara` (from the dataset's own fields), `adhikara_kasika` (the Kasika says "adhikara" in a sentence that cites a sutra: the scope that the dataset's `ad` field does not show, e.g. 6.1.77 `aci` up to 6.1.108; **low precision**: the stem also matches other words), `kasika_ref` (Kasika text
 cites another sutra; `label` = keyword stems in the same sentence), `apavada` (Kasika says "apavada" and
 either names the sutra with a `[[ref]]` (explicit-ref) or a sutra text matches the quoted/compound name
-(name:...)). Every kind is a heuristic or a third-party reading, not authority. **Coverage of
+(name:...)). Every kind is a heuristic or a third-party reading, not authority. Membership of the general sutra in the `ad` field of the apavada sutra supports the target only together with the affix name; it does not prove that the phrase refers to it (aṇ can be part of a compound). The curated layers (`apavada_manual.py`, `apavada_curated.tsv`) are hypotheses: the affix map and its measurements come from one agent, and a blind check of 25 edges by another agent (25/25) tests only the wording match, not that the target is the unique general sutra. **Coverage of
 `apavada` is low: about 495 sutras mention the word, 51 edges are resolved, the rest need a human
 reading** (`apavada_unresolved.tsv`).
 
