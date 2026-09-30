@@ -224,6 +224,38 @@ def _decomposes(spelling: str, placed: set) -> bool:
     return False
 
 
+def _uk_case_aliases(
+    direct_spellings: Iterable[str],
+    sequences: Mapping[str, Tuple[str, ...]],
+) -> Dict[str, Tuple[str, ...]]:
+    """Explicit Ukrainian case aliases for input only.
+
+    The aliases are generated once from the declared Ukrainian layout inventory.
+    The encoder does not case-fold arbitrary input.  This is intentionally not
+    shared with SLP1, where ASCII case can distinguish phonological identity.
+    """
+    direct = set(direct_spellings)
+    aliases: Dict[str, Tuple[str, ...]] = {}
+    for spelling in sorted(direct | set(sequences)):
+        if not _is_cyrillic(spelling):
+            continue
+        parts = sequences.get(spelling, (spelling,))
+        candidates = {
+            spelling.upper(),
+            spelling[:1].upper() + spelling[1:],
+        }
+        for alias in candidates:
+            if alias == spelling:
+                continue
+            previous = aliases.get(alias)
+            if previous is not None && previous != parts:
+                raise UPC7LayoutError(
+                    f"uk: case alias {alias!r} is ambiguous: {previous} vs {parts}"
+                )
+            aliases[alias] = tuple(parts)
+    return aliases
+
+
 @dataclass(frozen=True)
 class Layout:
     """A human projection over UPC-7 codes.
@@ -236,6 +268,7 @@ class Layout:
     code_to_spelling: Mapping[int, str]
     known_unassigned: FrozenSet[str] = frozenset()
     sequences: Mapping[str, Tuple[str, ...]] = None  # type: ignore[assignment]
+    input_aliases: Mapping[str, Tuple[str, ...]] = None  # type: ignore[assignment]
 
     def __post_init__(self) -> None:
         seen: Dict[str, int] = {}
@@ -257,6 +290,21 @@ class Layout:
             missing = [p for p in parts if p not in seen]
             if missing:
                 raise UPC7LayoutError(f"{self.name}: sequence {key!r} uses unplaced {missing}")
+
+        if self.input_aliases is None:
+            object.__setattr__(self, "input_aliases", {})
+        occupied = set(seen) | set(self.sequences) | set(self.known_unassigned)
+        for alias, parts in self.input_aliases.items():
+            if alias in occupied:
+                raise UPC7LayoutError(
+                    f"{self.name}: input alias {alias!r} shadows a canonical spelling"
+                )
+            missing = [p for p in parts if p not in seen]
+            if missing:
+                raise UPC7LayoutError(
+                    f"{self.name}: input alias {alias!r} uses unplaced {missing}"
+                )
+
         clash = self.known_unassigned & set(seen)
         if clash:
             raise UPC7LayoutError(f"{self.name}: assigned and unassigned: {sorted(clash)}")
@@ -303,8 +351,13 @@ def _uk() -> Layout:
     spellings[geo.softness_code()] = _UK_SOFTNESS
     for sign, glyph in ASCII_SURFACE_GLYPHS.items():
         spellings[geo.sign_code(sign)] = glyph
+    sequences = dict(_UK_SEQUENCES)
     return Layout(
-        "uk", spellings, _uk_known_unassigned(spellings.values()), dict(_UK_SEQUENCES)
+        "uk",
+        spellings,
+        _uk_known_unassigned(spellings.values()),
+        sequences,
+        _uk_case_aliases(spellings.values(), sequences),
     )
 
 
@@ -340,8 +393,11 @@ class UPC7Text:
         chosen = self.layout(layout)
         table = chosen.spelling_to_code
         sequences = chosen.sequences
+        aliases = chosen.input_aliases
         candidates = sorted(
-            set(table) | set(sequences) | chosen.known_unassigned, key=len, reverse=True
+            set(table) | set(sequences) | set(aliases) | chosen.known_unassigned,
+            key=len,
+            reverse=True,
         )
         codes: List[int] = []
         index = 0
@@ -352,7 +408,9 @@ class UPC7Text:
                         raise UnassignedSpelling(
                             f"{layout}: {spelling!r} at offset {index} has no UPC-7 cell yet"
                         )
-                    if spelling in sequences:
+                    if spelling in aliases:
+                        codes.extend(table[part] for part in aliases[spelling])
+                    elif spelling in sequences:
                         codes.extend(table[part] for part in sequences[spelling])
                     else:
                         codes.append(table[spelling])
