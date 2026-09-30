@@ -159,6 +159,27 @@ tabulated (dadhy atra, cayanam, lavanam, cāyakaḥ, lāvakaḥ, agne 'tra, vāy
 Not implemented: 6.1.94, the plutapūrva exception of 6.1.77, the avagraha sign, 8.3.19,
 anything needing morphology.
 
+## it-saṃjñā on the path (`is_it`, `test_upc14v2_it.py`)
+
+Kāśikā readings by the shiva agent (kAshikAvRRitti.txt; **(q)** quotation, **(i)** inference):
+**(q)** 1.3.3 halantyam (line 3349): the final hal of a text unit is `it` (it names ṇ, k, ṅ, c; for the
+sutra text "upadese ity eva"); **(q)** the Kāśikā itself resolves the circularity of `hal` inside
+1.3.3 (line ~3358: a tantra use, so the `l` of hal is `it` too); **(q)** 1.1.71 (line 1647): the first
+sound with the `it`-final one denotes the sounds fallen between them **and its own form**; **(q)**
+1.3.9 tasya lopaḥ: the `it` disappears completely. **(i)** The other ten markers (ṭ ṇ m ñ ṣ ś v y r
+l) are the same rule for the other sutras; the Kāśikā does not list them. 1.3.4–1.3.8 concern
+affixes and roots, not the Śiva-sūtras.
+
+In the graph a node is `it` exactly when it is the last token of its sutra, so 1.3.3 is read off
+the structure (14 nodes, all consonants of `hal`); a marker is a `meta` cell that only names its
+place (it is never a sound vertex, which is 1.3.9 in code); a pratyāhāra contains its first sound
+(its own form) and the sounds between, never the marker. **Which occurrence of a repeated marker
+(ṇ twice, h twice) 1.1.71 takes is not said in the Kāśikā**; the graph uses the tradition of
+`ksetra/astadhyayi/occurrence-resolution.yaml` (aṇ first ṇ, iṇ second), which is an assumption
+here; and the panini agent notes that the yaml attributes the exception for aṇ to `8.3.32`, which
+in the registry is `ṅamo hrasvād aci ṅamuṇ nityam` (the phrase `aṇudit…` is 1.1.69), so that
+citation looks wrong and the traditional source of the rule is **not confirmed**. Not checked: Kāśikā 1.3.10-1.3.12, and the Mahābhāṣya/Śikṣā view of the count of 14.
+
 ## Design assumptions and where they come from (independent review, shiva agent)
 
 Recorded after an independent review that read the Kāśikā text in `ksetra/`
