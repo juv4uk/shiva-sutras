@@ -15,6 +15,10 @@ on:
       - "prototype/upc7-table.sha256"
       - "prototype/upc7_cold_verify.c"
       - "prototype/upc7_cold_witness.lisp"
+      - "prototype/upc14.py"
+      - "prototype/upc14_bridge.py"
+      - "prototype/test_upc14.py"
+      - "prototype/UPC14.md"
       - "prototype/UPC7.md"
       - "prototype/UPC7-GEOMETRY-v2.md"
       - ".github/workflows/upc7-prototype.yml"
@@ -46,6 +50,9 @@ jobs:
       - name: Run UPC-7 identity, geometry and layout witnesses
         working-directory: prototype
         run: python3 -m unittest -v test_upc7.py test_upc7_geometry.py test_upc7_layouts.py
+      - name: Run the sutra-first 14-bit candidate witnesses
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc14.py
       - name: Machine table is current
         working-directory: prototype
         run: python3 upc7_table.py --check
