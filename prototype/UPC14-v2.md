@@ -146,18 +146,19 @@ installed), `shantanuo/sandhi` (GPL-3: read only, nothing copied), `eGangotri/in
 
 6.1.101 (dīrgha), 6.1.88 (vṛddhi), 6.1.87 (guṇa; ṛ ḷ + `r l` by 1.1.51), 6.1.77 (yaṇ), 6.1.78
 (ayavāyāv: decompose the join of places, yaṇ the second part), and the two apavādas
-6.1.109 (word-final e/o + short a) and 6.1.97 (a inside a word + a/e/o). A result carries
+6.1.109 (word-final e/o + short a) and 6.1.97 (a inside a word + a/e/o; Kāśikā (lines 53311-53313, per the shiva agent, not re-read here) names only 6.1.101 as its apavāda target and adds that vṛddhi 6.1.88 would otherwise apply in pace, yaje: an inference that 6.1.97 also prevents it). A result carries
 its sūtra trace and `ekadesa`: under the adhikāra 6.1.84 (valid up to and including 6.1.111,
 Kāśikā on 6.1.84 as tabulated by the panini agent) the pair becomes one sound (87, 88, 97,
 101, 109); 6.1.77 and 6.1.78 stand before it and replace one sound.
 
 **Evidence** (`test_upc14v2_vowel_sandhi.py`, 16 tests; local run): **127 of 154** vowel+vowel
 rows of vidyut's generated rules agree; the other **27 are exactly the optional elision of y
-after a/ā (8.3.19)**, which vidyut applies to `e` and `ai` rows and this graph does not (each of
+after a/ā**; the Kāśikā allows it for y AND v (8.3.19, line 80714: pada-final, after avarṇa, before aś, optional; per the shiva agent, not re-read here), vidyut applies it to y only (o/au rows keep v), this graph applies neither (each of
 the 27 equals this graph's result with the `y` removed). The Kāśikā examples the panini agent
-tabulated (dadhy atra, cayanam, lavanam, cāyakaḥ, lāvakaḥ, agne 'tra, vāyo 'tra) hold.
+tabulated (dadhy atra, cayanam, lavanam, cāyakaḥ, lāvakaḥ, agne 'tra, vāyo 'tra) hold; cayanam and
+lavanam hold only with `padanta=False`, the default `padanta=True` sends e/o + a to 6.1.109 (agne 'tra).
 Not implemented: 6.1.94, the plutapūrva exception of 6.1.77, the avagraha sign, 8.3.19,
-anything needing morphology.
+anything needing morphology. The plutapūrva exception needs no morphology (pluta is the length coordinate; it needs a 3-sound window `vowel_sandhi(prev, left, right)`); 6.1.94-95 need an upasarga+dhātu flag (Kāśikā lines 53224, 53263, per the shiva agent).
 
 ## it-saṃjñā on the path (`is_it`, `test_upc14v2_it.py`)
 
@@ -190,6 +191,7 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   ābhyantara efforts only (spṛṣṭa, īṣatspṛṣṭa, saṃvṛta, vivṛta); there ūṣman and vowels share
   `vivṛta` and are kept apart only by 1.1.10 (ac vs hal). `ai`/`au` as a fifth step (wide vowel) is
   also mine (from Śikṣā tradition, not the Kāśikā).
+- **a = vivṛta in the śāstra.** Kāśikā lines 29-33: short a is saṃvṛta in use but is treated as vivṛta in the śāstra for savarṇa (8.4.68 restores it); this is the source for `a` on the VOWEL aperture (line numbers per the shiva agent, not re-read here).
 - **ṛ and ḷ.** The Kāśikā records a stipulation making them savarṇa (lines 53198, 53396, a
   vārttika); 1.1.9 as written does not (their places differ). `savarna(..., vartika=True)`
   adds it; the default is the sūtra as written. vidyut's `savarna_str` includes it.
@@ -227,7 +229,7 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
 - **ṛ and ḷ in 6.1.101** (lines 389, 6.1.101 and its vārttikas, tabulated by the reviewer): **ḷ has
   no long form** (`lṛvarṇasya dīrghā na santi`), so `dirgha(ḷ, ḷ)` raises. With `vartika=True` the
   pairs give the long ṛ or the vowel that follows (hotṝkāraḥ / hotṛkāraḥ; hotṝkāraḥ / hotlṛkāraḥ),
-  as `sounds` and `options`; ḷ+ḷ and ṛ+ḷ, ḷ+ṛ have no Kāśikā example (ḷ+ḷ and ḷ+ṛ follow by
+  as a set of variants (vā), no variant is primary (`sounds` holds one of them, `options` the others); ḷ+ḷ and ṛ+ḷ, ḷ+ṛ have no Kāśikā example (ḷ+ḷ and ḷ+ṛ follow by
   symmetry, an inference). Without the vartika, ṛ+ḷ, ḷ+ṛ, ḷ+ḷ fall to 6.1.77 and are marked
   `not attested` in `Result.note`.
 - A pratyāhāra whose start sound is recited twice (h): the default takes the first recitation,
@@ -243,7 +245,7 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   primary phonetic source. The pratyāhāra tests do not depend on it; the `nearest` and
   natural-class results do.
 - The order of the sūtras is one canon; the interval result says nothing about why.
-- Not covered: consonant sandhi beyond jaś, accent, `ṛ`+`a` = `ar` (a sequence, not a
+- Not covered: accent, optionality (`vā`), `chatvam ami`, `nitya` before a nasal affix, 8.4.53/55 inside a word (see docs/upc14v2-kasika-consonant-sandhi-2026-09-30.md; consonant sandhi itself now has 8.2.39, 8.4.40-45, 8.4.55, 8.4.60-63 and natva), `ṛ`+`a` = `ar` (a sequence, not a
   vertex), full Aṣṭādhyāyī ordering (rule conflict, 1.4.2), pluta usage, meta cells beyond
   markers, any text outside the 42 sounds.
 - 14 bits leave most of 16384 codes unused; nothing is claimed about packing or hardware.
