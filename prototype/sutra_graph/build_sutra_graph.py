@@ -30,8 +30,12 @@ def norm(text):             # compare sutra quotations: no spaces, no hyphens, n
     t = re.sub(r"[\s\-‌‍।॥]+", "", text)
     return t[:-1] if t.endswith("ः") else t
 
-FLAGS = {"apavada": "अपवाद", "pratishedha": "प्रतिषेध", "nishedha": "निषेध",
-         "atidesha": "अतिदेश", "vibhasha": "विभाषा", "niyama": "नियम", "badhaka": "बाध"}
+FLAGS = {"apavada": "अपवाद", "pratishedha": "प्रतिषेध", "nishedha": "निषेध", "vipratishedha": "विप्रतिषेध",
+         "paratvat": "परत्वात्", "atidesha": "अतिदेश", "vibhasha": "विभाषा", "niyama": "नियम",
+         "nivrtti": "निवृत्ति", "badha": "बाध"}
+# a sutra named only in a denial ("...(6.1.95) iti etat tu pararupam na badhyate") is not an exception edge
+GENERIC_STEMS = {"प्रत्यय", "संज्ञा", "अङ्ग", "धातु", "विभक्ति"}   # a general word is not the name of one sutra
+NEGATED_BADHA = re.compile(r"न\s+(?:तु\s+)?बाध|बाध[^\s।॥]*\s+न\b|न\s+तु\s+[^\s।॥]+\s+बाध")
 
 def main():
     ap = argparse.ArgumentParser()
@@ -46,6 +50,8 @@ def main():
     for k, v in by_id.items():
         key_of.setdefault(norm(v["s"]), []).append(sid(k))
     edges = []
+    # sutra texts as suffix keys: nominative ending removed (`-m`, visarga), longest first
+    suffix_keys = sorted(((re.sub(r"(म्|ः)$", "", k), v) for k, v in key_of.items()), key=lambda kv: -len(kv[0]))
     # anuvrtti and adhikara
     for k, v in by_id.items():
         for part in filter(None, v["an"].split("##")):
@@ -67,6 +73,9 @@ def main():
         me = sid(k)
         for sent in sentence.findall(body):
             flags = ",".join(n for n, stem in FLAGS.items() if stem in sent)
+            negated = bool(NEGATED_BADHA.search(sent))
+            if negated:
+                flags = (flags + ",negated").strip(",")
             refs = [latin_digits(m.group(1)) for m in ref_rx.finditer(sent)]
             for r in refs:
                 edges.append((me, r, "kasika_ref", flags))
@@ -76,18 +85,26 @@ def main():
                         edges.append((me, r, "adhikara_kasika", (sent.split() or [""])[0]))
             if "पवाद" not in sent:
                 continue
-            if refs:                                   # (a) the sentence names the sutra it is an exception to
-                for r in refs:
-                    if r != me:
-                        edges.append((me, r, "apavada", "explicit-ref"))
-                continue
             resolved = False
-            for m in apav_rx.finditer(sent):           # (b) resolve the quoted/compound name against sutra texts
-                stem = norm(m.group(1))
-                for tgt in key_of.get(stem, ()):
-                    if tgt != me:
-                        edges.append((me, tgt, "apavada", "name:" + m.group(1)))
+            if not negated:                            # (a) a sutra cited right next to `apavada` (<= 40 characters)
+                apav_at = [m.start() for m in re.finditer("पवाद", sent)]
+                for m in ref_rx.finditer(sent):
+                    r = latin_digits(m.group(1))
+                    near = any(0 <= a - m.end() <= 40 or 0 <= m.start() - a <= 12 for a in apav_at)
+                    if r != me and near:
+                        edges.append((me, r, "apavada", "explicit-ref"))
                         resolved = True
+            words = sent.replace("<<", " ").replace(">>", " ").split()
+            for m in apav_rx.finditer(sent):           # (b) names: a compound before `apavada`; sandhi joins it to the
+                for width in (1, 2, 3):                # preceding word, so a SUFFIX of the stem may equal a sutra text
+                    stem = norm(" ".join(sent[:m.end(1)].split()[-width:]))
+                    for key, ids in suffix_keys:
+                        if len(key) >= 5 and key not in GENERIC_STEMS and stem.endswith(key) and len(ids) == 1:   # a generic word (samjnayam) names many
+                            tgt = ids[0]
+                            if tgt != me:
+                                edges.append((me, tgt, "apavada", "name:" + key))
+                                resolved = True
+                            break                                                     # longest unambiguous key wins
             if not resolved:                           # (c) kept only as a count
                 unresolved[me] += 1
     with open(os.path.join(a.out_dir, "apavada_unresolved.tsv"), "w", encoding="utf-8") if os.makedirs(a.out_dir, exist_ok=True) is None else None as f:

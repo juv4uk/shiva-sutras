@@ -13,11 +13,21 @@ DATA = [
     sut(6, 1, 88, "वृद्धिरेचि", an="आत्$61087##एकः$61084", ad="एकः पूर्वपरयोः$6$1$84"),
     sut(6, 1, 97, "अतो गुणे", an="अतः$61087", ad="एकः पूर्वपरयोः$6$1$84"),
     sut(6, 1, 101, "अकः सवर्णे दीर्घः", ad="एकः पूर्वपरयोः$6$1$84"),
+    sut(6, 1, 89, "एत्येधत्यूठ्सु"),
+    sut(6, 1, 95, "ओमाङोश्च"),
+    sut(3, 1, 1, "प्रत्ययः"),
+    sut(3, 2, 2, "कप्रत्ययः"),
 ]
 KASIKA = {
     "61088": "आद्गुणस्यापवादः। ब्रह्मैडका॥",
     "61097": "अकः सवर्णे दीर्घस्य [[६.१.१०१]] अपवादः। पचे॥",
     "61101": "सवर्णे इति किम्? दध्यत्र॥",
+    # a sutra named only in a denial is not an exception edge
+    "61089": "<<ओमाङोश्च>> [[६.१.९५]] इत्येतत्तु पररूपं न बाध्यते॥",
+    # a generic word (pratyaya) does not name one sutra
+    "32002": "कप्रत्ययस्य अपवादः॥",
+    # a citation far from the word `apavada` is a source/consequence, not the target
+    "61095": "<<वृद्धिरेचि>> [[६.१.८८]] इति एतस्मिन् विषये बहुविधम् उदाहरणं दर्शयति तत्र च सामान्यं वक्तव्यम् इह तावत् अपवादः॥",
 }
 
 class ExtractorTests(unittest.TestCase):
@@ -49,6 +59,16 @@ class ExtractorTests(unittest.TestCase):
 
     def test_apavada_by_a_quoted_name_resolved_against_the_sutra_text(self):
         self.assertTrue(self.has("6.1.88", "6.1.87", "apavada"))
+
+    def test_a_denial_is_not_an_exception_edge(self):
+        self.assertFalse(self.has("6.1.89", "6.1.95", "apavada"))
+
+    def test_a_generic_word_does_not_name_a_sutra(self):
+        self.assertFalse(self.has("3.2.2", "3.1.1", "apavada"))
+
+    def test_a_citation_far_from_the_word_apavada_is_not_the_target(self):
+        self.assertFalse(self.has("6.1.95", "6.1.88", "apavada"))
+        self.assertTrue(self.has("6.1.95", "6.1.88", "kasika_ref"))     # still recorded as a reference
 
     def test_no_invented_edges(self):
         self.assertFalse(self.has("6.1.101", "6.1.97", "apavada"))

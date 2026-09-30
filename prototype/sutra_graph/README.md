@@ -31,3 +31,12 @@ the boundary). **Divergences (dataset vs Kasika):** 6.1.112 has `ati` from 6.1.1
 the Kasika says `ut` from 6.1.111 (`ṅasiṅasoh iti vartate, ut iti ca`); 6.1.77's `aci` adhikara to 6.1.108 is
 missing from the dataset's `ad` field (kept here as `adhikara_kasika`). Exact duplicate edges (the dataset
 repeats some) are removed. The other 9000+ anuvrtti edges were not compared one by one.
+
+## Measured precision of the `apavada` edges (independent review by the shiva agent, all 51 edges of the first version)
+First version: **42 correct, 9 wrong** (82%). Three error classes: a sutra named in a denial ("na badhyate"); the generic
+word `pratyaya` mapped to 3.1.1; the target named only as a consequence or as the source of a word. The extractor
+now drops denials (`negated`), stops generic stems, and accepts an explicit reference only within 40 characters of the
+word `apavada`. On the reviewer's verdicts: all 13 sampled correct edges kept, 7 of the 9 wrong ones gone (2 remain:
+6.4.174->4.1.136, 7.3.23->6.3.27); 42 edges now. **This is tuned on the reviewer's own sample, so it is NOT an
+independent precision estimate**; none of the 9 edges the reviewer listed as missing (for example 6.1.89->6.1.87,
+4.3.28->4.1.73) is found yet, and ~440 sutras that mention `apavada` remain unresolved.
