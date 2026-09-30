@@ -303,9 +303,36 @@ def first_rank(code: int) -> int:
 # ---------------------------------------------------------------------------
 
 
-def pratyahara(start: int, marker_label: str, nth: int = 1) -> Tuple[int, ...]:
-    """Sounds from `start` up to the `nth` marker named `marker_label` after it."""
-    begin = first_rank(start)
+class AmbiguousStart(GraphError):
+    """A start sound that occurs twice on the path needs an explicit occurrence (strict mode)."""
+
+
+def start_ranks(code: int) -> Tuple[int, ...]:
+    """Every path position where the sound `code` is recited (h has two)."""
+    ranks = tuple(n.rank for n in PATH if not n.is_marker and n.code == code)
+    if not ranks:
+        raise GraphError(f"{bits(code)} is not on the sutra path")
+    return ranks
+
+
+def pratyahara(start: int, marker_label: str, nth: int = 1, *, start_occurrence: Optional[int] = None,
+               strict: bool = False) -> Tuple[int, ...]:
+    """Sounds from `start` up to the `nth` marker named `marker_label` after it.
+
+    `start_occurrence` picks which recitation of a repeated start sound to use
+    (1 = the first, the tradition's default: aṭ, aś, haś, iṇ, hal). With `strict`
+    a repeated start sound and no explicit occurrence raises `AmbiguousStart`
+    instead of silently taking the first, as `pratyahara-exhaustive-v0.1.yaml`
+    asks (case `later-h-is-not-initial-h-for-hR`).
+    """
+    ranks = start_ranks(start)
+    if start_occurrence is None:
+        if strict and len(ranks) > 1:
+            raise AmbiguousStart(f"{bits(start)} is recited {len(ranks)} times: give start_occurrence")
+        start_occurrence = 1
+    if not 1 <= start_occurrence <= len(ranks):
+        raise GraphError(f"{bits(start)} has no recitation number {start_occurrence}")
+    begin = ranks[start_occurrence - 1]
     seen = 0
     for node in PATH[begin + 1:]:
         if node.is_marker and node.label == marker_label:
@@ -315,10 +342,21 @@ def pratyahara(start: int, marker_label: str, nth: int = 1) -> Tuple[int, ...]:
     raise GraphError(f"no marker {marker_label!r} (occurrence {nth}) after {bits(start)}")
 
 
-def savarna(a: int, b: int) -> bool:
-    """1.1.9: same place, same aperture. The nose is a separate atom (1.1.8)."""
+def savarna(a: int, b: int, *, vartika: bool = False) -> bool:
+    """1.1.9: same place, same aperture. The nose is a separate atom (1.1.8).
+
+    `vartika=True` adds the vartika that makes ṛ and ḷ savarna with each other (the Kasika
+    records this: line 53198 of kAshikAvRRitti.txt, as reported by the shiva agent). It is a
+    stipulation ON TOP of 1.1.9 (their places differ, so the sutra alone does not give it);
+    vidyut's `savarna_str` includes it. The default is the sutra as written.
+    """
     va, vb = unpack(a), unpack(b)
-    return va.place == vb.place and va.aperture == vb.aperture
+    if va.place == vb.place and va.aperture == vb.aperture:
+        return True
+    if vartika:
+        pair = {va.place, vb.place}
+        return va.aperture == vb.aperture == VOWEL and pair == {M, D}
+    return False
 
 
 def dirgha(a: int, b: int) -> int:
@@ -401,8 +439,8 @@ if __name__ == "__main__":
 
 
 __all__ = [
-    "Ambiguous", "CODE_MAX", "DERIVATION", "GraphError", "InvalidCode", "LABELS_BY_CODE", "PATH",
+    "Ambiguous", "AmbiguousStart", "CODE_MAX", "DERIVATION", "GraphError", "InvalidCode", "LABELS_BY_CODE", "PATH",
     "SOUNDS", "SUTRAS", "Vertex", "WIDTH", "bits", "dirgha", "e_asp", "e_join", "e_lift", "e_long",
     "e_nasal", "e_shift", "e_voice", "first_rank", "guna", "make", "meta_code", "nearest",
-    "neighbors", "pratyahara", "savarna", "to_dot", "unpack", "vrddhi",
+    "neighbors", "pratyahara", "savarna", "start_ranks", "to_dot", "unpack", "vrddhi",
 ]

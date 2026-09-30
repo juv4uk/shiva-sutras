@@ -134,6 +134,55 @@ installed), `shantanuo/sandhi` (GPL-3: read only, nothing copied), `eGangotri/in
 (MIT, transliteration and sandhi tooling; not evaluated), `nileshshrivastava/Maheshwara`
 (MIT, six documents, no code: a vision statement aligned with "derive, do not assume").
 
+## Vowel sandhi as graph queries (`upc14v2_vowel_sandhi.py`)
+
+6.1.101 (dīrgha), 6.1.88 (vṛddhi), 6.1.87 (guṇa; ṛ ḷ + `r l` by 1.1.51), 6.1.77 (yaṇ), 6.1.78
+(ayavāyāv: decompose the join of places, yaṇ the second part), and the two apavādas
+6.1.109 (word-final e/o + short a) and 6.1.97 (a inside a word + a/e/o). A result carries
+its sūtra trace and `ekadesa`: under the adhikāra 6.1.84 (valid up to and including 6.1.111,
+Kāśikā on 6.1.84 as tabulated by the panini agent) the pair becomes one sound (87, 88, 97,
+101, 109); 6.1.77 and 6.1.78 stand before it and replace one sound.
+
+**Evidence** (`test_upc14v2_vowel_sandhi.py`, 16 tests; local run): **127 of 154** vowel+vowel
+rows of vidyut's generated rules agree; the other **27 are exactly the optional elision of y
+after a/ā (8.3.19)**, which vidyut applies to `e` and `ai` rows and this graph does not (each of
+the 27 equals this graph's result with the `y` removed). The Kāśikā examples the panini agent
+tabulated (dadhy atra, cayanam, lavanam, cāyakaḥ, lāvakaḥ, agne 'tra, vāyo 'tra) hold.
+Not implemented: 6.1.94, the plutapūrva exception of 6.1.77, the avagraha sign, 8.3.19,
+anything needing morphology.
+
+## Design assumptions and where they come from (independent review, shiva agent)
+
+Recorded after an independent review that read the Kāśikā text in `ksetra/`
+(`kAshikAvRRitti.txt`; line numbers are the reviewer's):
+
+- **The aperture split (sibilant = 2, vowel = 3) is an assumption made to reproduce** "r and the
+  sibilants have no savarṇa" (line 392), **not derived from the Kāśikā**. Line 386 names four
+  ābhyantara efforts only (spṛṣṭa, īṣatspṛṣṭa, saṃvṛta, vivṛta); there ūṣman and vowels share
+  `vivṛta` and are kept apart only by 1.1.10 (ac vs hal). `ai`/`au` as a fifth step (wide vowel) is
+  also mine (from Śikṣā tradition, not the Kāśikā).
+- **ṛ and ḷ.** The Kāśikā records a stipulation making them savarṇa (lines 53198, 53396, a
+  vārttika); 1.1.9 as written does not (their places differ). `savarna(..., vartika=True)`
+  adds it; the default is the sūtra as written. vidyut's `savarna_str` includes it.
+- **Voicing and aspiration of ś ṣ s h** (aghoṣa mahāprāṇa, and h ghoṣa mahāprāṇa) are Śikṣā /
+  Siddhāntakaumudī tradition; the reviewer did not find them in the Kāśikā (searched for
+  mahāprāṇa, alpaprāṇa, ghoṣa, aghoṣa). vidyut disagrees on the sibilants; the interval
+  result holds under both (54/55/54). **`h` = throat** matches the tradition; not checked in the corpus.
+- **8.4.44 śāt is a prohibition** (lines 83760-83769: after ś the t-varga does not undergo the
+  preceding rule: praśnaḥ, viśnaḥ), and 8.4.43 toḥ ṣi is the same for ṣ (line 83746). So not
+  implementing it was right, and the Coq file that encodes it as a positive palatalization
+  departs from the Kāśikā.
+- **8.4.2** (lines 82823-82856): the intervening sounds are aṭ, ku, pu, āṅ, num (examples
+  karaṇam, arkeṇa, darpeṇa, carmaṇā, paryāṇaddham, bṛṃhaṇam). ś ṣ s are not in aṭ, ku or pu,
+  which is the reviewer's inference from the definition of the pratyāhāra; no Kāśikā line
+  names them, so `kṛśānu` keeping `n` is derived, not quoted.
+- **"r and the sibilants have no savarṇa"** is at line 392, and "vargīya only with vargīya of the
+  same varga" at line 393. Both are quoted in `docs/savarna-model-validation-2026-08-30.md`.
+- A pratyāhāra whose start sound is recited twice (h): the default takes the first recitation,
+  as `occurrence-resolution.yaml` does for aṭ aś haś iṇ hal. `strict=True` raises
+  `AmbiguousStart` instead of guessing, which is what case `later-h-is-not-initial-h-for-hR` of
+  the panini fixture asks; the fixture's five positive cases agree with the graph.
+
 ## Honest limits
 
 - The feature assignment (place of each sound, aperture, which sounds are aspirated or
