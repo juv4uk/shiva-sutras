@@ -179,6 +179,12 @@ class ContactTests(unittest.TestCase):
     def test_inside_a_word_the_same_pair_is_not_blocked_by_8_4_42(self):
         self.assertEqual(self.pair("w", "s"), "wz")
 
+    def test_torli_n_plus_l_gives_the_nasal_l(self):
+        # Kasika 8.4.60: bhavaml lunati (a nasal l); t + l gives the oral l
+        r = sd.final_stop("n", "l")
+        self.assertEqual((r.left, r.sutras), ("l~", ("8.4.60",)))
+        self.assertEqual(sd.final_stop("t", "l").left, "l")
+
     def test_the_trace_names_the_sutra_and_the_direction(self):
         r = sd.contact("j", "n")
         self.assertEqual([(s.sutra, s.before, s.after) for s in r.trace], [("8.4.40", "n", "Y")])
@@ -222,6 +228,14 @@ class NatvaTests(unittest.TestCase):
     def word(self, text):
         return tuple(text)
 
+    def test_a_word_final_n_is_not_changed_8_4_37(self):
+        # Kasika 8.4.37 (line 83569, via the shiva agent): vrksan, plaksan, arin, girin
+        for word in ("vfkzAn", "plakzAn", "arIn", "girIn"):
+            with self.subTest(word=word):
+                self.assertEqual("".join(sd.natva(tuple(word))), word)
+        # a stem that is not a whole pada still gets natva at its end
+        self.assertEqual("".join(sd.natva(tuple("purAn"), complete_pada=False)), "purAR")
+
     def test_natva_words(self):
         # SLP1: rAmeRa (ramena -> ramena?) see each case
         cases = {
@@ -244,7 +258,7 @@ class NatvaTests(unittest.TestCase):
         # natva_ex1..4 of paninian.v: [r a] n -> ṇ ; [a i] n -> n ; [r t a] n -> n ; [ṣ a] n -> ṇ
         for before, want in (("ra", "R"), ("ai", "n"), ("rta", "n"), ("za", "R")):
             with self.subTest(before=before):
-                self.assertEqual(sd.natva(tuple(before + "n"))[-1], want)
+                self.assertEqual(sd.natva(tuple(before + "n"), complete_pada=False)[-1], want)   # context test, not a whole pada
 
     def test_the_through_set_is_at_ku_pu_computed_from_the_graph(self):
         self.assertEqual(len(sd.AT), 13)

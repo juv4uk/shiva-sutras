@@ -63,6 +63,22 @@ class RuleTests(unittest.TestCase):
         self.assertEqual(vs.vowel_sandhi("a", "a").trace, ("6.1.101",))
 
 
+class VariantsAndBoundaryTests(unittest.TestCase):
+    def test_a_va_rule_has_no_primary_result_only_variants(self):
+        r = vs.vowel_sandhi("f", "f", vartika=True)
+        self.assertEqual(set(r.variants), {("F",), ("f",)})          # hotṝkāraḥ / hotṛkāraḥ
+        self.assertEqual(vs.vowel_sandhi("i", "a").variants, (("y", "a"),))   # an obligatory rule: one
+
+    def test_the_kasika_examples_of_6_1_78_are_inside_a_word(self):
+        self.assertEqual(vs.vowel_sandhi("e", "a").text, "e")                 # word-final e + a: 6.1.109
+        self.assertEqual(vs.vowel_sandhi("e", "a", padanta=False).text, "aya")   # cayanam
+
+    def test_6_1_97_blocks_vrddhi_as_well_as_dirgha(self):
+        # pace (pac + e), yaje (yaj + e): inside a word a + e / o gives the following sound, not ai / au
+        self.assertEqual(vs.vowel_sandhi("a", "e", padanta=False).text, "e")
+        self.assertEqual(vs.vowel_sandhi("a", "e", padanta=True).text, "E")
+
+
 class KasikaExampleTests(unittest.TestCase):
     """Examples the panini agent tabulated from the Kasika (second-hand: not re-read here)."""
 

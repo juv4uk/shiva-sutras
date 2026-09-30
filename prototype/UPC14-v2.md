@@ -133,6 +133,17 @@ palatal: praśnaḥ, viśnaḥ)**. So 8.4.44 is implemented, as a block, and the
 encodes it as a positive palatalization departs from the Kāśikā. The old `final_stop` still
 implements only the left-hand direction and is what the 97/99 vidyut comparison exercises.
 
+**Found by the shiva agent's Kāśikā check of the consonant sandhi** (`docs/upc14v2-kasika-consonant-sandhi-2026-09-30.md`
+on their branch) and fixed here: (1) a word-final `n` does not become ṇ (8.4.37: vṛkṣān, arīn,
+girīn), `natva(..., complete_pada=True)` now skips it; (2) 8.4.60 `n + l` gives the **nasal l**
+(bhavāṃl lunāti), not the oral one; (3) the docstring claimed "ascending sutra number", the code
+runs 8.4.60 before 8.4.45 and 8.4.55, and 8.4.53 is not a separate step; now stated as it is.
+Still open from that check: the vārttika "chatvam ami" of 8.4.63 (ś→ch before m, l is not
+handled: tacchlokena, tacchmaśruṇā), the optional (vā) results as sets, "nitya" before a nasal
+affix (vāṅmayam), 8.4.53/55 inside a word (bhettā), 8.4.38-39. The Kāśikā prints agnicitśete under
+8.4.63 (t not changed to c), which contradicts 8.4.40 that the code applies; it looks like a
+source error and is not resolved.
+
 **Not implemented, on purpose:** 8.4.65, the optional (vā) alternatives of 8.4.45 and 8.4.62 as a
 set, anusvāra and visarga, `n`-final insertions (`n + c → ṃś c`), `āṅ`/`num` in ṇatva, and the
 exceptions of 8.4.42 (nām, navati, nagarī), which need morphology.
@@ -177,9 +188,15 @@ place (it is never a sound vertex, which is 1.3.9 in code); a pratyāhāra conta
 (its own form) and the sounds between, never the marker. **Which occurrence of a repeated marker
 (ṇ twice, h twice) 1.1.71 takes is not said in the Kāśikā**; the graph uses the tradition of
 `ksetra/astadhyayi/occurrence-resolution.yaml` (aṇ first ṇ, iṇ second), which is an assumption
-here; and the panini agent notes that the yaml attributes the exception for aṇ to `8.3.32`, which
-in the registry is `ṅamo hrasvād aci ṅamuṇ nityam` (the phrase `aṇudit…` is 1.1.69), so that
-citation looks wrong and the traditional source of the rule is **not confirmed**. Not checked: Kāśikā 1.3.10-1.3.12, and the Mahābhāṣya/Śikṣā view of the count of 14.
+here. **Update (task #53, shiva agent, Kāśikā lines 99-103, 1622-1623, 43710):** the source **is** in the
+Kāśikā, not in the sūtras themselves: `iṇ` always takes the later ṇ, while `aṇ` takes the earlier one
+except for the single use named by 1.1.69 (`aṇudit savarṇasya cāpratyayaḥ`: `aṇ` with the later
+ṇ); the yaml's "8.3.32" is a wrong number for 1.1.69 (8.3.32 is an example of the pratyāhāra `ṅam`). The
+choice of occurrence is therefore fixed by the Kāśikā's list of uses, not derived from the sūtras. The
+second `h`: the Kāśikā explains (lines 165-176) that the later `h` serves the hal-groups (ral 1.2.26,
+śal 3.1.45, val, jhal) and the earlier `h` serves `aṭ` and `aś` (haśi ca 6.1.114). Status of those yaml
+entries is now "located: Kāśikā, not the sūtras themselves".
+Not checked: Kāśikā 1.3.10-1.3.12, and the Mahābhāṣya/Śikṣā view of the count of 14.
 
 ## Design assumptions and where they come from (independent review, shiva agent)
 
@@ -191,7 +208,12 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   ābhyantara efforts only (spṛṣṭa, īṣatspṛṣṭa, saṃvṛta, vivṛta); there ūṣman and vowels share
   `vivṛta` and are kept apart only by 1.1.10 (ac vs hal). `ai`/`au` as a fifth step (wide vowel) is
   also mine (from Śikṣā tradition, not the Kāśikā).
-- **a = vivṛta in the śāstra.** Kāśikā lines 29-33: short a is saṃvṛta in use but is treated as vivṛta in the śāstra for savarṇa (8.4.68 restores it); this is the source for `a` on the VOWEL aperture (line numbers per the shiva agent, not re-read here).
+- **Short `a` is vivṛta.** Before the first sūtra the Kāśikā (lines 29-33) says the short `a`, closed
+  in speech, is treated as vivṛta in the śāstra "for the sake of savarṇa" (`tasya prayogārtham a iti
+  8.4.68`). That is a direct source for putting `a` on the vowel step of the aperture path; the
+  sibilant/vowel split itself is still the assumption described above.
+- **ḷ is nasal by pratijñā** (line 107: `lakāre tv anunāsikaḥ pratijñāyate`), and `r` in 1.1.51 is the
+  pratyāhāra r+l; this supports `a + ḷ → al` (1.1.51) in `upc14v2_vowel_sandhi`.
 - **ṛ and ḷ.** The Kāśikā records a stipulation making them savarṇa (lines 53198, 53396, a
   vārttika); 1.1.9 as written does not (their places differ). `savarna(..., vartika=True)`
   adds it; the default is the sūtra as written. vidyut's `savarna_str` includes it.
