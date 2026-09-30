@@ -194,9 +194,14 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   sounds (42 plus the five long vowels) and none reaches an `Ambiguous`. This found a real case:
   `v + nasal` under 8.4.45, where v has two places and no varga nasal is nearest; the rule now gives
   the semivowel its own nasal form (`v~`) instead.
-- **e and ai are not savarṇa** with each other (Kāśikā line 390 keeps them apart; reviewer); the
+- **e and ai are not savarṇa** with each other: this is an **inference** from Kāśikā line 390
+  ("sandhyakṣarāṇāṃ hrasvā na santi, tāny api dvādaśaprabhedāni": e o ai au have twelve kinds
+  each and no short forms), **not a quotation**; no line says "e is not savarṇa to ai". The
   default `savarna` gives 22 classes: five vargas, the singletons y r l v ś ṣ s h, and the vowel
   groups a, i, u, ṛ, ḷ, e, o, ai, au (50 pairs).
+- **8.4.45 for the semivowels** (y v r l become their own nasal form, `v~`) was implemented to
+  keep `nearest` inside its domain; it has **not** been checked against the Kāśikā text on
+  8.4.45 (line 83774 of the corpus, not read).
 - A pratyāhāra whose start sound is recited twice (h): the default takes the first recitation,
   as `occurrence-resolution.yaml` does for aṭ aś haś iṇ hal. `strict=True` raises
   `AmbiguousStart` instead of guessing, which is what case `later-h-is-not-initial-h-for-hR` of
