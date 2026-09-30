@@ -1,0 +1,15 @@
+affix	target_sutra	condition_field	condition_value	coverage	source_ref	status
+aṇ	4.1.83	ad	4.1.83	76/84	txt:27795;json:41083	hypothesis
+aṇ	3.2.1	an	कर्मणि	5/84	txt:16705;json:32001	hypothesis
+ṭhak	4.4.1	ad	4.4.1	24/33	txt:37179;json:44001	hypothesis
+yat	4.4.75	ad	4.4.75	16/25	txt:38504;json:44075	hypothesis
+cha	5.1.1	ad	5.1.1	12/21	txt:39692;json:51001	hypothesis
+ṭhañ	5.1.18	ad	5.1.18	15/17	txt:40098;json:51018	hypothesis
+ka	5.3.70	ad	5.3.70	5/6	txt:46808;json:53070	hypothesis
+ṛtvaṇ	4.3.16	name	unambiguous name	7/7	txt:34180;json:43016	hypothesis
+iñ	4.1.95	name	unambiguous name	6/6	txt:28167;json:41095	hypothesis
+ktin	3.3.94	name	unambiguous name	4/4	txt:21884;json:33094	hypothesis
+tral	5.3.10	name	unambiguous name	3/3	txt:45707;json:53010	hypothesis
+ap	3.3.57	name	name (verify: ap also in 3.3.58 and later)	4/4	txt:21272;json:33057	hypothesis
+ghañ	3.3.18	name	none (also 3.3.19)	0/11	txt:20583;json:33018	hypothesis
+ghañ	3.3.19	name	none (also 3.3.18)	0/11	txt:20603;json:33019	hypothesis
