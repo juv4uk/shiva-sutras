@@ -106,6 +106,7 @@ class Result:
     left: str
     right: str
     trace: Tuple[Step, ...]
+    blocked: Tuple[str, ...] = ()   # sutras that stopped a substitution which would otherwise have fired
 
     @property
     def sutras(self) -> Tuple[str, ...]:
@@ -158,6 +159,60 @@ def final_stop(left: str, right: str, after: Optional[str] = "a") -> Result:
 
 
 # ---------------------------------------------------------------------------
+# 8.4.40-44: scutva and stutva in contact, in BOTH directions, with their blocks
+# ---------------------------------------------------------------------------
+
+
+def contact(left: str, right: str, *, padanta: bool = False) -> Result:
+    """Place assimilation of two adjacent consonants (`s`/t-varga meeting a palatal or retroflex).
+
+    The Kasika says 8.4.40 and 8.4.41 act whether the s/t-varga comes BEFORE or AFTER the
+    palatal/retroflex (it argues so from 8.4.44 itself, kAshikAvRRitti.txt lines 83644-83721,
+    quoted by the shiva agent). The blocks come first, as they stop the substitution itself:
+
+        8.4.42  a word-final ṭ-varga does not make a following s/t-varga retroflex (`padanta`)
+        8.4.43  a t-varga before ṣ does not become retroflex
+        8.4.44  after ś a t-varga does not become palatal
+
+    Not implemented: the exceptions of 8.4.42 (nam, navati, nagari), which need morphology,
+    and voicing (8.4.53/55), which `final_stop` applies.
+    """
+    l, r = code_of(left), code_of(right)
+    dental_l = l in TU or l == S["s"]
+    dental_r = r in TU or r == S["s"]
+    trace: List[Step] = []
+    blocked: List[str] = []
+
+    def fire(sutra: str, old: int, new: int) -> int:
+        if new != old:
+            trace.append(Step(sutra, label_of(old), label_of(new)))
+        return new
+
+    left_palatal = dental_l and r in SCU
+    right_palatal = dental_r and l in SCU
+    left_retro = dental_l and r in STU
+    right_retro = dental_r and l in STU
+    if right_palatal and l == S["S"] and r in TU:                       # 8.4.44 sat
+        right_palatal = False
+        blocked.append("8.4.44")
+    if left_retro and l in TU and r == S["z"]:                          # 8.4.43 toh si
+        left_retro = False
+        blocked.append("8.4.43")
+    if right_retro and padanta and l in WU and (r in TU or r == S["s"]):    # 8.4.42
+        right_retro = False
+        blocked.append("8.4.42")
+    if left_palatal:
+        l = fire("8.4.40", l, g.nearest(l, SCU))
+    if right_palatal:
+        r = fire("8.4.40", r, g.nearest(r, SCU))
+    if left_retro:
+        l = fire("8.4.41", l, g.nearest(l, STU))
+    if right_retro:
+        r = fire("8.4.41", r, g.nearest(r, STU))
+    return Result(label_of(l), label_of(r), tuple(trace), tuple(blocked))
+
+
+# ---------------------------------------------------------------------------
 # 8.4.2 natva: n becomes ṇ after r, ṣ (or ṛ) within a word, through aṭ, ku, pu
 # ---------------------------------------------------------------------------
 
@@ -182,5 +237,5 @@ def natva(word: Sequence[str]) -> Tuple[str, ...]:
 
 __all__ = [
     "AT", "CAR", "CU", "JAS", "JHAL", "JHAS", "JHAY", "KHAR", "KU", "NAM", "NATVA_THROUGH",
-    "PU", "Result", "SCU", "STU", "Step", "TU", "WU", "YAR", "base", "code_of", "final_stop", "label_of", "natva",
+    "PU", "Result", "SCU", "STU", "Step", "TU", "WU", "YAR", "base", "code_of", "contact", "final_stop", "label_of", "natva",
 ]

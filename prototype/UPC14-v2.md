@@ -107,7 +107,7 @@ stop meeting the next sound, and ṇatva (8.4.2) inside a word. A result carries
 sūtras that fired (`t + ca` → 8.2.39 t→d, 8.4.40 d→j, 8.4.55 j→c). Rules apply once each in
 ascending sūtra number; that order is one choice (see below).
 
-**Evidence** (`test_upc14v2_sandhi.py`, 15 tests, local run):
+**Evidence** (`test_upc14v2_sandhi.py`, 20 tests, local run):
 - vs **vidyut's generated sandhi rules** (99 rows for a final k, ṭ, t, p, obtained by running
   `create_sandhi_rules` at commit `8da2f90b`): **97 of 99 agree**. The 2 that differ (`t+ñ`,
   `t+ṇ`) are a rule-order choice: ascending sūtra order gives `ñ ñ` (8.4.40 then 8.4.45),
@@ -124,10 +124,18 @@ ascending sūtra number; that order is one choice (see below).
 - The ṇatva word list (rāmeṇa, varṇa, purāṇa, brāhmaṇa; arjuna, arthana, kṛśānu unchanged) is
   standard spelling from my own knowledge, not an oracle; the Coq file's 4 examples are.
 
-**Not implemented, on purpose:** 8.4.44 śāt (the Coq file encodes it as a positive
-palatalization; I could not confirm that reading, so I do not claim it), 8.4.65, the optional
-(vā) alternatives of 8.4.45 and 8.4.62 as a set, anusvāra and visarga, `n`-final insertions
-(`n + c → ṃś c`), and `āṅ`/`num` in ṇatva.
+**Contact in both directions (`contact`, added after the Kāśikā reading by the shiva agent).**
+8.4.40 and 8.4.41 act whether the s/t-varga comes before *or after* the palatal/retroflex
+(Kāśikā lines 83644-83721: yajñaḥ, yācñā, peṣṭā, kṛṣīṣṭhāḥ as well as vṛkṣaś śete, agnicid ḍīnaḥ).
+The blocks come before the substitution: 8.4.42 (word-final ṭ-varga does not make a following
+s/t-varga retroflex), 8.4.43 (t-varga before ṣ), **8.4.44 śāt (after ś a t-varga does not become
+palatal: praśnaḥ, viśnaḥ)**. So 8.4.44 is implemented, as a block, and the Coq file that
+encodes it as a positive palatalization departs from the Kāśikā. The old `final_stop` still
+implements only the left-hand direction and is what the 97/99 vidyut comparison exercises.
+
+**Not implemented, on purpose:** 8.4.65, the optional (vā) alternatives of 8.4.45 and 8.4.62 as a
+set, anusvāra and visarga, `n`-final insertions (`n + c → ṃś c`), `āṅ`/`num` in ṇatva, and the
+exceptions of 8.4.42 (nām, navati, nagarī), which need morphology.
 
 **Also surveyed:** `SandhiKosh` (LREC benchmark corpus in `.xls`; not parsed, no reader
 installed), `shantanuo/sandhi` (GPL-3: read only, nothing copied), `eGangotri/indicTools`
@@ -169,9 +177,9 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   mahāprāṇa, alpaprāṇa, ghoṣa, aghoṣa). vidyut disagrees on the sibilants; the interval
   result holds under both (54/55/54). **`h` = throat** matches the tradition; not checked in the corpus.
 - **8.4.44 śāt is a prohibition** (lines 83760-83769: after ś the t-varga does not undergo the
-  preceding rule: praśnaḥ, viśnaḥ), and 8.4.43 toḥ ṣi is the same for ṣ (line 83746). So not
-  implementing it was right, and the Coq file that encodes it as a positive palatalization
-  departs from the Kāśikā.
+  preceding rule: praśnaḥ, viśnaḥ), and 8.4.43 toḥ ṣi is the same for ṣ (line 83746); the Coq
+  file that encodes 8.4.44 as a positive palatalization departs from the Kāśikā. Both are now
+  implemented as blocks in `contact`.
 - **8.4.2** (lines 82823-82856): the intervening sounds are aṭ, ku, pu, āṅ, num (examples
   karaṇam, arkeṇa, darpeṇa, carmaṇā, paryāṇaddham, bṛṃhaṇam). ś ṣ s are not in aṭ, ku or pu,
   which is the reviewer's inference from the definition of the pratyāhāra; no Kāśikā line

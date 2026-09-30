@@ -141,6 +141,51 @@ class CoqOracleTests(unittest.TestCase):
             self.assertEqual(L[g.nearest(S[k], sd.JAS)], table[k])
 
 
+class ContactTests(unittest.TestCase):
+    """8.4.40-44 in both directions; examples tabulated from the Kasika by the shiva agent
+    (kAshikAvRRitti.txt lines 83644-83760; second-hand, not re-read here)."""
+
+    def pair(self, left, right, **kw):
+        r = sd.contact(left, right, **kw)
+        return r.left + r.right
+
+    def test_the_dental_changes_before_a_palatal_or_retroflex(self):
+        self.assertEqual(self.pair("s", "S"), "SS")        # vrksas sete
+        self.assertEqual(self.pair("s", "c"), "Sc")        # vrksas cinoti
+        self.assertEqual(self.pair("t", "C"), "cC")        # agnicic chadayati
+        self.assertEqual(self.pair("t", "c"), "cc")        # agnicic cinoti
+        self.assertEqual(self.pair("s", "z"), "zz")        # vrksas sande
+        self.assertEqual(self.pair("d", "q"), "qq")        # agnicid dinah
+        self.assertEqual(self.pair("d", "Q"), "qQ")        # agnicid dhaukate
+
+    def test_and_after_a_palatal_or_retroflex_which_the_left_only_version_missed(self):
+        self.assertEqual(self.pair("j", "n"), "jY")        # yajnah  (yaj + nah: n -> ñ)
+        self.assertEqual(self.pair("c", "n"), "cY")        # yacna
+        self.assertEqual(self.pair("z", "t"), "zw")        # pesta
+        self.assertEqual(self.pair("z", "T"), "zW")        # krsistha
+        self.assertEqual(self.pair("s", "j"), "Sj")        # majjati (masj): the s becomes ś
+
+    def test_the_blocks(self):
+        r = sd.contact("S", "n")                           # prasnah, visnah
+        self.assertEqual((r.left, r.right, r.blocked), ("S", "n", ("8.4.44",)))
+        self.assertEqual(sd.contact("S", "t").right, "t")
+        r = sd.contact("t", "z")                           # agnicitsande, bhavansande
+        self.assertEqual((r.left, r.right, r.blocked), ("t", "z", ("8.4.43",)))
+        self.assertEqual(sd.contact("n", "z").left, "n")
+        r = sd.contact("w", "s", padanta=True)             # svalit saye
+        self.assertEqual((r.left, r.right, r.blocked), ("w", "s", ("8.4.42",)))
+        self.assertEqual(sd.contact("w", "t", padanta=True).right, "t")   # madhulit tarati
+
+    def test_inside_a_word_the_same_pair_is_not_blocked_by_8_4_42(self):
+        self.assertEqual(self.pair("w", "s"), "wz")
+
+    def test_the_trace_names_the_sutra_and_the_direction(self):
+        r = sd.contact("j", "n")
+        self.assertEqual([(s.sutra, s.before, s.after) for s in r.trace], [("8.4.40", "n", "Y")])
+        r = sd.contact("t", "c")
+        self.assertEqual([(s.sutra, s.before, s.after) for s in r.trace], [("8.4.40", "t", "c")])
+
+
 class NatvaTests(unittest.TestCase):
     def word(self, text):
         return tuple(text)
