@@ -40,7 +40,7 @@
   },
   "sa-slp1": {
     "case_projection_recoverable_tokens": 0,
-    "coverage_with_explicit_lowercase_projection_percent": 100,
+    "coverage_with_explicit_lowercase_projection_percent": 100.0,
     "covered_tokens": 57,
     "cross_layout": {
       "renderable_percent_of_covered": 40.351,
@@ -60,11 +60,11 @@
       "added_cells": 0,
       "occurrences_by_spelling": {}
     },
-    "token_coverage_percent": 100,
+    "token_coverage_percent": 100.0,
     "tokens": 57,
     "unique_covered_tokens": 42,
     "unique_failed_tokens": 0,
-    "unique_token_coverage_percent": 100,
+    "unique_token_coverage_percent": 100.0,
     "unique_tokens": 42,
     "used_code_bits": [
       "0000000",
@@ -115,7 +115,7 @@
   "schema": "upc7-corpus-audit-v1",
   "uk": {
     "case_projection_recoverable_tokens": 30,
-    "coverage_with_explicit_lowercase_projection_percent": 100,
+    "coverage_with_explicit_lowercase_projection_percent": 100.0,
     "covered_tokens": 163,
     "cross_layout": {
       "renderable_percent_of_covered": 7.362,
