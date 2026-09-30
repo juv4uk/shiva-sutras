@@ -283,6 +283,21 @@ def _path() -> Tuple[Node, ...]:
 PATH: Tuple[Node, ...] = _path()  # 57 nodes; the edges are (rank, rank+1)
 
 
+def is_it(rank: int) -> bool:
+    """1.3.3 halantyam, for the sutra text: the last consonant (hal) of each sutra is `it`.
+
+    The path already marks a node as a marker exactly when it is the last token of its
+    sutra, so this is the rule read off the structure: 14 nodes. That such a node is `it`
+    only in the upadesa (here: the sutra text) is 1.3.3 itself ("upadese ity eva"); the
+    circularity of `hal` inside 1.3.3 is resolved by the Kasika (a tantra use of hal).
+    """
+    return PATH[rank].is_marker
+
+
+def it_ranks() -> Tuple[int, ...]:
+    return tuple(n.rank for n in PATH if is_it(n.rank))
+
+
 def meta_code(rank: int) -> int:
     """A marker is not a sound: a meta cell that names its place on the path."""
     if not 0 <= rank < len(PATH) or not PATH[rank].is_marker:
@@ -443,6 +458,6 @@ if __name__ == "__main__":
 __all__ = [
     "Ambiguous", "AmbiguousStart", "CODE_MAX", "DERIVATION", "GraphError", "InvalidCode", "LABELS_BY_CODE", "PATH",
     "SOUNDS", "SUTRAS", "Vertex", "WIDTH", "bits", "dirgha", "e_asp", "e_join", "e_lift", "e_long",
-    "e_nasal", "e_shift", "e_voice", "first_rank", "guna", "make", "meta_code", "nearest",
+    "e_nasal", "e_shift", "e_voice", "first_rank", "guna", "is_it", "it_ranks", "make", "meta_code", "nearest",
     "neighbors", "pratyahara", "savarna", "start_ranks", "to_dot", "unpack", "vrddhi",
 ]
