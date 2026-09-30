@@ -163,7 +163,7 @@ class ContactTests(unittest.TestCase):
         self.assertEqual(self.pair("c", "n"), "cY")        # yacna
         self.assertEqual(self.pair("z", "t"), "zw")        # pesta
         self.assertEqual(self.pair("z", "T"), "zW")        # krsistha
-        self.assertEqual(self.pair("s", "j"), "Sj")        # majjati (masj): the s becomes ś
+        self.assertEqual(self.pair("s", "j"), "Sj")        # intermediate only: masj -> maśj -> majj (other sutras finish it)
 
     def test_the_blocks(self):
         r = sd.contact("S", "n")                           # prasnah, visnah
@@ -184,6 +184,31 @@ class ContactTests(unittest.TestCase):
         self.assertEqual([(s.sutra, s.before, s.after) for s in r.trace], [("8.4.40", "n", "Y")])
         r = sd.contact("t", "c")
         self.assertEqual([(s.sutra, s.before, s.after) for s in r.trace], [("8.4.40", "t", "c")])
+
+
+class DomainTests(unittest.TestCase):
+    """No rule may call `nearest` outside its domain (review by the shiva agent)."""
+
+    def test_no_rule_raises_ambiguous_for_any_pair_of_sounds(self):
+        import upc14v2_vowel_sandhi as vs
+        labels = list(S) + list("AIUFX")
+        for a in labels:
+            for b in labels:
+                for fn in (sd.final_stop, sd.contact, vs.vowel_sandhi):
+                    with self.subTest(rule=fn.__name__, pair=a + b):
+                        fn(a, b)                                     # must not raise
+
+    def test_a_semivowel_before_a_nasal_becomes_its_own_nasal_form(self):
+        # v has two places (teeth, lips): no varga nasal is nearest to it, so 8.4.45 nasalises v itself.
+        r = sd.final_stop("v", "n")
+        self.assertEqual((r.left, r.sutras), ("v~", ("8.4.45",)))
+        self.assertEqual(sd.final_stop("y", "m").left, "y~")
+
+    def test_nearest_is_ambiguous_for_sounds_outside_the_domain_of_yan(self):
+        for x in "kKgGNha":
+            with self.subTest(source=x):
+                with self.assertRaises(g.Ambiguous):
+                    g.nearest(S[x], sd.YAN)
 
 
 class NatvaTests(unittest.TestCase):

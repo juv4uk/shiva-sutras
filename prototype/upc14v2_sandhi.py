@@ -65,6 +65,11 @@ def label_of(code: int) -> str:
     for long_label, short in _LONG.items():
         if code == g.e_long(S[short]):
             return long_label
+    v = g.unpack(code)
+    if v.nasal:                                         # the nasal form of a labelled vertex: `~`, as in SLP1
+        plain = g.Vertex(v.place, 0, v.aperture, v.length, v.voice, v.asp).code
+        if plain in L:
+            return L[plain] + "~"
     raise g.GraphError(f"{g.bits(code)} has no debug label")
 
 
@@ -85,6 +90,7 @@ JHAS = _p("J", "S")       # jhas in SLP1 `JaS`
 KHAR = _p("K", "r")
 CAR = _p("c", "r")
 YAR = _p("y", "r")
+YAN = _p("y", "R")
 NAM = _p("Y", "m")
 JHAY = _p("J", "y")
 AT = _p("a", "w")
@@ -146,7 +152,11 @@ def final_stop(left: str, right: str, after: Optional[str] = "a") -> Result:
     if l in TU and right == "l":                                    # 8.4.60 tor li
         l = fire("8.4.60", l, S["l"])
     if l in YAR and r in NAM:                                       # 8.4.45 yaro'nunasike'nunasiko va
-        l = fire("8.4.45", l, g.nearest(l, NAM))
+        if l in YAN:                                                # y v r l: their own nasal form,
+            v = g.unpack(l)                                         # not a varga nasal (v has two places)
+            l = fire("8.4.45", l, g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code)
+        else:
+            l = fire("8.4.45", l, g.nearest(l, NAM))
     elif l in JHAL and r in KHAR:                                   # 8.4.55 khari ca
         l = fire("8.4.55", l, g.nearest(l, CAR))
     if right == "h" and l in JHAY:                                  # 8.4.62 jhayo ho'nyatarasyam
@@ -237,5 +247,5 @@ def natva(word: Sequence[str]) -> Tuple[str, ...]:
 
 __all__ = [
     "AT", "CAR", "CU", "JAS", "JHAL", "JHAS", "JHAY", "KHAR", "KU", "NAM", "NATVA_THROUGH",
-    "PU", "Result", "SCU", "STU", "Step", "TU", "WU", "YAR", "base", "code_of", "contact", "final_stop", "label_of", "natva",
+    "PU", "Result", "SCU", "STU", "Step", "TU", "WU", "YAN", "YAR", "base", "code_of", "contact", "final_stop", "label_of", "natva",
 ]

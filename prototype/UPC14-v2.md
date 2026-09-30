@@ -107,7 +107,7 @@ stop meeting the next sound, and ṇatva (8.4.2) inside a word. A result carries
 sūtras that fired (`t + ca` → 8.2.39 t→d, 8.4.40 d→j, 8.4.55 j→c). Rules apply once each in
 ascending sūtra number; that order is one choice (see below).
 
-**Evidence** (`test_upc14v2_sandhi.py`, 20 tests, local run):
+**Evidence** (`test_upc14v2_sandhi.py`, 23 tests, local run):
 - vs **vidyut's generated sandhi rules** (99 rows for a final k, ṭ, t, p, obtained by running
   `create_sandhi_rules` at commit `8da2f90b`): **97 of 99 agree**. The 2 that differ (`t+ñ`,
   `t+ṇ`) are a rule-order choice: ascending sūtra order gives `ñ ñ` (8.4.40 then 8.4.45),
@@ -186,6 +186,17 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   names them, so `kṛśānu` keeping `n` is derived, not quoted.
 - **"r and the sibilants have no savarṇa"** is at line 392, and "vargīya only with vargīya of the
   same varga" at line 393. Both are quoted in `docs/savarna-model-validation-2026-08-30.md`.
+- **`nearest` distance order.** The distance is lexicographic: place, then aperture, then voice,
+  aspiration, nasal, length. Only "place first" is argued from 1.1.50; **the order after place is
+  a choice**, not found in the Kāśikā. An exact tie raises `Ambiguous` and is never resolved.
+- **`nearest` is ambiguous outside a rule's domain**, on purpose: for the yaṇ target set that is
+  k kh g gh ṅ h a; for jaś/car it is v e o ai au. A test runs every rule over all 47×47 pairs of
+  sounds (42 plus the five long vowels) and none reaches an `Ambiguous`. This found a real case:
+  `v + nasal` under 8.4.45, where v has two places and no varga nasal is nearest; the rule now gives
+  the semivowel its own nasal form (`v~`) instead.
+- **e and ai are not savarṇa** with each other (Kāśikā line 390 keeps them apart; reviewer); the
+  default `savarna` gives 22 classes: five vargas, the singletons y r l v ś ṣ s h, and the vowel
+  groups a, i, u, ṛ, ḷ, e, o, ai, au (50 pairs).
 - A pratyāhāra whose start sound is recited twice (h): the default takes the first recitation,
   as `occurrence-resolution.yaml` does for aṭ aś haś iṇ hal. `strict=True` raises
   `AmbiguousStart` instead of guessing, which is what case `later-h-is-not-initial-h-for-hR` of
