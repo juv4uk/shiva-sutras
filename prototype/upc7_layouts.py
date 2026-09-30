@@ -248,7 +248,7 @@ def _uk_case_aliases(
             if alias == spelling:
                 continue
             previous = aliases.get(alias)
-            if previous is not None && previous != parts:
+            if previous is not None and previous != parts:
                 raise UPC7LayoutError(
                     f"uk: case alias {alias!r} is ambiguous: {previous} vs {parts}"
                 )
