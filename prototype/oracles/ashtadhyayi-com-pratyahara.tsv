@@ -1,0 +1,50 @@
+# External oracle: pratyahara -> sounds, from ashtadhyayi.com data.
+# Source: https://github.com/ashtadhyayi-com/data  path pratyahara/data.txt  commit 5744762f010d677cfb43f347a42d02796cf615d6
+# Upstream declares no license: only the facts (a name and its set of sounds, both classical)
+# are kept, transliterated to SLP1; the prose and the sutra citations are not copied.
+# Morphological entries (sup, tin, ...) are not Siva-sutra pratyaharas and are left out.
+# The occurrence of a repeated marker (`an` twice) is NOT recorded: the test must find it.
+name_devanagari	start_slp1	marker_slp1	sounds_slp1
+अण्	a	R	aiu
+अक्	a	k	aiufx
+इक्	i	k	iufx
+उक्	u	k	ufx
+एङ्	e	N	eo
+अच्	a	c	aiufxeoEO
+इच्	i	c	iufxeoEO
+एच्	e	c	eoEO
+ऐच्	E	c	EO
+अट्	a	w	aiufxeoEOhyvr
+अण्	a	R	aiufxeoEOhyvrl
+इण्	i	R	iufxeoEOhyvrl
+यण्	y	R	yvrl
+अम्	a	m	aiufxeoEOhyvrlYmNRn
+यम्	y	m	yvrlYmNRn
+ङम्	N	m	NRn
+ञम्	Y	m	YmNRn
+यञ्	y	Y	yvrlYmNRnJB
+झष्	J	z	JBGQD
+भष्	B	z	BGQD
+अश्	a	S	aiufxeoEOhyvrlYmNRnJBGQDjbgqd
+हश्	h	S	hyvrlYmNRnJBGQDjbgqd
+वश्	v	S	vrlYmNRnJBGQDjbgqd
+झश्	J	S	JBGQDjbgqd
+जश्	j	S	jbgqd
+बश्	b	S	bgqd
+छव्	C	v	CWTcwt
+यय्	y	y	yvrlYmNRnJBGQDjbgqdKPCWTcwtkp
+मय्	m	y	mNRnJBGQDjbgqdKPCWTcwtkp
+झय्	J	y	JBGQDjbgqdKPCWTcwtkp
+खय्	K	y	KPCWTcwtkp
+चय्	c	y	cwtkp
+यर्	y	r	yvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzs
+झर्	J	r	JBGQDjbgqdKPCWTcwtkpSzs
+खर्	K	r	KPCWTcwtkpSzs
+चर्	c	r	cwtkpSzs
+शर्	S	r	Szs
+अल्	a	l	aiufxeoEOhyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsh
+हल्	h	l	hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsh
+वल्	v	l	vrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsh
+रल्	r	l	rlYmNRnJBGQDjbgqdKPCWTcwtkpSzsh
+झल्	J	l	JBGQDjbgqdKPCWTcwtkpSzsh
+शल्	S	l	Szsh
