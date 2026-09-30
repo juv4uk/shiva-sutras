@@ -114,13 +114,13 @@
   },
   "schema": "upc7-corpus-audit-v1",
   "uk": {
-    "case_projection_recoverable_tokens": 30,
+    "case_projection_recoverable_tokens": 0,
     "coverage_with_explicit_lowercase_projection_percent": 100.0,
-    "covered_tokens": 163,
+    "covered_tokens": 193,
     "cross_layout": {
-      "renderable_percent_of_covered": 7.362,
-      "renderable_tokens": 12,
-      "unrenderable_tokens": 151
+      "renderable_percent_of_covered": 7.254,
+      "renderable_tokens": 14,
+      "unrenderable_tokens": 179
     },
     "digit_glyphs": {
       "by_glyph": {
@@ -135,155 +135,9 @@
       },
       "total": 15
     },
-    "emitted_code_cells": 1007,
-    "failed_tokens": 30,
-    "failures": [
-      {
-        "count": 2,
-        "error": "UnknownSpelling",
-        "token": "Українська"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Інструкція"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Інтеграція"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Агенти"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Аштадх'яї"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Важливо"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Всі"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Відмінкові"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Давальний"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Дані"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Заборонено"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Знахідний"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Кличний"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Конфіденційність"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Мета"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Місцевий"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "НЕ"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Називний"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Обов'язкове"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Обробка"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Орудний"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Порівняльна"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Родовий"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Санскрит"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Семантичний"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Усі"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Формотворчі"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Цей"
-      },
-      {
-        "count": 1,
-        "error": "UnknownSpelling",
-        "token": "Частки"
-      }
-    ],
+    "emitted_code_cells": 1252,
+    "failed_tokens": 0,
+    "failures": [],
     "layout": "uk",
     "other_layout": "sa-slp1",
     "sequence_expansion": {
@@ -296,11 +150,11 @@
         "ї": 8
       }
     },
-    "token_coverage_percent": 84.456,
+    "token_coverage_percent": 100.0,
     "tokens": 193,
-    "unique_covered_tokens": 138,
-    "unique_failed_tokens": 29,
-    "unique_token_coverage_percent": 82.635,
+    "unique_covered_tokens": 167,
+    "unique_failed_tokens": 0,
+    "unique_token_coverage_percent": 100.0,
     "unique_tokens": 167,
     "used_code_bits": [
       "0000000",
@@ -331,8 +185,9 @@
       "1011101",
       "1011110",
       "1011111",
-      "1110001"
+      "1110001",
+      "1111001"
     ],
-    "used_code_cells": 29
+    "used_code_cells": 30
   }
 }

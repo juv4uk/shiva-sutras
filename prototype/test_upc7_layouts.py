@@ -81,6 +81,14 @@ class LayoutShapeTests(unittest.TestCase):
         with self.assertRaises(UPC7LayoutError):
             Layout("broken", {0: "x"}, frozenset({"x"}))
 
+    def test_input_alias_cannot_shadow_canonical_spelling(self):
+        with self.assertRaises(UPC7LayoutError):
+            Layout("broken", {0: "x"}, input_aliases={"x": ("x",)})
+
+    def test_input_alias_must_expand_only_to_placed_spellings(self):
+        with self.assertRaises(UPC7LayoutError):
+            Layout("broken", {0: "x"}, input_aliases={"X": ("missing",)})
+
     def test_spelling_counts_are_pinned(self):
         # 25 varga + 8 non-varga + 14 oral vowels + 5 Sanskrit signs + 25 ASCII signs
         self.assertEqual(len(SANSKRIT.code_to_spelling), 25 + 8 + 14 + 5 + 25)
@@ -200,6 +208,41 @@ class UkrainianTests(unittest.TestCase):
         self.assertEqual(codes[1], geo.sign_code("apostrophe"))
 
 
+    def test_case_is_an_input_projection_not_a_new_identity(self):
+        for projected, canonical in (
+            ("Українська", "українська"),
+            ("УКРАЇНСЬКА", "українська"),
+            ("Інструкція", "інструкція"),
+            ("Цей", "цей"),
+        ):
+            projected_codes = CODEC.encode(projected, "uk")
+            canonical_codes = CODEC.encode(canonical, "uk")
+            self.assertEqual(projected_codes, canonical_codes, projected)
+            rendered = CODEC.render(projected_codes, "uk")
+            self.assertEqual(rendered, CODEC.render(canonical_codes, "uk"))
+            self.assertEqual(rendered, rendered.lower())
+
+    def test_uppercase_sequence_spellings_keep_existing_decomposition(self):
+        for projected, canonical in (
+            ("Є", "є"),
+            ("Ї", "ї"),
+            ("Ю", "ю"),
+            ("Я", "я"),
+            ("Щ", "щ"),
+        ):
+            self.assertEqual(CODEC.encode(projected, "uk"), CODEC.encode(canonical, "uk"))
+
+    def test_affricate_case_aliases_preserve_longest_match(self):
+        for projected, canonical in (
+            ("Дз", "дз"),
+            ("ДЗ", "дз"),
+            ("Дж", "дж"),
+            ("ДЖ", "дж"),
+        ):
+            codes = CODEC.encode(projected, "uk")
+            self.assertEqual(codes, CODEC.encode(canonical, "uk"))
+            self.assertEqual(len(codes), 1)
+
 class FailClosedTests(unittest.TestCase):
     def test_unknown_spelling_is_rejected(self):
         with self.assertRaises(UnknownSpelling):
@@ -210,6 +253,11 @@ class FailClosedTests(unittest.TestCase):
     def test_no_silent_normalisation_of_case(self):
         # SLP1 is case sensitive: `K` (kh) and `k` (k) are different sounds.
         self.assertNotEqual(CODEC.encode("K", "sa-slp1"), CODEC.encode("k", "sa-slp1"))
+
+    def test_sanskrit_layout_has_no_case_alias_projection(self):
+        self.assertEqual(SANSKRIT.input_aliases, {})
+        self.assertNotEqual(CODEC.encode("A", "sa-slp1"), CODEC.encode("a", "sa-slp1"))
+        self.assertNotEqual(CODEC.encode("T", "sa-slp1"), CODEC.encode("t", "sa-slp1"))
 
     def test_reserved_cells_render_only_as_bits(self):
         reserved = [c.code for c in build_cells() if c.status == RESERVED]

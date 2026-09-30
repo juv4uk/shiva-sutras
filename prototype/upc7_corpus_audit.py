@@ -221,6 +221,7 @@ def main() -> int:
             return 1
         if REPORT.read_text(encoding="utf-8") != current:
             print(f"{REPORT.name} is stale; run upc7_corpus_audit.py --write")
+            print(current, end="")
             return 1
         print(f"{REPORT.name} is current")
         return 0
