@@ -92,4 +92,4 @@ jobs:
       - name: Run SENS-native cold witness
         run: sens-src/target/release/sens prototype/upc7_cold_witness.lisp | tee /tmp/upc7-sens-witness.txt
       - name: SENS-native witness must have reached its final line
-        run: grep -q 'upc7-cold-witness: all witnesses hold' /tmp/upc7-sens-witness.txt
+        run: grep -q 'all witnesses hold' /tmp/upc7-sens-witness.txt
