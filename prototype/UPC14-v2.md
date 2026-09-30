@@ -133,6 +133,17 @@ palatal: praśnaḥ, viśnaḥ)**. So 8.4.44 is implemented, as a block, and the
 encodes it as a positive palatalization departs from the Kāśikā. The old `final_stop` still
 implements only the left-hand direction and is what the 97/99 vidyut comparison exercises.
 
+**Found by the shiva agent's Kāśikā check of the consonant sandhi** (`docs/upc14v2-kasika-consonant-sandhi-2026-09-30.md`
+on their branch) and fixed here: (1) a word-final `n` does not become ṇ (8.4.37: vṛkṣān, arīn,
+girīn), `natva(..., complete_pada=True)` now skips it; (2) 8.4.60 `n + l` gives the **nasal l**
+(bhavāṃl lunāti), not the oral one; (3) the docstring claimed "ascending sutra number", the code
+runs 8.4.60 before 8.4.45 and 8.4.55, and 8.4.53 is not a separate step; now stated as it is.
+Still open from that check: the vārttika "chatvam ami" of 8.4.63 (ś→ch before m, l is not
+handled: tacchlokena, tacchmaśruṇā), the optional (vā) results as sets, "nitya" before a nasal
+affix (vāṅmayam), 8.4.53/55 inside a word (bhettā), 8.4.38-39. The Kāśikā prints agnicitśete under
+8.4.63 (t not changed to c), which contradicts 8.4.40 that the code applies; it looks like a
+source error and is not resolved.
+
 **Not implemented, on purpose:** 8.4.65, the optional (vā) alternatives of 8.4.45 and 8.4.62 as a
 set, anusvāra and visarga, `n`-final insertions (`n + c → ṃś c`), `āṅ`/`num` in ṇatva, and the
 exceptions of 8.4.42 (nām, navati, nagarī), which need morphology.

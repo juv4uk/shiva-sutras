@@ -14,8 +14,9 @@ and every substitution is the same query: the NEAREST vertex of a target set
 (1.1.50, sthane'ntaratamah). A rule is (sutra number, guard, target set). The
 result carries the trace of the sutras that fired, so a derivation is visible.
 
-Order. Rules are applied once each, in ascending sutra number
-(8.2.39, 8.4.40, 8.4.41, 8.4.60, 8.4.45, 8.4.55/53, 8.4.62, 8.4.63). That is one
+Order. Rules are applied once each, in THIS order (as the code runs, not ascending by number:
+8.4.60 comes before 8.4.45 and 8.4.55): 8.2.39, 8.4.40, 8.4.41, 8.4.60, 8.4.45 or 8.4.55,
+8.4.62, 8.4.63. 8.4.53 is not a separate step: 8.2.39 already yields the jas. That is one
 choice: the tradition orders conflicting rules by vipratisedha (1.4.2), and
 implementations differ (see `test_upc14v2_sandhi.py`).
 
@@ -150,7 +151,11 @@ def final_stop(left: str, right: str, after: Optional[str] = "a") -> Result:
     elif (l in TU or l == S["s"]) and r in STU:                     # 8.4.41 stuna stuh
         l = fire("8.4.41", l, g.nearest(l, STU))
     if l in TU and right == "l":                                    # 8.4.60 tor li
-        l = fire("8.4.60", l, S["l"])
+        if l == S["n"]:                                             # Kasika: bhavaml lunati (a nasal l)
+            v = g.unpack(S["l"])
+            l = fire("8.4.60", l, g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code)
+        else:
+            l = fire("8.4.60", l, S["l"])
     if l in YAR and r in NAM:                                       # 8.4.45 yaro'nunasike'nunasiko va
         if l == S["r"]:                                             # Kasika 391: r has no nasal form
             pass
@@ -233,11 +238,18 @@ NATVA_TRIGGERS = frozenset({S["r"], S["z"], S["f"]})
 NATVA_THROUGH = AT | KU | PU
 
 
-def natva(word: Sequence[str]) -> Tuple[str, ...]:
-    """Apply 8.4.2 to a word given as SLP1 debug labels; return the labels."""
+def natva(word: Sequence[str], *, complete_pada: bool = True) -> Tuple[str, ...]:
+    """Apply 8.4.2 to a word given as SLP1 debug labels; return the labels.
+
+    8.4.37 (Kasika line 83569, via the shiva agent): a word-final n does not become ṇ
+    (vṛkṣān, plakṣān, arīn, girīn). `complete_pada` says the word is a whole pada, so its last
+    letter is final; pass False for a stem that is not yet at a word boundary.
+    """
     out = list(word)
     for i, label in enumerate(word):
         if code_of(label) != S["n"]:
+            continue
+        if complete_pada and i == len(word) - 1:                    # 8.4.37 padantasya
             continue
         j = i - 1
         while j >= 0 and base(code_of(word[j])) in NATVA_THROUGH and base(code_of(word[j])) not in NATVA_TRIGGERS:
