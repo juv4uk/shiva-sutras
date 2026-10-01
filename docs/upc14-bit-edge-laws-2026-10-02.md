@@ -24,9 +24,9 @@ UPC-14 v2 derives the 42 sounds from one seed `k` by typed edges. The new observ
 | shift | next place on the spine | place field `<< 1` (bits 8..12) | partial successor, fails at the end |
 | lift n | aperture `+ n` | `c + 16n` | partial successor on a path of 5 |
 | join | union of places | `c | atoms << 8` | boolean OR |
-| long | length `+ 1` | `c + 4` | partial successor on a path of 3 |
+| long | length `+ 1` | `c + 4` below plutā, the identity at plutā (saturates) | partial successor on a path of 3 |
 
-**Checked:** on all 2232 vertices (of 16384 codes) the graph edge `upc14v2.e_*` and the bit form give the same result (or both raise); asp, voice and nasal are
+**Checked:** on all 2232 vertices (of 16384 codes) the graph edge `upc14v2.e_*` and the bit form give the same result (or both raise); the edges are **partial** (e.g. asp is defined on 248 of the 2232 vertices, shift on 1080), so "one bit operation" is a statement about the vertices where the edge is defined, and `long` saturates at plutā (an independent check by the panini agent found the 496 vertices where a plain `+4` would differ); asp, voice and nasal are
 **one constant xor mask each** over every instance in the derivation (10, 5, 5 pairs); asp and voice commute and are involutions on every stop.
 
 This is the sound-domain counterpart of "appending a bit is a composition step": the **suffix-bit law** `x0 = unaspirated, x1 = aspirated`, and `0x = unvoiced, 1x = voiced` one bit up.
