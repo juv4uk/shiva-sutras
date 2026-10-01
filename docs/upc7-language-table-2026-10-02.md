@@ -54,6 +54,7 @@ Of 93 cells: 84 are the same, 9 are the same cells that had no spelling in the p
 ## 5. Not done (do not read more into it)
 
 - **Case.** A sound has no case; rendering is lowercase (`Україна` comes back `україна`). A capital needs a cell (all 32 sign cells are used) or a case layer outside the cells: a decision.
+  **Proposal (not implemented, waiting for the owner's word):** `encode(text, layout, fold_case=False)`; with the default an upper-case letter is an **error** (`UnknownSpelling`), not a silent lowercase; `fold_case=True` is the explicit mode that lowercases (the SENS lock lists `ukrainian-case-input-projection: yes`, so the mode matches it). Rendering stays lowercase either way, and a capital still has no cell.
 - **Punctuation outside ASCII**: `—`, `«»`, `…` have no cell; refused.
 - **Sanskrit anusvāra, visarga, avagraha, plutā** and Ukrainian **stress** are outside the 55 sound cells; refused.
 - **Ukrainian morphology**: the й + vowel ambiguity of §3; the orthography is not checked against an independent Ukrainian orthography oracle (requested from the panini agent).
