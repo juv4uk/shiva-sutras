@@ -1,6 +1,6 @@
 # UPC-14 (кандидат): стан, джерела, перевірки на 2026-10-01 (агент «шіва»)
 
-Статус: **candidate**, не канон. Цей файл збирає те, що ще не потрапило в `prototype/UPC14-v2.md`, бо відповідні PR не змерджені; після мержу його треба згорнути в `UPC14-v2.md`. Позначки: source-confirmed / empirically confirmed / predicted / assumption (як у `docs/upc14-candidate-spec-2026-10-01.md`).
+Статус: **candidate**, не канон. **З 2026-10-02 згорнуто в `prototype/UPC14-v2.md`, розділ «Status and sources»; усі PR змерджені (таблиця нижче історична).** Раніше файл збирав те, що ще не потрапило в `prototype/UPC14-v2.md`. Позначки: source-confirmed / empirically confirmed / predicted / assumption (як у `docs/upc14-candidate-spec-2026-10-01.md`).
 
 ## 1. PR і що в них (стан gh на 2026-10-01)
 

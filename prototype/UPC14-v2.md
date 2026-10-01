@@ -263,6 +263,36 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   `AmbiguousStart` instead of guessing, which is what case `later-h-is-not-initial-h-for-hR` (the fixture's own id; its `R` is ṇ) of
   the panini fixture asks; the fixture's five positive cases agree with the graph.
 
+## Status and sources (folded 2026-10-02 from `docs/upc14-status-and-sources-2026-10-01.md`)
+
+Status: **candidate**, not canon. All PRs of the stack (#60-#73) are in master; the text codec (IAST, Devanagari, Cyrillic, pluta), `pratyahara_named` (43 names), the three-valued `savarna_status`, the SLP1-free core and `e_voice` validation (#73) are part of the code described above. Every typed edge is one bit operation on the 14-bit code (`upc14v2_bitops.py`, `docs/upc14-bit-edge-laws-2026-10-02.md`: on the derivation instances; wider over all vertices).
+
+### Джерела, знайдені після першої версії специфікації
+
+- **Місце звуків** (r мурдха, l дантья, h горло): Siddhāntakaumudī і Laghukaumudī на 1.1.9 (`ashtadhyayi-data` ключ 11009); у Kāśikā txt переліку sthāna нема. **Голос/придих ś ṣ s h:** Laghukaumudī («हशः संवारा नादा घोषाश्च», «शलश्च महाप्राणाः», «खरो … अघोषाः»). Обидва раніше були «з пам'яті», тепер source-confirmed.
+- **Aperture-розщеплення sibilant=2/vowel=3:** Laghukaumudī (п'ять ābhyantara-prayatna, ūṣman = īṣadvivṛta); Kāśikā і Siddhāntakaumudī мають чотири. **a = vowel:** Kāśikā txt 29-33 (a у шастрі vivṛta).
+- **e~ai, o~au:** жодне джерело не визначає; Kāśikā за власним означенням зробила б їх savarṇa; у коді `savarna_status` = None (а `savarna` False як припущення ai/au п'ятий ступінь).
+- **Класи голосних:** Kāśikā txt 387-390 (a i u ṛ: 18 видів, ḷ: 12 без довгого, e o ai au: 12 без короткого); довжина і назалізація в одному класі savarṇa.
+- **Pluta:** корпус Kāśikā: ३ 6451 раз, ā3 43 проти a3 1; Деванагарі `भो३इ` = `bho3i` кодека.
+- **Кирилиця:** книга власника «Бгаґавад-ґіта як вона є», «Як читати санскрит», сс. 810-812 (g = ґ, придих = стоп + г, ai = аі); ṅ ñ ṇ нерозбірливі на фото: hypothesis.
+
+### Перевірки
+
+| Перевірка | Результат | Хто |
+|---|---|---|
+| pratyāhāra як інтервал: оракул ashtadhyayi.com | 43/43 | тести, підтвердила «паніні» |
+| pratyāhāra: усі комбінації (початок, маркер, nth) проти другої реалізації | 305/305 | «паніні» (з сутр, не з коду) |
+| іменовані pratyāhāra | 43/43 (після виправлення `bhaś` → `bhaṣ`, додано `ṅam`) | «паніні», я |
+| кількість pratyāhāra за маркерами проти вступу Kāśikā | 13 із 14 (cay) | я |
+| savarṇa: 861 пара, з vārttika й без | 0 розбіжностей | «паніні» |
+| варіанти (довгі/назалізовані/pluta): 44 звуки, 1892 порівняння | 0; 64 «не визначено» (e~ai, o~au) | «паніні» |
+| кодек тексту (IAST, Деванагарі, кирилиця): round-trip, ін'єктивність, `transcode`, суворий декодер | 0 збоїв у моєму fuzz (випадкові послідовності довжини 4-14, 100 000 випадкових рядків на письмо, вичерпно довжини 1-2) і в тестах координатора (довжина 3 вичерпно) | я, координатор |
+| типізовані ребра і Hamming: 36 з 861 пар на відстані 1; 12 з 39 типізованих ребер не Hamming-1 | вимір | я |
+
+### Що лишається відкритим
+
+1. e~ai/o~au (джерело мовчить); 2. знаки кирилиці ṅ ñ ṇ (потрібне чітке фото с. 811, видання книги); 3. назалізація в IAST/Деванагарі (U+0303, ँ): hypothesis (у корпусі Kāśikā немає жодного ँ); 4. anusvāra, visarga, avagraha: поза 42 звуками (див. `docs/upc14-open-decisions-2026-10-01.md`); 5. рішення власника про мерж PR і про критерії «candidate → canon»; 6. cay у вступі Kāśikā.
+
 ## Honest limits
 
 - The feature assignment (place of each sound, aperture, which sounds are aspirated or
