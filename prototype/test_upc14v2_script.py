@@ -33,19 +33,19 @@ class ScriptViewTests(unittest.TestCase):
             self.assertTrue(all("ऀ" <= ch <= "ॿ" for ch in sc.to_devanagari(code)))
 
     def test_long_and_nasal_vowels_are_spelled_by_rule(self):
-        spelled = {key: (sc.to_iast(g.e_long(S[key])), sc.to_devanagari(g.e_long(S[key]))) for key in "aiuf"}
-        self.assertEqual(spelled, {"a": ("ā", "आ"), "i": ("ī", "ई"), "u": ("ū", "ऊ"), "f": ("ṝ", "ॠ")})
+        spelled = {key: (sc.to_iast(g.e_long(S[key])), sc.to_devanagari(g.e_long(S[key]))) for key in ("a", "i", "u", "ṛ")}
+        self.assertEqual(spelled, {"a": ("ā", "आ"), "i": ("ī", "ई"), "u": ("ū", "ऊ"), "ṛ": ("ṝ", "ॠ")})
         self.assertEqual(sc.to_devanagari(g.e_nasal(S["a"])), "अँ")
         self.assertEqual(sc.code_from_iast("ā"), g.e_long(S["a"]))
         self.assertEqual(sc.code_from_iast("ã"), g.e_nasal(S["a"]))
 
     def test_known_spellings(self):
-        for iast, dev, key in (("kh", "ख्", "K"), ("ṇ", "ण्", "R"), ("ś", "श्", "S"), ("ai", "ऐ", "E"), ("ṛ", "ऋ", "f")):
+        for iast, dev, key in (("kh", "ख्", "kh"), ("ṇ", "ण्", "ṇ"), ("ś", "श्", "ś"), ("ai", "ऐ", "ai"), ("ṛ", "ऋ", "ṛ")):
             self.assertEqual(sc.code_from_iast(iast), S[key])
             self.assertEqual(sc.code_from_devanagari(dev), S[key])
 
     def test_a_spelling_that_is_not_a_sound_raises(self):
-        for bad in ("K", "x", "", "kk"):
+        for bad in ("K", "x", "", "kk", "kh·", "ā̃̄"):
             with self.assertRaises(g.GraphError):
                 sc.code_from_iast(bad)
 
@@ -65,7 +65,7 @@ class CyrillicViewTests(unittest.TestCase):
                 self.assertTrue("\u0400" <= ch <= "\u04ff" or unicodedata.combining(ch), (ch, hex(ord(ch))))
 
     def test_known_spellings(self):
-        for cyr, key in (("кг", "K"), ("ґ", "g"), ("ґг", "G"), ("джг", "J"), ("т\u0323", "w"), ("т\u0323г", "W"), ("н\u0323", "R"), ("ш\u0301", "S"), ("аі", "E"), ("ау", "O"), ("дж", "j"), ("й", "y"), ("х", "h")):
+        for cyr, key in (("кг", "kh"), ("ґ", "g"), ("ґг", "gh"), ("джг", "jh"), ("т\u0323", "ṭ"), ("т\u0323г", "ṭh"), ("н\u0323", "ṇ"), ("ш\u0301", "ś"), ("аі", "ai"), ("ау", "au"), ("дж", "j"), ("й", "y"), ("х", "h")):
             self.assertEqual(sc.code_from_cyrillic(cyr), S[key])
 
     def test_long_and_nasal_vowels(self):
@@ -80,15 +80,15 @@ class CyrillicViewTests(unittest.TestCase):
 
 def _nasal_semivowels():
     out = []
-    for k in "yvl":
+    for k in ("y", "v", "l"):
         v = g.unpack(S[k])
         out.append(g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code)
     return out
 
 
 def _alphabet():
-    return (list(S.values()) + [g.e_long(S[k]) for k in "aiuf"] + [g.e_nasal(S[k]) for k in "aiufxeoEO"]
-            + [g.e_nasal(g.e_long(S[k])) for k in "aiuf"] + _nasal_semivowels())
+    return (list(S.values()) + [g.e_long(S[k]) for k in ("a", "i", "u", "ṛ")] + [g.e_nasal(S[k]) for k in ("a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au")]
+            + [g.e_nasal(g.e_long(S[k])) for k in ("a", "i", "u", "ṛ")] + _nasal_semivowels())
 
 
 class TextCodecTests(unittest.TestCase):
@@ -116,7 +116,7 @@ class TextCodecTests(unittest.TestCase):
                 self.assertEqual(sc.decode_text(sc.encode_text(seq, script), script), seq, script)
 
     def test_the_ambiguous_junctions_get_a_dot_in_iast_and_cyrillic(self):
-        k, h, kh, a, i, ai, y = (S[x] for x in ("k", "h", "K", "a", "i", "E", "y"))
+        k, h, kh, a, i, ai, y = (S[x] for x in ("k", "h", "kh", "a", "i", "ai", "y"))
         self.assertEqual(sc.encode_text([k, h], "iast"), "k·h")
         self.assertEqual(sc.encode_text([kh], "iast"), "kh")
         self.assertEqual(sc.encode_text([a, i], "iast"), "a·i")
@@ -133,7 +133,7 @@ class TextCodecTests(unittest.TestCase):
         self.assertEqual(sc.encode_text([S["k"], S["t"], S["a"]], "iast"), "kta")
 
     def test_devanagari_follows_the_writing_system(self):
-        k, a, R = S["k"], S["a"], S["R"]
+        k, a, R = S["k"], S["a"], S["ṇ"]
         long_a = g.e_long(a)
         self.assertEqual(sc.encode_text([k, a], "devanagari"), "क")           # k + inherent a
         self.assertEqual(sc.encode_text([k], "devanagari"), "क्")
@@ -142,14 +142,14 @@ class TextCodecTests(unittest.TestCase):
         self.assertEqual(sc.encode_text([k, a, a], "devanagari"), "कअ")       # hiatus: independent letter
 
     def test_transcode_goes_through_the_codes(self):
-        text = sc.encode_text([S["k"], S["R"], S["a"], g.e_long(S["a"])], "iast")
+        text = sc.encode_text([S["k"], S["ṇ"], S["a"], g.e_long(S["a"])], "iast")
         for src in self.SCRIPTS:
             for dst in self.SCRIPTS:
                 s = sc.transcode(sc.transcode(text, "iast", src), src, dst)
                 self.assertEqual(sc.decode_text(s, dst), sc.decode_text(text, "iast"))
 
     def test_a_string_that_is_not_a_text_of_the_script_raises(self):
-        for script, bad in (("iast", "kq"), ("cyrillic", "z"), ("devanagari", "k")):
+        for script, bad in (("iast", "kq"), ("cyrillic", "ṣ"), ("devanagari", "k")):
             with self.assertRaises(g.GraphError):
                 sc.decode_text(bad, script)
 
@@ -160,8 +160,7 @@ class FailClosedTests(unittest.TestCase):
     def bad_codes(self):
         e = g.unpack(S["e"])
         return {
-            "pluta a": g.e_long(g.e_long(S["a"])),
-            "long ḷ": g.e_long(S["x"]),
+            "long ḷ": g.e_long(S["ḷ"]),
             "short e": g.Vertex(e.place, e.nasal, e.aperture, 0, e.voice, e.asp).code,
             "nasal r": g.Vertex(g.unpack(S["r"]).place, 1, g.SEMIVOWEL, 0, 0, 0).code,
         }
@@ -192,6 +191,65 @@ class FailClosedTests(unittest.TestCase):
     def test_lenient_and_strict_agree_on_canonical_text(self):
         for script, text in (("iast", "k·h"), ("devanagari", "कणा"), ("cyrillic", "а·і")):
             self.assertEqual(sc.decode_text(text, script), sc.decode_text(text, script, strict=False))
+
+
+class PlutaTests(unittest.TestCase):
+    """Pluta is spelled with the digit 3 after the (long) vowel, as in the Kasika corpus (bho3i)."""
+
+    def pluta_codes(self):
+        out = {}
+        for key in ("a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au"):
+            code = S[key]
+            plut = g.e_long(g.e_long(code)) if g.unpack(code).length == g.SHORT else g.e_long(code)
+            out[key] = plut
+            out[key + "~"] = g.e_nasal(plut)
+        return out
+
+    def test_known_spellings(self):
+        c = self.pluta_codes()
+        self.assertEqual(sc.to_iast(c["a"]), "ā3")
+        self.assertEqual(sc.to_devanagari(c["a"]), "आ३")
+        self.assertEqual(sc.to_cyrillic(c["a"]), "а\u03043")
+        self.assertEqual(sc.to_iast(c["o"]), "o3")
+        self.assertEqual(sc.to_iast(c["ḷ"]), "ḷ3")           # ḷ has no long (Kasika 389): the short + 3
+        self.assertEqual(sc.to_iast(c["ṛ~"]), "ṝ\u03033")
+
+    def test_every_pluta_vowel_round_trips_in_every_script(self):
+        for name, code in self.pluta_codes().items():
+            for script in ("iast", "devanagari", "cyrillic"):
+                with self.subTest(vowel=name, script=script):
+                    self.assertEqual(sc.decode_text(sc.encode_text([code], script), script), (code,))
+
+    def test_the_corpus_string_bho3i(self):
+        o3 = g.e_long(S["o"])
+        seq = (S["bh"], o3, S["i"])
+        self.assertEqual(sc.encode_text(seq, "devanagari"), "भो३इ")           # Kasika 6.1.77, as in kAshikAvRRitti.txt
+        self.assertEqual(sc.encode_text(seq, "iast"), "bho3i")
+        self.assertEqual(sc.decode_text("भो३इ", "devanagari"), seq)
+
+    def test_the_short_form_plus_3_is_read_only_leniently(self):
+        a3 = self.pluta_codes()["a"]
+        for script, text in (("iast", "a3"), ("devanagari", "अ३"), ("cyrillic", "а3")):
+            with self.subTest(script=script):
+                with self.assertRaises(g.GraphError):
+                    sc.decode_text(text, script)
+                self.assertEqual(sc.decode_text(text, script, strict=False), (a3,))
+
+    def test_pairs_over_pluta_and_the_other_vowels_round_trip_and_do_not_collide(self):
+        symbols = list(self.pluta_codes().values()) + [S["a"], S["i"], S["h"], S["y"], S["k"], S["bh"]]
+        for script in ("iast", "devanagari", "cyrillic"):
+            seen = {}
+            for seq in itertools.chain(((c,) for c in symbols), itertools.product(symbols, repeat=2)):
+                text = sc.encode_text(seq, script)
+                self.assertEqual(sc.decode_text(text, script), tuple(seq))
+                self.assertNotIn(text, seen, (script, text))
+                seen[text] = seq
+
+    def test_a_plain_vowel_followed_by_3_is_not_mistaken_for_pluta_across_a_boundary(self):
+        # a, then the digit is never a separate sound: only the vowel before it can take it
+        for script in ("iast", "cyrillic"):
+            with self.assertRaises(g.GraphError):
+                sc.decode_text("k3", script)
 
 
 if __name__ == "__main__":

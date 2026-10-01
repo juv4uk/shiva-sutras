@@ -2,158 +2,163 @@
 # Source: https://github.com/ambuda-org/vidyut  vidyut-sandhi/src/generator.rs  commit 8da2f90bee3ce1c07505fa432fc3729e3f7e02ea
 # Rows whose first and second sound are both vowels; `result` is left' right' (a space separates two parts).
 # vidyut applies the optional elision of y after a/A (8.3.19) for e/ai rows and keeps the avagraha as an apostrophe.
-first_slp1	second_slp1	result_slp1
-a	a	A
-a	A	A
-a	i	e
-a	I	e
-a	u	o
-a	U	o
-a	f	ar
-a	F	ar
-a	x	al
-a	X	al
-a	e	E
-a	E	E
-a	o	O
-a	O	O
-A	a	A
-A	A	A
-A	i	e
-A	I	e
-A	u	o
-A	U	o
-A	f	ar
-A	F	ar
-A	x	al
-A	X	al
-A	e	E
-A	E	E
-A	o	O
-A	O	O
-i	a	y a
-i	A	y A
-i	i	I
-i	I	I
-i	u	y u
-i	U	y U
-i	f	y f
-i	F	y F
-i	x	y x
-i	X	y X
-i	e	y e
-i	E	y E
-i	o	y o
-i	O	y O
-I	a	y a
-I	A	y A
-I	i	I
-I	I	I
-I	u	y u
-I	U	y U
-I	f	y f
-I	F	y F
-I	x	y x
-I	X	y X
-I	e	y e
-I	E	y E
-I	o	y o
-I	O	y O
-u	a	v a
-u	A	v A
-u	i	v i
-u	I	v I
-u	u	U
-u	U	U
-u	f	v f
-u	F	v F
-u	x	v x
-u	X	v X
-u	e	v e
-u	E	v E
-u	o	v o
-u	O	v O
-U	a	v a
-U	A	v A
-U	i	v i
-U	I	v I
-U	u	U
-U	U	U
-U	f	v f
-U	F	v F
-U	x	v x
-U	X	v X
-U	e	v e
-U	E	v E
-U	o	v o
-U	O	v O
-f	a	r a
-f	A	r A
-f	i	r i
-f	I	r I
-f	u	r u
-f	U	r U
-f	f	F
-f	F	F
-f	x	r x
-f	X	r X
-f	e	r e
-f	E	r E
-f	o	r o
-f	O	r O
-F	a	r a
-F	A	r A
-F	i	r i
-F	I	r I
-F	u	r u
-F	U	r U
-F	f	F
-F	F	F
-F	x	r x
-F	X	r X
-F	e	r e
-F	E	r E
-F	o	r o
-F	O	r O
-e	a	e '
-e	A	a A
-e	i	a i
-e	I	a I
-e	u	a u
-e	U	a U
-e	f	a f
-e	F	a F
-e	x	a x
-e	X	a X
-e	e	a e
-e	E	a E
-e	o	a o
-e	O	a O
-E	a	A a
-E	A	A A
-E	i	A i
-E	I	A I
-E	u	A u
-E	U	A U
-E	f	A f
-E	F	A F
-E	x	A x
-E	X	A X
-E	e	A e
-E	E	A E
-E	o	A o
-E	O	A O
-O	a	Av a
-O	A	Av A
-O	i	Av i
-O	I	Av I
-O	u	Av u
-O	U	Av U
-O	f	Av f
-O	F	Av F
-O	x	Av x
-O	X	Av X
-O	e	Av e
-O	E	Av E
-O	o	Av o
-O	O	Av O
+# Converted from SLP1 to IAST, Devanagari and Cyrillic by docs/upc14-oracles-converted/to_script.py using
+# upc14v2_script.encode_text (commit 3785441). Sequences: tokens side by side, a middle dot only where the
+# reading would differ; `|` separates the left and right part of a sandhi result. Outside the codec and written
+# as literals: long ḷ (ḹ, ॡ; Kasika txt 389 says it does not exist) and the avagraha (’, ऽ).
+# Round trip: every cell was decoded back and compared with the SLP1 original; the original file stays in git history.
+first_iast	first_deva	first_cyr	second_iast	second_deva	second_cyr	result_iast	result_deva	result_cyr
+a	अ	а	a	अ	а	ā	आ	а̄
+a	अ	а	ā	आ	а̄	ā	आ	а̄
+a	अ	а	i	इ	і	e	ए	е
+a	अ	а	ī	ई	і̄	e	ए	е
+a	अ	а	u	उ	у	o	ओ	о
+a	अ	а	ū	ऊ	ӯ	o	ओ	о
+a	अ	а	ṛ	ऋ	р̣	ar	अर्	ар
+a	अ	а	ṝ	ॠ	р̣̄	ar	अर्	ар
+a	अ	а	ḷ	ऌ	л̣	al	अल्	ал
+a	अ	а	ḹ	ॡ	л̣̄	al	अल्	ал
+a	अ	а	e	ए	е	ai	ऐ	аі
+a	अ	а	ai	ऐ	аі	ai	ऐ	аі
+a	अ	а	o	ओ	о	au	औ	ау
+a	अ	а	au	औ	ау	au	औ	ау
+ā	आ	а̄	a	अ	а	ā	आ	а̄
+ā	आ	а̄	ā	आ	а̄	ā	आ	а̄
+ā	आ	а̄	i	इ	і	e	ए	е
+ā	आ	а̄	ī	ई	і̄	e	ए	е
+ā	आ	а̄	u	उ	у	o	ओ	о
+ā	आ	а̄	ū	ऊ	ӯ	o	ओ	о
+ā	आ	а̄	ṛ	ऋ	р̣	ar	अर्	ар
+ā	आ	а̄	ṝ	ॠ	р̣̄	ar	अर्	ар
+ā	आ	а̄	ḷ	ऌ	л̣	al	अल्	ал
+ā	आ	а̄	ḹ	ॡ	л̣̄	al	अल्	ал
+ā	आ	а̄	e	ए	е	ai	ऐ	аі
+ā	आ	а̄	ai	ऐ	аі	ai	ऐ	аі
+ā	आ	а̄	o	ओ	о	au	औ	ау
+ā	आ	а̄	au	औ	ау	au	औ	ау
+i	इ	і	a	अ	а	y|a	य्|अ	й|а
+i	इ	і	ā	आ	а̄	y|ā	य्|आ	й|а̄
+i	इ	і	i	इ	і	ī	ई	і̄
+i	इ	і	ī	ई	і̄	ī	ई	і̄
+i	इ	і	u	उ	у	y|u	य्|उ	й|у
+i	इ	і	ū	ऊ	ӯ	y|ū	य्|ऊ	й|ӯ
+i	इ	і	ṛ	ऋ	р̣	y|ṛ	य्|ऋ	й|р̣
+i	इ	і	ṝ	ॠ	р̣̄	y|ṝ	य्|ॠ	й|р̣̄
+i	इ	і	ḷ	ऌ	л̣	y|ḷ	य्|ऌ	й|л̣
+i	इ	і	ḹ	ॡ	л̣̄	y|ḹ	य्|ॡ	й|л̣̄
+i	इ	і	e	ए	е	y|e	य्|ए	й|е
+i	इ	і	ai	ऐ	аі	y|ai	य्|ऐ	й|аі
+i	इ	і	o	ओ	о	y|o	य्|ओ	й|о
+i	इ	і	au	औ	ау	y|au	य्|औ	й|ау
+ī	ई	і̄	a	अ	а	y|a	य्|अ	й|а
+ī	ई	і̄	ā	आ	а̄	y|ā	य्|आ	й|а̄
+ī	ई	і̄	i	इ	і	ī	ई	і̄
+ī	ई	і̄	ī	ई	і̄	ī	ई	і̄
+ī	ई	і̄	u	उ	у	y|u	य्|उ	й|у
+ī	ई	і̄	ū	ऊ	ӯ	y|ū	य्|ऊ	й|ӯ
+ī	ई	і̄	ṛ	ऋ	р̣	y|ṛ	य्|ऋ	й|р̣
+ī	ई	і̄	ṝ	ॠ	р̣̄	y|ṝ	य्|ॠ	й|р̣̄
+ī	ई	і̄	ḷ	ऌ	л̣	y|ḷ	य्|ऌ	й|л̣
+ī	ई	і̄	ḹ	ॡ	л̣̄	y|ḹ	य्|ॡ	й|л̣̄
+ī	ई	і̄	e	ए	е	y|e	य्|ए	й|е
+ī	ई	і̄	ai	ऐ	аі	y|ai	य्|ऐ	й|аі
+ī	ई	і̄	o	ओ	о	y|o	य्|ओ	й|о
+ī	ई	і̄	au	औ	ау	y|au	य्|औ	й|ау
+u	उ	у	a	अ	а	v|a	व्|अ	в|а
+u	उ	у	ā	आ	а̄	v|ā	व्|आ	в|а̄
+u	उ	у	i	इ	і	v|i	व्|इ	в|і
+u	उ	у	ī	ई	і̄	v|ī	व्|ई	в|і̄
+u	उ	у	u	उ	у	ū	ऊ	ӯ
+u	उ	у	ū	ऊ	ӯ	ū	ऊ	ӯ
+u	उ	у	ṛ	ऋ	р̣	v|ṛ	व्|ऋ	в|р̣
+u	उ	у	ṝ	ॠ	р̣̄	v|ṝ	व्|ॠ	в|р̣̄
+u	उ	у	ḷ	ऌ	л̣	v|ḷ	व्|ऌ	в|л̣
+u	उ	у	ḹ	ॡ	л̣̄	v|ḹ	व्|ॡ	в|л̣̄
+u	उ	у	e	ए	е	v|e	व्|ए	в|е
+u	उ	у	ai	ऐ	аі	v|ai	व्|ऐ	в|аі
+u	उ	у	o	ओ	о	v|o	व्|ओ	в|о
+u	उ	у	au	औ	ау	v|au	व्|औ	в|ау
+ū	ऊ	ӯ	a	अ	а	v|a	व्|अ	в|а
+ū	ऊ	ӯ	ā	आ	а̄	v|ā	व्|आ	в|а̄
+ū	ऊ	ӯ	i	इ	і	v|i	व्|इ	в|і
+ū	ऊ	ӯ	ī	ई	і̄	v|ī	व्|ई	в|і̄
+ū	ऊ	ӯ	u	उ	у	ū	ऊ	ӯ
+ū	ऊ	ӯ	ū	ऊ	ӯ	ū	ऊ	ӯ
+ū	ऊ	ӯ	ṛ	ऋ	р̣	v|ṛ	व्|ऋ	в|р̣
+ū	ऊ	ӯ	ṝ	ॠ	р̣̄	v|ṝ	व्|ॠ	в|р̣̄
+ū	ऊ	ӯ	ḷ	ऌ	л̣	v|ḷ	व्|ऌ	в|л̣
+ū	ऊ	ӯ	ḹ	ॡ	л̣̄	v|ḹ	व्|ॡ	в|л̣̄
+ū	ऊ	ӯ	e	ए	е	v|e	व्|ए	в|е
+ū	ऊ	ӯ	ai	ऐ	аі	v|ai	व्|ऐ	в|аі
+ū	ऊ	ӯ	o	ओ	о	v|o	व्|ओ	в|о
+ū	ऊ	ӯ	au	औ	ау	v|au	व्|औ	в|ау
+ṛ	ऋ	р̣	a	अ	а	r|a	र्|अ	р|а
+ṛ	ऋ	р̣	ā	आ	а̄	r|ā	र्|आ	р|а̄
+ṛ	ऋ	р̣	i	इ	і	r|i	र्|इ	р|і
+ṛ	ऋ	р̣	ī	ई	і̄	r|ī	र्|ई	р|і̄
+ṛ	ऋ	р̣	u	उ	у	r|u	र्|उ	р|у
+ṛ	ऋ	р̣	ū	ऊ	ӯ	r|ū	र्|ऊ	р|ӯ
+ṛ	ऋ	р̣	ṛ	ऋ	р̣	ṝ	ॠ	р̣̄
+ṛ	ऋ	р̣	ṝ	ॠ	р̣̄	ṝ	ॠ	р̣̄
+ṛ	ऋ	р̣	ḷ	ऌ	л̣	r|ḷ	र्|ऌ	р|л̣
+ṛ	ऋ	р̣	ḹ	ॡ	л̣̄	r|ḹ	र्|ॡ	р|л̣̄
+ṛ	ऋ	р̣	e	ए	е	r|e	र्|ए	р|е
+ṛ	ऋ	р̣	ai	ऐ	аі	r|ai	र्|ऐ	р|аі
+ṛ	ऋ	р̣	o	ओ	о	r|o	र्|ओ	р|о
+ṛ	ऋ	р̣	au	औ	ау	r|au	र्|औ	р|ау
+ṝ	ॠ	р̣̄	a	अ	а	r|a	र्|अ	р|а
+ṝ	ॠ	р̣̄	ā	आ	а̄	r|ā	र्|आ	р|а̄
+ṝ	ॠ	р̣̄	i	इ	і	r|i	र्|इ	р|і
+ṝ	ॠ	р̣̄	ī	ई	і̄	r|ī	र्|ई	р|і̄
+ṝ	ॠ	р̣̄	u	उ	у	r|u	र्|उ	р|у
+ṝ	ॠ	р̣̄	ū	ऊ	ӯ	r|ū	र्|ऊ	р|ӯ
+ṝ	ॠ	р̣̄	ṛ	ऋ	р̣	ṝ	ॠ	р̣̄
+ṝ	ॠ	р̣̄	ṝ	ॠ	р̣̄	ṝ	ॠ	р̣̄
+ṝ	ॠ	р̣̄	ḷ	ऌ	л̣	r|ḷ	र्|ऌ	р|л̣
+ṝ	ॠ	р̣̄	ḹ	ॡ	л̣̄	r|ḹ	र्|ॡ	р|л̣̄
+ṝ	ॠ	р̣̄	e	ए	е	r|e	र्|ए	р|е
+ṝ	ॠ	р̣̄	ai	ऐ	аі	r|ai	र्|ऐ	р|аі
+ṝ	ॠ	р̣̄	o	ओ	о	r|o	र्|ओ	р|о
+ṝ	ॠ	р̣̄	au	औ	ау	r|au	र्|औ	р|ау
+e	ए	е	a	अ	а	e|’	ए|ऽ	е|’
+e	ए	е	ā	आ	а̄	a|ā	अ|आ	а|а̄
+e	ए	е	i	इ	і	a|i	अ|इ	а|і
+e	ए	е	ī	ई	і̄	a|ī	अ|ई	а|і̄
+e	ए	е	u	उ	у	a|u	अ|उ	а|у
+e	ए	е	ū	ऊ	ӯ	a|ū	अ|ऊ	а|ӯ
+e	ए	е	ṛ	ऋ	р̣	a|ṛ	अ|ऋ	а|р̣
+e	ए	е	ṝ	ॠ	р̣̄	a|ṝ	अ|ॠ	а|р̣̄
+e	ए	е	ḷ	ऌ	л̣	a|ḷ	अ|ऌ	а|л̣
+e	ए	е	ḹ	ॡ	л̣̄	a|ḹ	अ|ॡ	а|л̣̄
+e	ए	е	e	ए	е	a|e	अ|ए	а|е
+e	ए	е	ai	ऐ	аі	a|ai	अ|ऐ	а|аі
+e	ए	е	o	ओ	о	a|o	अ|ओ	а|о
+e	ए	е	au	औ	ау	a|au	अ|औ	а|ау
+ai	ऐ	аі	a	अ	а	ā|a	आ|अ	а̄|а
+ai	ऐ	аі	ā	आ	а̄	ā|ā	आ|आ	а̄|а̄
+ai	ऐ	аі	i	इ	і	ā|i	आ|इ	а̄|і
+ai	ऐ	аі	ī	ई	і̄	ā|ī	आ|ई	а̄|і̄
+ai	ऐ	аі	u	उ	у	ā|u	आ|उ	а̄|у
+ai	ऐ	аі	ū	ऊ	ӯ	ā|ū	आ|ऊ	а̄|ӯ
+ai	ऐ	аі	ṛ	ऋ	р̣	ā|ṛ	आ|ऋ	а̄|р̣
+ai	ऐ	аі	ṝ	ॠ	р̣̄	ā|ṝ	आ|ॠ	а̄|р̣̄
+ai	ऐ	аі	ḷ	ऌ	л̣	ā|ḷ	आ|ऌ	а̄|л̣
+ai	ऐ	аі	ḹ	ॡ	л̣̄	ā|ḹ	आ|ॡ	а̄|л̣̄
+ai	ऐ	аі	e	ए	е	ā|e	आ|ए	а̄|е
+ai	ऐ	аі	ai	ऐ	аі	ā|ai	आ|ऐ	а̄|аі
+ai	ऐ	аі	o	ओ	о	ā|o	आ|ओ	а̄|о
+ai	ऐ	аі	au	औ	ау	ā|au	आ|औ	а̄|ау
+au	औ	ау	a	अ	а	āv|a	आव्|अ	а̄в|а
+au	औ	ау	ā	आ	а̄	āv|ā	आव्|आ	а̄в|а̄
+au	औ	ау	i	इ	і	āv|i	आव्|इ	а̄в|і
+au	औ	ау	ī	ई	і̄	āv|ī	आव्|ई	а̄в|і̄
+au	औ	ау	u	उ	у	āv|u	आव्|उ	а̄в|у
+au	औ	ау	ū	ऊ	ӯ	āv|ū	आव्|ऊ	а̄в|ӯ
+au	औ	ау	ṛ	ऋ	р̣	āv|ṛ	आव्|ऋ	а̄в|р̣
+au	औ	ау	ṝ	ॠ	р̣̄	āv|ṝ	आव्|ॠ	а̄в|р̣̄
+au	औ	ау	ḷ	ऌ	л̣	āv|ḷ	आव्|ऌ	а̄в|л̣
+au	औ	ау	ḹ	ॡ	л̣̄	āv|ḹ	आव्|ॡ	а̄в|л̣̄
+au	औ	ау	e	ए	е	āv|e	आव्|ए	а̄в|е
+au	औ	ау	ai	ऐ	аі	āv|ai	आव्|ऐ	а̄в|аі
+au	औ	ау	o	ओ	о	āv|o	आव्|ओ	а̄в|о
+au	औ	ау	au	औ	ау	āv|au	आव्|औ	а̄в|ау

@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-"""Spelling views of the 42 sounds: IAST, Devanagari and Ukrainian Cyrillic (stage 1 of removing SLP1).
+"""Spelling views of the 42 sounds: IAST, Devanagari and Ukrainian Cyrillic.
 
-The graph (`upc14v2`) never needed a spelling: a sound is its code. Its debug labels were
-SLP1, which is case-sensitive (k and K are two sounds) and a third script nobody asked for.
-Here are the two scripts the project keeps: IAST (lowercase Latin with diacritics) and
-Devanagari. They are VIEWS: `to_iast(code)` / `to_devanagari(code)` read a code, and
-`code_from_iast(text)` / `code_from_devanagari(text)` read a spelling. Identity stays the
-code, never the string.
+The graph (`upc14v2`) never needed a spelling: a sound is its code. SLP1, the case-sensitive
+ASCII notation (k and K are two sounds) it used before, is gone (owner's decision, 2026-10-01).
+The scripts the project keeps are IAST (lowercase Latin with diacritics, for reading), Devanagari
+(the native one) and Cyrillic (from a Ukrainian book). They are VIEWS: `to_iast(code)` and the
+like read a code, `code_from_iast(text)` and the like read a spelling; `encode_text` and
+`decode_text` do the same for a whole sequence, with no ambiguity. Identity stays the code.
 
 Length and nose are coordinates of the code, so they are spelled by a rule, not listed:
 long vowel = the long form (ā ī ū ṝ; Devanagari आ ई ऊ ॠ), nasal = a combining tilde
-(IAST) or candrabindu (Devanagari). Stage 1 keeps the SLP1 debug keys of `upc14v2.SOUNDS`
-as the way the SPELLING TABLE is addressed internally; stage 2 re-keys the graph and the
-tests by IAST and deletes this bridge.
+(IAST) or candrabindu (Devanagari). The spelling table is keyed by the IAST name of the sound (the keys of `upc14v2.SOUNDS`).
 
 A consonant in Devanagari is written bare with virama (क्), a vowel as its independent letter.
 
@@ -36,17 +34,17 @@ from typing import Dict
 import upc14v2 as g
 import upc14v2_sandhi as sd
 
-# one row per sound: legacy debug key -> (IAST, Devanagari, Cyrillic)
+# one row per sound: IAST name -> (IAST, Devanagari, Cyrillic)
 _ROWS = {
-    "a": ("a", "अ", "а"), "i": ("i", "इ", "і"), "u": ("u", "उ", "у"), "f": ("ṛ", "ऋ", "р̣"), "x": ("ḷ", "ऌ", "л̣"),
-    "e": ("e", "ए", "е"), "o": ("o", "ओ", "о"), "E": ("ai", "ऐ", "аі"), "O": ("au", "औ", "ау"),
-    "k": ("k", "क्", "к"), "K": ("kh", "ख्", "кг"), "g": ("g", "ग्", "ґ"), "G": ("gh", "घ्", "ґг"), "N": ("ṅ", "ङ्", "н̇"),
-    "c": ("c", "च्", "ч"), "C": ("ch", "छ्", "чг"), "j": ("j", "ज्", "дж"), "J": ("jh", "झ्", "джг"), "Y": ("ñ", "ञ्", "н̃"),
-    "w": ("ṭ", "ट्", "т̣"), "W": ("ṭh", "ठ्", "т̣г"), "q": ("ḍ", "ड्", "д̣"), "Q": ("ḍh", "ढ्", "д̣г"), "R": ("ṇ", "ण्", "н̣"),
-    "t": ("t", "त्", "т"), "T": ("th", "थ्", "тг"), "d": ("d", "द्", "д"), "D": ("dh", "ध्", "дг"), "n": ("n", "न्", "н"),
-    "p": ("p", "प्", "п"), "P": ("ph", "फ्", "пг"), "b": ("b", "ब्", "б"), "B": ("bh", "भ्", "бг"), "m": ("m", "म्", "м"),
+    "a": ("a", "अ", "а"), "i": ("i", "इ", "і"), "u": ("u", "उ", "у"), "ṛ": ("ṛ", "ऋ", "р̣"), "ḷ": ("ḷ", "ऌ", "л̣"),
+    "e": ("e", "ए", "е"), "o": ("o", "ओ", "о"), "ai": ("ai", "ऐ", "аі"), "au": ("au", "औ", "ау"),
+    "k": ("k", "क्", "к"), "kh": ("kh", "ख्", "кг"), "g": ("g", "ग्", "ґ"), "gh": ("gh", "घ्", "ґг"), "ṅ": ("ṅ", "ङ्", "н̇"),
+    "c": ("c", "च्", "ч"), "ch": ("ch", "छ्", "чг"), "j": ("j", "ज्", "дж"), "jh": ("jh", "झ्", "джг"), "ñ": ("ñ", "ञ्", "н̃"),
+    "ṭ": ("ṭ", "ट्", "т̣"), "ṭh": ("ṭh", "ठ्", "т̣г"), "ḍ": ("ḍ", "ड्", "д̣"), "ḍh": ("ḍh", "ढ्", "д̣г"), "ṇ": ("ṇ", "ण्", "н̣"),
+    "t": ("t", "त्", "т"), "th": ("th", "थ्", "тг"), "d": ("d", "द्", "д"), "dh": ("dh", "ध्", "дг"), "n": ("n", "न्", "н"),
+    "p": ("p", "प्", "п"), "ph": ("ph", "फ्", "пг"), "b": ("b", "ब्", "б"), "bh": ("bh", "भ्", "бг"), "m": ("m", "म्", "м"),
     "y": ("y", "य्", "й"), "r": ("r", "र्", "р"), "l": ("l", "ल्", "л"), "v": ("v", "व्", "в"),
-    "S": ("ś", "श्", "ш́"), "z": ("ṣ", "ष्", "ш̣"), "s": ("s", "स्", "с"), "h": ("h", "ह्", "х"),
+    "ś": ("ś", "श्", "ш́"), "ṣ": ("ṣ", "ष्", "ш̣"), "s": ("s", "स्", "с"), "h": ("h", "ह्", "х"),
 }
 _N = unicodedata.normalize
 # long vowel: the long form of the base spelling (a rule on four vowels; ḷ has none)
@@ -56,6 +54,9 @@ _LONG = (
     {"а": "а\u0304", "і": "і\u0304", "у": "у\u0304", "р\u0323": "р\u0323\u0304"},
 )
 _NASAL = ("\u0303", "\u0901", "\u0303")   # combining tilde, candrabindu, combining tilde
+# pluta: the digit 3 after the vowel (Kasika corpus: bho3i, 6451 uses of the Devanagari digit); the canonical spelling
+# writes the LONG form of a i u ṛ first (ā3, ī3: the corpus has ā3 43 times against a3 once), then the nose, then the 3
+_PLUTA = ("3", "\u0969", "3")
 _SCRIPTS = ("iast", "devanagari", "cyrillic")
 _DEV_VIRAMA = "\u094d"
 
@@ -64,13 +65,43 @@ def _plain(v: "g.Vertex") -> int:
     return g.Vertex(v.place, 0, v.aperture, v.length, v.voice, v.asp).code
 
 
-def _spell(code: int, column: int) -> str:
-    """Spell a code: base sound, then long, then nasal (the rule, not a list).
+def _vowel_base(v: "g.Vertex") -> int:
+    """The plain vowel of this place, aperture, voice and aspiration: the short one if it exists, else the long."""
+    for length in (g.SHORT, g.LONG):
+        code = g.Vertex(v.place, 0, v.aperture, length, v.voice, v.asp).code
+        if code in g.LABELS_BY_CODE:
+            return code
+    raise g.GraphError(f"{g.bits(g.Vertex(v.place, v.nasal, v.aperture, v.length, v.voice, v.asp).code)} has no spelling")
 
-    Fails closed: a code that does not read back to itself (pluta, a long ḷ, a short e/o/ai/au,
+
+def _pluta(code: int) -> int:
+    v = g.unpack(code)
+    return g.Vertex(v.place, v.nasal, v.aperture, g.PLUTA, v.voice, v.asp).code
+
+
+def _spell_pluta(code: int, column: int) -> str:
+    v = g.unpack(code)
+    key = g.LABELS_BY_CODE[_vowel_base(v)]
+    text = _ROWS[key][column]
+    if key in ("a", "i", "u", "ṛ"):
+        text = _LONG[column][text]
+    if v.nasal:
+        text += _NASAL[column]
+    text = _N("NFC", text + _PLUTA[column])
+    if _FROM[column].get(text) != code:
+        raise g.GraphError(f"{g.bits(code)} has no spelling in {_SCRIPTS[column]}")
+    return text
+
+
+def _spell(code: int, column: int) -> str:
+    """Spell a code: base sound, then long, then nasal, then pluta (the rule, not a list).
+
+    Fails closed: a code that does not read back to itself (a long ḷ, a short e/o/ai/au,
     a nasal r) raises GraphError instead of being written as some other sound.
     """
     v = g.unpack(code)
+    if v.aperture >= g.VOWEL and v.length == g.PLUTA:
+        return _spell_pluta(code, column)
     if v.nasal and v.aperture == g.SEMIVOWEL:        # y~ v~ l~ (8.4.45); r has no nasal form (Kasika 391)
         key = g.LABELS_BY_CODE.get(_plain(v))
         if key not in ("y", "v", "l"):
@@ -81,7 +112,7 @@ def _spell(code: int, column: int) -> str:
     if key is None:
         raise g.GraphError(f"{g.bits(code)} has no spelling")
     text = _ROWS[key][column]
-    if v.aperture >= g.VOWEL and v.length == g.LONG and key in "aiuf":
+    if v.aperture >= g.VOWEL and v.length == g.LONG and key in ("a", "i", "u", "ṛ"):
         text = _LONG[column][text]
     if v.nasal and v.aperture >= g.VOWEL:
         text += _NASAL[column]
@@ -111,6 +142,10 @@ def _reader(column: int) -> Dict[str, int]:
     for text, code in list(out.items()):
         if g.unpack(code).aperture >= g.VOWEL:
             out[text + _NASAL[column]] = g.e_nasal(code)
+    for text, code in list(out.items()):               # pluta: short or long (+ nose) + 3; only the long form is canonical
+        v = g.unpack(code)
+        if v.aperture >= g.VOWEL and v.length != g.PLUTA:
+            out[text + _PLUTA[column]] = _pluta(code)
     for key in "yvl":                                   # y~ v~ l~ (8.4.45)
         v = g.unpack(g.SOUNDS[key])
         nasal_code = g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code
@@ -155,8 +190,8 @@ def code_from_cyrillic(text: str) -> int:
 # Devanagari follows the writing system, which is unambiguous by itself: a consonant is a bare
 # letter + virama (क्), or a bare letter alone when the vowel `a` follows (क = k a), or a bare
 # letter + a vowel sign (कि = k i); a vowel stands as an independent letter when no consonant
-# precedes it; the candrabindu follows the vowel it nasalises. Pluta, anusvara, visarga and
-# avagraha are not among the 42 sounds and are not part of this codec.
+# precedes it; the candrabindu follows the vowel it nasalises and the digit ३ (pluta) follows both.
+# Anusvara, visarga and avagraha are not among the 42 sounds and are not part of this codec.
 
 SEPARATOR = "\u00b7"
 NASAL_DEV, NASAL_IAST = _NASAL[1], _NASAL[0]
@@ -174,7 +209,7 @@ def _tokens(column: int):
 
 _TOKENS = {0: _tokens(0), 2: _tokens(2)}   # IAST and Cyrillic: longest first
 _DEV_CONS = {row[1][:-1]: g.SOUNDS[key] for key, row in _ROWS.items() if row[1].endswith(_DEV_VIRAMA)}
-_DEV_VOWEL = {text: c for text, c in _FROM[1].items() if _is_vowel(c) and not text.endswith(_NASAL[1])}
+_DEV_VOWEL = {text: c for text, c in _FROM[1].items() if _is_vowel(c) and len(text) == 1}
 _DEV_SIGN_TO_CODE = {}
 for _iast, _sign in _DEV_SIGN.items():
     _DEV_SIGN_TO_CODE[_sign] = _FROM[0][_N("NFC", _iast)]
@@ -229,9 +264,12 @@ def _encode_devanagari(seq) -> str:
         nxt = seq[i + 1] if i + 1 < len(seq) else None
         if nxt is not None and _is_vowel(nxt):
             v = g.unpack(nxt)
-            plain = to_iast(g.Vertex(v.place, 0, v.aperture, v.length, v.voice, v.asp).code)
-            sign = "" if plain == "a" else _DEV_SIGN[plain]
-            out.append(bare + sign + (NASAL_DEV if v.nasal else ""))
+            key = g.LABELS_BY_CODE[_vowel_base(v)]
+            iast = _ROWS[key][0]
+            if v.length >= g.LONG and key in ("a", "i", "u", "ṛ"):
+                iast = _LONG[0][iast]                    # long or pluta: the long sign
+            sign = "" if iast == "a" else _DEV_SIGN[iast]
+            out.append(bare + sign + (NASAL_DEV if v.nasal else "") + (_PLUTA[1] if v.length == g.PLUTA else ""))
             i += 2
         else:
             out.append(bare + _DEV_VIRAMA)
@@ -264,11 +302,17 @@ def _decode_devanagari(text: str) -> tuple:
             if i < len(text) and text[i] == NASAL_DEV:
                 vowel = g.e_nasal(vowel)
                 i += 1
+            if i < len(text) and text[i] == _PLUTA[1]:
+                vowel = _pluta(vowel)
+                i += 1
             out.append(vowel)
         elif ch in _DEV_VOWEL:
             vowel = _DEV_VOWEL[ch]
             if i < len(text) and text[i] == NASAL_DEV:
                 vowel = g.e_nasal(vowel)
+                i += 1
+            if i < len(text) and text[i] == _PLUTA[1]:
+                vowel = _pluta(vowel)
                 i += 1
             out.append(vowel)
         else:

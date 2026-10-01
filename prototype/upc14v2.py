@@ -36,12 +36,14 @@ Grammar as graph queries (see `test_upc14v2.py`)
     guna / vrddhi  join of places, aperture lift          (6.1.87, 6.1.88)
     yan / jas      the NEAREST vertex in a target set      (1.1.50: sthane'ntaratamah)
 
-Nothing here is Sanskrit or Ukrainian: no layout, no sign, no spelling. SLP1
-letters appear only as debug labels for the sutra text and for tests.
+A sound is its code, not a spelling. The names used to refer to the 42 sounds (keys of `SOUNDS`,
+the tokens of `SUTRAS`) are lowercase IAST, as a convenience for reading; every written form of a
+sound (the scripts) is a view in `upc14v2_script`, and SLP1 is not used anywhere.
 """
 
 from __future__ import annotations
 
+import unicodedata
 from dataclasses import dataclass
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
@@ -184,18 +186,18 @@ def join_vertices(a: int, b: int, *, length: int, aperture: int) -> int:
 
 # ---------------------------------------------------------------------------
 # The derivation: 42 sounds from the seed `k`. (label, parent label(s), edge)
-# Labels are debug names only (SLP1), never identity.
+# Names are IAST, a convenience for reading only; identity is the code.
 # ---------------------------------------------------------------------------
 
 SEED = ("k", make(K, STOP))
 
-VARGA_FIRST = ("k", "c", "w", "t", "p")   # first member of each varga, spine order
+VARGA_FIRST = ("k", "c", "ṭ", "t", "p")   # first member of each varga, spine order
 VARGA_ROWS = {
-    "k": ("k", "K", "g", "G", "N"),
-    "c": ("c", "C", "j", "J", "Y"),
-    "w": ("w", "W", "q", "Q", "R"),
-    "t": ("t", "T", "d", "D", "n"),
-    "p": ("p", "P", "b", "B", "m"),
+    "k": ("k", "kh", "g", "gh", "ṅ"),
+    "c": ("c", "ch", "j", "jh", "ñ"),
+    "ṭ": ("ṭ", "ṭh", "ḍ", "ḍh", "ṇ"),
+    "t": ("t", "th", "d", "dh", "n"),
+    "p": ("p", "ph", "b", "bh", "m"),
 }
 
 
@@ -222,23 +224,23 @@ def _derive() -> Tuple[Dict[str, int], List[Tuple[str, str, str]]]:
         previous = first
 
     # 2. semivowels: lift the voiced unaspirated stop of the same place by 1
-    for label, parent in (("y", "j"), ("r", "q"), ("l", "d")):
+    for label, parent in (("y", "j"), ("r", "ḍ"), ("l", "d")):
         add(label, parent, "lift1", e_lift(codes[parent], 1))
     add("v", "b", "lift1+joinD", e_join(e_lift(codes["b"], 1), D))
 
     # 3. sibilants and h: lift the aspirate of the same place by 2
-    for label, parent in (("S", "C"), ("z", "W"), ("s", "T"), ("h", "G")):
+    for label, parent in (("ś", "ch"), ("ṣ", "ṭh"), ("s", "th"), ("h", "gh")):
         add(label, parent, "lift2", e_lift(codes[parent], 2))
 
     # 4. simple vowels: lift the voiced unaspirated stop by 3
-    for label, parent in (("a", "g"), ("i", "j"), ("u", "b"), ("f", "q"), ("x", "d")):
+    for label, parent in (("a", "g"), ("i", "j"), ("u", "b"), ("ṛ", "ḍ"), ("ḷ", "d")):
         add(label, parent, "lift3", e_lift(codes[parent], 3))
 
     # 5. e o: join of two vowels' places, long. ai au: lift of e o.
     add("e", "a+i", "join", join_vertices(codes["a"], codes["i"], length=LONG, aperture=VOWEL))
     add("o", "a+u", "join", join_vertices(codes["a"], codes["u"], length=LONG, aperture=VOWEL))
-    add("E", "e", "lift1", e_lift(codes["e"], 1))
-    add("O", "o", "lift1", e_lift(codes["o"], 1))
+    add("ai", "e", "lift1", e_lift(codes["e"], 1))
+    add("au", "o", "lift1", e_lift(codes["o"], 1))
     return codes, log
 
 
@@ -251,11 +253,11 @@ LABELS_BY_CODE = {c: l for l, c in SOUNDS.items()}
 # ---------------------------------------------------------------------------
 
 SUTRAS: Tuple[Tuple[str, ...], ...] = (
-    ("a", "i", "u", "R"), ("f", "x", "k"), ("e", "o", "N"), ("E", "O", "c"),
-    ("h", "y", "v", "r", "w"), ("l", "R"), ("Y", "m", "N", "R", "n", "m"),
-    ("J", "B", "Y"), ("G", "Q", "D", "z"), ("j", "b", "g", "q", "d", "S"),
-    ("K", "P", "C", "W", "T", "c", "w", "t", "v"), ("k", "p", "y"),
-    ("S", "z", "s", "r"), ("h", "l"),
+    ("a", "i", "u", "ṇ"), ("ṛ", "ḷ", "k"), ("e", "o", "ṅ"), ("ai", "au", "c"),
+    ("h", "y", "v", "r", "ṭ"), ("l", "ṇ"), ("ñ", "m", "ṅ", "ṇ", "n", "m"),
+    ("jh", "bh", "ñ"), ("gh", "ḍh", "dh", "ṣ"), ("j", "b", "g", "ḍ", "d", "ś"),
+    ("kh", "ph", "ch", "ṭh", "th", "c", "ṭ", "t", "v"), ("k", "p", "y"),
+    ("ś", "ṣ", "s", "r"), ("h", "l"),
 )
 
 
@@ -355,6 +357,72 @@ def pratyahara(start: int, marker_label: str, nth: int = 1, *, start_occurrence:
             if seen == nth:
                 return tuple(n.code for n in PATH[begin:node.rank] if not n.is_marker)
     raise GraphError(f"no marker {marker_label!r} (occurrence {nth}) after {bits(start)}")
+
+
+# ---------------------------------------------------------------------------
+# Named pratyahara: name -> (start sound, marker, nth marker after the start, start occurrence)
+# ---------------------------------------------------------------------------
+# One row per classical name (43). `nth` counts the markers of that letter after the start, as in
+# `pratyahara`. The occurrence rules are the Kasika's (preface, kAshikAvRRitti.txt 99-103, 165-176):
+# `aṇ` takes the first ṇ, `iṇ` the second, and `aṇ2` is the aṇ of 1.1.69 (the second ṇ); a name that
+# starts with h takes the first h. Verified: every row gives the set of the oracle/YAML name
+# (docs/upc14-named-pratyahara-2026-10-01.tsv; the preface counts per marker agree for 13 of 14
+# markers, see docs/upc14-pratyahara-counts-vs-kasika-2026-10-01.md; `cay` is the exception).
+
+NAMED_PRATYAHARA = {
+    "aṇ": ("a", "ṇ", 1, 1),
+    "ak": ("a", "k", 1, 1),
+    "ac": ("a", "c", 1, 1),
+    "aṭ": ("a", "ṭ", 1, 1),
+    "aṇ2": ("a", "ṇ", 2, 1),
+    "am": ("a", "m", 1, 1),
+    "aś": ("a", "ś", 1, 1),
+    "al": ("a", "l", 1, 1),
+    "ik": ("i", "k", 1, 1),
+    "ic": ("i", "c", 1, 1),
+    "iṇ": ("i", "ṇ", 2, 1),
+    "uk": ("u", "k", 1, 1),
+    "eṅ": ("e", "ṅ", 1, 1),
+    "ec": ("e", "c", 1, 1),
+    "aic": ("ai", "c", 1, 1),
+    "yañ": ("y", "ñ", 1, 1),
+    "yaṇ": ("y", "ṇ", 1, 1),
+    "yam": ("y", "m", 1, 1),
+    "yay": ("y", "y", 1, 1),
+    "yar": ("y", "r", 1, 1),
+    "vaś": ("v", "ś", 1, 1),
+    "val": ("v", "l", 1, 1),
+    "ral": ("r", "l", 1, 1),
+    "may": ("m", "y", 1, 1),
+    "ñam": ("ñ", "m", 1, 1),
+    "ṅam": ("ṅ", "m", 1, 1),
+    "jhaś": ("jh", "ś", 1, 1),
+    "jhaṣ": ("jh", "ṣ", 1, 1),
+    "jhay": ("jh", "y", 1, 1),
+    "jhar": ("jh", "r", 1, 1),
+    "jhal": ("jh", "l", 1, 1),
+    "bhaṣ": ("bh", "ṣ", 1, 1),
+    "jaś": ("j", "ś", 1, 1),
+    "baś": ("b", "ś", 1, 1),
+    "khay": ("kh", "y", 1, 1),
+    "khar": ("kh", "r", 1, 1),
+    "chav": ("ch", "v", 1, 1),
+    "cay": ("c", "y", 1, 1),
+    "car": ("c", "r", 1, 1),
+    "śar": ("ś", "r", 1, 1),
+    "śal": ("ś", "l", 1, 1),
+    "haś": ("h", "ś", 1, 1),
+    "hal": ("h", "l", 1, 1),
+}
+
+
+def pratyahara_named(name: str) -> Tuple[int, ...]:
+    """The sounds of a classical pratyahara by its name (IAST, e.g. "aṇ", "iṇ", "hal", "bhaṣ")."""
+    try:
+        start, marker, nth, occurrence = NAMED_PRATYAHARA[unicodedata.normalize("NFC", name)]
+    except KeyError:
+        raise GraphError(f"{name!r} is not a named pratyahara of the sutra path") from None
+    return pratyahara(SOUNDS[start], marker, nth, start_occurrence=occurrence)
 
 
 def savarna(a: int, b: int, *, vartika: bool = False) -> bool:
@@ -473,6 +541,7 @@ if __name__ == "__main__":
 
 
 __all__ = [
+    "NAMED_PRATYAHARA", "pratyahara_named",
     "Ambiguous", "AmbiguousStart", "CODE_MAX", "DERIVATION", "GraphError", "InvalidCode", "LABELS_BY_CODE", "PATH",
     "SOUNDS", "SUTRAS", "Vertex", "WIDTH", "bits", "dirgha", "e_asp", "e_join", "e_lift", "e_long",
     "e_nasal", "e_shift", "e_voice", "first_rank", "guna", "is_it", "it_ranks", "make", "meta_code", "nearest",
