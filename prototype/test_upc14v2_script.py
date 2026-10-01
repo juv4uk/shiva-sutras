@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """IAST, Devanagari and Cyrillic views of the 42 sounds (stage 1 of removing SLP1)."""
 
+import itertools
+import random
 import unicodedata
 
 import unittest
@@ -74,6 +76,71 @@ class CyrillicViewTests(unittest.TestCase):
     def test_the_three_scripts_name_the_same_42_sounds(self):
         for code in S.values():
             self.assertEqual(sc.code_from_iast(sc.to_iast(code)), sc.code_from_cyrillic(sc.to_cyrillic(code)))
+
+
+def _alphabet():
+    return (list(S.values()) + [g.e_long(S[k]) for k in "aiuf"] + [g.e_nasal(S[k]) for k in "aiufxeoEO"]
+            + [g.e_nasal(g.e_long(S[k])) for k in "aiuf"])
+
+
+class TextCodecTests(unittest.TestCase):
+    """A sequence of sounds -> a string -> the same sequence, in every script, no ambiguity."""
+
+    SCRIPTS = ("iast", "devanagari", "cyrillic")
+
+    def test_every_pair_round_trips_and_no_two_sequences_share_a_string(self):
+        alphabet = _alphabet()
+        for script in self.SCRIPTS:
+            seen = {}
+            for n in (1, 2):
+                for seq in itertools.product(alphabet, repeat=n):
+                    text = sc.encode_text(seq, script)
+                    self.assertEqual(sc.decode_text(text, script), seq, (script, text))
+                    self.assertNotIn(text, seen, (script, text))     # injective
+                    seen[text] = seq
+
+    def test_random_longer_sequences_round_trip(self):
+        rng = random.Random(14)
+        alphabet = _alphabet()
+        for script in self.SCRIPTS:
+            for _ in range(4000):
+                seq = tuple(rng.choice(alphabet) for _ in range(rng.randint(3, 7)))
+                self.assertEqual(sc.decode_text(sc.encode_text(seq, script), script), seq, script)
+
+    def test_the_ambiguous_junctions_get_a_dot_in_iast_and_cyrillic(self):
+        k, h, kh, a, i, ai, y = (S[x] for x in ("k", "h", "K", "a", "i", "E", "y"))
+        self.assertEqual(sc.encode_text([k, h], "iast"), "k·h")
+        self.assertEqual(sc.encode_text([kh], "iast"), "kh")
+        self.assertEqual(sc.encode_text([a, i], "iast"), "a·i")
+        self.assertEqual(sc.encode_text([ai], "iast"), "ai")
+        self.assertEqual(sc.encode_text([a, y], "cyrillic"), "а·й")
+        self.assertEqual(sc.encode_text([ai], "cyrillic"), "ай")
+        self.assertEqual(sc.decode_text("kh", "iast"), (kh,))
+        self.assertEqual(sc.decode_text("k·h", "iast"), (k, h))
+
+    def test_no_dot_where_the_text_is_already_unambiguous(self):
+        self.assertEqual(sc.encode_text([S["k"], S["t"], S["a"]], "iast"), "kta")
+
+    def test_devanagari_follows_the_writing_system(self):
+        k, a, R = S["k"], S["a"], S["R"]
+        long_a = g.e_long(a)
+        self.assertEqual(sc.encode_text([k, a], "devanagari"), "क")           # k + inherent a
+        self.assertEqual(sc.encode_text([k], "devanagari"), "क्")
+        self.assertEqual(sc.encode_text([k, S["i"]], "devanagari"), "कि")     # a vowel sign
+        self.assertEqual(sc.encode_text([k, a, R, long_a], "devanagari"), "कणा")
+        self.assertEqual(sc.encode_text([k, a, a], "devanagari"), "कअ")       # hiatus: independent letter
+
+    def test_transcode_goes_through_the_codes(self):
+        text = sc.encode_text([S["k"], S["R"], S["a"], g.e_long(S["a"])], "iast")
+        for src in self.SCRIPTS:
+            for dst in self.SCRIPTS:
+                s = sc.transcode(sc.transcode(text, "iast", src), src, dst)
+                self.assertEqual(sc.decode_text(s, dst), sc.decode_text(text, "iast"))
+
+    def test_a_string_that_is_not_a_text_of_the_script_raises(self):
+        for script, bad in (("iast", "kq"), ("cyrillic", "z"), ("devanagari", "k")):
+            with self.assertRaises(g.GraphError):
+                sc.decode_text(bad, script)
 
 
 if __name__ == "__main__":

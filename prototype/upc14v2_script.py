@@ -115,4 +115,151 @@ def code_from_cyrillic(text: str) -> int:
     return _read(text, 2)
 
 
-__all__ = ["code_from_cyrillic", "code_from_devanagari", "code_from_iast", "to_cyrillic", "to_devanagari", "to_iast"]
+# ---------------------------------------------------------------------------
+# Texts: a SEQUENCE of sounds <-> a string, in each script, with no ambiguity.
+# ---------------------------------------------------------------------------
+#
+# `decode_text(encode_text(seq, script), script) == seq` for every sequence, and so
+# `encode_text` is injective: two different sequences never give the same string.
+#
+# IAST and Cyrillic: tokens are written side by side; where the concatenation could be read
+# another way (k+h / kh, a+i / ai, а+й / ай) a middle dot "·" (U+00B7) separates them. The
+# decoder reads the longest token, and "·" only marks a boundary. (ISO 15919 uses the same
+# dot for this; the author's recollection, not checked here.)
+#
+# Devanagari follows the writing system, which is unambiguous by itself: a consonant is a bare
+# letter + virama (क्), or a bare letter alone when the vowel `a` follows (क = k a), or a bare
+# letter + a vowel sign (कि = k i); a vowel stands as an independent letter when no consonant
+# precedes it; the candrabindu follows the vowel it nasalises. Pluta, anusvara, visarga and
+# avagraha are not among the 42 sounds and are not part of this codec.
+
+SEPARATOR = "\u00b7"
+_DEV_VIRAMA = "\u094d"
+NASAL_DEV, NASAL_IAST = _NASAL[1], _NASAL[0]
+_DEV_SIGN = {"i": "ि", "u": "ु", "ṛ": "ृ", "ḷ": "ॢ", "e": "े", "o": "ो", "ai": "ै", "au": "ौ",
+             "ā": "ा", "ī": "ी", "ū": "ू", "ṝ": "ॄ"}
+
+
+def _is_vowel(code: int) -> bool:
+    return g.unpack(code).aperture >= g.VOWEL
+
+
+def _tokens(column: int):
+    return sorted(_FROM[column], key=len, reverse=True)
+
+
+_TOKENS = {0: _tokens(0), 2: _tokens(2)}   # IAST and Cyrillic: longest first
+_DEV_CONS = {row[1][:-1]: g.SOUNDS[key] for key, row in _ROWS.items() if row[1].endswith(_DEV_VIRAMA)}
+_DEV_VOWEL = {text: c for text, c in _FROM[1].items() if _is_vowel(c) and not text.endswith(_NASAL[1])}
+_DEV_SIGN_TO_CODE = {}
+for _iast, _sign in _DEV_SIGN.items():
+    _DEV_SIGN_TO_CODE[_sign] = _FROM[0][_N("NFC", _iast)]
+
+
+def _decode_latin_like(text: str, column: int) -> tuple:
+    text = _N("NFC", text)
+    out, i, table, tokens = [], 0, _FROM[column], _TOKENS[column]
+    while i < len(text):
+        if text[i] == SEPARATOR:
+            i += 1
+            continue
+        for tok in tokens:
+            if text.startswith(tok, i):
+                out.append(table[tok])
+                i += len(tok)
+                break
+        else:
+            raise g.GraphError(f"{text[i:i + 3]!r} at {i} is not a {_SCRIPTS[column]} sound")
+    return tuple(out)
+
+
+def _encode_latin_like(seq, column: int) -> str:
+    spelled = [_spell(c, column) for c in seq]
+    out = []
+    for i, tok in enumerate(spelled):
+        if i:
+            # a dot only when the plain concatenation of the two would not read back as the two
+            if _decode_latin_like(spelled[i - 1] + tok, column) != (seq[i - 1], seq[i]):
+                out.append(SEPARATOR)
+        out.append(tok)
+    return "".join(out)
+
+
+def _encode_devanagari(seq) -> str:
+    out, i = [], 0
+    while i < len(seq):
+        c = seq[i]
+        if _is_vowel(c):
+            out.append(_spell(c, 1))                # independent letter (+ candrabindu)
+            i += 1
+            continue
+        bare = to_devanagari(c)[:-1]
+        nxt = seq[i + 1] if i + 1 < len(seq) else None
+        if nxt is not None and _is_vowel(nxt):
+            v = g.unpack(nxt)
+            plain = to_iast(g.Vertex(v.place, 0, v.aperture, v.length, v.voice, v.asp).code)
+            sign = "" if plain == "a" else _DEV_SIGN[plain]
+            out.append(bare + sign + (NASAL_DEV if v.nasal else ""))
+            i += 2
+        else:
+            out.append(bare + _DEV_VIRAMA)
+            i += 1
+    return "".join(out)
+
+
+def _decode_devanagari(text: str) -> tuple:
+    text = _N("NFC", text)
+    out, i = [], 0
+    while i < len(text):
+        ch = text[i]
+        i += 1
+        if ch in _DEV_CONS:
+            out.append(_DEV_CONS[ch])
+            if i < len(text) and text[i] == _DEV_VIRAMA:
+                i += 1
+                continue
+            if i < len(text) and text[i] in _DEV_SIGN_TO_CODE:
+                vowel = _DEV_SIGN_TO_CODE[text[i]]
+                i += 1
+            else:
+                vowel = g.SOUNDS["a"]                   # the inherent a
+            if i < len(text) and text[i] == NASAL_DEV:
+                vowel = g.e_nasal(vowel)
+                i += 1
+            out.append(vowel)
+        elif ch in _DEV_VOWEL:
+            vowel = _DEV_VOWEL[ch]
+            if i < len(text) and text[i] == NASAL_DEV:
+                vowel = g.e_nasal(vowel)
+                i += 1
+            out.append(vowel)
+        else:
+            raise g.GraphError(f"{ch!r} at {i - 1} is not a Devanagari sound")
+    return tuple(out)
+
+
+def encode_text(seq, script: str) -> str:
+    """Spell a sequence of sound codes in `script` ("iast", "devanagari", "cyrillic")."""
+    seq = tuple(seq)
+    if script == "devanagari":
+        return _encode_devanagari(seq)
+    if script in ("iast", "cyrillic"):
+        return _encode_latin_like(seq, _SCRIPTS.index(script) if script == "iast" else 2)
+    raise g.GraphError(f"unknown script {script!r}")
+
+
+def decode_text(text: str, script: str) -> tuple:
+    """Read a string back to the sequence of sound codes (inverse of `encode_text`)."""
+    if script == "devanagari":
+        return _decode_devanagari(text)
+    if script in ("iast", "cyrillic"):
+        return _decode_latin_like(text, 0 if script == "iast" else 2)
+    raise g.GraphError(f"unknown script {script!r}")
+
+
+def transcode(text: str, src: str, dst: str) -> str:
+    """Rewrite a text from one script to another, through the codes."""
+    return encode_text(decode_text(text, src), dst)
+
+
+__all__ = ["SEPARATOR", "code_from_cyrillic", "code_from_devanagari", "code_from_iast", "decode_text", "encode_text", "to_cyrillic", "to_devanagari", "to_iast", "transcode"]
