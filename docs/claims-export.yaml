@@ -7,7 +7,7 @@
 Протокол: `docs/epistemic-coordination.md`
 Revision baseline: `9987e0e` (2026-09-07)
 
-История ревізій: `a8391c4` (2026-08-15, initial) → `0f6110d` (2026-08-17, adds H-SS-EXT-001..003 per REM-008) → `cd13c85` (2026-09-07, adds L-001-001..004 per L-001 completion) → `72046d3` (2026-09-07, adds L-001-005 computational coherence) → `c012ead` (2026-09-07, updates L-001-005 to 116/116=100% + adds L-001-006 staged sandhi) → `9987e0e` (2026-09-07, updates L-001-005 to 152/152=100% with lṛṭ).
+История ревізій: `a8391c4` (2026-08-15, initial) → `0f6110d` (2026-08-17, adds H-SS-EXT-001..003 per REM-008) → `cd13c85` (2026-09-07, adds L-001-001..004 per L-001 completion) → `72046d3` (2026-09-07, adds L-001-005 computational coherence) → `c012ead` (2026-09-07, updates L-001-005 to 116/116=100% + adds L-001-006 staged sandhi) → `9987e0e` (2026-09-07, updates L-001-005 to 152/152=100% with lṛṭ) → (2026-09-30, limitations of SS-PRATYAHARA-001 updated per #48/#53; the commit hash is pinned by the merge).
 
 ---
 
@@ -35,7 +35,7 @@ Revision baseline: `9987e0e` (2026-09-07)
 - **scope**: Формальна механіка в системі Паніні.
 - **status**: `SUPPORTED` (текст 1.1.71 + використання в Aṣṭādhyāyī).
 - **evidence**: `ksetra/astadhyayi/pratyahara-construction.yaml`; `ksetra/astadhyayi/pratyahara-usage.yaml`; `ksetra/astadhyayi/occurrence-resolution.yaml`.
-- **limitations**: Чи є множини "компактним дескриптором" у сучасному CS-сенсі — не встановлено і не є предметом цього claim.
+- **limitations**: Чи є множини "компактним дескриптором" у сучасному CS-сенсі — не встановлено і не є предметом цього claim. Ревізія 2026-09-30 (#48): свідчення `ksetra/astadhyayi/pratyahara-usage.yaml` мало 3 хибні записи із 42: `yaṇ` (33 звуки замість y v r l) та `has`, `jhas` (це не pratyāhāra: ś записано як s, набори розтягнуті до кінця переліку; правильні `haś` і `jhaś`). Записи виправлено, додано незалежну перевірку `tests/test_pratyahara_usage_canon.py` (перераховує кожен запис із `ksetra/canon/siva-sutras.yaml`; на старому YAML падає, на виправленому проходить). Твердження про механіку (1.1.71) не змінилося; статус `SUPPORTED` лишається. Ревізія 2026-10-01: ще один хибний запис (`bhaś` → `bhaṣ` = bh gh ḍh dh; `bhaś` не є pratyāhāra, Kāśikā називає шість ś-pratyāhāra) і один пропущений (`ṅam` = ṅ ṇ n, 8.3.32), за оракулом ashtadhyayi.com. Також (#53): виняток для `aṇ` у `ksetra/astadhyayi/occurrence-resolution.yaml` стосується 1.1.69, а не 8.3.32; джерело у Kāśikā (рядки 99-103 txt).
 
 ### SS-ORDER-001 — Неунікальність C1P порядку
 - **statement**: Сама вимога безперервності (C1P) не зумовлює унікальність канонічного порядку; існує понад 10,000 валідних топологій.
