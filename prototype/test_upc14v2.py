@@ -219,13 +219,13 @@ class SutraPathTests(unittest.TestCase):
 
 
 class PratyaharaTests(unittest.TestCase):
-    YAML_DEFECTS = set()   # the three wrong entries (yaṇ, haś, jhaś) were corrected in the YAML (PR #61): every entry is compared
+    YAML_DEFECTS = set()   # the three wrong entries (yaṇ, haś, jhaś) were corrected in the YAML (PR #61): every entry is compared, 43 in all
     NTH = {"iṇ": 2}
 
     def letters(self, start, marker, nth=1):
         return {L[c] for c in g.pratyahara(S[start], marker, nth)}
 
-    def test_42_of_42_classical_pratyaharas_agree_with_the_independent_yaml(self):
+    def test_all_43_classical_pratyaharas_agree_with_the_independent_yaml(self):
         compared = 0
         for name, sounds in astadhyayi_pratyaharas().items():
             if name in self.YAML_DEFECTS:
@@ -235,7 +235,7 @@ class PratyaharaTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertEqual(self.letters(start, marker, nth), set(sounds))
             compared += 1
-        self.assertEqual(compared, 42)
+        self.assertEqual(compared, 43)   # 42 entries + ṅam, added with the corrections in PR #61
 
     def test_the_oracle_case_yan_is_y_v_r_l(self):
         self.assertEqual(self.letters("y", "ṇ"), {"y", "v", "r", "l"})
