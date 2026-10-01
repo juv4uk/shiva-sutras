@@ -1,0 +1,55 @@
+# External oracle: pratyahara -> sounds, from ashtadhyayi.com data.
+# Source: https://github.com/ashtadhyayi-com/data  path pratyahara/data.txt  commit 5744762f010d677cfb43f347a42d02796cf615d6
+# Upstream declares no license: only the facts (a name and its set of sounds, both classical)
+# are kept, kept as facts; the prose and the sutra citations are not copied.
+# Morphological entries (sup, tin, ...) are not Siva-sutra pratyaharas and are left out.
+# The occurrence of a repeated marker (`an` twice) is NOT recorded: the test must find it.
+# Converted from SLP1 to IAST, Devanagari and Cyrillic by docs/upc14-oracles-converted/to_script.py using
+# upc14v2_script.encode_text (commit 3785441). Sequences: tokens side by side, a middle dot only where the
+# reading would differ; `|` separates the left and right part of a sandhi result. Outside the codec and written
+# as literals: long ḷ (ḹ, ॡ; Kasika txt 389 says it does not exist) and the avagraha (’, ऽ).
+# Round trip: every cell was decoded back and compared with the SLP1 original; the original file stays in git history.
+name_iast	name_deva	name_cyr	start_iast	start_deva	start_cyr	marker_iast	marker_deva	marker_cyr	sounds_iast	sounds_deva	sounds_cyr
+aṇ	अण्	ан̣	a	अ	а	ṇ	ण्	н̣	a·iu	अइउ	а·іу
+ak	अक्	ак	a	अ	а	k	क्	к	a·iuṛḷ	अइउऋऌ	а·іур̣л̣
+ik	इक्	ік	i	इ	і	k	क्	к	iuṛḷ	इउऋऌ	іур̣л̣
+uk	उक्	ук	u	उ	у	k	क्	к	uṛḷ	उऋऌ	ур̣л̣
+eṅ	एङ्	ен̇	e	ए	е	ṅ	ङ्	н̇	eo	एओ	ео
+ac	अच्	ач	a	अ	а	c	च्	ч	a·iuṛḷeoaiau	अइउऋऌएओऐऔ	а·іур̣л̣еоаіау
+ic	इच्	іч	i	इ	і	c	च्	ч	iuṛḷeoaiau	इउऋऌएओऐऔ	іур̣л̣еоаіау
+ec	एच्	еч	e	ए	е	c	च्	ч	eoaiau	एओऐऔ	еоаіау
+aic	ऐच्	аіч	ai	ऐ	аі	c	च्	ч	aiau	ऐऔ	аіау
+aṭ	अट्	ат̣	a	अ	а	ṭ	ट्	т̣	a·iuṛḷeoaiauhyvr	अइउऋऌएओऐऔह्य्व्र्	а·іур̣л̣еоаіаухйвр
+aṇ	अण्	ан̣	a	अ	а	ṇ	ण्	н̣	a·iuṛḷeoaiauhyvrl	अइउऋऌएओऐऔह्य्व्र्ल्	а·іур̣л̣еоаіаухйврл
+iṇ	इण्	ін̣	i	इ	і	ṇ	ण्	н̣	iuṛḷeoaiauhyvrl	इउऋऌएओऐऔह्य्व्र्ल्	іур̣л̣еоаіаухйврл
+yaṇ	यण्	йан̣	y	य्	й	ṇ	ण्	н̣	yvrl	य्व्र्ल्	йврл
+am	अम्	ам	a	अ	а	m	म्	м	a·iuṛḷeoaiauhyvrlñmṅṇn	अइउऋऌएओऐऔह्य्व्र्ल्ञ्म्ङ्ण्न्	а·іур̣л̣еоаіаухйврлн̃мн̇н̣н
+yam	यम्	йам	y	य्	й	m	म्	м	yvrlñmṅṇn	य्व्र्ल्ञ्म्ङ्ण्न्	йврлн̃мн̇н̣н
+ṅam	ङम्	н̇ам	ṅ	ङ्	н̇	m	म्	м	ṅṇn	ङ्ण्न्	н̇н̣н
+ñam	ञम्	н̃ам	ñ	ञ्	н̃	m	म्	м	ñmṅṇn	ञ्म्ङ्ण्न्	н̃мн̇н̣н
+yañ	यञ्	йан̃	y	य्	й	ñ	ञ्	н̃	yvrlñmṅṇnjhbh	य्व्र्ल्ञ्म्ङ्ण्न्झ्भ्	йврлн̃мн̇н̣нджгбг
+jhaṣ	झष्	джгаш̣	jh	झ्	джг	ṣ	ष्	ш̣	jhbhghḍhdh	झ्भ्घ्ढ्ध्	джгбгґгд̣гдг
+bhaṣ	भष्	бгаш̣	bh	भ्	бг	ṣ	ष्	ш̣	bhghḍhdh	भ्घ्ढ्ध्	бгґгд̣гдг
+aś	अश्	аш́	a	अ	а	ś	श्	ш́	a·iuṛḷeoaiauhyvrlñmṅṇnjhbhghḍhdhjbgḍd	अइउऋऌएओऐऔह्य्व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्	а·іур̣л̣еоаіаухйврлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣д
+haś	हश्	хаш́	h	ह्	х	ś	श्	ш́	hyvrlñmṅṇnjhbhghḍhdhjbgḍd	ह्य्व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्	хйврлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣д
+vaś	वश्	ваш́	v	व्	в	ś	श्	ш́	vrlñmṅṇnjhbhghḍhdhjbgḍd	व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्	врлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣д
+jhaś	झश्	джгаш́	jh	झ्	джг	ś	श्	ш́	jhbhghḍhdhjbgḍd	झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्	джгбгґгд̣гдгджбґд̣д
+jaś	जश्	джаш́	j	ज्	дж	ś	श्	ш́	jbgḍd	ज्ब्ग्ड्द्	джбґд̣д
+baś	बश्	баш́	b	ब्	б	ś	श्	ш́	bgḍd	ब्ग्ड्द्	бґд̣д
+chav	छव्	чгав	ch	छ्	чг	v	व्	в	chṭhthcṭt	छ्ठ्थ्च्ट्त्	чгт̣гтгчт̣т
+yay	यय्	йай	y	य्	й	y	य्	й	yvrlñmṅṇnjhbhghḍhdhjbgḍdkhphchṭhthcṭtkp	य्व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्	йврлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткп
+may	मय्	май	m	म्	м	y	य्	й	mṅṇnjhbhghḍhdhjbgḍdkhphchṭhthcṭtkp	म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्	мн̇н̣нджгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткп
+jhay	झय्	джгай	jh	झ्	джг	y	य्	й	jhbhghḍhdhjbgḍdkhphchṭhthcṭtkp	झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्	джгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткп
+khay	खय्	кгай	kh	ख्	кг	y	य्	й	khphchṭhthcṭtkp	ख्फ्छ्ठ्थ्च्ट्त्क्प्	кгпгчгт̣гтгчт̣ткп
+cay	चय्	чай	c	च्	ч	y	य्	й	cṭtkp	च्ट्त्क्प्	чт̣ткп
+yar	यर्	йар	y	य्	й	r	र्	р	yvrlñmṅṇnjhbhghḍhdhjbgḍdkhphchṭhthcṭtkpśṣs	य्व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्	йврлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткпш́ш̣с
+jhar	झर्	джгар	jh	झ्	джг	r	र्	р	jhbhghḍhdhjbgḍdkhphchṭhthcṭtkpśṣs	झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्	джгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткпш́ш̣с
+khar	खर्	кгар	kh	ख्	кг	r	र्	р	khphchṭhthcṭtkpśṣs	ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्	кгпгчгт̣гтгчт̣ткпш́ш̣с
+car	चर्	чар	c	च्	ч	r	र्	р	cṭtkpśṣs	च्ट्त्क्प्श्ष्स्	чт̣ткпш́ш̣с
+śar	शर्	ш́ар	ś	श्	ш́	r	र्	р	śṣs	श्ष्स्	ш́ш̣с
+al	अल्	ал	a	अ	а	l	ल्	л	a·iuṛḷeoaiauhyvrlñmṅṇnjhbhghḍhdhjbgḍdkhphchṭhthcṭtkpśṣsh	अइउऋऌएओऐऔह्य्व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्ह्	а·іур̣л̣еоаіаухйврлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткпш́ш̣сх
+hal	हल्	хал	h	ह्	х	l	ल्	л	hyvrlñmṅṇnjhbhghḍhdhjbgḍdkhphchṭhthcṭtkpśṣsh	ह्य्व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्ह्	хйврлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткпш́ш̣сх
+val	वल्	вал	v	व्	в	l	ल्	л	vrlñmṅṇnjhbhghḍhdhjbgḍdkhphchṭhthcṭtkpśṣsh	व्र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्ह्	врлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткпш́ш̣сх
+ral	रल्	рал	r	र्	р	l	ल्	л	rlñmṅṇnjhbhghḍhdhjbgḍdkhphchṭhthcṭtkpśṣsh	र्ल्ञ्म्ङ्ण्न्झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्ह्	рлн̃мн̇н̣нджгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткпш́ш̣сх
+jhal	झल्	джгал	jh	झ्	джг	l	ल्	л	jhbhghḍhdhjbgḍdkhphchṭhthcṭtkpśṣsh	झ्भ्घ्ढ्ध्ज्ब्ग्ड्द्ख्फ्छ्ठ्थ्च्ट्त्क्प्श्ष्स्ह्	джгбгґгд̣гдгджбґд̣дкгпгчгт̣гтгчт̣ткпш́ш̣сх
+śal	शल्	ш́ал	ś	श्	ш́	l	ल्	л	śṣsh	श्ष्स्ह्	ш́ш̣сх
