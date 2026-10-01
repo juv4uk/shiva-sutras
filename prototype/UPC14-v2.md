@@ -30,9 +30,13 @@ code (14) = meta(1) | place(5) | nasal(1) | aperture(3) | length(2) | voice(1) |
 **What is irreducible input:** the seed, the edge types, and the sūtra order itself.
 Everything else (the 42 codes, savarṇa, pratyāhāra, guṇa, vṛddhi, yaṇ, jaś) is computed.
 
-Nothing here is Sanskrit or Ukrainian: no layout, no sign, no spelling. SLP1 letters are
-debug labels for the sūtra text and tests only. Non-sounds (it-markers) are `meta` cells
-that name their place on the sūtra path.
+Nothing here is Sanskrit or Ukrainian: no layout, no sign, no spelling. Sound labels in
+documents and tests are **IAST** (lowercase, with diacritics) and **Devanāgarī**; the earlier SLP1
+labels and capital letters are being removed from the lab **by the owner's decision (2026-10-01)**;
+identity is the code, never a label. Non-sounds (it-markers) are `meta` cells that name their
+place on the sūtra path. Notation for the variant marks (anusvāra, visarga, avagraha, pluta,
+nasalization) with sources: `docs/upc14-candidate-spec-2026-10-01.md` §6; plan for the oracle
+files: `docs/upc14-oracles-iast-plan-2026-10-01.md`.
 
 ## Grammar as graph queries
 
@@ -95,7 +99,7 @@ three ingredients in a different form. A per-sound record (`sthāna` list, `gho�
 and a `map()` that picks the nearest sound by a **summed** distance that its own comment says
 is **not symmetric** (a TODO). Here the distance is lexicographic, place first, symmetric, and
 an exact tie raises `Ambiguous` instead of picking one. Vidyut's *identity* is a Latin letter
-in a 128-byte table (SLP1); it does not define a code space.
+in a 128-byte table (its own Latin notation, SLP1; not ours); it does not define a code space.
 
 ## Consonant sandhi as graph queries (`upc14v2_sandhi.py`)
 
@@ -256,7 +260,7 @@ Recorded after an independent review that read the Kāśikā text in `ksetra/`
   `not attested` in `Result.note`.
 - A pratyāhāra whose start sound is recited twice (h): the default takes the first recitation,
   as `occurrence-resolution.yaml` does for aṭ aś haś iṇ hal. `strict=True` raises
-  `AmbiguousStart` instead of guessing, which is what case `later-h-is-not-initial-h-for-hR` of
+  `AmbiguousStart` instead of guessing, which is what case `later-h-is-not-initial-h-for-hR` (the fixture's own id; its `R` is ṇ) of
   the panini fixture asks; the fixture's five positive cases agree with the graph.
 
 ## Honest limits
