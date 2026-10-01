@@ -44,9 +44,9 @@
 | Savarṇa як маска | source-confirmed + empirically confirmed | I5 |
 | guṇa/vṛddhi як join місць | **trivial by construction** (визначені так) | не доказ |
 | yaṇ/jaś як `nearest` | empirically confirmed | 1.1.50 |
-| Місце кожного звука (K T M D O) | assumption | традиційна класифікація; sthāna не перевірено в корпусі для всіх звуків |
-| Голос/придих ś ṣ s h (aghoṣa mahāprāṇa; h ghoṣa mahāprāṇa) | assumption | Śikṣā/Siddhāntakaumudī; у Kāśikā не знайдено (пошук за महाप्राण/अल्पप्राण/घोष/अघोष) |
-| h = горло, підйом gh | assumption | традиція; у корпусі не звірено |
+| Місце кожного звука (K T M D O) | **source-confirmed** | Siddhāntakaumudī і Laghukaumudī на 1.1.9 (`ashtadhyayi-data` ключ 11009): «अकुहविसर्जनीयानां कण्ठः» (a, ku, h, visarga = горло), «इचुयशानां तालु» (y, ś = піднебіння), «ऋटुरषाणां मूर्धा» (ṛ, r, ṣ, ṭu = мурдха), «ऌतुलसानां दन्ताः» (ḷ, l, s, tu = зуби), «वकारस्य दन्तोष्ठम्» (v = зуби+губи). У Kāśikā txt такого переліку нема (є лише «इचुयशानां तुल्यस्थानानां», рядок 398) |
+| Голос/придих ś ṣ s h (aghoṣa mahāprāṇa; h ghoṣa mahāprāṇa) | **source-confirmed (Laghukaumudī)** | Laghukaumudī на 1.1.9 (ключ 11009): «खरो विवाराः श्वासा अघोषाश्च» (khar ∋ ś ṣ s: безголосі), «हशः संवारा नादा घोषाश्च» (haś ∋ h: голосний), «वर्गाणां द्वितीयचतुर्थौ शलश्च महाप्राणाः» (śal = ś ṣ s h: mahāprāṇa), «यणश्चाल्पप्राणाः» (y v r l: alpaprāṇa). У Kāśikā txt такої класифікації нема; Siddhāntakaumudī цього рядка в ключі 11009 не має |
+| h = горло, підйом gh | **source-confirmed (Siddhāntakaumudī, Laghukaumudī)** | h kaṇṭhya («अकुहविसर्जनीयानां कण्ठः»), ghoṣa mahāprāṇa (див. вище); «підйом gh» це спосіб виведення в графі (`lift2`), а не слова джерела |
 | **Aperture-розщеплення: sibilant = 2, vowel = 3** | **source-confirmed поза Kāśikā; assumption щодо Kāśikā** | Kāśikā (txt 386) і Siddhāntakaumudī називають чотири ābhyantara-prayatna (spṛṣṭa, īṣatspṛṣṭa, saṃvṛta, vivṛta): ūṣman і голосні обидва vivṛta. **Laghukaumudī** (`laghukaumudi.txt`, ключ 11009) дає п'ять: spṛṣṭa, īṣatspṛṣṭa, **īṣadvivṛta (ūṣman)**, **vivṛta (голосні)**, saṃvṛta; це джерело розщеплення 2/3. Для Kāśikā лишається альтернативне читання: розділяє їх 1.1.10 «na ajjhalau» (txt 410) |
 | a = aperture VOWEL (3) | source-confirmed | txt 29-33: коротке a saṃvṛta в вжитку, але в шастрі розглядається як vivṛta для savarṇa; 8.4.68 повертає |
 | ai/au = п'ятий ступінь aperture (4) | assumption | Śikṣā-традиція; не з Kāśikā |
