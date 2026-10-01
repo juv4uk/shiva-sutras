@@ -69,7 +69,7 @@
 | Приклади Kāśikā (сандхі) | таблиці в `docs/upc14v2-kasika-*-sandhi-…md` | source-confirmed |
 | `savarna_str` vidyut | містить ṛ~ḷ | read |
 | SandhiKosh (.xls) | не розібрано | not checked |
-| PRĀṆA-14 (`prana14.py`) savarṇa | ті самі 22 класи, 0 розбіжностей (42×42), крім вартіки ṛ/ḷ | empirically confirmed |
+| prāṇa14 (`prana14.py`) savarṇa | ті самі 22 класи, 0 розбіжностей (42×42), крім вартіки ṛ/ḷ | empirically confirmed |
 
 ## 5. Що специфікація НЕ стверджує
 
