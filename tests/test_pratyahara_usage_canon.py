@@ -125,6 +125,9 @@ class PratyaharaUsageAgainstCanon(unittest.TestCase):
         self.assertEqual(by_id.get("jhaś"), ["jh", "bh", "gh", "ḍh", "dh", "j", "b", "g", "ḍ", "d"])
         self.assertEqual(by_id.get("haś"), ["h", "y", "v", "r", "l", "ñ", "m", "ṅ", "ṇ", "n",
                                              "jh", "bh", "gh", "ḍh", "dh", "j", "b", "g", "ḍ", "d"])
+        self.assertEqual(by_id.get("bhaṣ"), ["bh", "gh", "ḍh", "dh"])
+        self.assertEqual(by_id.get("ṅam"), ["ṅ", "ṇ", "n"])
+        self.assertNotIn("bhaś", by_id)            # Kasika lists six s-sh pratyaharas: as haś vaś jaś jhaś baś
         self.assertNotIn("has", by_id)             # not a pratyahara: `s` is not an it-marker
         self.assertNotIn("jhas", by_id)
 

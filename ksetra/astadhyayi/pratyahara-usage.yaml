@@ -572,6 +572,18 @@ pratyaharas:
     sutra_id: TBD
     sutra_text: TBD
     purpose: TBD
+- id: ṅam
+  set:
+  - ṅ
+  - ṇ
+  - n
+  meaning: TBD
+  count_in_astadhyayi: TBD
+  usage_example:
+    sutra_id: 8.3.32
+    sutra_text: ṅamo hrasvād aci ṅamuṇ nityam
+    purpose: 'ṅam (ṅ ṇ n): початок ṅ (Kāśikā txt, вступ до сутри «ñ m ṅ ṇ n m»: «ङमो ह्रस्वादचि ङमुण्नित्यम् (८,३.३२) इति ङकारेण»).'
+  correction: '2026-10-01: запису ṅam не було (є лише ñam); обидва існують: ñam (ञमन्ताड्डः) і ṅam (8.3.32); збігається з оракулом ashtadhyayi.com.'
 - id: jhaś
   set:
   - jh
@@ -696,23 +708,19 @@ pratyaharas:
     sutra_text: jhalāṃ jaśo 'nte
     purpose: Вказує, що наприкінці слова (ante) шумні (jhal) замінюються на дзвінкі
       неаспіровані (jaś).
-- id: bhaś
+- id: bhaṣ
   set:
   - bh
   - gh
   - ḍh
   - dh
-  - j
-  - b
-  - g
-  - ḍ
-  - d
   meaning: TBD
   count_in_astadhyayi: TBD
   usage_example:
-    sutra_id: TBD
-    sutra_text: TBD
-    purpose: TBD
+    sutra_id: 8.2.37
+    sutra_text: ekāco baśo bhaṣ jhaṣantasya stvoḥ
+    purpose: 'bhaṣ (bh gh ḍh dh): початок bh (Kāśikā txt, вступ до сутри «gh ḍh dh ṣ»: «एकाचो बशो भष्झषन्तस्य स्ध्वोः (८,२.३७) इति भकारझकाराभ्याम्»).'
+  correction: '2026-10-01: запис мав id bhaś з набором bh…d (до маркера ś); pratyāhāra bhaś у Aṣṭādhyāyī нема: Kāśikā (txt, вступ, сутра «j b g ḍ d ś») називає шість ś-pratyāhāra (aś haś vaś jaś jhaś baś). Правильний bhaṣ = bh gh ḍh dh (маркер ṣ, сутра 9); збігається з оракулом ashtadhyayi.com.'
 - id: jaś
   set:
   - j
