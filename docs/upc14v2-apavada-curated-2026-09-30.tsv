@@ -1,0 +1,27 @@
+src	dst	confidence	basis	status
+4.2.40	4.2.47	medium	ṭhak (acitta); JSON «अचित्तलक्षणस्य ठकोऽपवादः»	hypothesis
+4.2.103	4.2.102	medium-high	ṭhak; 4.2.102 kanthāyāṣ ṭhak, text names kanthā	hypothesis
+4.3.19	4.3.18	high	ṭhak; 4.3.18 varṣābhyaṣ ṭhak	hypothesis
+4.3.76	4.3.75	high	ṭhak; «आयस्थानठकोऽपवादः»	hypothesis
+5.1.41	5.1.19	high	ṭhak; ad contains 5.1.19	hypothesis
+5.1.66	5.1.19	medium	ṭhak in the 5.1.63 tad arhati meaning; 5.1.19 adhikāra reaches 5.1.63	hypothesis
+5.1.69	5.1.19	medium	same as 5.1.66	hypothesis
+5.1.70	5.1.19	medium	same as 5.1.66	hypothesis
+5.1.71	5.1.19	medium	same as 5.1.66	hypothesis
+3.1.98	3.1.124	high	ṇyat (not yat); «ण्यतोऽपवादः»	hypothesis
+3.1.125	3.1.97	high	yat; «यतोऽपवादः» at ṇyat	hypothesis
+3.1.126	3.1.97	high	same as 3.1.125	hypothesis
+4.3.7	4.3.4	high	yat; «अर्धान्तात् … यतोऽपवादौ»	hypothesis
+4.3.57	4.3.55	high	yat; «शरीरावयवाद् यतोऽपवादः»	hypothesis
+4.3.62	4.3.55	medium	yat; body parts (jihvāmūla, aṅguli)	hypothesis
+4.3.65	4.3.55	medium	yat; body parts (karṇa, lalāṭa)	hypothesis
+4.3.122	4.3.121	high	yat; «पूर्वस्य यतोऽपवादः» (positional)	hypothesis
+4.3.162	4.3.161	medium	yat; druvayam, 4.3.161 droś ca	hypothesis
+4.2.111	4.2.114	high	cha; 4.2.114 vṛddhāc chaḥ	hypothesis
+4.2.112	4.2.114	high	cha	hypothesis
+4.2.115	4.2.114	high	cha	hypothesis
+4.2.117	4.2.114	high	cha	hypothesis
+4.2.122	4.2.114	high	cha	hypothesis
+4.2.123	4.2.114	high	cha	hypothesis
+4.2.124	4.2.114	high	cha	hypothesis
+5.1.136	5.1.135	high	cha; hotrābhyaś chaḥ (previous sutra)	hypothesis
