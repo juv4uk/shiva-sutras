@@ -41,10 +41,10 @@ class BitEdgeTests(unittest.TestCase):
                     with self.assertRaises(g.GraphError):
                         fn(code)
 
-    def test_known_defect_the_graph_edge_e_voice_accepts_a_code_that_is_not_a_vertex(self):
-        # `upc14v2.e_voice` is `c ^ 2` without unpack(): 14152 non-vertex codes are accepted. Pinned here so a fix is visible.
+    def test_every_graph_edge_rejects_a_code_that_is_not_a_vertex(self):
+        # `e_voice` used to be `c ^ 2` without unpack() and accepted all 14152 non-vertex codes; it validates now.
         leaks = {name: leaks for name, (_, _, _, leaks) in b.agree_everywhere().items()}
-        self.assertEqual({k: v for k, v in leaks.items() if v}, {"voice": 14152})
+        self.assertEqual({k: v for k, v in leaks.items() if v}, {})
 
     def test_in_the_14_bit_code_asp_voice_and_nasal_are_each_one_constant_flip(self):
         c14 = {n: S[n] for n in S}
