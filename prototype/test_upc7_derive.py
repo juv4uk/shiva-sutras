@@ -18,9 +18,9 @@ class DerivedCellsTests(unittest.TestCase):
         self.assertEqual({name for name, _, _ in differ}, {"r", "l", "h"})
 
     def test_the_three_differences_are_exactly_these(self):
-        # r: the graph puts it with ṛ ṭ ṣ (retroflex, Kasika), the hand table with s l (dental).
+        # r: the graph puts it with ṛ ṭ ṣ (mūrdhanya: Siddhāntakaumudī/Laghukaumudī on 1.1.9), the hand table with s l (dental).
         # l: the hand table gives it a `lateral` slot of its own; the graph tells r from l by place.
-        # h: the graph has it throat + voiced (gh lifted, Panini: kanthya, ghosa); the hand table has a
+        # h: the graph has it throat + voiced (gh lifted; kaṇṭhya per Siddhāntakaumudī, ghoṣa per Laghukaumudī); the hand table has a
         #    glottal place and a voiceless slot (IPA-like).
         _, differ, _ = d.compare()
         got = {name: (format(derived, "07b"), format(hand, "07b")) for name, derived, hand in differ}
