@@ -16,12 +16,14 @@ tests by IAST and deletes this bridge.
 
 A consonant in Devanagari is written bare with virama (क्), a vowel as its independent letter.
 
-Cyrillic (`to_cyrillic`, `code_from_cyrillic`) follows the way Ukrainian and Russian Vaishnava
-(Krishna-tradition) publications write Sanskrit: aspirates as a digraph with х (кх, гх, чх,
-джх), diacritics as combining marks (ṭ т̣, ṇ н̣, ṅ н̇, ñ н̃, ś ш́, ṣ ш̣, ṛ р̣, ḷ л̣, long vowel with
-a macron), ai = ай, au = ау. HYPOTHESIS: written from the author's memory of that practice, not
-checked against a printed standard (BBT, ISKCON); there is no one official table. It is a VIEW:
-a sound's identity is its code, not a Cyrillic spelling, and the choice binds nothing else.
+Cyrillic (`to_cyrillic`, `code_from_cyrillic`) follows the Ukrainian book "Бгаґавад-ґіта як вона є",
+section "Як читати санскрит", pp. 810-812 (edition and year: unknown, to be added from the title page),
+which says its transliteration is a calque of Judith Tyberg's Latin one: Latin letters replaced by
+Cyrillic ones, diacritics kept. From the book (read by the author from the owner's photos): g = ґ and
+every aspirate = the stop + г (кг ґг чг джг т̣г д̣г тг дг пг бг), y = й, ai = аі, au = ау, h = х,
+ś = ш́, ṣ = ш̣, ṛ = р̣, ḷ = л̣, long vowels with a macron. Not yet read with certainty (photo too
+small): the exact marks on ṅ and ñ (this table has н̇ and н̃) and ṇ. The book also gives anusvara ṃ = м̇
+and visarga ḥ = х̣ (outside the 42 sounds). It is a VIEW: a sound's identity is its code, not a Cyrillic spelling.
 Strings are NFC-normalised on both sides (some marks compose, ӯ).
 """
 
@@ -37,12 +39,12 @@ import upc14v2_sandhi as sd
 # one row per sound: legacy debug key -> (IAST, Devanagari, Cyrillic)
 _ROWS = {
     "a": ("a", "अ", "а"), "i": ("i", "इ", "і"), "u": ("u", "उ", "у"), "f": ("ṛ", "ऋ", "р̣"), "x": ("ḷ", "ऌ", "л̣"),
-    "e": ("e", "ए", "е"), "o": ("o", "ओ", "о"), "E": ("ai", "ऐ", "ай"), "O": ("au", "औ", "ау"),
-    "k": ("k", "क्", "к"), "K": ("kh", "ख्", "кх"), "g": ("g", "ग्", "г"), "G": ("gh", "घ्", "гх"), "N": ("ṅ", "ङ्", "н̇"),
-    "c": ("c", "च्", "ч"), "C": ("ch", "छ्", "чх"), "j": ("j", "ज्", "дж"), "J": ("jh", "झ्", "джх"), "Y": ("ñ", "ञ्", "н̃"),
-    "w": ("ṭ", "ट्", "т̣"), "W": ("ṭh", "ठ्", "т̣х"), "q": ("ḍ", "ड्", "д̣"), "Q": ("ḍh", "ढ्", "д̣х"), "R": ("ṇ", "ण्", "н̣"),
-    "t": ("t", "त्", "т"), "T": ("th", "थ्", "тх"), "d": ("d", "द्", "д"), "D": ("dh", "ध्", "дх"), "n": ("n", "न्", "н"),
-    "p": ("p", "प्", "п"), "P": ("ph", "फ्", "пх"), "b": ("b", "ब्", "б"), "B": ("bh", "भ्", "бх"), "m": ("m", "म्", "м"),
+    "e": ("e", "ए", "е"), "o": ("o", "ओ", "о"), "E": ("ai", "ऐ", "аі"), "O": ("au", "औ", "ау"),
+    "k": ("k", "क्", "к"), "K": ("kh", "ख्", "кг"), "g": ("g", "ग्", "ґ"), "G": ("gh", "घ्", "ґг"), "N": ("ṅ", "ङ्", "н̇"),
+    "c": ("c", "च्", "ч"), "C": ("ch", "छ्", "чг"), "j": ("j", "ज्", "дж"), "J": ("jh", "झ्", "джг"), "Y": ("ñ", "ञ्", "н̃"),
+    "w": ("ṭ", "ट्", "т̣"), "W": ("ṭh", "ठ्", "т̣г"), "q": ("ḍ", "ड्", "д̣"), "Q": ("ḍh", "ढ्", "д̣г"), "R": ("ṇ", "ण्", "н̣"),
+    "t": ("t", "त्", "т"), "T": ("th", "थ्", "тг"), "d": ("d", "द्", "д"), "D": ("dh", "ध्", "дг"), "n": ("n", "न्", "н"),
+    "p": ("p", "प्", "п"), "P": ("ph", "फ्", "пг"), "b": ("b", "ब्", "б"), "B": ("bh", "भ्", "бг"), "m": ("m", "म्", "м"),
     "y": ("y", "य्", "й"), "r": ("r", "र्", "р"), "l": ("l", "ल्", "л"), "v": ("v", "व्", "в"),
     "S": ("ś", "श्", "ш́"), "z": ("ṣ", "ष्", "ш̣"), "s": ("s", "स्", "с"), "h": ("h", "ह्", "х"),
 }
@@ -55,19 +57,38 @@ _LONG = (
 )
 _NASAL = ("\u0303", "\u0901", "\u0303")   # combining tilde, candrabindu, combining tilde
 _SCRIPTS = ("iast", "devanagari", "cyrillic")
+_DEV_VIRAMA = "\u094d"
+
+
+def _plain(v: "g.Vertex") -> int:
+    return g.Vertex(v.place, 0, v.aperture, v.length, v.voice, v.asp).code
 
 
 def _spell(code: int, column: int) -> str:
-    """Spell a code: base sound, then long, then nasal (the rule, not a list)."""
-    base = sd.base(code)
+    """Spell a code: base sound, then long, then nasal (the rule, not a list).
+
+    Fails closed: a code that does not read back to itself (pluta, a long ḷ, a short e/o/ai/au,
+    a nasal r) raises GraphError instead of being written as some other sound.
+    """
     v = g.unpack(code)
-    key = g.LABELS_BY_CODE[base]
+    if v.nasal and v.aperture == g.SEMIVOWEL:        # y~ v~ l~ (8.4.45); r has no nasal form (Kasika 391)
+        key = g.LABELS_BY_CODE.get(_plain(v))
+        if key not in ("y", "v", "l"):
+            raise g.GraphError(f"{g.bits(code)} has no spelling")
+        return _N("NFC", _ROWS[key][column] + _NASAL[column])
+    base = sd.base(code)
+    key = g.LABELS_BY_CODE.get(base)
+    if key is None:
+        raise g.GraphError(f"{g.bits(code)} has no spelling")
     text = _ROWS[key][column]
     if v.aperture >= g.VOWEL and v.length == g.LONG and key in "aiuf":
         text = _LONG[column][text]
     if v.nasal and v.aperture >= g.VOWEL:
         text += _NASAL[column]
-    return _N("NFC", text)
+    text = _N("NFC", text)
+    if _FROM[column].get(text) != code:
+        raise g.GraphError(f"{g.bits(code)} has no spelling in {_SCRIPTS[column]}")
+    return text
 
 
 def to_iast(code: int) -> str:
@@ -90,6 +111,10 @@ def _reader(column: int) -> Dict[str, int]:
     for text, code in list(out.items()):
         if g.unpack(code).aperture >= g.VOWEL:
             out[text + _NASAL[column]] = g.e_nasal(code)
+    for key in "yvl":                                   # y~ v~ l~ (8.4.45)
+        v = g.unpack(g.SOUNDS[key])
+        nasal_code = g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code
+        out[_ROWS[key][column] + _NASAL[column]] = nasal_code
     return {_N("NFC", k): c for k, c in out.items()}
 
 
@@ -134,7 +159,6 @@ def code_from_cyrillic(text: str) -> int:
 # avagraha are not among the 42 sounds and are not part of this codec.
 
 SEPARATOR = "\u00b7"
-_DEV_VIRAMA = "\u094d"
 NASAL_DEV, NASAL_IAST = _NASAL[1], _NASAL[0]
 _DEV_SIGN = {"i": "ि", "u": "ु", "ṛ": "ृ", "ḷ": "ॢ", "e": "े", "o": "ो", "ai": "ै", "au": "ौ",
              "ā": "ा", "ī": "ी", "ū": "ू", "ṝ": "ॄ"}
@@ -179,7 +203,11 @@ def _encode_latin_like(seq, column: int) -> str:
     for i, tok in enumerate(spelled):
         if i:
             # a dot only when the plain concatenation of the two would not read back as the two
-            if _decode_latin_like(spelled[i - 1] + tok, column) != (seq[i - 1], seq[i]):
+            try:
+                joined = _decode_latin_like(spelled[i - 1] + tok, column)
+            except g.GraphError:                 # the greedy reading eats part of the next token (аі + ̄)
+                joined = None
+            if joined != (seq[i - 1], seq[i]):
                 out.append(SEPARATOR)
         out.append(tok)
     return "".join(out)
@@ -191,6 +219,10 @@ def _encode_devanagari(seq) -> str:
         c = seq[i]
         if _is_vowel(c):
             out.append(_spell(c, 1))                # independent letter (+ candrabindu)
+            i += 1
+            continue
+        if g.unpack(c).nasal and g.unpack(c).aperture == g.SEMIVOWEL:   # y~ v~ l~: bare + virama + candrabindu
+            out.append(to_devanagari(c))
             i += 1
             continue
         bare = to_devanagari(c)[:-1]
@@ -217,6 +249,12 @@ def _decode_devanagari(text: str) -> tuple:
             out.append(_DEV_CONS[ch])
             if i < len(text) and text[i] == _DEV_VIRAMA:
                 i += 1
+                if i < len(text) and text[i] == NASAL_DEV:      # y~ v~ l~
+                    nasal_code = _FROM[1].get(_N("NFC", ch + _DEV_VIRAMA + NASAL_DEV))
+                    if nasal_code is None:
+                        raise g.GraphError(f"{ch!r}+virama+candrabindu is not a sound of this graph")
+                    out[-1] = nasal_code
+                    i += 1
                 continue
             if i < len(text) and text[i] in _DEV_SIGN_TO_CODE:
                 vowel = _DEV_SIGN_TO_CODE[text[i]]
@@ -248,13 +286,22 @@ def encode_text(seq, script: str) -> str:
     raise g.GraphError(f"unknown script {script!r}")
 
 
-def decode_text(text: str, script: str) -> tuple:
-    """Read a string back to the sequence of sound codes (inverse of `encode_text`)."""
+def decode_text(text: str, script: str, *, strict: bool = True) -> tuple:
+    """Read a string back to the sequence of sound codes (inverse of `encode_text`).
+
+    `strict` (default): the text must be exactly what `encode_text` writes for the sequence it reads
+    (no extra dots, no `क्अ` for `क`), so text <-> sequence is a bijection on the accepted strings.
+    `strict=False` accepts those other spellings of the same sequence.
+    """
     if script == "devanagari":
-        return _decode_devanagari(text)
-    if script in ("iast", "cyrillic"):
-        return _decode_latin_like(text, 0 if script == "iast" else 2)
-    raise g.GraphError(f"unknown script {script!r}")
+        seq = _decode_devanagari(text)
+    elif script in ("iast", "cyrillic"):
+        seq = _decode_latin_like(text, 0 if script == "iast" else 2)
+    else:
+        raise g.GraphError(f"unknown script {script!r}")
+    if strict and encode_text(seq, script) != _N("NFC", text):
+        raise g.GraphError(f"{text!r} is not the canonical {script} spelling of its sounds")
+    return seq
 
 
 def transcode(text: str, src: str, dst: str) -> str:

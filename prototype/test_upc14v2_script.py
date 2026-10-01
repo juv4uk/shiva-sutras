@@ -65,7 +65,7 @@ class CyrillicViewTests(unittest.TestCase):
                 self.assertTrue("\u0400" <= ch <= "\u04ff" or unicodedata.combining(ch), (ch, hex(ord(ch))))
 
     def test_known_spellings(self):
-        for cyr, key in (("кх", "K"), ("т\u0323", "w"), ("н\u0323", "R"), ("ш\u0301", "S"), ("ай", "E"), ("дж", "j"), ("й", "y")):
+        for cyr, key in (("кг", "K"), ("ґ", "g"), ("ґг", "G"), ("джг", "J"), ("т\u0323", "w"), ("т\u0323г", "W"), ("н\u0323", "R"), ("ш\u0301", "S"), ("аі", "E"), ("ау", "O"), ("дж", "j"), ("й", "y"), ("х", "h")):
             self.assertEqual(sc.code_from_cyrillic(cyr), S[key])
 
     def test_long_and_nasal_vowels(self):
@@ -78,9 +78,17 @@ class CyrillicViewTests(unittest.TestCase):
             self.assertEqual(sc.code_from_iast(sc.to_iast(code)), sc.code_from_cyrillic(sc.to_cyrillic(code)))
 
 
+def _nasal_semivowels():
+    out = []
+    for k in "yvl":
+        v = g.unpack(S[k])
+        out.append(g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code)
+    return out
+
+
 def _alphabet():
     return (list(S.values()) + [g.e_long(S[k]) for k in "aiuf"] + [g.e_nasal(S[k]) for k in "aiufxeoEO"]
-            + [g.e_nasal(g.e_long(S[k])) for k in "aiuf"])
+            + [g.e_nasal(g.e_long(S[k])) for k in "aiuf"] + _nasal_semivowels())
 
 
 class TextCodecTests(unittest.TestCase):
@@ -113,8 +121,11 @@ class TextCodecTests(unittest.TestCase):
         self.assertEqual(sc.encode_text([kh], "iast"), "kh")
         self.assertEqual(sc.encode_text([a, i], "iast"), "a·i")
         self.assertEqual(sc.encode_text([ai], "iast"), "ai")
-        self.assertEqual(sc.encode_text([a, y], "cyrillic"), "а·й")
-        self.assertEqual(sc.encode_text([ai], "cyrillic"), "ай")
+        self.assertEqual(sc.encode_text([a, y], "cyrillic"), "ай")          # й is the semivowel: no clash with аі
+        self.assertEqual(sc.encode_text([a, i], "cyrillic"), "а·і")
+        self.assertEqual(sc.encode_text([ai], "cyrillic"), "аі")
+        self.assertEqual(sc.encode_text([k, h], "cyrillic"), "кх")          # k + h; the aspirate is кг, so no dot
+        self.assertEqual(sc.encode_text([kh], "cyrillic"), "кг")
         self.assertEqual(sc.decode_text("kh", "iast"), (kh,))
         self.assertEqual(sc.decode_text("k·h", "iast"), (k, h))
 
@@ -141,6 +152,46 @@ class TextCodecTests(unittest.TestCase):
         for script, bad in (("iast", "kq"), ("cyrillic", "z"), ("devanagari", "k")):
             with self.assertRaises(g.GraphError):
                 sc.decode_text(bad, script)
+
+
+class FailClosedTests(unittest.TestCase):
+    """What cannot be spelled raises GraphError; it is never written as another sound (shiva fuzz C1-C4)."""
+
+    def bad_codes(self):
+        e = g.unpack(S["e"])
+        return {
+            "pluta a": g.e_long(g.e_long(S["a"])),
+            "long ḷ": g.e_long(S["x"]),
+            "short e": g.Vertex(e.place, e.nasal, e.aperture, 0, e.voice, e.asp).code,
+            "nasal r": g.Vertex(g.unpack(S["r"]).place, 1, g.SEMIVOWEL, 0, 0, 0).code,
+        }
+
+    def test_unspellable_codes_raise_graph_error_in_every_script(self):
+        for name, code in self.bad_codes().items():
+            for script in ("iast", "devanagari", "cyrillic"):
+                with self.subTest(code=name, script=script):
+                    with self.assertRaises(g.GraphError):
+                        sc.encode_text([code], script)
+
+    def test_nasal_semivowels_from_8_4_45_are_written_and_read_back(self):
+        import upc14v2_sandhi as sd
+        left = sd.final_stop("y", "n").left            # y~
+        code = sd.code_of(left)
+        for script in ("iast", "devanagari", "cyrillic"):
+            self.assertEqual(sc.decode_text(sc.encode_text([code], script), script), (code,))
+        self.assertEqual(sc.to_devanagari(code), "य्ँ")
+
+    def test_strict_decoder_accepts_only_the_canonical_spelling(self):
+        for script, noncanonical in (("iast", "·k"), ("iast", "k··h"), ("iast", "k·a"), ("devanagari", "क्अ"),
+                                     ("cyrillic", "к·")):
+            with self.subTest(script=script, text=noncanonical):
+                with self.assertRaises(g.GraphError):
+                    sc.decode_text(noncanonical, script)
+                sc.decode_text(noncanonical, script, strict=False)   # the lenient reading still works
+
+    def test_lenient_and_strict_agree_on_canonical_text(self):
+        for script, text in (("iast", "k·h"), ("devanagari", "कणा"), ("cyrillic", "а·і")):
+            self.assertEqual(sc.decode_text(text, script), sc.decode_text(text, script, strict=False))
 
 
 if __name__ == "__main__":
