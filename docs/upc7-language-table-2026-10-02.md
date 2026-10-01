@@ -23,6 +23,13 @@ A sound the other language does not have has **no spelling there and is refused*
 14 sounds are Ukrainian-only (own cells): ж з ф х г ц ч дз дж ь а е о и. 55 cells are Sanskrit (the 42 sounds, ā ī ū ṝ, 9 nasal vowels), derived from the UPC-14 graph (`upc7_derive`); 27 are signs.
 Not decided by me, the owner's call: the pinned table keeps Ukrainian а е о и apart from Sanskrit a e o (UPC-8 calls them "near-equivalent"), and merges ш with ś and л with l.
 
+### 2a. What the phonetic comparison says about those inherited merges (the shiva agent, `docs/sanskrit-ukrainian-sounds-2026-10-02.md`, PR #76; Sanskrit places and voicing source-confirmed from the Laghukaumudī, IPA symbols an external convention)
+
+- **Unambiguously one sound:** i/і, u/у, k/к, g/ґ, y/й, p/п, b/б, m/м, t/т, d/д, n/н (both dental), s/с: the shared cells are right.
+- **Close, not identical; the pinned table nevertheless puts them in ONE cell and this candidate keeps that:** r/р, l/л (Ukrainian л is a hard ɫ plus a separate soft one), v/в, ś/ш (Sanskrit has ś and ṣ, Ukrainian one ш), a/а, e/е, o/о. The pinned table keeps а е о as Ukrainian-only cells and merges the others; whether to split r/р, l/л, v/в, ш from ś/ṣ is the owner's decision (splitting would give each its own cell; nothing in the layer needs the merge).
+- **h is Ukrainian г [ɦ]** by the Laghukaumudī (voiced, aspirated, throat), not х [x]; the pinned table has h and г as two cells; this candidate keeps them two (h moves, г does not).
+- **Sanskrit-only (refused in `uk`):** aspirates, ṭ ḍ ṇ, ṅ ñ, ṛ ḷ, the long vowels; **Ukrainian-only (refused in the Sanskrit layouts):** и ж з ц ф х дз щ and the soft consonants.
+
 ## 3. The Ukrainian orthography (stated as code, `uk_orth.py`)
 
 | orthography | sounds |
