@@ -250,6 +250,19 @@ class GrammarQueryTests(unittest.TestCase):
         self.assertTrue(all(g.savarna(S["k"], S[x]) for x in "KgGN"))  # a whole varga row incl. the nasal
         self.assertFalse(g.savarna(S["k"], S["c"]))
 
+    def test_savarna_status_is_none_exactly_for_e_ai_and_o_au(self):
+        undecided = {(x, y) for x in S for y in S
+                     if g.savarna_status(S[x], S[y]) is None}
+        self.assertEqual(undecided, {("e", "E"), ("E", "e"), ("o", "O"), ("O", "o")})
+
+    def test_savarna_status_equals_savarna_elsewhere(self):
+        for vartika in (False, True):
+            for x in S:
+                for y in S:
+                    st = g.savarna_status(S[x], S[y], vartika=vartika)
+                    if st is not None:
+                        self.assertEqual(st, g.savarna(S[x], S[y], vartika=vartika), (x, y, vartika))
+
     def test_dirgha_merges_savarna_simple_vowels(self):
         for x in "aiuf":
             long_form = g.dirgha(S[x], S[x])
