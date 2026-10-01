@@ -23,7 +23,7 @@
 
 | Файл | Дія |
 |---|---|
-| `ashtadhyayi-com-pratyahara.tsv` | **без SLP1**: перевибрати з першоджерела `ashtadhyayi-data/pratyahara/data.txt` (там уже Деванагарі: `name` «अण्», `list` «अ, इ, उ»; приголосні з віramою «य्, व्, र्, ल्»). Колонки: `name_iast`, `start_iast`, `marker_iast`, `sounds_iast` (для читання, виводяться відображенням §3) і `name_deva`, `start_deva`, `marker_deva`, `sounds_deva` (як у джерелі). Початок = перший елемент `list`, маркер = остання літера `name` |
+| `ashtadhyayi-com-pratyahara.tsv` | **без SLP1**: перевибрати з першоджерела `ashtadhyayi-data/pratyahara/data.txt` (там уже Деванагарі: `name` «अण्», `list` «अ, इ, उ»; приголосні з вірамою «य्, व्, र्, ल्»). Колонки: `name_iast`, `start_iast`, `marker_iast`, `sounds_iast` (для читання, виводяться відображенням §3) і `name_deva`, `start_deva`, `marker_deva`, `sounds_deva` (як у джерелі). Початок = перший елемент `list`, маркер = остання літера `name` |
 | `vidyut-sandhi-final-stops.tsv`, `vidyut-sandhi-vowels.tsv`, `paninian-verified-consonant-maps.tsv` | SLP1 → IAST і Деванагарі: колонки `first_iast`, `second_iast`, `result_iast`, `input_iast`, `output_iast` (для читання) і `…_deva` (другий вид) |
 
 Для ashtadhyayi-com перетранслітерація через SLP1 не потрібна: менше кроків і менше помилок (SLP1-копія в репо сама була транслітерацією з Деванагарі).
