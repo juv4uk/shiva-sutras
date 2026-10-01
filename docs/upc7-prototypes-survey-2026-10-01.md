@@ -8,9 +8,9 @@ Coordinator survey, 2026-10-01, read-only: no prototype was changed. The measuri
 |---|---|---|---|---|
 | H | hand-placed UPC-7 (geometry v2) | `upc7_geometry.py`, `upc7_layouts.py`, `upc7_table.py`, `upc7-table.tsv` | 2-bit class + 5-bit payload, cells placed by hand; layouts `sa-slp1`, `sa-iast`, `sa-deva`, `uk`, `bits`; the table SENS pins as Text7 | 8 + 53 OK |
 | L | legacy UPC-7 | `upc7.py` | the low half of the flat UPC-8 table (code = position in the sutra order); a donor witness | 7 OK |
-| V | VARṆA-7 | `varna7-prana14/varna7.py` | 4 regions (sparśa, antastha-ūṣman, svara, saṃjñā), the same shape as H with other names | 1 script, "all tests passed" |
-| A | AKSHARA-7 | `akshara7.py` | 1 family bit + 6-bit payload; code = index in a fixed order of the 42 sounds; 14 marker cells | 7 OK |
-| T | TANTU-7 | `graph7.py` | code = vertex index (0..41) in the same order as A; the graph (edges) is derived, not stored in the code | 7 OK |
+| V | varṇa7 | `varna7-prana14/varna7.py` | 4 regions (sparśa, antastha-ūṣman, svara, saṃjñā), the same shape as H with other names | 1 script, "all tests passed" |
+| A | akṣara7 | `akshara7.py` | 1 family bit + 6-bit payload; code = index in a fixed order of the 42 sounds; 14 marker cells | 7 OK |
+| T | tantu7 | `graph7.py` | code = vertex index (0..41) in the same order as A; the graph (edges) is derived, not stored in the code | 7 OK |
 | D | **saṅkṣepa7** (संक्षेप, "abridgment"): UPC-7 derived from the UPC-14 graph | `upc7_derive.py` (PR #65) | a cell computed from the UPC-14 vertex by rule | 8 OK |
 | — | witnesses and audit | `upc7_cold_witness.lisp`, `upc7_cold_verify.c`, `upc7_corpus_audit.py`, `upc7-corpus-report.json` | pin the table; audit a corpus (evidence only, it cannot assign identities) | audit run, not the witnesses |
 | — | SENS side | `sens/crates/sens/src/text7.rs`, `text7_projection*.rs`, `contracts/text7-upc7.lock` | `Text7` = an exact sequence of 7-bit cells (one per `u8`, high bit forbidden); projections generated from the pinned table | not run |
@@ -25,9 +25,9 @@ On the 42 sounds, same measures for every prototype (`python3 prototype/survey_7
 |---|---|---|---|---|
 | H hand table | 42 | 42 | 0 | 6 |
 | D derived | 42 | 42 | 0 | 4 |
-| V VARṆA-7 | 42 | 42 | 0 | 4 |
-| A AKSHARA-7 | 42 | 42 | 25 | not computable from bits (a code is an index) |
-| T TANTU-7 | 42 | 42 | 25 | not computable from bits |
+| V varṇa7 | 42 | 42 | 0 | 4 |
+| A akṣara7 | 42 | 42 | 25 | not computable from bits (a code is an index) |
+| T tantu7 | 42 | 42 | 25 | not computable from bits |
 | L legacy | 42 | 42 | 39 | not computable from bits |
 
 Cells equal between prototypes (of 42): D–V 41, H–V 40, H–D 39; A–T 42; A–L and T–L 22; H or D or V against A, T, L: 1.

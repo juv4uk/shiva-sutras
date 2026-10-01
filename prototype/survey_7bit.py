@@ -6,9 +6,9 @@ things, so the prototypes can be compared on evidence instead of descriptions:
 
   H  hand-placed UPC-7 table (upc7-table.tsv, geometry v2)           = what SENS pins as Text7
   D  UPC-7 derived from the UPC-14 graph (upc7_derive.py)
-  V  VARNA-7 (varna7-prana14/varna7.py)
-  A  AKSHARA-7 (akshara7.py)
-  T  TANTU-7 (graph7.py)
+  V  varṇa7 (varna7-prana14/varna7.py)
+  A  akṣara7 (akshara7.py)
+  T  tantu7 (graph7.py)
   L  legacy UPC-7 (upc7.py): the low half of the flat UPC-8 table (its codes are the sutra order)
 
 Measured: coverage and distinctness of the 42 cells; pairwise agreement; whether the 43 pratyaharas are
@@ -82,7 +82,7 @@ def cells_legacy() -> Dict[str, int]:
 
 
 PROTOTYPES = (("H", "hand-placed UPC-7 table", cells_hand), ("D", "UPC-7 derived from the UPC-14 graph", cells_derived),
-              ("V", "VARNA-7", cells_varna), ("A", "AKSHARA-7", cells_akshara), ("T", "TANTU-7", cells_tantu),
+              ("V", "varṇa7", cells_varna), ("A", "akṣara7", cells_akshara), ("T", "tantu7", cells_tantu),
               ("L", "legacy UPC-7 (sutra order)", cells_legacy))
 
 PRATYAHARA_SETS: List[Tuple[str, frozenset]] = []
