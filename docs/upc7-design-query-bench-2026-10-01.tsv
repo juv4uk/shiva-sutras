@@ -1,0 +1,33 @@
+# gcc: gcc (GCC) 16.1.0
+# valgrind: valgrind-3.27.0
+# parity	H	savarna_mismatches=6/1764	ac_mismatches=0/42	jhal_mismatches=0/42
+# parity	D	savarna_mismatches=4/1764	ac_mismatches=0/42	jhal_mismatches=0/42
+# parity	V	savarna_mismatches=4/1764	ac_mismatches=0/42	jhal_mismatches=0/42
+# parity	A	savarna_mismatches=0/1764	ac_mismatches=0/42	jhal_mismatches=0/42
+# parity	T	savarna_mismatches=0/1764	ac_mismatches=0/42	jhal_mismatches=0/42
+# parity	L	savarna_mismatches=0/1764	ac_mismatches=0/42	jhal_mismatches=0/42
+design	name	query	I_per_call_gross	I_setup_extra
+H	hand table	null	98.00	0
+H	hand table	sav	87.65	0
+H	hand table	ac	133.86	0
+H	hand table	jhal	132.22	0
+D	saṅkṣepa7 (derived)	null	98.00	0
+D	saṅkṣepa7 (derived)	sav	87.65	0
+D	saṅkṣepa7 (derived)	ac	133.86	0
+D	saṅkṣepa7 (derived)	jhal	132.22	0
+V	varṇa7	null	98.00	-1
+V	varṇa7	sav	87.65	-1
+V	varṇa7	ac	133.86	-1
+V	varṇa7	jhal	132.22	-1
+A	akṣara7	null	98.00	9952
+A	akṣara7	sav	81.00	9952
+A	akṣara7	ac	136.00	9952
+A	akṣara7	jhal	132.00	9952
+T	tantu7	null	98.00	9952
+T	tantu7	sav	81.00	9952
+T	tantu7	ac	136.00	9952
+T	tantu7	jhal	132.00	9952
+L	legacy (sutra order)	null	98.00	9951
+L	legacy (sutra order)	sav	81.00	9951
+L	legacy (sutra order)	ac	136.00	9951
+L	legacy (sutra order)	jhal	132.00	9951
