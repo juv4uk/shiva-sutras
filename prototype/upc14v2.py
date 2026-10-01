@@ -141,6 +141,7 @@ def e_asp(c: int) -> int:
 
 
 def e_voice(c: int) -> int:
+    unpack(c)
     return c ^ (1 << VOICE_SHIFT)
 
 

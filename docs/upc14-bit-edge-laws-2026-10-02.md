@@ -36,11 +36,11 @@ This is the sound-domain counterpart of "appending a bit is a composition step":
 1. **The 7-bit prototypes have no such law.** The same asp pairs give 4 different xor masks in the hand-placed UPC-7 table (and 4 in akshara7); voice gives 3 and 4.
    Reason for the hand table: `payload = place * 5 + member` is not bit-aligned (a carry), chosen to fit 25 stops in 5 bits. The derived saṅkṣepa7 has the same shape. A bit-aligned
    stop word needs `place * 8 + member` = 40 cells, i.e. more than the 32 of a class.
-2. **Hamming-1 does not cover the edges** (hypothesis-level, the shiva agent measured it independently): in the 14-bit code asp, voice and nasal are 1 bit apart, but shift is 2, join 2, lift 1..3.
+2. **Hamming-1 does not cover the edges** (hypothesis-level, the shiva agent measured it independently): in the 14-bit code asp, voice and nasal are 1 bit apart, but shift is 2, join 2, lift 1..3. (Measured by the shiva agent on the derivation instances: asp 1 [10 pairs], voice 1 [5], nasal 1 [5], shift 2 [4], join 2 [4], lift 1..3. Over ALL 2232 vertices the distances are wider: shift 2 or 4, nasal 0..3 (0 on an already nasal vertex), join 0..1, lift1 1..3. The statement holds for the derivation, not for every vertex.)
    "Typed edge = one bit operation" is true; "typed edge = one bit changed" is false.
 3. **Place is not binary.** The place field is a boolean lattice of 5 atoms (join = OR) and a spine (shift = `<< 1`), not a binary choice; the five places are not a prefix tree.
 4. **A defect found by the check:** `upc14v2.e_voice` is `c ^ 2` without validating its input: it accepts all 14152 non-vertex codes, the only one of the nine edges that does
-   (pinned in `test_known_defect_…`). A fail-closed fix is one line (`unpack(c)`); the core file belongs to the shiva agent, not changed here.
+   (pinned in `test_known_defect_…`). A fail-closed fix is one line (`unpack(c)`). **Fixed afterwards** in `upc14v2.e_voice` (the test now expects no edge to accept a non-vertex).
 
 ## 4. What this does and does not claim
 
