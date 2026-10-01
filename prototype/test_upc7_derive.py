@@ -64,5 +64,14 @@ class DerivedCellsTests(unittest.TestCase):
             d.derive(weird)
 
 
+    def test_a_pluta_vowel_is_refused_not_turned_into_a_short_one(self):
+        # before the fix derive() returned the SHORT cell for a pluta vertex: bho3i lost its 3 without an error
+        S = g.SOUNDS
+        for vowel in ("a", "i", "u", "e", "o"):
+            v = g.unpack(S[vowel])
+            with self.assertRaises(d.DeriveError):
+                d.derive(g.Vertex(v.place, v.nasal, v.aperture, g.PLUTA, v.voice, v.asp).code)
+
+
 if __name__ == "__main__":
     unittest.main()

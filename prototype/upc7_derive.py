@@ -55,6 +55,8 @@ def derive(code: int) -> int:
         else:
             slot = 1 if v.voice else 0
         return CLASS_NONVARGA << 5 | (SPINE[top] * 4 + slot)
+    if v.length == g.PLUTA:
+        raise DeriveError(f"{g.bits(code)} is a pluta vowel: the 7-bit cells have no pluta")
     row = VOWEL_ROW.get(v.place)
     if row is None:
         raise DeriveError(f"{g.bits(code)} has no vowel row")
