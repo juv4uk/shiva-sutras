@@ -11,7 +11,7 @@ Coordinator survey, 2026-10-01, read-only: no prototype was changed. The measuri
 | V | VARṆA-7 | `varna7-prana14/varna7.py` | 4 regions (sparśa, antastha-ūṣman, svara, saṃjñā), the same shape as H with other names | 1 script, "all tests passed" |
 | A | AKSHARA-7 | `akshara7.py` | 1 family bit + 6-bit payload; code = index in a fixed order of the 42 sounds; 14 marker cells | 7 OK |
 | T | TANTU-7 | `graph7.py` | code = vertex index (0..41) in the same order as A; the graph (edges) is derived, not stored in the code | 7 OK |
-| D | UPC-7 derived from the UPC-14 graph | `upc7_derive.py` (PR #65) | a cell computed from the UPC-14 vertex by rule | 8 OK |
+| D | **SAṄKṢEPA-7** (संक্षेप, "abridgment"): UPC-7 derived from the UPC-14 graph | `upc7_derive.py` (PR #65) | a cell computed from the UPC-14 vertex by rule | 8 OK |
 | — | witnesses and audit | `upc7_cold_witness.lisp`, `upc7_cold_verify.c`, `upc7_corpus_audit.py`, `upc7-corpus-report.json` | pin the table; audit a corpus (evidence only, it cannot assign identities) | audit run, not the witnesses |
 | — | SENS side | `sens/crates/sens/src/text7.rs`, `text7_projection*.rs`, `contracts/text7-upc7.lock` | `Text7` = an exact sequence of 7-bit cells (one per `u8`, high bit forbidden); projections generated from the pinned table | not run |
 

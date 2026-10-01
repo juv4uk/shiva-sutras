@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""UPC-7 as a derived projection of the UPC-14 graph (experiment, hypothesis).
+"""SAṄKṢEPA-7 (संक्षेप, "abridgment"): UPC-7 as a derived projection of the UPC-14 graph (experiment, hypothesis).
 
 New paradigm: a UPC-7 cell is not placed by hand in a table, it is COMPUTED from the UPC-14 vertex
 (`upc14v2`): the 2-bit class from the aperture, the payload from the place and the edges. This
