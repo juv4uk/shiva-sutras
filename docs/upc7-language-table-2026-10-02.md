@@ -43,7 +43,9 @@ Not decided by me, the owner's call: the pinned table keeps Ukrainian а е о �
 | дз дж ц ч | one cell each |
 
 **Evidence (executable, `DictionaryTests`):** 229,973 Ukrainian lemmas of `dict_uk` (`base.lst`) go through `to_orth(to_tokens(w))`: **229,939 round-trip exactly (99.985%)**; 26 differ and 8 are refused.
-The 26 are one class: a **й + vowel across a morpheme boundary** (райавтодор, райелектромережа, найаерованіш, сільуправа, бельетаж), where the sounds do not say whether the letters are `йа` or `я`; no phoneme-level layer can know that without morphology. The 8 are colloquial words with an apostrophe not before я ю є ї (чо', пра').
+The 26 are **two classes** (found by the independent oracle of the panini agent, who split them): **21** are a **й or ь + vowel across a morpheme boundary** (13 with й: райавтодор, райагробуд, райелектромережа, натрійурез; 8 with ь: бельетаж, сільуправа, гідромідьустановка, утильустановка), where the sounds do not say whether the letters are `йа` or `я`, `ьу` or `ю`; no phoneme-level layer can know that without morphology. **5** are `ш + ч` that comes back as `щ` (батюшчин, пляшчина, пляшчинка, подушчаний, шарашчин): `щ` = ш + ч is ambiguous the other way. The 8 refused are colloquial words with an apostrophe not before я ю є ї (чо', пра').
+
+**Independent check:** the panini agent wrote her own transducer from the rule table above (`uk_orth.py` unread) and ran it on all of `base.lst`: classification identical in every row (232,032 exact, 26 differ, 7,130 refused: hyphenated and tagged lines, not pure Cyrillic words, plus the 8); the token sequences are identical on all 232,058 words where both give tokens. This confirms the implementation of the table, **not** the table against real orthography (both come from the same table).
 
 ## 4. What changes in the table (candidate vs pinned)
 
@@ -62,5 +64,5 @@ Of 93 cells: 84 are the same, 9 are the same cells that had no spelling in the p
 
 Клітинка це **звук**, розкладка це спосіб записати його мовою. Переключили українську: пишете українські слова (я ю є ї щ, ь, апостроф), санскритську (IAST, справжня деванагарі, санскрит кирилицею за книгою): санскритські.
 Звуку, якого нема в іншій мові, у тій розкладці немає запису, і він відхиляється, а не наближається. На 229 973 українських лемах `dict_uk` 99,985% повертаються точно, 26 різняться
-через сполучення «й + голосна» на межі морфем (райавтодор), 8 відхилено (розмовні апострофи). Порівняно з закріпленою таблицею рухаються три клітинки (h, r, l, українські р і л разом із r і l): це та сама міграція SENS Text7, яку тут не застосовано.
+через «й або ь + голосна» на межі морфем (21) та «шч → щ» (5), 8 відхилено (розмовні апострофи). Порівняно з закріпленою таблицею рухаються три клітинки (h, r, l, українські р і л разом із r і l): це та сама міграція SENS Text7, яку тут не застосовано.
 Не зроблено: регістр (великі літери), пунктуація поза ASCII, анусвара/вісарга/плута, наголос.
