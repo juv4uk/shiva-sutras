@@ -48,7 +48,7 @@
 | Голос/придих ś ṣ s h (aghoṣa mahāprāṇa; h ghoṣa mahāprāṇa) | assumption | Śikṣā/Siddhāntakaumudī; у Kāśikā не знайдено (пошук за महाप्राण/अल्पप्राण/घोष/अघोष) |
 | h = горло, підйом gh | assumption | традиція; у корпусі не звірено |
 | **Aperture-розщеплення: sibilant = 2, vowel = 3** | **source-confirmed поза Kāśikā; assumption щодо Kāśikā** | Kāśikā (txt 386) і Siddhāntakaumudī називають чотири ābhyantara-prayatna (spṛṣṭa, īṣatspṛṣṭa, saṃvṛta, vivṛta): ūṣman і голосні обидва vivṛta. **Laghukaumudī** (`laghukaumudi.txt`, ключ 11009) дає п'ять: spṛṣṭa, īṣatspṛṣṭa, **īṣadvivṛta (ūṣman)**, **vivṛta (голосні)**, saṃvṛta; це джерело розщеплення 2/3. Для Kāśikā лишається альтернативне читання: розділяє їх 1.1.10 «na ajjhalau» (txt 410) |
-| a = aperture VOWEL (3) | source-confirmed | txt 29-33: коротке a saṃvṛta в вжитку, але в шастрі розглядається як vivṛta для савarṇа; 8.4.68 повертає |
+| a = aperture VOWEL (3) | source-confirmed | txt 29-33: коротке a saṃvṛta в вжитку, але в шастрі розглядається як vivṛta для savarṇa; 8.4.68 повертає |
 | ai/au = п'ятий ступінь aperture (4) | assumption | Śikṣā-традиція; не з Kāśikā |
 | `v` = D + O (зуби + губи) | assumption | традиція (dantoṣṭhya) |
 | Порядок ознак після place у `nearest` (aperture, voice, asp, nasal, length) | assumption | у Kāśikā не знайдено; варто фіксувати як припущення |
