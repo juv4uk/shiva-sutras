@@ -1,37 +1,50 @@
-import sys, unicodedata
-sys.path.insert(0, sys.argv[1] if len(sys.argv) > 1 else 'prototype')  # path to prototype/ of commit 7a2aa38
+import sys, random, itertools, unicodedata
+sys.path.insert(0, sys.argv[1] if len(sys.argv) > 1 else 'prototype')  # prototype/ of stage 2 (IAST keys)
 import upc14v2 as g, upc14v2_sandhi as sd, upc14v2_script as sc
 S=g.SOUNDS
-def show(name, seq):
+base=[S[k] for k in S]; longs=[g.e_long(S[k]) for k in ('a','i','u','ṛ')]
+nas=[g.e_nasal(c) for c in base if g.unpack(c).aperture>=g.VOWEL]; lnas=[g.e_nasal(c) for c in longs]
+extra=[sd.code_of(x) for x in ('ỹ','ṽ','l̃')]
+sym=list(dict.fromkeys(base+longs+nas+lnas+extra)); print('symbols',len(sym))
+scripts=('iast','devanagari','cyrillic')
+# (a) exhaustive length 1-3
+for s in scripts:
+    seen={}; bad=coll=0
+    for L in (1,2):
+        for seq in itertools.product(sym,repeat=L):
+            t=sc.encode_text(seq,s)
+            if sc.decode_text(t,s)!=seq: bad+=1
+            if t in seen: coll+=1
+            seen[t]=seq
+    print('exhaustive len1-2',s,'roundtrip failures',bad,'collisions',coll,'strings',len(seen))
+# (b) unspellable codes
+def tryraise(name,code):
+    r=[]
+    for s in scripts:
+        try: sc.encode_text((code,),s); r.append('NO ERROR')
+        except Exception as e: r.append(type(e).__name__)
+    print(name,r)
+v=g.unpack(S['ḷ']); tryraise('long ḷ',g.e_long(S['ḷ']))
+ve=g.unpack(S['e']); tryraise('short e',g.Vertex(ve.place,0,ve.aperture,g.SHORT,ve.voice,ve.asp).code)
+vr=g.unpack(S['r']); tryraise('nasal r',g.Vertex(vr.place,1,vr.aperture,vr.length,vr.voice,vr.asp).code)
+tryraise('pluta i',g.e_long(g.e_long(S['i'])))
+# (c) strict decoder
+cases=[('k·h','iast'),('·k','iast'),('k·','iast'),('k··h','iast'),('k·a','iast'),('क्अ','devanagari'),('к·г','cyrillic'),('кг','cyrillic'),('к·ґ','cyrillic')]
+for t,s in cases:
     out=[]
-    for s in ('iast','devanagari','cyrillic'):
-        try:
-            t=sc.encode_text(seq,s); back=sc.decode_text(t,s)
-            out.append(f"{s}: {t!r} -> {'OK' if back==seq else 'LOSSY (decodes to a different sequence)'}")
-        except Exception as e:
-            out.append(f"{s}: RAISES {type(e).__name__}")
-    print(f"[{name}]"," | ".join(out))
-# codes outside the 59
-show('pluta a', (g.Vertex(g.unpack(S['a']).place,0,g.unpack(S['a']).aperture,g.PLUTA,0,0).code,))
-show('pluta i', (g.Vertex(g.unpack(S['i']).place,0,g.unpack(S['i']).aperture,g.PLUTA,g.unpack(S['i']).voice,0).code,))
-show('nasal y (8.4.45 y~)', (sd.code_of('y') if False else g.Vertex(g.unpack(S['y']).place,1,g.unpack(S['y']).aperture,g.unpack(S['y']).length,g.unpack(S['y']).voice,g.unpack(S['y']).asp).code,))
-show('nasal v', (g.Vertex(g.unpack(S['v']).place,1,g.unpack(S['v']).aperture,g.unpack(S['v']).length,g.unpack(S['v']).voice,g.unpack(S['v']).asp).code,))
-show('nasal l', (g.Vertex(g.unpack(S['l']).place,1,g.unpack(S['l']).aperture,g.unpack(S['l']).length,g.unpack(S['l']).voice,g.unpack(S['l']).asp).code,))
-try:
-    longx=g.e_long(S['x']); show('long ḷ (e_long(ḷ))',(longx,))
-except Exception as e: print('long ḷ: e_long raises',e)
-v=g.unpack(S['e']); 
-try: show('short e (length 0)',(g.Vertex(v.place,0,v.aperture,g.SHORT,v.voice,v.asp).code,))
-except Exception as e: print('short e: Vertex/code raises',type(e).__name__,e)
-print('--- decoder acceptance of non-canonical strings')
-def dec(t,s):
-    try: r=sc.decode_text(t,s); return [ (sc.to_iast(c)) for c in r]
-    except Exception as e: return f"RAISES {type(e).__name__}"
-for t,s in [('k·h','iast'),('kh','iast'),('·k','iast'),('k·','iast'),('k··h','iast'),('k·a','iast'),('ka','iast'),
-            ('ḳ','iast'),('ṛ','iast'),('ṝ','iast'),('ã','iast'),('ã','iast'),('ā̃','iast'),('ã̄','iast'),
-            ('क्अ','devanagari'),('क','devanagari'),('कअ','devanagari'),('क्‍ह','devanagari'),('क्‌ह','devanagari'),('क््','devanagari'),('कँ','devanagari'),('अँ','devanagari'),('आँ','devanagari'),('कँा','devanagari'),('क़','devanagari'),('ॐ','devanagari'),('कः','devanagari'),
-            ('к·х','cyrillic'),('кх','cyrillic'),('ш','cyrillic'),('ш́','cyrillic'),('ш́','cyrillic'),('a','cyrillic'),('ќ','cyrillic')]:
-    print(f"{s:10s} {t!r:22s} -> {dec(t,s)}")
-# Latin look-alike in Cyrillic and vice versa
-print('cyrillic with Latin a:', dec('а','cyrillic'), dec('a','cyrillic'))
-print('iast with Cyrillic а:', dec('а','iast'))
+    for strict in (True,False):
+        try: out.append([sc.to_iast(c) for c in sc.decode_text(t,s,strict=strict)])
+        except Exception as e: out.append(type(e).__name__)
+    print(f"{s:10s} {t!r:10s} strict={out[0]} | non-strict={out[1]}")
+# (d) bijection on accepted strings: random strings, strict decode -> if accepted then encode == NFC(text)
+random.seed(1001)
+for s in scripts:
+    toks=[sc.encode_text((c,),s) for c in sym]+['·',' ','‍','‌','|','̃','̄','̣']
+    acc=viol=0
+    for _ in range(100000):
+        text=''.join(random.choice(toks) for _ in range(random.randint(1,7)))
+        try: seq=sc.decode_text(text,s)
+        except Exception: continue
+        acc+=1
+        if sc.encode_text(seq,s)!=unicodedata.normalize('NFC',text): viol+=1
+    print('random strings',s,'accepted',acc,'strict-bijection violations',viol)

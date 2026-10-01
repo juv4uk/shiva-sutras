@@ -1,13 +1,14 @@
 import sys, random, itertools, unicodedata
-sys.path.insert(0, sys.argv[1] if len(sys.argv) > 1 else 'prototype')  # path to prototype/ of commit 7a2aa38
+sys.path.insert(0, sys.argv[1] if len(sys.argv) > 1 else 'prototype')  # prototype/ of stage 2 (IAST keys)
 import upc14v2 as g, upc14v2_sandhi as sd, upc14v2_script as sc
 S=g.SOUNDS
 # the 59 symbols of the coordinator: 42 sounds + long ā ī ū ṝ + nasal vowels + long nasal vowels
 base=[S[k] for k in S]
-longs=[g.e_long(S[k]) for k in 'aiuf']
+longs=[g.e_long(S[k]) for k in ('a','i','u','ṛ')]
 nas=[g.e_nasal(c) for c in base if g.unpack(c).aperture>=g.VOWEL]
 lnas=[g.e_nasal(c) for c in longs]
-sym=list(dict.fromkeys(base+longs+nas+lnas))
+extra=[sd.code_of(x) for x in ('ỹ','ṽ','l̃')]
+sym=list(dict.fromkeys(base+longs+nas+lnas+extra))
 print('symbols',len(sym))
 scripts=('iast','devanagari','cyrillic')
 random.seed(20261001)
