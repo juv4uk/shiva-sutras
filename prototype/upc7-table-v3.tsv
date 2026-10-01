@@ -1,0 +1,97 @@
+bits	hex	class	sound	sa-iast	sa-deva	sa-cyr	uk	language	pinned_bits	change
+0000000	0x00	varga	k	k	क्	к	к	Sanskrit + Ukrainian	0000000	same
+0000001	0x01	varga	kh	kh	ख्	кг		Sanskrit	0000001	same
+0000010	0x02	varga	g	g	ग्	ґ	ґ	Sanskrit + Ukrainian	0000010	same
+0000011	0x03	varga	gh	gh	घ्	ґг		Sanskrit	0000011	same
+0000100	0x04	varga	ṅ	ṅ	ङ्	н̇		Sanskrit	0000100	same
+0000101	0x05	varga	c	c	च्	ч		Sanskrit	0000101	same
+0000110	0x06	varga	ch	ch	छ्	чг		Sanskrit	0000110	same
+0000111	0x07	varga	j	j	ज्	дж		Sanskrit	0000111	same
+0001000	0x08	varga	jh	jh	झ्	джг		Sanskrit	0001000	same
+0001001	0x09	varga	ñ	ñ	ञ्	н̃		Sanskrit	0001001	same
+0001010	0x0A	varga	ṭ	ṭ	ट्	т̣		Sanskrit	0001010	same
+0001011	0x0B	varga	ṭh	ṭh	ठ्	т̣г		Sanskrit	0001011	same
+0001100	0x0C	varga	ḍ	ḍ	ड्	д̣		Sanskrit	0001100	same
+0001101	0x0D	varga	ḍh	ḍh	ढ्	д̣г		Sanskrit	0001101	same
+0001110	0x0E	varga	ṇ	ṇ	ण्	н̣		Sanskrit	0001110	same
+0001111	0x0F	varga	t	t	त्	т	т	Sanskrit + Ukrainian	0001111	same
+0010000	0x10	varga	th	th	थ्	тг		Sanskrit	0010000	same
+0010001	0x11	varga	d	d	द्	д	д	Sanskrit + Ukrainian	0010001	same
+0010010	0x12	varga	dh	dh	ध्	дг		Sanskrit	0010010	same
+0010011	0x13	varga	n	n	न्	н	н	Sanskrit + Ukrainian	0010011	same
+0010100	0x14	varga	p	p	प्	п	п	Sanskrit + Ukrainian	0010100	same
+0010101	0x15	varga	ph	ph	फ्	пг		Sanskrit	0010101	same
+0010110	0x16	varga	b	b	ब्	б	б	Sanskrit + Ukrainian	0010110	same
+0010111	0x17	varga	bh	bh	भ्	бг		Sanskrit	0010111	same
+0011000	0x18	varga	m	m	म्	м	м	Sanskrit + Ukrainian	0011000	same
+0100000	0x20	non-varga	х				х	Ukrainian	0100000	same
+0100001	0x21	non-varga	h	h	ह्	х		Sanskrit	0110100	moved from 0110100
+0100100	0x24	non-varga	ś	ś	श्	ш́	ш	Sanskrit + Ukrainian	0100100	same
+0100101	0x25	non-varga	ж				ж	Ukrainian	0100101	same
+0100110	0x26	non-varga	y	y	य्	й	й	Sanskrit + Ukrainian	0100110	same
+0100111	0x27	non-varga	ь				ь	Ukrainian	0100111	same
+0101000	0x28	non-varga	ṣ	ṣ	ष्	ш̣		Sanskrit	0101000	same
+0101010	0x2A	non-varga	r	r	र्	р	р	Sanskrit + Ukrainian	0101110	moved from 0101110
+0101100	0x2C	non-varga	s	s	स्	с	с	Sanskrit + Ukrainian	0101100	same
+0101101	0x2D	non-varga	з				з	Ukrainian	0101101	same
+0101110	0x2E	non-varga	l	l	ल्	л	л	Sanskrit + Ukrainian	0101111	moved from 0101111
+0110000	0x30	non-varga	ф				ф	Ukrainian	0110000	same
+0110010	0x32	non-varga	v	v	व्	в	в	Sanskrit + Ukrainian	0110010	same
+0110101	0x35	non-varga	г				г	Ukrainian	0110101	same
+0111100	0x3C	non-varga	ц				ц	Ukrainian	0111100	same
+0111101	0x3D	non-varga	ч				ч	Ukrainian	0111101	same
+0111110	0x3E	non-varga	дз				дз	Ukrainian	0111110	same
+0111111	0x3F	non-varga	дж				дж	Ukrainian	0111111	same
+1000000	0x40	vowel	a	a	अ	а		Sanskrit	1000000	same
+1000001	0x41	vowel	ā	ā	आ	а̄		Sanskrit	1000001	same
+1000010	0x42	vowel	ã	ã	अँ	а̃		Sanskrit		same cell, no spelling in the pinned table
+1000100	0x44	vowel	i	i	इ	і	і	Sanskrit + Ukrainian	1000100	same
+1000101	0x45	vowel	ī	ī	ई	і̄		Sanskrit	1000101	same
+1000110	0x46	vowel	ĩ	ĩ	इँ	і̃		Sanskrit		same cell, no spelling in the pinned table
+1001000	0x48	vowel	u	u	उ	у	у	Sanskrit + Ukrainian	1001000	same
+1001001	0x49	vowel	ū	ū	ऊ	ӯ		Sanskrit	1001001	same
+1001010	0x4A	vowel	ũ	ũ	उँ	у̃		Sanskrit		same cell, no spelling in the pinned table
+1001100	0x4C	vowel	ṛ	ṛ	ऋ	р̣		Sanskrit	1001100	same
+1001101	0x4D	vowel	ṝ	ṝ	ॠ	р̣̄		Sanskrit	1001101	same
+1001110	0x4E	vowel	ṛ̃	ṛ̃	ऋँ	р̣̃		Sanskrit		same cell, no spelling in the pinned table
+1010000	0x50	vowel	ḷ	ḷ	ऌ	л̣		Sanskrit	1010000	same
+1010010	0x52	vowel	ḷ̃	ḷ̃	ऌँ	л̣̃		Sanskrit		same cell, no spelling in the pinned table
+1010100	0x54	vowel	e	e	ए	е		Sanskrit	1010100	same
+1010101	0x55	vowel	ai	ai	ऐ	аі		Sanskrit	1010101	same
+1010110	0x56	vowel	ẽ	ẽ	एँ	е̃		Sanskrit		same cell, no spelling in the pinned table
+1010111	0x57	vowel	aĩ	aĩ	ऐँ	аі̃		Sanskrit		same cell, no spelling in the pinned table
+1011000	0x58	vowel	o	o	ओ	о		Sanskrit	1011000	same
+1011001	0x59	vowel	au	au	औ	ау		Sanskrit	1011001	same
+1011010	0x5A	vowel	õ	õ	ओँ	о̃		Sanskrit		same cell, no spelling in the pinned table
+1011011	0x5B	vowel	aũ	aũ	औँ	ау̃		Sanskrit		same cell, no spelling in the pinned table
+1011100	0x5C	vowel	а				а	Ukrainian	1011100	same
+1011101	0x5D	vowel	е				е	Ukrainian	1011101	same
+1011110	0x5E	vowel	о				о	Ukrainian	1011110	same
+1011111	0x5F	vowel	и				и	Ukrainian	1011111	same
+1100000	0x60	sign	space	 	 	 	 	signs	1100000	same
+1100001	0x61	sign	newline	\n	\n	\n	\n	signs	1100001	same
+1100010	0x62	sign	tab	\t	\t	\t	\t	signs	1100010	same
+1100011	0x63	sign	left-paren	(	(	(	(	signs	1100011	same
+1100100	0x64	sign	right-paren	)	)	)	)	signs	1100100	same
+1100101	0x65	sign	double-quote	""""	""""	""""	""""	signs	1100101	same
+1100110	0x66	sign	backslash	\	\	\	\	signs	1100110	same
+1100111	0x67	sign	underscore	_	_	_	_	signs	1100111	same
+1101101	0x6D	sign	ampersand	&	&	&	&	signs	1101101	same
+1101110	0x6E	sign	pipe	|	|	|	|	signs	1101110	same
+1101111	0x6F	sign	backquote	`	`	`	`	signs	1101111	same
+1110000	0x70	sign	plus	+	+	+	+	signs	1110000	same
+1110001	0x71	sign	minus	-	-	-	-	signs	1110001	same
+1110010	0x72	sign	star	*	*	*	*	signs	1110010	same
+1110011	0x73	sign	slash	/	/	/	/	signs	1110011	same
+1110100	0x74	sign	equals	=	=	=	=	signs	1110100	same
+1110101	0x75	sign	less	<	<	<	<	signs	1110101	same
+1110110	0x76	sign	greater	>	>	>	>	signs	1110110	same
+1110111	0x77	sign	question	?	?	?	?	signs	1110111	same
+1111000	0x78	sign	bang	!	!	!	!	signs	1111000	same
+1111001	0x79	sign	apostrophe	'	'	'	'	signs	1111001	same
+1111010	0x7A	sign	dot	.	.	.	.	signs	1111010	same
+1111011	0x7B	sign	comma	,	,	,	,	signs	1111011	same
+1111100	0x7C	sign	colon	:	:	:	:	signs	1111100	same
+1111101	0x7D	sign	semicolon	;	;	;	;	signs	1111101	same
+1111110	0x7E	sign	hash	#	#	#	#	signs	1111110	same
+1111111	0x7F	sign	at	@	@	@	@	signs	1111111	same

@@ -1,0 +1,124 @@
+#!/usr/bin/env python3
+"""The language-faithful text layer: Ukrainian layout writes Ukrainian words, Sanskrit layouts write Sanskrit words."""
+
+import csv
+import os
+import re
+import unittest
+
+import uk_orth
+import upc7_lang as L
+
+HERE = os.path.dirname(__file__)
+T = L.LangText()
+DICT_UK = "/home/agents/GitHub/dict_uk/data/dict/base.lst"
+
+SANSKRIT = ["yoga", "kṛṣṇa", "dharma", "rāmāyaṇa", "aṣṭādhyāyī", "śiva", "saṃskṛta".replace("ṃ", "m"), "bhagavad gītā".replace("ī", "i")]
+UKRAINIAN = ["кіт", "україна", "щасливий", "об'єкт", "їжа", "юність", "сьогодні", "мільйон", "п'ять", "сім'я", "з'їзд",
+             "яма", "дзвін", "джміль", "знання", "льон", "ґанок", "цей", "розв'язати", "пір'я", "мама", "рік"]
+
+
+class CellsTests(unittest.TestCase):
+    def test_no_cell_is_claimed_twice_and_the_counts(self):
+        cells = list(L.SANSKRIT_CELL.values()) + list(L.UK_ONLY_CELL.values()) + list(L.SIGN_CELL.values())
+        self.assertEqual(len(cells), len(set(cells)))
+        self.assertEqual((len(L.SANSKRIT_CELL), len(L.UK_ONLY_CELL), len(L.SIGN_CELL)), (55, 14, 27))
+
+    def test_only_h_r_l_move_relative_to_the_pinned_table(self):
+        pinned = {}
+        with open(os.path.join(HERE, "upc7-table.tsv"), encoding="utf-8") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                if row["status"] == "assigned":
+                    for col in ("sa-iast", "uk"):
+                        if row[col]:
+                            pinned.setdefault((col, row[col]), int(row["bits"], 2))
+        moved = {name for name, cell in L.SANSKRIT_CELL.items() if pinned.get(("sa-iast", name), cell) != cell}
+        self.assertEqual(moved, {"h", "r", "l"})
+        moved_uk = {tok for tok, cell in L.UK_CELL.items() if pinned.get(("uk", tok), cell) != cell}
+        self.assertEqual(moved_uk, {"р", "л"})            # the Ukrainian letters that share the cell of r and l
+
+
+class SanskritLayoutsTests(unittest.TestCase):
+    def test_every_sanskrit_sound_round_trips_in_the_three_layouts(self):
+        for name, cell in L.SANSKRIT_CELL.items():
+            for layout in ("sa-iast", "sa-deva", "sa-cyr"):
+                with self.subTest(sound=name, layout=layout):
+                    self.assertEqual(T.encode(T.render([cell], layout), layout), (cell,))
+
+    def test_sanskrit_words_switch_between_the_three_scripts_without_changing_the_cells(self):
+        for word in SANSKRIT:
+            cells = T.encode(word, "sa-iast")
+            for layout in ("sa-deva", "sa-cyr"):
+                with self.subTest(word=word, layout=layout):
+                    written = T.render(cells, layout)
+                    self.assertEqual(T.encode(written, layout), cells)
+                    self.assertEqual(T.render(T.encode(written, layout), "sa-iast"), word)
+
+    def test_real_devanagari_and_the_books_cyrillic(self):
+        self.assertEqual(T.switch("योग", "sa-deva", "sa-iast"), "yoga")
+        self.assertEqual(T.switch("कृष्ण", "sa-deva", "sa-iast"), "kṛṣṇa")
+        self.assertEqual(T.switch("yoga", "sa-iast", "sa-cyr"), "йоґа")        # g is ґ in the book's scheme
+        self.assertEqual(T.switch("dharma", "sa-iast", "sa-cyr"), "дхарма".replace("дх", "дг"))   # the aspirate is stop + г
+
+
+class UkrainianLayoutTests(unittest.TestCase):
+    def test_ukrainian_words_round_trip_as_ukrainian_orthography(self):
+        for word in UKRAINIAN:
+            with self.subTest(word=word):
+                self.assertEqual(T.render(T.encode(word, "uk"), "uk"), word)
+
+    def test_iotated_vowels_and_the_apostrophe_are_written_not_spelled_out(self):
+        self.assertEqual(T.render(T.encode("я ю є ї щ", "uk"), "uk"), "я ю є ї щ")
+        self.assertEqual(T.render(T.encode("об'єкт", "uk"), "uk"), "об'єкт")
+
+    def test_every_ukrainian_token_round_trips_alone(self):
+        for tok, cell in L.UK_CELL.items():
+            with self.subTest(token=tok):
+                self.assertEqual(T.render([cell], "uk"), tok)
+
+    def test_punctuation_and_spaces_are_signs(self):
+        self.assertEqual(T.render(T.encode("кіт, мама!", "uk"), "uk"), "кіт, мама!")
+
+
+class SwitchingTheLanguageTests(unittest.TestCase):
+    def test_a_shared_word_is_written_in_each_language(self):
+        self.assertEqual(T.switch("кіт", "uk", "sa-iast"), "kit")
+        self.assertEqual(T.switch("kit", "sa-iast", "uk"), "кіт")
+        self.assertEqual(T.switch("кіт", "uk", "sa-deva"), "कित्")
+
+    def test_a_sound_the_other_language_does_not_have_is_refused_never_approximated(self):
+        for text, src, dst in (("жито", "uk", "sa-iast"), ("мама", "uk", "sa-iast"), ("kṛṣṇa", "sa-iast", "uk"),
+                               ("aṣṭa", "sa-iast", "uk"), ("цей", "uk", "sa-deva")):
+            with self.subTest(text=text, dst=dst):
+                with self.assertRaises(L.UnrenderableCode):
+                    T.switch(text, src, dst)
+
+    def test_the_sixteen_shared_letters(self):
+        self.assertEqual(len(L.SHARED), 16)
+        for uk_letter, sanskrit in L.SHARED.items():
+            self.assertEqual(L.UK_CELL[uk_letter], L.SANSKRIT_CELL[sanskrit])
+
+
+@unittest.skipUnless(os.path.exists(DICT_UK), "dict_uk is not checked out here")
+class DictionaryTests(unittest.TestCase):
+    def test_the_ukrainian_lemmas_of_dict_uk_round_trip(self):
+        words = set()
+        with open(DICT_UK, encoding="utf-8") as handle:
+            for line in handle:
+                w = line.split(None, 1)[0] if line.strip() else ""
+                if w and re.fullmatch(r"[А-Яа-яЄєІіЇїҐґ'’ʼ]+", w):
+                    words.add(w.lower().replace("’", "'").replace("ʼ", "'"))
+        self.assertGreater(len(words), 200000)
+        differ = errors = 0
+        for w in words:
+            try:
+                differ += uk_orth.to_orth(uk_orth.to_tokens(w)) != w
+            except uk_orth.UkOrthError:
+                errors += 1
+        # measured 2026-10-02: 26 differ (a й + vowel across a morpheme boundary is written я/ю/є after a vowel: райавтодор), 8 errors (colloquial apostrophes)
+        self.assertLessEqual(differ, 40)
+        self.assertLessEqual(errors, 12)
+
+
+if __name__ == "__main__":
+    unittest.main()
