@@ -30,6 +30,12 @@ python3 prototype/bench_7bit/run.py --out docs/upc7-design-query-bench-2026-10-0
 
 Preparation (once): ordinals build the savarṇa row table (42 rows × 8 bytes): about 9,950 I refs more than geometry, which has no table.
 
+## Reading notes (from the shiva agent's review of this harness)
+
+- **The parity of `jhal` (0 of 42 for every design) is by construction**: the mask is built from the oracle for every design, so it is not evidence about a geometry; the same holds for the ordinals' savarṇa table. Only the geometry rule's savarṇa mismatches (6 / 4 / 4) and the `ac` class test are tests of a design.
+- H, D and V give identical I refs because they run the same code on different cells; their cost cannot differ here, only their answers can.
+- `bench7.c` selects the query with `strcmp` on every call, so the I refs of DIFFERENT queries (`sav` vs `ac` vs `jhal`) are not comparable with each other; comparing designs within one query is.
+
 ## What it says
 
 1. **The query cost does not separate the designs**: the differences are single-digit instructions per query, inside what a compiler's
