@@ -30,7 +30,7 @@
 | I4 | Pratyāhāra = інтервал шляху сутр; маркер = meta-клітина; сам маркер не входить | source-confirmed (1.1.71, txt 1647); empirically confirmed: 43 із 43 `ashtadhyayi.com`; 42 із 42 записів `pratyahara-usage.yaml` **після виправлення** (мій прогін 2026-10-01 на гілці `fix/48-53-…`; у master YAML ще має 3 хибні записи → 39 з 42) |
 | I5 | Savarṇa = рівні place і aperture: **одна бітова маска `0x1F70`** (place 5 біт + aperture 3 біти, розділені бітом nasal) | source-confirmed як зміст 1.1.9 (txt 375-384 «tulya āsye prayatnaḥ»); empirically confirmed як маска: `savarna()` == `(a&0x1F70)==(b&0x1F70)` на всіх 47×47 парах (мій прогін, `docs/upc14-prana14-vs-v2-2026-10-01.md`) |
 | I6 | Savarṇa не охоплює ṛ~ḷ без вартіки (`vartika=True` додає) | source-confirmed (txt 400-403, 53198, 53396); 1.1.9 як написано їх не називає |
-| I7 | e≁ai, o≁au (aperture 3 проти 4) | assumption: Kāśikā каже лише, що e o ai au мають по 12 видів і не мають коротких (txt 390); окремого «e не savarṇa до ai» там нема |
+| I7 | e≁ai, o≁au (aperture 3 проти 4) | assumption. Kāśikā каже лише, що e o ai au мають по 12 видів і не мають коротких (txt 390); «e не savarṇa до ai» там нема. Siddhāntakaumudī і Laghukaumudī (`ashtadhyayi-data`, ключ 11009) дають e і ai одне місце (kaṇṭhatālu), o і au kaṇṭhoṣṭha; обидва в чотирьох чи п'яти ābhyantara-prayatna лишають e і ai vivṛta; за самим означенням 1.1.9 вони були б savarṇa. Mahābhāṣya (ключ 11009, у запереченні) називає ai/au «vivṛtatara» щодо a, про e~ai нічого. Пряме джерело не знайдено |
 | I8 | 1.1.50: заміна = найближча вершина цільової множини; нічия → `Ambiguous`, не вибір | empirically confirmed на yaṇ/jaś/car/cu/wu; поза доменом правила нічия очікувана (мій прогін) |
 | I9 | Довжина = координата; довгого ḷ нема (`dirgha(ḷ, ḷ)` кидає) | source-confirmed (txt 389 «लृवर्णस्य दीर्घा न सन्ति») |
 | I10 | Результат правила з опцією «vā» = множина варіантів, жоден не головний | predicted (так сформульовано в специфікації; код віддає `sounds` + `options`) |
@@ -47,7 +47,7 @@
 | Місце кожного звука (K T M D O) | assumption | традиційна класифікація; sthāna не перевірено в корпусі для всіх звуків |
 | Голос/придих ś ṣ s h (aghoṣa mahāprāṇa; h ghoṣa mahāprāṇa) | assumption | Śikṣā/Siddhāntakaumudī; у Kāśikā не знайдено (пошук за महाप्राण/अल्पप्राण/घोष/अघोष) |
 | h = горло, підйом gh | assumption | традиція; у корпусі не звірено |
-| **Aperture-розщеплення: sibilant = 2, vowel = 3** | **assumption** | введено, щоб відтворити «रेफोष्मणां सवर्णा न सन्ति» (txt 392). Kāśikā (txt 386) називає лише чотири ābhyantara-prayatna (spṛṣṭa, īṣatspṛṣṭa, saṃvṛta, vivṛta); ūṣman і голосні там обидва vivṛta. Альтернативне читання: розділяє їх 1.1.10 «na ajjhalau» (txt 410), а не aperture |
+| **Aperture-розщеплення: sibilant = 2, vowel = 3** | **source-confirmed поза Kāśikā; assumption щодо Kāśikā** | Kāśikā (txt 386) і Siddhāntakaumudī називають чотири ābhyantara-prayatna (spṛṣṭa, īṣatspṛṣṭa, saṃvṛta, vivṛta): ūṣman і голосні обидва vivṛta. **Laghukaumudī** (`laghukaumudi.txt`, ключ 11009) дає п'ять: spṛṣṭa, īṣatspṛṣṭa, **īṣadvivṛta (ūṣman)**, **vivṛta (голосні)**, saṃvṛta; це джерело розщеплення 2/3. Для Kāśikā лишається альтернативне читання: розділяє їх 1.1.10 «na ajjhalau» (txt 410) |
 | a = aperture VOWEL (3) | source-confirmed | txt 29-33: коротке a саṃvṛta в вжитку, але в шастрі розглядається як vivṛta для савarṇа; 8.4.68 повертає |
 | ai/au = п'ятий ступінь aperture (4) | assumption | Śikṣā-традиція; не з Kāśikā |
 | `v` = D + O (зуби + губи) | assumption | традиція (dantoṣṭhya) |
