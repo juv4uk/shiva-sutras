@@ -5,7 +5,9 @@ S=g.SOUNDS
 base=[S[k] for k in S]; longs=[g.e_long(S[k]) for k in ('a','i','u','ṛ')]
 nas=[g.e_nasal(c) for c in base if g.unpack(c).aperture>=g.VOWEL]; lnas=[g.e_nasal(c) for c in longs]
 extra=[sd.code_of(x) for x in ('ỹ','ṽ','l̃')]
-sym=list(dict.fromkeys(base+longs+nas+lnas+extra)); print('symbols',len(sym))
+plut=[g.e_long(g.e_long(S[k])) for k in ('a','i','u','ṛ','ḷ')]+[g.e_long(S[k]) for k in ('e','o','ai','au')]
+plut+= [g.e_nasal(c) for c in plut]
+sym=list(dict.fromkeys(base+longs+nas+lnas+extra+plut)); print('symbols',len(sym))
 scripts=('iast','devanagari','cyrillic')
 # (a) exhaustive length 1-3
 for s in scripts:
@@ -27,7 +29,7 @@ def tryraise(name,code):
 v=g.unpack(S['ḷ']); tryraise('long ḷ',g.e_long(S['ḷ']))
 ve=g.unpack(S['e']); tryraise('short e',g.Vertex(ve.place,0,ve.aperture,g.SHORT,ve.voice,ve.asp).code)
 vr=g.unpack(S['r']); tryraise('nasal r',g.Vertex(vr.place,1,vr.aperture,vr.length,vr.voice,vr.asp).code)
-tryraise('pluta i',g.e_long(g.e_long(S['i'])))
+print('pluta i round trip:',[sc.decode_text(sc.encode_text((g.e_long(g.e_long(S['i'])),),sx),sx)==(g.e_long(g.e_long(S['i'])),) for sx in scripts])  # spelled since the pluta codec
 # (c) strict decoder
 cases=[('k·h','iast'),('·k','iast'),('k·','iast'),('k··h','iast'),('k·a','iast'),('क्अ','devanagari'),('к·г','cyrillic'),('кг','cyrillic'),('к·ґ','cyrillic')]
 for t,s in cases:

@@ -8,7 +8,9 @@ longs=[g.e_long(S[k]) for k in ('a','i','u','ṛ')]
 nas=[g.e_nasal(c) for c in base if g.unpack(c).aperture>=g.VOWEL]
 lnas=[g.e_nasal(c) for c in longs]
 extra=[sd.code_of(x) for x in ('ỹ','ṽ','l̃')]
-sym=list(dict.fromkeys(base+longs+nas+lnas+extra))
+plut=[g.e_long(g.e_long(S[k])) for k in ('a','i','u','ṛ','ḷ')]+[g.e_long(S[k]) for k in ('e','o','ai','au')]
+plut+= [g.e_nasal(c) for c in plut]
+sym=list(dict.fromkeys(base+longs+nas+lnas+extra+plut))
 print('symbols',len(sym))
 scripts=('iast','devanagari','cyrillic')
 random.seed(20261001)
