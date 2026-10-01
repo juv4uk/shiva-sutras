@@ -36,8 +36,9 @@ Grammar as graph queries (see `test_upc14v2.py`)
     guna / vrddhi  join of places, aperture lift          (6.1.87, 6.1.88)
     yan / jas      the NEAREST vertex in a target set      (1.1.50: sthane'ntaratamah)
 
-Nothing here is Sanskrit or Ukrainian: no layout, no sign, no spelling. SLP1
-letters appear only as debug labels for the sutra text and for tests.
+A sound is its code, not a spelling. The names used to refer to the 42 sounds (keys of `SOUNDS`,
+the tokens of `SUTRAS`) are lowercase IAST, as a convenience for reading; every written form of a
+sound (the scripts) is a view in `upc14v2_script`, and SLP1 is not used anywhere.
 """
 
 from __future__ import annotations
@@ -184,18 +185,18 @@ def join_vertices(a: int, b: int, *, length: int, aperture: int) -> int:
 
 # ---------------------------------------------------------------------------
 # The derivation: 42 sounds from the seed `k`. (label, parent label(s), edge)
-# Labels are debug names only (SLP1), never identity.
+# Names are IAST, a convenience for reading only; identity is the code.
 # ---------------------------------------------------------------------------
 
 SEED = ("k", make(K, STOP))
 
-VARGA_FIRST = ("k", "c", "w", "t", "p")   # first member of each varga, spine order
+VARGA_FIRST = ("k", "c", "ṭ", "t", "p")   # first member of each varga, spine order
 VARGA_ROWS = {
-    "k": ("k", "K", "g", "G", "N"),
-    "c": ("c", "C", "j", "J", "Y"),
-    "w": ("w", "W", "q", "Q", "R"),
-    "t": ("t", "T", "d", "D", "n"),
-    "p": ("p", "P", "b", "B", "m"),
+    "k": ("k", "kh", "g", "gh", "ṅ"),
+    "c": ("c", "ch", "j", "jh", "ñ"),
+    "ṭ": ("ṭ", "ṭh", "ḍ", "ḍh", "ṇ"),
+    "t": ("t", "th", "d", "dh", "n"),
+    "p": ("p", "ph", "b", "bh", "m"),
 }
 
 
@@ -222,23 +223,23 @@ def _derive() -> Tuple[Dict[str, int], List[Tuple[str, str, str]]]:
         previous = first
 
     # 2. semivowels: lift the voiced unaspirated stop of the same place by 1
-    for label, parent in (("y", "j"), ("r", "q"), ("l", "d")):
+    for label, parent in (("y", "j"), ("r", "ḍ"), ("l", "d")):
         add(label, parent, "lift1", e_lift(codes[parent], 1))
     add("v", "b", "lift1+joinD", e_join(e_lift(codes["b"], 1), D))
 
     # 3. sibilants and h: lift the aspirate of the same place by 2
-    for label, parent in (("S", "C"), ("z", "W"), ("s", "T"), ("h", "G")):
+    for label, parent in (("ś", "ch"), ("ṣ", "ṭh"), ("s", "th"), ("h", "gh")):
         add(label, parent, "lift2", e_lift(codes[parent], 2))
 
     # 4. simple vowels: lift the voiced unaspirated stop by 3
-    for label, parent in (("a", "g"), ("i", "j"), ("u", "b"), ("f", "q"), ("x", "d")):
+    for label, parent in (("a", "g"), ("i", "j"), ("u", "b"), ("ṛ", "ḍ"), ("ḷ", "d")):
         add(label, parent, "lift3", e_lift(codes[parent], 3))
 
     # 5. e o: join of two vowels' places, long. ai au: lift of e o.
     add("e", "a+i", "join", join_vertices(codes["a"], codes["i"], length=LONG, aperture=VOWEL))
     add("o", "a+u", "join", join_vertices(codes["a"], codes["u"], length=LONG, aperture=VOWEL))
-    add("E", "e", "lift1", e_lift(codes["e"], 1))
-    add("O", "o", "lift1", e_lift(codes["o"], 1))
+    add("ai", "e", "lift1", e_lift(codes["e"], 1))
+    add("au", "o", "lift1", e_lift(codes["o"], 1))
     return codes, log
 
 
@@ -251,11 +252,11 @@ LABELS_BY_CODE = {c: l for l, c in SOUNDS.items()}
 # ---------------------------------------------------------------------------
 
 SUTRAS: Tuple[Tuple[str, ...], ...] = (
-    ("a", "i", "u", "R"), ("f", "x", "k"), ("e", "o", "N"), ("E", "O", "c"),
-    ("h", "y", "v", "r", "w"), ("l", "R"), ("Y", "m", "N", "R", "n", "m"),
-    ("J", "B", "Y"), ("G", "Q", "D", "z"), ("j", "b", "g", "q", "d", "S"),
-    ("K", "P", "C", "W", "T", "c", "w", "t", "v"), ("k", "p", "y"),
-    ("S", "z", "s", "r"), ("h", "l"),
+    ("a", "i", "u", "ṇ"), ("ṛ", "ḷ", "k"), ("e", "o", "ṅ"), ("ai", "au", "c"),
+    ("h", "y", "v", "r", "ṭ"), ("l", "ṇ"), ("ñ", "m", "ṅ", "ṇ", "n", "m"),
+    ("jh", "bh", "ñ"), ("gh", "ḍh", "dh", "ṣ"), ("j", "b", "g", "ḍ", "d", "ś"),
+    ("kh", "ph", "ch", "ṭh", "th", "c", "ṭ", "t", "v"), ("k", "p", "y"),
+    ("ś", "ṣ", "s", "r"), ("h", "l"),
 )
 
 

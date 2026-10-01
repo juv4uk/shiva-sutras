@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-"""Spelling views of the 42 sounds: IAST, Devanagari and Ukrainian Cyrillic (stage 1 of removing SLP1).
+"""Spelling views of the 42 sounds: IAST, Devanagari and Ukrainian Cyrillic.
 
-The graph (`upc14v2`) never needed a spelling: a sound is its code. Its debug labels were
-SLP1, which is case-sensitive (k and K are two sounds) and a third script nobody asked for.
-Here are the two scripts the project keeps: IAST (lowercase Latin with diacritics) and
-Devanagari. They are VIEWS: `to_iast(code)` / `to_devanagari(code)` read a code, and
-`code_from_iast(text)` / `code_from_devanagari(text)` read a spelling. Identity stays the
-code, never the string.
+The graph (`upc14v2`) never needed a spelling: a sound is its code. SLP1, the case-sensitive
+ASCII notation (k and K are two sounds) it used before, is gone (owner's decision, 2026-10-01).
+The scripts the project keeps are IAST (lowercase Latin with diacritics, for reading), Devanagari
+(the native one) and Cyrillic (from a Ukrainian book). They are VIEWS: `to_iast(code)` and the
+like read a code, `code_from_iast(text)` and the like read a spelling; `encode_text` and
+`decode_text` do the same for a whole sequence, with no ambiguity. Identity stays the code.
 
 Length and nose are coordinates of the code, so they are spelled by a rule, not listed:
 long vowel = the long form (ā ī ū ṝ; Devanagari आ ई ऊ ॠ), nasal = a combining tilde
-(IAST) or candrabindu (Devanagari). Stage 1 keeps the SLP1 debug keys of `upc14v2.SOUNDS`
-as the way the SPELLING TABLE is addressed internally; stage 2 re-keys the graph and the
-tests by IAST and deletes this bridge.
+(IAST) or candrabindu (Devanagari). The spelling table is keyed by the IAST name of the sound (the keys of `upc14v2.SOUNDS`).
 
 A consonant in Devanagari is written bare with virama (क्), a vowel as its independent letter.
 
@@ -36,17 +34,17 @@ from typing import Dict
 import upc14v2 as g
 import upc14v2_sandhi as sd
 
-# one row per sound: legacy debug key -> (IAST, Devanagari, Cyrillic)
+# one row per sound: IAST name -> (IAST, Devanagari, Cyrillic)
 _ROWS = {
-    "a": ("a", "अ", "а"), "i": ("i", "इ", "і"), "u": ("u", "उ", "у"), "f": ("ṛ", "ऋ", "р̣"), "x": ("ḷ", "ऌ", "л̣"),
-    "e": ("e", "ए", "е"), "o": ("o", "ओ", "о"), "E": ("ai", "ऐ", "аі"), "O": ("au", "औ", "ау"),
-    "k": ("k", "क्", "к"), "K": ("kh", "ख्", "кг"), "g": ("g", "ग्", "ґ"), "G": ("gh", "घ्", "ґг"), "N": ("ṅ", "ङ्", "н̇"),
-    "c": ("c", "च्", "ч"), "C": ("ch", "छ्", "чг"), "j": ("j", "ज्", "дж"), "J": ("jh", "झ्", "джг"), "Y": ("ñ", "ञ्", "н̃"),
-    "w": ("ṭ", "ट्", "т̣"), "W": ("ṭh", "ठ्", "т̣г"), "q": ("ḍ", "ड्", "д̣"), "Q": ("ḍh", "ढ्", "д̣г"), "R": ("ṇ", "ण्", "н̣"),
-    "t": ("t", "त्", "т"), "T": ("th", "थ्", "тг"), "d": ("d", "द्", "д"), "D": ("dh", "ध्", "дг"), "n": ("n", "न्", "н"),
-    "p": ("p", "प्", "п"), "P": ("ph", "फ्", "пг"), "b": ("b", "ब्", "б"), "B": ("bh", "भ्", "бг"), "m": ("m", "म्", "м"),
+    "a": ("a", "अ", "а"), "i": ("i", "इ", "і"), "u": ("u", "उ", "у"), "ṛ": ("ṛ", "ऋ", "р̣"), "ḷ": ("ḷ", "ऌ", "л̣"),
+    "e": ("e", "ए", "е"), "o": ("o", "ओ", "о"), "ai": ("ai", "ऐ", "аі"), "au": ("au", "औ", "ау"),
+    "k": ("k", "क्", "к"), "kh": ("kh", "ख्", "кг"), "g": ("g", "ग्", "ґ"), "gh": ("gh", "घ्", "ґг"), "ṅ": ("ṅ", "ङ्", "н̇"),
+    "c": ("c", "च्", "ч"), "ch": ("ch", "छ्", "чг"), "j": ("j", "ज्", "дж"), "jh": ("jh", "झ्", "джг"), "ñ": ("ñ", "ञ्", "н̃"),
+    "ṭ": ("ṭ", "ट्", "т̣"), "ṭh": ("ṭh", "ठ्", "т̣г"), "ḍ": ("ḍ", "ड्", "д̣"), "ḍh": ("ḍh", "ढ्", "д̣г"), "ṇ": ("ṇ", "ण्", "н̣"),
+    "t": ("t", "त्", "т"), "th": ("th", "थ्", "тг"), "d": ("d", "द्", "д"), "dh": ("dh", "ध्", "дг"), "n": ("n", "न्", "н"),
+    "p": ("p", "प्", "п"), "ph": ("ph", "फ्", "пг"), "b": ("b", "ब्", "б"), "bh": ("bh", "भ्", "бг"), "m": ("m", "म्", "м"),
     "y": ("y", "य्", "й"), "r": ("r", "र्", "р"), "l": ("l", "ल्", "л"), "v": ("v", "व्", "в"),
-    "S": ("ś", "श्", "ш́"), "z": ("ṣ", "ष्", "ш̣"), "s": ("s", "स्", "с"), "h": ("h", "ह्", "х"),
+    "ś": ("ś", "श्", "ш́"), "ṣ": ("ṣ", "ष्", "ш̣"), "s": ("s", "स्", "с"), "h": ("h", "ह्", "х"),
 }
 _N = unicodedata.normalize
 # long vowel: the long form of the base spelling (a rule on four vowels; ḷ has none)
@@ -81,7 +79,7 @@ def _spell(code: int, column: int) -> str:
     if key is None:
         raise g.GraphError(f"{g.bits(code)} has no spelling")
     text = _ROWS[key][column]
-    if v.aperture >= g.VOWEL and v.length == g.LONG and key in "aiuf":
+    if v.aperture >= g.VOWEL and v.length == g.LONG and key in ("a", "i", "u", "ṛ"):
         text = _LONG[column][text]
     if v.nasal and v.aperture >= g.VOWEL:
         text += _NASAL[column]

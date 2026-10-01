@@ -28,6 +28,7 @@ vowel sandhi are outside this module.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import unicodedata
 from typing import FrozenSet, List, Optional, Sequence, Tuple
 
 import upc14v2 as g
@@ -36,17 +37,30 @@ S = g.SOUNDS
 L = g.LABELS_BY_CODE
 
 # A long vowel is not a 43rd sound: it is the short vertex one step along the length path.
-_LONG = {"A": "a", "I": "i", "U": "u", "F": "f", "X": "x"}
+# A nasal form is the same vertex with the nose atom: the IAST combining tilde (U+0303).
+_LONG = {"ā": "a", "ī": "i", "ū": "u", "ṝ": "ṛ", "ḹ": "ḷ"}   # ḹ: no such sound (Kasika 389); read only so an oracle row can name it
+_TILDE = "\u0303"
+
+
+def _nfc(text: str) -> str:
+    return unicodedata.normalize("NFC", text)
 
 
 def code_of(label: str) -> int:
+    """The code of a sound named in IAST (lowercase, NFC; nasal = combining tilde; long = ā ī ū ṝ)."""
+    label = _nfc(label)
     if label in S:
         return S[label]
     if label in _LONG:
         return g.e_long(S[_LONG[label]])
-    if label.endswith("~") and label[:-1] in ("y", "v", "l"):     # the nasal form `label_of` writes (8.4.45)
-        v = g.unpack(S[label[:-1]])
-        return g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code
+    decomposed = unicodedata.normalize("NFD", label)
+    if decomposed.endswith(_TILDE):                 # a nasal vowel, or y~ v~ l~ (8.4.45)
+        base_label = _nfc(decomposed[:-1])
+        if base_label in S or base_label in _LONG:
+            plain = code_of(base_label)
+            v = g.unpack(plain)
+            if v.aperture >= g.VOWEL or base_label in ("y", "v", "l"):
+                return g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code
     raise g.GraphError(f"{label!r} is not a sound of this graph")
 
 
@@ -64,17 +78,20 @@ def base(code: int) -> int:
 
 
 def label_of(code: int) -> str:
+    """The IAST name of a code (inverse of `code_of`)."""
     if code in L:
         return L[code]
     for long_label, short in _LONG.items():
         if code == g.e_long(S[short]):
             return long_label
     v = g.unpack(code)
-    if v.nasal:                                         # the nasal form of a labelled vertex: `~`, as in SLP1
+    if v.nasal:                                         # the nasal form of a named vertex
         plain = g.Vertex(v.place, 0, v.aperture, v.length, v.voice, v.asp).code
-        if plain in L:
-            return L[plain] + "~"
-    raise g.GraphError(f"{g.bits(code)} has no debug label")
+        try:
+            return _nfc(label_of(plain) + _TILDE)
+        except g.GraphError:
+            pass
+    raise g.GraphError(f"{g.bits(code)} has no name")
 
 
 def _p(start: str, marker: str, nth: int = 1) -> FrozenSet[int]:
@@ -88,20 +105,20 @@ def _varga(letter: str) -> FrozenSet[int]:
 
 
 # Pratyaharas: intervals of the sutra path.
-JHAL = _p("J", "l")
-JAS = _p("j", "S")
-JHAS = _p("J", "S")       # jhas in SLP1 `JaS`
-KHAR = _p("K", "r")
+JHAL = _p("jh", "l")
+JAS = _p("j", "ś")
+JHAS = _p("jh", "ś")      
+KHAR = _p("kh", "r")
 CAR = _p("c", "r")
 YAR = _p("y", "r")
-YAN = _p("y", "R")
-NAM = _p("Y", "m")
-JHAY = _p("J", "y")
-AT = _p("a", "w")
+YAN = _p("y", "ṇ")
+NAM = _p("ñ", "m")
+JHAY = _p("jh", "y")
+AT = _p("a", "ṭ")
 # Savarna classes.
-KU, CU, WU, TU, PU = (_varga(x) for x in "kcwtp")
-SCU = CU | {S["S"]}
-STU = WU | {S["z"]}
+KU, CU, WU, TU, PU = (_varga(x) for x in ("k", "c", "ṭ", "t", "p"))
+SCU = CU | {S["ś"]}
+STU = WU | {S["ṣ"]}
 
 
 @dataclass(frozen=True)
@@ -136,7 +153,7 @@ def final_stop(left: str, right: str, after: Optional[str] = "a") -> Result:
     """A pada-final stop `left` meets the first sound `right` of the next word.
 
     `after` is the sound that follows `right` (8.4.63 needs it); default: a vowel.
-    Letters are SLP1 debug labels; the work is done on vertices.
+    Sounds are IAST names (see `code_of`); the work is done on vertices.
     """
     l, r = code_of(left), code_of(right)
     r_out = r
@@ -173,8 +190,8 @@ def final_stop(left: str, right: str, after: Optional[str] = "a") -> Result:
         fourth = _fourth_of(l)
         if fourth is not None:
             r_out = fire("8.4.62", r, fourth)
-    if right == "S" and code_of(left) in JHAY and after and base(code_of(after)) in AT:   # 8.4.63 sas cho'ti
-        r_out = fire("8.4.63", r, S["C"])
+    if right == "ś" and code_of(left) in JHAY and after and base(code_of(after)) in AT:   # 8.4.63 sas cho'ti
+        r_out = fire("8.4.63", r, S["ch"])
     return Result(label_of(l), label_of(r_out), tuple(trace))
 
 
@@ -212,10 +229,10 @@ def contact(left: str, right: str, *, padanta: bool = False) -> Result:
     right_palatal = dental_r and l in SCU
     left_retro = dental_l and r in STU
     right_retro = dental_r and l in STU
-    if right_palatal and l == S["S"] and r in TU:                       # 8.4.44 sat
+    if right_palatal and l == S["ś"] and r in TU:                       # 8.4.44 sat
         right_palatal = False
         blocked.append("8.4.44")
-    if left_retro and l in TU and r == S["z"]:                          # 8.4.43 toh si
+    if left_retro and l in TU and r == S["ṣ"]:                          # 8.4.43 toh si
         left_retro = False
         blocked.append("8.4.43")
     if right_retro and padanta and l in WU and (r in TU or r == S["s"]):    # 8.4.42
@@ -236,13 +253,13 @@ def contact(left: str, right: str, *, padanta: bool = False) -> Result:
 # 8.4.2 natva: n becomes ṇ after r, ṣ (or ṛ) within a word, through aṭ, ku, pu
 # ---------------------------------------------------------------------------
 
-NATVA_TRIGGERS = frozenset({S["r"], S["z"], S["f"]})
+NATVA_TRIGGERS = frozenset({S["r"], S["ṣ"], S["ṛ"]})
 # What may stand between trigger and n (aṭ-kupvāṅnumvyavāye'pi). `āṅ` and `num` are not modelled.
 NATVA_THROUGH = AT | KU | PU
 
 
 def natva(word: Sequence[str], *, complete_pada: bool = True) -> Tuple[str, ...]:
-    """Apply 8.4.2 to a word given as SLP1 debug labels; return the labels.
+    """Apply 8.4.2 to a word given as IAST sound names; return the names.
 
     8.4.37 (Kasika line 83569, via the shiva agent): a word-final n does not become ṇ
     (vṛkṣān, plakṣān, arīn, girīn). `complete_pada` says the word is a whole pada, so its last
@@ -258,7 +275,7 @@ def natva(word: Sequence[str], *, complete_pada: bool = True) -> Tuple[str, ...]
         while j >= 0 and base(code_of(word[j])) in NATVA_THROUGH and base(code_of(word[j])) not in NATVA_TRIGGERS:
             j -= 1
         if j >= 0 and base(code_of(word[j])) in NATVA_TRIGGERS:
-            out[i] = "R"
+            out[i] = "ṇ"
     return tuple(out)
 
 
