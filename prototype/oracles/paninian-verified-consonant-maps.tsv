@@ -2,36 +2,41 @@
 # Source: https://github.com/CharlesCNorton/paninian-verified  paninian.v  commit 9d2e3efa7c77ac2f3310f657406afdddd6bd4b61
 # Parsed mechanically from `Definition palatalize|retroflexize|voiced_of|voiceless_of` (SLP1 letters).
 # Coq was not run here (no coqc): these are the definitions as written, not proof results.
-rule	coq_definition	input_slp1	output_slp1
-8.4.40	palatalize	s	S
-8.4.40	palatalize	t	c
-8.4.40	palatalize	T	C
-8.4.40	palatalize	d	j
-8.4.40	palatalize	D	J
-8.4.40	palatalize	n	Y
-8.4.41	retroflexize	s	z
-8.4.41	retroflexize	t	w
-8.4.41	retroflexize	T	W
-8.4.41	retroflexize	d	q
-8.4.41	retroflexize	D	Q
-8.4.41	retroflexize	n	R
-8.4.53	voiced_of	k	g
-8.4.53	voiced_of	K	G
-8.4.53	voiced_of	c	j
-8.4.53	voiced_of	C	J
-8.4.53	voiced_of	w	q
-8.4.53	voiced_of	W	Q
-8.4.53	voiced_of	t	d
-8.4.53	voiced_of	T	D
-8.4.53	voiced_of	p	b
-8.4.53	voiced_of	P	B
-8.4.55	voiceless_of	g	k
-8.4.55	voiceless_of	G	k
-8.4.55	voiceless_of	j	c
-8.4.55	voiceless_of	J	c
-8.4.55	voiceless_of	q	w
-8.4.55	voiceless_of	Q	w
-8.4.55	voiceless_of	d	t
-8.4.55	voiceless_of	D	t
-8.4.55	voiceless_of	b	p
-8.4.55	voiceless_of	B	p
+# Converted from SLP1 to IAST, Devanagari and Cyrillic by docs/upc14-oracles-converted/to_script.py using
+# upc14v2_script.encode_text (commit 3785441). Sequences: tokens side by side, a middle dot only where the
+# reading would differ; `|` separates the left and right part of a sandhi result. Outside the codec and written
+# as literals: long ḷ (ḹ, ॡ; Kasika txt 389 says it does not exist) and the avagraha (’, ऽ).
+# Round trip: every cell was decoded back and compared with the SLP1 original; the original file stays in git history.
+rule	coq_definition	input_iast	input_deva	input_cyr	output_iast	output_deva	output_cyr
+8.4.40	palatalize	s	स्	с	ś	श्	ш́
+8.4.40	palatalize	t	त्	т	c	च्	ч
+8.4.40	palatalize	th	थ्	тг	ch	छ्	чг
+8.4.40	palatalize	d	द्	д	j	ज्	дж
+8.4.40	palatalize	dh	ध्	дг	jh	झ्	джг
+8.4.40	palatalize	n	न्	н	ñ	ञ्	н̃
+8.4.41	retroflexize	s	स्	с	ṣ	ष्	ш̣
+8.4.41	retroflexize	t	त्	т	ṭ	ट्	т̣
+8.4.41	retroflexize	th	थ्	тг	ṭh	ठ्	т̣г
+8.4.41	retroflexize	d	द्	д	ḍ	ड्	д̣
+8.4.41	retroflexize	dh	ध्	дг	ḍh	ढ्	д̣г
+8.4.41	retroflexize	n	न्	н	ṇ	ण्	н̣
+8.4.53	voiced_of	k	क्	к	g	ग्	ґ
+8.4.53	voiced_of	kh	ख्	кг	gh	घ्	ґг
+8.4.53	voiced_of	c	च्	ч	j	ज्	дж
+8.4.53	voiced_of	ch	छ्	чг	jh	झ्	джг
+8.4.53	voiced_of	ṭ	ट्	т̣	ḍ	ड्	д̣
+8.4.53	voiced_of	ṭh	ठ्	т̣г	ḍh	ढ्	д̣г
+8.4.53	voiced_of	t	त्	т	d	द्	д
+8.4.53	voiced_of	th	थ्	тг	dh	ध्	дг
+8.4.53	voiced_of	p	प्	п	b	ब्	б
+8.4.53	voiced_of	ph	फ्	пг	bh	भ्	бг
+8.4.55	voiceless_of	g	ग्	ґ	k	क्	к
+8.4.55	voiceless_of	gh	घ्	ґг	k	क्	к
+8.4.55	voiceless_of	j	ज्	дж	c	च्	ч
+8.4.55	voiceless_of	jh	झ्	джг	c	च्	ч
+8.4.55	voiceless_of	ḍ	ड्	д̣	ṭ	ट्	т̣
+8.4.55	voiceless_of	ḍh	ढ्	д̣г	ṭ	ट्	т̣
+8.4.55	voiceless_of	d	द्	д	t	त्	т
+8.4.55	voiceless_of	dh	ध्	дг	t	त्	т
+8.4.55	voiceless_of	b	ब्	б	p	प्	п
+8.4.55	voiceless_of	bh	भ्	бг	p	प्	п

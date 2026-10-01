@@ -17,11 +17,11 @@ L = g.LABELS_BY_CODE
 
 # SLP1 -> IAST: only to read the independent YAML sources. Not part of the code.
 IAST = {
-    "a": "a", "i": "i", "u": "u", "f": "ṛ", "x": "ḷ", "e": "e", "o": "o", "E": "ai", "O": "au",
-    "h": "h", "y": "y", "v": "v", "r": "r", "l": "l", "Y": "ñ", "m": "m", "N": "ṅ", "R": "ṇ",
-    "n": "n", "J": "jh", "B": "bh", "G": "gh", "Q": "ḍh", "D": "dh", "j": "j", "b": "b",
-    "g": "g", "q": "ḍ", "d": "d", "K": "kh", "P": "ph", "C": "ch", "W": "ṭh", "T": "th",
-    "c": "c", "w": "ṭ", "t": "t", "k": "k", "p": "p", "S": "ś", "z": "ṣ", "s": "s",
+    "a": "a", "i": "i", "u": "u", "ṛ": "ṛ", "ḷ": "ḷ", "e": "e", "o": "o", "ai": "ai", "au": "au",
+    "h": "h", "y": "y", "v": "v", "r": "r", "l": "l", "ñ": "ñ", "m": "m", "ṅ": "ṅ", "ṇ": "ṇ",
+    "n": "n", "jh": "jh", "bh": "bh", "gh": "gh", "ḍh": "ḍh", "dh": "dh", "j": "j", "b": "b",
+    "g": "g", "ḍ": "ḍ", "d": "d", "kh": "kh", "ph": "ph", "ch": "ch", "ṭh": "ṭh", "th": "th",
+    "c": "c", "ṭ": "ṭ", "t": "t", "k": "k", "p": "p", "ś": "ś", "ṣ": "ṣ", "s": "s",
 }
 FROM_IAST = {unicodedata.normalize("NFC", v): k for k, v in IAST.items()}
 
@@ -36,14 +36,15 @@ def read_lines(*parts):
 
 
 def canon_sutras():
+    """(text, marker) of each of the 14 sutras, read from the immutable IAST canon `canon/siva-sutras.yaml`."""
     texts, markers = [], []
-    for line in read_lines("canon", "siva-sutras-encoded.yaml"):
-        m = re.match(r'\s*text_slp1:\s*"([^"]*)"', line)
+    for line in read_lines("canon", "siva-sutras.yaml"):
+        m = re.match(r'\s*text_iast:\s*"([^"]*)"', line)
         if m:
-            texts.append(m.group(1))
-        m = re.match(r'\s*it_marker_slp1:\s*"([^"]*)"', line)
+            texts.append(nfc(m.group(1)))
+        m = re.match(r'\s*it_marker_iast:\s*"([^"]*)"', line)
         if m:
-            markers.append(m.group(1))
+            markers.append(nfc(m.group(1)))
     return list(zip(texts, markers))
 
 
@@ -150,7 +151,8 @@ class DerivationTests(unittest.TestCase):
 
 
 class StructureTests(unittest.TestCase):
-    ROWS = {"k": "kKgGN", "c": "cCjJY", "w": "wWqQR", "t": "tTdDn", "p": "pPbBm"}
+    ROWS = {"k": ("k", "kh", "g", "gh", "ṅ"), "c": ("c", "ch", "j", "jh", "ñ"), "ṭ": ("ṭ", "ṭh", "ḍ", "ḍh", "ṇ"),
+            "t": ("t", "th", "d", "dh", "n"), "p": ("p", "ph", "b", "bh", "m")}
 
     def test_shift_commutes_with_every_row_edge_so_the_five_vargas_are_isomorphic(self):
         # The 25 varga sounds are a 5 x 5 grid graph: (place spine) x (row of members).
@@ -178,7 +180,7 @@ class StructureTests(unittest.TestCase):
         self.assertEqual(g.e_lift(S["y"], 2), S["i"])     # semivowel -> vowel, same place
         self.assertEqual(g.e_lift(S["j"], 1), S["y"])
         with self.assertRaises(g.GraphError):
-            g.e_lift(S["E"], 1)                            # the path ends
+            g.e_lift(S["ai"], 1)                            # the path ends
 
     def test_v_is_u_with_teeth_added_at_semivowel_aperture(self):
         vu, vv = g.unpack(S["u"]), g.unpack(S["v"])
@@ -186,9 +188,9 @@ class StructureTests(unittest.TestCase):
         self.assertEqual((vu.aperture, vv.aperture), (g.VOWEL, g.SEMIVOWEL))
 
     def test_the_edges_out_of_k_and_g_are_the_expected_ones(self):
-        self.assertEqual(g.neighbors(S["k"]), {"asp": S["K"], "voice": S["g"], "nasal": S["N"], "shift": S["c"]})   # nasal: k -> the varga nasal
+        self.assertEqual(g.neighbors(S["k"]), {"asp": S["kh"], "voice": S["g"], "nasal": S["ṅ"], "shift": S["c"]})   # nasal: k -> the varga nasal
         self.assertEqual(g.neighbors(S["g"]),
-                         {"asp": S["G"], "voice": S["k"], "nasal": S["N"], "shift": S["j"]})
+                         {"asp": S["gh"], "voice": S["k"], "nasal": S["ṅ"], "shift": S["j"]})
 
 
 class SutraPathTests(unittest.TestCase):
@@ -236,8 +238,8 @@ class PratyaharaTests(unittest.TestCase):
         self.assertEqual(compared, 39)
 
     def test_the_oracle_case_yan_is_y_v_r_l(self):
-        self.assertEqual(self.letters("y", "R"), {"y", "v", "r", "l"})
-        self.assertEqual(self.letters("E", "c"), {"E", "O"})
+        self.assertEqual(self.letters("y", "ṇ"), {"y", "v", "r", "l"})
+        self.assertEqual(self.letters("ai", "c"), {"ai", "au"})
 
 
 class GrammarQueryTests(unittest.TestCase):
@@ -247,13 +249,13 @@ class GrammarQueryTests(unittest.TestCase):
         nasal = g.Vertex(g.K, 1, g.VOWEL, 0, 1, 0).code
         self.assertTrue(g.savarna(a, nasal))                    # the nose is separate
         self.assertFalse(g.savarna(S["a"], S["i"]))
-        self.assertTrue(all(g.savarna(S["k"], S[x]) for x in "KgGN"))  # a whole varga row incl. the nasal
+        self.assertTrue(all(g.savarna(S["k"], S[x]) for x in ("kh", "g", "gh", "ṅ")))  # a whole varga row incl. the nasal
         self.assertFalse(g.savarna(S["k"], S["c"]))
 
     def test_savarna_status_is_none_exactly_for_e_ai_and_o_au(self):
         undecided = {(x, y) for x in S for y in S
                      if g.savarna_status(S[x], S[y]) is None}
-        self.assertEqual(undecided, {("e", "E"), ("E", "e"), ("o", "O"), ("O", "o")})
+        self.assertEqual(undecided, {("e", "ai"), ("ai", "e"), ("o", "au"), ("au", "o")})
 
     def test_savarna_status_equals_savarna_elsewhere(self):
         for vartika in (False, True):
@@ -264,38 +266,39 @@ class GrammarQueryTests(unittest.TestCase):
                         self.assertEqual(st, g.savarna(S[x], S[y], vartika=vartika), (x, y, vartika))
 
     def test_dirgha_merges_savarna_simple_vowels(self):
-        for x in "aiuf":
+        for x in ("a", "i", "u", "ṛ"):
             long_form = g.dirgha(S[x], S[x])
             self.assertEqual(g.unpack(long_form).length, g.LONG)
             self.assertEqual(g.unpack(long_form).place, g.unpack(S[x]).place)
         with self.assertRaises(g.GraphError):
-            g.dirgha(S["x"], S["x"])          # the Kasika (389): ḷ has no long form
+            g.dirgha(S["ḷ"], S["ḷ"])          # the Kasika (389): ḷ has no long form
         with self.assertRaises(g.GraphError):
             g.dirgha(S["a"], S["i"])
 
     def test_guna_and_vrddhi_are_place_join_with_an_aperture_lift(self):
         self.assertEqual(g.guna(S["a"], S["i"]), S["e"])
         self.assertEqual(g.guna(S["a"], S["u"]), S["o"])
-        self.assertEqual(g.vrddhi(S["a"], S["e"]), S["E"])
-        self.assertEqual(g.vrddhi(S["a"], S["o"]), S["O"])
-        self.assertEqual(g.vrddhi(S["a"], S["E"]), S["E"])
+        self.assertEqual(g.vrddhi(S["a"], S["e"]), S["ai"])
+        self.assertEqual(g.vrddhi(S["a"], S["o"]), S["au"])
+        self.assertEqual(g.vrddhi(S["a"], S["ai"]), S["ai"])
 
     def test_yan_substitution_is_the_nearest_semivowel_and_is_not_definitional(self):
         # iko yan aci: i u ri li -> y v r l. Nothing in the derivation says so; the
         # nearest vertex of {y v r l} in the place lattice does (1.1.50).
-        yan = [S[x] for x in "yvrl"]
-        self.assertEqual({x: L[g.nearest(S[x], yan)] for x in "iufx"},
-                         {"i": "y", "u": "v", "f": "r", "x": "l"})
+        yan = [S[x] for x in ("y", "v", "r", "l")]
+        self.assertEqual({x: L[g.nearest(S[x], yan)] for x in ("i", "u", "ṛ", "ḷ")},
+                         {"i": "y", "u": "v", "ṛ": "r", "ḷ": "l"})
         # u sits on the lips; v has teeth AND lips, so it is nearer than y, r or l.
         def apart(x, y):
             return bin(g.unpack(S[x]).place ^ g.unpack(S[y]).place).count("1")
 
-        for other in "yrl":
+        for other in ("y", "r", "l"):
             self.assertGreater(apart("u", other), apart("u", "v"))
 
     def test_jas_substitution_is_the_nearest_voiced_unaspirated_stop_of_the_same_varga(self):
-        jas = [S[x] for x in "jbgqd"]
-        rows = {"kKgGN": "g", "cCjJY": "j", "wWqQR": "q", "tTdDn": "d", "pPbBm": "b"}
+        jas = [S[x] for x in ("j", "b", "g", "ḍ", "d")]
+        rows = {("k", "kh", "g", "gh", "ṅ"): "g", ("c", "ch", "j", "jh", "ñ"): "j", ("ṭ", "ṭh", "ḍ", "ḍh", "ṇ"): "ḍ",
+                ("t", "th", "d", "dh", "n"): "d", ("p", "ph", "b", "bh", "m"): "b"}
         for row, expected in rows.items():
             for x in row[:4]:                           # the stops of the varga (not the nasal)
                 self.assertEqual(L[g.nearest(S[x], jas)], expected, x)
@@ -357,7 +360,7 @@ class NaturalClassTests(unittest.TestCase):
         by_name = {tuple(names): members for members, names in self.classes.items() if len(names) == 1}
         for name in [f"aperture {a}" for a in range(5)] + ["voiced", "unvoiced", "nasal", "long"]:
             self.assertTrue(self.is_interval(by_name[(name,)], self.sutra_order), name)
-        for name in ("K", "T", "M", "D", "O"):
+        for name in "KTMDO":
             self.assertFalse(self.is_interval(by_name[(f"place has {name}",)], self.sutra_order), name)
 
 

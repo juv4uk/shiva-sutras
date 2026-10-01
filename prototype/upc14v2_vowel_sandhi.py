@@ -57,7 +57,7 @@ AC = _p("a", "c")
 AK = _p("a", "k")
 IK = _p("i", "k")
 EC = _p("e", "c")
-YAN = _p("y", "R")
+YAN = _p("y", "ṇ")
 
 
 ADHIKARA_EKADESA = (84, 111)   # 6.1.84 ekah purvaparayoh .. 6.1.111 inclusive (Kasika)
@@ -96,7 +96,7 @@ class Result:
         return bool(self.trace) and under_ekadesa(self.trace[0])
 
 
-_ATOM_VOWEL = {g.K: "a", g.T: "i", g.O: "u", g.M: "f", g.D: "x"}
+_ATOM_VOWEL = {g.K: "a", g.T: "i", g.O: "u", g.M: "ṛ", g.D: "ḷ"}
 
 
 def decompose(code: int) -> Tuple[int, int]:
@@ -130,8 +130,8 @@ def vowel_sandhi(left: str, right: str, *, padanta: bool = True, vartika: bool =
         return Result((label_of(r),), ("6.1.97",))
     if padanta and bl in (S["e"], S["o"]) and r == S["a"]:           # 6.1.109 (apavada of 6.1.78; ati is tapara: short a)
         return Result((label_of(l),), ("6.1.109",))
-    if vartika and bl in (S["f"], S["x"]) and br in (S["f"], S["x"]):   # 6.1.101 vartikas
-        return Result((label_of(g.e_long(S["f"])),), ("6.1.101", "vartika"),
+    if vartika and bl in (S["ṛ"], S["ḷ"]) and br in (S["ṛ"], S["ḷ"]):   # 6.1.101 vartikas
+        return Result((label_of(g.e_long(S["ṛ"])),), ("6.1.101", "vartika"),
                       options=((label_of(r),),))
     if bl in AK and br in AC and g.savarna(l, r):                    # 6.1.101
         try:
@@ -143,12 +143,12 @@ def vowel_sandhi(left: str, right: str, *, padanta: bool = True, vartika: bool =
     if bl == S["a"] and br in EC:                                    # 6.1.88
         return Result((label_of(g.vrddhi(bl, br)),), ("6.1.88",))
     if bl == S["a"] and br in IK:                                    # 6.1.87
-        if br in (S["f"], S["x"]):                                   # 1.1.51 uran raparah
+        if br in (S["ṛ"], S["ḷ"]):                                   # 1.1.51 uran raparah
             return Result((label_of(bl), label_of(g.nearest(br, YAN))), ("6.1.87", "1.1.51"))
         return Result((label_of(g.guna(bl, br)),), ("6.1.87",))
     if bl in IK and br in AC:                                        # 6.1.77
         note = ""
-        if bl in (S["f"], S["x"]) and br in (S["f"], S["x"]):
+        if bl in (S["ṛ"], S["ḷ"]) and br in (S["ṛ"], S["ḷ"]):
             note = "not attested in the Kasika without the vartika (there: hotṝkāraḥ / hotṛkāraḥ / hotlṛkāraḥ)"
         return Result((label_of(g.nearest(bl, YAN)), label_of(r)), ("6.1.77",), note=note)
     if bl in EC and br in AC:                                        # 6.1.78

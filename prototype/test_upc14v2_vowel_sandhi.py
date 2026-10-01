@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Vowel sandhi as graph queries: witnesses (shiva-sutras#44)."""
 
-import csv
 import os
 import unittest
 
+import oracle_io
 import upc14v2 as g
 import upc14v2_vowel_sandhi as vs
 
@@ -15,47 +15,47 @@ L = g.LABELS_BY_CODE
 
 class ClassTests(unittest.TestCase):
     def test_classes_are_computed_from_the_path(self):
-        self.assertEqual({L[c] for c in vs.AC}, set("aiufxeoEO"))
-        self.assertEqual({L[c] for c in vs.AK}, set("aiufx"))
-        self.assertEqual({L[c] for c in vs.IK}, set("iufx"))
-        self.assertEqual({L[c] for c in vs.EC}, set("eoEO"))
-        self.assertEqual({L[c] for c in vs.YAN}, set("yvrl"))
+        self.assertEqual({L[c] for c in vs.AC}, set(("a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au")))
+        self.assertEqual({L[c] for c in vs.AK}, set(("a", "i", "u", "ṛ", "ḷ")))
+        self.assertEqual({L[c] for c in vs.IK}, set(("i", "u", "ṛ", "ḷ")))
+        self.assertEqual({L[c] for c in vs.EC}, set(("e", "o", "ai", "au")))
+        self.assertEqual({L[c] for c in vs.YAN}, set(("y", "v", "r", "l")))
 
 
 class RuleTests(unittest.TestCase):
     def test_dirgha_6_1_101(self):
-        for x, want in (("a", "A"), ("A", "A"), ("i", "I"), ("I", "I"), ("u", "U"), ("f", "F")):  # no ḷ + ḷ here
+        for x, want in (("a", "ā"), ("ā", "ā"), ("i", "ī"), ("ī", "ī"), ("u", "ū"), ("ṛ", "ṝ")):  # no ḷ + ḷ here
             self.assertEqual(vs.vowel_sandhi(x, x).text, want, x)
-        self.assertEqual(vs.vowel_sandhi("a", "A").sounds, ("A",))
+        self.assertEqual(vs.vowel_sandhi("a", "ā").sounds, ("ā",))
 
     def test_guna_and_rapara_6_1_87(self):
         self.assertEqual(vs.vowel_sandhi("a", "i").text, "e")
-        self.assertEqual(vs.vowel_sandhi("A", "u").text, "o")
-        r = vs.vowel_sandhi("a", "f")
+        self.assertEqual(vs.vowel_sandhi("ā", "u").text, "o")
+        r = vs.vowel_sandhi("a", "ṛ")
         self.assertEqual((r.text, r.trace), ("ar", ("6.1.87", "1.1.51")))
-        self.assertEqual(vs.vowel_sandhi("a", "x").text, "al")
+        self.assertEqual(vs.vowel_sandhi("a", "ḷ").text, "al")
 
     def test_vrddhi_6_1_88(self):
-        for right, want in (("e", "E"), ("o", "O"), ("E", "E"), ("O", "O")):
+        for right, want in (("e", "ai"), ("o", "au"), ("ai", "ai"), ("au", "au")):
             self.assertEqual(vs.vowel_sandhi("a", right).text, want, right)
 
     def test_yan_6_1_77_is_the_nearest_semivowel(self):
-        for left, want in (("i", "y"), ("I", "y"), ("u", "v"), ("f", "r")):
+        for left, want in (("i", "y"), ("ī", "y"), ("u", "v"), ("ṛ", "r")):
             self.assertEqual(vs.vowel_sandhi(left, "a").text, want + "a", left)
 
     def test_ayavayav_6_1_78_decomposes_the_join(self):
         self.assertEqual(vs.vowel_sandhi("e", "i", padanta=False).text, "ayi")
         self.assertEqual({vs.decompose(S[x]) == (S[a], S[b]) for x, a, b in (("e", "a", "i"), ("o", "a", "u"))}, {True})
-        first, second = vs.decompose(S["E"])
+        first, second = vs.decompose(S["ai"])
         self.assertEqual((L[second], g.unpack(first).length), ("i", g.LONG))   # ai = long a + i
 
     def test_the_apavadas_6_1_109_and_6_1_97(self):
         self.assertEqual(vs.vowel_sandhi("e", "a").trace, ("6.1.109",))      # agne 'tra
         self.assertEqual(vs.vowel_sandhi("o", "a").text, "o")                # vayo 'tra
-        self.assertEqual(vs.vowel_sandhi("e", "A").text, "ayA")                # long ā is not `ati` (tapara)
+        self.assertEqual(vs.vowel_sandhi("e", "ā").text, "ayā")                # long ā is not `ati` (tapara)
         self.assertEqual(vs.vowel_sandhi("a", "e", padanta=False).text, "e")  # 6.1.97 pararupa
         self.assertEqual(vs.vowel_sandhi("a", "a", padanta=False).text, "a")
-        self.assertEqual(vs.vowel_sandhi("a", "a", padanta=True).text, "A")   # at a boundary: 6.1.101
+        self.assertEqual(vs.vowel_sandhi("a", "a", padanta=True).text, "ā")   # at a boundary: 6.1.101
         self.assertEqual(vs.vowel_sandhi("a", "i", padanta=False).text, "e")  # 6.1.87 is untouched
 
     def test_no_rule_leaves_the_pair_alone(self):
@@ -65,8 +65,8 @@ class RuleTests(unittest.TestCase):
 
 class VariantsAndBoundaryTests(unittest.TestCase):
     def test_a_va_rule_has_no_primary_result_only_variants(self):
-        r = vs.vowel_sandhi("f", "f", vartika=True)
-        self.assertEqual(set(r.variants), {("F",), ("f",)})          # hotṝkāraḥ / hotṛkāraḥ
+        r = vs.vowel_sandhi("ṛ", "ṛ", vartika=True)
+        self.assertEqual(set(r.variants), {("ṝ",), ("ṛ",)})          # hotṝkāraḥ / hotṛkāraḥ
         self.assertEqual(vs.vowel_sandhi("i", "a").variants, (("y", "a"),))   # an obligatory rule: one
 
     def test_the_kasika_examples_of_6_1_78_are_inside_a_word(self):
@@ -76,7 +76,7 @@ class VariantsAndBoundaryTests(unittest.TestCase):
     def test_6_1_97_blocks_vrddhi_as_well_as_dirgha(self):
         # pace (pac + e), yaje (yaj + e): inside a word a + e / o gives the following sound, not ai / au
         self.assertEqual(vs.vowel_sandhi("a", "e", padanta=False).text, "e")
-        self.assertEqual(vs.vowel_sandhi("a", "e", padanta=True).text, "E")
+        self.assertEqual(vs.vowel_sandhi("a", "e", padanta=True).text, "ai")
 
 
 class KasikaExampleTests(unittest.TestCase):
@@ -84,7 +84,7 @@ class KasikaExampleTests(unittest.TestCase):
 
     def test_the_examples(self):
         self.assertEqual(vs.vowel_sandhi("i", "a").text, "ya")                       # dadhy atra
-        for left, right, want in (("e", "a", "aya"), ("o", "a", "ava"), ("E", "a", "Aya"), ("O", "a", "Ava")):
+        for left, right, want in (("e", "a", "aya"), ("o", "a", "ava"), ("ai", "a", "āya"), ("au", "a", "āva")):
             self.assertEqual(vs.vowel_sandhi(left, right, padanta=False).text, want)  # cayanam lavanam cayakah lavakah
 
 
@@ -97,7 +97,7 @@ class AdhikaraTests(unittest.TestCase):
 
     def test_the_result_says_whether_the_pair_became_one_sound(self):
         for pair, want in ((("a", "i"), True), (("a", "e"), True), (("a", "a"), True), (("e", "a"), True),
-                           (("i", "a"), False), (("E", "i"), False)):
+                           (("i", "a"), False), (("ai", "i"), False)):
             self.assertEqual(vs.vowel_sandhi(*pair).ekadesa, want, pair)
 
 
@@ -106,26 +106,25 @@ class VidyutTests(unittest.TestCase):
 
     @staticmethod
     def rows():
-        path = os.path.join(HERE, "oracles", "vidyut-sandhi-vowels.tsv")
-        with open(path, encoding="utf-8") as handle:
-            lines = [line for line in handle if not line.startswith("#")]
-        return list(csv.DictReader(lines, delimiter="\t"))
+        return oracle_io.rows("vidyut-sandhi-vowels.tsv")
 
     def test_127_of_154_agree_and_the_other_27_are_only_the_optional_yv_elision(self):
         rows = self.rows()
         self.assertEqual(len(rows), 154)
         agree, elided = 0, []
         for row in rows:
-            mine = vs.vowel_sandhi(row["first_slp1"], row["second_slp1"]).text
-            theirs = row["result_slp1"].replace(" ", "").replace("'", "")
+            first, = oracle_io.names(row["first_iast"])
+            second, = oracle_io.names(row["second_iast"])
+            mine = vs.vowel_sandhi(first, second).sounds
+            theirs = tuple(n for part in oracle_io.parts(row["result_iast"]) for n in part if n != oracle_io.AVAGRAHA)
             if mine == theirs:
                 agree += 1
             else:
-                elided.append((row["first_slp1"], row["second_slp1"], mine.replace("y", "") == theirs))
+                elided.append((first, second, tuple(n for n in mine if n != "y") == theirs))
         self.assertEqual(agree, 127)
         self.assertEqual(len(elided), 27)
-        self.assertTrue(all(ok for _, _, ok in elided), elided)      # 8.3.19: y dropped after a / A
-        self.assertEqual({first for first, _, _ in elided}, {"e", "E"})
+        self.assertTrue(all(ok for _, _, ok in elided), elided)      # 8.3.19: y dropped after a / ā
+        self.assertEqual({first for first, _, _ in elided}, {"e", "ai"})
 
 
 class RVocalicTests(unittest.TestCase):
@@ -133,33 +132,33 @@ class RVocalicTests(unittest.TestCase):
     'rti r va', 'lrti lr va': hotṝkāraḥ / hotṛkāraḥ, hotṝkāraḥ / hotlṛkāraḥ."""
 
     def test_the_vartika_gives_the_long_r_or_the_short_vowel_that_follows(self):
-        for left, right in (("f", "f"), ("f", "x"), ("x", "x"), ("x", "f")):
+        for left, right in (("ṛ", "ṛ"), ("ṛ", "ḷ"), ("ḷ", "ḷ"), ("ḷ", "ṛ")):
             r = vs.vowel_sandhi(left, right, vartika=True)
-            self.assertEqual(r.sounds, ("F",), (left, right))            # the dirgha variant
+            self.assertEqual(r.sounds, ("ṝ",), (left, right))            # the dirgha variant
             self.assertEqual(r.options, ((right,),), (left, right))      # the va variant: the following vowel
             self.assertEqual(r.trace, ("6.1.101", "vartika"))
 
     def test_there_is_no_long_l(self):
         with self.assertRaises(g.GraphError):
-            g.dirgha(S["x"], S["x"])
-        for left, right in (("f", "f"), ("f", "x"), ("x", "x"), ("x", "f")):
+            g.dirgha(S["ḷ"], S["ḷ"])
+        for left, right in (("ṛ", "ṛ"), ("ṛ", "ḷ"), ("ḷ", "ḷ"), ("ḷ", "ṛ")):
             for vartika in (False, True):
-                self.assertNotIn("X", vs.vowel_sandhi(left, right, vartika=vartika).text)
+                self.assertNotIn("ḹ", vs.vowel_sandhi(left, right, vartika=vartika).text)
 
     def test_without_the_vartika_r_l_pairs_fall_to_yan_and_are_marked_unattested(self):
-        for left, right, want in (("f", "x", "rx"), ("x", "f", "lf"), ("x", "x", "lx")):
+        for left, right, want in (("ṛ", "ḷ", "rḷ"), ("ḷ", "ṛ", "lṛ"), ("ḷ", "ḷ", "lḷ")):
             r = vs.vowel_sandhi(left, right)
             self.assertEqual((r.text, r.trace), (want, ("6.1.77",)))
             self.assertIn("not attested", r.note)
-        r = vs.vowel_sandhi("f", "f")                                    # the sutra alone: long r
-        self.assertEqual((r.text, r.note), ("F", ""))
+        r = vs.vowel_sandhi("ṛ", "ṛ")                                    # the sutra alone: long r
+        self.assertEqual((r.text, r.note), ("ṝ", ""))
 
 
 class SavarnaVartikaTests(unittest.TestCase):
     def test_r_and_l_are_savarna_only_with_the_vartika(self):
-        self.assertFalse(g.savarna(S["f"], S["x"]))                # 1.1.9 as written: places differ
-        self.assertTrue(g.savarna(S["f"], S["x"], vartika=True))   # the Kasika's stipulation
-        self.assertFalse(g.savarna(S["f"], S["r"], vartika=True))  # a vowel and r never (1.1.10)
+        self.assertFalse(g.savarna(S["ṛ"], S["ḷ"]))                # 1.1.9 as written: places differ
+        self.assertTrue(g.savarna(S["ṛ"], S["ḷ"], vartika=True))   # the Kasika's stipulation
+        self.assertFalse(g.savarna(S["ṛ"], S["r"], vartika=True))  # a vowel and r never (1.1.10)
         self.assertFalse(g.savarna(S["a"], S["i"], vartika=True))
 
 
@@ -168,19 +167,19 @@ class StartOccurrenceTests(unittest.TestCase):
 
     def test_default_takes_the_first_recitation_as_the_tradition_does(self):
         self.assertEqual(len(g.start_ranks(S["h"])), 2)
-        self.assertEqual({L[c] for c in g.pratyahara(S["h"], "R")}, set("hyvrl"))
+        self.assertEqual({L[c] for c in g.pratyahara(S["h"], "ṇ")}, set(("h", "y", "v", "r", "l")))
         self.assertEqual(len(g.pratyahara(S["h"], "l")), 34)        # hal: h twice in the stream
 
     def test_strict_mode_refuses_to_guess(self):
         with self.assertRaises(g.AmbiguousStart):
-            g.pratyahara(S["h"], "R", strict=True)
+            g.pratyahara(S["h"], "ṇ", strict=True)
         with self.assertRaises(g.AmbiguousStart):
             g.pratyahara(S["h"], "l", strict=True)
         self.assertEqual(len(g.pratyahara(S["h"], "l", strict=True, start_occurrence=1)), 34)
 
     def test_the_second_h_has_no_R_after_it(self):
         with self.assertRaises(g.GraphError):
-            g.pratyahara(S["h"], "R", start_occurrence=2)
+            g.pratyahara(S["h"], "ṇ", start_occurrence=2)
         self.assertEqual(len(g.pratyahara(S["h"], "l", start_occurrence=2)), 1)   # just the last h
 
 

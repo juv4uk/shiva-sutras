@@ -14,31 +14,26 @@ Two implementations written by others, neither of which this code has seen:
 """
 
 import itertools
-import os
 import unittest
 
+import oracle_io
 import upc14v2 as g
 
-HERE = os.path.dirname(__file__)
 S = g.SOUNDS
 L = g.LABELS_BY_CODE
 
-LONG_TO_SHORT = {"A": "a", "I": "i", "U": "u", "F": "f", "X": "x"}
+LONG_TO_SHORT = {"ā": "a", "ī": "i", "ū": "u", "ṝ": "ṛ", "ḹ": "ḷ"}
 
 
-def fold(letters):
-    return {LONG_TO_SHORT.get(c, c) for c in letters}
+def fold(names):
+    """Fold the long vowels (vidyut spells them as separate sounds) onto the short ones."""
+    return {LONG_TO_SHORT.get(n, n) for n in names}
 
 
 def read_oracle():
-    rows = []
-    with open(os.path.join(HERE, "oracles", "ashtadhyayi-com-pratyahara.tsv"), encoding="utf-8") as handle:
-        for line in handle:
-            if line.startswith("#") or line.startswith("name_devanagari") or not line.strip():
-                continue
-            name, start, marker, sounds = line.rstrip("\n").split("\t")
-            rows.append((name, start, marker, set(sounds)))
-    return rows
+    """(name in Devanagari, start, marker, set of sound names) for each of the 43 pratyaharas."""
+    return [(row["name_deva"], row["start_iast"], row["marker_iast"], set(oracle_io.names(row["sounds_iast"])))
+            for row in oracle_io.rows("ashtadhyayi-com-pratyahara.tsv")]
 
 
 def graph_set(start, marker, nth=1):
@@ -69,54 +64,54 @@ class AshtadhyayiComTests(unittest.TestCase):
     def test_yan_here_agrees_with_the_oracle_document_and_disagrees_with_the_ksetra_yaml(self):
         names = {name: sounds for name, _, _, sounds in read_oracle()}
         self.assertEqual(names["यण्"], {"y", "v", "r", "l"})
-        self.assertEqual(graph_set("y", "R"), {"y", "v", "r", "l"})
+        self.assertEqual(graph_set("y", "ṇ"), {"y", "v", "r", "l"})
 
 
 class VidyutTests(unittest.TestCase):
     """Vectors of vidyut's `test_s2` (its pratyahara notation `R2` is the second n)."""
 
+    # (start, marker, nth, the sounds): vidyut's `ac`, `iR2` ... written as start + marker + nth, in IAST.
     S2 = (
-        ("ac", "aAiIuUfFxXeEoO"), ("ec", "eEoO"), ("iR", "iIuU"),
-        ("iR2", "iIuUfFxXeEoOyrlvh"), ("yaR", "yrlv"),
-        ("hal", "kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzsh"), ("Yam", "NYRnm"), ("Sar", "Szs"),
+        ("a", "c", 1, "a ā i ī u ū ṛ ṝ ḷ ḹ e ai o au"), ("e", "c", 1, "e ai o au"), ("i", "ṇ", 1, "i ī u ū"),
+        ("i", "ṇ", 2, "i ī u ū ṛ ṝ ḷ ḹ e ai o au y r l v h"), ("y", "ṇ", 1, "y r l v"),
+        ("h", "l", 1, "k kh g gh ṅ c ch j jh ñ ṭ ṭh ḍ ḍh ṇ t th d dh n p ph b bh m y r l v ś ṣ s h"),
+        ("ñ", "m", 1, "ṅ ñ ṇ n m"), ("ś", "r", 1, "ś ṣ s"),
     )
 
     @staticmethod
-    def parse(name):
-        second = name.endswith("2")
-        name = name[:-1] if second else name
-        return name[0], name[-1], 2 if second else 1
+    def sounds(text):
+        return fold(text.split())
 
     def test_pratyahara_sets_agree_with_vidyuts_test_s2(self):
-        for name, expected in self.S2:
-            start, marker, nth = self.parse(name)
-            with self.subTest(pratyahara=name):
-                self.assertEqual(graph_set(start, marker, nth), fold(expected))
+        for start, marker, nth, expected in self.S2:
+            with self.subTest(pratyahara=(start, marker, nth)):
+                self.assertEqual(graph_set(start, marker, nth), self.sounds(expected))
 
     def test_savarna_sets_agree(self):
-        # vidyut: a -> aA, i -> iI, ku~ -> kKgGN, cu~ -> cCjJY
-        for short, expected in (("a", "a"), ("i", "i")):
+        # vidyut: a -> a ā, i -> i ī, ku~ -> k kh g gh ṅ, cu~ -> c ch j jh ñ ...
+        for short in ("a", "i"):
             self.assertTrue(g.savarna(S[short], g.e_long(S[short])))
-        for first, row in (("k", "kKgGN"), ("c", "cCjJY"), ("w", "wWqQR"), ("t", "tTdDn"), ("p", "pPbBm")):
+        for first, row in (("k", "k kh g gh ṅ"), ("c", "c ch j jh ñ"), ("ṭ", "ṭ ṭh ḍ ḍh ṇ"),
+                           ("t", "t th d dh n"), ("p", "p ph b bh m")):
             members = {x for x in S if g.unpack(S[x]).aperture == g.STOP and g.savarna(S[first], S[x])}
-            self.assertEqual(members, set(row), first)
+            self.assertEqual(members, set(row.split()), first)
 
     def test_map_jhal_to_jas_agrees_with_all_24_pairs_of_vidyuts_test(self):
         expected = {
-            "J": "j", "B": "b", "G": "g", "Q": "q", "D": "d", "j": "j", "b": "b", "g": "g",
-            "q": "q", "d": "d", "K": "g", "P": "b", "C": "j", "W": "q", "T": "d", "c": "j",
-            "w": "q", "t": "d", "k": "g", "p": "b", "S": "j", "z": "q", "s": "d", "h": "g",
+            "jh": "j", "bh": "b", "gh": "g", "ḍh": "ḍ", "dh": "d", "j": "j", "b": "b", "g": "g",
+            "ḍ": "ḍ", "d": "d", "kh": "g", "ph": "b", "ch": "j", "ṭh": "ḍ", "th": "d", "c": "j",
+            "ṭ": "ḍ", "t": "d", "k": "g", "p": "b", "ś": "j", "ṣ": "ḍ", "s": "d", "h": "g",
         }
-        jhal = graph_set("J", "l")
+        jhal = graph_set("jh", "l")
         self.assertEqual(jhal, set(expected))  # vidyut's key set is the same 24 sounds
-        jas = [S[x] for x in "jbgqd"]
+        jas = [S[x] for x in ("j", "b", "g", "ḍ", "d")]
         for key, want in expected.items():
             with self.subTest(sound=key):
                 self.assertEqual(L[g.nearest(S[key], jas)], want)
 
     def test_map_ku_and_h_to_cu_agrees_with_vidyuts_test(self):
-        expected = {"k": "c", "K": "C", "g": "j", "G": "J", "N": "Y", "h": "J"}
-        cu = [S[x] for x in "cCjJY"]
+        expected = {"k": "c", "kh": "ch", "g": "j", "gh": "jh", "ṅ": "ñ", "h": "jh"}
+        cu = [S[x] for x in ("c", "ch", "j", "jh", "ñ")]
         for key, want in expected.items():
             with self.subTest(sound=key):
                 self.assertEqual(L[g.nearest(S[key], cu)], want)
@@ -129,13 +124,13 @@ class WhereTheImplementationsDifferTests(unittest.TestCase):
         # vidyut: Prayatna::Ishat for `yaR` and `Sar`; Vivrta for `ac` and `h`.
         # This graph keeps the sibilants and h on one aperture step (2) between the
         # semivowels (1) and the vowels (3).
-        ap = {x: g.unpack(S[x]).aperture for x in "yvrlSzsha"}
-        self.assertEqual({ap[x] for x in "yvrl"}, {g.SEMIVOWEL})
-        self.assertEqual({ap[x] for x in "Szsh"}, {g.SIBILANT})
+        ap = {x: g.unpack(S[x]).aperture for x in ("y", "v", "r", "l", "ś", "ṣ", "s", "h", "a")}
+        self.assertEqual({ap[x] for x in ("y", "v", "r", "l")}, {g.SEMIVOWEL})
+        self.assertEqual({ap[x] for x in ("ś", "ṣ", "s", "h")}, {g.SIBILANT})
         self.assertEqual(ap["a"], g.VOWEL)
 
     def test_vidyut_treats_the_sibilants_as_unaspirated_this_graph_as_aspirated(self):
-        self.assertEqual({g.unpack(S[x]).asp for x in "Szs"}, {1})
+        self.assertEqual({g.unpack(S[x]).asp for x in ("ś", "ṣ", "s")}, {1})
 
 
 class KasikaSavarnaTests(unittest.TestCase):
@@ -151,24 +146,24 @@ class KasikaSavarnaTests(unittest.TestCase):
         return {x for x in S if g.savarna(S[letter], S[x])}
 
     def test_r_and_the_sibilants_have_no_savarna(self):
-        for letter in "rSzsh":
+        for letter in ("r", "ś", "ṣ", "s", "h"):
             self.assertEqual(self.klass(letter), {letter}, letter)
 
     def test_a_vowel_and_a_consonant_are_never_savarna_1_1_10(self):
-        vowels = set("aiufxeoEO")
+        vowels = set(("a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au"))
         for x in S:
             for y in S:
                 if g.savarna(S[x], S[y]):
                     self.assertEqual(x in vowels, y in vowels, (x, y))
 
     def test_the_effort_steps_keep_apart_sounds_of_one_place(self):
-        # palate: i (vowel) y (semivowel) S (sibilant) j (stop) share the place, not the effort.
-        for a, b in itertools.combinations("iySj", 2):
+        # palate: i (vowel) y (semivowel) ś (sibilant) j (stop) share the place, not the effort.
+        for a, b in itertools.combinations(("i", "y", "ś", "j"), 2):
             self.assertFalse(g.savarna(S[a], S[b]), (a, b))
         self.assertTrue(g.savarna(S["j"], S["c"]))            # two stops of one varga
 
     def test_no_false_positive_savarna_among_the_non_stop_consonants(self):
-        for a, b in itertools.combinations("yvrlSzsh", 2):
+        for a, b in itertools.combinations(("y", "v", "r", "l", "ś", "ṣ", "s", "h"), 2):
             self.assertFalse(g.savarna(S[a], S[b]), (a, b))
 
 
@@ -194,7 +189,7 @@ class SensitivityTests(unittest.TestCase):
     def test_the_54_survives_vidyuts_classification_of_the_sibilants_and_h(self):
         def sib(asp, ap):
             out = {}
-            for x in "Szs":
+            for x in ("ś", "ṣ", "s"):
                 v = g.unpack(S[x])
                 out[x] = g.make(v.place, ap, voice=v.voice, asp=asp)
             return out
