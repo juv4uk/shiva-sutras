@@ -43,6 +43,7 @@ sound (the scripts) is a view in `upc14v2_script`, and SLP1 is not used anywhere
 
 from __future__ import annotations
 
+import unicodedata
 from dataclasses import dataclass
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
@@ -358,6 +359,72 @@ def pratyahara(start: int, marker_label: str, nth: int = 1, *, start_occurrence:
     raise GraphError(f"no marker {marker_label!r} (occurrence {nth}) after {bits(start)}")
 
 
+# ---------------------------------------------------------------------------
+# Named pratyahara: name -> (start sound, marker, nth marker after the start, start occurrence)
+# ---------------------------------------------------------------------------
+# One row per classical name (43). `nth` counts the markers of that letter after the start, as in
+# `pratyahara`. The occurrence rules are the Kasika's (preface, kAshikAvRRitti.txt 99-103, 165-176):
+# `aṇ` takes the first ṇ, `iṇ` the second, and `aṇ2` is the aṇ of 1.1.69 (the second ṇ); a name that
+# starts with h takes the first h. Verified: every row gives the set of the oracle/YAML name
+# (docs/upc14-named-pratyahara-2026-10-01.tsv; the preface counts per marker agree for 13 of 14
+# markers, see docs/upc14-pratyahara-counts-vs-kasika-2026-10-01.md; `cay` is the exception).
+
+NAMED_PRATYAHARA = {
+    "aṇ": ("a", "ṇ", 1, 1),
+    "ak": ("a", "k", 1, 1),
+    "ac": ("a", "c", 1, 1),
+    "aṭ": ("a", "ṭ", 1, 1),
+    "aṇ2": ("a", "ṇ", 2, 1),
+    "am": ("a", "m", 1, 1),
+    "aś": ("a", "ś", 1, 1),
+    "al": ("a", "l", 1, 1),
+    "ik": ("i", "k", 1, 1),
+    "ic": ("i", "c", 1, 1),
+    "iṇ": ("i", "ṇ", 2, 1),
+    "uk": ("u", "k", 1, 1),
+    "eṅ": ("e", "ṅ", 1, 1),
+    "ec": ("e", "c", 1, 1),
+    "aic": ("ai", "c", 1, 1),
+    "yañ": ("y", "ñ", 1, 1),
+    "yaṇ": ("y", "ṇ", 1, 1),
+    "yam": ("y", "m", 1, 1),
+    "yay": ("y", "y", 1, 1),
+    "yar": ("y", "r", 1, 1),
+    "vaś": ("v", "ś", 1, 1),
+    "val": ("v", "l", 1, 1),
+    "ral": ("r", "l", 1, 1),
+    "may": ("m", "y", 1, 1),
+    "ñam": ("ñ", "m", 1, 1),
+    "ṅam": ("ṅ", "m", 1, 1),
+    "jhaś": ("jh", "ś", 1, 1),
+    "jhaṣ": ("jh", "ṣ", 1, 1),
+    "jhay": ("jh", "y", 1, 1),
+    "jhar": ("jh", "r", 1, 1),
+    "jhal": ("jh", "l", 1, 1),
+    "bhaṣ": ("bh", "ṣ", 1, 1),
+    "jaś": ("j", "ś", 1, 1),
+    "baś": ("b", "ś", 1, 1),
+    "khay": ("kh", "y", 1, 1),
+    "khar": ("kh", "r", 1, 1),
+    "chav": ("ch", "v", 1, 1),
+    "cay": ("c", "y", 1, 1),
+    "car": ("c", "r", 1, 1),
+    "śar": ("ś", "r", 1, 1),
+    "śal": ("ś", "l", 1, 1),
+    "haś": ("h", "ś", 1, 1),
+    "hal": ("h", "l", 1, 1),
+}
+
+
+def pratyahara_named(name: str) -> Tuple[int, ...]:
+    """The sounds of a classical pratyahara by its name (IAST, e.g. "aṇ", "iṇ", "hal", "bhaṣ")."""
+    try:
+        start, marker, nth, occurrence = NAMED_PRATYAHARA[unicodedata.normalize("NFC", name)]
+    except KeyError:
+        raise GraphError(f"{name!r} is not a named pratyahara of the sutra path") from None
+    return pratyahara(SOUNDS[start], marker, nth, start_occurrence=occurrence)
+
+
 def savarna(a: int, b: int, *, vartika: bool = False) -> bool:
     """1.1.9: same place, same aperture. The nose is a separate atom (1.1.8).
 
@@ -474,6 +541,7 @@ if __name__ == "__main__":
 
 
 __all__ = [
+    "NAMED_PRATYAHARA", "pratyahara_named",
     "Ambiguous", "AmbiguousStart", "CODE_MAX", "DERIVATION", "GraphError", "InvalidCode", "LABELS_BY_CODE", "PATH",
     "SOUNDS", "SUTRAS", "Vertex", "WIDTH", "bits", "dirgha", "e_asp", "e_join", "e_lift", "e_long",
     "e_nasal", "e_shift", "e_voice", "first_rank", "guna", "is_it", "it_ranks", "make", "meta_code", "nearest",
