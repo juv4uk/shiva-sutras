@@ -374,6 +374,23 @@ def savarna(a: int, b: int, *, vartika: bool = False) -> bool:
     return False
 
 
+def savarna_status(a: int, b: int, *, vartika: bool = False) -> Optional[bool]:
+    """Three-valued 1.1.9: True, False, or None when the Kasika does not decide.
+
+    `savarna` answers a plain bool and says False for e~ai and o~au (their apertures differ: the
+    wide-vowel step). That step is ours, taken from the Siksa tradition, not from the Kasika, and
+    the Kasika's 1.1.9 does not settle these two pairs (as found by the panini agent's independent
+    implementation, 2026-10-01: 861 pairs agree, these 2 do not). So here they are `None`
+    (not decided), never True or False. Everything else equals `savarna`.
+    """
+    if savarna(a, b, vartika=vartika):
+        return True
+    va, vb = unpack(a), unpack(b)
+    if va.place == vb.place and {va.aperture, vb.aperture} == {VOWEL, WIDE_VOWEL}:
+        return None
+    return False
+
+
 def dirgha(a: int, b: int) -> int:
     """6.1.101: two savarna simple vowels merge into the long one."""
     va = unpack(a)

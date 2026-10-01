@@ -44,6 +44,9 @@ def code_of(label: str) -> int:
         return S[label]
     if label in _LONG:
         return g.e_long(S[_LONG[label]])
+    if label.endswith("~") and label[:-1] in ("y", "v", "l"):     # the nasal form `label_of` writes (8.4.45)
+        v = g.unpack(S[label[:-1]])
+        return g.Vertex(v.place, 1, v.aperture, v.length, v.voice, v.asp).code
     raise g.GraphError(f"{label!r} is not a sound of this graph")
 
 
