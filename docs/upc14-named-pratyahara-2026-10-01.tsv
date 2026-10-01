@@ -1,4 +1,4 @@
-# Named pratyahara -> (start, marker, nth marker, start occurrence); verified: g.pratyahara(start, marker, nth) equals the set of the fixed pratyahara-usage.yaml for all 42 names (stage 2, f85c99d).
+# Named pratyahara -> (start, marker, nth marker, start occurrence); verified: g.pratyahara(start, marker, nth) equals the set of pratyahara-usage.yaml (fixed on branch fix/48-53, 0db88e3: bhaś is bhaṣ, ṅam added) for all 43 names.
 # nth_marker counts the markers of that letter AFTER the start (as upc14v2.pratyahara). Names are IAST; aṇ2 = aṇ of 1.1.69 (second ṇ).
 name_iast	name_deva	start_iast	marker_iast	nth_marker	start_occurrence	source
 aṇ	अण्	a	ṇ	1	1	Kāśikā txt 99-103, 1622-1623 (aṇ first ṇ, iṇ second; 1.1.69 aṇ second = aṇ2)
@@ -26,12 +26,13 @@ val	वल्	v	l	1	1	1.1.71; the marker is the first marker of that letter afte
 ral	रल्	r	l	1	1	1.1.71; the marker is the first marker of that letter after the start
 may	मय्	m	y	1	1	1.1.71; the marker is the first marker of that letter after the start
 ñam	ञम्	ñ	m	1	1	1.1.71; the marker is the first marker of that letter after the start
+ṅam	ङम्	ṅ	m	1	1	1.1.71; the marker is the first marker of that letter after the start
 jhaś	झश्	jh	ś	1	1	1.1.71; the marker is the first marker of that letter after the start
 jhaṣ	झष्	jh	ṣ	1	1	1.1.71; the marker is the first marker of that letter after the start
 jhay	झय्	jh	y	1	1	1.1.71; the marker is the first marker of that letter after the start
 jhar	झर्	jh	r	1	1	1.1.71; the marker is the first marker of that letter after the start
 jhal	झल्	jh	l	1	1	1.1.71; the marker is the first marker of that letter after the start
-bhaś	भश्	bh	ś	1	1	1.1.71; the marker is the first marker of that letter after the start
+bhaṣ	भष्	bh	ṣ	1	1	1.1.71; the marker is the first marker of that letter after the start
 jaś	जश्	j	ś	1	1	1.1.71; the marker is the first marker of that letter after the start
 baś	बश्	b	ś	1	1	1.1.71; the marker is the first marker of that letter after the start
 khay	खय्	kh	y	1	1	1.1.71; the marker is the first marker of that letter after the start
