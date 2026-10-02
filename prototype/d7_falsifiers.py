@@ -153,11 +153,21 @@ def f_free() -> Result:
     return len(free) == 11, f"free cells {free}"
 
 
+def f_position_attack() -> Result:
+    """The claim of the symmetry row: the row-internal laws survive any permutation of whole rows (places); the order law (shift) does not."""
+    r = attack_positions()
+    asp = r["asp (pairs 10) under places permutations"]["constant add delta"]
+    voice = r["voice (pairs 10) under places permutations"]["constant add delta"]
+    shift = r["shift (pairs 20) under places permutations"]["constant add delta"]
+    sav = r["savarṇa row relation (same place <=> same cell // 5) under place permutations"]["holds"]
+    return (asp, voice, sav, shift) == (120, 120, 120, 2), f"survive of 120 place permutations: asp {asp}, voice {voice}, row relation {sav}; shift (order of places) {shift}"
+
+
 FALSIFIERS: Dict[str, Callable[[], Result]] = {
     "identity: 42 from k": f_identity, "identity: recipe is data, each edge type needed": f_identity_recipe_is_input,
     "closure vs Sanskrit set": f_closure, "guarded XOR on all vertices": f_guarded_xor, "hand table vs derive": f_hand_table,
     "linear map": f_linear, "ASCII signs": f_ascii_signs, "Sanskrit signs": f_sanskrit_signs, "modifiers": f_modifiers,
-    "digits": f_digits, "free cells": f_free,
+    "digits": f_digits, "free cells": f_free, "position attack": f_position_attack,
 }
 
 
