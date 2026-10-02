@@ -74,6 +74,10 @@ class UkrainianLayoutTests(unittest.TestCase):
     def test_every_ukrainian_token_round_trips_alone(self):
         for tok, cell in L.UK_CELL.items():
             with self.subTest(token=tok):
+                if tok == uk_orth.STRESS:                    # a stress needs a vowel before it: alone it has no decodable text
+                    with self.assertRaises(L.LangError):
+                        T.render([cell], "uk")
+                    continue
                 self.assertEqual(T.render([cell], "uk"), tok)
 
     def test_punctuation_and_spaces_are_signs(self):
@@ -97,6 +101,45 @@ class SwitchingTheLanguageTests(unittest.TestCase):
         self.assertEqual(len(L.SHARED), 16)
         for uk_letter, sanskrit in L.SHARED.items():
             self.assertEqual(L.UK_CELL[uk_letter], L.SANSKRIT_CELL[sanskrit])
+
+
+class SharedAttackTests(unittest.TestCase):
+    """Defects found by the panini agent's attack on the 53 shared cells (my-lisp-panini#48), now fixed."""
+
+    def setUp(self):
+        self.t = L.LangText()
+
+    def test_ascii_apostrophe_between_letters_is_a_sign_unless_the_orthography_writes_one(self):
+        cells = self.t.encode("к'т", "uk")
+        self.assertIn(L.SIGN_CELL["'"], cells)
+        self.assertEqual(self.t.render(cells, "uk"), "к'т")
+        self.assertEqual(self.t.encode("п'ять", "uk"), self.t.encode("п’ять", "uk"))
+        self.assertNotIn(L.SIGN_CELL["'"], self.t.encode("п'ять", "uk"))
+
+    def test_a_sign_apostrophe_before_an_iotated_vowel_has_no_decodable_text(self):
+        cells = list(self.t.encode("п", "uk")) + [L.SIGN_CELL["'"]] + list(self.t.encode("ять", "uk"))
+        with self.assertRaises(L.LangError):
+            self.t.render(cells, "uk")
+
+    def test_backtick_is_a_sign_not_an_apostrophe(self):
+        self.assertIn(L.SIGN_CELL["`"], self.t.encode("п`ять", "uk"))
+
+    def test_avagraha_and_the_ascii_apostrophe_are_not_silently_two_spellings(self):
+        self.assertIn(L.SANSKRIT_SIGN_CELL["avagraha"], self.t.encode("so’ham", "sa-iast"))
+        with self.assertRaises(L.LangError):
+            self.t.encode("so'ham", "sa-iast")
+        self.assertEqual(self.t.render(self.t.encode("'ham", "sa-iast"), "sa-iast"), "'ham")
+
+    def test_canonically_equivalent_text_is_the_same_cells(self):
+        import unicodedata as u
+        for lay, w in (("uk", "йога їжа"), ("sa-iast", "oṃ kṛṣṇaḥ ś")):
+            self.assertEqual(self.t.encode(u.normalize("NFD", w), lay), self.t.encode(u.normalize("NFC", w), lay))
+
+    def test_render_is_fail_closed_for_every_layout(self):
+        for lay in ("uk", "sa-iast", "sa-deva", "sa-cyr"):
+            for w in ({"uk": "Київ, 2026", "sa-iast": "oṃ 108 ॥", "sa-deva": "ओं १०८ ॥", "sa-cyr": "ом̇ 108"}[lay],):
+                cells = self.t.encode(w, lay)
+                self.assertEqual(self.t.encode(self.t.render(cells, lay), lay), cells)
 
 
 class DigitTests(unittest.TestCase):
