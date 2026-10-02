@@ -24,14 +24,16 @@ bits	hex	class	sound	sa-iast	sa-deva	sa-cyr	uk	language	pinned_bits	change
 0010110	0x16	varga	b	b	ब्	б	б	Sanskrit + Ukrainian	0010110	same
 0010111	0x17	varga	bh	bh	भ्	бг		Sanskrit	0010111	same
 0011000	0x18	varga	m	m	म्	м	м	Sanskrit + Ukrainian	0011000	same
-0011001	0x19	varga	digit-0	0	०	0	0	text digit		new cell
-0011010	0x1A	varga	digit-8	8	८	8	8	text digit		new cell
-0011011	0x1B	varga	digit-2	2	२	2	2	text digit		new cell
-0011100	0x1C	varga	digit-3	3	३	3	3	text digit		new cell
-0011101	0x1D	varga	digit-9	9	९	9	9	text digit		new cell
-0011110	0x1E	varga	digit-1	1	१	1	1	text digit		new cell
+0011001	0x19	varga	digit-8	8	८	8	8	text digit		new cell
+0011010	0x1A	varga	digit-9	9	९	9	9	text digit		new cell
+0011100	0x1C	varga	digit-0	0	०	0	0	text digit		new cell
+0011101	0x1D	varga	digit-2	2	२	2	2	text digit		new cell
+0011110	0x1E	varga	digit-3	3	३	3	3	text digit		new cell
+0011111	0x1F	varga	digit-1	1	१	1	1	text digit		new cell
 0100000	0x20	non-varga	х				х	Ukrainian	0100000	same
 0100001	0x21	non-varga	h	h	ह्	х		Sanskrit	0110100	moved from 0110100
+0100010	0x22	non-varga	capital				(next letter uppercase)	Ukrainian		new cell
+0100011	0x23	non-varga	́				́	Ukrainian		new cell
 0100100	0x24	non-varga	ś	ś	श्	ш́	ш	Sanskrit + Ukrainian	0100100	same
 0100101	0x25	non-varga	ж				ж	Ukrainian	0100101	same
 0100110	0x26	non-varga	y	y	य्	й	й	Sanskrit + Ukrainian	0100110	same
@@ -42,14 +44,12 @@ bits	hex	class	sound	sa-iast	sa-deva	sa-cyr	uk	language	pinned_bits	change
 0101101	0x2D	non-varga	з				з	Ukrainian	0101101	same
 0101110	0x2E	non-varga	l	l	ल्	л	л	Sanskrit + Ukrainian	0101111	moved from 0101111
 0110000	0x30	non-varga	ф				ф	Ukrainian	0110000	same
-0110001	0x31	non-varga	digit-4	4	४	4	4	text digit		new cell
 0110010	0x32	non-varga	v	v	व्	в	в	Sanskrit + Ukrainian	0110010	same
-0110011	0x33	non-varga	digit-6	6	६	6	6	text digit		new cell
-0110100	0x34	non-varga	digit-7	7	७	7	7	text digit		same cell, no spelling in the pinned table
 0110101	0x35	non-varga	г				г	Ukrainian	0110101	same
-0110110	0x36	non-varga	digit-5	5	५	5	5	text digit		new cell
-0111000	0x38	non-varga	capital				(next letter uppercase)	Ukrainian		new cell
-0111001	0x39	non-varga	́				́	Ukrainian		new cell
+0111000	0x38	non-varga	digit-4	4	४	4	4	text digit		new cell
+0111001	0x39	non-varga	digit-6	6	६	6	6	text digit		new cell
+0111010	0x3A	non-varga	digit-7	7	७	7	7	text digit		new cell
+0111011	0x3B	non-varga	digit-5	5	५	5	5	text digit		new cell
 0111100	0x3C	non-varga	ц				ц	Ukrainian	0111100	same
 0111101	0x3D	non-varga	ч				ч	Ukrainian	0111101	same
 0111110	0x3E	non-varga	дз				дз	Ukrainian	0111110	same

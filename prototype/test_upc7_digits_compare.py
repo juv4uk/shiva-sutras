@@ -8,11 +8,11 @@ class DigitCandidateTests(unittest.TestCase):
         self.assertEqual(len(D.free_v3()), 21)
         self.assertEqual(len(D.free_pinned()), 21)
         self.assertEqual(D.free_pinned()[:10], [25, 26, 27, 28, 29, 30, 31, 33, 34, 35])
-        self.assertEqual(D.free_v3()[:10], [25, 26, 27, 28, 29, 30, 31, 34, 35, 41])
+        self.assertEqual(D.free_v3()[:10], [25, 26, 27, 28, 29, 30, 31, 41, 43, 47])        # v3 now uses 34, 35 for capital/stress
 
     def test_the_affine_candidates_give_the_digit_by_bit_operations_the_ordinal_ones_do_not(self):
         c = D.candidates()
-        self.assertEqual(D.affine_decoder(c["affine-v3"]), [(4, 0), (3, 1), (8, 1), (5, 1)])
+        self.assertEqual(D.affine_decoder(c["affine-v3"]), [(2, 0), (39, 1), (32, 0), (36, 1)])
         self.assertIsNotNone(D.affine_decoder(c["affine-pinned"]))
         self.assertIsNone(D.affine_decoder(c["ordinal-v3"]))
         self.assertIsNone(D.affine_decoder(c["ordinal-pinned"]))
@@ -24,10 +24,10 @@ class DigitCandidateTests(unittest.TestCase):
         self.assertEqual((m["ordinal-v3"]["varga"], m["ordinal-v3"]["non-varga"]), (7, 3))
         self.assertEqual((m["ordinal-pinned"]["varga"], m["ordinal-pinned"]["non-varga"]), (7, 3))
 
-    def test_only_affine_v3_collides_with_the_pinned_table(self):
+    def test_no_digit_candidate_collides_with_the_pinned_table(self):
         m = {k: D.metrics(v)["collides_with_pinned"] for k, v in D.candidates().items()}
-        self.assertEqual(m["affine-v3"], [52])           # the pinned cell of h; v3 moved h, so v3 needs the h/r/l migration
-        self.assertEqual(m["ordinal-v3"], [])
+        self.assertEqual(m["affine-v3"], [])             # fixed after review: the first choice put digit 7 on the pinned h cell (52)
+        self.assertEqual(m["ordinal-v3"], [47])           # comparison candidate over the changed v3 free set: cell 47 is pinned-assigned
         self.assertEqual(m["ordinal-pinned"], [])
         self.assertEqual(m["affine-pinned"], [])
 
