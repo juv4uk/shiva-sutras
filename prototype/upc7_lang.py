@@ -107,8 +107,15 @@ SANSKRIT_SIGN_SPELLING = {
     "sa-cyr": {"anusvara": "м\u0307", "visarga": "х\u0323", "avagraha": "’", "danda": "।", "double-danda": "॥"},
 }
 SANSKRIT_SIGN_OF_CELL = {c: n for n, c in SANSKRIT_SIGN_CELL.items()}
+
+# ---- the ten decimal digits as TEXT (not Number: nothing here coerces a digit cell to a numeric value) --------------------
+# Ten free cells with an AFFINE structure: with the digit's four bits d3 d2 d1 d0, cell = DIGIT_BASE ^ (d0*c0 ^ d1*c1 ^ d2*c2 ^ d3*c3).
+# 2688 such embeddings exist in the free cells; this one has the most cells in the varga class (6 of 10; only 7 varga cells were free).
+DIGIT_CELL = {str(d): c for d, c in enumerate([25, 30, 27, 28, 49, 54, 51, 52, 26, 29])}
+DIGIT_OF_CELL = {c: d for d, c in DIGIT_CELL.items()}
+DIGIT_SPELLING = {"uk": "0123456789", "sa-iast": "0123456789", "sa-cyr": "0123456789", "sa-deva": "०१२३४५६७८९"}
 _all = (list(SANSKRIT_CELL.values()) + list(UK_ONLY_CELL.values()) + list(SIGN_CELL.values())
-        + list(SANSKRIT_SIGN_CELL.values()) + [CAPITAL_CELL])
+        + list(SANSKRIT_SIGN_CELL.values()) + [CAPITAL_CELL] + list(DIGIT_CELL.values()))
 if len(set(_all)) != len(_all):
     raise LangError("a cell is claimed twice")
 
@@ -179,7 +186,9 @@ class LangText:
             raise LangError(f"unknown layout {layout!r}")
         cells: List[int] = []
         ok = _apostrophe_in_word if layout == "uk" else (lambda t, i: False)
-        extra = None if layout == "uk" else {s: SANSKRIT_SIGN_CELL[n] for n, s in SANSKRIT_SIGN_SPELLING[layout].items()}
+        extra = {glyph: DIGIT_CELL[str(d)] for d, glyph in enumerate(DIGIT_SPELLING[layout])}
+        if layout != "uk":
+            extra.update({s: SANSKRIT_SIGN_CELL[n] for n, s in SANSKRIT_SIGN_SPELLING[layout].items()})
         for kind, chunk in _split(text, ok, extra):
             if kind == "sign":
                 cells.append(chunk)
@@ -239,6 +248,9 @@ class LangText:
             if c in SIGN_OF_CELL:
                 flush()
                 out.append(SIGN_OF_CELL[c])
+            elif c in DIGIT_OF_CELL:
+                flush()
+                out.append(DIGIT_SPELLING[layout][int(DIGIT_OF_CELL[c])])
             elif c in SANSKRIT_SIGN_OF_CELL:
                 flush()
                 if layout == "uk":

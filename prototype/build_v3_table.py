@@ -45,6 +45,8 @@ def rows():
     for name, cell in L.SANSKRIT_SIGN_CELL.items():
         spell = {lay: L.SANSKRIT_SIGN_SPELLING[lay][name] for lay in ("sa-iast", "sa-deva", "sa-cyr")}
         out.append([cell, name, spell["sa-iast"], spell["sa-deva"], spell["sa-cyr"], "", "Sanskrit", None])
+    for d, cell in L.DIGIT_CELL.items():
+        out.append([cell, f"digit-{d}", d, L.DIGIT_SPELLING["sa-deva"][int(d)], d, d, "text digit", None])
     out.append([L.CAPITAL_CELL, "capital", "", "", "", "(next letter uppercase)", "Ukrainian", None])
     table = []
     for cell, sound, iast, deva, cyr, uk, lang, old in sorted(out, key=lambda r: r[0]):
