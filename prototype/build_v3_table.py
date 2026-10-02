@@ -42,6 +42,10 @@ def rows():
         out.append([cell, tok, "", "", "", tok, "Ukrainian", pinned.get(("uk", tok))])
     for glyph, cell in L.SIGN_CELL.items():
         out.append([cell, geo.SIGN_NAMES[cell & 31], glyph, glyph, glyph, glyph, "signs", format(cell, "07b")])     # the sign cells are the pinned geometry's, unchanged
+    for name, cell in L.SANSKRIT_SIGN_CELL.items():
+        spell = {lay: L.SANSKRIT_SIGN_SPELLING[lay][name] for lay in ("sa-iast", "sa-deva", "sa-cyr")}
+        out.append([cell, name, spell["sa-iast"], spell["sa-deva"], spell["sa-cyr"], "", "Sanskrit", None])
+    out.append([L.CAPITAL_CELL, "capital", "", "", "", "(next letter uppercase)", "Ukrainian", None])
     table = []
     for cell, sound, iast, deva, cyr, uk, lang, old in sorted(out, key=lambda r: r[0]):
         bits = format(cell, "07b")

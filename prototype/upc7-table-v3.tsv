@@ -38,6 +38,8 @@ bits	hex	class	sound	sa-iast	sa-deva	sa-cyr	uk	language	pinned_bits	change
 0110000	0x30	non-varga	ф				ф	Ukrainian	0110000	same
 0110010	0x32	non-varga	v	v	व्	в	в	Sanskrit + Ukrainian	0110010	same
 0110101	0x35	non-varga	г				г	Ukrainian	0110101	same
+0111000	0x38	non-varga	capital				(next letter uppercase)	Ukrainian		new cell
+0111001	0x39	non-varga	́				́	Ukrainian		new cell
 0111100	0x3C	non-varga	ц				ц	Ukrainian	0111100	same
 0111101	0x3D	non-varga	ч				ч	Ukrainian	0111101	same
 0111110	0x3E	non-varga	дз				дз	Ukrainian	0111110	same
@@ -45,15 +47,19 @@ bits	hex	class	sound	sa-iast	sa-deva	sa-cyr	uk	language	pinned_bits	change
 1000000	0x40	vowel	a	a	अ	а		Sanskrit	1000000	same
 1000001	0x41	vowel	ā	ā	आ	а̄		Sanskrit	1000001	same
 1000010	0x42	vowel	ã	ã	अँ	а̃		Sanskrit		same cell, no spelling in the pinned table
+1000011	0x43	vowel	ā̃	ā̃	आँ	а̄̃		Sanskrit		same cell, no spelling in the pinned table
 1000100	0x44	vowel	i	i	इ	і	і	Sanskrit + Ukrainian	1000100	same
 1000101	0x45	vowel	ī	ī	ई	і̄		Sanskrit	1000101	same
 1000110	0x46	vowel	ĩ	ĩ	इँ	і̃		Sanskrit		same cell, no spelling in the pinned table
+1000111	0x47	vowel	ī̃	ī̃	ईँ	і̄̃		Sanskrit		same cell, no spelling in the pinned table
 1001000	0x48	vowel	u	u	उ	у	у	Sanskrit + Ukrainian	1001000	same
 1001001	0x49	vowel	ū	ū	ऊ	ӯ		Sanskrit	1001001	same
 1001010	0x4A	vowel	ũ	ũ	उँ	у̃		Sanskrit		same cell, no spelling in the pinned table
+1001011	0x4B	vowel	ū̃	ū̃	ऊँ	ӯ̃		Sanskrit		same cell, no spelling in the pinned table
 1001100	0x4C	vowel	ṛ	ṛ	ऋ	р̣		Sanskrit	1001100	same
 1001101	0x4D	vowel	ṝ	ṝ	ॠ	р̣̄		Sanskrit	1001101	same
 1001110	0x4E	vowel	ṛ̃	ṛ̃	ऋँ	р̣̃		Sanskrit		same cell, no spelling in the pinned table
+1001111	0x4F	vowel	ṝ̃	ṝ̃	ॠँ	р̣̄̃		Sanskrit		same cell, no spelling in the pinned table
 1010000	0x50	vowel	ḷ	ḷ	ऌ	л̣		Sanskrit	1010000	same
 1010010	0x52	vowel	ḷ̃	ḷ̃	ऌँ	л̣̃		Sanskrit		same cell, no spelling in the pinned table
 1010100	0x54	vowel	e	e	ए	е		Sanskrit	1010100	same
@@ -76,6 +82,11 @@ bits	hex	class	sound	sa-iast	sa-deva	sa-cyr	uk	language	pinned_bits	change
 1100101	0x65	sign	double-quote	""""	""""	""""	""""	signs	1100101	same
 1100110	0x66	sign	backslash	\	\	\	\	signs	1100110	same
 1100111	0x67	sign	underscore	_	_	_	_	signs	1100111	same
+1101000	0x68	sign	anusvara	ṃ	ं	м̇		Sanskrit		same cell, no spelling in the pinned table
+1101001	0x69	sign	visarga	ḥ	ः	х̣		Sanskrit		same cell, no spelling in the pinned table
+1101010	0x6A	sign	avagraha	’	ऽ	’		Sanskrit		same cell, no spelling in the pinned table
+1101011	0x6B	sign	danda	।	।	।		Sanskrit		same cell, no spelling in the pinned table
+1101100	0x6C	sign	double-danda	॥	॥	॥		Sanskrit		same cell, no spelling in the pinned table
 1101101	0x6D	sign	ampersand	&	&	&	&	signs	1101101	same
 1101110	0x6E	sign	pipe	|	|	|	|	signs	1101110	same
 1101111	0x6F	sign	backquote	`	`	`	`	signs	1101111	same
