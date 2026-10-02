@@ -32,12 +32,13 @@ Space, newline, tab, ( ) " \ _ & | ` + - * / = < > ? ! ' . , : ; # @ — identic
 | each shared letter round-trips in all layouts | local runs + CI (upc7 job) | test_upc7_lang; panini round-trip 4 layouts x 400 | independent corpus beyond dict_uk lemmas (99.985% exact; 26 differ by й/ь+vowel at morpheme boundaries, 8 rejected) |
 | cell laws are coordinate/representation, not Sound semantics | independent reproduction (panini#47) | relabelling attack E1/E2/E3 | whether G is the full automorphism group |
 | no digit cell can be coerced to a Number | independent source read + probe | panini#47 d7_probe; value.rs, arithmetic.rs | sens-host, FASL/JSON/TCP paths; `(number->string <Text7>)` leaks the wire token (unintended inheritance) |
-| the merged cells p/р.. are the right sounds | source-confirmed phonetics | LK 1.1.9 etc. | independent phonetician; the book's photos pp. 810-812 only partly used |
+| the sources agree on WHAT each sound is; the four merged pairs р/r л/l в/v ш/ś are close, NOT identical (the shared cell is an identity decision, not a phonetic equality) | Sanskrit side: Śikṣā verses quoted in Nyāsa/Padamañjarī + Laghukaumudī (source-confirmed); Ukrainian side: secondary source only (Wikipedia Ukrainian phonology); `docs/upc7-phonetic-attack-2026-10-02.md` | `python3 prototype/upc7_phonetic_attack.py` | printed sources (Allen 1953, Buk et al. 2008, Vakulenko 2019) read directly; an independent phonetician; the book's photos pp. 810-812 only partly used |
+| the shared cells keep ś≠ṣ and ṛ≠р, and Sanskrit round-trips | local run | 40 947 of 40 947 Kasika words Devanagari → cells → Devanagari identical; the Sanskrit-Cyrillic layout refuses a bare ш | other Sanskrit corpora |
 
 ## 4. Open decisions (the owner's, not ours)
 
 1. Keep the merges р/r, л/l, в/v, ш/ś, or split them (a split gives each sound its own cell; nothing in the layer needs the merge).
-2. h/г: one cell or two.
+2. h/г: one cell or two. Numbers (`docs/upc7-phonetic-attack-2026-10-02.md` §3): one cell adds 127 renderable Ukrainian lemmas and 14 Sanskrit words; г is in 15.3% of Ukrainian lemmas, h in 9.7% of Sanskrit words; 75 of 617 encodable SENS literals contain г (lower bound), so a cell shared on the derived h cell adds 49 literals to the 273 already touched by r/l/h; shiva's recommendation: one cell (derived), owner decides.
 3. Migrating h, r, l from the pinned cells to the derived ones (saṅkṣepa7) is a **Text-identity migration** for SENS (#1700, #1981): lock bump + regenerated projection + wire/test updates; 273 of 617 Ukrainian literals in SENS contain р/л.
 4. Digits' placement (affine within reserved cells) and punctuation outside ASCII (« » — – …: 11 free cells, shiva recommends a reserve).
 5. Whether Text7 is renamed Sound7 in code (prose already renamed in tasks).
