@@ -31,6 +31,8 @@ on:
       - "prototype/UPC14-v2.md"
       - "prototype/upc14v2*.py"
       - "prototype/upc7_derive.py"
+      - "prototype/upc7_phonetic_attack.py"
+      - "prototype/test_upc7_phonetic_attack.py"
       - "prototype/d7_sound_map.py"
       - "prototype/test_d7_sound_map.py"
       - "prototype/d7_falsifiers.py"
@@ -86,7 +88,7 @@ jobs:
         run: python3 -m unittest discover -s . -p 'test_upc14v2*.py' -v
       - name: Derived 7-bit cells and the language layer (saṅkṣepa7, Ukrainian orthography)
         working-directory: prototype
-        run: python3 -m unittest -v test_upc7_derive test_upc7_lang test_upc7_linear test_upc7_linear_ext test_upc7_digits_compare test_d7_sound_map test_d7_falsifiers
+        run: python3 -m unittest -v test_upc7_derive test_upc7_lang test_upc7_linear test_upc7_linear_ext test_upc7_digits_compare test_d7_sound_map test_d7_falsifiers test_upc7_phonetic_attack
       - name: Sutra graph extractor logic (synthetic fixture)
         working-directory: prototype/sutra_graph
         run: python3 -m unittest -v test_sutra_graph.py
