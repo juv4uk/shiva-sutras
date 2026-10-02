@@ -99,6 +99,45 @@ class SwitchingTheLanguageTests(unittest.TestCase):
             self.assertEqual(L.UK_CELL[uk_letter], L.SANSKRIT_CELL[sanskrit])
 
 
+class DigitTests(unittest.TestCase):
+    """Decimal digits as text cells (not Number), placed affinely in free cells."""
+
+    def setUp(self):
+        self.t = L.LangText()
+
+    def test_digits_round_trip_in_every_layout(self):
+        for lay, text in (("uk", "Станом на 2026 рік"), ("sa-iast", "oṃ 108 ॥"), ("sa-cyr", "ом̇ 108"), ("sa-deva", "ओं १०८ ॥")):
+            self.assertEqual(self.t.render(self.t.encode(text, lay), lay), text)
+
+    def test_the_same_cells_are_written_natively_per_layout(self):
+        cells = self.t.encode("2026", "uk")
+        self.assertEqual(self.t.render(cells, "sa-deva"), "२०२६")
+        self.assertEqual(self.t.render(cells, "sa-iast"), "2026")
+
+    def test_a_layout_refuses_the_other_layouts_digit_glyphs(self):
+        with self.assertRaises(L.LangError):
+            self.t.encode("१०८", "sa-iast")
+
+    def test_ten_distinct_free_cells_no_collision(self):
+        cells = list(L.DIGIT_CELL.values())
+        self.assertEqual(len(set(cells)), 10)
+        others = set(L.SANSKRIT_CELL.values()) | set(L.UK_ONLY_CELL.values()) | set(L.SIGN_CELL.values()) | set(L.SANSKRIT_SIGN_CELL.values()) | {L.CAPITAL_CELL}
+        self.assertFalse(set(cells) & others)
+
+    def test_affine_law_digit_bits_are_cell_xor(self):
+        c = {int(d): v for d, v in L.DIGIT_CELL.items()}
+        for a in range(10):
+            for b in range(10):
+                for e in range(10):
+                    if (a ^ b ^ e) < 10:
+                        self.assertEqual(c[a] ^ c[b] ^ c[e] ^ c[a ^ b ^ e], 0)
+
+    def test_a_digit_cell_is_text_not_a_number(self):
+        cells = self.t.encode("7", "uk")
+        self.assertIsInstance(self.t.render(cells, "uk"), str)
+        self.assertNotEqual(cells[0], 7)
+
+
 @unittest.skipUnless(os.path.exists(DICT_UK), "dict_uk is not checked out here")
 class RoomTests(unittest.TestCase):
     """The cells added into the free room: Sanskrit signs, long nasal vowels, capital, stress."""
