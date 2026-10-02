@@ -124,6 +124,11 @@ class DigitTests(unittest.TestCase):
         others = set(L.SANSKRIT_CELL.values()) | set(L.UK_ONLY_CELL.values()) | set(L.SIGN_CELL.values()) | set(L.SANSKRIT_SIGN_CELL.values()) | {L.CAPITAL_CELL}
         self.assertFalse(set(cells) & others)
 
+    def test_no_added_cell_sits_on_a_pinned_assigned_cell(self):
+        pinned = {int(r["bits"], 2) for r in csv.DictReader(open(os.path.join(os.path.dirname(__file__), "upc7-table.tsv"), encoding="utf-8"), delimiter="\t") if r["status"] == "assigned"}
+        added = list(L.DIGIT_CELL.values()) + [L.CAPITAL_CELL, L.STRESS_CELL]
+        self.assertFalse(set(added) & pinned)
+
     def test_affine_law_digit_bits_are_cell_xor(self):
         c = {int(d): v for d, v in L.DIGIT_CELL.items()}
         for a in range(10):
