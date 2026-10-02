@@ -9,8 +9,9 @@ class D7SoundMapTests(unittest.TestCase):
         self.assertEqual((n, extra, reached), (42, 17, 17))
 
     def test_the_coordinate_laws_die_under_relabelling(self):
-        for key, (pairs, add, xor) in M.attack(trials=300).items():
-            self.assertEqual(pairs, 20)
+        for key, (pairs, add, xor, ident) in M.attack(trials=300).items():
+            self.assertEqual(pairs, 10)
+            self.assertTrue(ident[0])                      # the control: on the unpermuted cells the additive delta IS constant
             self.assertLess(add, 0.01)
             self.assertLess(xor, 0.01)
 
