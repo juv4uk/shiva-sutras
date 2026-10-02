@@ -89,6 +89,8 @@ def rows() -> List[list]:
         ["Sanskrit signs", "Sound-text", "anusvāra visarga avagraha daṇḍa double-daṇḍa", len(L.SANSKRIT_SIGN_CELL), "no", "no", "all 5", "yes", "test_upc7_lang RoomTests", "none", "residue (convention)"],
         ["capital / stress modifiers", "Sound-text", "next letter uppercase; combining acute", 2, "no", "no", "both", "yes (uk orthography)", "test_upc7_lang", "none", "residue (orthography)"],
         ["decimal digits 0-9", "Text (NOT Number)", "cell = base ^ XOR of 4 columns by the digit's bits (affine, 0..9 only)", 10, "no (one of 7680 placements)", "no", "all 10", "yes (coordinate law)", "test_upc7_lang DigitTests; panini review_upc7_digits (independent)", "a digit cell compared/added as a number; relabelling the cells", "established as placement; semantics = text"],
+        ["symmetry of the 7-bit coordinate laws", "Sound", "laws of the cell (asp/voice = +1/+2 within a series, long/nasal XOR, digit affinity, class = top 2 bits) die under a uniform random permutation of the 128 cells (0/2000) but ALL survive a structured NON-affine group G: permute whole series/rows (5 varga series, 6 non-varga rows, 8 vowel rows), |G| = 5!*6!*8!; G moves WHICH sound sits in which cell (k->20 in ~80% of samples)", 1, "no", "no", "no", "yes (coordinate: structure inside a row, not the identity or the order of places)", "my-lisp-panini#47 review_d7_relabel_attack.py (panini, independent; E1/E2/E3)", "a law that fixes the identity of a sound, i.e. is not preserved by G", "established (empirical); not shown that G is the full automorphism group"],
+        ["Sound7 cell -> Number coercion", "Sound-text vs Number", "none found: arithmetic has branches only for Rational/Number (Type error otherwise); Text7==Number is false; eval forbidden", 0, "-", "-", "-", "-", "my-lisp-panini#47 d7_probe (40 expressions, cargo test; source read of eval/arithmetic.rs, value.rs, text7.rs)", "any expression where a Text7 cell takes part in Number arithmetic or comparison", "no coercion found; LEAK: (number->string t) returns the wire token '#t7:3b' (a String projection, not a Number; defect status undecided)"],
         ["unassigned cells", "-", "free", free, "no", "no", "no", "-", "table", "-", "free"],
     ]
 
@@ -99,6 +101,7 @@ def main():
     for r in rows():
         w.writerow(r)
     print("\n# re-encoding attack (random relabelling of the sound cells, 2000 trials): pairs | share of relabellings under which the asp/voice delta stays constant (add, xor). The pair relation itself, transported with the relabelling, is invariant by definition and is not a result", file=sys.stderr)
+    print("# NOTE (panini, my-lisp-panini#47): on the 7-bit CELL asp/voice are +1/+2 additions, the XOR law is the 14-bit code's", file=sys.stderr)
     for k, (n, a, x) in attack().items():
         print(f"# {k}: pairs {n}  add {a:.3f}  xor {x:.3f}", file=sys.stderr)
 
