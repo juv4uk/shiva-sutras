@@ -22,7 +22,7 @@ class CellsTests(unittest.TestCase):
     def test_no_cell_is_claimed_twice_and_the_counts(self):
         cells = list(L.SANSKRIT_CELL.values()) + list(L.UK_ONLY_CELL.values()) + list(L.SIGN_CELL.values())
         self.assertEqual(len(cells), len(set(cells)))
-        self.assertEqual((len(L.SANSKRIT_CELL), len(L.UK_ONLY_CELL), len(L.SIGN_CELL)), (55, 14, 27))
+        self.assertEqual((len(L.SANSKRIT_CELL), len(L.UK_ONLY_CELL), len(L.SIGN_CELL)), (59, 15, 27))
 
     def test_only_h_r_l_move_relative_to_the_pinned_table(self):
         pinned = {}
@@ -100,6 +100,48 @@ class SwitchingTheLanguageTests(unittest.TestCase):
 
 
 @unittest.skipUnless(os.path.exists(DICT_UK), "dict_uk is not checked out here")
+class RoomTests(unittest.TestCase):
+    """The cells added into the free room: Sanskrit signs, long nasal vowels, capital, stress."""
+
+    def setUp(self):
+        self.t = L.LangText()
+
+    def test_sanskrit_signs_round_trip_in_three_layouts(self):
+        for lay, text in (("sa-iast", "oṃ kṛṣṇaḥ ’ । ॥"), ("sa-deva", "ओं कृष्णः ऽ । ॥"), ("sa-cyr", "ом̇ кр̣ш̣н̣ах̣ ’ । ॥")):
+            cells = self.t.encode(text, lay)
+            self.assertEqual(self.t.render(cells, lay), text)
+        c = self.t.encode("oṃ kṛṣṇaḥ", "sa-iast")
+        self.assertEqual(self.t.render(c, "sa-deva"), "ओं कृष्णः")
+        self.assertEqual(self.t.render(c, "sa-cyr"), "ом̇ кр̣ш̣н̣ах̣")
+
+    def test_sanskrit_signs_refused_in_ukrainian(self):
+        with self.assertRaises(L.LangError):
+            self.t.render(self.t.encode("oṃ", "sa-iast"), "uk")
+
+    def test_long_nasal_vowels(self):
+        for lay, text in (("sa-iast", "ā̃ ī̃ ū̃ ṝ̃"), ("sa-deva", "आँ ईँ ऊँ ॠँ")):
+            self.assertEqual(self.t.render(self.t.encode(text, lay), lay), text)
+        self.assertEqual(len({L.SANSKRIT_CELL[n + "\u0303"] for n in ("ā", "ī", "ū", "ṝ")}), 4)
+
+    def test_capitals_and_stress_round_trip(self):
+        for w in ("Україна", "ЩАСЛИВИЙ Об'єкт", "Київ, Львів.", "Дя́дя", "Їжа", "З'їв"):
+            self.assertEqual(self.t.render(self.t.encode(w, "uk"), "uk"), w)
+
+    def test_capital_is_ukrainian_only_and_needs_a_letter(self):
+        with self.assertRaises(L.LangError):
+            self.t.encode("Kṛṣṇa", "sa-iast")
+        with self.assertRaises(L.LangError):
+            self.t.render([L.CAPITAL_CELL], "uk")
+        with self.assertRaises(L.LangError):
+            self.t.render(list(self.t.encode("а", "uk")) + [L.CAPITAL_CELL], "uk")
+        with self.assertRaises(L.LangError):
+            self.t.render([L.CAPITAL_CELL], "sa-iast")
+
+    def test_non_ascii_punctuation_still_refused(self):
+        with self.assertRaises(L.LangError):
+            self.t.encode("так — ні", "uk")
+
+
 class DictionaryTests(unittest.TestCase):
     def test_the_ukrainian_lemmas_of_dict_uk_round_trip(self):
         words = set()

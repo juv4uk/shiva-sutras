@@ -47,7 +47,8 @@ class UnrenderableCode(LangError):
 
 # ---- the sounds Sanskrit names ---------------------------------------------------------------------------------------
 def _sanskrit_vertices() -> Dict[str, int]:
-    names = list(g.SOUNDS) + ["ā", "ī", "ū", "ṝ"] + [n + "̃" for n in ("a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au")]
+    names = (list(g.SOUNDS) + ["ā", "ī", "ū", "ṝ"] + [n + "\u0303" for n in ("a", "i", "u", "ṛ", "ḷ", "e", "o", "ai", "au")]
+             + [n + "\u0303" for n in ("ā", "ī", "ū", "ṝ")])           # the long nasal vowels: free cells of the vowel class
     out: Dict[str, int] = {}
     for name in names:
         try:
@@ -83,6 +84,11 @@ def _ukrainian_only() -> Dict[str, int]:
 
 
 UK_ONLY_CELL = _ukrainian_only()
+# Modifiers are not sounds: two cells of the (otherwise unused) place 6 of the non-varga class: `capital` (the next letter is
+# uppercase) and `stress` (a combining acute after a vowel). They are written only by the Ukrainian layout.
+CAPITAL_CELL = geo.nonvarga_code(6, 0)
+STRESS_CELL = geo.nonvarga_code(6, 1)
+UK_ONLY_CELL["\u0301"] = STRESS_CELL
 UK_CELL = {**{tok: SANSKRIT_CELL[sk] for tok, sk in SHARED.items()}, **UK_ONLY_CELL}
 TOKEN_OF_CELL = {cell: tok for tok, cell in UK_CELL.items()}
 if len(TOKEN_OF_CELL) != len(UK_CELL):
@@ -92,35 +98,77 @@ if len(TOKEN_OF_CELL) != len(UK_CELL):
 SIGN_CELL = {glyph: geo.sign_code(name) for name, glyph in geo.ASCII_SURFACE_GLYPHS.items()}
 SIGN_OF_CELL = {cell: glyph for glyph, cell in SIGN_CELL.items()}
 
-_all = list(SANSKRIT_CELL.values()) + list(UK_ONLY_CELL.values()) + list(SIGN_CELL.values())
+# ---- the five Sanskrit signs the geometry already has (cells exist; they were not spelled before) --------------------------
+SANSKRIT_SIGN_CELL = {name: geo.sign_code(name) for name in ("anusvara", "visarga", "avagraha", "danda", "double-danda")}
+SANSKRIT_SIGN_SPELLING = {
+    "sa-iast": {"anusvara": "ṃ", "visarga": "ḥ", "avagraha": "’", "danda": "।", "double-danda": "॥"},
+    "sa-deva": {"anusvara": "ं", "visarga": "ः", "avagraha": "ऽ", "danda": "।", "double-danda": "॥"},
+    # the book's scheme: anusvara м with a dot above, visarga х with a dot below; the avagraha and the dandas as in IAST
+    "sa-cyr": {"anusvara": "м\u0307", "visarga": "х\u0323", "avagraha": "’", "danda": "।", "double-danda": "॥"},
+}
+SANSKRIT_SIGN_OF_CELL = {c: n for n, c in SANSKRIT_SIGN_CELL.items()}
+_all = (list(SANSKRIT_CELL.values()) + list(UK_ONLY_CELL.values()) + list(SIGN_CELL.values())
+        + list(SANSKRIT_SIGN_CELL.values()) + [CAPITAL_CELL])
 if len(set(_all)) != len(_all):
     raise LangError("a cell is claimed twice")
 
 
-def _is_sign(ch: str) -> bool:
-    return ch in SIGN_CELL
+def _split(text: str, letter_ok, extra_signs=None):
+    """[(kind, chunk)]: 'sign' (chunk = its cell) or 'word' (chunk = the text run).
 
-
-def _split(text: str, letter_ok) -> List[Tuple[str, str]]:
-    """[(kind, chunk)]: kind 'sign' for one sign character, 'word' for a run of letters."""
-    out: List[Tuple[str, str]] = []
+    `extra_signs` maps multi-character sign spellings of a layout (the Sanskrit signs) to their cells.
+    """
+    extra = sorted((extra_signs or {}).items(), key=lambda kv: -len(kv[0]))
+    out = []
+    word = ""
     i = 0
     while i < len(text):
         ch = text[i]
-        if ch in SIGN_CELL and not letter_ok(text, i):
-            out.append(("sign", ch))
+        hit = next(((s, c) for s, c in extra if text.startswith(s, i)), None)
+        if hit:
+            if word:
+                out.append(("word", word))
+                word = ""
+            out.append(("sign", hit[1]))
+            i += len(hit[0])
+        elif ch in SIGN_CELL and not letter_ok(text, i):
+            if word:
+                out.append(("word", word))
+                word = ""
+            out.append(("sign", SIGN_CELL[ch]))
             i += 1
-            continue
-        j = i
-        while j < len(text) and (text[j] not in SIGN_CELL or letter_ok(text, j)):
-            j += 1
-        out.append(("word", text[i:j]))
-        i = j
+        else:
+            word += ch
+            i += 1
+    if word:
+        out.append(("word", word))
     return out
 
 
 def _apostrophe_in_word(text: str, i: int) -> bool:
     return text[i] == "'" and 0 < i < len(text) - 1 and text[i - 1].isalpha() and text[i + 1].isalpha()
+
+
+def _uk_word_cells(chunk: str):
+    """Cells of one Ukrainian word: sounds, with a `capital` cell before each uppercase letter's first sound."""
+    lower = chunk.lower()
+    if len(lower) != len(chunk):
+        raise UnknownSpelling(f"uk: {chunk!r}: a letter whose lowercase is longer is not supported")
+    try:
+        tokens = uk_orth.to_tokens(lower)
+        capitals = set()
+        for i, ch in enumerate(chunk):
+            if ch != lower[i]:
+                prefix = lower[:i].rstrip("'’ʼ`")
+                capitals.add(len(uk_orth.to_tokens(prefix)) if prefix else 0)
+    except uk_orth.UkOrthError as exc:
+        raise UnknownSpelling(str(exc)) from None
+    cells = []
+    for idx, tok in enumerate(tokens):
+        if idx in capitals:
+            cells.append(CAPITAL_CELL)
+        cells.append(UK_CELL[tok])
+    return cells
 
 
 class LangText:
@@ -131,15 +179,15 @@ class LangText:
             raise LangError(f"unknown layout {layout!r}")
         cells: List[int] = []
         ok = _apostrophe_in_word if layout == "uk" else (lambda t, i: False)
-        for kind, chunk in _split(text, ok):
+        extra = None if layout == "uk" else {s: SANSKRIT_SIGN_CELL[n] for n, s in SANSKRIT_SIGN_SPELLING[layout].items()}
+        for kind, chunk in _split(text, ok, extra):
             if kind == "sign":
-                cells.append(SIGN_CELL[chunk])
+                cells.append(chunk)
             elif layout == "uk":
-                try:
-                    cells.extend(UK_CELL[tok] for tok in uk_orth.to_tokens(chunk))
-                except uk_orth.UkOrthError as exc:
-                    raise UnknownSpelling(str(exc)) from None
+                cells.extend(_uk_word_cells(chunk))
             else:
+                if chunk != chunk.lower():
+                    raise UnknownSpelling(f"{layout}: {chunk!r}: capitals are written by the Ukrainian layout only; the Sanskrit layouts are lowercase")
                 try:
                     vertices = sc.decode_text(chunk, SCRIPT_OF[layout], strict=False)
                     cells.extend(derive.derive(v) for v in vertices)
@@ -157,13 +205,27 @@ class LangText:
             if not run:
                 return
             if layout == "uk":
-                tokens = []
+                tokens, caps, pending = [], set(), False
                 for c in run:
+                    if c == CAPITAL_CELL:
+                        pending = True
+                        continue
                     if c not in TOKEN_OF_CELL:
                         raise UnrenderableCode(f"uk: {geo.code_bits(c)} is not a Ukrainian sound")
+                    if pending:
+                        caps.add(len(tokens))
+                        pending = False
                     tokens.append(TOKEN_OF_CELL[c])
-                out.append(uk_orth.to_orth(tokens))
+                if pending:
+                    raise UnrenderableCode("uk: a capital cell with no letter after it")
+                text, origin = uk_orth.to_orth_mapped(tokens)
+                chars = list(text)
+                for idx in caps:
+                    chars[origin[idx]] = chars[origin[idx]].upper()
+                out.append("".join(chars))
             else:
+                if CAPITAL_CELL in run:
+                    raise UnrenderableCode(f"{layout}: the capital cell is written by the Ukrainian layout only")
                 vertices = []
                 for c in run:
                     if c not in VERTEX_OF_CELL:
@@ -177,6 +239,11 @@ class LangText:
             if c in SIGN_OF_CELL:
                 flush()
                 out.append(SIGN_OF_CELL[c])
+            elif c in SANSKRIT_SIGN_OF_CELL:
+                flush()
+                if layout == "uk":
+                    raise UnrenderableCode(f"uk: {geo.code_bits(c)} is a Sanskrit sign")
+                out.append(SANSKRIT_SIGN_SPELLING[layout][SANSKRIT_SIGN_OF_CELL[c]])
             else:
                 run.append(c)
         flush()

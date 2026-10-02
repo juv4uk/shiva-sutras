@@ -53,10 +53,11 @@ Of 93 cells: 84 are the same, 9 are the same cells that had no spelling in the p
 
 ## 5. Not done (do not read more into it)
 
-- **Case.** A sound has no case; rendering is lowercase (`Україна` comes back `україна`). A capital needs a cell (all 32 sign cells are used) or a case layer outside the cells: a decision.
-  **Proposal (not implemented, waiting for the owner's word):** `encode(text, layout, fold_case=False)`; with the default an upper-case letter is an **error** (`UnknownSpelling`), not a silent lowercase; `fold_case=True` is the explicit mode that lowercases (the SENS lock lists `ukrainian-case-input-projection: yes`, so the mode matches it). Rendering stays lowercase either way, and a capital still has no cell.
-- **Punctuation outside ASCII**: `—`, `«»`, `…` have no cell; refused.
-- **Sanskrit anusvāra, visarga, avagraha, plutā** and Ukrainian **stress** are outside the 55 sound cells; refused.
+- **Case (added into free cells).** Cell `0111000` (`capital`, non-varga place 6) means "the next letter is uppercase"; written by the Ukrainian layout only (`Україна` round-trips); Sanskrit layouts are lowercase and refuse a capital. `fold_case` is no longer needed for round-trip, but still a possible input mode.
+- **Stress (added).** Cell `0111001` = combining acute after a vowel (`дя́дя`), Ukrainian layout only.
+- **Sanskrit signs (added).** anusvāra, visarga, avagraha, daṇḍa, double daṇḍa use the five sign cells the pinned geometry already had (`1101000`–`1101100`); spelled ṃ ḥ ’ । ॥ (IAST), ं ः ऽ । ॥ (Devanagari), м̇ х̣ ’ । ॥ (Cyrillic). Refused in the Ukrainian layout.
+- **Long nasal vowels (added)**: ā̃ ī̃ ū̃ ṝ̃, four free vowel-class cells.
+- **Still no cell:** punctuation outside ASCII (`—`, `«»`, `…`; refused) and pluta. Free after this: varga 7, non-varga 12, vowel 2 (ḹ-related, do not exist), sign 0. Using the free varga/non-varga cells for punctuation would break the class semantics (a "consonant" cell that is a dash): a decision for the owner.
 - **Ukrainian morphology**: the й + vowel ambiguity of §3; the orthography is not checked against an independent Ukrainian orthography oracle (requested from the panini agent).
 - The shared-sound decisions of §2 are inherited, not re-derived; the shiva agent was asked for a source-checked phonetic comparison (IPA, source, confidence) of the borderline pairs (а/a, г/h, р/r, л/l, ш/ś, в/v).
 - CI: not run.
