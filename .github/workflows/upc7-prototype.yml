@@ -31,6 +31,8 @@ on:
       - "prototype/UPC14-v2.md"
       - "prototype/upc14v2*.py"
       - "prototype/upc7_derive.py"
+      - "prototype/upc7_phonetic_attack.py"
+      - "prototype/test_upc7_phonetic_attack.py"
       - "prototype/upc7_digits_compare.py"
       - "prototype/test_upc7_digits_compare.py"
       - "prototype/upc7_linear.py"
