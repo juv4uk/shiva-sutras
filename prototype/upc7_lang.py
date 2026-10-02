@@ -19,6 +19,8 @@ Sanskrit sounds come from the UPC-14 graph (`upc7_derive`); the Ukrainian-only c
 
 from __future__ import annotations
 
+import unicodedata
+
 from typing import Dict, Iterable, List, Optional, Tuple
 
 import uk_orth
@@ -154,8 +156,14 @@ def _split(text: str, letter_ok, extra_signs=None):
     return out
 
 
+_UK_VOWELS = "аеєиіїоуюя"
+
+
 def _apostrophe_in_word(text: str, i: int) -> bool:
-    return text[i] == "'" and 0 < i < len(text) - 1 and text[i - 1].isalpha() and text[i + 1].isalpha()
+    """The ASCII ' is the Ukrainian apostrophe only where the orthography writes one (a consonant before я ю є ї); anywhere else it
+    is the sign cell, so it round-trips (k't is the three cells k ' t)."""
+    return (text[i] == "'" and 0 < i < len(text) - 1 and text[i - 1].isalpha() and text[i - 1].lower() not in _UK_VOWELS
+            and text[i + 1].lower() in "яюєї")
 
 
 def _uk_word_cells(chunk: str):
@@ -186,6 +194,11 @@ class LangText:
     def encode(self, text: str, layout: str) -> Tuple[int, ...]:
         if layout not in LAYOUTS:
             raise LangError(f"unknown layout {layout!r}")
+        text = unicodedata.normalize("NFC", text)          # canonical equivalence only: й as и+U+0306, ṃ as m+U+0323 are the same text
+        if layout != "uk":
+            for i, ch in enumerate(text):
+                if ch == "'" and 0 < i < len(text) - 1 and text[i - 1].isalpha() and text[i + 1].isalpha():
+                    raise UnknownSpelling(f"{layout}: an ASCII ' inside a word is ambiguous (avagraha is written ’, the sign ' stands apart)")
         cells: List[int] = []
         ok = _apostrophe_in_word if layout == "uk" else (lambda t, i: False)
         extra = {glyph: DIGIT_CELL[str(d)] for d, glyph in enumerate(DIGIT_SPELLING[layout])}
@@ -261,7 +274,10 @@ class LangText:
             else:
                 run.append(c)
         flush()
-        return "".join(out)
+        text = "".join(out)
+        if tuple(self.encode(text, layout)) != tuple(cells):
+            raise UnrenderableCode(f"{layout}: this cell stream has no text that decodes back to the same cells (e.g. a ' sign before я ю є ї)")
+        return text
 
     def switch(self, text: str, from_layout: str, to_layout: str) -> str:
         """Change only the human projection; the cell stream is untouched."""
