@@ -43,6 +43,8 @@ Space, newline, tab, ( ) " \ _ & | ` + - * / = < > ? ! ' . , : ; # @ — identic
 4. Digits' placement (affine within reserved cells) and punctuation outside ASCII (« » — – …: 11 free cells, shiva recommends a reserve).
 5. Whether Text7 is renamed Sound7 in code (prose already renamed in tasks).
 
+6. **Cell streams are not closed under concatenation of rendered texts (panini, my-lisp-panini#49).** `render` is fail-closed and gave 0 false refusals on 30 000 random uk texts, 15 000 per Sanskrit layout, 549 real Devanagari verses, dict_uk lemmas and 4000 mixed streams. But cells(A)+cells(B) of two separately valid texts can have NO text: (a) the sign cell `'` before a letter (`k'`+`t`; uk `к'`+`ять`); (b) д+з and д+ж across a boundary (`під`+`звіт` is д,з as two cells, yet the text «підзвіт» encodes the affricate дз as ONE cell: the orthography cannot tell д+з from дз; 3689 dict_uk lemmas contain d+z/zh). Consequence: concatenating two Sound7 streams is not a total operation on texts. Owner decision: treat concatenation as outside `render` (a stream is valid, its text may not exist), or add an explicit separator/escape. Not checked: streams not made by concatenation, sa-cyr concatenations, whether SENS ever concatenates Sound7 (none found: string-append takes strings only).
+
 ## 5. Attack plan before ratification (assigned)
 
 - panini: confusables and normalisation (Latin/Cyrillic homoglyphs, NFC/NFD of ś ṛ ṃ, Devanagari digit vs ASCII digit), cross-layout rendering of shared letters, collisions of shared cells with language syntax.
