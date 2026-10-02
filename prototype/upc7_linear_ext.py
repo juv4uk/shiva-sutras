@@ -101,6 +101,46 @@ def affine_T_exists(rows: List[int], pairs: List[Tuple[int, int]], linear: bool 
     return True
 
 
+# ---- guarded XOR forms: every edge is c ^ mask(guard class of c), checked on all 2232 vertices -----------------------
+def all_vertices() -> List[int]:
+    out = []
+    for c in range(1 << g.WIDTH):
+        try:
+            g.unpack(c)
+        except g.GraphError:
+            continue
+        out.append(c)
+    return out
+
+
+def nasal_mask(c: int) -> int:
+    """set the nose and voice bits, clear asp: a flip only where the bit is not yet in its target state. Guard class = (nasal, voice, asp)."""
+    return ((~c) & 0x0082) | (c & 0x0001)
+
+
+def join_mask(c: int, atoms: int) -> int:
+    """OR of place atoms = XOR with the atoms not yet present. Guard class = which of `atoms` are already in the place."""
+    return (atoms & ~((c >> 8) & 0x1F)) << 8
+
+
+def long_mask(c: int) -> int:
+    """length + 1 (saturating at pluta): 4 at length 0, 12 at length 1, 0 at pluta. Guard class = the length."""
+    length = (c >> 2) & 3
+    return 0 if length == g.PLUTA else (0x4 if length == 0 else 0xC)
+
+
+def edge_mask_count(edge) -> Tuple[int, int, int]:
+    """(vertices where the edge is defined, distinct masks c^edge(c), vertices where it is undefined) over ALL 2232 vertices."""
+    masks, defined = set(), 0
+    for c in all_vertices():
+        try:
+            masks.add(c ^ edge(c))
+            defined += 1
+        except g.GraphError:
+            pass
+    return defined, len(masks), len(all_vertices()) - defined
+
+
 SHIFT_ROWS = [0x3BFD, 0x072A, 0x2D6F, 0x1CC2, 0x3218, 0x2897, 0x277A]    # seeded hill climb (seed 2): injective, affine T for shift
 
 
