@@ -142,6 +142,7 @@ class RoomTests(unittest.TestCase):
             self.t.encode("так — ні", "uk")
 
 
+@unittest.skipUnless(os.path.exists(DICT_UK), "dict_uk is not checked out here (local-only evidence)")
 class DictionaryTests(unittest.TestCase):
     def test_the_ukrainian_lemmas_of_dict_uk_round_trip(self):
         words = set()
