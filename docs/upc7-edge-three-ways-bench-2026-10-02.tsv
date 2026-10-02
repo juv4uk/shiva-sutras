@@ -1,0 +1,34 @@
+# gcc: gcc (GCC) 16.1.0
+# valgrind: valgrind-3.27.0
+# parity	A	asp	pairs=20	mismatches=0
+# parity	A	voice	pairs=20	mismatches=0
+# parity	A	nasal	pairs=20	mismatches=0
+# parity	A	shift	pairs=30	mismatches=0
+# parity	A	long	pairs=4	mismatches=0
+# parity	B	asp	pairs=20	mismatches=0
+# parity	B	voice	pairs=20	mismatches=0
+# parity	B	nasal	pairs=20	mismatches=0
+# parity	B	shift	pairs=30	mismatches=5
+# parity	B	long	pairs=4	mismatches=0
+# parity	C	asp	pairs=20	mismatches=0
+# parity	C	voice	pairs=20	mismatches=0
+# parity	C	nasal	pairs=20	mismatches=0
+# parity	C	shift	pairs=30	mismatches=0
+# parity	C	long	pairs=4	mismatches=0
+method	name	edge	I_per_call_gross	I_per_call_net_of_null	I_setup_extra
+A	guarded XOR on the 14-bit code	asp	23.00	7.00	0
+A	guarded XOR on the 14-bit code	voice	20.00	4.00	0
+A	guarded XOR on the 14-bit code	nasal	20.00	4.00	0
+A	guarded XOR on the 14-bit code	shift	25.00	9.00	0
+A	guarded XOR on the 14-bit code	long	33.00	17.00	0
+B	hand table mixed radix (7-bit)	asp	29.00	13.00	0
+B	hand table mixed radix (7-bit)	voice	31.00	15.00	0
+B	hand table mixed radix (7-bit)	nasal	27.00	11.00	0
+B	hand table mixed radix (7-bit)	shift	26.91	10.91	0
+B	hand table mixed radix (7-bit)	long	26.00	10.00	0
+C	lookup in 128 cells (7-bit)	asp	19.00	3.00	616
+C	lookup in 128 cells (7-bit)	voice	19.00	3.00	616
+C	lookup in 128 cells (7-bit)	nasal	19.00	3.00	616
+C	lookup in 128 cells (7-bit)	shift	19.00	3.00	616
+C	lookup in 128 cells (7-bit)	long	19.00	3.00	616
+-	null (loop + rng)	null	16.00	0.00	0
