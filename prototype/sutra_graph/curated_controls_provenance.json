@@ -1,0 +1,33 @@
+{
+  "schema": "panini-graph-curated-controls/v1",
+  "authority": "repo-curated-control",
+  "purpose": "non-synthetic donor replay for graph-ID invariance; not a complete or primary-source grammar corpus",
+  "no_d14_allocation": true,
+  "sources": [
+    {
+      "path": "prototype/upc14v2_vowel_sandhi.py",
+      "anchors": [
+        "ADHIKARA_EKADESA",
+        "6.1.109 comment: apavada of 6.1.78",
+        "6.1.97 comment: blocks 6.1.101 and 6.1.88",
+        "6.1.87 branch: 1.1.51 uran raparah"
+      ],
+      "status": "curated-source-anchor"
+    },
+    {
+      "path": "prototype/upc14v2_sandhi.py",
+      "anchors": [
+        "contact(): 8.4.42 block",
+        "contact(): 8.4.43 block",
+        "contact(): 8.4.44 block"
+      ],
+      "status": "curated-source-anchor"
+    }
+  ],
+  "limitations": [
+    "these edges are extracted from already-curated repository controls, not the unlicensed third-party bulk graph",
+    "this fixture does not establish full Paninian coverage",
+    "primary textual provenance remains required before promoting donor facts beyond curated-control status",
+    "opaque IDs remain transport keys; no SENS D14 coordinate is implied"
+  ]
+}
