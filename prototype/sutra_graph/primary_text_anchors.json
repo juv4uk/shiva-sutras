@@ -1,0 +1,118 @@
+{
+  "schema": "panini-primary-text-anchors/v1",
+  "authority": "textual-edition-anchor-only",
+  "purpose": "Anchor every node in the repo-curated graph fixture to an independently readable Aṣṭādhyāyī text witness without promoting any graph edge relation.",
+  "no_d14_allocation": true,
+  "relation_promotions": 0,
+  "sources": {
+    "gretil": {
+      "title": "Pāṇini: Aṣṭādhyāyī (GRETIL)",
+      "url": "https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_pANini-aSTAdhyAyI.htm",
+      "evidence_role": "canonical-text-edition-anchor"
+    },
+    "wikisource_1151": {
+      "title": "Kāśikāvivaraṇapañjikā, 1.1 — explicit quotation of Pāṇini 1.1.51",
+      "url": "https://sa.wikisource.org/wiki/%E0%A4%95%E0%A4%BE%E0%A4%B6%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B5%E0%A4%BF%E0%A4%B5%E0%A4%B0%E0%A4%A3%E0%A4%AA%E0%A4%9E%E0%A5%8D%E0%A4%9C%E0%A4%BF%E0%A4%95%E0%A4%BE/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A5%8B%E0%A4%BD%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AF%E0%A4%83/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%AA%E0%A4%BE%E0%A4%A6%E0%A4%83",
+      "evidence_role": "numbered-text-quotation-anchor"
+    }
+  },
+  "anchors": [
+    {
+      "node_id": "1.1.51",
+      "canonical_ref": "PS_1,1.51",
+      "text": "uraṇ raparaḥ",
+      "source_key": "wikisource_1151",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "6.1.78",
+      "canonical_ref": "PS_6,1.78",
+      "text": "eco 'y-av-āy-āvaḥ",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "6.1.84",
+      "canonical_ref": "PS_6,1.84",
+      "text": "ekaḥ pūrvaparayoḥ",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "6.1.87",
+      "canonical_ref": "PS_6,1.87",
+      "text": "ādguṇaḥ",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "6.1.88",
+      "canonical_ref": "PS_6,1.88",
+      "text": "vṛddhir eci",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "6.1.97",
+      "canonical_ref": "PS_6,1.97",
+      "text": "ato guṇe",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "6.1.101",
+      "canonical_ref": "PS_6,1.101",
+      "text": "akaḥ savarṇe dīrghaḥ",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "6.1.109",
+      "canonical_ref": "PS_6,1.109",
+      "text": "eṅaḥ padāntād ati",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "8.4.40",
+      "canonical_ref": "PS_8,4.40",
+      "text": "s-toḥ ś-cunā ś-cuḥ",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "8.4.41",
+      "canonical_ref": "PS_8,4.41",
+      "text": "ṣṭunā ṣuḥ",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "8.4.42",
+      "canonical_ref": "PS_8,4.42",
+      "text": "na padāntāṭ ṭor anām",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "8.4.43",
+      "canonical_ref": "PS_8,4.43",
+      "text": "toḥ ṣi",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    },
+    {
+      "node_id": "8.4.44",
+      "canonical_ref": "PS_8,4.44",
+      "text": "śāt",
+      "source_key": "gretil",
+      "relation_authority": "none"
+    }
+  ],
+  "limitations": [
+    "A textual node anchor proves only that the numbered sūtra text is independently readable.",
+    "It does not prove adhikara/apavada/blocks/depends_on edge semantics.",
+    "Edge authority remains repo-curated-control until relation-specific textual or scholarly evidence is attached.",
+    "This slice allocates no D14 coordinate and proves no 14-bit placement law."
+  ]
+}
