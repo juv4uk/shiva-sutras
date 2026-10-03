@@ -117,9 +117,15 @@ SANSKRIT_SIGN_OF_CELL = {c: n for n, c in SANSKRIT_SIGN_CELL.items()}
 # the most varga cells (6 of 10).
 DIGIT_CELL = {str(d): c for d, c in enumerate([28, 31, 29, 30, 56, 59, 57, 58, 25, 26])}
 DIGIT_OF_CELL = {c: d for d, c in DIGIT_CELL.items()}
+# ---- non-ASCII punctuation (measured in the project's Ukrainian prose by the shiva agent: « 805 » 806 — 785 – 125 … 93 “ 25 ” 25) ----
+# Seven cells that are free in v3 AND not assigned in the pinned table (so no migration). They are signs written the same in every layout.
+# One of them is a varga cell and six are non-varga cells: for these seven the class-prefix reading of a cell does not hold.
+# Not placed (no room left that is pinned-safe): § (33 occurrences), № (2), and ASCII $ % [ ] ^ { } ~.
+PUNCT_CELL = {"«": 41, "»": 43, "—": 49, "–": 51, "“": 54, "”": 55, "…": 27}
+PUNCT_OF_CELL = {c: g_ for g_, c in PUNCT_CELL.items()}
 DIGIT_SPELLING = {"uk": "0123456789", "sa-iast": "0123456789", "sa-cyr": "0123456789", "sa-deva": "०१२३४५६७८९"}
 _all = (list(SANSKRIT_CELL.values()) + list(UK_ONLY_CELL.values()) + list(SIGN_CELL.values())
-        + list(SANSKRIT_SIGN_CELL.values()) + [CAPITAL_CELL] + list(DIGIT_CELL.values()))
+        + list(SANSKRIT_SIGN_CELL.values()) + [CAPITAL_CELL] + list(DIGIT_CELL.values()) + list(PUNCT_CELL.values()))
 if len(set(_all)) != len(_all):
     raise LangError("a cell is claimed twice")
 
@@ -202,6 +208,7 @@ class LangText:
         cells: List[int] = []
         ok = _apostrophe_in_word if layout == "uk" else (lambda t, i: False)
         extra = {glyph: DIGIT_CELL[str(d)] for d, glyph in enumerate(DIGIT_SPELLING[layout])}
+        extra.update(PUNCT_CELL)
         if layout != "uk":
             extra.update({s: SANSKRIT_SIGN_CELL[n] for n, s in SANSKRIT_SIGN_SPELLING[layout].items()})
         for kind, chunk in _split(text, ok, extra):
@@ -263,6 +270,9 @@ class LangText:
             if c in SIGN_OF_CELL:
                 flush()
                 out.append(SIGN_OF_CELL[c])
+            elif c in PUNCT_OF_CELL:
+                flush()
+                out.append(PUNCT_OF_CELL[c])
             elif c in DIGIT_OF_CELL:
                 flush()
                 out.append(DIGIT_SPELLING[layout][int(DIGIT_OF_CELL[c])])

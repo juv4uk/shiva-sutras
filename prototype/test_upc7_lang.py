@@ -142,6 +142,34 @@ class SharedAttackTests(unittest.TestCase):
                 self.assertEqual(self.t.encode(self.t.render(cells, lay), lay), cells)
 
 
+class PunctuationTests(unittest.TestCase):
+    def setUp(self):
+        self.t = L.LangText()
+
+    def test_non_ascii_punctuation_round_trips_in_every_layout(self):
+        for lay, w in (("uk", "«Так» — сказав він… “ні” – ні"), ("sa-iast", "oṃ — kṛṣṇa … “ṛṣi” – deva «»"), ("sa-deva", "ओं — कृष्ण … “ऋषि” – «»"), ("sa-cyr", "ом̇ — крiшна")):
+            with self.subTest(layout=lay):
+                try:
+                    c = self.t.encode(w, lay)
+                except L.LangError as exc:
+                    if lay == "sa-cyr":
+                        continue                       # the book scheme has no і; only the punctuation matters for this subtest
+                    self.fail(f"{lay}: {w!r}: {exc}")
+                self.assertEqual(self.t.render(c, lay), w)
+        self.assertEqual(self.t.render(self.t.encode("— … « » “ ” –", "sa-cyr"), "sa-cyr"), "— … « » “ ” –")
+
+    def test_the_seven_cells_are_distinct_free_and_pinned_safe(self):
+        cells = list(L.PUNCT_CELL.values())
+        self.assertEqual(len(set(cells)), 7)
+        pinned = {int(r["bits"], 2) for r in csv.DictReader(open(os.path.join(os.path.dirname(__file__), "upc7-table.tsv"), encoding="utf-8"), delimiter="\t") if r["status"] == "assigned"}
+        self.assertFalse(set(cells) & pinned)
+
+    def test_unplaced_punctuation_is_still_refused(self):
+        for ch in ("§", "№", "‘", "’’", "$", "[", "~"):
+            with self.assertRaises(L.LangError):
+                self.t.encode("а" + ch + "б", "uk")
+
+
 class DigitTests(unittest.TestCase):
     """Decimal digits as text cells (not Number), placed affinely in free cells."""
 
@@ -224,9 +252,9 @@ class RoomTests(unittest.TestCase):
         with self.assertRaises(L.LangError):
             self.t.render([L.CAPITAL_CELL], "sa-iast")
 
-    def test_non_ascii_punctuation_still_refused(self):
+    def test_unplaced_non_ascii_punctuation_still_refused(self):
         with self.assertRaises(L.LangError):
-            self.t.encode("так — ні", "uk")
+            self.t.encode("так § ні", "uk")
 
 
 @unittest.skipUnless(os.path.exists(DICT_UK), "dict_uk is not checked out here (local-only evidence)")

@@ -47,6 +47,8 @@ def rows():
         out.append([cell, name, spell["sa-iast"], spell["sa-deva"], spell["sa-cyr"], "", "Sanskrit", None])
     for d, cell in L.DIGIT_CELL.items():
         out.append([cell, f"digit-{d}", d, L.DIGIT_SPELLING["sa-deva"][int(d)], d, d, "text digit", None])
+    for glyph, cell in L.PUNCT_CELL.items():
+        out.append([cell, f"punct-{glyph}", glyph, glyph, glyph, glyph, "punctuation", None])
     out.append([L.CAPITAL_CELL, "capital", "", "", "", "(next letter uppercase)", "Ukrainian", None])
     table = []
     for cell, sound, iast, deva, cyr, uk, lang, old in sorted(out, key=lambda r: r[0]):
