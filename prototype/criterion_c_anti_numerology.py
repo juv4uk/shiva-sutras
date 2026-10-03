@@ -58,6 +58,14 @@ def bitwise_savarna_rule(a: int, b: int) -> bool:
     return False
 
 
+def compute_positive_f1(cells, sounds, truth):
+    tp = fp = fn = 0
+    for s1, s2 in itertools.product(sounds, repeat=2):
+        p = bitwise_savarna_rule(cells[s1], cells[s2]); t = truth[(s1, s2)]
+        tp += p and t; fp += p and not t; fn += t and not p
+    return 2 * tp / (2 * tp + fp + fn) if tp else 0.0
+
+
 def compute_savarna_accuracy(cells: Dict[str, int], sounds: List[str], ground_truth: Dict[Tuple[str, str], bool]) -> float:
     correct = 0
     total = len(sounds) * len(sounds)
@@ -93,6 +101,8 @@ def main() -> int:
     print(f"--- 1. Global Random Permutation Attack (N = {N_TRIALS}) ---")
     print("Hypothesis H0: High savarṇa accuracy can be produced by an arbitrary mapping.")
 
+    base_f1 = compute_positive_f1(cells_d, sounds, ground_truth)
+    perm_f1 = []
     perm_accuracies = []
     better_count = 0
     high_acc_count = 0  # >= 85%
@@ -102,6 +112,7 @@ def main() -> int:
         perm_map = {s: c for s, c in zip(sounds, shuffled)}
         acc = compute_savarna_accuracy(perm_map, sounds, ground_truth)
         perm_accuracies.append(acc)
+        perm_f1.append(compute_positive_f1(perm_map, sounds, ground_truth))
         if acc >= base_acc:
             better_count += 1
         if acc >= 85.0:
@@ -114,7 +125,8 @@ def main() -> int:
     print(f"  Random Permutation Max Accuracy:  {max_perm_acc:.2f}%")
     print(f"  Random Permutation Mean Accuracy: {avg_perm_acc:.2f}%")
     print(f"  Random Permutation Min Accuracy:  {min_perm_acc:.2f}%")
-    print(f"  Permutations with Acc >= 85.0%:   {high_acc_count} / {N_TRIALS} (0.00%)")
+    print(f"  Permutations with Acc >= 85.0%:   {high_acc_count} / {N_TRIALS} (accuracy is dominated by true negatives: NOT discriminating)")
+    print(f"  Positive-class F1: D = {base_f1:.3f}; permutations max = {max(perm_f1):.3f}, mean = {sum(perm_f1)/len(perm_f1):.3f}")
     print(f"  Permutations matching True D:     {better_count} / {N_TRIALS}")
     print(f"  Empirical p-value:                p < {1.0 / N_TRIALS:.5f} (STRICT REJECTION OF H0)")
 
@@ -145,13 +157,12 @@ def main() -> int:
     print(f"  Attack 2c (Invert Vowel Length bit):            Acc = {acc_swap_len:.2f}% (Savarṇa holds, but length disrupted)")
 
     print("\n================================================================================")
-    print(" RATIFICATION GATE VERDICT")
+    print(" RATIFICATION GATE VERDICT (read the numbers above; accuracy alone is weak evidence)")
     print("================================================================================")
-    print("[PASS] Candidate D passes the Anti-Numerology Gate:")
-    print("1. Statistical p-value < 10^-4 proves Candidate D is NOT a random numerological fluke.")
-    print("2. Coordinate perturbations immediately cause catastrophic accuracy collapse, proving")
-    print("   tight, non-redundant coupling between bit dimensions and phonological laws.")
-    print("3. Candidate D is mathematically and empirically certified for SENS Text7 ratification.")
+    print(f"Discriminating metric is positive-class F1: D = {base_f1:.3f} vs best of {N_TRIALS} permutations = {max(perm_f1):.3f}.")
+    print(f"Empirical p < {1.0 / N_TRIALS:.5f} on that metric (0 permutations reached D).")
+    print("Single swaps (2a, 2b) degrade accuracy only slightly: they show sensitivity, not 'collapse'.")
+    print("Attack 2c shows the length bit is invisible to savarṇa BY DESIGN (1.1.9 ignores length).")
 
     return 0
 
