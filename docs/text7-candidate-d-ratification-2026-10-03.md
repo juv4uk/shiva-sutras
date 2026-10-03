@@ -37,8 +37,12 @@ invalidates the numbers in section 1 until the scripts are rerun.
 Four ordered pairs remain wrong under strict 1.1.9 for D and V: (e, ai), (ai, e), (o, au), (au, o).
 This is not a defect to repair. guṇa and vṛddhi share one vowel row and differ only by the length
 bit; 1.1.9 savarṇa ignores length, so a one-cycle bit test cannot separate them. Adding bits to
-"fix" it would spend reserved cells and violate #2494. Two further corpus misses, ṛ~ḷ, come from
-a vārttika (not from 1.1.9); the row geometry does not carry it either.
+"fix" it would spend reserved cells and violate #2494. Two further corpus "misses", ṛ~ḷ, exist only if the vārttika is used as ground truth (as
+`criterion_a_savarna_eval.py` does): vidyut itself does NOT merge ṛ+ḷ (`r|ḷ`), and Text7 rows differ, so Text7
+agrees with 1.1.9 and with vidyut. Against vidyut's own behaviour D has no false negative on the
+`ak`+`ak` rows. Classified in `prototype/test_savarna_dirgha_layers.py` (layer 1 asserted: 70 rows, 16 merges;
+layer 2 vārttika and layer 3 diphthongs annotated). Corpus coverage limit: no row has `o` or `ḷ` as the first
+vowel, so (o,au) is covered only by the pair matrix.
 What Text7 does not express structurally, D14 expresses through context (the 43-node Śiva-sūtra
 graph with h₁/h₂, see `hakardvitva-c1p-topological-necessity.md` and sens
 `docs/research/2497-d7-d14-constitutional-demarcation.md`). Do not change Text7 bits for this.
@@ -79,8 +83,13 @@ corpus, not the permutation test alone.
 лишаються «помилкою» за суворою 1.1.9 для D і V. Це не дефект: гуна і вріддгі ділять один
 рядок голосних і різняться лише бітом довжини, а савarṇa 1.1.9 довжину ігнорує, тож
 однотактний бітовий тест їх не розрізнить. Додавання бітів «для виправлення» витратило б
-зарезервовані клітинки й порушило б #2494. Ще два промахи корпусу, ṛ~ḷ, походять із
-вартики (не з 1.1.9) і не виражаються геометрією рядків. Те, чого Text7 не виражає структурно,
+зарезервовані клітинки й порушило б #2494. Ще два «промахи» корпусу, ṛ~ḷ, існують лише
+якщо за еталон взято вартику (так робить `criterion_a_savarna_eval.py`): сам vidyut ṛ+ḷ НЕ зливає
+(`r|ḷ`), а рядки Text7 різні, тож Text7 узгоджений і з 1.1.9, і з vidyut. Відносно власної
+поведінки vidyut D не має хибнонегативних на парах ak+ak. Класифікація —
+`prototype/test_savarna_dirgha_layers.py` (шар 1 стверджується: 70 рядків, 16 зливань; шар 2 вартика
+і шар 3 дифтонги анотуються). Межа покриття корпусу: жоден рядок не має `o` чи `ḷ` першим голосним,
+тож (o,au) покрито лише матрицею пар. Те, чого Text7 не виражає структурно,
 виражає D14 через контекст (43-вузловий граф Шива-сутр з h₁/h₂). Біти Text7 через це не змінювати.
 
 **Статус шести прототипів (умова 3).** H — архів (три задокументовані помилки: r, l, h).
