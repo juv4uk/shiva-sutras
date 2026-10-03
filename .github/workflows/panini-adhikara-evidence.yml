@@ -1,0 +1,22 @@
+name: Panini adhikara relation evidence
+
+on:
+  pull_request:
+    paths:
+      - "prototype/sutra_graph/curated_controls_edges.tsv"
+      - "prototype/sutra_graph/adhikara_6184_relation_evidence.json"
+      - "prototype/sutra_graph/check_adhikara_relation_evidence.py"
+      - ".github/workflows/panini-adhikara-evidence.yml"
+  workflow_dispatch:
+
+jobs:
+  relation-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check 6.1.84 adhikara relation evidence overlay
+        run: |
+          python3 prototype/sutra_graph/check_adhikara_relation_evidence.py \
+            --edges prototype/sutra_graph/curated_controls_edges.tsv \
+            --evidence prototype/sutra_graph/adhikara_6184_relation_evidence.json
