@@ -37,8 +37,12 @@ invalidates the numbers in section 1 until the scripts are rerun.
 Four ordered pairs remain wrong under strict 1.1.9 for D and V: (e, ai), (ai, e), (o, au), (au, o).
 This is not a defect to repair. guṇa and vṛddhi share one vowel row and differ only by the length
 bit; 1.1.9 savarṇa ignores length, so a one-cycle bit test cannot separate them. Adding bits to
-"fix" it would spend reserved cells and violate #2494. Two further corpus misses, ṛ~ḷ, come from
-a vārttika (not from 1.1.9); the row geometry does not carry it either.
+"fix" it would spend reserved cells and violate #2494. Two further corpus "misses", ṛ~ḷ, exist only if the vārttika is used as ground truth (as
+`criterion_a_savarna_eval.py` does): vidyut itself does NOT merge ṛ+ḷ (`r|ḷ`), and Text7 rows differ, so Text7
+agrees with 1.1.9 and with vidyut. Against vidyut's own behaviour D has no false negative on the
+`ak`+`ak` rows. Classified in `prototype/test_savarna_dirgha_layers.py` (layer 1 asserted: 70 rows, 16 merges;
+layer 2 vārttika and layer 3 diphthongs annotated). Corpus coverage limit: no row has `o` or `ḷ` as the first
+vowel, so (o,au) is covered only by the pair matrix.
 What Text7 does not express structurally, D14 expresses through context (the 43-node Śiva-sūtra
 graph with h₁/h₂, see `hakardvitva-c1p-topological-necessity.md` and sens
 `docs/research/2497-d7-d14-constitutional-demarcation.md`). Do not change Text7 bits for this.
@@ -57,6 +61,18 @@ Caveat on evidence: the savarṇa predicate in criterion (a)/(c) reads bit field
 structure D was derived from, so D passing is partly by construction. The independent evidence
 is (b) (agreement with 1.1.9 text and with V, which was designed separately) and the sandhi
 corpus, not the permutation test alone.
+
+## 5. Epistemic status of the witnesses (added after review)
+
+- **The sūtra is the specification; vidyut is a witness, not the reverse.** The tests assert 1.1.9 + 6.1.101;
+  agreement with vidyut is evidence; a disagreement is a classified fact (layers 2 and 3), not a defect
+  of either side. "vidyut reference" must never drift into "vidyut truth".
+- **Corpus coverage window (known room for data growth, not a researcher's gap):** in the pinned
+  `vidyut-sandhi-vowels.tsv` neither `o` nor `ḷ` is ever the first vowel. The metadata is kept here, not in the TSV,
+  because editing the TSV would change its pinned sha256.
+- **Precedent "97 → 70":** while writing `test_savarna_dirgha_layers.py` the row count was guessed as 97; the test
+  failed and the measured value is 70. A test that catches its own author's guess is the evidence that
+  the tests guard rather than decorate. Same session: the first report's "100% on the corpus" was caught and corrected before merge.
 
 ## Українською
 
@@ -79,8 +95,13 @@ corpus, not the permutation test alone.
 лишаються «помилкою» за суворою 1.1.9 для D і V. Це не дефект: гуна і вріддгі ділять один
 рядок голосних і різняться лише бітом довжини, а савarṇa 1.1.9 довжину ігнорує, тож
 однотактний бітовий тест їх не розрізнить. Додавання бітів «для виправлення» витратило б
-зарезервовані клітинки й порушило б #2494. Ще два промахи корпусу, ṛ~ḷ, походять із
-вартики (не з 1.1.9) і не виражаються геометрією рядків. Те, чого Text7 не виражає структурно,
+зарезервовані клітинки й порушило б #2494. Ще два «промахи» корпусу, ṛ~ḷ, існують лише
+якщо за еталон взято вартику (так робить `criterion_a_savarna_eval.py`): сам vidyut ṛ+ḷ НЕ зливає
+(`r|ḷ`), а рядки Text7 різні, тож Text7 узгоджений і з 1.1.9, і з vidyut. Відносно власної
+поведінки vidyut D не має хибнонегативних на парах ak+ak. Класифікація —
+`prototype/test_savarna_dirgha_layers.py` (шар 1 стверджується: 70 рядків, 16 зливань; шар 2 вартика
+і шар 3 дифтонги анотуються). Межа покриття корпусу: жоден рядок не має `o` чи `ḷ` першим голосним,
+тож (o,au) покрито лише матрицею пар. Те, чого Text7 не виражає структурно,
 виражає D14 через контекст (43-вузловий граф Шива-сутр з h₁/h₂). Біти Text7 через це не змінювати.
 
 **Статус шести прототипів (умова 3).** H — архів (три задокументовані помилки: r, l, h).
@@ -94,3 +115,15 @@ corpus, not the permutation test alone.
 самої структури, з якої виведено D, тож проходження D частково побудоване. Незалежні докази —
 критерій (б) (збіг із текстом 1.1.9 та з V, спроєктованим окремо) і сандхі-корпус, а не
 лише перестановковий тест.
+
+## 5. Епістемічний статус свідків (додано після рецензії)
+
+- **Сутра — специфікація, vidyut — свідок, а не навпаки.** Тести стверджують 1.1.9 + 6.1.101; збіг
+  із vidyut — evidence; розбіжність — класифікований факт (шари 2 і 3), не дефект жодної зі сторін.
+  «Еталон vidyut» не повинен розпливтися в «правду vidyut».
+- **Вікно покриття корпусу (відоме місце для зростання даних, а не прогалина дослідника):** у запіненому
+  `vidyut-sandhi-vowels.tsv` ані `o`, ані `ḷ` ніколи не стоять першим голосним. Метадані тримаю тут,
+  не в TSV, бо правка TSV змінила б його запінений sha256.
+- **Прецедент «97 → 70»:** під час написання `test_savarna_dirgha_layers.py` кількість рядків було вгадано
+  як 97; тест упав, виміряно 70. Тест, що ловить здогад власного автора, — доказ, що тести стережуть, а не
+  прикрашають. Тієї ж сесії «100% на корпусі» з першого звіту піймано й виправлено до мерджу.
