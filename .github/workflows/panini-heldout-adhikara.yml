@@ -1,0 +1,30 @@
+name: Panini held-out adhikara reconstruction
+
+on:
+  pull_request:
+    paths:
+      - "prototype/sutra_graph/curated_controls_edges.tsv"
+      - "prototype/sutra_graph/primary_text_anchors.json"
+      - "prototype/sutra_graph/adhikara_6184_relation_evidence.json"
+      - "prototype/sutra_graph/heldout_adhikara.py"
+      - ".github/workflows/panini-heldout-adhikara.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  heldout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reconstruct held-out adhikara relations
+        run: >-
+          python3 prototype/sutra_graph/heldout_adhikara.py
+          --edges prototype/sutra_graph/curated_controls_edges.tsv
+          --anchors prototype/sutra_graph/primary_text_anchors.json
+          --relation prototype/sutra_graph/adhikara_6184_relation_evidence.json
+          --trials 64
