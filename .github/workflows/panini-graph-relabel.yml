@@ -1,0 +1,23 @@
+name: Panini graph relabel attack
+
+on:
+  pull_request:
+    paths:
+      - "prototype/sutra_graph/relabel_attack.py"
+      - "prototype/sutra_graph/test_relabel_attack.py"
+      - ".github/workflows/panini-graph-relabel.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-invariance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run graph ID invariance mechanics
+        run: python3 -m unittest prototype/sutra_graph/test_relabel_attack.py
