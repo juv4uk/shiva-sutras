@@ -6,6 +6,8 @@ on:
       - "prototype/sutra_graph/relabel_attack.py"
       - "prototype/sutra_graph/test_relabel_attack.py"
       - ".github/workflows/panini-graph-relabel.yml"
+      - "prototype/sutra_graph/curated_controls_edges.tsv"
+      - "prototype/sutra_graph/curated_controls_provenance.json"
   workflow_dispatch:
 
 permissions:
@@ -21,3 +23,20 @@ jobs:
           python-version: "3.12"
       - name: Run graph ID invariance mechanics
         run: python3 -m unittest prototype/sutra_graph/test_relabel_attack.py
+
+      - name: Replay repository-curated donor controls
+        run: |
+          python3 prototype/sutra_graph/relabel_attack.py             prototype/sutra_graph/curated_controls_edges.tsv             --trials 64
+
+      - name: Validate curated provenance boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path("prototype/sutra_graph/curated_controls_provenance.json").read_text())
+          assert p["authority"] == "repo-curated-control"
+          assert p["no_d14_allocation"] is True
+          assert p["sources"]
+          assert p["limitations"]
+          print("CURATED-PROVENANCE-BOUNDARY=PASS")
+          PY
