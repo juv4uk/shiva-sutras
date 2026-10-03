@@ -29,7 +29,7 @@ OTHER = ("й", "ь", STRESS)
 TOKENS = frozenset(CONSONANTS) | frozenset(VOWELS) | frozenset(OTHER)
 CONSONANT_SET = frozenset(CONSONANTS)
 VOWEL_SET = frozenset(VOWELS)
-APOSTROPHES = "'’ʼ`"
+APOSTROPHES = "'’ʼ"        # the backtick is a sign cell of the 7-bit table, not an apostrophe
 IOTATED = {"я": "а", "ю": "у", "є": "е"}
 GLYPH_OF = {"а": "я", "у": "ю", "е": "є"}
 
