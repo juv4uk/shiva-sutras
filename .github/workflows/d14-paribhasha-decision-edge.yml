@@ -1,0 +1,50 @@
+name: D14 paribhasha decision edge research
+
+on:
+  pull_request:
+    paths:
+      - "prototype/derivation_ir/d14_paribhasha_decision_edge.py"
+      - "prototype/derivation_ir/test_d14_paribhasha_decision_edge.py"
+      - "prototype/derivation_ir/paribhasha_resolver.py"
+      - "prototype/upc14v2_vowel_sandhi.py"
+      - "ksetra/astadhyayi/sources/KASIKA-6.1.109.yaml"
+      - ".github/workflows/d14-paribhasha-decision-edge.yml"
+  push:
+    branches: [master]
+    paths:
+      - "prototype/derivation_ir/d14_paribhasha_decision_edge.py"
+      - "prototype/derivation_ir/test_d14_paribhasha_decision_edge.py"
+      - "prototype/derivation_ir/paribhasha_resolver.py"
+      - "prototype/upc14v2_vowel_sandhi.py"
+      - "ksetra/astadhyayi/sources/KASIKA-6.1.109.yaml"
+      - ".github/workflows/d14-paribhasha-decision-edge.yml"
+  workflow_dispatch:
+
+jobs:
+  decision-edge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Run existing derivation IR tests
+        run: python3 prototype/derivation_ir/test_derivation_ir.py
+
+      - name: Run typed paribhasha decision witness
+        run: |
+          python3 -m unittest prototype/derivation_ir/test_d14_paribhasha_decision_edge.py
+          python3 prototype/derivation_ir/d14_paribhasha_decision_edge.py
+
+      - name: Publish boundary
+        run: |
+          {
+            echo "## D14 paribhasha decision edge"
+            echo
+            echo "- real conflict: 6.1.109 vs 6.1.78"
+            echo "- selected: 6.1.109"
+            echo "- rejected: 6.1.78"
+            echo "- principle: apavada"
+            echo "- source: checked-in Kasika 6.1.109 witness"
+            echo "- removing apavada fact changes proof principle to para"
+            echo "- D14 coordinates allocated: 0"
+          } >> "$GITHUB_STEP_SUMMARY"
