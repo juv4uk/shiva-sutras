@@ -1,0 +1,39 @@
+name: D14 6.1 pratyahara operand research
+
+on:
+  pull_request:
+    paths:
+      - "prototype/sutra_graph/d14_61_pratyahara_operands.py"
+      - "prototype/sutra_graph/test_d14_61_pratyahara_operands.py"
+      - "prototype/upc14v2.py"
+      - ".github/workflows/d14-61-pratyahara-operands.yml"
+  push:
+    branches: [master]
+    paths:
+      - "prototype/sutra_graph/d14_61_pratyahara_operands.py"
+      - "prototype/sutra_graph/test_d14_61_pratyahara_operands.py"
+      - "prototype/upc14v2.py"
+      - ".github/workflows/d14-61-pratyahara-operands.yml"
+  workflow_dispatch:
+
+jobs:
+  typed-operands:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Run bounded 6.1 typed operand witness
+        run: |
+          python3 -m unittest prototype/sutra_graph/test_d14_61_pratyahara_operands.py
+          python3 prototype/sutra_graph/d14_61_pratyahara_operands.py
+      - name: Publish boundary
+        run: |
+          {
+            echo "## D14 6.1 typed operand witness"
+            echo
+            echo "- source forms: aci, akaḥ"
+            echo "- resolved donor classes: ac, ak"
+            echo "- inherited context: 6.1.77 aci -> 6.1.101"
+            echo "- D14 coordinates allocated: 0"
+            echo "- evidence tier: repo-grounded-control"
+          } >> "$GITHUB_STEP_SUMMARY"
