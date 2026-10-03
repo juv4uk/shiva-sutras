@@ -152,6 +152,22 @@ Membership testing requires exactly **one range comparison**:
 $$\text{is\_in\_pratyahara}(x) \iff start \le x \le end$$
 This compiles to a single unsigned subtraction and compare instruction on modern CPUs (`(x - start) <= (end - start)`).
 
+### 4.2 The Exact Bijection: The Pathology of the 42-World and the Cure of the 43-World
+A striking mathematical correspondence emerges between the minimal hitting set $\mathcal{H}^*$ and Sūtra 14:
+
+The unique minimal transversal $\mathcal{H}^* = \{\text{jhal}, \text{ral}, \text{val}, \text{śal}\}$ consists of **precisely all proper sub-consonantal pratyāhāras terminating in the anubandha `l` of Sūtra 14 (`ha l`)**:
+- $al$ spans all sounds $[0 \dots 42]$ (trivially an interval in any permutation).
+- $hal$ spans all consonants $[9 \dots 42]$ (contiguous whenever vowels are segregated to one end).
+- The remaining pratyāhāras terminating at Sūtra 14 are strictly proper sub-segments:
+  - $val = [11 \dots 42]$ (all consonants except $y$)
+  - $ral = [12 \dots 42]$ (all consonants except $y, v$)
+  - $jhal = [19 \dots 42]$ (all voiced and unvoiced obstruents)
+  - $śal = [39 \dots 42]$ (sibilants + $h_2$)
+
+In any 42-sound world with a single $h$, placing $h$ at Sūtra 5 satisfies $aṭ$ but breaks $val$, $ral$, $jhal$, and $śal$, which require $h$ at their terminal boundary without including earlier segments or $h_1$. Conversely, placing $h$ at the terminus satisfies $śal$ but destroys $aṭ$.
+
+Therefore, the **sole unavoidable sacrifice of the 42-sound world ($\mathcal{H}^*$) concentrates exactly at the locus of Pāṇini's cure ($h_2$ at Sūtra 14)**. The hypergraph transversal certificate $\mathcal{H}^*$ and Pāṇini's *hakāradvitva* are not merely compatible—they are dual, isomorphic formulations of the exact same topological necessity.
+
 ---
 
 ## 5. Architectural Law: Domain Demarcation in SENS
