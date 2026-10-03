@@ -62,6 +62,18 @@ structure D was derived from, so D passing is partly by construction. The indepe
 is (b) (agreement with 1.1.9 text and with V, which was designed separately) and the sandhi
 corpus, not the permutation test alone.
 
+## 5. Epistemic status of the witnesses (added after review)
+
+- **The sūtra is the specification; vidyut is a witness, not the reverse.** The tests assert 1.1.9 + 6.1.101;
+  agreement with vidyut is evidence; a disagreement is a classified fact (layers 2 and 3), not a defect
+  of either side. "vidyut reference" must never drift into "vidyut truth".
+- **Corpus coverage window (known room for data growth, not a researcher's gap):** in the pinned
+  `vidyut-sandhi-vowels.tsv` neither `o` nor `ḷ` is ever the first vowel. The metadata is kept here, not in the TSV,
+  because editing the TSV would change its pinned sha256.
+- **Precedent "97 → 70":** while writing `test_savarna_dirgha_layers.py` the row count was guessed as 97; the test
+  failed and the measured value is 70. A test that catches its own author's guess is the evidence that
+  the tests guard rather than decorate. Same session: the first report's "100% on the corpus" was caught and corrected before merge.
+
 ## Українською
 
 Область: вибір 7-бітної геометрії Text7 (UPC-7). Усе відтворюється чотирма скриптами
@@ -103,3 +115,15 @@ corpus, not the permutation test alone.
 самої структури, з якої виведено D, тож проходження D частково побудоване. Незалежні докази —
 критерій (б) (збіг із текстом 1.1.9 та з V, спроєктованим окремо) і сандхі-корпус, а не
 лише перестановковий тест.
+
+## 5. Епістемічний статус свідків (додано після рецензії)
+
+- **Сутра — специфікація, vidyut — свідок, а не навпаки.** Тести стверджують 1.1.9 + 6.1.101; збіг
+  із vidyut — evidence; розбіжність — класифікований факт (шари 2 і 3), не дефект жодної зі сторін.
+  «Еталон vidyut» не повинен розпливтися в «правду vidyut».
+- **Вікно покриття корпусу (відоме місце для зростання даних, а не прогалина дослідника):** у запіненому
+  `vidyut-sandhi-vowels.tsv` ані `o`, ані `ḷ` ніколи не стоять першим голосним. Метадані тримаю тут,
+  не в TSV, бо правка TSV змінила б його запінений sha256.
+- **Прецедент «97 → 70»:** під час написання `test_savarna_dirgha_layers.py` кількість рядків було вгадано
+  як 97; тест упав, виміряно 70. Тест, що ловить здогад власного автора, — доказ, що тести стережуть, а не
+  прикрашають. Тієї ж сесії «100% на корпусі» з першого звіту піймано й виправлено до мерджу.
