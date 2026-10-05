@@ -19,6 +19,8 @@ Sanskrit sounds come from the UPC-14 graph (`upc7_derive`); the Ukrainian-only c
 
 from __future__ import annotations
 
+import unicodedata
+
 from typing import Dict, Iterable, List, Optional, Tuple
 
 import uk_orth
@@ -84,10 +86,10 @@ def _ukrainian_only() -> Dict[str, int]:
 
 
 UK_ONLY_CELL = _ukrainian_only()
-# Modifiers are not sounds: two cells of the (otherwise unused) place 6 of the non-varga class: `capital` (the next letter is
+# Modifiers are not sounds: two reserved cells of the non-varga class: `capital` (the next letter is
 # uppercase) and `stress` (a combining acute after a vowel). They are written only by the Ukrainian layout.
-CAPITAL_CELL = geo.nonvarga_code(6, 0)
-STRESS_CELL = geo.nonvarga_code(6, 1)
+CAPITAL_CELL = geo.nonvarga_code(0, 2)       # cells 34, 35: reserved in the pinned table, not used by the digits
+STRESS_CELL = geo.nonvarga_code(0, 3)
 UK_ONLY_CELL["\u0301"] = STRESS_CELL
 UK_CELL = {**{tok: SANSKRIT_CELL[sk] for tok, sk in SHARED.items()}, **UK_ONLY_CELL}
 TOKEN_OF_CELL = {cell: tok for tok, cell in UK_CELL.items()}
@@ -107,8 +109,23 @@ SANSKRIT_SIGN_SPELLING = {
     "sa-cyr": {"anusvara": "м\u0307", "visarga": "х\u0323", "avagraha": "’", "danda": "।", "double-danda": "॥"},
 }
 SANSKRIT_SIGN_OF_CELL = {c: n for n, c in SANSKRIT_SIGN_CELL.items()}
+
+# ---- the ten decimal digits as TEXT (not Number: nothing here coerces a digit cell to a numeric value) --------------------
+# Ten free cells with an AFFINE structure: with the digit's four bits d3 d2 d1 d0, cell = DIGIT_BASE ^ (d0*c0 ^ d1*c1 ^ d2*c2 ^ d3*c3).
+# Chosen INSIDE the reserved cells of the PINNED table (no digit sits on a pinned-assigned cell, so digits need no h/r/l migration;
+# an earlier choice put digit 7 on the pinned h cell: found by the shiva and panini agents). 7680 such embeddings exist; this one has
+# the most varga cells (6 of 10).
+DIGIT_CELL = {str(d): c for d, c in enumerate([28, 31, 29, 30, 56, 59, 57, 58, 25, 26])}
+DIGIT_OF_CELL = {c: d for d, c in DIGIT_CELL.items()}
+# ---- non-ASCII punctuation (measured in the project's Ukrainian prose by the shiva agent: « 805 » 806 — 785 – 125 … 93 “ 25 ” 25) ----
+# Seven cells that are free in v3 AND not assigned in the pinned table (so no migration). They are signs written the same in every layout.
+# One of them is a varga cell and six are non-varga cells: for these seven the class-prefix reading of a cell does not hold.
+# Not placed (no room left that is pinned-safe): § (33 occurrences), № (2), and ASCII $ % [ ] ^ { } ~.
+PUNCT_CELL = {"«": 41, "»": 43, "—": 49, "–": 51, "“": 54, "”": 55, "…": 27}
+PUNCT_OF_CELL = {c: g_ for g_, c in PUNCT_CELL.items()}
+DIGIT_SPELLING = {"uk": "0123456789", "sa-iast": "0123456789", "sa-cyr": "0123456789", "sa-deva": "०१२३४५६७८९"}
 _all = (list(SANSKRIT_CELL.values()) + list(UK_ONLY_CELL.values()) + list(SIGN_CELL.values())
-        + list(SANSKRIT_SIGN_CELL.values()) + [CAPITAL_CELL])
+        + list(SANSKRIT_SIGN_CELL.values()) + [CAPITAL_CELL] + list(DIGIT_CELL.values()) + list(PUNCT_CELL.values()))
 if len(set(_all)) != len(_all):
     raise LangError("a cell is claimed twice")
 
@@ -145,8 +162,14 @@ def _split(text: str, letter_ok, extra_signs=None):
     return out
 
 
+_UK_VOWELS = "аеєиіїоуюя"
+
+
 def _apostrophe_in_word(text: str, i: int) -> bool:
-    return text[i] == "'" and 0 < i < len(text) - 1 and text[i - 1].isalpha() and text[i + 1].isalpha()
+    """The ASCII ' is the Ukrainian apostrophe only where the orthography writes one (a consonant before я ю є ї); anywhere else it
+    is the sign cell, so it round-trips (k't is the three cells k ' t)."""
+    return (text[i] == "'" and 0 < i < len(text) - 1 and text[i - 1].isalpha() and text[i - 1].lower() not in _UK_VOWELS
+            and text[i + 1].lower() in "яюєї")
 
 
 def _uk_word_cells(chunk: str):
@@ -177,9 +200,17 @@ class LangText:
     def encode(self, text: str, layout: str) -> Tuple[int, ...]:
         if layout not in LAYOUTS:
             raise LangError(f"unknown layout {layout!r}")
+        text = unicodedata.normalize("NFC", text)          # canonical equivalence only: й as и+U+0306, ṃ as m+U+0323 are the same text
+        if layout != "uk":
+            for i, ch in enumerate(text):
+                if ch == "'" and 0 < i < len(text) - 1 and text[i - 1].isalpha() and text[i + 1].isalpha():
+                    raise UnknownSpelling(f"{layout}: an ASCII ' inside a word is ambiguous (avagraha is written ’, the sign ' stands apart)")
         cells: List[int] = []
         ok = _apostrophe_in_word if layout == "uk" else (lambda t, i: False)
-        extra = None if layout == "uk" else {s: SANSKRIT_SIGN_CELL[n] for n, s in SANSKRIT_SIGN_SPELLING[layout].items()}
+        extra = {glyph: DIGIT_CELL[str(d)] for d, glyph in enumerate(DIGIT_SPELLING[layout])}
+        extra.update(PUNCT_CELL)
+        if layout != "uk":
+            extra.update({s: SANSKRIT_SIGN_CELL[n] for n, s in SANSKRIT_SIGN_SPELLING[layout].items()})
         for kind, chunk in _split(text, ok, extra):
             if kind == "sign":
                 cells.append(chunk)
@@ -239,6 +270,12 @@ class LangText:
             if c in SIGN_OF_CELL:
                 flush()
                 out.append(SIGN_OF_CELL[c])
+            elif c in PUNCT_OF_CELL:
+                flush()
+                out.append(PUNCT_OF_CELL[c])
+            elif c in DIGIT_OF_CELL:
+                flush()
+                out.append(DIGIT_SPELLING[layout][int(DIGIT_OF_CELL[c])])
             elif c in SANSKRIT_SIGN_OF_CELL:
                 flush()
                 if layout == "uk":
@@ -247,7 +284,10 @@ class LangText:
             else:
                 run.append(c)
         flush()
-        return "".join(out)
+        text = "".join(out)
+        if tuple(self.encode(text, layout)) != tuple(cells):
+            raise UnrenderableCode(f"{layout}: this cell stream has no text that decodes back to the same cells (e.g. a ' sign before я ю є ї)")
+        return text
 
     def switch(self, text: str, from_layout: str, to_layout: str) -> str:
         """Change only the human projection; the cell stream is untouched."""

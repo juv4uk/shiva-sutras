@@ -74,6 +74,10 @@ class UkrainianLayoutTests(unittest.TestCase):
     def test_every_ukrainian_token_round_trips_alone(self):
         for tok, cell in L.UK_CELL.items():
             with self.subTest(token=tok):
+                if tok == uk_orth.STRESS:                    # a stress needs a vowel before it: alone it has no decodable text
+                    with self.assertRaises(L.LangError):
+                        T.render([cell], "uk")
+                    continue
                 self.assertEqual(T.render([cell], "uk"), tok)
 
     def test_punctuation_and_spaces_are_signs(self):
@@ -97,6 +101,117 @@ class SwitchingTheLanguageTests(unittest.TestCase):
         self.assertEqual(len(L.SHARED), 16)
         for uk_letter, sanskrit in L.SHARED.items():
             self.assertEqual(L.UK_CELL[uk_letter], L.SANSKRIT_CELL[sanskrit])
+
+
+class SharedAttackTests(unittest.TestCase):
+    """Defects found by the panini agent's attack on the 53 shared cells (my-lisp-panini#48), now fixed."""
+
+    def setUp(self):
+        self.t = L.LangText()
+
+    def test_ascii_apostrophe_between_letters_is_a_sign_unless_the_orthography_writes_one(self):
+        cells = self.t.encode("к'т", "uk")
+        self.assertIn(L.SIGN_CELL["'"], cells)
+        self.assertEqual(self.t.render(cells, "uk"), "к'т")
+        self.assertEqual(self.t.encode("п'ять", "uk"), self.t.encode("п’ять", "uk"))
+        self.assertNotIn(L.SIGN_CELL["'"], self.t.encode("п'ять", "uk"))
+
+    def test_a_sign_apostrophe_before_an_iotated_vowel_has_no_decodable_text(self):
+        cells = list(self.t.encode("п", "uk")) + [L.SIGN_CELL["'"]] + list(self.t.encode("ять", "uk"))
+        with self.assertRaises(L.LangError):
+            self.t.render(cells, "uk")
+
+    def test_backtick_is_a_sign_not_an_apostrophe(self):
+        self.assertIn(L.SIGN_CELL["`"], self.t.encode("п`ять", "uk"))
+
+    def test_avagraha_and_the_ascii_apostrophe_are_not_silently_two_spellings(self):
+        self.assertIn(L.SANSKRIT_SIGN_CELL["avagraha"], self.t.encode("so’ham", "sa-iast"))
+        with self.assertRaises(L.LangError):
+            self.t.encode("so'ham", "sa-iast")
+        self.assertEqual(self.t.render(self.t.encode("'ham", "sa-iast"), "sa-iast"), "'ham")
+
+    def test_canonically_equivalent_text_is_the_same_cells(self):
+        import unicodedata as u
+        for lay, w in (("uk", "йога їжа"), ("sa-iast", "oṃ kṛṣṇaḥ ś")):
+            self.assertEqual(self.t.encode(u.normalize("NFD", w), lay), self.t.encode(u.normalize("NFC", w), lay))
+
+    def test_render_is_fail_closed_for_every_layout(self):
+        for lay in ("uk", "sa-iast", "sa-deva", "sa-cyr"):
+            for w in ({"uk": "Київ, 2026", "sa-iast": "oṃ 108 ॥", "sa-deva": "ओं १०८ ॥", "sa-cyr": "ом̇ 108"}[lay],):
+                cells = self.t.encode(w, lay)
+                self.assertEqual(self.t.encode(self.t.render(cells, lay), lay), cells)
+
+
+class PunctuationTests(unittest.TestCase):
+    def setUp(self):
+        self.t = L.LangText()
+
+    def test_non_ascii_punctuation_round_trips_in_every_layout(self):
+        for lay, w in (("uk", "«Так» — сказав він… “ні” – ні"), ("sa-iast", "oṃ — kṛṣṇa … “ṛṣi” – deva «»"), ("sa-deva", "ओं — कृष्ण … “ऋषि” – «»"), ("sa-cyr", "ом̇ — крiшна")):
+            with self.subTest(layout=lay):
+                try:
+                    c = self.t.encode(w, lay)
+                except L.LangError as exc:
+                    if lay == "sa-cyr":
+                        continue                       # the book scheme has no і; only the punctuation matters for this subtest
+                    self.fail(f"{lay}: {w!r}: {exc}")
+                self.assertEqual(self.t.render(c, lay), w)
+        self.assertEqual(self.t.render(self.t.encode("— … « » “ ” –", "sa-cyr"), "sa-cyr"), "— … « » “ ” –")
+
+    def test_the_seven_cells_are_distinct_free_and_pinned_safe(self):
+        cells = list(L.PUNCT_CELL.values())
+        self.assertEqual(len(set(cells)), 7)
+        pinned = {int(r["bits"], 2) for r in csv.DictReader(open(os.path.join(os.path.dirname(__file__), "upc7-table.tsv"), encoding="utf-8"), delimiter="\t") if r["status"] == "assigned"}
+        self.assertFalse(set(cells) & pinned)
+
+    def test_unplaced_punctuation_is_still_refused(self):
+        for ch in ("§", "№", "‘", "’’", "$", "[", "~"):
+            with self.assertRaises(L.LangError):
+                self.t.encode("а" + ch + "б", "uk")
+
+
+class DigitTests(unittest.TestCase):
+    """Decimal digits as text cells (not Number), placed affinely in free cells."""
+
+    def setUp(self):
+        self.t = L.LangText()
+
+    def test_digits_round_trip_in_every_layout(self):
+        for lay, text in (("uk", "Станом на 2026 рік"), ("sa-iast", "oṃ 108 ॥"), ("sa-cyr", "ом̇ 108"), ("sa-deva", "ओं १०८ ॥")):
+            self.assertEqual(self.t.render(self.t.encode(text, lay), lay), text)
+
+    def test_the_same_cells_are_written_natively_per_layout(self):
+        cells = self.t.encode("2026", "uk")
+        self.assertEqual(self.t.render(cells, "sa-deva"), "२०२६")
+        self.assertEqual(self.t.render(cells, "sa-iast"), "2026")
+
+    def test_a_layout_refuses_the_other_layouts_digit_glyphs(self):
+        with self.assertRaises(L.LangError):
+            self.t.encode("१०८", "sa-iast")
+
+    def test_ten_distinct_free_cells_no_collision(self):
+        cells = list(L.DIGIT_CELL.values())
+        self.assertEqual(len(set(cells)), 10)
+        others = set(L.SANSKRIT_CELL.values()) | set(L.UK_ONLY_CELL.values()) | set(L.SIGN_CELL.values()) | set(L.SANSKRIT_SIGN_CELL.values()) | {L.CAPITAL_CELL}
+        self.assertFalse(set(cells) & others)
+
+    def test_no_added_cell_sits_on_a_pinned_assigned_cell(self):
+        pinned = {int(r["bits"], 2) for r in csv.DictReader(open(os.path.join(os.path.dirname(__file__), "upc7-table.tsv"), encoding="utf-8"), delimiter="\t") if r["status"] == "assigned"}
+        added = list(L.DIGIT_CELL.values()) + [L.CAPITAL_CELL, L.STRESS_CELL]
+        self.assertFalse(set(added) & pinned)
+
+    def test_affine_law_digit_bits_are_cell_xor(self):
+        c = {int(d): v for d, v in L.DIGIT_CELL.items()}
+        for a in range(10):
+            for b in range(10):
+                for e in range(10):
+                    if (a ^ b ^ e) < 10:
+                        self.assertEqual(c[a] ^ c[b] ^ c[e] ^ c[a ^ b ^ e], 0)
+
+    def test_a_digit_cell_is_text_not_a_number(self):
+        cells = self.t.encode("7", "uk")
+        self.assertIsInstance(self.t.render(cells, "uk"), str)
+        self.assertNotEqual(cells[0], 7)
 
 
 @unittest.skipUnless(os.path.exists(DICT_UK), "dict_uk is not checked out here")
@@ -137,9 +252,9 @@ class RoomTests(unittest.TestCase):
         with self.assertRaises(L.LangError):
             self.t.render([L.CAPITAL_CELL], "sa-iast")
 
-    def test_non_ascii_punctuation_still_refused(self):
+    def test_unplaced_non_ascii_punctuation_still_refused(self):
         with self.assertRaises(L.LangError):
-            self.t.encode("так — ні", "uk")
+            self.t.encode("так § ні", "uk")
 
 
 @unittest.skipUnless(os.path.exists(DICT_UK), "dict_uk is not checked out here (local-only evidence)")
