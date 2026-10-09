@@ -1,0 +1,53 @@
+name: D14 6.1 Text7 application bridge
+
+on:
+  pull_request:
+    paths:
+      - "prototype/derivation_ir/d14_61_text7_bridge.py"
+      - "prototype/derivation_ir/test_d14_61_text7_bridge.py"
+      - "prototype/derivation_ir/**"
+      - "prototype/sutra_graph/d14_61_pratyahara_operands.py"
+      - "prototype/test_savarna_dirgha_layers.py"
+      - "docs/text7-candidate-d-ratification-2026-10-03.md"
+      - ".github/workflows/d14-61-text7-bridge.yml"
+  push:
+    branches: [master]
+    paths:
+      - "prototype/derivation_ir/d14_61_text7_bridge.py"
+      - "prototype/derivation_ir/test_d14_61_text7_bridge.py"
+      - "prototype/sutra_graph/d14_61_pratyahara_operands.py"
+      - "prototype/test_savarna_dirgha_layers.py"
+      - ".github/workflows/d14-61-text7-bridge.yml"
+  workflow_dispatch:
+
+jobs:
+  application-bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - name: Re-check typed pratyahara operand donor
+        run: python3 -m unittest prototype/sutra_graph/test_d14_61_pratyahara_operands.py
+      - name: Re-check merged three-layer Text7 witness
+        run: python3 prototype/test_savarna_dirgha_layers.py
+      - name: Run D14 application bridge
+        run: |
+          python3 -m unittest prototype/derivation_ir/test_d14_61_text7_bridge.py
+          python3 prototype/derivation_ir/d14_61_text7_bridge.py > /tmp/d14-61-text7-bridge.jsonl
+      - name: Publish boundary
+        run: |
+          {
+            echo "## D14 6.1 Text7 application bridge"
+            echo
+            echo "- specification: sutra 1.1.9 + 6.1.101"
+            echo "- vidyut: evidence, not authority"
+            echo "- layer 1: 70 rows / 16 asserted applications"
+            echo "- layers 2/3: named annotations"
+            echo "- corpus window: no first-position o or l-vocalic"
+            echo "- D14 coordinates allocated: 0"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: d14-61-text7-bridge
+          path: /tmp/d14-61-text7-bridge.jsonl
+          retention-days: 14
