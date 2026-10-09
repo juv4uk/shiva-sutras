@@ -1,0 +1,24 @@
+name: Panini curated relation evidence coverage
+
+on:
+  pull_request:
+    paths:
+      - "prototype/sutra_graph/curated_controls_edges.tsv"
+      - "prototype/sutra_graph/adhikara_6184_relation_evidence.json"
+      - "prototype/sutra_graph/remaining_relation_evidence.json"
+      - "prototype/sutra_graph/check_relation_evidence_coverage.py"
+      - ".github/workflows/panini-relation-evidence-coverage.yml"
+  workflow_dispatch:
+
+jobs:
+  relation-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check curated relation evidence coverage
+        run: |
+          python3 prototype/sutra_graph/check_relation_evidence_coverage.py \
+            --edges prototype/sutra_graph/curated_controls_edges.tsv \
+            --adhikara prototype/sutra_graph/adhikara_6184_relation_evidence.json \
+            --remaining prototype/sutra_graph/remaining_relation_evidence.json
