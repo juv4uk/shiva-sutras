@@ -1,0 +1,97 @@
+{
+  "schema": "panini-relation-evidence/v1",
+  "authority": "commentarial-supported",
+  "purpose": "Attach relation-specific public evidence to the already curated 6.1.84 adhikara edges without changing the graph or promoting any relation to primary-text authority.",
+  "no_d14_allocation": true,
+  "primary_relation_promotions": 0,
+  "relation_kind": "adhikara",
+  "anchor_node": "6.1.84",
+  "scope_claim": {
+    "start": "6.1.84",
+    "through": "6.1.111",
+    "interpretation": "6.1.84 is treated as an adhikara whose ekadesa context supplies following rules in this scope."
+  },
+  "sources": {
+    "sanskritdictionary_6184": {
+      "url": "https://sanskritdictionary.com/panini/6-1-84",
+      "evidence_role": "commentarial-rule-class-and-scope",
+      "supports": [
+        "6.1.84 classified as adhikara",
+        "scope extends through 6.1.111",
+        "following rules inherit ekaḥ/pūrvaparayoḥ context"
+      ]
+    },
+    "sanskritdictionary_6187": {
+      "url": "https://sanskritdictionary.com/panini/6-1-87",
+      "evidence_role": "commentarial-anuvrtti-cross-check",
+      "supports": [
+        "6.1.87 lists 6.1.84 ekaḥ/pūrvaparayoḥ as anuvritti",
+        "6.1.87 identifies 6.1.84 as preceding adhikara"
+      ]
+    },
+    "learnsanskrit_vowel": {
+      "url": "https://www.learnsanskrit.org/panini/vowel/",
+      "evidence_role": "independent-pedagogical-commentary",
+      "supports": [
+        "6.1.84 described as adhikara",
+        "6.1.87 and 6.1.88 shown under that inherited context"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "src": "6.1.87",
+      "dst": "6.1.84",
+      "kind": "adhikara",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "sanskritdictionary_6184",
+        "sanskritdictionary_6187",
+        "learnsanskrit_vowel"
+      ]
+    },
+    {
+      "src": "6.1.88",
+      "dst": "6.1.84",
+      "kind": "adhikara",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "sanskritdictionary_6184",
+        "learnsanskrit_vowel"
+      ]
+    },
+    {
+      "src": "6.1.97",
+      "dst": "6.1.84",
+      "kind": "adhikara",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "sanskritdictionary_6184"
+      ]
+    },
+    {
+      "src": "6.1.101",
+      "dst": "6.1.84",
+      "kind": "adhikara",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "sanskritdictionary_6184"
+      ]
+    },
+    {
+      "src": "6.1.109",
+      "dst": "6.1.84",
+      "kind": "adhikara",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "sanskritdictionary_6184"
+      ]
+    }
+  ],
+  "limitations": [
+    "This overlay does not derive the graph edges; it supports five already curated adhikara edges.",
+    "Commentarial/secondary support is not the same as primary-text relation authority.",
+    "No apavada, blocks, or depends_on relation is promoted by this file.",
+    "No source numbering is a SENS D14 coordinate."
+  ]
+}

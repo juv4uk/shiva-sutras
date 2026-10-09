@@ -1,0 +1,22 @@
+name: Panini primary text node anchors
+
+on:
+  pull_request:
+    paths:
+      - "prototype/sutra_graph/curated_controls_edges.tsv"
+      - "prototype/sutra_graph/primary_text_anchors.json"
+      - "prototype/sutra_graph/check_primary_text_anchors.py"
+      - ".github/workflows/panini-primary-text-anchor.yml"
+  workflow_dispatch:
+
+jobs:
+  anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check full curated-node text-anchor coverage
+        run: |
+          python3 prototype/sutra_graph/check_primary_text_anchors.py \
+            --edges prototype/sutra_graph/curated_controls_edges.tsv \
+            --anchors prototype/sutra_graph/primary_text_anchors.json

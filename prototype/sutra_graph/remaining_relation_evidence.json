@@ -1,0 +1,137 @@
+{
+  "schema": "panini-relation-evidence/v1",
+  "authority": "commentarial-supported",
+  "purpose": "Attach public secondary/commentarial/scholarly evidence to the seven current curated relations not covered by the 6.1.84 adhikara overlay, without mutating graph facts or promoting primary relation authority.",
+  "no_d14_allocation": true,
+  "primary_relation_promotions": 0,
+  "sources": {
+    "ashtadhyayi_lite_6178": {
+      "url": "https://ashtadhyayi-lite.github.io/sutra/6.1.78.html",
+      "evidence_role": "secondary-rule-interaction",
+      "supports": [
+        "6.1.109 overrides the ay/av substitution otherwise supplied by 6.1.78 in its narrower context"
+      ]
+    },
+    "ashtadhyayi_lite_6197": {
+      "url": "https://ashtadhyayi-lite.github.io/sutra/6.1.97.html",
+      "evidence_role": "secondary-rule-interaction",
+      "supports": [
+        "6.1.97 is described as apavada/badhaka with respect to 6.1.88 and 6.1.101 where both would otherwise apply"
+      ]
+    },
+    "sanskritdictionary_8442": {
+      "url": "https://sanskritdictionary.com/panini/8-4-42",
+      "evidence_role": "commentarial-pratisedha",
+      "supports": [
+        "8.4.42 is classified as pratisedha and inherits 8.4.40/8.4.41 context while forbidding the retroflex replacement in its scope"
+      ]
+    },
+    "sanskritdictionary_8443": {
+      "url": "https://sanskritdictionary.com/panini/8-4-43",
+      "evidence_role": "commentarial-pratisedha",
+      "supports": [
+        "8.4.43 carries forward na and the 8.4.41 retroflex context, prohibiting the operation before ṣ"
+      ]
+    },
+    "ashtadhyayi_lite_8444": {
+      "url": "https://ashtadhyayi-lite.github.io/sutra/8.4.44.html",
+      "evidence_role": "secondary-pratisedha",
+      "supports": [
+        "8.4.44 explicitly prevents the 8.4.40 ścutva operation in the shown case"
+      ]
+    },
+    "scharf_modeling_paninian_grammar": {
+      "url": "https://sanskrit.inria.fr/Symposium/DOC/Scharf.pdf",
+      "evidence_role": "scholarly-computational-dependency",
+      "supports": [
+        "the 6.1.87 implementation is described as operating in accordance with 1.1.51 uraṇ raparaḥ for relevant ṛ substitutions"
+      ]
+    },
+    "sanskritdictionary_6187": {
+      "url": "https://sanskritdictionary.com/panini/6-1-87",
+      "evidence_role": "commentarial-dependency-cross-check",
+      "supports": [
+        "commentarial discussion of 6.1.87 invokes 1.1.51 uraṇ raparaḥ for the relevant replacement behavior"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "src": "6.1.109",
+      "dst": "6.1.78",
+      "kind": "apavada",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "ashtadhyayi_lite_6178"
+      ],
+      "evidence_summary": "In the narrower pada-final eṅ + short-a context, 6.1.109 overrides the 6.1.78 ay/av substitution."
+    },
+    {
+      "src": "6.1.97",
+      "dst": "6.1.88",
+      "kind": "blocks",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "ashtadhyayi_lite_6197"
+      ],
+      "evidence_summary": "6.1.97 is described as an exception/bādhaka over the vṛddhi result otherwise obtained from 6.1.88."
+    },
+    {
+      "src": "6.1.97",
+      "dst": "6.1.101",
+      "kind": "blocks",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "ashtadhyayi_lite_6197"
+      ],
+      "evidence_summary": "6.1.97 is described as an exception/bādhaka over the savarṇa-dīrgha result otherwise obtained from 6.1.101."
+    },
+    {
+      "src": "8.4.42",
+      "dst": "8.4.41",
+      "kind": "blocks",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "sanskritdictionary_8442"
+      ],
+      "evidence_summary": "8.4.42 is a pratiṣedha preventing the 8.4.41 retroflex operation in the stated pada-final context."
+    },
+    {
+      "src": "8.4.43",
+      "dst": "8.4.41",
+      "kind": "blocks",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "sanskritdictionary_8443"
+      ],
+      "evidence_summary": "8.4.43 continues the negative condition and prevents the 8.4.41 retroflex operation before ṣ."
+    },
+    {
+      "src": "8.4.44",
+      "dst": "8.4.40",
+      "kind": "blocks",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "ashtadhyayi_lite_8444"
+      ],
+      "evidence_summary": "8.4.44 prevents the 8.4.40 ścutva operation in its specific environment."
+    },
+    {
+      "src": "6.1.87",
+      "dst": "1.1.51",
+      "kind": "depends_on",
+      "status": "commentarial-supported",
+      "source_keys": [
+        "scharf_modeling_paninian_grammar",
+        "sanskritdictionary_6187"
+      ],
+      "evidence_summary": "For ṛ/lṛ cases under 6.1.87, the replacement behavior uses the 1.1.51 uraṇ raparaḥ condition."
+    }
+  ],
+  "limitations": [
+    "This overlay supports only already-curated graph edges; it does not discover new relations.",
+    "Secondary/commentarial/scholarly evidence is not primary-text relation authority.",
+    "The computational label depends_on is a donor modeling relation, not a claim that Pāṇini used that graph terminology.",
+    "No D14 bit placement or coordinate follows from these relations."
+  ]
+}
