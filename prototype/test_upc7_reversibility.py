@@ -12,7 +12,7 @@ from __future__ import annotations
 import unittest
 
 import upc7_geometry as geo
-from upc7_layouts import UPC7Text, UnrenderableCode, build_cells
+from upc7_layouts import UPC7Text, UnrenderableCode, UnknownSpelling, UnassignedSpelling, build_cells
 import upc7_lang
 
 GEOMETRY = UPC7Text()
@@ -157,12 +157,12 @@ class ReversibilityAudit(unittest.TestCase):
                 codes = ORTHOGRAPHY.encode(example, "uk")
                 self.assertEqual(ORTHOGRAPHY.render(codes, "uk"), example)
 
-    def test_english_renders_only_proven_placed_sound_cells(self):
+    def test_english_renders_only_admitted_pilot_phoneme_cells(self):
         for sound in ("b", "ɡ", "k", "m", "p", "ŋ", "j"):
             codes = GEOMETRY.encode(sound, "en-ipa")
             self.assertEqual(GEOMETRY.render_checked(codes, "en-ipa"), sound)
         for sound in ("θ", "ð", "æ", "ə", "ɪ", "ʃ"):
-            with self.assertRaises(Exception):
+            with self.assertRaises((UnknownSpelling, UnassignedSpelling)):
                 GEOMETRY.encode(sound, "en-ipa")
 
 
