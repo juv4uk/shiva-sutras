@@ -290,3 +290,15 @@ Not covered (open, do not read this as done): encoding text through a layout and
 round-tripping code streams (the witness reads the table, it does not implement a
 layout encoder); a CI job (needs a `sens` checkout, see #26); independence is between two
 implementations by the same author, not two parties.
+
+
+## Наступний окремий кандидат: UPC-7 v4 (2026-10-13)
+
+Цей документ описує історичний UPC-7 (v2) та ранні layout-и.
+Пізніше створено UPC-7 v3 (upc7-table-v3.tsv), і окремо
+**UPC-7 v4** (UPC7-v4.md, upc7v4.py, test_upc7v4.py).
+**Не вважати їх однією взаємозамінною таблицею:**
+v4 приймає 44 звуки англійського референтного профілю
+UPC-14 v3 через одно- або двоклітинковий W7 потік,
+причому завжди має явно задану версію кадру.
+Жодна попередня таблиця тут не переписана.
