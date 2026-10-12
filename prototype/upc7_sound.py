@@ -24,7 +24,8 @@ from typing import Dict, Optional, Tuple
 from upc7_layouts import ASSIGNED, UPC7Text
 
 SOURCE = "docs/sanskrit-ukrainian-sounds-2026-10-02.tsv"
-PROFILES = ("sa", "uk")
+PROFILES = ("sa", "uk", "en")
+EN_SOURCE = "extensions/english-sarvam.yaml + extensions/english-claude-sarvam.yaml"
 
 
 class UPC7SoundError(ValueError):
@@ -168,18 +169,33 @@ def project_sound(code: int, profile: str) -> SoundProjection:
         )
 
     if kind == "modifier":
-        spelling = codec.layout("uk" if profile == "uk" else "sa-iast").code_to_spelling.get(code)
+        spelling = codec.layout({"uk": "uk", "sa": "sa-iast", "en": "en-ipa"}[profile]).code_to_spelling.get(code)
         return SoundProjection(
             code, cell.bits, cell.name, kind, profile,
             spelling, None, (), "context-required", "source-backed", SOURCE
         )
 
-    layout_name = "uk" if profile == "uk" else "sa-iast"
+    layout_name = {"uk": "uk", "sa": "sa-iast", "en": "en-ipa"}[profile]
     spelling = codec.layout(layout_name).code_to_spelling.get(code)
     if spelling is None:
         return SoundProjection(
             code, cell.bits, cell.name, kind, profile,
             None, None, (), "unsupported", "n/a", SOURCE
+        )
+
+    if profile == "en":
+        # Intersection of independent English extension annotations:
+        # b, ɡ, m, ŋ are segment-equivalent in both sources.
+        # k and p differ on the contrastive status of aspiration, while
+        # /j/ is called system-equivalent (Sarvam) vs segment (Claude).
+        # None of these change the owner-placed seven-bit identities.
+        confirmed = frozenset({"b", "ɡ", "m", "ŋ"})
+        status = "resolved" if spelling in confirmed else "candidate"
+        return SoundProjection(
+            code, cell.bits, cell.name, kind, profile,
+            spelling, spelling, (), status,
+            "cross-source" if spelling in confirmed else "disputed",
+            EN_SOURCE,
         )
 
     table = _UK_IPA if profile == "uk" else _SA_IPA
