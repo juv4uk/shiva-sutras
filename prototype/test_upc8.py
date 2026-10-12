@@ -310,21 +310,23 @@ def test_code_space_stats():
     assert s["sanskrit_extended"] == 7
     assert s["ukrainian_shared"] == 13
     assert s["ukrainian_new"] == 31
-    assert s["english_shared"] == 7
-    assert s["english_new"] == 37
+    assert s["english_shared"] == 12
+    assert s["english_shared_sanskrit"] == 7
+    assert s["english_shared_ukrainian"] == 5
+    assert s["english_new"] == 32
     assert s["english_phonemes"] == 44
-    assert s["total_assigned"] == 117
-    assert s["reserved"] == 139
+    assert s["total_assigned"] == 112
+    assert s["reserved"] == 144
     print(f"  [PASS] Code space: {s['total_assigned']} assigned, {s['reserved']} reserved")
 
 
 def test_reserved_codes():
     u = UPC8()
-    for code in [0x75, 0x7F, 0x80, 0xFE, 0xFF]:
+    for code in [0x52, 0x53, 0x54, 0x5A, 0x5B, 0x75, 0x7F, 0x80, 0xFE, 0xFF]:
         assert u.decode(code)["layer"] == "reserved"
     assert u.decode(0x50)["layer"] == "english_new"
     assert u.decode(0x74)["layer"] == "english_new"
-    print("  [PASS] Reserved codes 0x75-0xFF remain unassigned")
+    print("  [PASS] Retired English duplicates and codes 0x75-0xFF are unassigned")
 
 
 def test_roundtrip_sanskrit():
@@ -379,18 +381,21 @@ def test_code_space_no_gaps():
         assert code in u.table, f"Gap at 0x{code:02X} in extended"
     for code in range(0x31, 0x50):
         assert code in u.table, f"Gap at 0x{code:02X} in ukrainian"
+    from upc8 import ENGLISH_RETIRED_CODES
     for code in range(0x50, 0x75):
-        assert code in u.table, f"Gap at 0x{code:02X} in English extension"
+        assert (code in u.table) == (code not in ENGLISH_RETIRED_CODES)
     assert 0x75 not in u.table
-    print("  [PASS] No gaps in code space: 0x00-0x74 fully assigned")
+    print("  [PASS] Codes 0x00-0x4F stable; exact English lane with five retired cells")
 
 
 
 def test_english_complete_donor_inventory():
     """Both independent donor lists define the same 44 reference phonemes."""
-    from upc8 import ENGLISH_SHARED, ENGLISH_NEW, ENGLISH_IPA_ALIASES
+    from upc8 import ENGLISH_SHARED, ENGLISH_SHARED_UKRAINIAN, ENGLISH_NEW, ENGLISH_IPA_ALIASES
     import pathlib
-    en = {ipa for ipa, _, _ in ENGLISH_SHARED} | {ipa for ipa, _ in ENGLISH_NEW}
+    en = ({ipa for ipa, _, _ in ENGLISH_SHARED} |
+          {ipa for ipa, _, _ in ENGLISH_SHARED_UKRAINIAN} |
+          {ipa for _, ipa, _ in ENGLISH_NEW})
     assert len(en) == 44
 
     def donor_inventory(name):
@@ -419,7 +424,7 @@ def test_english_complete_donor_inventory():
 
 
 def test_english_exact_one_cell_for_each_phoneme():
-    from upc8 import CODE_OF_SOUND, ENGLISH_SHARED, ENGLISH_NEW
+    from upc8 import CODE_OF_SOUND, ENGLISH_SHARED, ENGLISH_SHARED_UKRAINIAN, ENGLISH_NEW
     u = UPC8()
     codes = []
     for ipa, slp1, manner in ENGLISH_SHARED:
@@ -429,9 +434,17 @@ def test_english_exact_one_cell_for_each_phoneme():
         assert u.decode(code)["layer"] == "canonical"
         assert 0 <= code < 0x2A
         codes.append(code)
-    for offset, (ipa, manner) in enumerate(ENGLISH_NEW):
+    for ipa, ukrainian, manner in ENGLISH_SHARED_UKRAINIAN:
         code = u.encode_english_phoneme(ipa)
-        assert code == 0x50 + offset, ipa
+        assert code == u.encode_ukrainian(ukrainian), (ipa, ukrainian)
+        assert u.decode(code)["languages"]["english"]["ipa"] == ipa
+        assert u.decode(code)["languages"]["english"]["manner"] == manner
+        assert u.decode(code)["layer"] == "ukrainian_new"
+        assert 0x31 <= code <= 0x4F
+        codes.append(code)
+    for source_code, ipa, manner in ENGLISH_NEW:
+        code = u.encode_english_phoneme(ipa)
+        assert code == source_code, ipa
         assert u.decode(code)["ipa"] == ipa
         assert u.decode(code)["manner"] == manner
         assert u.decode(code)["layer"] == "english_new"
@@ -443,9 +456,11 @@ def test_english_exact_one_cell_for_each_phoneme():
 
 
 def test_english_roundtrip_and_language_classes():
-    from upc8 import ENGLISH_SHARED, ENGLISH_NEW
+    from upc8 import ENGLISH_SHARED, ENGLISH_SHARED_UKRAINIAN, ENGLISH_NEW
     u = UPC8()
-    inventory = [row[0] for row in ENGLISH_SHARED] + [row[0] for row in ENGLISH_NEW]
+    inventory = ([row[0] for row in ENGLISH_SHARED] +
+                 [row[0] for row in ENGLISH_SHARED_UKRAINIAN] +
+                 [row[1] for row in ENGLISH_NEW])
     for ipa in inventory:
         code = u.encode_english_phoneme(ipa)
         assert u.decode_english_phoneme(code) == ipa
@@ -467,7 +482,7 @@ def test_english_roundtrip_and_language_classes():
 
 def test_english_no_false_friends_or_hidden_orthography():
     u = UPC8()
-    false_friends = ("t", "d", "v", "h", "ɹ", "l", "s", "ʃ", "θ", "ð", "ə")
+    false_friends = ("t", "d", "v", "h", "ɹ", "l", "n", "s", "z", "θ", "ð", "ə")
     for ipa in false_friends:
         c = u.encode_english_phoneme(ipa)
         assert 0x50 <= c <= 0x74, (ipa, c)
@@ -479,7 +494,7 @@ def test_english_no_false_friends_or_hidden_orthography():
             assert False, f"Accepted an English spelling or unsupported IPA {invalid!r}"
         except KeyError:
             pass
-    for invalid in ([], [0x75], [0x7F], [0x4F], [0x2A]):
+    for invalid in ([], [0x52], [0x53], [0x54], [0x5A], [0x5B], [0x75], [0x7F], [0x4F], [0x2A]):
         if not invalid:
             assert u.decode_english_phonemes(b"") == ()
             continue
@@ -502,6 +517,69 @@ def test_english_no_false_friends_or_hidden_orthography():
 
 
 
+
+def test_english_ukrainian_phonetic_overlap_evidence():
+    """Five shared sound identities are supported by *both* Ukrainian donors."""
+    from upc8 import ENGLISH_SHARED_UKRAINIAN, ENGLISH_RETIRED_CODES, ENGLISH_LANE_ORDER
+    from pathlib import Path
+    import re
+    root = Path(__file__).resolve().parent.parent
+    inventory = {
+        # Ukrainian donor ID suffix, canonical IPA. The independent donor
+        # uses "t̠ʃ" instead of "t͡ʃ" and "d̠ʒ" instead of "d͡ʒ".
+        "ch": "t͡ʃ", "dzh": "d͡ʒ", "f": "f", "sh": "ʃ", "zh": "ʒ"
+    }
+    assert {(ipa, letter) for ipa, letter, _ in ENGLISH_SHARED_UKRAINIAN} == {
+        ("t͡ʃ", "ч"), ("d͡ʒ", "дж"), ("f", "ф"),
+        ("ʃ", "ш"), ("ʒ", "ж")}
+    for donor in ("ukrainian-sarvam.yaml", "ukrainian-claude-sarvam.yaml"):
+        content = (root / "extensions" / donor).read_text(encoding="utf-8")
+        for suffix, expected in inventory.items():
+            prefix = "PH-UKR-CS-" if "claude" in donor else "PH-UKR-"
+            match = re.search(r"^  - id: " + re.escape(prefix + suffix) +
+                              r"\s*\n((?:(?!^  - id:).|\n)*?)(?=^  - id:|\Z)",
+                              content, re.M)
+            assert match is not None, (donor, suffix)
+            ipa = re.search(r"^    ipa:\s*[\"']?([^\"'\n]+)", match.group(1), re.M)
+            assert ipa is not None, (donor, suffix)
+            got = ipa.group(1).strip().replace("t̠ʃ", "t͡ʃ").replace("d̠ʒ", "d͡ʒ")
+            assert got == expected, (donor, suffix, got, expected)
+    u = UPC8()
+    for ipa, uk, manner in ENGLISH_SHARED_UKRAINIAN:
+        code = u.encode_english_phoneme(ipa)
+        assert code == u.encode_ukrainian(uk)
+        assert u.decode(code)["layer"] == "ukrainian_new"
+        assert u.decode_english_phoneme(code) == ipa
+    assert ENGLISH_RETIRED_CODES == frozenset(
+        0x50 + i for i, (ipa, _) in enumerate(ENGLISH_LANE_ORDER)
+        if ipa in inventory.values())
+    print("  [PASS] English/Ukrainian sound overlap: 5/5 donor-backed byte equalities")
+
+
+def test_english_no_false_friend_ukrainian_collapse():
+    """Denti-alveolar vs alveolar, approximant vs fricative and dark l."""
+    u = UPC8()
+    # English phonemes not identical to the corresponding Ukrainian
+    # entries; no letters-as-identity rule.
+    different = (
+        ("t", "т"), ("d", "д"), ("n", "н"),
+        ("s", "с"), ("z", "з"), ("v", "в"),
+        ("l", "л"), ("h", "г"), ("ɪ", "и"), ("e", "е"),
+    )
+    for english_ipa, ukrainian in different:
+        assert u.encode_english_phoneme(english_ipa) != u.encode_ukrainian(ukrainian), (
+            english_ipa, ukrainian)
+    # Shared Sanskrit and Ukrainian bytes are preserved in all three views.
+    for ipa, slp1, ukrainian in (
+        ("p", "p", "п"), ("b", "b", "б"),
+        ("k", "k", "к"), ("ɡ", "g", "ґ"),
+        ("m", "m", "м"), ("j", "y", "й")
+    ):
+        assert u.encode_english_phoneme(ipa) == u.encode_sanskrit(slp1) == u.encode_ukrainian(ukrainian)
+    print("  [PASS] Three-language compatibility without false friend mergers")
+
+
+
 def run_all():
     print("=" * 60)
     print("UPC-8 Test Suite")
@@ -518,6 +596,8 @@ def run_all():
         ("English 44 distinct bytes",  test_english_exact_one_cell_for_each_phoneme),
         ("English roundtrips and class", test_english_roundtrip_and_language_classes),
         ("English strict sound identity", test_english_no_false_friends_or_hidden_orthography),
+        ("English/Ukrainian donor equivalence", test_english_ukrainian_phonetic_overlap_evidence),
+        ("Three-language no false friends", test_english_no_false_friend_ukrainian_collapse),
         ("Word encoding (Sanskrit)",    test_word_encoding_sanskrit),
         ("Word encoding (Ukrainian)",   test_word_encoding_ukrainian),
         ("encode_sanskrit_slp1_token",  test_encode_sanskrit_slp1_token),
