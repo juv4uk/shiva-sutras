@@ -8,6 +8,8 @@ on:
       - "prototype/test_upc8.py"
       - "extensions/english-sarvam.yaml"
       - "extensions/english-claude-sarvam.yaml"
+      - "extensions/ukrainian-sarvam.yaml"
+      - "extensions/ukrainian-claude-sarvam.yaml"
       - ".github/workflows/upc8-english.yml"
   pull_request:
     paths:
@@ -15,6 +17,8 @@ on:
       - "prototype/test_upc8.py"
       - "extensions/english-sarvam.yaml"
       - "extensions/english-claude-sarvam.yaml"
+      - "extensions/ukrainian-sarvam.yaml"
+      - "extensions/ukrainian-claude-sarvam.yaml"
       - ".github/workflows/upc8-english.yml"
   workflow_dispatch:
 
@@ -35,12 +39,15 @@ jobs:
         working-directory: prototype
         run: |
           python3 - <<'PY'
-          from upc8 import UPC8, ENGLISH_SHARED, ENGLISH_NEW
+          from upc8 import UPC8, ENGLISH_SHARED, ENGLISH_SHARED_UKRAINIAN, ENGLISH_NEW, ENGLISH_RETIRED_CODES
           u = UPC8()
-          ipa = [p for p, _, _ in ENGLISH_SHARED] + [p for p, _ in ENGLISH_NEW]
+          ipa = [p for p, _, _ in ENGLISH_SHARED] + [p for p, _, _ in ENGLISH_SHARED_UKRAINIAN] + [p for _, p, _ in ENGLISH_NEW]
           data = u.encode_english_phonemes(ipa)
           assert len(data) == len(set(data)) == 44
           assert u.decode_english_phonemes(data) == tuple(ipa)
-          assert (u.stats()["total_assigned"], u.stats()["reserved"]) == (117, 139)
-          print("44 IPA phonemes, 44 unique UPC-8 bytes, zero collisions")
+          assert (u.stats()["total_assigned"], u.stats()["reserved"]) == (112, 144)
+          assert ENGLISH_RETIRED_CODES == {0x52, 0x53, 0x54, 0x5A, 0x5B}
+          for p, letter, _ in ENGLISH_SHARED_UKRAINIAN:
+              assert u.encode_english_phoneme(p) == u.encode_ukrainian(letter)
+          print("44 IPA phonemes = 7 Sanskrit + 5 Ukrainian + 32 English, exact-byte roundtrip")
           PY
