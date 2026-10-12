@@ -24,8 +24,10 @@ Code space:
               42 unique sounds; h in sutra 14 aliases to h in sutra 5 (code 0x09)
   0x2A-0x30  Sanskrit extended (long vowels, anusvara, visarga)
   0x31-0x4F  Ukrainian (near-equivalent + new-extension)
-  0x50-0x74  English (37 additional phonemes; 7 shared canonical bytes)
-  0x75-0xFF  Reserved for future languages (11 left in the old English lane)
+  0x50-0x74  English-only candidates (32 retained new phonemes;
+              five retired cells 0x52/53/54/5A/5B unassigned)
+  0x75-0xFF  Reserved for future languages (7 Sanskrit + 5 Ukrainian shared)
+
 """
 
 import hashlib
@@ -250,7 +252,7 @@ UKRAINIAN_NEW = [
 # ENGLISH: 44 IPA PHONEMES (SSBE reference accent), NOT ENGLISH SPELLING.
 #
 # Sources: extensions/english-sarvam.yaml, english-claude-sarvam.yaml
-# Only identical Sanskrit segments reuse the established UPC-8 code.
+# Reuse exact Sanskrit AND Ukrainian sound identities before adding bytes.
 # Near-equivalents /t d v h ɹ/ MUST NOT silently alias dental Sanskrit
 # stops, an approximant v, a voiced h, or a trill r.
 #
@@ -269,10 +271,29 @@ ENGLISH_SHARED = (
     ("j", "y", "approximant"),
 )
 
-# New phonemes in the unused UPC-8 English lane. The order is pinned.
-# (IPA, manner) for consonants, then (IPA, "vowel") for monophthongs
-# and diphthongs. Accent-specific, NOT a universal fixed English inventory.
-ENGLISH_NEW = (
+# Exact segment correspondences with *already existing* Ukrainian-only
+# UPC-8 entries. Both independent Ukrainian sources name these segments
+# with matching IPA, except for equivalent affricate notations:
+# ukrainian-sarvam.yaml and ukrainian-claude-sarvam.yaml.
+#
+# Ukrainian /т д н с з/ are described as dental/denti-alveolar vs English
+# alveolar; Ukrainian /в/ is frequently [ʋ], /л/ is dark [ɫ], Ukrainian
+# /г/ is [ɦ]. They MUST NOT be conflated with English /t d n s z v l h/.
+# (IPA, Ukrainian grapheme, English consonant manner)
+ENGLISH_SHARED_UKRAINIAN = (
+    ("t͡ʃ", "ч", "affricate"),
+    ("d͡ʒ", "дж", "affricate"),
+    ("f", "ф", "fricative"),
+    ("ʃ", "ш", "fricative"),
+    ("ʒ", "ж", "fricative"),
+)
+
+# Preserve ALL byte positions assigned in the first English UPC-8 attempt:
+# removing duplicates from that attempt must not silently renumber other
+# English phonemes. A reused sound vacates its former English byte, which
+# stays UNASSIGNED (NOT a second spelling/alias and NOT a reusable free slot).
+# Original (IPA, manner) order of the 37 candidates, 0x50+index.
+ENGLISH_LANE_ORDER = (
     ("t", "stop"), ("d", "stop"),
     ("t͡ʃ", "affricate"), ("d͡ʒ", "affricate"),
     ("f", "fricative"), ("v", "fricative"),
@@ -291,17 +312,34 @@ ENGLISH_NEW = (
     ("eə", "vowel"), ("ʊə", "vowel"),
 )
 
+# The resulting new identities have stable original byte positions, with
+# holes exactly where the Ukrainian identities are now reused.
+_UKR_REUSED = frozenset(ipa for ipa, _, _ in ENGLISH_SHARED_UKRAINIAN)
+ENGLISH_NEW = tuple(
+    (0x50 + i, ipa, manner)
+    for i, (ipa, manner) in enumerate(ENGLISH_LANE_ORDER)
+    if ipa not in _UKR_REUSED
+)
+ENGLISH_RETIRED_CODES = frozenset(
+    0x50 + i for i, (ipa, _) in enumerate(ENGLISH_LANE_ORDER)
+    if ipa in _UKR_REUSED
+)
+
 # The independent English donor writes the postalveolar affricates with
 # retraction diacritics instead of tie bars. Canonical decoder output is
 # the first spelling; no implicit English grapheme-to-phoneme conversion.
 ENGLISH_IPA_ALIASES = {"t̠ʃ": "t͡ʃ", "d̠ʒ": "d͡ʒ"}
 
 assert len(ENGLISH_SHARED) == 7
-assert len(ENGLISH_NEW) == 37
-assert 0x50 + len(ENGLISH_NEW) == 0x75
-assert len({x[0] for x in ENGLISH_SHARED} | {x[0] for x in ENGLISH_NEW}) == 44
-assert sum(manner != "vowel" for _, manner in ENGLISH_NEW) == 17
-assert sum(manner == "vowel" for _, manner in ENGLISH_NEW) == 20
+assert len(ENGLISH_SHARED_UKRAINIAN) == 5
+assert len(ENGLISH_LANE_ORDER) == 37
+assert len(ENGLISH_NEW) == 32
+assert ENGLISH_RETIRED_CODES == frozenset({0x52, 0x53, 0x54, 0x5A, 0x5B})
+assert len({x[0] for x in ENGLISH_SHARED} |
+           {x[0] for x in ENGLISH_SHARED_UKRAINIAN} |
+           {ipa for _, ipa, _ in ENGLISH_NEW}) == 44
+assert sum(manner != "vowel" for _, _, manner in ENGLISH_NEW) == 12
+assert sum(manner == "vowel" for _, _, manner in ENGLISH_NEW) == 20
 
 
 
@@ -403,9 +441,23 @@ class UPC8:
                 "manner": manner,
                 "profile": ENGLISH_PROFILE,
             }
-        for i, (ipa, manner) in enumerate(ENGLISH_NEW):
-            code = 0x50 + i
-            if code in self.table or code > 0x7F:
+        uk_code_by_letter = {letter: code
+                             for code, pid, letter, old_ipa, cands, cref, rel in UKRAINIAN_NEW}
+        for ipa, letter, manner in ENGLISH_SHARED_UKRAINIAN:
+            code = uk_code_by_letter[letter]
+            entry = self.table[code]
+            if entry["layer"] != "ukrainian_new":
+                raise ValueError(f"Cannot reuse non-Ukrainian UPC-8 byte {code:#04x}")
+            entry.setdefault("languages", {})["english"] = {
+                "ipa": ipa,
+                "phoneme_id": "PH-ENG-" + ipa,
+                "relation": "segment-equivalent",
+                "manner": manner,
+                "profile": ENGLISH_PROFILE,
+                "evidence": "independent Ukrainian/English IPA inventories",
+            }
+        for code, ipa, manner in ENGLISH_NEW:
+            if code in self.table or code > 0x7F or code in ENGLISH_RETIRED_CODES:
                 raise ValueError(f"UPC-8 English code collision: 0x{code:02X}")
             self.table[code] = {
                 "code": code,
@@ -437,8 +489,15 @@ class UPC8:
             code = CODE_OF_SOUND[slp1]
             self._english_ipa_to_code[ipa] = code
             self._english_code_to_ipa[code] = ipa
-        for i, (ipa, manner) in enumerate(ENGLISH_NEW):
-            code = 0x50 + i
+        for ipa, letter, manner in ENGLISH_SHARED_UKRAINIAN:
+            code = self._ukr_letter_to_code[letter]
+            if code in self._english_code_to_ipa or ipa in self._english_ipa_to_code:
+                raise ValueError(f"English/Ukrainian sound collision: {ipa!r}")
+            self._english_ipa_to_code[ipa] = code
+            self._english_code_to_ipa[code] = ipa
+        for code, ipa, manner in ENGLISH_NEW:
+            if code in self._english_code_to_ipa or ipa in self._english_ipa_to_code:
+                raise ValueError(f"English sound collision: {ipa!r}")
             self._english_ipa_to_code[ipa] = code
             self._english_code_to_ipa[code] = ipa
         assert len(self._english_ipa_to_code) == len(self._english_code_to_ipa) == 44
@@ -794,7 +853,10 @@ class UPC8:
             if type(code) is not int or code not in self._english_code_to_ipa:
                 return frozenset()
             ipa = self._english_code_to_ipa[code]
-            manner = self.table[code]["languages"]["english"]["manner"] if self.table[code]["layer"] == "canonical" else self.table[code]["manner"]
+            entry = self.table[code]
+            manner = (entry["languages"]["english"]["manner"]
+                      if entry["layer"] in ("canonical", "ukrainian_new")
+                      else entry["manner"])
             if manner == "vowel":
                 return frozenset({"vowel"})
             return frozenset({"consonant", manner})
@@ -824,7 +886,9 @@ class UPC8:
         ukr_new = sum(1 for c in self.table if self.table[c]["layer"] == "ukrainian_new")
         ukr_shared = len(UKRAINIAN_SHARED)
         eng_new = sum(1 for c in self.table if self.table[c]["layer"] == "english_new")
-        eng_shared = len(ENGLISH_SHARED)
+        eng_shared_canon = len(ENGLISH_SHARED)
+        eng_shared_ukrainian = len(ENGLISH_SHARED_UKRAINIAN)
+        eng_shared = eng_shared_canon + eng_shared_ukrainian
         reserved = 256 - len(self.table)
         return {
             "canonical": canonical,
@@ -832,6 +896,8 @@ class UPC8:
             "ukrainian_shared": ukr_shared,
             "ukrainian_new": ukr_new,
             "english_shared": eng_shared,
+            "english_shared_sanskrit": eng_shared_canon,
+            "english_shared_ukrainian": eng_shared_ukrainian,
             "english_new": eng_new,
             "english_phonemes": eng_shared + eng_new,
             "total_assigned": len(self.table),
@@ -883,7 +949,7 @@ if __name__ == "__main__":
     print(f"  Skt extended:  {s['sanskrit_extended']} codes (0x2A-0x30)")
     print(f"  Ukr shared:    {s['ukrainian_shared']} codes (reuse canonical)")
     print(f"  Ukr new:       {s['ukrainian_new']} codes (0x31-0x4F)")
-    print(f"  Eng shared:    {s['english_shared']} codes (reuse canonical)")
+    print(f"  Eng shared:    {s['english_shared']} codes (7 Sanskrit + 5 Ukrainian)")
     print(f"  Eng new:       {s['english_new']} codes (0x50-0x74)")
     print(f"  Total:         {s['total_assigned']} assigned, {s['reserved']} reserved")
 
