@@ -586,9 +586,36 @@ class UPC7Text:
             out.append(mapping[code])
         return "".join(out)
 
+    def render_checked(self, codes: Iterable[int], layout: str) -> str:
+        """Only return text if the exact sequence survives decode -> encode.
+
+        Sound codes are not text delimiters: k+h and kh, d+zh and dzh,
+        a+i and ai, etc. may spell alike. Raw render() is a presentation
+        view; render_checked() is a strict, reversible encoding boundary.
+        """
+        checked = tuple(geo.checked_code(code) for code in codes)
+        rendered = self.render(checked, layout)
+        try:
+            reconstructed = self.encode(rendered, layout)
+        except (UnknownSpelling, UnassignedSpelling) as exc:
+            raise UnrenderableCode(
+                f"{layout}: spelling {rendered!r} cannot recover the exact codes"
+            ) from exc
+        if reconstructed != checked:
+            raise UnrenderableCode(
+                f"{layout}: ambiguous concatenation {rendered!r}: "
+                f"{tuple(geo.code_bits(c) for c in checked)} != "
+                f"{tuple(geo.code_bits(c) for c in reconstructed)}"
+            )
+        return rendered
+
     def switch_layout(self, text: str, from_layout: str, to_layout: str) -> str:
-        """Change only the human projection; the code stream is untouched."""
-        return self.render(self.encode(text, from_layout), to_layout)
+        """Switch with exact 7-bit identity preserved, or refuse.
+
+        This does not promise identical *source spelling*. Ukrainian case
+        aliases and sequence spellings are intentionally many-to-one.
+        """
+        return self.render_checked(self.encode(text, from_layout), to_layout)
 
     @staticmethod
     def _encode_bits(text: str) -> Tuple[int, ...]:
