@@ -460,7 +460,49 @@ def _uk() -> Layout:
     )
 
 
-LAYOUT_NAMES = ("sa-slp1", "sa-iast", "sa-deva", "uk", "bits")
+# English is a PHONEME profile, not English orthography and not Sanskrit IAST.
+# Source: extensions/english-sarvam.yaml (44-phoneme SSBE candidate) independently
+# checked against english-claude-sarvam.yaml; accept only six shared
+# "segment-equivalent" consonants. Approximate/false-friend/new-extension
+# English phonemes have NO invented seven-bit identity.
+#
+# These cells are already assigned in the immutable seven-bit geometry.
+# No reserved bits, D2 structure, case folding or aspirated /th/ alias.
+_EN_EXACT = (
+    ("k", geo.varga_code(0, 0), "k"),
+    ("ɡ", geo.varga_code(0, 2), "g"),
+    ("ŋ", geo.varga_code(0, 4), None),
+    ("p", geo.varga_code(4, 0), "p"),
+    ("b", geo.varga_code(4, 2), "b"),
+    ("m", geo.varga_code(4, 4), "m"),
+)
+
+# Known English phonemes/letters not sound-equivalent in the researched
+# canonical Sanskrit geometry. Refuse; do not approximate e.g. "th" -> थ.
+_EN_UNPLACED = frozenset((
+    "th", "sh", "ch", "ph", "dh", "f", "v", "w", "r", "s", "t", "d",
+    "n", "h", "l", "j", "z", "a", "e", "i", "o", "u", "q", "x", "y",
+    "θ", "ð", "ə", "ɪ", "æ", "ʌ", "ʊ", "ʒ", "ʃ", "tʃ", "dʒ",
+))
+
+
+def _en() -> Layout:
+    """Conservative English Roman phoneme surface, not a grapheme-to-phoneme reader.
+
+    Only 5 unambiguous one-letter spellings are currently admitted. For /ŋ/
+    use en-ipa, not the context-sensitive English letters "ng".
+    """
+    spellings = {code: roman for _ipa, code, roman in _EN_EXACT if roman}
+    return Layout("en", spellings, _EN_UNPLACED)
+
+
+def _en_ipa() -> Layout:
+    """IPA spelling of the six independently supported English segments."""
+    spellings = {code: ipa for ipa, code, _roman in _EN_EXACT}
+    return Layout("en-ipa", spellings, _EN_UNPLACED)
+
+
+LAYOUT_NAMES = ("sa-slp1", "sa-iast", "sa-deva", "uk", "en", "en-ipa", "bits")
 
 
 def build_layouts() -> Dict[str, Layout]:
@@ -470,6 +512,8 @@ def build_layouts() -> Dict[str, Layout]:
         "sa-iast": _sa_iast(),
         "sa-deva": _sa_deva(),
         "uk": _uk(),
+        "en": _en(),
+        "en-ipa": _en_ipa(),
     }
 
 
