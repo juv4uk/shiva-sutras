@@ -165,3 +165,17 @@ test_upc14v3.py (44-source witnesses, exhaustive inverse and
 reversibility checks), .github/workflows/upc14-v3.yml.
 This v3 is a **research candidate**, not a universal human-sounds
 standard, and does not encode English spelling.
+
+
+## Окремі сучасні версії звукової геометрії
+
+**UPC-14 v3**: upc14v3.py + UPC14-v3.md
+(44 англійські фонеми, 7 історичних + 37 типізованих розширень).
+
+**UPC-7 v4**: upc7v4.py + UPC7-v4.md + test_upc7v4.py
+(сумісний за семантикою звуків 7-бітний потік,
+44/44 англійських фонем, 7 одноклітинкових та
+37 двоклітинкових W7 звуків, явний версійний кадр).
+
+Ці окремі experimental candidates НЕ міняють історичні
+UPC-8, UPC-14 v2, UPC-7 v2 / v3 або SENS D7.
