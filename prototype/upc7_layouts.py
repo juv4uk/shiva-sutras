@@ -473,7 +473,7 @@ def _uk() -> Layout:
 #
 # These cells are already assigned in the immutable seven-bit geometry.
 # No reserved bits, D2 structure, case folding or aspirated /th/ alias.
-_EN_EXACT = (
+_EN_PILOT = (
     ("k", geo.varga_code(0, 0), "k"),
     ("ɡ", geo.varga_code(0, 2), "g"),
     ("ŋ", geo.varga_code(0, 4), None),
@@ -498,13 +498,13 @@ def _en() -> Layout:
     Only 6 one-letter sound spellings are currently admitted. For /ŋ/
     use en-ipa, not the context-sensitive English letters "ng".
     """
-    spellings = {code: roman for _ipa, code, roman in _EN_EXACT if roman}
+    spellings = {code: roman for _ipa, code, roman in _EN_PILOT if roman}
     return Layout("en", spellings, _EN_UNPLACED)
 
 
 def _en_ipa() -> Layout:
-    """IPA spelling of the six independently supported English segments."""
-    spellings = {code: ipa for ipa, code, _roman in _EN_EXACT}
+    """Seven placed English candidates; only four exact across both audits."""
+    spellings = {code: ipa for ipa, code, _roman in _EN_PILOT}
     return Layout("en-ipa", spellings, _EN_UNPLACED)
 
 
