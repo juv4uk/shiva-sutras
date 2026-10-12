@@ -33,8 +33,8 @@ class EnglishSoundProfileTests(unittest.TestCase):
     def test_new_language_views_exist_without_minting_codes(self):
         self.assertIn("en", build_layouts())
         self.assertIn("en-ipa", build_layouts())
-        self.assertEqual(len(CODEC.layout("en").code_to_spelling), 6)
-        self.assertEqual(len(CODEC.layout("en-ipa").code_to_spelling), 7)
+        self.assertEqual(len(CODEC.layout("en").code_to_spelling), 8)
+        self.assertEqual(len(CODEC.layout("en-ipa").code_to_spelling), 9)
         cells = {c.code: c for c in build_cells()}
         self.assertEqual(len(cells), 128)
         self.assertEqual(sum(c.status == RESERVED for c in cells.values()), 21)
@@ -79,9 +79,30 @@ class EnglishSoundProfileTests(unittest.TestCase):
         with self.assertRaises((UnassignedSpelling, UnknownSpelling)):
             CODEC.encode("th", "en")
 
-    def test_reserved_and_sign_cells_do_not_gain_english_spellings(self):
+    def test_space_and_period_are_text_data_not_phonemes(self):
+        space = geo.sign_code("space")
+        period = geo.sign_code("dot")
+        self.assertNotEqual(space, period)
+        for language in ("en", "en-ipa"):
+            with self.subTest(language=language):
+                self.assertEqual(CODEC.encode(" ", language), (space,))
+                self.assertEqual(CODEC.encode(".", language), (period,))
+                self.assertEqual(CODEC.render_checked((space, period), language), " .")
+                sample = "b. m"
+                expected = (
+                    geo.varga_code(4, 2), period, space, geo.varga_code(4, 4)
+                )
+                self.assertEqual(CODEC.encode(sample, language), expected)
+                self.assertEqual(CODEC.render_checked(expected, language), sample)
+                self.assertEqual(CODEC.encode("b..m", language), (
+                    geo.varga_code(4, 2), period, period, geo.varga_code(4, 4)
+                ))
+        self.assertEqual(CODEC.switch_layout("b. m", "en", "uk"), "б. м")
+
+    def test_reserved_and_other_sign_cells_are_still_unrenderable(self):
+        text_signs = {geo.sign_code("space"), geo.sign_code("dot")}
         for cell in build_cells():
-            if cell.status == RESERVED or cell.klass == "sign/operator":
+            if (cell.status == RESERVED or cell.klass == "sign/operator") and cell.code not in text_signs:
                 for name in ("en", "en-ipa"):
                     with self.subTest(name=name, code=cell.code):
                         with self.assertRaises(UnrenderableCode):
