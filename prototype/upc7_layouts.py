@@ -462,9 +462,11 @@ def _uk() -> Layout:
 
 # English is a PHONEME profile, not English orthography and not Sanskrit IAST.
 # Source: extensions/english-sarvam.yaml (44-phoneme SSBE candidate) independently
-# checked against english-claude-sarvam.yaml; accept only six shared
-# "segment-equivalent" consonants. Approximate/false-friend/new-extension
-# English phonemes have NO invented seven-bit identity.
+# compared with english-claude-sarvam.yaml. That independent annotation
+# disputes the *equivalence label* for p/k (aspiration status), although
+# the base phoneme slots are the same. This is a provisional, narrowly
+# scoped English phonemic pilot, NOT owner-ratified universal equivalence.
+# New English-only and near-equivalent phonemes gain NO seven-bit identity.
 #
 # These cells are already assigned in the immutable seven-bit geometry.
 # No reserved bits, D2 structure, case folding or aspirated /th/ alias.
