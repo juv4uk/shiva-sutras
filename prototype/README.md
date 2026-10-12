@@ -149,3 +149,19 @@ This prototype implements the encoding/hardware layer of the five-layer architec
 3. Language Extensions ← `ukrainian.yaml`, `english.yaml`
 4. Phonological Dimensions ← `phonological-dimensions-v0.3.yaml`
 5. **Encoding/Hardware** ← **this prototype (UPC-8)**
+
+
+## UPC-14 v3 (2026-10-13) — full English phoneme experiment
+
+Separate from the historical experimental UPC-8 described above, the new
+[UPC-14 v3 English sound geometry](UPC14-v3.md) provides the **44 English
+reference-accent phonemes**, not written English letters: 7 reuse unchanged
+UPC-14 v2 sound identities; 37 receive new 14-bit *typed* feature
+coordinates with prefix 11. The old 42 Śiva-sūtra sound vertices,
+it-markers and UPC-7/SENS D7 coordinates are unmodified.
+
+Files: upc14v3.py (geometry/decoder/typed voice and vowel edges),
+test_upc14v3.py (44-source witnesses, exhaustive inverse and
+reversibility checks), .github/workflows/upc14-v3.yml.
+This v3 is a **research candidate**, not a universal human-sounds
+standard, and does not encode English spelling.
