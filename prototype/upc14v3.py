@@ -255,6 +255,46 @@ def decode_english_phoneme(code: int) -> str:
         raise UPC14V3Error(f"not an admitted English phoneme code: {code!r}") from exc
 
 
+
+def english_voice_edge(code: int) -> int:
+    """Typed graph edge, allowed only between BOTH admitted English segments.
+
+    Within the extension consonant lane, the voiced distinction is bit 3.
+    It is NOT a general toggling law for vowels or historical Sanskrit cells.
+    """
+    row = _BY_CODE.get(code) if type(code) is int else None
+    if row is None or not isinstance(row.features, ConsonantFeatures):
+        raise UPC14V3Error("voice edge requires admitted extended consonant")
+    other = code ^ (1 << 3)
+    target = _BY_CODE.get(other)
+    if target is None or not isinstance(target.features, ConsonantFeatures):
+        raise UPC14V3Error("voice edge target not admitted")
+    if (target.features.place != row.features.place or
+        target.features.manner != row.features.manner or
+        target.features.secondary != row.features.secondary or
+        target.features.voiced == row.features.voiced):
+        raise UPC14V3Error("invalid voice contrast")
+    return other
+
+
+def english_vowel_trajectory_edge(code: int, trajectory: str) -> int:
+    """Change the glide TARGET CLASS only if result is another admitted phone.
+
+    Monophthong -> diphthong is NOT assumed to be a universal sound law.
+    The graph has an edge only when both English reference vowels exist.
+    """
+    row = _BY_CODE.get(code) if type(code) is int else None
+    if row is None or not isinstance(row.features, VowelFeatures):
+        raise UPC14V3Error("trajectory edge requires admitted extended vowel")
+    f = row.features
+    dest = pack_vowel(VowelFeatures(f.height, f.backness, f.rounded,
+                                    f.long, trajectory))
+    target = _BY_CODE.get(dest)
+    if target is None or not isinstance(target.features, VowelFeatures):
+        raise UPC14V3Error("trajectory target not admitted")
+    return dest
+
+
 def project_to_legacy_upc7(ipa: str) -> int | None:
     """Strict seven-bit candidate for known exact v2 sound ancestry ONLY.
 
