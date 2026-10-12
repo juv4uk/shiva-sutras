@@ -1,0 +1,44 @@
+name: UPC7 English candidate (no code reassignment)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - prototype/upc7_layouts.py
+      - prototype/test_upc7_english.py
+      - prototype/upc7_geometry.py
+      - prototype/upc7_table.py
+      - prototype/upc7-table.tsv
+      - prototype/upc7-table.sha256
+      - extensions/english-sarvam.yaml
+      - extensions/english-claude-sarvam.yaml
+      - .github/workflows/upc7-english.yml
+  pull_request:
+    paths:
+      - prototype/upc7_layouts.py
+      - prototype/test_upc7_english.py
+      - prototype/upc7_geometry.py
+      - prototype/upc7_table.py
+      - prototype/upc7-table.tsv
+      - prototype/upc7-table.sha256
+      - extensions/english-sarvam.yaml
+      - extensions/english-claude-sarvam.yaml
+      - .github/workflows/upc7-english.yml
+
+permissions:
+  contents: read
+
+jobs:
+  seven-bit-english:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+      - name: English sound profile and existing Sanskrit/Ukrainian regressions
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc7_english test_upc7_layouts
+      - name: Prove canonical 7-bit machine table was not changed
+        working-directory: prototype
+        run: |
+          python3 upc7_table.py --check
+          sha256sum -c upc7-table.sha256
