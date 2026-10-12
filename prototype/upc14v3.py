@@ -1,325 +1,235 @@
 #!/usr/bin/env python3
-"""UPC-14 v3: conservative, typed 14-bit English sound inventory (research).
+"""UPC-14 v3: English added to the EXISTING UPC-14 v2 sound graph.
 
-All 42 historical Śiva-sūtra sound coordinates from upc14v2 are unchanged.
-The v2 meta-marker range 0b10xxxxxxxxxxxx is unchanged. Newly admitted
-English contrasts use 0b11xxxxxxxxxxxx, never a v2 sound or it-marker.
-This is an experimental reference-accent PHONEME layer, not orthography,
-not universal IPA coverage, and not an owner ratification.
+Not another geometry. EXACTLY the same 14-bit field layout, bit meanings,
+graph operations and 42 Śiva-sūtra vertices as prototype/upc14v2.py.
+The English reference inventory contains 44 phonemes, but a mapping is
+ADMITTED only when the old geometry expresses the phonetic distinction.
+Unsupported phonemes are first-class evidence, not guessed bit patterns.
 
-Sources: extensions/english-sarvam.yaml and english-claude-sarvam.yaml
-(44 reference-accent phonemes each); official IPA chart for feature names.
-The split (English /t/ alveolar vs Sanskrit /t/ dental, English /v/
-labiodental fricative vs Sanskrit /v/ approximant, English /ɹ/ vs trill)
-is DELIBERATE. Source disagreements remain visible in the documentation.
+No change to UPC-7, SENS D7, v2 code or Sanskrit script views. Research
+candidate; no owner ratification implied.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import NamedTuple
+from typing import Iterable
 import unicodedata
 
-import upc14v2 as v2
+import upc14v2 as graph
 
-WIDTH = 14
-EXT_PREFIX = 0b11 << 12
-KIND_VOWEL = 1 << 11
+WIDTH = graph.WIDTH
+# The sole permitted 14-bit layout (unchanged from the graph):
+# meta(1) | place(5) | nasal(1) | aperture(3) | length(2) | voice(1) | asp(1)
+FIELDS = (
+    graph.META_SHIFT, graph.PLACE_SHIFT, graph.NASAL_SHIFT,
+    graph.AP_SHIFT, graph.LEN_SHIFT, graph.VOICE_SHIFT, graph.ASP_SHIFT,
+)
 
-# Consonant payload: 0 (kind) | place 4 | manner 3 | voiced 1 | secondary 3
-# 11 + 0 + PPPP + MMM + V + SSS = 14 bits.
-PLACES = {
-    "bilabial": 1, "labiodental": 2, "dental": 3, "alveolar": 4,
-    "postalveolar": 5, "palatal": 6, "velar": 7,
-    "labial-velar": 8, "glottal": 9, "retroflex": 10,
-    "uvular": 11, "pharyngeal": 12, "linguolabial": 13,
-    "epiglottal": 14,
-}
-MANNERS = {
-    "stop": 0, "affricate": 1, "fricative": 2, "nasal": 3,
-    "approximant": 4, "lateral-approximant": 5,
-    "trill": 6, "tap": 7,
-}
-SECONDARY = {
-    "plain": 0, "aspirated": 1, "labialized": 2, "palatalized": 3,
-    "velarized": 4, "pharyngealized": 5, "ejective": 6,
-    "implosive": 7,
-}
-
-# Vowel payload: 1 (kind) | height 3 | backness 3 | rounded 1 |
-#                long 1 | trajectory 3. Glide gives a *target class*,
-# NOT an exact time-resolved articulatory or acoustic trajectory.
-HEIGHTS = {
-    "close": 0, "near-close": 1, "close-mid": 2, "mid": 3,
-    "open-mid": 4, "near-open": 5, "open": 6,
-}
-BACKNESSES = {
-    "front": 0, "near-front": 1, "central": 2,
-    "near-back": 3, "back": 4,
-}
-TRAJECTORIES = {
-    "steady": 0, "toward-near-front-close": 1,
-    "toward-near-back-close": 2, "toward-central-mid": 3,
-}
 
 class UPC14V3Error(ValueError):
-    """An unadmitted, ambiguous or non-canonical v3 representation."""
+    """Phoneme absent from profile, or graph cannot represent it faithfully."""
 
 
-class ConsonantFeatures(NamedTuple):
-    place: str
-    manner: str
-    voiced: bool
-    secondary: str = "plain"
-
-
-class VowelFeatures(NamedTuple):
-    height: str
-    backness: str
-    rounded: bool
-    long: bool
-    trajectory: str = "steady"
-
-
-def _key(table: dict[str, int], name: str) -> int:
-    try:
-        return table[name]
-    except KeyError as exc:
-        raise UPC14V3Error(f"unratified/unknown feature {name!r}") from exc
-
-
-def pack_consonant(f: ConsonantFeatures) -> int:
-    """Injective coordinate for the declared consonant-feature product."""
-    if not isinstance(f.voiced, bool):
-        raise UPC14V3Error("voiced must be bool")
-    return (EXT_PREFIX | (_key(PLACES, f.place) << 7) |
-            (_key(MANNERS, f.manner) << 4) | (int(f.voiced) << 3) |
-            _key(SECONDARY, f.secondary))
-
-
-def pack_vowel(f: VowelFeatures) -> int:
-    """Injective coordinate for declared reference-accent vowel features."""
-    if not isinstance(f.rounded, bool) or not isinstance(f.long, bool):
-        raise UPC14V3Error("rounded/long must be bool")
-    return (EXT_PREFIX | KIND_VOWEL | (_key(HEIGHTS, f.height) << 8) |
-            (_key(BACKNESSES, f.backness) << 5) |
-            (int(f.rounded) << 4) | (int(f.long) << 3) |
-            _key(TRAJECTORIES, f.trajectory))
-
-
-def unpack_extension(code: int) -> ConsonantFeatures | VowelFeatures:
-    """Invert *all* valid feature coordinates; not an admission decision."""
-    if type(code) is not int or not 0 <= code < (1 << WIDTH) or code >> 12 != 0b11:
-        raise UPC14V3Error("not a v3 14-bit sound extension")
-    if code & KIND_VOWEL:
-        h = (code >> 8) & 7
-        b = (code >> 5) & 7
-        glide = code & 7
-        if h not in HEIGHTS.values() or b not in BACKNESSES.values() or glide not in TRAJECTORIES.values():
-            raise UPC14V3Error("invalid vowel feature coordinate")
-        rev_h = {value: name for name, value in HEIGHTS.items()}
-        rev_b = {value: name for name, value in BACKNESSES.items()}
-        rev_g = {value: name for name, value in TRAJECTORIES.items()}
-        return VowelFeatures(rev_h[h], rev_b[b], bool(code & 16),
-                             bool(code & 8), rev_g[glide])
-    p = (code >> 7) & 15
-    m = (code >> 4) & 7
-    sec = code & 7
-    if p not in PLACES.values():
-        raise UPC14V3Error("invalid consonant place")
-    rev_p = {value: name for name, value in PLACES.items()}
-    rev_m = {value: name for name, value in MANNERS.items()}
-    rev_s = {value: name for name, value in SECONDARY.items()}
-    return ConsonantFeatures(rev_p[p], rev_m[m], bool(code & 8), rev_s[sec])
+class UnrepresentedSound(UPC14V3Error):
+    """A known English phoneme for which the historical graph lacks a law."""
 
 
 @dataclass(frozen=True)
 class EnglishPhoneme:
     ipa: str
-    code: int
     family: str
+    code: int | None
+    graph_derivation: str | None
     evidence: str
-    features: ConsonantFeatures | VowelFeatures | None
-    v2_label: str | None = None
+    missing_law: str | None
+
+    @property
+    def mapped(self) -> bool:
+        return self.code is not None
 
 
-# Seven shared *segment* identities, NEVER a claim that English /p/ and
-# Sanskrit /p/ have the same phonemic aspiration system or phonotactics.
-# /p/, /k/: aspirated English onset is a conditioned ALLOPHONE, not v2 /ph/.
-# /j/: IPA palatal glide is v2 sound labelled "y" in IAST.
-SHARED_SEGMENTS = (
-    ("p", "p", "contextual-aspiration"),
-    ("b", "b", "independent-segment-agreement"),
-    ("k", "k", "contextual-aspiration"),
-    ("ɡ", "g", "independent-segment-agreement"),
-    ("m", "m", "independent-segment-agreement"),
-    ("ŋ", "ṅ", "independent-segment-agreement"),
-    ("j", "y", "segment-with-profile-status"),
+# PHONOLOGY first: these 44 IPA entries come from TWO independent
+# source inventories, not English letters.
+# /p k/ retain the base unaspirated segments, not an English phonemic
+# aspirate contrast. The donor analyses disagree on strict identity:
+# these entries explicitly retain the caveat instead of hiding it.
+SHARED = (
+    ("p", "p", "base-segment; English aspiration is positional"),
+    ("b", "b", "base-segment; phonemic systems may differ"),
+    ("k", "k", "base-segment; English aspiration is positional"),
+    ("ɡ", "g", "base-segment; phonemic systems may differ"),
+    ("m", "m", "base-segment; phonemic systems may differ"),
+    ("ŋ", "ṅ", "base-segment; English distribution is restricted"),
+    ("j", "y", "palatal approximant; v2 calls this y"),
 )
 
-# Distinct English 14-bit EXTENSIONS, not approximated to Sanskrit s/t/v/h/r/l.
-# IPA /t͡ʃ/ and /d͡ʒ/ are ONE affricate phoneme each in this profile.
-NEW_CONSONANTS = (
-    ("t", "alveolar", "stop", False),
-    ("d", "alveolar", "stop", True),
-    ("t͡ʃ", "postalveolar", "affricate", False),
-    ("d͡ʒ", "postalveolar", "affricate", True),
-    ("f", "labiodental", "fricative", False),
-    ("v", "labiodental", "fricative", True),
-    ("θ", "dental", "fricative", False),
-    ("ð", "dental", "fricative", True),
-    ("s", "alveolar", "fricative", False),
-    ("z", "alveolar", "fricative", True),
-    ("ʃ", "postalveolar", "fricative", False),
-    ("ʒ", "postalveolar", "fricative", True),
-    ("h", "glottal", "fricative", False),
-    ("n", "alveolar", "nasal", True),
-    ("w", "labial-velar", "approximant", True),
-    ("ɹ", "postalveolar", "approximant", True),
-    ("l", "alveolar", "lateral-approximant", True),
+# New valid sound vertices DERIVED BY EXISTING V2 EDGES:
+# iː,uː = their source vowel followed by v2's long edge.
+# w = labial voiced stop b, lift to semivowel, join with
+#     the throat/velar articulator (bilabial + velar).
+# Their codes use the SAME v2.make/unpack layout, not a new class/prefix.
+DERIVED = (
+    ("iː", "vowel", "long(i)", "close-front long monophthong"),
+    ("uː", "vowel", "long(u)", "close-back rounded long monophthong"),
+    ("w", "consonant", "join(lift(b),K)", "voiced labial-velar approximant"),
 )
 
-# British/reference-accent 12 monophthongs + 8 diphthongs.
-# Tuple = (IPA, height, backness, rounded, phonological length, glide).
-# The e-symbol follows the source inventories' DRESS /e/ convention,
-# not a claim that the measured realization is always cardinal [e].
-NEW_VOWELS = (
-    ("ɪ", "near-close", "near-front", False, False, "steady"),
-    ("e", "close-mid", "front", False, False, "steady"),
-    ("æ", "near-open", "front", False, False, "steady"),
-    ("ɒ", "open", "back", True, False, "steady"),
-    ("ʌ", "open-mid", "central", False, False, "steady"),
-    ("ʊ", "near-close", "near-back", True, False, "steady"),
-    ("ə", "mid", "central", False, False, "steady"),
-    ("iː", "close", "front", False, True, "steady"),
-    ("ɑː", "open", "back", False, True, "steady"),
-    ("ɔː", "open-mid", "back", True, True, "steady"),
-    ("uː", "close", "back", True, True, "steady"),
-    ("ɜː", "open-mid", "central", False, True, "steady"),
-    ("eɪ", "close-mid", "front", False, False, "toward-near-front-close"),
-    ("aɪ", "open", "front", False, False, "toward-near-front-close"),
-    ("ɔɪ", "open-mid", "back", True, False, "toward-near-front-close"),
-    ("aʊ", "open", "front", False, False, "toward-near-back-close"),
-    ("əʊ", "mid", "central", False, False, "toward-near-back-close"),
-    ("ɪə", "near-close", "near-front", False, False, "toward-central-mid"),
-    ("eə", "close-mid", "front", False, False, "toward-central-mid"),
-    ("ʊə", "near-close", "near-back", True, False, "toward-central-mid"),
+# INVENTORY ONLY. The old graph has no ALVEOLAR (distinct from its dental
+# and retroflex place atoms), affricate, lateral, fricative manner distinct
+# from its sibilant, seven vowel heights/front-back positions, or ordered
+# glide trajectory. 'Free' bit words cannot be given these meanings by
+# fiat. Every remaining IPA entry is retained explicitly with its
+# missing typed law so admission cannot silently approximate it.
+UNREPRESENTED_CONSONANTS = (
+    ("t", "alveolar-place"),
+    ("d", "alveolar-place"),
+    ("t͡ʃ", "postalveolar-affricate"),
+    ("d͡ʒ", "postalveolar-affricate"),
+    ("f", "labiodental-fricative"),
+    ("v", "labiodental-fricative"),
+    ("θ", "dental-non-sibilant-fricative"),
+    ("ð", "dental-non-sibilant-fricative"),
+    ("s", "alveolar-sibilant-place"),
+    ("z", "alveolar-sibilant-place"),
+    ("ʃ", "postalveolar-sibilant-place"),
+    ("ʒ", "postalveolar-sibilant-place"),
+    ("h", "voiceless-glottal-vs-v2-h"),
+    ("n", "alveolar-nasal-place"),
+    ("ɹ", "alveolar-approximant-vs-v2-trill"),
+    ("l", "alveolar-lateral-manner"),
+)
+
+UNREPRESENTED_VOWELS = (
+    ("ɪ", "near-close-near-front-quality"),
+    ("e", "short-DRESS-quality-vs-v2-long-e"),
+    ("æ", "near-open-front-quality"),
+    ("ɒ", "open-back-rounded-quality"),
+    ("ʌ", "open-mid-central-quality"),
+    ("ʊ", "near-close-near-back-rounded-quality"),
+    ("ə", "central-reduced-quality"),
+    ("ɑː", "open-back-unrounded-long-quality"),
+    ("ɔː", "open-mid-back-rounded-long-quality"),
+    ("ɜː", "open-mid-central-long-quality"),
+    ("eɪ", "ordered-diphthong-start-and-target"),
+    ("aɪ", "ordered-diphthong-start-and-target"),
+    ("ɔɪ", "ordered-diphthong-start-and-target"),
+    ("aʊ", "ordered-diphthong-start-and-target"),
+    ("əʊ", "ordered-diphthong-start-and-target"),
+    ("ɪə", "ordered-centring-diphthong"),
+    ("eə", "ordered-centring-diphthong"),
+    ("ʊə", "ordered-centring-diphthong"),
 )
 
 
-def _build_inventory() -> tuple[EnglishPhoneme, ...]:
-    rows: list[EnglishPhoneme] = []
-    for ipa, v2_label, evidence in SHARED_SEGMENTS:
-        rows.append(EnglishPhoneme(ipa, v2.SOUNDS[v2_label],
-                                  "consonant", evidence, None, v2_label))
-    for ipa, place, manner, voiced in NEW_CONSONANTS:
-        f = ConsonantFeatures(place, manner, voiced)
-        rows.append(EnglishPhoneme(ipa, pack_consonant(f),
-                                  "consonant", "distinct-segment", f))
-    for ipa, height, back, rounded, long, trajectory in NEW_VOWELS:
-        f = VowelFeatures(height, back, rounded, long, trajectory)
-        rows.append(EnglishPhoneme(ipa, pack_vowel(f),
-                                  "vowel", "distinct-segment", f))
-    if len(rows) != 44 or len({row.ipa for row in rows}) != 44:
-        raise UPC14V3Error("reference-accent phoneme inventory not 44 distinct symbols")
-    if len({row.code for row in rows}) != len(rows):
-        raise UPC14V3Error("two English phonemes have the same 14-bit identity")
-    for row in rows:
-        if row.features is not None and unpack_extension(row.code) != row.features:
-            raise UPC14V3Error("sound feature coordinates failed their inverse")
-    return tuple(rows)
+def _derived_code(expression: str) -> int:
+    if expression == "long(i)":
+        return graph.e_long(graph.SOUNDS["i"])
+    if expression == "long(u)":
+        return graph.e_long(graph.SOUNDS["u"])
+    if expression == "join(lift(b),K)":
+        return graph.e_join(graph.e_lift(graph.SOUNDS["b"], 1), graph.K)
+    raise UPC14V3Error(f"unrecognized edge expression {expression!r}")
 
 
-ENGLISH = _build_inventory()
-_BY_IPA = {row.ipa: row for row in ENGLISH}
-_BY_CODE = {row.code: row for row in ENGLISH}
+def _inventory() -> tuple[EnglishPhoneme, ...]:
+    out: list[EnglishPhoneme] = []
+    for ipa, source_label, evidence in SHARED:
+        out.append(EnglishPhoneme(ipa, "consonant", graph.SOUNDS[source_label],
+                                 f"v2.SOUNDS[{source_label}]", evidence, None))
+    for ipa, family, expression, evidence in DERIVED:
+        out.append(EnglishPhoneme(ipa, family, _derived_code(expression),
+                                 expression, evidence, None))
+    for ipa, needed in UNREPRESENTED_CONSONANTS:
+        out.append(EnglishPhoneme(ipa, "consonant", None, None,
+                                 "donor phoneme, unassigned", needed))
+    for ipa, needed in UNREPRESENTED_VOWELS:
+        out.append(EnglishPhoneme(ipa, "vowel", None, None,
+                                 "donor phoneme, unassigned", needed))
+    if len(out) != 44 or len({p.ipa for p in out}) != 44:
+        raise UPC14V3Error("44 unique donor phonemes required")
+    if sum(p.family == "consonant" for p in out) != 24:
+        raise UPC14V3Error("24 consonants required")
+    if sum(p.family == "vowel" for p in out) != 20:
+        raise UPC14V3Error("20 vowels required")
+    codes = [p.code for p in out if p.code is not None]
+    if len(codes) != len(set(codes)):
+        raise UPC14V3Error("two English phonemes share one sound code")
+    for code in codes:
+        if not isinstance(code, int) or graph.unpack(code).code != code:
+            raise UPC14V3Error("not a historical UPC14-v2 geometric vertex")
+        if code >> graph.META_SHIFT:
+            raise UPC14V3Error("it-marker used as sound")
+    if set(codes) - set(graph.SOUNDS.values()) != {
+        _derived_code(expression) for _, _, expression, _ in DERIVED
+    }:
+        raise UPC14V3Error("undocumented new vertex")
+    return tuple(out)
+
+
+ENGLISH = _inventory()
+_BY_IPA = {p.ipa: p for p in ENGLISH}
+_BY_CODE = {p.code: p for p in ENGLISH if p.code is not None}
+
+
+def describe_english_phoneme(ipa: str) -> EnglishPhoneme:
+    """Information for *all 44* sounds, even those lacking legal v2 codes."""
+    if not isinstance(ipa, str) or unicodedata.normalize("NFC", ipa) != ipa:
+        raise UPC14V3Error("IPA token must be canonical NFC")
+    try:
+        return _BY_IPA[ipa]
+    except KeyError as exc:
+        raise UPC14V3Error(f"not in British English reference inventory: {ipa!r}") from exc
 
 
 def encode_english_phoneme(ipa: str) -> int:
-    """IPA transcription of ONE English phoneme, never an English word."""
-    if not isinstance(ipa, str) or unicodedata.normalize("NFC", ipa) != ipa:
-        raise UPC14V3Error("IPA token must be a canonical NFC string")
-    try:
-        return _BY_IPA[ipa].code
-    except KeyError as exc:
-        raise UPC14V3Error(f"not an admitted English IPA phoneme: {ipa!r}") from exc
+    """Return a real UPC14-v2 geometric vertex; never fabricate a new law."""
+    row = describe_english_phoneme(ipa)
+    if row.code is None:
+        raise UnrepresentedSound(f"{ipa}: original UPC14 lacks {row.missing_law}")
+    return row.code
 
 
 def decode_english_phoneme(code: int) -> str:
-    """Only 44 admitted English segment identities; arbitrary bits fail shut."""
+    """Only codes with a proved current English mapping are admitted."""
     if type(code) is not int:
-        raise UPC14V3Error("not an integer 14-bit code")
+        raise UPC14V3Error("sound coordinate must be an integer")
     try:
         return _BY_CODE[code].ipa
     except KeyError as exc:
-        raise UPC14V3Error(f"not an admitted English phoneme code: {code!r}") from exc
+        raise UPC14V3Error(f"unadmitted English sound coordinate {code!r}") from exc
 
 
-
-def english_voice_edge(code: int) -> int:
-    """Typed graph edge, allowed only between BOTH admitted English segments.
-
-    Within the extension consonant lane, the voiced distinction is bit 3.
-    It is NOT a general toggling law for vowels or historical Sanskrit cells.
-    """
-    row = _BY_CODE.get(code) if type(code) is int else None
-    if row is None or not isinstance(row.features, ConsonantFeatures):
-        raise UPC14V3Error("voice edge requires admitted extended consonant")
-    other = code ^ (1 << 3)
-    target = _BY_CODE.get(other)
-    if target is None or not isinstance(target.features, ConsonantFeatures):
-        raise UPC14V3Error("voice edge target not admitted")
-    if (target.features.place != row.features.place or
-        target.features.manner != row.features.manner or
-        target.features.secondary != row.features.secondary or
-        target.features.voiced == row.features.voiced):
-        raise UPC14V3Error("invalid voice contrast")
-    return other
+def encode_english_tokens(ipa_tokens: Iterable[str]) -> tuple[int, ...]:
+    """Sequence of phonemic tokens; no letters, word segmentation or spelling."""
+    return tuple(encode_english_phoneme(tok) for tok in ipa_tokens)
 
 
-def english_vowel_trajectory_edge(code: int, trajectory: str) -> int:
-    """Change the glide TARGET CLASS only if result is another admitted phone.
-
-    Monophthong -> diphthong is NOT assumed to be a universal sound law.
-    The graph has an edge only when both English reference vowels exist.
-    """
-    row = _BY_CODE.get(code) if type(code) is int else None
-    if row is None or not isinstance(row.features, VowelFeatures):
-        raise UPC14V3Error("trajectory edge requires admitted extended vowel")
-    f = row.features
-    dest = pack_vowel(VowelFeatures(f.height, f.backness, f.rounded,
-                                    f.long, trajectory))
-    target = _BY_CODE.get(dest)
-    if target is None or not isinstance(target.features, VowelFeatures):
-        raise UPC14V3Error("trajectory target not admitted")
-    return dest
+def decode_english_tokens(codes: Iterable[int]) -> tuple[str, ...]:
+    return tuple(decode_english_phoneme(c) for c in codes)
 
 
-def project_to_legacy_upc7(ipa: str) -> int | None:
-    """Strict seven-bit candidate for known exact v2 sound ancestry ONLY.
-
-    The seven inherited v2 sounds preserve the UPC-14 -> derived UPC-7 route.
-    No other English phone is squeezed into a false seven-bit sound identity.
-    Does NOT ratify any SENS D7 mapping or alter any seven-bit table.
-    """
-    row = _BY_IPA.get(ipa)
-    if row is None:
-        raise UPC14V3Error(f"unknown English phoneme {ipa!r}")
-    if row.v2_label is None:
-        return None
-    from upc7_derive import derive
-    return derive(row.code)
+def unresolved_laws() -> dict[str, tuple[str, ...]]:
+    """Evidence-backed blocker groups. No bit-space assumption is smuggled in."""
+    groups: dict[str, list[str]] = {}
+    for item in ENGLISH:
+        if item.missing_law is not None:
+            groups.setdefault(item.missing_law, []).append(item.ipa)
+    return {name: tuple(ipa) for name, ipa in groups.items()}
 
 
 def bitstring(code: int) -> str:
     if type(code) is not int or not 0 <= code < (1 << WIDTH):
-        raise UPC14V3Error("not a 14-bit word")
+        raise UPC14V3Error("not a 14-bit code")
     return f"{code:014b}"
 
 
 if __name__ == "__main__":
-    for entry in ENGLISH:
-        seven = project_to_legacy_upc7(entry.ipa)
-        print(entry.ipa, bitstring(entry.code),
-              f"7:{seven:07b}" if seven is not None else "7:UNMAPPED",
-              entry.evidence)
+    print("UPC-14 v3: SAME geometric law as v2; English sound audit")
+    print(f"English phonemes: {len(ENGLISH)}, geometric: "
+          f"{sum(p.mapped for p in ENGLISH)}, "
+          f"unrepresented: {sum(not p.mapped for p in ENGLISH)}")
+    for row in ENGLISH:
+        print(row.ipa, bitstring(row.code) if row.mapped else "UNREPRESENTED",
+              row.graph_derivation or row.missing_law)
