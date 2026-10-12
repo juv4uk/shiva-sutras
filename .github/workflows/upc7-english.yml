@@ -9,6 +9,8 @@ on:
       - prototype/test_upc7_reversibility.py
       - prototype/upc7_lang.py
       - prototype/uk_orth.py
+      - prototype/upc7_sound.py
+      - prototype/test_upc7_sound.py
       - prototype/upc7_geometry.py
       - prototype/upc7_table.py
       - prototype/upc7-table.tsv
@@ -23,6 +25,8 @@ on:
       - prototype/test_upc7_reversibility.py
       - prototype/upc7_lang.py
       - prototype/uk_orth.py
+      - prototype/upc7_sound.py
+      - prototype/test_upc7_sound.py
       - prototype/upc7_geometry.py
       - prototype/upc7_table.py
       - prototype/upc7-table.tsv
@@ -42,7 +46,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: English sound profile and existing Sanskrit/Ukrainian regressions
         working-directory: prototype
-        run: python3 -m unittest -v test_upc7_english test_upc7_reversibility test_upc7_layouts test_upc7_lang
+        run: python3 -m unittest -v test_upc7_english test_upc7_reversibility test_upc7_sound test_upc7_layouts test_upc7_lang
       - name: Prove canonical 7-bit machine table was not changed
         working-directory: prototype
         run: |
