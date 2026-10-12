@@ -1,0 +1,53 @@
+name: UPC-14 v3 — англійська 44 фонеми, незмінний канон
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "prototype/upc14v3.py"
+      - "prototype/test_upc14v3.py"
+      - "prototype/upc14v2.py"
+      - "prototype/upc7_derive.py"
+      - "extensions/english-sarvam.yaml"
+      - "extensions/english-claude-sarvam.yaml"
+      - "prototype/UPC14-v3.md"
+      - ".github/workflows/upc14-v3.yml"
+  pull_request:
+    paths:
+      - "prototype/upc14v3.py"
+      - "prototype/test_upc14v3.py"
+      - "prototype/upc14v2.py"
+      - "prototype/upc7_derive.py"
+      - "extensions/english-sarvam.yaml"
+      - "extensions/english-claude-sarvam.yaml"
+      - "prototype/UPC14-v3.md"
+      - ".github/workflows/upc14-v3.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  english-44:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - name: Compile v3 and tests without third-party libraries
+        working-directory: prototype
+        run: python3 -m compileall -q upc14v3.py test_upc14v3.py
+      - name: Prove 44 donor phonemes, 37 extensions, inverse and graph laws
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc14v3
+      - name: Confirm v2 graph regression independently
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc14v2
+      - name: Emit human-readable, exact-width English audit
+        working-directory: prototype
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 upc14v3.py > "$RUNNER_TEMP/upc14v3-english.txt"
+          test "$(wc -l < "$RUNNER_TEMP/upc14v3-english.txt")" -eq 44
+          test "$(grep -c '7:UNMAPPED' "$RUNNER_TEMP/upc14v3-english.txt")" -eq 37
+          cat "$RUNNER_TEMP/upc14v3-english.txt"
