@@ -7,7 +7,7 @@ from upc7_sound import UPC7SoundError, project_sound, sound_table
 
 class UPC7SoundProjectionTests(unittest.TestCase):
     def test_exact_seven_bit_identity_is_preserved(self):
-        for profile in ("sa", "uk"):
+        for profile in ("sa", "uk", "en"):
             rows = sound_table(profile)
             self.assertEqual(128, len(rows))
             for code, row in enumerate(rows):
@@ -57,6 +57,29 @@ class UPC7SoundProjectionTests(unittest.TestCase):
         self.assertEqual("unassigned", row.kind)
         self.assertEqual("unassigned", row.status)
         self.assertIsNone(row.ipa)
+
+    def test_english_phonemes_are_resolved_only_with_both_sources(self):
+        rows = sound_table("en")
+        observed = {r.ipa: r for r in rows if r.ipa is not None}
+        self.assertEqual(set(observed), {"b", "ɡ", "m", "ŋ", "p", "k", "j"})
+        for ipa in ("b", "ɡ", "m", "ŋ"):
+            self.assertEqual(observed[ipa].status, "resolved")
+            self.assertTrue(observed[ipa].resolved)
+            self.assertEqual(observed[ipa].confidence, "cross-source")
+        for ipa in ("k", "p", "j"):
+            self.assertEqual(observed[ipa].status, "candidate")
+            self.assertFalse(observed[ipa].resolved)
+            self.assertEqual(observed[ipa].confidence, "disputed")
+
+    def test_english_th_is_not_sanskrit_th(self):
+        aspirated_sanskrit_th = geo.varga_code(3, 1)
+        sa = project_sound(aspirated_sanskrit_th, "sa")
+        en = project_sound(aspirated_sanskrit_th, "en")
+        self.assertEqual(sa.spelling, "th")
+        self.assertEqual(sa.ipa, "t̪ʰ")
+        self.assertEqual(en.status, "unsupported")
+        self.assertIsNone(en.spelling)
+        self.assertIsNone(en.ipa)
 
     def test_unknown_profile_rejected(self):
         with self.assertRaises(UPC7SoundError):
