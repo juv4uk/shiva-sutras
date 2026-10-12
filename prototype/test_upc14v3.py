@@ -55,6 +55,39 @@ class EnglishInventoryTests(unittest.TestCase):
         self.assertEqual(sarvam, {row.ipa for row in v3.ENGLISH})
         self.assertEqual(normalized, sarvam)
 
+    def test_17_new_consonant_features_match_independent_ipa_evidence(self) -> None:
+        source = (EXTENSIONS / "english-claude-sarvam.yaml").read_text(encoding="utf-8")
+        blocks = re.split(r"(?=^  - id: PH-ENG-CS-)", source, flags=re.MULTILINE)
+        audited = {}
+        for block in blocks:
+            if not block.startswith("  - id: PH-ENG-CS-"):
+                continue
+            ipa_match = re.search(r"^\s*ipa:\s*\"?([^\"\n]+)\"?", block,
+                                  flags=re.MULTILINE)
+            fields = re.search(
+                r'^\s*features:\s*\{place:\s*("[^"]+"|[\w-]+),\s*'
+                r'manner:\s*([\w-]+),\s*voicing:\s*([\w-]+)',
+                block, flags=re.MULTILINE)
+            if ipa_match is None or fields is None:
+                raise AssertionError("missing English donor IPA/feature fields")
+            ipa = ipa_match.group(1).strip().replace("t̠ʃ", "t͡ʃ").replace(
+                "d̠ʒ", "d͡ʒ")
+            audited[ipa] = (fields.group(1).strip('"'), fields.group(2),
+                            fields.group(3))
+        checked = 0
+        for row in v3.ENGLISH:
+            if not isinstance(row.features, v3.ConsonantFeatures):
+                continue
+            place, manner, voice = audited[row.ipa]
+            # Independent donor names laterality as 'lateral'.
+            if manner == "lateral":
+                manner = "lateral-approximant"
+            self.assertEqual((row.features.place, row.features.manner,
+                              row.features.voiced),
+                             (place, manner, voice == "voiced"), row.ipa)
+            checked += 1
+        self.assertEqual(checked, 17)
+
     def test_roundtrip_exact_on_all_44_14bit_sound_words(self) -> None:
         for row in v3.ENGLISH:
             with self.subTest(row=row.ipa):
