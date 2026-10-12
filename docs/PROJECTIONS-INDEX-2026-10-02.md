@@ -24,6 +24,7 @@
 | saṅkṣepa7: клітинки з графа (43 з 46 збігаються з ручною; r, l, h різні) | `prototype/upc7_derive.py`, `docs/upc7-sankshepa7-impact-on-sens-2026-10-01.md` | candidate; міграція SENS: рішення власника (рекомендація: не мігрувати) |
 | Огляд усіх 7-бітних прототипів і вартість запитів | `prototype/survey_7bit.py`, `prototype/bench_7bit/`, `docs/upc7-prototypes-survey-2026-10-01.md`, `docs/upc7-design-query-bench-2026-10-01.tsv` | research |
 | Мовно-відповідна таблиця (українська / санскритська розкладка) | `prototype/upc7_lang.py`, `prototype/uk_orth.py`, `prototype/upc7-table-v3.tsv`, `docs/upc7-language-table-2026-10-02.md` | candidate; закріплену таблицю не змінює |
+| Англійські профілі `en` / `en-ipa` (6 досліджених співвіднесень, 5 прямих латинських позначень) | `prototype/upc7_layouts.py`, `prototype/test_upc7_english.py`, `extensions/english-sarvam.yaml`, `extensions/english-claude-sarvam.yaml` | **candidate**; жодних нових координат, повну англійську орфографію не реалізовано; p/k мають розбіжні фонологічні оцінки |
 | Санскрит проти української: звуки, IPA, джерела | `docs/sanskrit-ukrainian-sounds-2026-10-02.md` (+ `.tsv`) | research (IPA: зовнішня конвенція) |
 
 ## 3. Рішення і узгодження
