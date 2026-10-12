@@ -466,6 +466,9 @@ def _uk() -> Layout:
 # disputes the *equivalence label* for p/k (aspiration status), although
 # the base phoneme slots are the same. This is a provisional, narrowly
 # scoped English phonemic pilot, NOT owner-ratified universal equivalence.
+# The English /j/ ↔ Sanskrit y [j] mapping is a *system-equivalent* in
+# Sarvam and segment-equivalent in Claude-Sarvam; include it as separately
+# qualified evidence, not as an English orthography or general proof.
 # New English-only and near-equivalent phonemes gain NO seven-bit identity.
 #
 # These cells are already assigned in the immutable seven-bit geometry.
@@ -477,13 +480,14 @@ _EN_EXACT = (
     ("p", geo.varga_code(4, 0), "p"),
     ("b", geo.varga_code(4, 2), "b"),
     ("m", geo.varga_code(4, 4), "m"),
+    ("j", _sa_iast().spelling_to_code["y"], "y"),
 )
 
 # Known English phonemes/letters not sound-equivalent in the researched
 # canonical Sanskrit geometry. Refuse; do not approximate e.g. "th" -> थ.
 _EN_UNPLACED = frozenset((
     "th", "sh", "ch", "ph", "dh", "f", "v", "w", "r", "s", "t", "d",
-    "n", "h", "l", "j", "z", "a", "e", "i", "o", "u", "q", "x", "y",
+    "n", "h", "l", "z", "a", "e", "i", "o", "u", "q", "x",
     "θ", "ð", "ə", "ɪ", "æ", "ʌ", "ʊ", "ʒ", "ʃ", "tʃ", "dʒ",
 ))
 
@@ -491,7 +495,7 @@ _EN_UNPLACED = frozenset((
 def _en() -> Layout:
     """Conservative English Roman phoneme surface, not a grapheme-to-phoneme reader.
 
-    Only 5 unambiguous one-letter spellings are currently admitted. For /ŋ/
+    Only 6 one-letter sound spellings are currently admitted. For /ŋ/
     use en-ipa, not the context-sensitive English letters "ng".
     """
     spellings = {code: roman for _ipa, code, roman in _EN_EXACT if roman}
