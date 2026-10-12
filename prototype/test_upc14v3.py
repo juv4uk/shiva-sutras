@@ -104,6 +104,38 @@ class EnglishInventoryTests(unittest.TestCase):
         self.assertNotEqual(v3.encode_english_phoneme("eɪ"),
                             v3.encode_english_phoneme("eə"))
 
+    def test_typed_voice_edges_are_admitted_and_reversible(self) -> None:
+        for left, right in (("t", "d"), ("θ", "ð"), ("s", "z"),
+                            ("f", "v"), ("ʃ", "ʒ"), ("t͡ʃ", "d͡ʒ")):
+            a = v3.encode_english_phoneme(left)
+            b = v3.encode_english_phoneme(right)
+            self.assertEqual(v3.english_voice_edge(a), b)
+            self.assertEqual(v3.english_voice_edge(b), a)
+        for no_edge in (v3.encode_english_phoneme("ɹ"),
+                        v3.encode_english_phoneme("ə"),
+                        v3.encode_english_phoneme("p"), 0x3000):
+            with self.assertRaises(v3.UPC14V3Error):
+                v3.english_voice_edge(no_edge)
+
+    def test_vowel_trajectory_edges_require_both_phonemes(self) -> None:
+        pairs = (("e", "toward-near-front-close", "eɪ"),
+                 ("e", "toward-central-mid", "eə"),
+                 ("ɪ", "toward-central-mid", "ɪə"),
+                 ("ʊ", "toward-central-mid", "ʊə"),
+                 ("ə", "toward-near-back-close", "əʊ"))
+        for source, trajectory, expected in pairs:
+            self.assertEqual(
+                v3.english_vowel_trajectory_edge(
+                    v3.encode_english_phoneme(source), trajectory),
+                v3.encode_english_phoneme(expected))
+        with self.assertRaises(v3.UPC14V3Error):
+            v3.english_vowel_trajectory_edge(
+                v3.encode_english_phoneme("æ"),
+                "toward-near-front-close")
+        with self.assertRaises(v3.UPC14V3Error):
+            v3.english_vowel_trajectory_edge(
+                v3.encode_english_phoneme("ɹ"), "steady")
+
     def test_exhaustive_extension_bit_inverse_and_admission_gate(self) -> None:
         admitted_extensions = {row.code for row in v3.ENGLISH
                                if row.features is not None}
