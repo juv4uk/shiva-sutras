@@ -4,8 +4,9 @@
 English spelling is NOT a one-to-one representation of English speech.
 'en' is a restricted Roman phoneme spelling, 'en-ipa' an IPA sound view.
 The six proposed /p b k ɡ m ŋ/ correspondences are in english-sarvam.yaml;
-english-claude-sarvam.yaml disputes treating English p/k aspiration as
-segment-equivalent, so this is a research PROFILE, not ratified English.
+english-claude-sarvam.yaml disputes labeling English p/k as fully
+segment-equivalent because aspiration is contrastive in Sanskrit only.
+Therefore this is a research PROFILE, not ratified English.
 """
 import unittest
 
@@ -78,7 +79,7 @@ class EnglishSoundProfileTests(unittest.TestCase):
 
     def test_reserved_and_sign_cells_do_not_gain_english_spellings(self):
         for cell in build_cells():
-            if cell.status == RESERVED or cell.klass == "sign":
+            if cell.status == RESERVED or cell.klass == "sign/operator":
                 for name in ("en", "en-ipa"):
                     with self.subTest(name=name, code=cell.code):
                         with self.assertRaises(UnrenderableCode):
