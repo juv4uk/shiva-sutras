@@ -492,19 +492,31 @@ _EN_UNPLACED = frozenset((
 ))
 
 
+# These are TEXT GLYPHS inside a language surface, never parser commands.
+# The 7-bit identities already exist; whether the corresponding characters
+# are treated as structural tokens belongs to an external reader context.
+_EN_TEXT_SIGNS = {
+    geo.sign_code("space"): " ",
+    geo.sign_code("dot"): ".",
+}
+
+
 def _en() -> Layout:
-    """Conservative English Roman phoneme surface, not a grapheme-to-phoneme reader.
+    """English phonemic pilot with actual text spacing/punctuation.
 
     Only 6 one-letter sound spellings are currently admitted. For /ŋ/
     use en-ipa, not the context-sensitive English letters "ng".
+    Space and period are data cells, NOT phonemes or control instructions.
     """
     spellings = {code: roman for _ipa, code, roman in _EN_PILOT if roman}
+    spellings.update(_EN_TEXT_SIGNS)
     return Layout("en", spellings, _EN_UNPLACED)
 
 
 def _en_ipa() -> Layout:
-    """Seven placed English candidates; only four exact across both audits."""
+    """Seven placed English candidate sounds plus two text signs."""
     spellings = {code: ipa for ipa, code, _roman in _EN_PILOT}
+    spellings.update(_EN_TEXT_SIGNS)
     return Layout("en-ipa", spellings, _EN_UNPLACED)
 
 
