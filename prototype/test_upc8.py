@@ -6,6 +6,7 @@ Run: python test_upc8.py
 
 import sys
 import os
+import unicodedata
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -195,7 +196,7 @@ def test_language_class_ukrainian():
     # Sanskrit-extended codes are out of scope for the ukrainian language.
     assert u.language_class(0x2A) == frozenset()
     try:
-        u.language_class(0x00, language="english")
+        u.language_class(0x00, language="klingon")
         assert False, "unknown language should raise ValueError"
     except ValueError:
         pass
@@ -309,16 +310,21 @@ def test_code_space_stats():
     assert s["sanskrit_extended"] == 7
     assert s["ukrainian_shared"] == 13
     assert s["ukrainian_new"] == 31
-    assert s["total_assigned"] == 80
-    assert s["reserved"] == 176
+    assert s["english_shared"] == 7
+    assert s["english_new"] == 37
+    assert s["english_phonemes"] == 44
+    assert s["total_assigned"] == 117
+    assert s["reserved"] == 139
     print(f"  [PASS] Code space: {s['total_assigned']} assigned, {s['reserved']} reserved")
 
 
 def test_reserved_codes():
     u = UPC8()
-    for code in [0x50, 0x7F, 0x80, 0xFE, 0xFF]:
+    for code in [0x75, 0x7F, 0x80, 0xFE, 0xFF]:
         assert u.decode(code)["layer"] == "reserved"
-    print("  [PASS] Reserved codes 0x50-0xFF are unassigned")
+    assert u.decode(0x50)["layer"] == "english_new"
+    assert u.decode(0x74)["layer"] == "english_new"
+    print("  [PASS] Reserved codes 0x75-0xFF remain unassigned")
 
 
 def test_roundtrip_sanskrit():
@@ -373,9 +379,127 @@ def test_code_space_no_gaps():
         assert code in u.table, f"Gap at 0x{code:02X} in extended"
     for code in range(0x31, 0x50):
         assert code in u.table, f"Gap at 0x{code:02X} in ukrainian"
-    # 0x50 should be reserved
-    assert 0x50 not in u.table
-    print("  [PASS] No gaps in code space: 0x00-0x4F fully assigned")
+    for code in range(0x50, 0x75):
+        assert code in u.table, f"Gap at 0x{code:02X} in English extension"
+    assert 0x75 not in u.table
+    print("  [PASS] No gaps in code space: 0x00-0x74 fully assigned")
+
+
+
+def test_english_complete_donor_inventory():
+    """Both independent donor lists define the same 44 reference phonemes."""
+    from upc8 import ENGLISH_SHARED, ENGLISH_NEW, ENGLISH_IPA_ALIASES
+    import pathlib
+    en = {ipa for ipa, _, _ in ENGLISH_SHARED} | {ipa for ipa, _ in ENGLISH_NEW}
+    assert len(en) == 44
+
+    def donor_inventory(name):
+        lines = (pathlib.Path(__file__).resolve().parent.parent /
+                 "extensions" / name).read_text(encoding="utf-8").splitlines()
+        result = []
+        for i, line in enumerate(lines):
+            if not line.startswith("  - id: PH-ENG-"):
+                continue
+            # The first "ipa:" scalar of each entry (not a nested IPA note).
+            for next_line in lines[i + 1:]:
+                if next_line.startswith("  - id: "):
+                    raise AssertionError(f"missing ipa after {line}")
+                if next_line.startswith("    ipa: "):
+                    result.append(next_line.split("ipa: ", 1)[1].strip().strip('"'))
+                    break
+        return result
+
+    for file in ("english-sarvam.yaml", "english-claude-sarvam.yaml"):
+        from_file = [ENGLISH_IPA_ALIASES.get(ipa, ipa)
+                     for ipa in donor_inventory(file)]
+        assert len(from_file) == 44, (file, len(from_file))
+        assert len(set(from_file)) == 44, file
+        assert set(from_file) == en, (file, set(from_file) ^ en)
+    print("  [PASS] 44/44 English IPA phonemes match both independent donor inventories")
+
+
+def test_english_exact_one_cell_for_each_phoneme():
+    from upc8 import CODE_OF_SOUND, ENGLISH_SHARED, ENGLISH_NEW
+    u = UPC8()
+    codes = []
+    for ipa, slp1, manner in ENGLISH_SHARED:
+        code = u.encode_english_phoneme(ipa)
+        assert code == CODE_OF_SOUND[slp1]
+        assert u.decode(code)["languages"]["english"]["ipa"] == ipa
+        assert u.decode(code)["layer"] == "canonical"
+        assert 0 <= code < 0x2A
+        codes.append(code)
+    for offset, (ipa, manner) in enumerate(ENGLISH_NEW):
+        code = u.encode_english_phoneme(ipa)
+        assert code == 0x50 + offset, ipa
+        assert u.decode(code)["ipa"] == ipa
+        assert u.decode(code)["manner"] == manner
+        assert u.decode(code)["layer"] == "english_new"
+        codes.append(code)
+    assert len(codes) == 44 and len(set(codes)) == 44
+    assert all(0 <= c < 256 for c in codes)
+    assert 0x50 <= max(codes) <= 0x74
+    print("  [PASS] 44 phonemes -> 44 distinct single-byte sound identities")
+
+
+def test_english_roundtrip_and_language_classes():
+    from upc8 import ENGLISH_SHARED, ENGLISH_NEW
+    u = UPC8()
+    inventory = [row[0] for row in ENGLISH_SHARED] + [row[0] for row in ENGLISH_NEW]
+    for ipa in inventory:
+        code = u.encode_english_phoneme(ipa)
+        assert u.decode_english_phoneme(code) == ipa
+        assert u.decode_english_phonemes(bytes([code])) == (ipa,)
+    encoded = u.encode_english_phonemes(inventory)
+    assert len(encoded) == 44
+    assert u.decode_english_phonemes(encoded) == tuple(inventory)
+    for ipa in inventory:
+        cls = u.language_class(u.encode_english_phoneme(ipa), "english")
+        assert ("vowel" in cls) ^ ("consonant" in cls)
+    assert u.language_class(u.encode_english_phoneme("θ"), "english") == frozenset({"consonant", "fricative"})
+    assert u.language_class(u.encode_english_phoneme("eɪ"), "english") == frozenset({"vowel"})
+    assert u.language_class(u.encode_english_phoneme("ŋ"), "english") == frozenset({"consonant", "nasal"})
+    # Explicit alternate IPA notation used by the second donor.
+    assert u.encode_english_phoneme("t̠ʃ") == u.encode_english_phoneme("t͡ʃ")
+    assert u.encode_english_phoneme("d̠ʒ") == u.encode_english_phoneme("d͡ʒ")
+    print("  [PASS] 44/44 English IPA roundtrips and strict English phonetic classes")
+
+
+def test_english_no_false_friends_or_hidden_orthography():
+    u = UPC8()
+    false_friends = ("t", "d", "v", "h", "ɹ", "l", "s", "ʃ", "θ", "ð", "ə")
+    for ipa in false_friends:
+        c = u.encode_english_phoneme(ipa)
+        assert 0x50 <= c <= 0x74, (ipa, c)
+    for ipa, slp1 in (("t", "t"), ("d", "d"), ("v", "v"), ("h", "h"), ("ɹ", "r"), ("l", "l"), ("s", "s"), ("ʃ", "S")):
+        assert u.encode_english_phoneme(ipa) != u.encode_sanskrit(slp1)
+    for invalid in ("the", "thin", "hello", "th", "ch", "sh", "g", "y", "tʃ", "dʒ"):
+        try:
+            u.encode_english_phoneme(invalid)
+            assert False, f"Accepted an English spelling or unsupported IPA {invalid!r}"
+        except KeyError:
+            pass
+    for invalid in ([], [0x75], [0x7F], [0x4F], [0x2A]):
+        if not invalid:
+            assert u.decode_english_phonemes(b"") == ()
+            continue
+        try:
+            u.decode_english_phonemes(bytes(invalid))
+            assert False, f"Accepted a non-English code: {invalid!r}"
+        except KeyError:
+            pass
+    for invalid in ("hello", b"hello"):
+        try:
+            u.encode_english_phonemes(invalid)
+            assert False, "Spelling was silently accepted as phonemes"
+        except TypeError:
+            pass
+    # Sanskrit, Ukrainian and pratyahara bytes must remain unchanged.
+    assert u.encode_sanskrit_word("karma") == bytes([0x25, 0x00, 0x0C, 0x0F, 0x00])
+    assert u.encode_ukrainian("б") == 0x19
+    assert len(u.pratyahara("hal")) == 33
+    print("  [PASS] No English/Sanskrit false-friend collapse, no orthographic fallback")
+
 
 
 def run_all():
@@ -390,6 +514,10 @@ def run_all():
         ("Sanskrit extended",           test_sanskrit_extended),
         ("Ukrainian shared",            test_ukrainian_shared),
         ("Ukrainian new",               test_ukrainian_new),
+        ("English two-donor 44 inventory", test_english_complete_donor_inventory),
+        ("English 44 distinct bytes",  test_english_exact_one_cell_for_each_phoneme),
+        ("English roundtrips and class", test_english_roundtrip_and_language_classes),
+        ("English strict sound identity", test_english_no_false_friends_or_hidden_orthography),
         ("Word encoding (Sanskrit)",    test_word_encoding_sanskrit),
         ("Word encoding (Ukrainian)",   test_word_encoding_ukrainian),
         ("encode_sanskrit_slp1_token",  test_encode_sanskrit_slp1_token),
