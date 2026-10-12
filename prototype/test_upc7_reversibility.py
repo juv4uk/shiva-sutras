@@ -87,6 +87,30 @@ class ReversibilityAudit(unittest.TestCase):
                     GEOMETRY.encode("".join(phrase), language), original
                 )
 
+    def test_space_and_period_are_text_cells_not_reader_controls(self):
+        space = geo.sign_code("space")
+        dot = geo.sign_code("dot")
+        for language in ("uk", "sa-iast", "sa-deva", "en", "en-ipa"):
+            with self.subTest(language=language):
+                self.assertEqual(GEOMETRY.encode(" .", language), (space, dot))
+                self.assertEqual(
+                    GEOMETRY.render_checked((space, dot), language), " ."
+                )
+                self.assertEqual(
+                    GEOMETRY.encode_tokens((" ", "."), language), (space, dot)
+                )
+        # SLP1 historically spells Sanskrit daṇḍa with "."; it is a
+        # DIFFERENT seven-bit cell from the ASCII text period. Never equate
+        # these two identities just because their human glyph matches.
+        danda = geo.sign_code("danda")
+        self.assertNotEqual(danda, dot)
+        self.assertEqual(GEOMETRY.encode(".", "sa-slp1"), (danda,))
+        self.assertEqual(GEOMETRY.encode(" ", "sa-slp1"), (space,))
+        with self.assertRaises(UnrenderableCode):
+            GEOMETRY.render_checked((space, dot), "sa-slp1")
+        with self.assertRaises(UnrenderableCode):
+            GEOMETRY.switch_layout(".", "en", "sa-slp1")
+
     def test_known_sanskrit_and_ukrainian_boundary_collisions_are_refused(self):
         for language, source in (
             ("sa-iast", ("k", "h")),
