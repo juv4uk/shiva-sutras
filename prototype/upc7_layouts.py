@@ -590,6 +590,46 @@ class UPC7Text:
             out.append(mapping[code])
         return "".join(out)
 
+    def render_tokens(self, codes: Iterable[int], layout: str) -> Tuple[str, ...]:
+        """Lossless single-cell spellings; TOKEN BOUNDARIES are not concatenated.
+
+        This representation is invertible even where the visual string is
+        ambiguous (IAST k+h, Ukrainian д+ж, SLP1 dot+dot).
+        """
+        checked = tuple(geo.checked_code(code) for code in codes)
+        if layout == "bits":
+            return tuple(geo.code_bits(code) for code in checked)
+        mapping = self.layout(layout).code_to_spelling
+        tokens: List[str] = []
+        for index, code in enumerate(checked):
+            if code not in mapping:
+                raise UnrenderableCode(
+                    f"{layout}: {geo.code_bits(code)} at {index} has no glyph"
+                )
+            tokens.append(mapping[code])
+        return tuple(tokens)
+
+    def encode_tokens(self, tokens: Iterable[str], layout: str) -> Tuple[int, ...]:
+        """Invert render_tokens exactly; never parse across token boundaries."""
+        items = tuple(tokens)
+        if layout == "bits":
+            codes: List[int] = []
+            for spelling in items:
+                if len(spelling) != 7 or set(spelling) - {"0", "1"}:
+                    raise UnknownSpelling(f"bits: expected 7-bit cell, got {spelling!r}")
+                codes.append(int(spelling, 2))
+            return tuple(codes)
+        inverse = self.layout(layout).spelling_to_code
+        codes = []
+        for spelling in items:
+            try:
+                codes.append(inverse[spelling])
+            except (KeyError, TypeError):
+                raise UnknownSpelling(
+                    f"{layout}: {spelling!r} is not a single direct cell spelling"
+                ) from None
+        return tuple(codes)
+
     def render_checked(self, codes: Iterable[int], layout: str) -> str:
         """Only return text if the exact sequence survives decode -> encode.
 
