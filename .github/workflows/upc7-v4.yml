@@ -1,0 +1,66 @@
+name: UPC-7 v4 — exact 7-bit stream from UPC-14 v3
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "prototype/upc7v4.py"
+      - "prototype/test_upc7v4.py"
+      - "prototype/UPC7-v4.md"
+      - "prototype/upc14v3.py"
+      - "prototype/test_upc14v3.py"
+      - "prototype/upc14v2.py"
+      - "prototype/upc7_derive.py"
+      - "prototype/upc7-table-v3.tsv"
+      - "prototype/upc7-table.tsv"
+      - ".github/workflows/upc7-v4.yml"
+  pull_request:
+    paths:
+      - "prototype/upc7v4.py"
+      - "prototype/test_upc7v4.py"
+      - "prototype/UPC7-v4.md"
+      - "prototype/upc14v3.py"
+      - "prototype/test_upc14v3.py"
+      - "prototype/upc14v2.py"
+      - "prototype/upc7_derive.py"
+      - "prototype/upc7-table-v3.tsv"
+      - "prototype/upc7-table.tsv"
+      - ".github/workflows/upc7-v4.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  width-and-sound-identity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - name: Syntax check, independent of cached bytecode
+        working-directory: prototype
+        run: python3 -m compileall -q upc7v4.py test_upc7v4.py
+      - name: UPC-7 v4 sound code admission, exhaustive prefix and exact physical pack
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc7v4
+      - name: UPC-14 v3 donor English 44-phoneme witness
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc14v3
+      - name: Historical UPC-14 v2 sound graph regression
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc14v2
+      - name: Historical UPC-7 v3 derived sound ancestry regression
+        working-directory: prototype
+        run: python3 -m unittest -v test_upc7_derive
+      - name: Original UPC-7 v2 pinned table still unchanged
+        working-directory: prototype
+        run: sha256sum -c upc7-table.sha256
+      - name: Human-readable audit of all 44 distinct English sound projections
+        working-directory: prototype
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 upc7v4.py > "$RUNNER_TEMP/upc7v4-english.txt"
+          test "$(grep -c '^' "$RUNNER_TEMP/upc7v4-english.txt")" -eq 45
+          test "$(grep -c '0101111 ' "$RUNNER_TEMP/upc7v4-english.txt")" -eq 37
+          cat "$RUNNER_TEMP/upc7v4-english.txt"
