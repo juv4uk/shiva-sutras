@@ -121,6 +121,23 @@ class UPC7V4Witness(unittest.TestCase):
                 encodings[w7] = sequence
         self.assertEqual(len(encodings), 44 * 44)
 
+    def test_explicit_version_bound_frame_not_legacy_auto_decode(self):
+        sample = ("θ", "ə", "m", "t͡ʃ", "ɹ", "iː")
+        frame = v4.encode_english_frame(sample)
+        self.assertEqual(frame.version, "UPC-7 v4")
+        self.assertEqual(frame.profile, "english-reference-44")
+        self.assertEqual(v4.decode_english_frame(frame), sample)
+        for bad in (
+            v4.UPC7V4Frame("UPC-7 v3", frame.profile,
+                           frame.cell_count, frame.payload),
+            v4.UPC7V4Frame(frame.version, "uk", frame.cell_count,
+                           frame.payload),
+            (frame.payload, frame.cell_count),
+            None,
+        ):
+            with self.subTest(bad=bad), self.assertRaises(v4.UPC7V4Error):
+                v4.decode_english_frame(bad)
+
     def test_bitaligned_pack_no_hidden_cell_padding(self):
         self.assertEqual(v4.pack_w7(())[0], b"")
         rng = random.Random(140704)
