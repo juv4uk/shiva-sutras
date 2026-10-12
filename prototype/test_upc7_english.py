@@ -3,7 +3,8 @@
 
 English spelling is NOT a one-to-one representation of English speech.
 'en' is a restricted Roman phoneme spelling, 'en-ipa' an IPA sound view.
-The six proposed /p b k ɡ m ŋ/ correspondences are in english-sarvam.yaml;
+The six /p b k ɡ m ŋ/ candidates and a qualified /j/ system-equivalent
+are supported by english-sarvam.yaml;
 english-claude-sarvam.yaml disputes labeling English p/k as fully
 segment-equivalent because aspiration is contrastive in Sanskrit only.
 Therefore this is a research PROFILE, not ratified English.
@@ -24,6 +25,7 @@ EQUIVALENCES = (
     ("p", "p", geo.varga_code(4, 0)),
     ("b", "b", geo.varga_code(4, 2)),
     ("m", "m", geo.varga_code(4, 4)),
+    ("j", "y", 0b0100110),  # Sanskrit y; English /j/, not English letter j
 )
 
 
@@ -31,8 +33,8 @@ class EnglishSoundProfileTests(unittest.TestCase):
     def test_new_language_views_exist_without_minting_codes(self):
         self.assertIn("en", build_layouts())
         self.assertIn("en-ipa", build_layouts())
-        self.assertEqual(len(CODEC.layout("en").code_to_spelling), 5)
-        self.assertEqual(len(CODEC.layout("en-ipa").code_to_spelling), 6)
+        self.assertEqual(len(CODEC.layout("en").code_to_spelling), 6)
+        self.assertEqual(len(CODEC.layout("en-ipa").code_to_spelling), 7)
         cells = {c.code: c for c in build_cells()}
         self.assertEqual(len(cells), 128)
         self.assertEqual(sum(c.status == RESERVED for c in cells.values()), 21)
