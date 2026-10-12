@@ -20,6 +20,7 @@ import hashlib
 import io
 from pathlib import Path
 from typing import Iterable
+from dataclasses import dataclass
 import upc14v2 as v2
 import upc14v3 as v3
 from upc7_derive import derive
@@ -188,6 +189,28 @@ def unpack_w7(data: bytes, count: int) -> tuple[int, ...]:
         raise UPC7V4Error("nonzero high-level padding, not canonical")
     value >>= pad
     return tuple((value >> (7 * (count - i - 1))) & 0x7F for i in range(count))
+
+
+@dataclass(frozen=True)
+class UPC7V4Frame:
+    """Explicit outer transport metadata; NOT new semantic W7 codes."""
+    version: str
+    profile: str
+    cell_count: int
+    payload: bytes
+
+
+def encode_english_frame(ipa_tokens: Iterable[str]) -> UPC7V4Frame:
+    packed, count = pack_w7(encode_english_tokens(ipa_tokens))
+    return UPC7V4Frame(VERSION, PROFILE, count, packed)
+
+
+def decode_english_frame(frame: UPC7V4Frame) -> tuple[str, ...]:
+    if not isinstance(frame, UPC7V4Frame):
+        raise UPC7V4Error("explicit v4 frame metadata required")
+    if frame.version != VERSION or frame.profile != PROFILE:
+        raise UPC7V4Error("version/profile mismatch; never guess a codec")
+    return decode_english_tokens(unpack_w7(frame.payload, frame.cell_count))
 
 
 def bits(cells7: Iterable[int]) -> str:
