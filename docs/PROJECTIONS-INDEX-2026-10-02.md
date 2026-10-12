@@ -24,7 +24,7 @@
 | saṅkṣepa7: клітинки з графа (43 з 46 збігаються з ручною; r, l, h різні) | `prototype/upc7_derive.py`, `docs/upc7-sankshepa7-impact-on-sens-2026-10-01.md` | candidate; міграція SENS: рішення власника (рекомендація: не мігрувати) |
 | Огляд усіх 7-бітних прототипів і вартість запитів | `prototype/survey_7bit.py`, `prototype/bench_7bit/`, `docs/upc7-prototypes-survey-2026-10-01.md`, `docs/upc7-design-query-bench-2026-10-01.tsv` | research |
 | Мовно-відповідна таблиця (українська / санскритська розкладка) | `prototype/upc7_lang.py`, `prototype/uk_orth.py`, `prototype/upc7-table-v3.tsv`, `docs/upc7-language-table-2026-10-02.md` | candidate; закріплену таблицю не змінює |
-| Англійські профілі `en` / `en-ipa` (6 досліджених співвіднесень, 5 прямих латинських позначень) | `prototype/upc7_layouts.py`, `prototype/test_upc7_english.py`, `extensions/english-sarvam.yaml`, `extensions/english-claude-sarvam.yaml` | **candidate**; жодних нових координат, повну англійську орфографію не реалізовано; p/k мають розбіжні фонологічні оцінки |
+| Англійські профілі `en` / `en-ipa` (7 кандидатів із /j/, 6 прямих латинських позначень; /p,k/ спірні) | `prototype/upc7_layouts.py`, `prototype/test_upc7_english.py`, `extensions/english-sarvam.yaml`, `extensions/english-claude-sarvam.yaml` | **candidate**; жодних нових координат, повну англійську орфографію не реалізовано; p/k мають розбіжні фонологічні оцінки |
 | Санскрит проти української: звуки, IPA, джерела | `docs/sanskrit-ukrainian-sounds-2026-10-02.md` (+ `.tsv`) | research (IPA: зовнішня конвенція) |
 
 ## 3. Рішення і узгодження
@@ -39,3 +39,30 @@
 ## 4. Тести
 
 `cd prototype && python3 -m unittest discover -s . -p 'test_*.py'` (250+ тестів). CI: `.github/workflows/upc7-prototype.yml` (UPC-7, UPC-14 v2, derive, language layer). Окремо `tests/` (потрібен `yaml`); 2 давні падіння `test_epistemic_linter` чекають рішення власника.
+
+### Аудит оберненості усіх мов (2026-10-12)
+
+`prototype/test_upc7_reversibility.py` перевіряє **кожен призначений символ
+і всі пари призначених клітинок** для `sa-slp1`, `sa-iast`, `sa-deva`,
+`uk`, `en`, `en-ipa`, а також точні біти для всіх 128 клітинок.
+Окремо перевірено чотири профілі більш повного
+`upc7_lang.py`: `uk`, `sa-iast`, `sa-deva`, `sa-cyr`.
+
+**Не плутати різні твердження про оберненість**:
+- точний потік семибітних клітинок може бути відновлений зі
+  `render_checked` або операції `switch_layout` (інакше `UnrenderableCode`);
+- старий `render` лишився нестрогим способом *показати* гліфи;
+- вихідне написання не завжди відновлюється навіть із тотожного набору
+  звуків: `я` → `йа`, великий регістр в базовому `uk` та омонімні
+  послідовності. `upc7_lang.py` містить розширені орфографічні правила,
+  модифікатор регістру і вже виконує явну перевірку повторного кодування;
+- приклади неоднозначних меж: санскрит IAST `k+h → kh`,
+  `a+i → ai`; українська `д+ж → дж`, `д+з → дз`;
+  SLP1 `.+. → ..`.
+- незалежні дослідження згодні щодо exact /b ɡ m ŋ/.
+  /p k/ включено лише як кандидатні базові фонеми (незгода щодо
+  контрасту придиху), /j/ — як system-equivalent Sanskrit y.
+  Решта звуків англійської поки не отримують вигаданих клітинок.
+
+Це **інженерна гарантія fail-closed для оберненого кодового потоку**,
+а не доказ повної оборотності всієї фонетики чи орфографії трьох мов.
