@@ -125,7 +125,7 @@ class ReversibilityAudit(unittest.TestCase):
                 self.assertEqual(ORTHOGRAPHY.render(codes, "uk"), example)
 
     def test_english_renders_only_proven_placed_sound_cells(self):
-        for sound in ("b", "ɡ", "k", "m", "p", "ŋ"):
+        for sound in ("b", "ɡ", "k", "m", "p", "ŋ", "j"):
             codes = GEOMETRY.encode(sound, "en-ipa")
             self.assertEqual(GEOMETRY.render_checked(codes, "en-ipa"), sound)
         for sound in ("θ", "ð", "æ", "ə", "ɪ", "ʃ"):
