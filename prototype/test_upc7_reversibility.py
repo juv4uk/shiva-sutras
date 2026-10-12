@@ -54,6 +54,39 @@ class ReversibilityAudit(unittest.TestCase):
                 flush=True,
             )
 
+    def test_every_two_cell_token_stream_roundtrips_in_every_language(self):
+        for language, layout in GEOMETRY.layouts.items():
+            codes = tuple(layout.code_to_spelling)
+            for a in codes:
+                for b in codes:
+                    with self.subTest(language=language, a=a, b=b):
+                        pair = (a, b)
+                        spellings = GEOMETRY.render_tokens(pair, language)
+                        self.assertEqual(
+                            GEOMETRY.encode_tokens(spellings, language), pair
+                        )
+
+        for code in range(128):
+            bits = (geo.code_bits(code),)
+            self.assertEqual(GEOMETRY.render_tokens((code,), "bits"), bits)
+            self.assertEqual(GEOMETRY.encode_tokens(bits, "bits"), (code,))
+
+    def test_token_stream_exposes_ambiguous_boundaries_without_renumbering(self):
+        for language, phrase in (
+            ("sa-iast", ("k", "h")),
+            ("sa-iast", ("a", "i")),
+            ("sa-slp1", (".", ".")),
+            ("uk", ("д", "ж")),
+            ("uk", ("д", "з")),
+        ):
+            with self.subTest(language=language, phrase=phrase):
+                original = GEOMETRY.encode_tokens(phrase, language)
+                self.assertEqual(GEOMETRY.render_tokens(original, language), phrase)
+                self.assertEqual(GEOMETRY.encode_tokens(phrase, language), original)
+                self.assertNotEqual(
+                    GEOMETRY.encode("".join(phrase), language), original
+                )
+
     def test_known_sanskrit_and_ukrainian_boundary_collisions_are_refused(self):
         for language, source in (
             ("sa-iast", ("k", "h")),
